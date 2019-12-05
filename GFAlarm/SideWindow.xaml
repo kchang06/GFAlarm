@@ -1,0 +1,173 @@
+﻿<Window x:Class="GFAlarm.SideWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d"
+        
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="CanResize"
+        
+        Closed="Window_Closed"
+        
+        Height="300" Width="400"
+    >
+    <Window.Template>
+        <ControlTemplate TargetType="{x:Type Window}">
+            <Border x:Name="WindowBorder" BorderBrush="#007ACC" BorderThickness="2">
+                <Grid Background="#1E1E1E">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.Resources>
+                        <!-- 타이틀바 버튼 스타일 -->
+                        <Style x:Key="TitlebarButton" TargetType="{x:Type Button}">
+                            <Setter Property="Width" Value="32"/>
+                            <Setter Property="Height" Value="30"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="#FFFFFFFF"/>
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Opacity" Value="0.75"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
+                                            </Grid>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1.0"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                        <!-- 타이틀바 최소화 버튼 스타일 -->
+                        <Style x:Key="TitlebarMinimizeButton" TargetType="{x:Type Button}" BasedOn="{StaticResource TitlebarButton}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                                                <ContentPresenter Margin="0,8,0,0" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
+                                            </Grid>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                        <!-- 타이틀바 토글 버튼 스타일 -->
+                        <Style x:Key="TitlebarToggleButton" TargetType="{x:Type ToggleButton}">
+                            <Setter Property="Width" Value="32"/>
+                            <Setter Property="Height" Value="30"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="#FFFFFFFF"/>
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Opacity" Value="0.75"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1.0"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid x:Name="WindowTitlebar" Grid.Row="0" Background="#007ACC">
+                        <TextBlock Margin="10,0,0,2" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="12" Text="소녀전선 알리미"/>
+                        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+                            <!-- 항상 위 -->
+                            <ToggleButton x:Name="AlwaysOnTopButton" Style="{DynamicResource TitlebarToggleButton}" 
+                                          Margin="0,0,0,2"
+                                          Content="{iconPacks:Material Kind=PinOff, Width=11, Height=11}" ToolTip="항상 위"/>
+                            <!-- 구분선 -->
+                            <Rectangle Margin="5,0" HorizontalAlignment="Stretch" Fill="#40FFFFFF" Width="1" Height="18"/>
+                            <!-- 최소화 -->
+                            <Button x:Name="WindowMinimizeButton" Style="{DynamicResource TitlebarMinimizeButton}" 
+                                    Margin="0,0,0,2"
+                                    Content="{iconPacks:Material Kind=WindowMinimize, Width=9, Height=9}" ToolTip="최소화"
+                                    VerticalAlignment="Center" />
+                            <!-- 종료 -->
+                            <Button x:Name="WidnowCloseButton" Style="{DynamicResource TitlebarButton}" 
+                                    Margin="0,0,0,2"
+                                    Content="{iconPacks:Material Kind=WindowClose, Width=10, Height=10}" ToolTip="종료"/>
+                        </StackPanel>
+                    </Grid>
+                    <ContentPresenter Grid.Row="1"/>
+                </Grid>
+            </Border>
+        </ControlTemplate>
+    </Window.Template>
+    <!-- -->
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="5" CornerRadius="0"/>
+    </WindowChrome.WindowChrome>
+    <Window.Resources>
+        <!-- 탭 메뉴 버튼 스타일 -->
+        <Style x:Key="TabMenuButtonStyle" TargetType="Button">
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="#00007ACC"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <!-- 푸터 메뉴 버튼 스타일 -->
+        <Style x:Key="FooterMenuButtonStyle" TargetType="Button" BasedOn="{StaticResource SquareButtonStyle}">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Padding" Value="5,4"/>
+            <Setter Property="FontFamily" Value="Segoe UI, Malgun Gothic"/>
+            <Setter Property="FontSize" Value="11"/>
+        </Style>
+    </Window.Resources>
+    <!-- 메인 -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="32"/>
+        </Grid.RowDefinitions>
+        <!-- 헤더 -->
+        <Grid Grid.Row="0" Background="#2D2D30">
+            <StackPanel Orientation="Horizontal" Margin="10,0">
+                <Button Style="{DynamicResource TabMenuButtonStyle}" Content="제대"/>
+                <Button Style="{DynamicResource TabMenuButtonStyle}" Content="인형"/>
+                <Button Style="{DynamicResource TabMenuButtonStyle}" Content="장비"/>
+                <Button Style="{DynamicResource TabMenuButtonStyle}" Content="요정"/>
+                <Button Style="{DynamicResource TabMenuButtonStyle}" Content="도구"/>
+            </StackPanel>
+        </Grid>
+        <!-- 본문 -->
+        <Grid Grid.Row="1">
+            
+        </Grid>
+        <!-- 푸터 -->
+        <Grid Grid.Row="2" Background="#2D2D30">
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="10,0">
+                <Button Style="{DynamicResource FooterMenuButtonStyle}" Width="70" Content="일괄해제"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,792 @@
+﻿<UserControl 
+    x:Class="GFAlarm.View.Menu.EchelonView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:GFAlarm.View.Menu"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:ls="clr-namespace:LocalizationResources;assembly=LocalizationResources"
+    xmlns:uc="http://www.quickzip.org/BaseControls"
+    mc:Ignorable="d" 
+    d:DesignHeight="500" d:DesignWidth="200">
+    <UserControl.Resources>
+        <!-- 설정 툴팁 스택판넬 스타일 -->
+        <Style x:Key="SettingToolTipStackPanelStyle" TargetType="{x:Type StackPanel}">
+            <Setter Property="Orientation" Value="Vertical"/>
+            <Setter Property="MaxWidth" Value="300"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <!-- 제대 번호 스타일 -->
+        <Style x:Key="EchelonGroupNumericStyle" TargetType="{x:Type iconPacks:PackIconMaterial}">
+            <!--<Setter Property="Margin" Value="8,0,0,0"/>-->
+            <!--<Setter Property="Width" Value="14"/>-->
+            <Setter Property="Height" Value="14"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <!-- 제대 그룹 텍스트 스타일 -->
+        <Style x:Key="EchelonGroupTextStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+        </Style>
+        <!-- 제대 그룹 화살표 스타일  -->
+        <Style x:Key="EchelonGroupArrowStyle" TargetType="{x:Type iconPacks:PackIconMaterial}">
+            <Setter Property="Width" Value="11"/>
+            <Setter Property="Height" Value="11"/>
+            <Setter Property="Margin" Value="0,0,8,0"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
+        </Style>
+        <!-- 제대 상태 Border 스타일 -->
+        <Style x:Key="EchelonStatusBorderStyle" TargetType="{x:Type Border}">
+            <Setter Property="Margin" Value="8,0,0,0"/>
+            <Setter Property="Padding" Value="5,0,5,0"/>
+            <Setter Property="Height" Value="18"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="3"/>
+        </Style>
+        <!-- 제대 상태 텍스트 스타일 -->
+        <Style x:Key="EchelonStatusTextStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <!-- 리스트 아이템 스타일 -->
+        <DataTemplate x:Key="EchelonTemplate">
+            <Grid x:Name="TemplateGrid" 
+                  Style="{StaticResource ItemTemplateStyle}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <!-- tooltip -->
+                <Grid.ToolTip>
+                    <StackPanel Style="{StaticResource SettingToolTipStackPanelStyle}" 
+                                Orientation="Vertical">
+                        
+                        <!-- 필요 경험치 -->
+                        <Grid x:Name="RequireExpGrid" Margin="0,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition MinWidth="60"/>
+                                <ColumnDefinition MinWidth="60"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <!-- 필요 경험치 -->
+                            <iconPacks:PackIconMaterial 
+                                Grid.Row="0" Grid.ColumnSpan="3" 
+                                Style="{StaticResource IconStyle}"
+                                HorizontalAlignment="Left" VerticalAlignment="Center"
+                                Width="24" Height="13" Foreground="{StaticResource OrangeBrush}"
+                                Kind="AccountClock"/>
+                            <StackPanel 
+                                Grid.Row="0" Grid.ColumnSpan="3" Orientation="Horizontal"
+                                Margin="24,0,0,5" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                <TextBlock 
+                                    Style="{StaticResource ToolTipTitleStyle}"
+                                    Margin="0" Padding="0" VerticalAlignment="Bottom"
+                                    Text="{Binding Path=[REQUIRE_EXP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                                <uc:HtmlTextBlock 
+                                    Style="{StaticResource ToolTipTitleStyle}"
+                                    Margin="3,0,0,0" Padding="0" VerticalAlignment="Bottom" 
+                                    FontSize="11"
+                                    Html="{Binding Path=[NO_MVP_BONUS], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                            <!-- header -->
+                            <Border Grid.Row="1" Grid.Column="0" BorderThickness="0,1,1,1"
+                                    Style="{StaticResource ToolTipTableStyle}"/>
+                            <!-- 다음 레벨 -->
+                            <Border Grid.Row="2" Grid.Column="0" BorderThickness="0,0,1,1"
+                                    Style="{StaticResource ToolTipTableStyle}">
+                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}" 
+                                           HorizontalAlignment="Center"
+                                           Text="{Binding Path=[TO_NEXT_LEVEL], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </Border>
+                            <!-- 다음 편제 -->
+                            <Border Grid.Row="3" Grid.Column="0" BorderThickness="0,0,1,1"
+                                    Style="{StaticResource ToolTipTableStyle}">
+                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}" 
+                                           HorizontalAlignment="Center"
+                                           Text="{Binding Path=[TO_NEXT_EXPAND], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </Border>
+                            <!-- 최대 레벨 -->
+                            <Border Grid.Row="4" Grid.Column="0" BorderThickness="0,0,1,1"
+                                    Style="{StaticResource ToolTipTableStyle}">
+                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}" 
+                                           HorizontalAlignment="Center"
+                                           Text="{Binding Path=[TO_MAX_LEVEL], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </Border>
+                            <!-- require run -->
+                            <Border Grid.Row="1" Grid.Column="1" BorderThickness="0,1,1,1"
+                                    Style="{StaticResource ToolTipTableStyle}">
+                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                           HorizontalAlignment="Center"
+                                           Text="전역"/>
+                            </Border>
+                            <Border Grid.Row="2" Grid.Column="1" BorderThickness="0,0,1,1"
+                                    Style="{StaticResource ToolTipTableStyle}">
+                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                           HorizontalAlignment="Right"
+                                           Text="{Binding Path=runCount[0], Mode=OneWay}"/>
+                            </Border>
+                            <Border Grid.Row="3" Grid.Column="1" BorderThickness="0,0,1,1"
+                                    Style="{StaticResource ToolTipTableStyle}">
+                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                           HorizontalAlignment="Right"
+                                           Text="{Binding Path=runCount[1], Mode=OneWay}"/>
+                            </Border>
+                            <Border Grid.Row="4" Grid.Column="1" BorderThickness="0,0,1,1"
+                                    Style="{StaticResource ToolTipTableStyle}">
+                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                           HorizontalAlignment="Right"
+                                           Text="{Binding Path=runCount[2], Mode=OneWay}"/>
+                            </Border>
+                            <!-- combat report count -->
+                            <Border Grid.Row="1" Grid.Column="2" BorderThickness="0,1,0,1"
+                                    Style="{StaticResource ToolTipTableStyle}">
+                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                           HorizontalAlignment="Center"
+                                           Text="작보"/>
+                            </Border>
+                            <Border Grid.Row="2" Grid.Column="2" BorderThickness="0,0,0,1"
+                                    Style="{StaticResource ToolTipTableStyle}">
+                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                           HorizontalAlignment="Right"
+                                           Text="{Binding Path=reportCount[0], Mode=OneWay}"/>
+                            </Border>
+                            <Border Grid.Row="3" Grid.Column="2" BorderThickness="0,0,0,1"
+                                    Style="{StaticResource ToolTipTableStyle}">
+                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                           HorizontalAlignment="Right"
+                                           Text="{Binding Path=reportCount[1], Mode=OneWay}"/>
+                            </Border>
+                            <Border Grid.Row="4" Grid.Column="2" BorderThickness="0,0,0,1"
+                                    Style="{StaticResource ToolTipTableStyle}">
+                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                           HorizontalAlignment="Right"
+                                           Text="{Binding Path=reportCount[2], Mode=OneWay}"/>
+                            </Border>
+                        </Grid>
+                        
+                        <!-- 수복 정보 -->
+                        <Grid x:Name="RequireRestoreGrid" Margin="0,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="55"/>
+                                <ColumnDefinition Width="55"/>
+                                <ColumnDefinition Width="90"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <!-- 수복 정보 -->
+                            <iconPacks:PackIconMaterial Grid.ColumnSpan="3" Grid.Row="0" 
+                                                        Style="{StaticResource IconStyle}"
+                                                        Margin="0,5,0,5" Width="24" Height="8" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                                        Foreground="{StaticResource OrangeBrush}"
+                                                        Kind="SeatFlat"/>
+                            <TextBlock Grid.ColumnSpan="3" Grid.Row="0"
+                                       Style="{StaticResource ToolTipTitleStyle}"
+                                       Margin="24,5,0,5" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                       Text="{Binding Path=[REQUIRE_RESTORE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            <!-- 헤더 -->
+                            <Border Grid.Column="0" Grid.Row="1" BorderThickness="0,1,1,1"
+                                    Style="{StaticResource ToolTipTableStyle}">
+                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                           HorizontalAlignment="Center">
+                                    <InlineUIContainer>
+                                        <Image Source="/GFAlarm;component/Resource/image/icon/res/manpower.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                    </InlineUIContainer>
+                                </TextBlock>
+                            </Border>
+                            <Border Grid.Column="1" Grid.Row="1" BorderThickness="0,1,1,1"
+                                    Style="{StaticResource ToolTipTableStyle}">
+                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                           HorizontalAlignment="Center">
+                                    <InlineUIContainer>
+                                        <Image Source="/GFAlarm;component/Resource/image/icon/res/part.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                    </InlineUIContainer>
+                                </TextBlock>
+                            </Border>
+                            <Border Grid.Column="2" Grid.Row="1" BorderThickness="0,1,0,1"
+                                    Style="{StaticResource ToolTipTableStyle}">
+                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                           HorizontalAlignment="Center"
+                                           Text="{Binding Path=[REQUIRE_TIME], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </Border>
+                            <!-- 내용 -->
+                            <Border Grid.Column="0" Grid.Row="2" BorderThickness="0,0,1,1"
+                                    Style="{StaticResource ToolTipTableStyle}">
+                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                           Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right"
+                                           Text="{Binding Path=TBRestoreRequireManpower, Mode=OneWay}"/>
+                            </Border>
+                            <Border Grid.Column="1" Grid.Row="2" BorderThickness="0,0,1,1"
+                                    Style="{StaticResource ToolTipTableStyle}">
+                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                           Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right"
+                                           Text="{Binding Path=TBRestoreRequirePart, Mode=OneWay}"/>
+                            </Border>
+                            <Border Grid.Column="2" Grid.Row="2" BorderThickness="0,0,0,1"
+                                    Style="{StaticResource ToolTipTableStyle}">
+                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                           Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right"
+                                           Text="{Binding Path=TBRestoreRequireTime, Mode=OneWay}"/>
+                            </Border>
+                        </Grid>
+                        
+                    </StackPanel>
+                </Grid.ToolTip>
+                <!-- 보직 -->
+                <TextBlock x:Name="AssignTextBlock" Grid.ColumnSpan="2" Panel.ZIndex="0" Visibility="Collapsed"
+                           Style="{StaticResource TextBlockBaseStyle}"
+                           Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                           FontSize="26" FontWeight="Bold" Text="MEMBER" Foreground="#0803A9F4"/>
+                <!-- 인형 정보 -->
+                <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal" Panel.ZIndex="0" 
+                            Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <!-- 병과 아이콘 -->
+                    <Image Source="{Binding Path=typeIcon, Mode=OneWay}" Margin="0,5,0,0" Height="12" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    <!-- 레벨 -->
+                    <TextBlock Style="{StaticResource TextBlockBaseStyle}" 
+                               Margin="3,4,0,0" FontSize="11">
+                        <Run Foreground="#70FFFFFF">Lv.</Run><Run x:Name="LevelTextBlock" Text="{Binding Path=level, Mode=OneWay}"/>
+                    </TextBlock>
+                    <!-- 제대 위치 -->
+                    <!--<TextBlock Style="{StaticResource TextBlockBaseStyle}"
+                               Margin="3,4,0,0" FontSize="11">
+                        <Run Foreground="#10FFFFFF" Text="{Binding Path=location, Mode=OneWay}"/>
+                    </TextBlock>-->
+                </StackPanel>
+                <TextBlock Grid.ColumnSpan="2" Margin="0,4,21,0" HorizontalAlignment="Right" VerticalAlignment="Top"
+                           Style="{StaticResource TextBlockBaseStyle}" FontSize="11" Foreground="#70FFFFFF">
+                    <Run>Next</Run>
+                    <!-- 남은 경험치 -->
+                    <Run x:Name="RemainExpTextBlock" Foreground="White" Text="{Binding Path=remainExp, Mode=OneWay}"/>
+                </TextBlock>
+                <!-- 인형 이름 -->
+                <TextBlock x:Name="NameTextBlock" Grid.Column="0" Margin="5,0,0,4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Panel.ZIndex="10"
+                           Style="{StaticResource TextBlockBaseStyle}" FontSize="11" TextTrimming="CharacterEllipsis">
+                    <Run FontSize="14" Text="{Binding Path=name, Mode=OneWay}"/>
+                </TextBlock>
+                <!-- 체력 -->
+                <TextBlock x:Name="HpStatusTextBlock" Grid.Column="1"
+                           Style="{StaticResource TextBlockBaseStyle}" 
+                           Margin="0,0,21,4" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                           FontSize="11" Foreground="#70FFFFFF">
+                    <!-- 링크 -->
+                    <Run x:Name="LinkTextBlock" 
+                         Foreground="#FFFFFF" FontSize="14" 
+                         Text="{Binding Path=number, Mode=OneWay}"/>/<Run Text="{Binding Path=maxNumber, Mode=OneWay}"/>
+                    <!-- 체력 -->
+                    <Run x:Name="HpTextBlock" 
+                         FontSize="14" 
+                         Text="{Binding Path=hp, Mode=OneWay}"/>/<Run Text="{Binding Path=maxHp, Mode=OneWay}"/>
+                </TextBlock>
+                <!-- 요정 특성 -->
+                <TextBlock x:Name="TraitTextBlock" Grid.Column="1" Visibility="Collapsed"
+                           Style="{StaticResource TextBlockBaseStyle}"
+                           Margin="0,0,21,4" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                           FontSize="12" Foreground="#FFFFFF"
+                           Text="{Binding Path=fairyTrait, Mode=OneWay}"/>
+                <!-- 슬라이더 -->
+                <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal"
+                            Margin="0,5,5,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                    <!-- 경험치 -->
+                    <Grid Margin="0,0,1,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <Rectangle x:Name="MaxExpBar" 
+                                   Width="3" Height="29" VerticalAlignment="Bottom" 
+                                   Fill="#4D4D4D" RenderOptions.BitmapScalingMode="Fant"/>
+                        <Rectangle x:Name="ExpBar" 
+                                   Width="3" Height="{Binding Path=expHeight, Mode=OneWay}" VerticalAlignment="Bottom"
+                                   Fill="#6EDCC8" RenderOptions.BitmapScalingMode="Fant"/>
+                    </Grid>
+                    <!-- 체력 -->
+                    <Grid Margin="0,0,1,0" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Collapsed">
+                        <Rectangle x:Name="MaxHpBar" Width="2" Height="29" Fill="#4D4D4D" VerticalAlignment="Bottom" RenderOptions.BitmapScalingMode="Fant"/>
+                        <Rectangle x:Name="HpBar" Width="2" Height="{Binding Path=hpHeight, Mode=OneWay}" Fill="#D2E05C" VerticalAlignment="Bottom" RenderOptions.BitmapScalingMode="Fant"/>
+                    </Grid>
+                    <!-- 탄약 -->
+                    <StackPanel Orientation="Vertical" 
+                                Margin="0,0,1,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <Rectangle x:Name="AmmoBlock_5" Margin="0,0,0,0" Width="3" Height="5" Fill="#4D4D4D" RenderOptions.BitmapScalingMode="Fant"/>
+                        <Rectangle x:Name="AmmoBlock_4" Margin="0,1,0,0" Width="3" Height="5" Fill="#4D4D4D" RenderOptions.BitmapScalingMode="Fant"/>
+                        <Rectangle x:Name="AmmoBlock_3" Margin="0,1,0,0" Width="3" Height="5" Fill="#4D4D4D" RenderOptions.BitmapScalingMode="Fant"/>
+                        <Rectangle x:Name="AmmoBlock_2" Margin="0,1,0,0" Width="3" Height="5" Fill="#4D4D4D" RenderOptions.BitmapScalingMode="Fant"/>
+                        <Rectangle x:Name="AmmoBlock_1" Margin="0,1,0,0" Width="3" Height="5" Fill="#4D4D4D" RenderOptions.BitmapScalingMode="Fant"/>
+                    </StackPanel>
+                    <!-- 식량 -->
+                    <StackPanel Orientation="Vertical" 
+                                Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <Rectangle x:Name="MreBlock_10" Margin="0,0,0,0" Width="3" Height="2" Fill="#4D4D4D" RenderOptions.BitmapScalingMode="Fant"/>
+                        <Rectangle x:Name="MreBlock_9"  Margin="0,1,0,0" Width="3" Height="2" Fill="#4D4D4D" RenderOptions.BitmapScalingMode="Fant"/>
+                        <Rectangle x:Name="MreBlock_8"  Margin="0,1,0,0" Width="3" Height="2" Fill="#4D4D4D" RenderOptions.BitmapScalingMode="Fant"/>
+                        <Rectangle x:Name="MreBlock_7"  Margin="0,1,0,0" Width="3" Height="2" Fill="#4D4D4D" RenderOptions.BitmapScalingMode="Fant"/>
+                        <Rectangle x:Name="MreBlock_6"  Margin="0,1,0,0" Width="3" Height="2" Fill="#4D4D4D" RenderOptions.BitmapScalingMode="Fant"/>
+                        <Rectangle x:Name="MreBlock_5"  Margin="0,1,0,0" Width="3" Height="2" Fill="#4D4D4D" RenderOptions.BitmapScalingMode="Fant"/>
+                        <Rectangle x:Name="MreBlock_4"  Margin="0,1,0,0" Width="3" Height="2" Fill="#4D4D4D" RenderOptions.BitmapScalingMode="Fant"/>
+                        <Rectangle x:Name="MreBlock_3"  Margin="0,1,0,0" Width="3" Height="2" Fill="#4D4D4D" RenderOptions.BitmapScalingMode="Fant"/>
+                        <Rectangle x:Name="MreBlock_2"  Margin="0,1,0,0" Width="3" Height="2" Fill="#4D4D4D" RenderOptions.BitmapScalingMode="Fant"/>
+                        <Rectangle x:Name="MreBlock_1"  Margin="0,1,0,0" Width="3" Height="2" Fill="#4D4D4D" RenderOptions.BitmapScalingMode="Fant"/>
+                    </StackPanel>
+                </StackPanel>
+                <!--구분선-->
+                <Border x:Name="Delimiter" Grid.ColumnSpan="2"
+                        Style="{StaticResource ItemDelimiterStyle}"/>
+            </Grid>
+            <DataTemplate.Triggers>
+                <!-- 탄약 -->
+                <DataTrigger Binding="{Binding Path=supply[0], Mode=OneWay}" Value="1">
+                    <Setter TargetName="AmmoBlock_1" Property="Rectangle.Fill" Value="{StaticResource AmmoBrush}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=supply[0], Mode=OneWay}" Value="2">
+                    <Setter TargetName="AmmoBlock_1" Property="Rectangle.Fill" Value="{StaticResource AmmoBrush}"/>
+                    <Setter TargetName="AmmoBlock_2" Property="Rectangle.Fill" Value="{StaticResource AmmoBrush}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=supply[0], Mode=OneWay}" Value="3">
+                    <Setter TargetName="AmmoBlock_1" Property="Rectangle.Fill" Value="{StaticResource AmmoBrush}"/>
+                    <Setter TargetName="AmmoBlock_2" Property="Rectangle.Fill" Value="{StaticResource AmmoBrush}"/>
+                    <Setter TargetName="AmmoBlock_3" Property="Rectangle.Fill" Value="{StaticResource AmmoBrush}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=supply[0], Mode=OneWay}" Value="4">
+                    <Setter TargetName="AmmoBlock_1" Property="Rectangle.Fill" Value="{StaticResource AmmoBrush}"/>
+                    <Setter TargetName="AmmoBlock_2" Property="Rectangle.Fill" Value="{StaticResource AmmoBrush}"/>
+                    <Setter TargetName="AmmoBlock_3" Property="Rectangle.Fill" Value="{StaticResource AmmoBrush}"/>
+                    <Setter TargetName="AmmoBlock_4" Property="Rectangle.Fill" Value="{StaticResource AmmoBrush}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=supply[0], Mode=OneWay}" Value="5">
+                    <Setter TargetName="AmmoBlock_1" Property="Rectangle.Fill" Value="{StaticResource AmmoBrush}"/>
+                    <Setter TargetName="AmmoBlock_2" Property="Rectangle.Fill" Value="{StaticResource AmmoBrush}"/>
+                    <Setter TargetName="AmmoBlock_3" Property="Rectangle.Fill" Value="{StaticResource AmmoBrush}"/>
+                    <Setter TargetName="AmmoBlock_4" Property="Rectangle.Fill" Value="{StaticResource AmmoBrush}"/>
+                    <Setter TargetName="AmmoBlock_5" Property="Rectangle.Fill" Value="{StaticResource AmmoBrush}"/>
+                </DataTrigger>
+                <!-- 식량 -->
+                <DataTrigger Binding="{Binding Path=supply[1], Mode=OneWay}" Value="1">
+                    <Setter TargetName="MreBlock_1" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=supply[1], Mode=OneWay}" Value="2">
+                    <Setter TargetName="MreBlock_1" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_2" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=supply[1], Mode=OneWay}" Value="3">
+                    <Setter TargetName="MreBlock_1" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_2" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_3" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=supply[1], Mode=OneWay}" Value="4">
+                    <Setter TargetName="MreBlock_1" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_2" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_3" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_4" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=supply[1], Mode=OneWay}" Value="5">
+                    <Setter TargetName="MreBlock_1" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_2" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_3" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_4" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_5" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=supply[1], Mode=OneWay}" Value="6">
+                    <Setter TargetName="MreBlock_1" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_2" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_3" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_4" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_5" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_6" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=supply[1], Mode=OneWay}" Value="7">
+                    <Setter TargetName="MreBlock_1" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_2" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_3" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_4" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_5" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_6" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_7" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=supply[1], Mode=OneWay}" Value="8">
+                    <Setter TargetName="MreBlock_1" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_2" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_3" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_4" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_5" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_6" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_7" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_8" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=supply[1], Mode=OneWay}" Value="9">
+                    <Setter TargetName="MreBlock_1" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_2" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_3" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_4" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_5" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_6" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_7" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_8" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_9" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=supply[1], Mode=OneWay}" Value="10">
+                    <Setter TargetName="MreBlock_1" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_2" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_3" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_4" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_5" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_6" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_7" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_8" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_9" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                    <Setter TargetName="MreBlock_10" Property="Rectangle.Fill" Value="{StaticResource MreBrush}"/>
+                </DataTrigger>
+                <!-- 마지막 목록 -->
+                <DataTrigger Binding="{Binding Path=isLast, Mode=OneWay}" Value="True">
+                    <Setter TargetName="Delimiter" Property="Visibility" Value="Collapsed"/>
+                </DataTrigger>
+                <!-- 최대 레벨 -->
+                <DataTrigger Binding="{Binding Path=remainExp, Mode=OneWay}" Value="MAX">
+                    <Setter TargetName="RemainExpTextBlock" Property="Foreground" Value="#FFB400"/>
+                    <Setter TargetName="LevelTextBlock" Property="Foreground" Value="#FFB400"/>
+                    <Setter TargetName="RequireExpGrid" Property="Visibility" Value="Collapsed"/>
+                    <Setter TargetName="ExpBar" Property="Fill" Value="#FFB400"/>
+                </DataTrigger>
+                <!-- 체력 경고 -->
+                <DataTrigger Binding="{Binding Path=TBHpWarning, Mode=OneWay}" Value="0">
+                    <Setter TargetName="HpTextBlock" Property="Foreground" Value="LawnGreen"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=TBHpWarning, Mode=OneWay}" Value="1">
+                    <Setter TargetName="HpTextBlock" Property="Foreground" Value="Yellow"/>
+                    <Setter TargetName="HpBar" Property="Fill" Value="Yellow"/>
+                    <Setter TargetName="NameTextBlock" Property="Foreground" Value="Yellow"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=TBHpWarning, Mode=OneWay}" Value="2">
+                    <Setter TargetName="HpTextBlock" Property="Foreground" Value="Red"/>
+                    <Setter TargetName="HpBar" Property="Fill" Value="Red"/>
+                    <Setter TargetName="NameTextBlock" Property="Foreground" Value="Red"/>
+                </DataTrigger>
+                <!-- 리더 -->
+                <DataTrigger Binding="{Binding Path=location, Mode=OneWay}" Value="1">
+                    <Setter TargetName="AssignTextBlock" Property="TextBlock.Text" Value="LEADER"/>
+                    <Setter TargetName="AssignTextBlock" Property="Foreground" Value="#08FF9800"/>
+                </DataTrigger>
+                <!-- 요정 -->
+                <DataTrigger Binding="{Binding Path=location, Mode=OneWay}" Value="6">
+                    <Setter TargetName="AssignTextBlock" Property="TextBlock.Text" Value="FAIRY"/>
+                    <Setter TargetName="AssignTextBlock" Property="Foreground" Value="#084CAF50"/>
+                    <Setter TargetName="TraitTextBlock" Property="Visibility" Value="Visible"/>
+                    <Setter TargetName="HpStatusTextBlock" Property="Visibility" Value="Collapsed"/>
+                </DataTrigger>
+                <!-- 희귀 특성 -->
+                <DataTrigger Binding="{Binding Path=isRareTrait, Mode=OneWay}" Value="True">
+                    <Setter TargetName="TraitTextBlock" Property="Foreground" Value="#FFB400"/>
+                </DataTrigger>
+                <!-- 수복시간 및 자원 -->
+                <DataTrigger Binding="{Binding Path=TBRestoreRequireTime, Mode=OneWay}" Value="00:00:00">
+                    <Setter TargetName="RequireRestoreGrid" Property="Visibility" Value="Collapsed"/>
+                </DataTrigger>
+                <!-- 툴팁 -->
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <!--<Condition Binding="{Binding Path=toNextLevelRunCount[0], Mode=OneWay}" Value="0"/>-->
+                        <Condition Binding="{Binding Path=runCount[0], Mode=OneWay}" Value="0"/>
+                        <Condition Binding="{Binding Path=TBRestoreRequireTime, Mode=OneWay}" Value="00:00:00"/>
+                    </MultiDataTrigger.Conditions>
+                    <Setter TargetName="TemplateGrid" Property="ToolTipService.IsEnabled" Value="False"/>
+                    <Setter TargetName="TemplateGrid" Property="ToolTipService.ShowOnDisabled" Value="True"/>
+                </MultiDataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+    </UserControl.Resources>
+    <!-- content -->
+    <Grid>
+        <!-- 오버레이 -->
+        <Grid x:Name="EmptyOverlay" Panel.ZIndex="100" Visibility="Visible"
+              Background="{StaticResource BackgroundBrush}">
+            <iconPacks:PackIconMaterial Style="{StaticResource IconStyle}"
+                                        Margin="0,0,0,60"  HorizontalAlignment="Center" VerticalAlignment="Center"
+                                        Kind="EmoticonDead" Foreground="White" Width="64" Height="64"/>
+            <uc:HtmlTextBlock Style="{StaticResource TextBlockBaseStyle}" 
+                              Margin="0,90,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                              TextAlignment="Center" Foreground="#FFFFFF" FontSize="14"
+                              Html="{Binding Path=[OVERLAY_EMPTY_ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+        </Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Visible">
+            <StackPanel x:Name="EchelonStackPanel" Orientation="Vertical">
+                
+                <!-- [그룹] 1제대 -->
+                <Grid x:Name="Echelon1GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- border -->
+                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
+                    <!-- echelon number -->
+                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric1"/>
+                    <!-- title -->
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- echelon status -->
+                        <Border x:Name="Echelon1GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
+                            <TextBlock x:Name="Echelon1GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        </Border>
+                    </StackPanel>
+                    <!-- arrow -->
+                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon1GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
+                </Grid>
+                <!-- [목록] 1제대 -->
+                <ListBox x:Name="Echelon1ListBox"
+                         ItemTemplate="{StaticResource EchelonTemplate}"/>
+
+                <!-- [그룹] 2제대 -->
+                <Grid x:Name="Echelon2GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- border -->
+                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
+                    <!-- echelon number -->
+                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric2"/>
+                    <!-- title -->
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- echelon status -->
+                        <Border x:Name="Echelon2GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
+                            <TextBlock x:Name="Echelon2GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        </Border>
+                    </StackPanel>
+                    <!-- arrow -->
+                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon2GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
+                </Grid>
+                <!-- [목록] 2제대 -->
+                <ListBox x:Name="Echelon2ListBox"
+                         ItemTemplate="{StaticResource EchelonTemplate}"/>
+
+                <!-- [그룹] 3제대 -->
+                <Grid x:Name="Echelon3GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- border -->
+                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
+                    <!-- echelon number -->
+                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric3"/>
+                    <!-- title -->
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- echelon status -->
+                        <Border x:Name="Echelon3GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
+                            <TextBlock x:Name="Echelon3GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        </Border>
+                    </StackPanel>
+                    <!-- arrow -->
+                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon3GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
+                </Grid>
+                <!-- [목록] 3제대 -->
+                <ListBox x:Name="Echelon3ListBox"
+                         ItemTemplate="{StaticResource EchelonTemplate}"/>
+
+                <!-- [그룹] 4제대 -->
+                <Grid x:Name="Echelon4GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- border -->
+                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
+                    <!-- echelon number -->
+                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric4"/>
+                    <!-- title -->
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- echelon status -->
+                        <Border x:Name="Echelon4GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
+                            <TextBlock x:Name="Echelon4GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        </Border>
+                    </StackPanel>
+                    <!-- arrow -->
+                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon4GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
+                </Grid>
+                <!-- [목록] 4제대 -->
+                <ListBox x:Name="Echelon4ListBox"
+                         ItemTemplate="{StaticResource EchelonTemplate}"/>
+
+                <!-- [그룹] 5제대 -->
+                <Grid x:Name="Echelon5GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- border -->
+                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
+                    <!-- echelon number -->
+                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric5"/>
+                    <!-- title -->
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- echelon status -->
+                        <Border x:Name="Echelon5GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
+                            <TextBlock x:Name="Echelon5GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        </Border>
+                    </StackPanel>
+                    <!-- arrow -->
+                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon5GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
+                </Grid>
+                <!-- [목록] 5제대 -->
+                <ListBox x:Name="Echelon5ListBox"
+                         ItemTemplate="{StaticResource EchelonTemplate}"/>
+
+                <!-- [그룹] 6제대 -->
+                <Grid x:Name="Echelon6GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- border -->
+                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
+                    <!-- echelon number -->
+                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric6"/>
+                    <!-- title -->
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- echelon status -->
+                        <Border x:Name="Echelon6GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
+                            <TextBlock x:Name="Echelon6GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        </Border>
+                    </StackPanel>
+                    <!-- arrow -->
+                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon6GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
+                </Grid>
+                <!-- [목록] 6제대 -->
+                <ListBox x:Name="Echelon6ListBox"
+                         ItemTemplate="{StaticResource EchelonTemplate}"/>
+
+                <!-- [그룹] 7제대 -->
+                <Grid x:Name="Echelon7GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- border -->
+                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
+                    <!-- echelon number -->
+                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric7"/>
+                    <!-- title -->
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- echelon status -->
+                        <Border x:Name="Echelon7GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
+                            <TextBlock x:Name="Echelon7GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        </Border>
+                    </StackPanel>
+                    <!-- arrow -->
+                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon7GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
+                </Grid>
+                <!-- [목록] 7제대 -->
+                <ListBox x:Name="Echelon7ListBox"
+                         ItemTemplate="{StaticResource EchelonTemplate}"/>
+
+                <!-- [그룹] 8제대 -->
+                <Grid x:Name="Echelon8GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- border -->
+                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
+                    <!-- echelon number -->
+                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric8"/>
+                    <!-- title -->
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- echelon status -->
+                        <Border x:Name="Echelon8GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
+                            <TextBlock x:Name="Echelon8GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        </Border>
+                    </StackPanel>
+                    <!-- arrow -->
+                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon8GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
+                </Grid>
+                <!-- [목록] 8제대 -->
+                <ListBox x:Name="Echelon8ListBox"
+                         ItemTemplate="{StaticResource EchelonTemplate}"/>
+
+                <!-- [그룹] 9제대 -->
+                <Grid x:Name="Echelon9GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- border -->
+                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
+                    <!-- echelon number -->
+                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric9"/>
+                    <!-- title -->
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- echelon status -->
+                        <Border x:Name="Echelon9GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
+                            <TextBlock x:Name="Echelon9GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        </Border>
+                    </StackPanel>
+                    <!-- arrow -->
+                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon9GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
+                </Grid>
+                <!-- [목록] 9제대 -->
+                <ListBox x:Name="Echelon9ListBox"
+                         ItemTemplate="{StaticResource EchelonTemplate}"/>
+
+                <!-- [그룹] 10제대 -->
+                <Grid x:Name="Echelon10GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- border -->
+                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
+                    <!-- echelon number -->
+                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric10"/>
+                    <!-- title -->
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- echelon status -->
+                        <Border x:Name="Echelon10GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
+                            <TextBlock x:Name="Echelon10GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        </Border>
+                    </StackPanel>
+                    <!-- arrow -->
+                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon10GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
+                </Grid>
+                <!-- [목록] 10제대 -->
+                <ListBox x:Name="Echelon10ListBox"
+                         ItemTemplate="{StaticResource EchelonTemplate}"/>
+
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -1,0 +1,1501 @@
+﻿ <UserControl 
+    x:Class="GFAlarm.View.Menu.DashboardView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:data="clr-namespace:GFAlarm.Data"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:ls="clr-namespace:LocalizationResources;assembly=LocalizationResources"
+    xmlns:uc="http://www.quickzip.org/BaseControls"
+    mc:Ignorable="d" SnapsToDevicePixels="True"
+    d:DesignHeight="300" d:DesignWidth="200">
+    <Grid>
+        
+        <!-- 오버레이 -->
+        <Grid x:Name="EmptyOverlay" Panel.ZIndex="100" Visibility="Visible"
+              Background="{StaticResource BackgroundBrush}">
+            <iconPacks:PackIconMaterial Style="{DynamicResource OverlayIconStyle}" 
+                                        Kind="EmoticonDead"/>
+            <uc:HtmlTextBlock Style="{DynamicResource OverlayTextStyle}"  
+                              Html="{Binding Path=[OVERLAY_EMPTY_DASHBOARD], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+        </Grid>
+        
+        <!-- 리스트 박스들 -->
+        <ScrollViewer VerticalScrollBarVisibility="Visible">
+            <StackPanel x:Name="DashboardStackPanel" 
+                        Orientation="Vertical">
+                
+                <!-- 공유보석 -->
+                <StackPanel x:Name="ShareGem">
+                    <Grid x:Name="ShareGem_GroupBox" Visibility="Collapsed"
+                          Style="{StaticResource GroupGridStyle}">
+                        <!-- border -->
+                        <Border Style="{StaticResource GroupBorderStyle}"/>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial 
+                            Style="{StaticResource GroupIconStyle}"
+                            Width="16" Height="13" Foreground="{StaticResource OrangeBrush}" 
+                            Kind="DiamondStone"/>
+                        <!-- title -->
+                        <TextBlock Style="{StaticResource GroupTitleStyle}">
+                            <Run Text="{Binding Path=[UNRECEIVE_SHARE_GEM], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                    </Grid>
+                </StackPanel>
+                
+                <!-- 공유전지 -->
+                <StackPanel x:Name="ShareBattery">
+                    <Grid x:Name="ShareBattery_GroupBox" Visibility="Collapsed"
+                          Style="{StaticResource GroupGridStyle}">
+                        <!-- border -->
+                        <Border Style="{StaticResource GroupBorderStyle}"/>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial 
+                            Style="{StaticResource GroupIconStyle}"
+                            Width="16" Height="14" Foreground="{StaticResource OrangeBrush}" 
+                            Kind="BatteryCharging"/>
+                        <!-- title -->
+                        <TextBlock Style="{StaticResource GroupTitleStyle}">
+                            <Run Text="{Binding Path=[UNRECEIVE_SHARE_BATTERY], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                    </Grid>
+                </StackPanel>
+                
+                <!-- 지원현황 -->
+                <StackPanel x:Name="DispatchedEchelon">
+                    <!-- lower guide -->
+                    <Border x:Name="DispatchedEchelon_LowerGuide" Visibility="Collapsed"
+                            Style="{StaticResource GroupGuideStyle}"/>
+                    <!-- groupbox -->
+                    <Grid x:Name="DispatchedEchelon_GroupBox" Visibility="Collapsed"
+                          Style="{StaticResource GroupGridStyle}" 
+                          MouseLeftButtonDown="GroupBox_MouseDown" MouseLeftButtonUp="GroupBox_MouseUp" MouseMove="Group_MouseMove">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- border -->
+                        <Border Grid.ColumnSpan="2" 
+                                Style="{StaticResource GroupBorderStyle}"/>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial Grid.Column="0" 
+                                                    Style="{StaticResource GroupIconStyle}"
+                                                    Width="16" Height="15" 
+                                                    Kind="ChessKnight"/>
+                        <!-- title -->
+                        <TextBlock Grid.Column="0" 
+                                   Style="{StaticResource GroupTitleStyle}">
+                            <Run Text="{Binding Path=[DASHBOARD_GROUP_DISPATCHED_ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- count -->
+                        <TextBlock Grid.Column="1"
+                                   Style="{StaticResource GroupCountStyle}">
+                            <Run x:Name="DispatchedEchelon_Count" Text="0"/><Run Text="{Binding Path=[COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial Grid.Column="1" 
+                                                    x:Name="DispatchedEchelon_Arrow"
+                                                    Style="{StaticResource GroupArrowStyle}"
+                                                    Kind="ChevronDown"/>
+                    </Grid>
+                    <!-- listbox -->
+                    <ListBox x:Name="DispatchedEchelon_ListBox" Visibility="Collapsed">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid x:Name="TemplateGrid" 
+                                      Style="{StaticResource ItemTemplateStyle}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!-- 슬롯 -->
+                                    <TextBlock x:Name="SlotTextBlock" Grid.ColumnSpan="2"
+                                               Style="{StaticResource ItemSlotStyle}"
+                                               Text="{Binding Path=TBSlot, Mode=OneWay}"/>
+                                    <!-- 지원코드 -->
+                                    <TextBlock x:Name="TitleTextBlock" Grid.Column="0"
+                                               Style="{StaticResource ItemTitleStyle}"
+                                               Margin="30,1,0,0"
+                                               Text="{Binding Path=TBCode, Mode=OneWay}"/>
+                                    <!-- 지원종류 -->
+                                    <TextBlock x:Name="SubtitleTextBlock" Grid.Column="0"
+                                               Style="{StaticResource ItemSubtitleStyle}">
+                                        <Run x:Name="TypeTextBlock" Text="{Binding Path=TBType, Mode=OneWay}"/>
+                                        <Run x:Name="NumberTextBlock" Text="{Binding Path=TBNumber, Mode=OneWay}"/>
+                                    </TextBlock>
+                                    <!-- 남은 시간 -->
+                                    <TextBlock x:Name="RemainTimeTextBlock" Grid.ColumnSpan="2"
+                                               Style="{StaticResource ItemRemainTimeStyle}"
+                                               Text="{Binding Path=TBRemainTime, Mode=OneWay}"/>
+                                    <!-- 완료 시간 -->
+                                    <TextBlock x:Name="EndTimeTextBlock" Grid.ColumnSpan="2"
+                                               Style="{StaticResource ItemEndTimeStyle}"
+                                               Text="{Binding Path=TBEndTime, Mode=OneWay}"/>
+                                    <!-- 구분선 -->
+                                    <Border x:Name="Delimiter" Grid.ColumnSpan="2" 
+                                            Style="{StaticResource ItemDelimiterStyle}"/>
+                                    <!-- tooltip -->
+                                    <Grid.ToolTip>
+                                        <StackPanel Style="{StaticResource ToolTipStackPanelStyle}" Orientation="Vertical">
+                                            <!-- 자율작전 툴팁 -->
+                                            <Grid x:Name="AutoMissionToolTipGrid" Margin="0,5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition MinWidth="40"/>
+                                                    <ColumnDefinition MinWidth="45"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <!-- 투입 제대 -->
+                                                <iconPacks:PackIconMaterial 
+                                                    Grid.Row="0" Grid.ColumnSpan="2" 
+                                                    Style="{StaticResource IconStyle}"
+                                                    Height="14" Margin="3,0,0,5" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                                    Foreground="{StaticResource GreenBrush}" 
+                                                    Kind="ChessKnight"/>
+                                                <TextBlock Grid.Row="0" Grid.ColumnSpan="2"
+                                                           Style="{StaticResource ToolTipTitleStyle}"
+                                                           Margin="24,0,0,5"
+                                                           Text="{Binding Path=[DISPATCHED_ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                                                <Border Grid.Row="1" Grid.ColumnSpan="2"
+                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        Padding="6,2,0,5"
+                                                        BorderThickness="0,1">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               FontSize="14" Foreground="{StaticResource OrangeBrush}"
+                                                               Text="{Binding Path=TBTeamIds, Mode=OneWay}"/>
+                                                </Border>
+                                                <!-- 투입 자원 -->
+                                                <iconPacks:PackIconMaterial 
+                                                    Grid.Row="2" Grid.ColumnSpan="2"
+                                                    Style="{StaticResource IconStyle}"
+                                                    Height="11" Margin="3,10,0,5" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                                    Foreground="{StaticResource GreenBrush}"
+                                                    Kind="Archive"/>
+                                                <TextBlock Grid.Row="2"   Grid.ColumnSpan="2"
+                                                           Style="{StaticResource ToolTipTitleStyle}"
+                                                           Margin="24,10,0,5"
+                                                           Text="{Binding Path=[SPEND_RESOURCE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                                                <!-- row header -->
+                                                <Border Grid.Row="3" Grid.Column="0" BorderThickness="0,1,1,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}" HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image Source="/GFAlarm;component/Resource/image/icon/res/manpower.png" 
+                                                                   Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                        </InlineUIContainer>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="4" Grid.Column="0" BorderThickness="0,0,1,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}" HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image Source="/GFAlarm;component/Resource/image/icon/res/ammo.png" 
+                                                                   Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                        </InlineUIContainer>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="5" Grid.Column="0" BorderThickness="0,0,1,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}" HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image Source="/GFAlarm;component/Resource/image/icon/res/mre.png" 
+                                                                   Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                        </InlineUIContainer>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="6" Grid.Column="0" BorderThickness="0,0,1,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}" HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image Source="/GFAlarm;component/Resource/image/icon/res/part.png" 
+                                                                   Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                        </InlineUIContainer>
+                                                    </TextBlock>
+                                                </Border>
+                                                <!-- spend resources -->
+                                                <Border Grid.Row="3" Grid.Column="1" BorderThickness="0,1,0,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Right" Foreground="{StaticResource OrangeBrush}">
+                                                        <Run Text="{Binding Path=spendResource[0], Mode=OneWay}"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="4" Grid.Column="1" BorderThickness="0,0,0,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Right" Foreground="{StaticResource OrangeBrush}">
+                                                        <Run Text="{Binding Path=spendResource[0], Mode=OneWay}"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="5" Grid.Column="1" BorderThickness="0,0,0,1" 
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Right" Foreground="{StaticResource OrangeBrush}">
+                                                        <Run Text="{Binding Path=spendResource[0], Mode=OneWay}"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="6" Grid.Column="1" BorderThickness="0,0,0,1"
+                                                        Style="{StaticResource ToolTipTableStyle}" >
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}" 
+                                                               HorizontalAlignment="Right" Foreground="{StaticResource OrangeBrush}">
+                                                        <Run Text="{Binding Path=spendResource[1], Mode=OneWay}"/>
+                                                    </TextBlock>
+                                                </Border>
+                                            </Grid>
+                                            <!-- 군수지원 툴팁 -->
+                                            <Grid x:Name="OperationToolTipGrid" Margin="0,5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition MinWidth="40"/>
+                                                    <ColumnDefinition MinWidth="45"/>
+                                                    <ColumnDefinition MinWidth="45"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <!-- 획득 자원 -->
+                                                <iconPacks:PackIconMaterial 
+                                                    Grid.Row="0" Grid.ColumnSpan="3"
+                                                    Style="{StaticResource IconStyle}"
+                                                    Height="12" Margin="3,0,0,5" VerticalAlignment="Center"
+                                                    Foreground="{StaticResource OrangeBrush}"
+                                                    Kind="Archive"/>
+                                                <TextBlock Grid.Row="0" Grid.ColumnSpan="3"
+                                                           Style="{StaticResource ToolTipTitleStyle}"
+                                                           Margin="24,0,0,5"
+                                                           Text="{Binding Path=[REWARD_RESOURCE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                                                <!-- row header -->
+                                                <Border Grid.Row="1" Grid.Column="0" BorderThickness="0,1,1,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image Source="/GFAlarm;component/Resource/image/icon/res/manpower.png" 
+                                                                   Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                        </InlineUIContainer>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="2" Grid.Column="0" BorderThickness="0,0,1,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image Source="/GFAlarm;component/Resource/image/icon/res/ammo.png" 
+                                                                   Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                        </InlineUIContainer>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="3" Grid.Column="0" BorderThickness="0,0,1,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image Source="/GFAlarm;component/Resource/image/icon/res/mre.png" 
+                                                                   Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                        </InlineUIContainer>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="4" Grid.Column="0" BorderThickness="0,0,1,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image Source="/GFAlarm;component/Resource/image/icon/res/part.png" 
+                                                                   Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                        </InlineUIContainer>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="5" Grid.Column="0" BorderThickness="0,0,1,1"
+                                                        x:Name="ItemIconBorder1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                </Border>
+                                                <!-- reward resources -->
+                                                <Border Grid.Row="1" Grid.Column="1" BorderThickness="0,1,1,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Right" Foreground="#FFB400">
+                                                        <Run x:Name="ManpowerTextBlock" Text="{Binding Path=rewardResource[0], Mode=OneWay}"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="2" Grid.Column="1" BorderThickness="0,0,1,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Right" Foreground="#FFB400">
+                                                        <Run x:Name="AmmoTextBlock" Text="{Binding Path=rewardResource[1], Mode=OneWay}"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="3" Grid.Column="1" BorderThickness="0,0,1,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Right" Foreground="#FFB400">
+                                                        <Run x:Name="MreTextBlock" Text="{Binding Path=rewardResource[2], Mode=OneWay}"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="4" Grid.Column="1" BorderThickness="0,0,1,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}" 
+                                                               HorizontalAlignment="Right" Foreground="#FFB400">
+                                                        <Run x:Name="PartTextBlock" Text="{Binding Path=rewardResource[3], Mode=OneWay}"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <!-- reward resources (per hour) -->
+                                                <Border Grid.Row="1" Grid.Column="2" BorderThickness="0,1,0,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Right" Foreground="#FFB400">
+                                                        <Run x:Name="ManpowerHourTextBlock" Text="{Binding Path=rewardResourcePerHour[0], Mode=OneWay}"/><Run Foreground="#FFFFFF" Text="/h"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="2" Grid.Column="2" BorderThickness="0,0,0,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Right" Foreground="#FFB400">
+                                                        <Run x:Name="AmmoHourTextBlock" Text="{Binding Path=rewardResourcePerHour[1], Mode=OneWay}"/><Run Foreground="#FFFFFF" Text="/h"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="3" Grid.Column="2" BorderThickness="0,0,0,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Right" Foreground="#FFB400">
+                                                        <Run x:Name="MreHourTextBlock" Text="{Binding Path=rewardResourcePerHour[2], Mode=OneWay}"/><Run Foreground="#FFFFFF" Text="/h"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="4" Grid.Column="2" BorderThickness="0,0,0,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Right" Foreground="#FFB400">
+                                                        <Run x:Name="PartHourTextBlock" Text="{Binding Path=rewardResourcePerHour[3], Mode=OneWay}"/><Run Foreground="#FFFFFF" Text="/h"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <!-- reward items -->
+                                                <Border Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" BorderThickness="0,0,0,1"
+                                                        x:Name="ItemIconBorder2"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource TextBlockBaseStyle}" 
+                                                               Padding="0,3,0,0" HorizontalAlignment="Center" FontSize="13">
+                                                        <InlineUIContainer>
+                                                            <Image x:Name="ItemIcon1TextBlock" Source="{Binding Path=rewardItemIcon[0], Mode=OneWay}" 
+                                                                   Width="24" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                        </InlineUIContainer><Run x:Name="ItemCount1TextBlock" Text="1"/>
+                                                        <InlineUIContainer>
+                                                            <Image x:Name="ItemIcon2TextBlock" Source="{Binding Path=rewardItemIcon[1], Mode=OneWay}" 
+                                                                   Width="24" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                        </InlineUIContainer><Run x:Name="ItemCount2TextBlock" Text="1"/>
+                                                    </TextBlock>
+                                                </Border>
+                                            </Grid>
+                                        </StackPanel>
+                                    </Grid.ToolTip>
+                                </Grid>
+                                <!-- triggers -->
+                                <DataTemplate.Triggers>
+                                    <!-- 마지막 목록 -->
+                                    <DataTrigger Binding="{Binding Path=isLast, Mode=OneWay}" Value="True">
+                                        <Setter TargetName="Delimiter" Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                    <!-- 남은 시간이 00:00:00 -->
+                                    <DataTrigger Binding="{Binding Path=TBRemainTime, Mode=OneWay}" Value="00:00:00">
+                                        <Setter TargetName="RemainTimeTextBlock" Property="Foreground" Value="#FFB400"/>
+                                    </DataTrigger>
+                                    <!-- 군수지원인 경우 -->
+                                    <DataTrigger Binding="{Binding Path=type, Mode=OneWay}" Value="1">
+                                        <Setter TargetName="TypeTextBlock" Property="Foreground" Value="#FFB400"/>
+                                        <Setter TargetName="AutoMissionToolTipGrid" Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                    <!-- 자율작전인 경우 -->
+                                    <DataTrigger Binding="{Binding Path=type, Mode=OneWay}" Value="2">
+                                        <Setter TargetName="TypeTextBlock" Property="Foreground" Value="#8FC41F"/>
+                                        <Setter TargetName="OperationToolTipGrid" Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                    <!-- 획득 자원 -->
+                                    <DataTrigger Binding="{Binding Path=rewardResource[0], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="ManpowerTextBlock" Property="Foreground" Value="#30FFFFFF"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=rewardResource[1], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="AmmoTextBlock" Property="Foreground" Value="#30FFFFFF"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=rewardResource[2], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="MreTextBlock" Property="Foreground" Value="#30FFFFFF"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=rewardResource[3], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="PartTextBlock" Property="Foreground" Value="#30FFFFFF"/>
+                                    </DataTrigger>
+                                    <!-- 아이템 -->
+                                    <DataTrigger Binding="{Binding Path=rewardItemIcon[0], Mode=OneWay}" Value="">
+                                        <Setter TargetName="ItemCount1TextBlock" Property="Text" Value=""/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=rewardItemIcon[1], Mode=OneWay}" Value="">
+                                        <Setter TargetName="ItemCount2TextBlock" Property="Text" Value=""/>
+                                    </DataTrigger>
+                                    <MultiDataTrigger>
+                                        <MultiDataTrigger.Conditions>
+                                            <Condition Binding="{Binding Path=rewardItemIcon[0], Mode=OneWay}" Value=""/>
+                                            <Condition Binding="{Binding Path=rewardItemIcon[1], Mode=OneWay}" Value=""/>
+                                        </MultiDataTrigger.Conditions>
+                                        <Setter TargetName="ItemIconBorder1" Property="Visibility" Value="Collapsed"/>
+                                        <Setter TargetName="ItemIconBorder2" Property="Visibility" Value="Collapsed"/>
+                                    </MultiDataTrigger>
+                                    <!-- 시간당 획득 자원 -->
+                                    <DataTrigger Binding="{Binding Path=rewardResourcePerHour[0], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="ManpowerHourTextBlock" Property="Foreground" Value="#30FFFFFF"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=rewardResourcePerHour[1], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="AmmoHourTextBlock" Property="Foreground" Value="#30FFFFFF"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=rewardResourcePerHour[2], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="MreHourTextBlock" Property="Foreground" Value="#30FFFFFF"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=rewardResourcePerHour[3], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="PartHourTextBlock" Property="Foreground" Value="#30FFFFFF"/>
+                                    </DataTrigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <!-- upper guide -->
+                    <Border x:Name="DispatchedEchelon_UpperGuide" Visibility="Collapsed"
+                            Style="{StaticResource GroupGuideStyle}"/>
+                </StackPanel>
+                
+                <!-- 인형제조 -->
+                <StackPanel x:Name="ProduceDoll">
+                    <!-- lower guide -->
+                    <Border x:Name="ProduceDoll_LowerGuide" Visibility="Collapsed"
+                            Style="{StaticResource GroupGuideStyle}"/>
+                    <!-- groupbox -->
+                    <Grid x:Name="ProduceDoll_GroupBox" Visibility="Collapsed" 
+                          Style="{StaticResource GroupGridStyle}"
+                          MouseLeftButtonDown="GroupBox_MouseDown" MouseLeftButtonUp="GroupBox_MouseUp" MouseMove="Group_MouseMove">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- border -->
+                        <Border Grid.ColumnSpan="2" 
+                                Style="{StaticResource GroupBorderStyle}"/>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial Grid.ColumnSpan="2"
+                                                    Style="{StaticResource GroupIconStyle}"
+                                                    Width="16" Height="12" 
+                                                    Kind="HumanGreeting"/>
+                        <!-- title -->
+                        <TextBlock Grid.Column="0" 
+                                   Style="{StaticResource GroupTitleStyle}">
+                            <Run Text="{Binding Path=[DASHBOARD_GROUP_PRODUCE_DOLL], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- count -->
+                        <TextBlock Grid.Column="1"
+                                   Style="{StaticResource GroupCountStyle}">
+                            <Run x:Name="ProduceDoll_Count" Text="0"/><Run Text="{Binding Path=[COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial Grid.Column="1" 
+                                                    x:Name="ProduceDoll_Arrow"
+                                                    Style="{StaticResource GroupArrowStyle}"
+                                                    Kind="ChevronDown"/>
+                    </Grid>
+                    <!-- listbox -->
+                    <ListBox x:Name="ProduceDoll_ListBox">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid x:Name="TemplateGrid" 
+                                      Style="{StaticResource ItemTemplateStyle}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!--슬롯-->
+                                    <TextBlock x:Name="SlotTextBlock" Grid.ColumnSpan="2"
+                                               Style="{StaticResource ItemSlotStyle}"
+                                               Text="{Binding Path=TBSlot, Mode=OneWay}"/>
+                                    <!--인형이름-->
+                                    <TextBlock x:Name="TitleTextBlock" Grid.Column="0"
+                                               Style="{StaticResource ItemTitleStyle}"
+                                               Margin="30,3,0,0" FontSize="14" TextTrimming="CharacterEllipsis"
+                                               Text="{Binding Path=TBName, Mode=OneWay}"/>
+                                    <!--인형종류/레어도-->
+                                    <TextBlock x:Name="SubtitleTextBlock" Grid.Column="0"
+                                               Style="{StaticResource ItemSubtitleStyle}"
+                                               Margin="30,0,0,5" TextTrimming="CharacterEllipsis">
+                                        <Run Text="{Binding Path=TBCategory, Mode=OneWay}" FontSize="11"/>
+                                        <Run Text="{Binding Path=TBStar, Mode=OneWay}" Foreground="{StaticResource OrangeBrush}"/>
+                                    </TextBlock>
+                                    <!--남은시간-->
+                                    <TextBlock x:Name="RemainTimeTextBlock" Grid.Column="1"
+                                               Style="{StaticResource ItemRemainTimeStyle}"
+                                               Text="{Binding Path=TBRemainTime, Mode=OneWay}"/>
+                                    <!--예정시간-->
+                                    <TextBlock x:Name="EndTimeTextBlock" Grid.Column="1"
+                                               Style="{StaticResource ItemEndTimeStyle}"
+                                               Text="{Binding Path=TBEndTime, Mode=OneWay}"/>
+                                    <!--구분선-->
+                                    <Border x:Name="Delimiter" Grid.ColumnSpan="2" 
+                                            Style="{StaticResource ItemDelimiterStyle}"/>
+                                    <Grid.ToolTip>
+                                        <StackPanel Style="{StaticResource ToolTipStackPanelStyle}" Orientation="Vertical">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition MinWidth="40"/>
+                                                    <ColumnDefinition MinWidth="45"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <!-- 투입 자원 -->
+                                                <iconPacks:PackIconMaterial 
+                                                    Grid.Row="0" Grid.ColumnSpan="2"
+                                                    Style="{StaticResource IconStyle}"
+                                                    Height="11" Margin="3,0,0,5" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                                    Foreground="{StaticResource OrangeBrush}"
+                                                    Kind="Archive"/>
+                                                <TextBlock Grid.Row="0" Grid.ColumnSpan="2"
+                                                           Style="{StaticResource ToolTipTitleStyle}"
+                                                           Margin="24,0,0,5"
+                                                           Text="{Binding Path=[SPEND_RESOURCE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                                                <!-- 인력 -->
+                                                <Border Grid.Row="1" Grid.Column="0"
+                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        BorderThickness="0,1,1,1">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image Source="/GFAlarm;component/Resource/image/icon/res/manpower.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                        </InlineUIContainer>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="1" Grid.Column="1" 
+                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        BorderThickness="0,1,0,1">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               Foreground="{StaticResource OrangeBrush}"  HorizontalAlignment="Right">
+                                                        <Run x:Name="ManpowerTextBlock" Text="{Binding Path=spendResource[0], Mode=OneWay}"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <!-- 탄약 -->
+                                                <Border Grid.Row="2" Grid.Column="0"
+                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        BorderThickness="0,0,1,1">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image Source="/GFAlarm;component/Resource/image/icon/res/ammo.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                        </InlineUIContainer>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="2" Grid.Column="1" 
+                                                        Style="{StaticResource ToolTipTableStyle}" 
+                                                        BorderThickness="0,0,0,1">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right">
+                                                        <Run x:Name="AmmoTextBlock" Text="{Binding Path=spendResource[1], Mode=OneWay}"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <!-- 식량 -->
+                                                <Border Grid.Row="3" Grid.Column="0" 
+                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        BorderThickness="0,0,1,1">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image Source="/GFAlarm;component/Resource/image/icon/res/mre.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                        </InlineUIContainer>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="3" Grid.Column="1" 
+                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        BorderThickness="0,0,0,1">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right">
+                                                        <Run x:Name="MreTextBlock" Text="{Binding Path=spendResource[2], Mode=OneWay}"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <!-- 부품 -->
+                                                <Border Grid.Row="4" Grid.Column="0" 
+                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        BorderThickness="0,0,1,1">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image Source="/GFAlarm;component/Resource/image/icon/res/part.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                        </InlineUIContainer>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="4" Grid.Column="1" 
+                                                        Style="{StaticResource ToolTipTableStyle}" 
+                                                        BorderThickness="0,0,0,1">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}" 
+                                                            Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right">
+                                                        <Run x:Name="PartTextBlock" Text="{Binding Path=spendResource[3], Mode=OneWay}"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <!-- 아이템 -->
+                                                <Border Grid.Row="5" Grid.ColumnSpan="2"
+                                                        x:Name="ItemIconBorder"
+                                                        Style="{StaticResource ToolTipTableStyle}" 
+                                                        BorderThickness="0,0,0,1">
+                                                        <TextBlock Style="{StaticResource TextBlockBaseStyle}" 
+                                                                   Padding="0,3,0,0" HorizontalAlignment="Center" FontSize="13">
+                                                            <!-- 인형제조계약 -->
+                                                            <InlineUIContainer>
+                                                                <Image x:Name="ItemIcon1TextBlock" Source="/GFAlarm;component/Resource/image/icon/item/doll_contract.png" 
+                                                                       Width="24" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                            </InlineUIContainer><Run x:Name="ItemCount1TextBlock" Text="{Binding Path=spendItem[0], Mode=OneWay}"/>
+                                                            <!-- 코어 -->
+                                                            <InlineUIContainer>
+                                                                <Image x:Name="ItemIcon2TextBlock" Source="/GFAlarm;component/Resource/image/icon/item/core.png" 
+                                                                       Width="24" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                            </InlineUIContainer><Run x:Name="ItemCount2TextBlock" Text="{Binding Path=spendItem[1], Mode=OneWay}"/>
+                                                        </TextBlock>
+                                                </Border>
+                                            </Grid>
+                                        </StackPanel>
+                                    </Grid.ToolTip>
+                                </Grid>
+                                <DataTemplate.Triggers>
+                                    <!-- 마지막 목록 -->
+                                    <DataTrigger Binding="{Binding Path=isLast, Mode=OneWay}" Value="True">
+                                        <Setter TargetName="Delimiter" Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                    <!-- 남은 시간 00:00:00 -->
+                                    <DataTrigger Binding="{Binding Path=TBRemainTime, Mode=OneWay}" Value="00:00:00">
+                                        <Setter TargetName="RemainTimeTextBlock" Property="Foreground" Value="#FFB400"/>
+                                    </DataTrigger>
+                                    <!-- 중형제조 -->
+                                    <DataTrigger Binding="{Binding Path=TBSlotType, Mode=OneWay}" Value="heavy">
+                                        <Setter TargetName="SlotTextBlock" Property="Foreground" Value="#30FF0000"/>
+                                    </DataTrigger>
+                                    <!-- 투입자원 -->
+                                    <DataTrigger Binding="{Binding Path=spendResource[0], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="ManpowerTextBlock" Property="Foreground" Value="#70FFFFFF"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=spendResource[1], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="AmmoTextBlock" Property="Foreground" Value="#70FFFFFF"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=spendResource[2], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="MreTextBlock" Property="Foreground" Value="#70FFFFFF"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=spendResource[3], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="PartTextBlock" Property="Foreground" Value="#70FFFFFF"/>
+                                    </DataTrigger>
+                                    <!-- 투입 아이템 -->
+                                    <DataTrigger Binding="{Binding Path=spendItem[0], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="ItemIcon1TextBlock" Property="Visibility" Value="Collapsed"/>
+                                        <Setter TargetName="ItemCount1TextBlock" Property="Text" Value=""/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=spendItem[1], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="ItemIcon2TextBlock" Property="Visibility" Value="Collapsed"/>
+                                        <Setter TargetName="ItemCount2TextBlock" Property="Text" Value=""/>
+                                    </DataTrigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <!-- upper guide -->
+                    <Border x:Name="ProduceDoll_UpperGuide" Visibility="Collapsed"
+                            Style="{StaticResource GroupGuideStyle}"/>
+                </StackPanel>
+                
+                <!-- 장비제조 -->
+                <StackPanel x:Name="ProduceEquip">
+                    <!-- lower guide -->
+                    <Border x:Name="ProduceEquip_LowerGuide" Visibility="Collapsed"
+                            Style="{StaticResource GroupGuideStyle}"/>
+                    <!-- groupbox -->
+                    <Grid x:Name="ProduceEquip_GroupBox" Visibility="Collapsed"
+                          Style="{StaticResource GroupGridStyle}"
+                          MouseLeftButtonDown="GroupBox_MouseDown" MouseLeftButtonUp="GroupBox_MouseUp" MouseMove="Group_MouseMove">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- border -->
+                        <Border Grid.ColumnSpan="2" 
+                                Style="{StaticResource GroupBorderStyle}"/>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial Grid.Column="0" 
+                                                    Style="{StaticResource GroupIconStyle}"
+                                                    Width="16" Height="12" 
+                                                    Kind="Package"/>
+                        <!-- title -->
+                        <TextBlock Grid.Column="0" 
+                                   Style="{StaticResource GroupTitleStyle}">
+                            <Run Text="{Binding Path=[DASHBOARD_GROUP_PRODUCE_EQUIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- count -->
+                        <TextBlock Grid.Column="1"
+                                   Style="{StaticResource GroupCountStyle}">
+                            <Run x:Name="ProduceEquip_Count" Text="0"/><Run Text="{Binding Path=[COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial Grid.Column="1" 
+                                                    x:Name="ProduceEquip_Arrow"
+                                                    Style="{StaticResource GroupArrowStyle}"
+                                                    Kind="ChevronDown"/>
+                    </Grid>
+                    <!-- listbox -->
+                    <ListBox x:Name="ProduceEquip_ListBox">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid x:Name="TemplateGrid"
+                                      Style="{StaticResource ItemTemplateStyle}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!--슬롯-->
+                                    <TextBlock x:Name="SlotTextBlock" Grid.ColumnSpan="2"
+                                               Style="{StaticResource ItemSlotStyle}"
+                                               Text="{Binding Path=TBSlot, Mode=OneWay}"/>
+                                    <!-- title -->
+                                    <TextBlock x:Name="TitleTextBlock" Grid.Column="0"
+                                               Style="{StaticResource ItemTitleStyle}" 
+                                               Margin="30,3,0,0" FontSize="14" TextTrimming="CharacterEllipsis"
+                                               Text="{Binding Path=TBName, Mode=OneWay}"/>
+                                    <!--부제목-->
+                                    <TextBlock x:Name="SubtitleTextBlock" Grid.Column="0"
+                                               Style="{StaticResource ItemSubtitleStyle}"
+                                               Margin="30,0,0,5" FontSize="11" TextTrimming="CharacterEllipsis">
+                                        <Run Text="{Binding Path=TBSubtitle1, Mode=OneWay}" x:Name="FairyTraitTextBlock"/><Run Text="{Binding Path=TBSubtitle2, Mode=OneWay}" Foreground="{StaticResource OrangeBrush}"/>
+                                    </TextBlock>
+                                    <!--남은시간-->
+                                    <TextBlock x:Name="RemainTimeTextBlock" Grid.Column="1"
+                                               Style="{StaticResource ItemRemainTimeStyle}"
+                                               Text="{Binding Path=TBRemainTime, Mode=OneWay}"/>
+                                    <!--예정시간-->
+                                    <TextBlock x:Name="EndTimeTextBlock" Grid.Column="1"
+                                               Style="{StaticResource ItemEndTimeStyle}"
+                                               Text="{Binding Path=TBEndTime, Mode=OneWay}"/>
+                                    <!--구분선-->
+                                    <Border x:Name="Delimiter" Grid.ColumnSpan="2"
+                                            Style="{StaticResource ItemDelimiterStyle}"/>
+                                    <!-- tooltip -->
+                                    <Grid.ToolTip>
+                                        <StackPanel Style="{StaticResource ToolTipStackPanelStyle}" Orientation="Vertical">
+                                            <Grid Margin="0,5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition MinWidth="40"/>
+                                                    <ColumnDefinition MinWidth="45"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <!-- 투입 자원 -->
+                                                <iconPacks:PackIconMaterial 
+                                                    Grid.Row="0" Grid.ColumnSpan="2" 
+                                                    Style="{StaticResource IconStyle}"
+                                                    Height="11" Margin="3,0,0,5" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                                    Foreground="{StaticResource OrangeBrush}"
+                                                    Kind="Archive"/>
+                                                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" 
+                                                           Style="{StaticResource ToolTipTitleStyle}"
+                                                           Margin="24,0,0,5"
+                                                           Text="{Binding Path=[SPEND_RESOURCE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                                                <!-- row header -->
+                                                <Border Grid.Row="1" Grid.Column="0" BorderThickness="0,1,1,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image Source="/GFAlarm;component/Resource/image/icon/res/manpower.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                        </InlineUIContainer>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="2" Grid.Column="0" BorderThickness="0,0,1,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image Source="/GFAlarm;component/Resource/image/icon/res/ammo.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                        </InlineUIContainer>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="3" Grid.Column="0" BorderThickness="0,0,1,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image Source="/GFAlarm;component/Resource/image/icon/res/mre.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                        </InlineUIContainer>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="4" Grid.Column="0" BorderThickness="0,0,1,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image Source="/GFAlarm;component/Resource/image/icon/res/part.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                        </InlineUIContainer>
+                                                    </TextBlock>
+                                                </Border>
+                                                <!-- spend resources -->
+                                                <Border Grid.Row="1" Grid.Column="1" BorderThickness="0,1,0,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right">
+                                                        <Run x:Name="ManpowerTextBlock" Text="{Binding Path=spendResource[0], Mode=OneWay}"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="2" Grid.Column="1" BorderThickness="0,0,0,1"
+                                                        Style="{StaticResource ToolTipTableStyle}" >
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right">
+                                                        <Run x:Name="AmmoTextBlock" Text="{Binding Path=spendResource[1], Mode=OneWay}"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="3" Grid.Column="1" BorderThickness="0,0,0,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right">
+                                                        <Run x:Name="MreTextBlock" Text="{Binding Path=spendResource[2], Mode=OneWay}"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <Border Grid.Row="4" Grid.Column="1" BorderThickness="0,0,0,1"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}" 
+                                                               Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right">
+                                                        <Run x:Name="PartTextBlock" Text="{Binding Path=spendResource[3], Mode=OneWay}"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <!-- spend items -->
+                                                <Border Grid.Row="5" Grid.ColumnSpan="2" BorderThickness="0,0,0,1"
+                                                        x:Name="ItemIconBorder"
+                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                        <TextBlock Style="{StaticResource TextBlockBaseStyle}" 
+                                                                   Padding="0,5,0,0" HorizontalAlignment="Center" FontSize="13">
+                                                            <!-- 장비제조계약 -->
+                                                            <InlineUIContainer>
+                                                                <Image x:Name="ItemIcon1TextBlock" Source="/GFAlarm;component/Resource/image/icon/item/equip_contract.png" 
+                                                                       Width="24" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                            </InlineUIContainer><Run x:Name="ItemCount1TextBlock" Text="{Binding Path=spendItem[0], Mode=OneWay}"/>
+                                                            <!-- 코어 -->
+                                                            <InlineUIContainer>
+                                                                <Image x:Name="ItemIcon2TextBlock" Source="/GFAlarm;component/Resource/image/icon/item/core.png" 
+                                                                        Width="24" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
+                                                            </InlineUIContainer><Run x:Name="ItemCount2TextBlock" Text="{Binding Path=spendItem[1], Mode=OneWay}"/>
+                                                        </TextBlock>
+                                                </Border>
+                                            </Grid>
+                                        </StackPanel>
+                                    </Grid.ToolTip>
+                                </Grid>
+                                <DataTemplate.Triggers>
+                                    <!-- 마지막 목록 -->
+                                    <DataTrigger Binding="{Binding Path=isLast, Mode=OneWay}" Value="True">
+                                        <Setter TargetName="Delimiter" Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                    <!-- 남은 시간 00:00:00 -->
+                                    <DataTrigger Binding="{Binding Path=TBRemainTime, Mode=OneWay}" Value="00:00:00">
+                                        <Setter TargetName="RemainTimeTextBlock" Property="Foreground" Value="#FFB400"/>
+                                    </DataTrigger>
+                                    <!-- 중형제조 -->
+                                    <DataTrigger Binding="{Binding Path=TBSlotType, Mode=OneWay}" Value="heavy">
+                                        <Setter TargetName="SlotTextBlock" Property="Foreground" Value="#30FF0000"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=isRareTrait, Mode=OneWay}" Value="true">
+                                        <Setter TargetName="FairyTraitTextBlock" Property="Foreground" Value="#FFB400"/>
+                                    </DataTrigger>
+                                    <!-- 투입자원 -->
+                                    <DataTrigger Binding="{Binding Path=spendResource[0], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="ManpowerTextBlock" Property="Foreground" Value="#70FFFFFF"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=spendResource[1], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="AmmoTextBlock" Property="Foreground" Value="#70FFFFFF"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=spendResource[2], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="MreTextBlock" Property="Foreground" Value="#70FFFFFF"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=spendResource[3], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="PartTextBlock" Property="Foreground" Value="#70FFFFFF"/>
+                                    </DataTrigger>
+                                    <!-- 투입 아이템 -->
+                                    <DataTrigger Binding="{Binding Path=spendItem[0], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="ItemIcon1TextBlock" Property="Visibility" Value="Collapsed"/>
+                                        <Setter TargetName="ItemCount1TextBlock" Property="Text" Value=""/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=spendItem[1], Mode=OneWay}" Value="0">
+                                        <Setter TargetName="ItemIcon2TextBlock" Property="Visibility" Value="Collapsed"/>
+                                        <Setter TargetName="ItemCount2TextBlock" Property="Text" Value=""/>
+                                    </DataTrigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <!-- upper guide -->
+                    <Border x:Name="ProduceEquip_UpperGuide" Visibility="Collapsed"
+                        Style="{StaticResource GroupGuideStyle}"/>
+                </StackPanel>
+                
+                <!-- 스킬훈련 -->
+                <StackPanel x:Name="SkillTrain">
+                    <!-- lower guide -->
+                    <Border x:Name="SkillTrain_LowerGuide" Visibility="Collapsed"
+                            Style="{StaticResource GroupGuideStyle}"/>
+                    <!-- groupbox -->
+                    <Grid x:Name="SkillTrain_GroupBox" Visibility="Collapsed"
+                          Style="{StaticResource GroupGridStyle}" 
+                          MouseLeftButtonDown="GroupBox_MouseDown" MouseLeftButtonUp="GroupBox_MouseUp" MouseMove="Group_MouseMove">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- border -->
+                        <Border Grid.ColumnSpan="2" 
+                                Style="{StaticResource GroupBorderStyle}"/>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial Grid.Column="0" 
+                                                    Style="{StaticResource GroupIconStyle}" 
+                                                    Width="16" Height="15" 
+                                                    Kind="Microscope"/>
+                        <!-- title -->
+                        <TextBlock Grid.Column="0" 
+                                   Style="{StaticResource GroupTitleStyle}">
+                            <Run Text="{Binding Path=[DASHBOARD_GROUP_SKILL_TRAIN], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- count -->
+                        <TextBlock Grid.Column="1"
+                                   Style="{StaticResource GroupCountStyle}">
+                            <Run x:Name="SkillTrain_Count" Text="0"/><Run Text="{Binding Path=[COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial Grid.Column="1" 
+                                                    x:Name="SkillTrain_Arrow"
+                                                    Style="{StaticResource GroupArrowStyle}"
+                                                    Kind="ChevronDown"/>
+                    </Grid>
+                    <!-- listbox -->
+                    <ListBox x:Name="SkillTrain_ListBox">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid x:Name="TemplateGrid" 
+                                      Style="{StaticResource ItemTemplateStyle}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!--슬롯-->
+                                    <TextBlock x:Name="SlotTextBlock" Grid.ColumnSpan="2"
+                                               Style="{StaticResource ItemSlotStyle}"
+                                               Text="{Binding Path=TBSlot, Mode=OneWay}"/>
+                                    <!-- title -->
+                                    <TextBlock x:Name="TitleTextBlock" Grid.Column="0"
+                                               Style="{StaticResource ItemTitleStyle}"
+                                               Margin="30,3,0,0" FontSize="14" TextTrimming="CharacterEllipsis"
+                                               Text="{Binding Path=TBTitle, Mode=OneWay}"/>
+                                    <!--부제목-->
+                                    <TextBlock x:Name="SubtitleTextBlock" Grid.Column="0"
+                                               Style="{StaticResource ItemSubtitleStyle}"
+                                               Margin="30,0,0,4" TextTrimming="CharacterEllipsis">
+                                        Lv <Run Text="{Binding Path=TBSubtitle1, Mode=OneWay}" Foreground="{StaticResource OrangeBrush}"/> → Lv <Run Text="{Binding Path=TBSubtitle2, Mode=OneWay}" Foreground="{StaticResource OrangeBrush}"/>
+                                    </TextBlock>
+                                    <!-- 경험훈련 -->
+                                    <TextBlock x:Name="SubtitleTextBlock2" Grid.Column="0" Visibility="Collapsed"
+                                               Style="{StaticResource ItemSubtitleStyle}"
+                                               Margin="30,0,0,4" TextTrimming="CharacterEllipsis">
+                                        <Run Text="{Binding Path=[EXP_TRAIN], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                                    </TextBlock>
+                                    <!--남은시간-->
+                                    <TextBlock x:Name="RemainTimeTextBlock" Grid.Column="1"
+                                               Style="{StaticResource ItemRemainTimeStyle}"
+                                               Text="{Binding Path=TBRemainTime, Mode=OneWay}"/>
+                                    <!--예정시간-->
+                                    <TextBlock x:Name="EndTimeTextBlock" Grid.Column="1"
+                                               Style="{StaticResource ItemEndTimeStyle}"
+                                               Text="{Binding Path=TBEndTime, Mode=OneWay}"/>
+                                    <!--구분선-->
+                                    <Border x:Name="Delimiter" Grid.ColumnSpan="2" 
+                                            Style="{StaticResource ItemDelimiterStyle}"/>
+                                </Grid>
+                                <DataTemplate.Triggers>
+                                    <!-- 마지막 목록 -->
+                                    <DataTrigger Binding="{Binding Path=isLast, Mode=OneWay}" Value="True">
+                                        <Setter TargetName="Delimiter" Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                    <!-- 남은시간 00:00:00 -->
+                                    <DataTrigger Binding="{Binding Path=TBRemainTime, Mode=OneWay}" Value="00:00:00">
+                                        <Setter TargetName="RemainTimeTextBlock" Property="Foreground" Value="#FFB400"/>
+                                    </DataTrigger>
+                                    <!-- 중장비부대 슬롯 -->
+                                    <DataTrigger Binding="{Binding Path=slotType, Mode=OneWay}" Value="1">
+                                        <Setter TargetName="SlotTextBlock" Property="Foreground" Value="#30FF0000"/>
+                                    </DataTrigger>
+                                    <!-- 경험훈련 여부 -->
+                                    <DataTrigger Binding="{Binding Path=isExpTrain, Mode=OneWay}" Value="True">
+                                        <Setter TargetName="SubtitleTextBlock" Property="Visibility" Value="Collapsed"/>
+                                        <Setter TargetName="SubtitleTextBlock2" Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <!-- upper guide -->
+                    <Border x:Name="SkillTrain_UpperGuide" Visibility="Collapsed"
+                        Style="{StaticResource GroupGuideStyle}"/>
+                </StackPanel>
+                
+                <!-- 정보분석 -->
+                <StackPanel x:Name="DataAnalysis">
+                    <!-- lower guide -->
+                    <Border x:Name="DataAnalysis_LowerGuide" Visibility="Collapsed"
+                        Style="{StaticResource GroupGuideStyle}"/>
+                    <!-- groupbox -->
+                    <Grid x:Name="DataAnalysis_GroupBox" 
+                          Style="{StaticResource GroupGridStyle}" Visibility="Collapsed"
+                          MouseLeftButtonDown="GroupBox_MouseDown" MouseLeftButtonUp="GroupBox_MouseUp" MouseMove="Group_MouseMove">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- border -->
+                        <Border Grid.ColumnSpan="2" 
+                                Style="{StaticResource GroupBorderStyle}"/>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial Grid.Column="0" 
+                                                    Style="{StaticResource GroupIconStyle}"
+                                                    Width="16" Height="15" 
+                                                    Kind="HexagonMultiple"/>
+                        <!-- title -->
+                        <TextBlock Grid.Column="0" 
+                                   Style="{StaticResource GroupTitleStyle}">
+                            <Run Text="{Binding Path=[DASHBOARD_GROUP_DATA_ANALYSIS], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- count -->
+                        <TextBlock Grid.Column="1"
+                                   Style="{StaticResource GroupCountStyle}">
+                            <Run x:Name="DataAnalysis_Count" Text="0"/><Run Text="{Binding Path=[COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial Grid.Column="1" 
+                                                    x:Name="DataAnalysis_Arrow"
+                                                    Style="{StaticResource GroupArrowStyle}"
+                                                    Kind="ChevronDown"/>
+                    </Grid>
+                    <!-- listbox -->
+                    <ListBox x:Name="DataAnalysis_ListBox">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid x:Name="TemplateGrid" 
+                                      Style="{StaticResource ItemTemplateStyle}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!-- chip shape -->
+                                    <ContentPresenter x:Name="ChipShape" Grid.ColumnSpan="2" Visibility="Collapsed"
+                                                      Margin="26,0,0,0" Width="18" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                                      Content="{Binding canvasChipShape, Mode=OneWay}"/>
+                                    <!-- slot -->
+                                    <TextBlock x:Name="SlotTextBlock" Grid.ColumnSpan="2"
+                                               Style="{StaticResource ItemSlotStyle}"
+                                               Text="{Binding Path=TBSlot, Mode=OneWay}"/>
+                                    <!-- title -->
+                                    <TextBlock x:Name="PieceTextBlock" Grid.Column="0"
+                                            Style="{StaticResource ItemTitleStyle}" 
+                                            Margin="30,3,0,0" FontSize="14" Foreground="#FFFFFFFF" TextTrimming="CharacterEllipsis"
+                                            Text="{Binding Path=TBPiece, Mode=OneWay}"/>
+                                    <!-- piece name -->
+                                    <TextBlock x:Name="PieceTitleTextBlock" Grid.Column="0"
+                                            Style="{StaticResource ItemSubtitleStyle}" 
+                                            Margin="30,0,0,4" Foreground="{StaticResource OrangeBrush}" TextTrimming="CharacterEllipsis"
+                                            Text="{Binding Path=TBPieceGuide, Mode=OneWay}"/>
+                                    <!-- chip stat -->
+                                    <Grid x:Name="ChipInfoGrid" Grid.ColumnSpan="2" Visibility="Collapsed"
+                                          Margin="50,1,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <Image x:Name="HitIcon" 
+                                               Source="/GFAlarm;component/Resource/image/icon/chip/hit.png" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"
+                                               Margin="0,3,0,0" Height="10" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                        <TextBlock x:Name="HitTextBlock" 
+                                                   Style="{StaticResource TextBlockBaseStyle}" 
+                                                   Margin="12,1,0,0" FontSize="11" Foreground="#FFFFFF" 
+                                                   Text="{Binding Path=hit, Mode=OneWay}"/>
+                                        <Image x:Name="ReloadIcon" 
+                                               Source="/GFAlarm;component/Resource/image/icon/chip/reload.png" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"
+                                               Margin="30,3,0,0" Height="10" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                        <TextBlock x:Name="ReloadTextBlock" 
+                                                   Style="{StaticResource TextBlockBaseStyle}" 
+                                                   Margin="42,1,0,0" FontSize="11" Foreground="#FFFFFF"
+                                                   Text="{Binding Path=reload, Mode=OneWay}"/>
+                                        <Image x:Name="DamageIcon" 
+                                               Source="/GFAlarm;component/Resource/image/icon/chip/damage.png" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"
+                                               Margin="0,14,0,0" Height="10" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                        <TextBlock x:Name="DamageTextBlock" 
+                                                   Style="{StaticResource TextBlockBaseStyle}" 
+                                                   Margin="12,12,0,0" FontSize="11" Foreground="#FFFFFF"
+                                                   Text="{Binding Path=damage, Mode=OneWay}"/>
+                                        <Image x:Name="DefBreakIcon" 
+                                               Source="/GFAlarm;component/Resource/image/icon/chip/def_break.png" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"
+                                               Margin="30,14,0,0" Height="10" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                        <TextBlock x:Name="DefBreakTextBlock"
+                                                   Style="{StaticResource TextBlockBaseStyle}" 
+                                                   Margin="42,12,0,0" FontSize="11" Foreground="#FFFFFF"
+                                                   Text="{Binding Path=defBreak, Mode=OneWay}"/>
+                                    </Grid>
+                                    <!-- chip star -->
+                                    <TextBlock x:Name="ChipStarTextBlock" Grid.Column="0" Visibility="Collapsed"
+                                               Style="{StaticResource TextBlockBaseStyle}"
+                                               Margin="49,0,0,4" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                               Foreground="{StaticResource OrangeBrush}" FontSize="9" TextTrimming="CharacterEllipsis">
+                                        <Run Text="{Binding Path=TBChipStar, Mode=OneWay}"/>
+                                    </TextBlock>
+                                    <!-- remain time -->
+                                    <TextBlock x:Name="RemainTimeTextBlock" Grid.Column="1"
+                                               Style="{StaticResource ItemRemainTimeStyle}"
+                                               Text="{Binding Path=TBRemainTime, Mode=OneWay}"/>
+                                    <!-- end time -->
+                                    <TextBlock x:Name="EndTimeTextBlock" Grid.Column="1"
+                                               Style="{StaticResource ItemEndTimeStyle}"
+                                               Text="{Binding Path=TBEndTime, Mode=OneWay}"/>
+                                    <!-- border -->
+                                    <Border x:Name="Delimiter" Grid.ColumnSpan="2"
+                                            Style="{StaticResource ItemDelimiterStyle}"/>
+                                </Grid>
+                                <DataTemplate.Triggers>
+                                    <!-- 마지막 목록 -->
+                                    <DataTrigger Binding="{Binding Path=isLast, Mode=OneWay}" Value="True">
+                                        <Setter TargetName="Delimiter" Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                    <!-- 남은 시간 00:00:00 -->
+                                    <DataTrigger Binding="{Binding Path=TBRemainTime, Mode=OneWay}" Value="00:00:00">
+                                        <Setter TargetName="RemainTimeTextBlock" Property="Foreground" Value="#ffb400"/>
+                                    </DataTrigger>
+                                    <!-- 핵심데이터인 경우 -->
+                                    <DataTrigger Binding="{Binding Path=isPiece, Mode=OneWay}" Value="0">
+                                        <Setter TargetName="ChipShape" Property="Visibility" Value="Visible"/>
+                                        <Setter TargetName="ChipInfoGrid" Property="Visibility" Value="Visible"/>
+                                        <Setter TargetName="ChipStarTextBlock" Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                    <!-- 칩셋인 경우 -->
+                                    <DataTrigger Binding="{Binding Path=gridId, Mode=OneWay}" Value="0">
+                                        <Setter TargetName="ChipShape" Property="Visibility" Value="Collapsed"/>
+                                        <Setter TargetName="ChipInfoGrid" Property="Visibility" Value="Collapsed"/>
+                                        <Setter TargetName="ChipStarTextBlock" Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                    <!-- 칩셋 스탯 색상 -->
+                                    <DataTrigger Binding="{Binding Path=assistDamage, Mode=OneWay}" Value="0">
+                                        <Setter TargetName="DamageIcon" Property="Opacity" Value="0.15"/>
+                                        <Setter TargetName="DamageTextBlock" Property="Foreground" Value="#40FFFFFF"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=assistDefBreak, Mode=OneWay}" Value="0">
+                                        <Setter TargetName="DefBreakIcon" Property="Opacity" Value="0.15"/>
+                                        <Setter TargetName="DefBreakTextBlock" Property="Foreground" Value="#40FFFFFF"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=assistHit, Mode=OneWay}" Value="0">
+                                        <Setter TargetName="HitIcon" Property="Opacity" Value="0.15"/>
+                                        <Setter TargetName="HitTextBlock" Property="Foreground" Value="#40FFFFFF"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=assistReload, Mode=OneWay}" Value="0">
+                                        <Setter TargetName="ReloadIcon" Property="Opacity" Value="0.15"/>
+                                        <Setter TargetName="ReloadTextBlock" Property="Foreground" Value="#40FFFFFF"/>
+                                    </DataTrigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <!-- upper guide -->
+                    <Border x:Name="DataAnalysis_UpperGuide" Visibility="Collapsed"
+                        Style="{StaticResource GroupGuideStyle}"/>
+                </StackPanel>
+                
+                <!-- 탐색현황 -->
+                <StackPanel x:Name="Explore">
+                    <!-- lower guide -->
+                    <Border x:Name="Explore_LowerGuide" Visibility="Collapsed"
+                            Style="{StaticResource GroupGuideStyle}"/>
+                    <!-- groupbox -->
+                    <Grid x:Name="Explore_GroupBox" Visibility="Collapsed"
+                          Style="{StaticResource GroupGridStyle}" 
+                          MouseLeftButtonDown="GroupBox_MouseDown" MouseLeftButtonUp="GroupBox_MouseUp" MouseMove="Group_MouseMove">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- border -->
+                        <Border Grid.ColumnSpan="2" 
+                                Style="{StaticResource GroupBorderStyle}"/>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial Grid.Column="0" 
+                                                    Style="{StaticResource GroupIconStyle}"
+                                                    Width="16" Height="13" 
+                                                    Kind="MapOutline"/>
+                        <!-- title -->
+                        <TextBlock Grid.Column="0" 
+                                   Style="{StaticResource GroupTitleStyle}">
+                            <Run Text="{Binding Path=[DASHBOARD_GROUP_EXPLORE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- count -->
+                        <TextBlock Grid.Column="1"
+                                   Style="{StaticResource GroupCountStyle}">
+                            <Run x:Name="Explore_Count" Text="0"/><Run Text="{Binding Path=[COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial Grid.Column="1" 
+                                                    x:Name="Explore_Arrow"
+                                                    Style="{StaticResource GroupArrowStyle}"
+                                                    Kind="ChevronDown"/>
+                    </Grid>
+                    <!-- listbox --> 
+                    <ListBox x:Name="Explore_ListBox">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid x:Name="TemplateGrid"
+                                      Style="{StaticResource ItemTemplateStyle}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!-- title -->
+                                    <TextBlock x:Name="TitleTextBlock" Grid.Column="0"
+                                               Style="{StaticResource ItemTitleStyle}"
+                                               Margin="5,2,0,0" FontSize="14" TextTrimming="CharacterEllipsis">
+                                        <Run Text="{Binding Path=TBAreaName, Mode=OneWay}"/>
+                                        <Run Foreground="#8FC41F" Text="{Binding Path=[NOW_EXPLORE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                                    </TextBlock>
+                                    <!--부제목-->
+                                    <TextBlock x:Name="SubtitleTextBlock" Grid.Column="0"
+                                               Style="{StaticResource ItemSubtitleStyle}"
+                                               Margin="5,0,0,5" FontSize="11" TextTrimming="CharacterEllipsis">
+                                        <Run Text="{Binding Path=[NEXT_EVENT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                                        <Run x:Name="EventRemainTimeTextBlock" Text="{Binding Path=TBEventRemainTime, Mode=OneWay}"/>
+                                    </TextBlock>
+                                    <!--남은시간-->
+                                    <TextBlock x:Name="RemainTimeTextBlock" Grid.Column="1"
+                                            Style="{StaticResource ItemRemainTimeStyle}"
+                                            Text="{Binding Path=TBRemainTime, Mode=OneWay}"/>
+                                    <!--예정시간-->
+                                    <TextBlock x:Name="EndTimeTextBlock" Grid.Column="1"
+                                            Style="{StaticResource ItemEndTimeStyle}"
+                                            Text="{Binding Path=TBEndTime, Mode=OneWay}"/>
+                                    <!--구분선-->
+                                    <Border x:Name="Delimiter" Grid.ColumnSpan="2" 
+                                            Style="{StaticResource ItemDelimiterStyle}"/>
+                                    <!-- 툴팁 -->
+                                    <Grid.ToolTip>
+                                        <StackPanel Style="{StaticResource ToolTipStackPanelStyle}" Orientation="Vertical">
+                                            <!-- 가이드 -->
+                                            <StackPanel x:Name="ToolTipGuideTextBlock" Visibility="Collapsed"
+                                                        Orientation="Horizontal">
+                                                <iconPacks:PackIconMaterial Width="24" Height="24" 
+                                                                            Style="{StaticResource IconStyle}"
+                                                                            HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                                                            Foreground="{StaticResource OrangeBrush}" 
+                                                                            Kind="AlertCircle"/>
+                                                <TextBlock Style="{StaticResource ToolTipTextBlockStyle}" 
+                                                           Width="180" Margin="8,0,0,0" Foreground="#FFFFFF" VerticalAlignment="Top"
+                                                           TextWrapping="Wrap" TextTrimming="None"
+                                                           Text="{Binding Path=[EXPLORE_REWARD_GUIDE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                                            </StackPanel>
+                                            <!-- 획득 보상 -->
+                                            <Grid x:Name="ToolTipRewardContentTextBlock" Margin="0,5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition MinWidth="55"/>
+                                                    <ColumnDefinition MinWidth="55"/>
+                                                    <ColumnDefinition MinWidth="55"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <!-- 획득 자원 -->
+                                                <iconPacks:PackIconMaterial Grid.ColumnSpan="3" Grid.Row="0" 
+                                                                            Style="{StaticResource IconStyle}"
+                                                                            Height="12" Margin="3,0,0,5" VerticalAlignment="Center"
+                                                                            Foreground="{StaticResource OrangeBrush}"
+                                                                            Kind="Archive"/>
+                                                <TextBlock Grid.ColumnSpan="3" Grid.Row="0"
+                                                           x:Name="ToolTipRewardTitleTextBlock"
+                                                           Style="{StaticResource ToolTipTitleStyle}"
+                                                           Margin="24,0,0,5">
+                                                    <Run Text="{Binding Path=[REWARD_RESOURCE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                                                    <Run Text="{Binding Path=[EXPLORE_8_HOUR_GUIDE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}" FontSize="11" FontWeight="Normal"/>                                                    
+                                                </TextBlock>
+                                                <!-- 획득 보상 -->
+                                                <!--<TextBlock Grid.ColumnSpan="3" Grid.Row="0" 
+                                                           x:Name="ToolTipRewardTitleTextBlock"
+                                                           Style="{StaticResource ToolTipTitleStyle}">
+                                                    <Run Text="{Binding Path=[REWARD_RESOURCE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                                                    <Run Text="{Binding Path=[EXPLORE_8_HOUR_GUIDE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}" FontSize="11" FontWeight="Normal"/>
+                                                </TextBlock>-->
+                                                <!-- 메인 보상 -->
+                                                <Border Grid.Column="0" Grid.Row="1"
+                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        Padding="5" BorderThickness="0,1,1,1">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image x:Name="MainRewardIcon" Width="20" Source="{Binding Path=TBMainRewardIcon, Mode=OneWay}" RenderOptions.BitmapScalingMode="HighQuality"/>        
+                                                        </InlineUIContainer><Run Text="{Binding Path=TBMainRewardCount, Mode=OneWay}" FontSize="13"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <!-- 서브 보상 1 -->
+                                                <Border Grid.Column="1" Grid.Row="1"
+                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        Padding="5" BorderThickness="0,1,1,1">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image x:Name="SubReward1Icon" Width="20" Source="{Binding Path=TBSubReward1Icon, Mode=OneWay}" RenderOptions.BitmapScalingMode="HighQuality"/>        
+                                                        </InlineUIContainer><Run Text="{Binding Path=TBSubRewardCount, Mode=OneWay}" FontSize="13"/>
+                                                    </TextBlock>
+                                                </Border>
+                                                <!-- 서브 보상 2 -->
+                                                <Border Grid.Column="2" Grid.Row="1"
+                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        Padding="5" BorderThickness="0,1,0,1">
+                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                               HorizontalAlignment="Center">
+                                                        <InlineUIContainer>
+                                                            <Image x:Name="SubReward2Icon" Width="20" Source="{Binding Path=TBSubReward2Icon, Mode=OneWay}" RenderOptions.BitmapScalingMode="HighQuality"/>        
+                                                        </InlineUIContainer><Run Text="{Binding Path=TBSubRewardCount, Mode=OneWay}" FontSize="13"/>
+                                                    </TextBlock>
+                                                </Border>
+                                            </Grid>
+                                        </StackPanel>
+                                    </Grid.ToolTip>
+                                </Grid>
+                                <DataTemplate.Triggers>
+                                    <!-- 마지막 목록 -->
+                                    <DataTrigger Binding="{Binding Path=isLast, Mode=OneWay}" Value="True">
+                                        <Setter TargetName="Delimiter" Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                    <!-- 툴팁 -->
+                                    <DataTrigger Binding="{Binding Path=TBMainRewardCount, Mode=OneWay}" Value="">
+                                        <Setter TargetName="ToolTipGuideTextBlock" Property="Visibility" Value="Visible"/>
+                                        <Setter TargetName="ToolTipRewardTitleTextBlock" Property="Visibility" Value="Collapsed"/>
+                                        <Setter TargetName="ToolTipRewardContentTextBlock" Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                    <!-- 남은 시간 -->
+                                    <DataTrigger Binding="{Binding Path=TBRemainTime, Mode=OneWay}" Value="00:00:00">
+                                        <Setter TargetName="RemainTimeTextBlock" Property="Foreground" Value="#FFB400"/>
+                                    </DataTrigger>
+                                    <!-- 다음 발견 -->
+                                    <DataTrigger Binding="{Binding Path=TBEventRemainTime, Mode=OneWay}" Value="00:00:00">
+                                        <Setter TargetName="EventRemainTimeTextBlock" Property="Foreground" Value="#FFB400"/>
+                                    </DataTrigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <!-- upper guide -->
+                    <Border x:Name="Explore_UpperGuide" Visibility="Collapsed"
+                            Style="{StaticResource GroupGuideStyle}"/>
+                </StackPanel>
+                
+                <!-- 수복현황 -->
+                <StackPanel x:Name="RestoreDoll">
+                    <!-- lower guide -->
+                    <Border 
+                        x:Name="RestoreDoll_LowerGuide" Visibility="Collapsed"
+                        Style="{StaticResource GroupGuideStyle}"/>
+                    <!-- groupbox -->
+                    <Grid 
+                        x:Name="RestoreDoll_GroupBox" Visibility="Collapsed"
+                        Style="{StaticResource GroupGridStyle}"
+                        MouseLeftButtonDown="GroupBox_MouseDown" MouseLeftButtonUp="GroupBox_MouseUp" MouseMove="Group_MouseMove">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- border -->
+                        <Border Grid.ColumnSpan="2" 
+                                Style="{StaticResource GroupBorderStyle}"/>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial Grid.Column="0" 
+                                                    Style="{StaticResource GroupIconStyle}"
+                                                    Width="16" Height="15" 
+                                                    Kind="SeatFlat"/>
+                        <!-- title -->
+                        <TextBlock Grid.Column="0" 
+                                   Style="{StaticResource GroupTitleStyle}">
+                            <Run Text="{Binding Path=[DASHBOARD_GROUP_RESTORE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- count -->
+                        <TextBlock Grid.Column="1"
+                                   Style="{StaticResource GroupCountStyle}">
+                            <Run x:Name="RestoreDoll_Count" Text="0"/><Run Text="{Binding Path=[COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial Grid.Column="1" 
+                                                    x:Name="RestoreDoll_Arrow"
+                                                    Style="{StaticResource GroupArrowStyle}"
+                                                    Kind="ChevronDown"/>
+                    </Grid>
+                    <!-- listbox -->
+                    <ListBox x:Name="RestoreDoll_ListBox">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid x:Name="TemplateGrid" 
+                                      Style="{StaticResource ItemTemplateStyle}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!--슬롯-->
+                                    <TextBlock x:Name="SlotTextBlock" Grid.ColumnSpan="2"
+                                               Style="{StaticResource ItemSlotStyle}"
+                                               Text="{Binding Path=TBSlot, Mode=OneWay}"/>
+                                    <!--인형이름-->
+                                    <TextBlock x:Name="TitleTextBlock" Grid.Column="0"
+                                               Style="{StaticResource ItemTitleStyle}"
+                                               Margin="30,3,0,0" FontSize="14" TextTrimming="CharacterEllipsis"
+                                               Text="{Binding Path=TBTitle, Mode=OneWay}"/>
+                                    <!--인형종류/레어도-->
+                                    <TextBlock x:Name="SubtitleTextBlock" Grid.Column="0"
+                                               Style="{StaticResource ItemSubtitleStyle}"
+                                               Margin="30,0,0,5" FontSize="11" TextTrimming="CharacterEllipsis"
+                                               Text="{Binding Path=TBSubtitle, Mode=OneWay}"/>
+                                    <!--남은시간-->
+                                    <TextBlock x:Name="RemainTimeTextBlock" Grid.Column="1"
+                                               Style="{StaticResource ItemRemainTimeStyle}"
+                                               Text="{Binding Path=TBRemainTime, Mode=OneWay}"/>
+                                    <!--예정시간-->
+                                    <TextBlock x:Name="EndTimeTextBlock" Grid.Column="1"
+                                               Style="{StaticResource ItemEndTimeStyle}"
+                                               Text="{Binding Path=TBEndTime, Mode=OneWay}"/>
+                                    <!--구분선-->
+                                    <Border x:Name="Delimiter" Grid.ColumnSpan="2" 
+                                            Style="{StaticResource ItemDelimiterStyle}"/>
+                                </Grid>
+                                <DataTemplate.Triggers>
+                                    <!-- 마지막 목록 -->
+                                    <DataTrigger Binding="{Binding Path=isLast, Mode=OneWay}" Value="True">
+                                        <Setter TargetName="Delimiter" Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                    <!-- 남은 시간 00:00:00 -->
+                                    <DataTrigger Binding="{Binding Path=TBRemainTime, Mode=OneWay}" Value="00:00:00">
+                                        <Setter TargetName="RemainTimeTextBlock" Property="Foreground" Value="#ffb400"/>
+                                    </DataTrigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <!-- upper guide -->
+                    <Border x:Name="RestoreDoll_UpperGuide" Visibility="Collapsed"
+                        Style="{StaticResource GroupGuideStyle}"/>
+                </StackPanel>
+                
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

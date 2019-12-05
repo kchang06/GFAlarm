@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29001.49
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFAlarm", "GFAlarm\GFAlarm.csproj", "{9B9F5A98-5334-43ED-805E-8EE65FC036AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalizationResources", "LocalizationResources\LocalizationResources.csproj", "{46AB5491-C12A-4A5C-90FD-1369A0F50E08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B9F5A98-5334-43ED-805E-8EE65FC036AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B9F5A98-5334-43ED-805E-8EE65FC036AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B9F5A98-5334-43ED-805E-8EE65FC036AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B9F5A98-5334-43ED-805E-8EE65FC036AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46AB5491-C12A-4A5C-90FD-1369A0F50E08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46AB5491-C12A-4A5C-90FD-1369A0F50E08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46AB5491-C12A-4A5C-90FD-1369A0F50E08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46AB5491-C12A-4A5C-90FD-1369A0F50E08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {332884C1-C826-430A-BE3C-91176B4CDE99}
+	EndGlobalSection
+EndGlobal

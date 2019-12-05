@@ -1,0 +1,23 @@
+﻿<UserControl
+    x:Name="ProxyGuideViewControl"
+    x:Class="GFAlarm.View.Guide.ProxyGuideView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:GFAlarm.View.Guide"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:ls="clr-namespace:LocalizationResources;assembly=LocalizationResources"
+    xmlns:uc="http://www.quickzip.org/BaseControls"
+    mc:Ignorable="d" 
+    d:DesignHeight="450" d:DesignWidth="800"
+    Loaded="ProxyGuideViewControl_Loaded">
+    <ScrollViewer VerticalScrollBarVisibility="Visible">
+        <Grid Margin="20,10">
+            <uc:HtmlTextBlock x:Name="ProxyGuideTextBlock" 
+                              Style="{StaticResource TextBlockBaseStyle}"
+                              TextWrapping="Wrap"
+                              Html="{Binding Path=[SETTING_PROXY_SERVER_GUIDE_COMMENT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+        </Grid>
+    </ScrollViewer>
+</UserControl>
