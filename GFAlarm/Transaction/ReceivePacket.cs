@@ -569,6 +569,12 @@ namespace GFAlarm.Transaction.PacketProcess
             {
                 PacketProcess.Gun.MindUpdate(request_string, response_string);
             }
+            // 인형서약
+            // ("Gun/contract")
+            else if (uri.EndsWith("Gun/contract"))
+            {
+                PacketProcess.Gun.Constract(request_string, response_string);
+            }
             // 장비강화
             // ("Equip/eatEquip")
             else if (uri.EndsWith("Equip/eatEquip"))

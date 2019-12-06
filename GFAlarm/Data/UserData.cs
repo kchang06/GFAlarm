@@ -3691,6 +3691,26 @@ namespace GFAlarm.Data
             }
 
             /// <summary>
+            /// 인형 서약 설정
+            /// </summary>
+            /// <param name="id"></param>
+            /// <param name="soulBondTime"></param>
+            public static void Contract(long id, int soulBondTime)
+            {
+                if (dictionary.ContainsKey(id))
+                {
+                    log.Debug("인형 {0} ({1}) 서약", UserData.Doll.GetName(id), id);
+
+                    dictionary[id].married = true;
+                    dictionary[id].marriedTime = soulBondTime;
+                    dictionary[id].Refresh();
+
+                    int teamId = dictionary[id].team;
+                    MainWindow.echelonView.Update(teamId);
+                }
+            }
+
+            /// <summary>
             /// 인형 경험치 설정
             /// </summary>
             /// <param name="id"></param>

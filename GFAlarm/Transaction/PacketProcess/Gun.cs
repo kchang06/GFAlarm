@@ -988,5 +988,37 @@ namespace GFAlarm.Transaction.PacketProcess
                 log.Error(ex, "인형복구 처리 실패");
             }
         }
+
+        /// <summary>
+        /// 인형 서약
+        /// </summary>
+        /// <param name="request_string"></param>
+        /// <param name="response_string"></param>
+        public static void Constract(string request_string, string response_string)
+        {
+            #region Packet Example
+            // request
+            // {"gun_with_user_id":7010880} 
+            // response
+            // {"soul_bond_time":1575659520} 
+            #endregion
+            try
+            {
+                log.Debug("인형서약");
+                JObject request = Parser.Json.ParseJObject(request_string);
+                JObject response = Parser.Json.ParseJObject(response_string);
+                if (request != null && response != null)
+                {
+                    long gunWithUserId = Parser.Json.ParseLong(request["gun_with_user_id"]);
+                    int soulBondTime = Parser.Json.ParseInt(response["soul_bond_time"]);
+
+                    UserData.Doll.Contract(gunWithUserId, soulBondTime);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "인형서약 처리 실패");
+            }
+        }
     }
 }
