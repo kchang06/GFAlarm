@@ -24,17 +24,11 @@ using System.Windows.Shapes;
 namespace GFAlarm.View.Option
 {
     /// <summary>
-    /// ProxyView2.xaml에 대한 상호 작용 논리
+    /// ProxyView.xaml에 대한 상호 작용 논리
     /// </summary>
     public partial class ProxyView : UserControl
     {
         private static readonly Logger log = LogManager.GetCurrentClassLogger();
-
-        //string proxyIp = "0.0.0.0";     // 프록시 주소
-        //string proxyPort = "0";         // 프록시 포트번호
-
-        //string pacIp = "0.0.0.0";       // PAC 주소
-        //string pacPort = "0";           // PAC 포트번호
 
         public ProxyView()
         {
@@ -205,7 +199,6 @@ namespace GFAlarm.View.Option
         Dictionary<string, bool> expand = new Dictionary<string, bool>()
         {
             { "ProxyServer", true },
-            { "ProxyAutoConfig", true },
             { "PacServer", true },
             { "UpstreamProxy", true },
             { "PacketForger", true },

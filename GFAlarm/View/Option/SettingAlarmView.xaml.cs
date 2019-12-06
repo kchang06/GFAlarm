@@ -368,7 +368,7 @@ namespace GFAlarm.View.Option
         }
         private void BattleReportCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            this.useNotifyBattleReportComplete = true;
+            this.useNotifyBattleReportComplete = false;
         }
 
         /// <summary>
@@ -403,6 +403,7 @@ namespace GFAlarm.View.Option
             set
             {
                 this.MaxPointCheckBox.IsChecked = value;
+                this.MaxPointSlider.IsEnabled = value;
                 Config.Alarm.notifyMaxBp = value;
             }
         }
@@ -491,6 +492,7 @@ namespace GFAlarm.View.Option
             set
             {
                 this.GetDollCheckBox.IsChecked = value;
+                this.GetDollSlider.IsEnabled = value;
                 Config.Alarm.notifyRescueDoll = value;
             }
         }
@@ -515,6 +517,7 @@ namespace GFAlarm.View.Option
             set
             {
                 this.GetEquipCheckBox.IsChecked = value;
+                this.GetEquipSlider.IsEnabled = value;
                 Config.Alarm.notifyGetEquip = value;
             }
         }
@@ -579,6 +582,8 @@ namespace GFAlarm.View.Option
             set
             {
                 this.MoveFinishCheckBox.IsChecked = value;
+                this.MoveFinishSlider.IsEnabled = value;
+                this.MoveAndBattleFinishCheckBox.IsEnabled = value;
                 Config.Alarm.notifyTeamMove = value;
             }
         }
@@ -647,6 +652,7 @@ namespace GFAlarm.View.Option
             set
             {
                 this.HpWarningCheckBox.IsChecked = value;
+                this.HpWarningSlider.IsEnabled = value;
                 Config.Alarm.notifyDollWounded = value;
             }
         }
@@ -878,6 +884,7 @@ namespace GFAlarm.View.Option
             set
             {
                 this.EarlyNotifyCheckBox.IsChecked = value;
+                this.EarlyNotifySlider.IsEnabled = value;
                 Config.Extra.earlyNotify = value;
             }
         }
