@@ -80,9 +80,10 @@ namespace LocalizationResources
                 Dictionary<string, string> tempDictionary = new Dictionary<string, string>();
                 string assemblyFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase).Substring(6);
                 string filepath = string.Format("{0}\\Resource\\language.tsv", assemblyFolder);
-                fileStream = File.ReadAllText(filepath);
+                //fileStream = File.ReadAllText(filepath);
                 int languageIdx = 0;
-                string[] lines = fileStream.Split('\n');
+                //string[] lines = fileStream.Split('\n');
+                string[] lines = File.ReadAllLines(filepath);
                 for (int i = 0; i < lines.Length; i++)
                 {
                     if (string.IsNullOrEmpty(lines[i]))
@@ -101,7 +102,7 @@ namespace LocalizationResources
                     }
                     else
                     {
-                        if (keyValues.Length > languageIdx && !string.IsNullOrEmpty(keyValues[languageIdx]))
+                        if (keyValues.Length >= languageIdx && !string.IsNullOrEmpty(keyValues[languageIdx]))
                             tempDictionary.Add(keyValues[0], keyValues[languageIdx]);
                         else if (keyValues.Length >= 2 && !string.IsNullOrEmpty(keyValues[1]))
                             tempDictionary.Add(keyValues[0], keyValues[1]);
