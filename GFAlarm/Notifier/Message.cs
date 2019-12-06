@@ -108,6 +108,7 @@ namespace GFAlarm.Notifier
 
         test,                     // 테스트
         other,                    // 기타
+        random,                   // 랜덤
     }
 
     /// <summary>

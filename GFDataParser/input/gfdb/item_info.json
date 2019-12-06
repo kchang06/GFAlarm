@@ -1,0 +1,92 @@
+{
+  "1": {
+    "id": "1",
+    "type": "1",
+    "arg": "1",
+    "code": "IOP_Contract",
+    "item_name": "item-10000001",
+    "introduction": "item-20000001",
+    "rank": "1",
+    "sort": "2"
+  },
+  "2": {
+    "id": "2",
+    "type": "1",
+    "arg": "2",
+    "code": "EQUIP_Contract",
+    "item_name": "item-10000002",
+    "introduction": "item-20000002",
+    "rank": "1",
+    "sort": "3"
+  },
+  "3": {
+    "id": "3",
+    "type": "1",
+    "arg": "3",
+    "code": "Quick_Develop",
+    "item_name": "item-10000003",
+    "introduction": "item-20000003",
+    "rank": "1",
+    "sort": "4"
+  },
+  "4": {
+    "id": "4",
+    "type": "1",
+    "arg": "4",
+    "code": "Quick_Reinforce",
+    "item_name": "item-10000004",
+    "introduction": "item-20000004",
+    "rank": "1",
+    "sort": "5"
+  },
+  "41": {
+    "id": "41",
+    "type": "1",
+    "arg": "10",
+    "code": "Furniture_Coin",
+    "item_name": "item-10000041",
+    "introduction": "item-20000041",
+    "rank": "1",
+    "sort": "12"
+  },
+  "501": {
+    "id": "501",
+    "type": "2",
+    "arg": "5",
+    "code": "Mp",
+    "item_name": "item-10000501",
+    "introduction": "item-20000501",
+    "rank": "1",
+    "sort": "0"
+  },
+  "502": {
+    "id": "502",
+    "type": "2",
+    "arg": "6",
+    "code": "Ammo",
+    "item_name": "item-10000502",
+    "introduction": "item-20000502",
+    "rank": "1",
+    "sort": "0"
+  },
+  "503": {
+    "id": "503",
+    "type": "2",
+    "arg": "7",
+    "code": "Mre",
+    "item_name": "item-10000503",
+    "introduction": "item-20000503",
+    "rank": "1",
+    "sort": "0"
+  },
+  "504": {
+    "id": "504",
+    "type": "2",
+    "arg": "8",
+    "code": "Part",
+    "item_name": "item-10000504",
+    "introduction": "item-20000504",
+    "rank": "1",
+    "sort": "0"
+  }
+}

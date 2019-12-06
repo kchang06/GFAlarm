@@ -589,7 +589,7 @@ namespace GFAlarm.View.Menu
         /// <param name="visible"></param>
         public void SetGroupVisible(int list, bool visible)
         {
-            Grid groupBox = this.FindName(string.Format("{0}GroupBox", listNames[list])) as Grid;
+            Border groupBox = this.FindName(string.Format("{0}GroupBox", listNames[list])) as Border;
 
             /// 그룹 박스가 비활성화 상태면 안 보이게
             if (groupBox.IsEnabled == false)
@@ -615,7 +615,7 @@ namespace GFAlarm.View.Menu
         /// <param name="count"></param>
         public void SetListBoxHeight(int idx, int count)
         {
-            Grid groupBox = this.FindName(string.Format("{0}GroupBox", listNames[idx])) as Grid;
+            Border groupBox = this.FindName(string.Format("{0}GroupBox", listNames[idx])) as Border;
             ListBox listBox = this.FindName(string.Format("{0}ListBox", listNames[idx])) as ListBox;
 
             listBox.BeginAnimation(ListBox.HeightProperty, null);
@@ -673,7 +673,7 @@ namespace GFAlarm.View.Menu
         /// <param name="e"></param>
         private void GroupBox_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            string name = (sender as Grid).Name;
+            string name = (sender as Border).Name;
 
             int idx = 0;
             int count = 0;

@@ -50,22 +50,20 @@ namespace GFAlarm
             //else
             //    textBlockBaseStyle.Setters.Add(new Setter(TextBlock.FontFamilyProperty, new FontFamily("Segoe UI,Malgun Gothic")));
             //textBlockBaseStyle.Setters.Add(new Setter(TextBlock.FontSizeProperty, (double)12.0));
-
             //Application.Current.Resources["TextBlockBaseStyle"] = textBlockBaseStyle;
-
-            //Util.Console.Show();
 
             /// 로그 설정
             var config = new LoggingConfiguration();
 
-            //var logconsole = new ColoredConsoleTarget("logconsole");
-            //logconsole.Layout = new SimpleLayout() { Text = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} ${level:uppercase=true:padding=-5} [${threadid}] ${logger} - ${message} ${exception:format=tostring}" };
-            //config.AddRule(NLog.LogLevel.Trace, NLog.LogLevel.Fatal, logconsole);
+            // console log
+            /*
+            var logconsole = new ColoredConsoleTarget("logconsole");
+            logconsole.Layout = new SimpleLayout() { Text = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} ${level:uppercase=true:padding=-5} [${logger}] ${message} ${exception:format=tostring}" };
+            config.AddRule(NLog.LogLevel.Trace, NLog.LogLevel.Fatal, logconsole);
+            */
 
             var logfile = new FileTarget("logfile");
             logfile.FileName = "${basedir}/Logs/${date:format=yyyy-MM-dd}.log";
-            //logfile.Layout = new SimpleLayout() { Text = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} ${level:uppercase=true:padding=-5} [${threadid}] ${logger} - ${message} ${exception:format=tostring}" };
-            //logfile.Layout = new SimpleLayout() { Text = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} ${level:uppercase=true:padding=-5} [${threadid}] ${message} ${exception:format=tostring}" };
             logfile.Layout = new SimpleLayout() { Text = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} ${level:uppercase=true:padding=-5} [${logger}] ${message} ${exception:format=tostring}" };
             config.AddRule(NLog.LogLevel.Trace, NLog.LogLevel.Fatal, logfile);
 
@@ -110,9 +108,6 @@ namespace GFAlarm
                 SolidColorBrush primaryBrush2 = new SolidColorBrush(primaryColor2);
                 Application.Current.Resources["PrimaryBrush"] = primaryBrush1;
                 Application.Current.Resources["PrimaryDeactiveBrush"] = primaryBrush2;
-                Application.Current.Resources["PrimaryButtonOverBrush"] = primaryColor2;
-                Application.Current.Resources["PrimaryButtonNormalBrush"] = primaryColor3;
-                Application.Current.Resources["PrimaryButtonSelectedBrush"] = primaryBrush1;
                 Application.Current.Resources["WindowActiveBrush"] = primaryBrush1;
                 Application.Current.Resources["WindowDeactiveBrush"] = primaryBrush2;
             }

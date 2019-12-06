@@ -96,8 +96,8 @@ namespace GFAlarm.Data.Element
         public int isLocked = 0;            // 잠김 여부
 
         public int runEarnExp = 0;                          // 전역 획득 경험치
-        public int[] runCount = new int[] { 0, 0, 0 };      // 전역 횟수
-        public int[] reportCount = new int[] { 0, 0, 0 };   // 작보 갯수
+        public long[] runCount = new long[] { 0, 0, 0 };      // 전역 횟수
+        public long[] reportCount = new long[] { 0, 0, 0 };   // 작보 갯수
 
         //public int[] earnExp = new int[] { 0, 0, 0, 0, 0, 0 };
         //public int[] toNextLevelRunCount = new int[] { 0, 0, 0, 0, 0, 0 };
@@ -176,20 +176,14 @@ namespace GFAlarm.Data.Element
                     if (fairy != null)
                     {
                         this.name = GameData.Fairy.GetFairyName(this.no);
-                        //this.name = LanguageResources.Instance[string.Format("FAIRY_{0}", this.no)];
-                        //this.name = Parser.Json.ParseString(fairy["name"]);
                         this.category = Parser.Json.ParseString(fairy["category"]);
                     }
                     JObject trait = GameData.Fairy.GetTrait(this.traitId);
                     if (trait != null)
                     {
-                        //this.traitName = LanguageResources.Instance[string.Format("TRAIT_{0}", this.traitId)];
                         this.traitName = GameData.Fairy.GetFairyTraitName(this.traitId);
-                        //this.traitName = Parser.Json.ParseString(trait["name"]);
                         this.isRareTrait = Parser.Json.ParseInt(trait["is_rare"]) == 1 ? true : false;
                     }
-                    //this.traitName = GameData.Fairy.GetTrait(this.traitId);
-                    //this.isRareTrait = GameData.Fairy.IsTraitRare(this.traitId);
                     break;
                 case REFRESH.EXP:
                     maxLevel = 100;
@@ -231,21 +225,9 @@ namespace GFAlarm.Data.Element
                                 runCount[0] = (int)((double)remainExp / runEarnExp + 1);
                             runCount[1] = UserData.Fairy.GetRunCountToMaxLevel(id, runEarnExp);
                             runCount[2] = runCount[1];
-                            //earnExp = UserData.Fairy.GetTeamEarnExp(team);
-                            //for (int i = 0; i < 6; i++)
-                            //{
-                            //    if (earnExp[i] > 0)
-                            //    {
-                            //        toNextLevelRunCount[i] = Convert.ToInt32((double)remainExp / earnExp[i] + 1);
-                            //        toMaxLevelRunCount[i] = UserData.Fairy.GetRunCountToMaxLevel(id, earnExp[i]);
-                            //    }
-                            //}
                             reportCount[0] = UserData.Fairy.GetBattleReportCountToMaxLevel(id, level + 1);
                             reportCount[1] = UserData.Fairy.GetBattleReportCountToMaxLevel(id);
                             reportCount[2] = reportCount[1];
-
-                            //toNextLevelBattleReportCount = UserData.Fairy.GetBattleReportCountToMaxLevel(id, level + 1);
-                            //toMaxLevelBattleReportCount = UserData.Fairy.GetBattleReportCountToMaxLevel(id);
                         }
                         catch(Exception ex)
                         {

@@ -24,6 +24,7 @@ namespace GFAlarm.Util
         public static bool isLoaded = false;
         public static bool duringTheater = false;
         public static bool needFakeVersion = false;
+
         public static string latest_version = "";
         public static string latest_download_url = "";
         public static string voice_guide_url = "";

@@ -179,8 +179,8 @@ namespace GFAlarm.Data.Element
         //public int[] toMaxLevelRunCount = new int[] { 0, 0, 0, 0, 0, 0 };
 
         public int runEarnExp = 0;                          // 전역 획득 경험치
-        public int[] runCount = new int[] { 0, 0, 0 };      // 전역 횟수
-        public int[] reportCount = new int[] { 0, 0, 0 };   // 작보 갯수
+        public long[] runCount = new long[] { 0, 0, 0 };      // 전역 횟수
+        public long[] reportCount = new long[] { 0, 0, 0 };   // 작보 갯수
         //public int expBattleReport = 0;
 
         //public int toNextLevelBattleReportCount = 0;

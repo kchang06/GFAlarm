@@ -28,8 +28,6 @@ namespace GFAlarm
         {
             InitializeComponent();
             view = this;
-
-            this.Loaded += SubWindow_Loaded;
         }
 
         /// <summary>
@@ -46,25 +44,6 @@ namespace GFAlarm
             // According to some sources these steps gurantee that an app will be brought to foreground.
             this.Activate();
             this.Focus();
-        }
-
-        private void SubWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            isLoaded = true;
-
-            // 윈도우 위치 및 크기
-            this.Top = Config.Window.subWindowPosition[0];
-            this.Left = Config.Window.subWindowPosition[1];
-            this.Width = Config.Window.subWindowPosition[2];
-            this.Height = Config.Window.subWindowPosition[3];
-            //this.Top = Config.subWindowTop;
-            //this.Left = Config.subWindowLeft;
-            //this.Width = Config.subWindowWidth;
-            //this.Height = Config.subWindowHeight;
-
-            // 윈도우 요소 가져오기
-            WindowBorder = this.Template.FindName("WindowBorder", this) as Border;
-            WindowTitlebarGrid = this.Template.FindName("WindowTitlebarGrid", this) as Grid;
         }
 
         public void SetContent(int menu)
@@ -91,28 +70,7 @@ namespace GFAlarm
             }
         }
 
-        /// <summary>
-        /// 윈도우 투명도
-        /// </summary>
-        private int _WindowOpacity = 100;
-        public int WindowOpacity
-        {
-            get
-            {
-                return _WindowOpacity;
-            }
-            set
-            {
-                _WindowOpacity = value;
-                Dispatcher.Invoke(() =>
-                {
-                    if (this.ViewMainWindow != null)
-                    {
-                        this.ViewMainWindow.Opacity = ((double)value) / 100;
-                    }
-                });
-            }
-        }
+        #region Sticky Window
 
         // this is the offset of the mouse cursor from the top left corner of the window
         private Point offset = new Point();
@@ -151,10 +109,6 @@ namespace GFAlarm
 
             /// get screen rect
             currentScreen = Extensions.GetScreen(this);
-
-            //uint x, y;
-            //Extensions.GetDpi(currentScreen, DpiType.Raw, out x, out y);
-            //log.Debug("dpi x {0} y {1}", x, y);
 
             workAreaTop = currentScreen.WorkingArea.Top * dpiMuliply;
             workAreaLeft = currentScreen.WorkingArea.Left * dpiMuliply;
@@ -195,12 +149,8 @@ namespace GFAlarm
 
                 if (Config.Window.stickyWindow)
                 {
-                    int snappingMargin = 15;
+                    int snappingMargin = 10;
 
-                    //double workAreaTop = SystemParameters.WorkArea.Top;
-                    //double workAreaLeft = SystemParameters.WorkArea.Left;
-                    //double workAreaWidth = SystemParameters.WorkArea.Width;
-                    //double workAreaHeight = SystemParameters.WorkArea.Height;
                     if (Math.Abs(workAreaLeft - newLeft) < snappingMargin)
                         newLeft = workAreaLeft;
                     else if (Math.Abs(newLeft + this.ActualWidth - workAreaLeft - workAreaWidth) < snappingMargin)
@@ -217,6 +167,25 @@ namespace GFAlarm
             }
         }
 
+        #endregion
+
+        #region Window
+
+        private void SubWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            isLoaded = true;
+
+            // 윈도우 위치 및 크기
+            this.Top = Config.Window.subWindowPosition[0];
+            this.Left = Config.Window.subWindowPosition[1];
+            this.Width = Config.Window.subWindowPosition[2];
+            this.Height = Config.Window.subWindowPosition[3];
+
+            // 윈도우 요소 가져오기
+            WindowBorder = this.Template.FindName("WindowBorder", this) as Border;
+            WindowTitlebarGrid = this.Template.FindName("WindowTitlebarGrid", this) as Grid;
+        }
+
         /// <summary>
         /// 윈도우 활성화
         /// </summary>
@@ -224,11 +193,7 @@ namespace GFAlarm
         /// <param name="e"></param>
         private void Window_Activated(object sender, EventArgs e)
         {
-            if (WindowBorder != null)
-                WindowBorder.BorderBrush = (SolidColorBrush)Application.Current.Resources["PrimaryBrush"];
-            if (WindowTitlebarGrid != null)
-                WindowTitlebarGrid.Background = (SolidColorBrush)Application.Current.Resources["PrimaryBrush"];
-            //StatusGrid.Background = (SolidColorBrush)Application.Current.Resources["PrimaryBrush"];
+            Application.Current.Resources["PrimaryBrush"] = Application.Current.Resources["WindowActiveBrush"];
         }
 
         /// <summary>
@@ -238,11 +203,39 @@ namespace GFAlarm
         /// <param name="e"></param>
         private void Window_Deactivated(object sender, EventArgs e)
         {
-            if (WindowBorder != null)
-                WindowBorder.BorderBrush = (SolidColorBrush)Application.Current.Resources["PrimaryDeactiveBrush"];
-            if (WindowTitlebarGrid != null)
-                WindowTitlebarGrid.Background = (SolidColorBrush)Application.Current.Resources["PrimaryDeactiveBrush"];
-            //StatusGrid.Background = (SolidColorBrush)Application.Current.Resources["PrimaryDeactiveBrush"];
+            Application.Current.Resources["PrimaryBrush"] = Application.Current.Resources["WindowDeactiveBrush"];
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
+        }
+
+        /// <summary>
+        /// 윈도우 투명도
+        /// </summary>
+        private int _WindowOpacity = 100;
+        public int WindowOpacity
+        {
+            get
+            {
+                return _WindowOpacity;
+            }
+            set
+            {
+                _WindowOpacity = value;
+                Dispatcher.Invoke(() =>
+                {
+                    if (this.ViewSubWindow != null)
+                        this.ViewSubWindow.Opacity = ((double)value) / 100;
+                });
+            }
         }
 
         /// <summary>
@@ -266,32 +259,32 @@ namespace GFAlarm
             this.Hide();
         }
 
+        /// <summary>
+        /// [버튼] 좌측 붙이기
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StickLeftButton_Click(object sender, RoutedEventArgs e)
         {
-            //double workAreaTop = SystemParameters.WorkArea.Top;
-            //double workAreaLeft = SystemParameters.WorkArea.Left;
-            //double workAreaWidth = SystemParameters.WorkArea.Width;
-            //double workAreaHeight = SystemParameters.WorkArea.Height;
-
             this.Height = MainWindow.view.Height;
             this.Top = MainWindow.view.Top;
             this.Left = MainWindow.view.Left - this.Width;
-            //if (this.Left < 0)
-            //    this.Left = 0;
         }
 
+        /// <summary>
+        /// [버튼] 우측 붙이기
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StickRightButton_Click(object sender, RoutedEventArgs e)
         {
-            //double workAreaTop = SystemParameters.WorkArea.Top;
-            //double workAreaLeft = SystemParameters.WorkArea.Left;
-            //double workAreaWidth = SystemParameters.WorkArea.Width;
-            //double workAreaHeight = SystemParameters.WorkArea.Height;
-
             this.Height = MainWindow.view.Height;
             this.Top = MainWindow.view.Top;
             this.Left = MainWindow.view.Left + MainWindow.view.Width;
-            //if (this.Left + this.Width >= workAreaWidth)
-            //    this.Left = workAreaWidth - this.Width;
         }
+
+        #endregion
+
+
     }
 }

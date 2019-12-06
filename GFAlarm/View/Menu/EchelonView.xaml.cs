@@ -457,7 +457,7 @@ namespace GFAlarm.View.Menu
         {
             Dispatcher.Invoke(() =>
             {
-                Grid groupBox = this.FindName(string.Format("Echelon{0}GroupBox", idx)) as Grid;
+                Border groupBox = this.FindName(string.Format("Echelon{0}GroupBox", idx)) as Border;
                 ListBox listBox = this.FindName(string.Format("Echelon{0}ListBox", idx)) as ListBox;
                 if (groupBox != null && listBox != null)
                 {
@@ -502,7 +502,7 @@ namespace GFAlarm.View.Menu
         {
             Dispatcher.Invoke(() =>
             {
-                Grid groupBox = this.FindName(string.Format("Echelon{0}GroupBox", idx)) as Grid;
+                Border groupBox = this.FindName(string.Format("Echelon{0}GroupBox", idx)) as Border;
 
                 //log.Debug("제대 그룹 {0} {1}", idx, visible == true ? "보임" : "숨김");
 
@@ -603,7 +603,7 @@ namespace GFAlarm.View.Menu
         /// <param name="e"></param>
         private void GroupBox_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            string name = (sender as Grid).Name;
+            string name = (sender as Border).Name;
 
             string idxString = string.Concat(name.Where(char.IsDigit));
             int idx = Parser.String.ParseInt(idxString);

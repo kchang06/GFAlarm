@@ -1417,7 +1417,7 @@ namespace GFAlarm.Transaction.PacketProcess
                         if (theater_area_id > 0 && enemy_teams.Length > 0)
                         {
                             log.Debug("국지전 웨이브 정보 저장 중...");
-                            Csv.ExportTheaterExerciseInfo(theater_area_id, enemy_teams);
+                            CsvExporter.ExportTheaterExerciseInfo(theater_area_id, enemy_teams);
                             log.Debug("국지전 웨이브 정보 파일로 저장 (theater_exercise.csv)");
                         }
                     }
@@ -1438,7 +1438,7 @@ namespace GFAlarm.Transaction.PacketProcess
                 log.Debug("아이템 정보 저장 중...");
                 try
                 {
-                    Util.Csv.ExportItemInfo(index);
+                    Util.CsvExporter.ExportItemInfo(index);
                     log.Debug("아이템 정보 파일로 저장 (item_info.csv)");
                 }
                 catch (Exception ex)
@@ -1453,7 +1453,7 @@ namespace GFAlarm.Transaction.PacketProcess
                 log.Debug("인형 정보 저장 중...");
                 try
                 {
-                    Util.Csv.ExportDollInfo(UserData.Doll.GetAll());
+                    Util.CsvExporter.ExportDollInfo(UserData.Doll.GetAll());
                     log.Debug("인형 정보 파일로 저장 (doll_info.csv)");
                 }
                 catch (Exception ex)
@@ -1468,7 +1468,7 @@ namespace GFAlarm.Transaction.PacketProcess
                 log.Debug("장비 정보 저장 중...");
                 try
                 {
-                    Util.Csv.ExportEquipInfo(UserData.Equip.GetAll());
+                    Util.CsvExporter.ExportEquipInfo(UserData.Equip.GetAll());
                     log.Debug("장비 정보 파일로 저장 (equip_info.csv)");
                 }
                 catch (Exception ex)
@@ -1483,7 +1483,7 @@ namespace GFAlarm.Transaction.PacketProcess
                 log.Debug("요정 정보 저장 중...");
                 try
                 {
-                    Util.Csv.ExportFairyInfo(UserData.Fairy.GetAll());
+                    Util.CsvExporter.ExportFairyInfo(UserData.Fairy.GetAll());
                     log.Debug("요정 정보 파일로 저장 (fairy_info.csv)");
                 }
                 catch (Exception ex)

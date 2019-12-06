@@ -9,7 +9,10 @@
     xmlns:ls="clr-namespace:LocalizationResources;assembly=LocalizationResources"
     xmlns:uc="http://www.quickzip.org/BaseControls"
     mc:Ignorable="d" 
-    d:DesignHeight="500" d:DesignWidth="200">
+    
+    SnapsToDevicePixels="True"
+    d:DesignHeight="500" 
+    d:DesignWidth="200">
     <UserControl.Resources>
         <!-- 설정 툴팁 스택판넬 스타일 -->
         <Style x:Key="SettingToolTipStackPanelStyle" TargetType="{x:Type StackPanel}">
@@ -32,19 +35,9 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="5,0,0,0"/>
         </Style>
-        <!-- 제대 그룹 화살표 스타일  -->
-        <Style x:Key="EchelonGroupArrowStyle" TargetType="{x:Type iconPacks:PackIconMaterial}">
-            <Setter Property="Width" Value="11"/>
-            <Setter Property="Height" Value="11"/>
-            <Setter Property="Margin" Value="0,0,8,0"/>
-            <Setter Property="HorizontalAlignment" Value="Right"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Foreground" Value="#FFFFFF"/>
-            <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
-        </Style>
         <!-- 제대 상태 Border 스타일 -->
         <Style x:Key="EchelonStatusBorderStyle" TargetType="{x:Type Border}">
-            <Setter Property="Margin" Value="8,0,0,0"/>
+            <Setter Property="Margin" Value="8,-1,0,0"/>
             <Setter Property="Padding" Value="5,0,5,0"/>
             <Setter Property="Height" Value="18"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
@@ -134,7 +127,7 @@
                                     Style="{StaticResource ToolTipTableStyle}">
                                 <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
                                            HorizontalAlignment="Center"
-                                           Text="전역"/>
+                                           Text="{Binding Path=[MISSION_SHORT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </Border>
                             <Border Grid.Row="2" Grid.Column="1" BorderThickness="0,0,1,1"
                                     Style="{StaticResource ToolTipTableStyle}">
@@ -159,7 +152,7 @@
                                     Style="{StaticResource ToolTipTableStyle}">
                                 <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
                                            HorizontalAlignment="Center"
-                                           Text="작보"/>
+                                           Text="{Binding Path=[COMBAT_REPORT_SHORT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </Border>
                             <Border Grid.Row="2" Grid.Column="2" BorderThickness="0,0,0,1"
                                     Style="{StaticResource ToolTipTableStyle}">
@@ -251,11 +244,6 @@
                         
                     </StackPanel>
                 </Grid.ToolTip>
-                <!-- 보직 -->
-                <TextBlock x:Name="AssignTextBlock" Grid.ColumnSpan="2" Panel.ZIndex="0" Visibility="Collapsed"
-                           Style="{StaticResource TextBlockBaseStyle}"
-                           Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                           FontSize="26" FontWeight="Bold" Text="MEMBER" Foreground="#0803A9F4"/>
                 <!-- 인형 정보 -->
                 <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal" Panel.ZIndex="0" 
                             Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -272,10 +260,10 @@
                         <Run Foreground="#10FFFFFF" Text="{Binding Path=location, Mode=OneWay}"/>
                     </TextBlock>-->
                 </StackPanel>
+                <!-- 남은 경험치 -->
                 <TextBlock Grid.ColumnSpan="2" Margin="0,4,21,0" HorizontalAlignment="Right" VerticalAlignment="Top"
                            Style="{StaticResource TextBlockBaseStyle}" FontSize="11" Foreground="#70FFFFFF">
                     <Run>Next</Run>
-                    <!-- 남은 경험치 -->
                     <Run x:Name="RemainExpTextBlock" Foreground="White" Text="{Binding Path=remainExp, Mode=OneWay}"/>
                 </TextBlock>
                 <!-- 인형 이름 -->
@@ -478,13 +466,13 @@
                 </DataTrigger>
                 <!-- 리더 -->
                 <DataTrigger Binding="{Binding Path=location, Mode=OneWay}" Value="1">
-                    <Setter TargetName="AssignTextBlock" Property="TextBlock.Text" Value="LEADER"/>
-                    <Setter TargetName="AssignTextBlock" Property="Foreground" Value="#08FF9800"/>
+                    <!--<Setter TargetName="AssignTextBlock" Property="TextBlock.Text" Value="LEADER"/>
+                    <Setter TargetName="AssignTextBlock" Property="Foreground" Value="#08FF9800"/>-->
                 </DataTrigger>
                 <!-- 요정 -->
                 <DataTrigger Binding="{Binding Path=location, Mode=OneWay}" Value="6">
-                    <Setter TargetName="AssignTextBlock" Property="TextBlock.Text" Value="FAIRY"/>
-                    <Setter TargetName="AssignTextBlock" Property="Foreground" Value="#084CAF50"/>
+                    <!--<Setter TargetName="AssignTextBlock" Property="TextBlock.Text" Value="FAIRY"/>
+                    <Setter TargetName="AssignTextBlock" Property="Foreground" Value="#084CAF50"/>-->
                     <Setter TargetName="TraitTextBlock" Property="Visibility" Value="Visible"/>
                     <Setter TargetName="HpStatusTextBlock" Property="Visibility" Value="Collapsed"/>
                 </DataTrigger>
@@ -526,261 +514,441 @@
             <StackPanel x:Name="EchelonStackPanel" Orientation="Vertical">
                 
                 <!-- [그룹] 1제대 -->
-                <Grid x:Name="Echelon1GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <!-- border -->
-                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
-                    <!-- echelon number -->
-                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric1"/>
-                    <!-- title -->
-                    <StackPanel Grid.Column="1" Orientation="Horizontal">
-                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                <Border x:Name="Echelon1GroupBox" Visibility="Collapsed"
+                        Style="{StaticResource GroupBoxBorderStyle}"
+                        MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- echelon number -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Kind="Numeric1"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
-                        <Border x:Name="Echelon1GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
-                            <TextBlock x:Name="Echelon1GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        <Border 
+                            Grid.Column="2" 
+                            x:Name="Echelon1GroupBox_StatusBorder" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Width="Auto">
+                            <TextBlock 
+                                x:Name="Echelon1GroupBox_StatusTextBlock"
+                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Text="STATUS"/>
                         </Border>
-                    </StackPanel>
-                    <!-- arrow -->
-                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon1GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
-                </Grid>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="3"
+                            x:Name="Echelon1GroupBox_Arrow"
+                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
                 <!-- [목록] 1제대 -->
                 <ListBox x:Name="Echelon1ListBox"
                          ItemTemplate="{StaticResource EchelonTemplate}"/>
 
                 <!-- [그룹] 2제대 -->
-                <Grid x:Name="Echelon2GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <!-- border -->
-                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
-                    <!-- echelon number -->
-                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric2"/>
-                    <!-- title -->
-                    <StackPanel Grid.Column="1" Orientation="Horizontal">
-                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                <Border x:Name="Echelon2GroupBox" Visibility="Collapsed"
+                        Style="{StaticResource GroupBoxBorderStyle}"
+                        MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- echelon number -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Kind="Numeric2"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
-                        <Border x:Name="Echelon2GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
-                            <TextBlock x:Name="Echelon2GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        <Border 
+                            Grid.Column="2" 
+                            x:Name="Echelon2GroupBox_StatusBorder" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Width="Auto">
+                            <TextBlock 
+                                x:Name="Echelon2GroupBox_StatusTextBlock"
+                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Text="STATUS"/>
                         </Border>
-                    </StackPanel>
-                    <!-- arrow -->
-                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon2GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
-                </Grid>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="3"
+                            x:Name="Echelon2GroupBox_Arrow"
+                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
                 <!-- [목록] 2제대 -->
                 <ListBox x:Name="Echelon2ListBox"
                          ItemTemplate="{StaticResource EchelonTemplate}"/>
 
                 <!-- [그룹] 3제대 -->
-                <Grid x:Name="Echelon3GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <!-- border -->
-                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
-                    <!-- echelon number -->
-                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric3"/>
-                    <!-- title -->
-                    <StackPanel Grid.Column="1" Orientation="Horizontal">
-                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                <Border x:Name="Echelon3GroupBox" Visibility="Collapsed"
+                        Style="{StaticResource GroupBoxBorderStyle}"
+                        MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- echelon number -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Kind="Numeric3"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
-                        <Border x:Name="Echelon3GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
-                            <TextBlock x:Name="Echelon3GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        <Border 
+                            Grid.Column="2" 
+                            x:Name="Echelon3GroupBox_StatusBorder" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Width="Auto">
+                            <TextBlock 
+                                x:Name="Echelon3GroupBox_StatusTextBlock"
+                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Text="STATUS"/>
                         </Border>
-                    </StackPanel>
-                    <!-- arrow -->
-                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon3GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
-                </Grid>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="3"
+                            x:Name="Echelon3GroupBox_Arrow"
+                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
                 <!-- [목록] 3제대 -->
                 <ListBox x:Name="Echelon3ListBox"
                          ItemTemplate="{StaticResource EchelonTemplate}"/>
 
                 <!-- [그룹] 4제대 -->
-                <Grid x:Name="Echelon4GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <!-- border -->
-                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
-                    <!-- echelon number -->
-                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric4"/>
-                    <!-- title -->
-                    <StackPanel Grid.Column="1" Orientation="Horizontal">
-                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                <Border x:Name="Echelon4GroupBox" Visibility="Collapsed"
+                        Style="{StaticResource GroupBoxBorderStyle}"
+                        MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- echelon number -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Kind="Numeric4"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
-                        <Border x:Name="Echelon4GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
-                            <TextBlock x:Name="Echelon4GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        <Border 
+                            Grid.Column="2" 
+                            x:Name="Echelon4GroupBox_StatusBorder" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Width="Auto">
+                            <TextBlock 
+                                x:Name="Echelon4GroupBox_StatusTextBlock"
+                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Text="STATUS"/>
                         </Border>
-                    </StackPanel>
-                    <!-- arrow -->
-                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon4GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
-                </Grid>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="3"
+                            x:Name="Echelon4GroupBox_Arrow"
+                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
                 <!-- [목록] 4제대 -->
                 <ListBox x:Name="Echelon4ListBox"
                          ItemTemplate="{StaticResource EchelonTemplate}"/>
 
                 <!-- [그룹] 5제대 -->
-                <Grid x:Name="Echelon5GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <!-- border -->
-                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
-                    <!-- echelon number -->
-                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric5"/>
-                    <!-- title -->
-                    <StackPanel Grid.Column="1" Orientation="Horizontal">
-                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                <Border x:Name="Echelon5GroupBox" Visibility="Collapsed"
+                        Style="{StaticResource GroupBoxBorderStyle}"
+                        MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- echelon number -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Kind="Numeric5"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
-                        <Border x:Name="Echelon5GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
-                            <TextBlock x:Name="Echelon5GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        <Border 
+                            Grid.Column="2" 
+                            x:Name="Echelon5GroupBox_StatusBorder" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Width="Auto">
+                            <TextBlock 
+                                x:Name="Echelon5GroupBox_StatusTextBlock"
+                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Text="STATUS"/>
                         </Border>
-                    </StackPanel>
-                    <!-- arrow -->
-                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon5GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
-                </Grid>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="3"
+                            x:Name="Echelon5GroupBox_Arrow"
+                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
                 <!-- [목록] 5제대 -->
                 <ListBox x:Name="Echelon5ListBox"
                          ItemTemplate="{StaticResource EchelonTemplate}"/>
 
                 <!-- [그룹] 6제대 -->
-                <Grid x:Name="Echelon6GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <!-- border -->
-                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
-                    <!-- echelon number -->
-                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric6"/>
-                    <!-- title -->
-                    <StackPanel Grid.Column="1" Orientation="Horizontal">
-                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                <Border x:Name="Echelon6GroupBox" Visibility="Collapsed"
+                        Style="{StaticResource GroupBoxBorderStyle}"
+                        MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- echelon number -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Kind="Numeric6"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
-                        <Border x:Name="Echelon6GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
-                            <TextBlock x:Name="Echelon6GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        <Border 
+                            Grid.Column="2" 
+                            x:Name="Echelon6GroupBox_StatusBorder" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Width="Auto">
+                            <TextBlock 
+                                x:Name="Echelon6GroupBox_StatusTextBlock"
+                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Text="STATUS"/>
                         </Border>
-                    </StackPanel>
-                    <!-- arrow -->
-                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon6GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
-                </Grid>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="3"
+                            x:Name="Echelon6GroupBox_Arrow"
+                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
                 <!-- [목록] 6제대 -->
                 <ListBox x:Name="Echelon6ListBox"
                          ItemTemplate="{StaticResource EchelonTemplate}"/>
 
                 <!-- [그룹] 7제대 -->
-                <Grid x:Name="Echelon7GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <!-- border -->
-                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
-                    <!-- echelon number -->
-                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric7"/>
-                    <!-- title -->
-                    <StackPanel Grid.Column="1" Orientation="Horizontal">
-                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                <Border x:Name="Echelon7GroupBox" Visibility="Collapsed"
+                        Style="{StaticResource GroupBoxBorderStyle}"
+                        MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- echelon number -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Kind="Numeric7"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
-                        <Border x:Name="Echelon7GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
-                            <TextBlock x:Name="Echelon7GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        <Border 
+                            Grid.Column="2" 
+                            x:Name="Echelon7GroupBox_StatusBorder" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Width="Auto">
+                            <TextBlock 
+                                x:Name="Echelon7GroupBox_StatusTextBlock"
+                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Text="STATUS"/>
                         </Border>
-                    </StackPanel>
-                    <!-- arrow -->
-                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon7GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
-                </Grid>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="3"
+                            x:Name="Echelon7GroupBox_Arrow"
+                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
                 <!-- [목록] 7제대 -->
                 <ListBox x:Name="Echelon7ListBox"
                          ItemTemplate="{StaticResource EchelonTemplate}"/>
 
                 <!-- [그룹] 8제대 -->
-                <Grid x:Name="Echelon8GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <!-- border -->
-                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
-                    <!-- echelon number -->
-                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric8"/>
-                    <!-- title -->
-                    <StackPanel Grid.Column="1" Orientation="Horizontal">
-                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                <Border x:Name="Echelon8GroupBox" Visibility="Collapsed"
+                        Style="{StaticResource GroupBoxBorderStyle}"
+                        MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- echelon number -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Kind="Numeric8"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
-                        <Border x:Name="Echelon8GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
-                            <TextBlock x:Name="Echelon8GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        <Border 
+                            Grid.Column="2" 
+                            x:Name="Echelon8GroupBox_StatusBorder" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Width="Auto">
+                            <TextBlock 
+                                x:Name="Echelon8GroupBox_StatusTextBlock"
+                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Text="STATUS"/>
                         </Border>
-                    </StackPanel>
-                    <!-- arrow -->
-                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon8GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
-                </Grid>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="3"
+                            x:Name="Echelon8GroupBox_Arrow"
+                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
                 <!-- [목록] 8제대 -->
                 <ListBox x:Name="Echelon8ListBox"
                          ItemTemplate="{StaticResource EchelonTemplate}"/>
 
                 <!-- [그룹] 9제대 -->
-                <Grid x:Name="Echelon9GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <!-- border -->
-                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
-                    <!-- echelon number -->
-                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric9"/>
-                    <!-- title -->
-                    <StackPanel Grid.Column="1" Orientation="Horizontal">
-                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                <Border x:Name="Echelon9GroupBox" Visibility="Collapsed"
+                        Style="{StaticResource GroupBoxBorderStyle}"
+                        MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- echelon number -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Kind="Numeric9"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
-                        <Border x:Name="Echelon9GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
-                            <TextBlock x:Name="Echelon9GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        <Border 
+                            Grid.Column="2" 
+                            x:Name="Echelon9GroupBox_StatusBorder" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Width="Auto">
+                            <TextBlock 
+                                x:Name="Echelon9GroupBox_StatusTextBlock"
+                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Text="STATUS"/>
                         </Border>
-                    </StackPanel>
-                    <!-- arrow -->
-                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon9GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
-                </Grid>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="3"
+                            x:Name="Echelon9GroupBox_Arrow"
+                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
                 <!-- [목록] 9제대 -->
                 <ListBox x:Name="Echelon9ListBox"
                          ItemTemplate="{StaticResource EchelonTemplate}"/>
 
                 <!-- [그룹] 10제대 -->
-                <Grid x:Name="Echelon10GroupBox" Visibility="Collapsed" Style="{StaticResource GroupGridStyle}" MouseLeftButtonDown="GroupBox_MouseDown">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <!-- border -->
-                    <Border Grid.ColumnSpan="3" Style="{StaticResource GroupBorderStyle}"/>
-                    <!-- echelon number -->
-                    <iconPacks:PackIconMaterial Grid.Column="0" Style="{StaticResource EchelonGroupNumericStyle}" Kind="Numeric10"/>
-                    <!-- title -->
-                    <StackPanel Grid.Column="1" Orientation="Horizontal">
-                        <TextBlock Style="{StaticResource EchelonGroupTextStyle}" Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                <Border x:Name="Echelon10GroupBox" Visibility="Collapsed"
+                        Style="{StaticResource GroupBoxBorderStyle}"
+                        MouseLeftButtonDown="GroupBox_MouseDown">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- echelon number -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Kind="Numeric10"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
-                        <Border x:Name="Echelon10GroupBox_StatusBorder" Visibility="Collapsed" Style="{StaticResource EchelonStatusBorderStyle}">
-                            <TextBlock x:Name="Echelon10GroupBox_StatusTextBlock" Style="{StaticResource EchelonStatusTextStyle}" />
+                        <Border 
+                            Grid.Column="2" 
+                            x:Name="Echelon10GroupBox_StatusBorder" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Width="Auto">
+                            <TextBlock 
+                                x:Name="Echelon10GroupBox_StatusTextBlock"
+                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Text="STATUS"/>
                         </Border>
-                    </StackPanel>
-                    <!-- arrow -->
-                    <iconPacks:PackIconMaterial Grid.Column="2" x:Name="Echelon10GroupBox_Arrow" Style="{StaticResource EchelonGroupArrowStyle}"/>
-                </Grid>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="3"
+                            x:Name="Echelon10GroupBox_Arrow"
+                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
                 <!-- [목록] 10제대 -->
                 <ListBox x:Name="Echelon10ListBox"
                          ItemTemplate="{StaticResource EchelonTemplate}"/>

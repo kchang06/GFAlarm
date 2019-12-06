@@ -1,0 +1,2030 @@
+{
+  "accelerate_build": {
+    "parameter_name": "accelerate_build",
+    "parameter_type": "float",
+    "parameter_value": "0.333",
+    "client_require": 1
+  },
+  "achievement_type_sort": {
+    "parameter_name": "achievement_type_sort",
+    "parameter_type": "string",
+    "parameter_value": "1:35023,2:35024,3:1420,4:35025,5:35026,6:35027,7:35028,8:35029,9:1421,10:35030,11:35031,12:35032,13:35049,14:35050,100:35041",
+    "client_require": 1
+  },
+  "activity_rank_begin_showtime": {
+    "parameter_name": "activity_rank_begin_showtime",
+    "parameter_type": "int",
+    "parameter_value": "0",
+    "client_require": 1
+  },
+  "activity_rank_end_showtime": {
+    "parameter_name": "activity_rank_end_showtime",
+    "parameter_type": "int",
+    "parameter_value": "1568858400",
+    "client_require": 1
+  },
+  "activity_rank_id": {
+    "parameter_name": "activity_rank_id",
+    "parameter_type": "int",
+    "parameter_value": "8",
+    "client_require": 1
+  },
+  "activity_rank_mission_id": {
+    "parameter_name": "activity_rank_mission_id",
+    "parameter_type": "int",
+    "parameter_value": "10365",
+    "client_require": 1
+  },
+  "additional_range": {
+    "parameter_name": "additional_range",
+    "parameter_type": "float",
+    "parameter_value": "2",
+    "client_require": 1
+  },
+  "aeo_coef": {
+    "parameter_name": "aeo_coef",
+    "parameter_type": "float",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "ally_team_hp_remain": {
+    "parameter_name": "ally_team_hp_remain",
+    "parameter_type": "string",
+    "parameter_value": "5,0.05,1,0.2,0.8",
+    "client_require": 1
+  },
+  "america_reset_first_pay_time": {
+    "parameter_name": "america_reset_first_pay_time",
+    "parameter_type": "int",
+    "parameter_value": "-1",
+    "client_require": 1
+  },
+  "armor_basic": {
+    "parameter_name": "armor_basic",
+    "parameter_type": "string",
+    "parameter_value": "2,0.161,100",
+    "client_require": 1
+  },
+  "armor_basic_after100": {
+    "parameter_name": "armor_basic_after100",
+    "parameter_type": "string",
+    "parameter_value": "13.979,0.04,100",
+    "client_require": 1
+  },
+  "armor_piercing_harm": {
+    "parameter_name": "armor_piercing_harm",
+    "parameter_type": "int",
+    "parameter_value": "2",
+    "client_require": 1
+  },
+  "assist_armor_piercing_coef": {
+    "parameter_name": "assist_armor_piercing_coef",
+    "parameter_type": "int",
+    "parameter_value": "100",
+    "client_require": 1
+  },
+  "assist_damage_efficien": {
+    "parameter_name": "assist_damage_efficien",
+    "parameter_type": "int",
+    "parameter_value": "48",
+    "client_require": 1
+  },
+  "atk_divide_def_range": {
+    "parameter_name": "atk_divide_def_range",
+    "parameter_type": "string",
+    "parameter_value": "0.5,2",
+    "client_require": 1
+  },
+  "attack_effect_mg": {
+    "parameter_name": "attack_effect_mg",
+    "parameter_type": "string",
+    "parameter_value": "7,1.5,4,200,23,8,3",
+    "client_require": 1
+  },
+  "attack_effect_normal": {
+    "parameter_name": "attack_effect_normal",
+    "parameter_type": "string",
+    "parameter_value": "5,1.5,23,8,50,3",
+    "client_require": 1
+  },
+  "attack_effect_sg": {
+    "parameter_name": "attack_effect_sg",
+    "parameter_type": "string",
+    "parameter_value": "6,1.5,23,8,50,3,3,1.5,0.5",
+    "client_require": 1
+  },
+  "auto_mission_exp": {
+    "parameter_name": "auto_mission_exp",
+    "parameter_type": "int",
+    "parameter_value": "50",
+    "client_require": 1
+  },
+  "auto_mission_times": {
+    "parameter_name": "auto_mission_times",
+    "parameter_type": "string",
+    "parameter_value": "3,5",
+    "client_require": 1
+  },
+  "avg_auto_play_speed": {
+    "parameter_name": "avg_auto_play_speed",
+    "parameter_type": "string",
+    "parameter_value": "6,1",
+    "client_require": 1
+  },
+  "avg_type_speed": {
+    "parameter_name": "avg_type_speed",
+    "parameter_type": "string",
+    "parameter_value": "1,4",
+    "client_require": 1
+  },
+  "basic_equip_exp": {
+    "parameter_name": "basic_equip_exp",
+    "parameter_type": "string",
+    "parameter_value": "2:50,3:100,4:175,5:300",
+    "client_require": 1
+  },
+  "battle_member_zoom_switch": {
+    "parameter_name": "battle_member_zoom_switch",
+    "parameter_type": "int",
+    "parameter_value": "2",
+    "client_require": 1
+  },
+  "battle_spine_mainframe_work": {
+    "parameter_name": "battle_spine_mainframe_work",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "blacklist_limit": {
+    "parameter_name": "blacklist_limit",
+    "parameter_type": "int",
+    "parameter_value": "50",
+    "client_require": 1
+  },
+  "black_card _available": {
+    "parameter_name": "black_card _available",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "bp_buy_limit": {
+    "parameter_name": "bp_buy_limit",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "break_overflow": {
+    "parameter_name": "break_overflow",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "build_coin_max": {
+    "parameter_name": "build_coin_max",
+    "parameter_type": "int",
+    "parameter_value": "9999",
+    "client_require": 1
+  },
+  "capsule_overflow_threthod": {
+    "parameter_name": "capsule_overflow_threthod",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "cd_reduction_limit": {
+    "parameter_name": "cd_reduction_limit",
+    "parameter_type": "int",
+    "parameter_value": "30",
+    "client_require": 1
+  },
+  "chat_censorship_switch": {
+    "parameter_name": "chat_censorship_switch",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "chat_refresh_rate": {
+    "parameter_name": "chat_refresh_rate",
+    "parameter_type": "int",
+    "parameter_value": "5",
+    "client_require": 1
+  },
+  "chs_reset_first_pay_time": {
+    "parameter_name": "chs_reset_first_pay_time",
+    "parameter_type": "int",
+    "parameter_value": "1531368000",
+    "client_require": 1
+  },
+  "clickCount": {
+    "parameter_name": "clickCount",
+    "parameter_type": "int",
+    "parameter_value": "300",
+    "client_require": 1
+  },
+  "clickLimit": {
+    "parameter_name": "clickLimit",
+    "parameter_type": "int",
+    "parameter_value": "5",
+    "client_require": 1
+  },
+  "Coin_Convert_propotion": {
+    "parameter_name": "Coin_Convert_propotion",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "commander_emoji_default": {
+    "parameter_name": "commander_emoji_default",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "commander_mall_limit": {
+    "parameter_name": "commander_mall_limit",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "commander_uniform_default": {
+    "parameter_name": "commander_uniform_default",
+    "parameter_type": "string",
+    "parameter_value": "1010:,1020:,1030:,1040:,1050:",
+    "client_require": 1
+  },
+  "damage_efficien": {
+    "parameter_name": "damage_efficien",
+    "parameter_type": "int",
+    "parameter_value": "12",
+    "client_require": 1
+  },
+  "damag_ereduce_coef": {
+    "parameter_name": "damag_ereduce_coef",
+    "parameter_type": "float",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "datacell_change_unit_time": {
+    "parameter_name": "datacell_change_unit_time",
+    "parameter_type": "int",
+    "parameter_value": "28800",
+    "client_require": 1
+  },
+  "data_dungeon_enemy_1": {
+    "parameter_name": "data_dungeon_enemy_1",
+    "parameter_type": "int",
+    "parameter_value": "111111",
+    "client_require": 1
+  },
+  "data_dungeon_enemy_2": {
+    "parameter_name": "data_dungeon_enemy_2",
+    "parameter_type": "int",
+    "parameter_value": "111111",
+    "client_require": 1
+  },
+  "data_dungeon_enemy_3": {
+    "parameter_name": "data_dungeon_enemy_3",
+    "parameter_type": "int",
+    "parameter_value": "111111",
+    "client_require": 1
+  },
+  "deffence_effect": {
+    "parameter_name": "deffence_effect",
+    "parameter_type": "string",
+    "parameter_value": "1,35,2.6,75,1.6,1",
+    "client_require": 1
+  },
+  "def_break_efficien": {
+    "parameter_name": "def_break_efficien",
+    "parameter_type": "int",
+    "parameter_value": "14",
+    "client_require": 1
+  },
+  "def_break_value": {
+    "parameter_name": "def_break_value",
+    "parameter_type": "int",
+    "parameter_value": "187",
+    "client_require": 1
+  },
+  "dodge_basic": {
+    "parameter_name": "dodge_basic",
+    "parameter_type": "string",
+    "parameter_value": "5,100",
+    "client_require": 1
+  },
+  "dodge_grow": {
+    "parameter_name": "dodge_grow",
+    "parameter_type": "string",
+    "parameter_value": "0.303,100,100,0",
+    "client_require": 1
+  },
+  "dodge_grow_after100": {
+    "parameter_name": "dodge_grow_after100",
+    "parameter_type": "string",
+    "parameter_value": "0.075,100,100,22.572",
+    "client_require": 1
+  },
+  "dormitory_score_basic": {
+    "parameter_name": "dormitory_score_basic",
+    "parameter_type": "int",
+    "parameter_value": "2500",
+    "client_require": 1
+  },
+  "dorm_build_coin_range_time": {
+    "parameter_name": "dorm_build_coin_range_time",
+    "parameter_type": "string",
+    "parameter_value": "11,12,13|17,18,19|22,23,24",
+    "client_require": 1
+  },
+  "dorm_carpet_size": {
+    "parameter_name": "dorm_carpet_size",
+    "parameter_type": "string",
+    "parameter_value": "35,14",
+    "client_require": 1
+  },
+  "dorm_floor_size": {
+    "parameter_name": "dorm_floor_size",
+    "parameter_type": "string",
+    "parameter_value": "35,14",
+    "client_require": 1
+  },
+  "dorm_furniture_position_init": {
+    "parameter_name": "dorm_furniture_position_init",
+    "parameter_type": "string",
+    "parameter_value": "201:18|4,202:3|6,203:10|6,204:0|0,205:10|0,206:6|6,207:0|0",
+    "client_require": 1
+  },
+  "dorm_material_coefficients": {
+    "parameter_name": "dorm_material_coefficients",
+    "parameter_type": "string",
+    "parameter_value": "80,10,0.1,60000,0.2,1.7,0.08,4.58,0.05,0",
+    "client_require": 1
+  },
+  "dorm_score_init": {
+    "parameter_name": "dorm_score_init",
+    "parameter_type": "int",
+    "parameter_value": "3200",
+    "client_require": 1
+  },
+  "dorm_visitor_limit": {
+    "parameter_name": "dorm_visitor_limit",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "dorm_visit_prize": {
+    "parameter_name": "dorm_visit_prize",
+    "parameter_type": "int",
+    "parameter_value": "71",
+    "client_require": 1
+  },
+  "dorm_visit_prize_limit": {
+    "parameter_name": "dorm_visit_prize_limit",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "dorm_wall_size": {
+    "parameter_name": "dorm_wall_size",
+    "parameter_type": "string",
+    "parameter_value": "35,23",
+    "client_require": 1
+  },
+  "download_on": {
+    "parameter_name": "download_on",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "draw_event_show": {
+    "parameter_name": "draw_event_show",
+    "parameter_type": "string",
+    "parameter_value": "19,20",
+    "client_require": 1
+  },
+  "duplicate2_win_item9": {
+    "parameter_name": "duplicate2_win_item9",
+    "parameter_type": "string",
+    "parameter_value": "1-2-3",
+    "client_require": 1
+  },
+  "duplicate5_win_item45": {
+    "parameter_name": "duplicate5_win_item45",
+    "parameter_type": "string",
+    "parameter_value": "8-20-30",
+    "client_require": 1
+  },
+  "duplicate_open_time": {
+    "parameter_name": "duplicate_open_time",
+    "parameter_type": "string",
+    "parameter_value": "1:3,6,0|2:1,4,0|3:2,5,0|101:1,2,3,4,5,6,0|5:1,2,3,4,5,6,0",
+    "client_require": 1
+  },
+  "enemy_color": {
+    "parameter_name": "enemy_color",
+    "parameter_type": "string",
+    "parameter_value": "0.5,0.75,1",
+    "client_require": 1
+  },
+  "enemy_effect_attack": {
+    "parameter_name": "enemy_effect_attack",
+    "parameter_type": "string",
+    "parameter_value": "22,50,35,2,0.85",
+    "client_require": 1
+  },
+  "enemy_effect_defence": {
+    "parameter_name": "enemy_effect_defence",
+    "parameter_type": "string",
+    "parameter_value": "0.25,35,300,100,1200",
+    "client_require": 1
+  },
+  "enemy_quickmove_maplimit": {
+    "parameter_name": "enemy_quickmove_maplimit",
+    "parameter_type": "int",
+    "parameter_value": "3600",
+    "client_require": 1
+  },
+  "equip_attr": {
+    "parameter_name": "equip_attr",
+    "parameter_type": "string",
+    "parameter_value": "pow,hit,dodge,speed,rate,critical_harm_rate,critical_percent,armor_piercing,armor,shield,damage_amplify,damage_reduction,night_view_percent,bullet_number_up",
+    "client_require": 1
+  },
+  "equip_enhance_switch": {
+    "parameter_name": "equip_enhance_switch",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "equip_exp_rate": {
+    "parameter_name": "equip_exp_rate",
+    "parameter_type": "string",
+    "parameter_value": "2:0.8,3:1,4:2,5:4",
+    "client_require": 1
+  },
+  "equip_intensive_exp": {
+    "parameter_name": "equip_intensive_exp",
+    "parameter_type": "int",
+    "parameter_value": "100",
+    "client_require": 1
+  },
+  "equip_level_limit": {
+    "parameter_name": "equip_level_limit",
+    "parameter_type": "string",
+    "parameter_value": "20-1,50-2,80-3",
+    "client_require": 1
+  },
+  "equip_lv_limit": {
+    "parameter_name": "equip_lv_limit",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "equip_rank_level_limit": {
+    "parameter_name": "equip_rank_level_limit",
+    "parameter_type": "string",
+    "parameter_value": "20-2,30-3,45-4,60-5",
+    "client_require": 1
+  },
+  "equip_rectify_switch": {
+    "parameter_name": "equip_rectify_switch",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "equip_strengthen_unlock_mission": {
+    "parameter_name": "equip_strengthen_unlock_mission",
+    "parameter_type": "int",
+    "parameter_value": "90004",
+    "client_require": 1
+  },
+  "equip_type_count": {
+    "parameter_name": "equip_type_count",
+    "parameter_type": "string",
+    "parameter_value": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+    "client_require": 1
+  },
+  "establish_switch": {
+    "parameter_name": "establish_switch",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "event_boss_kill_time": {
+    "parameter_name": "event_boss_kill_time",
+    "parameter_type": "int",
+    "parameter_value": "8",
+    "client_require": 1
+  },
+  "event_story_campaign": {
+    "parameter_name": "event_story_campaign",
+    "parameter_type": "string",
+    "parameter_value": "-1;-2,-3,-4,-5;",
+    "client_require": 1
+  },
+  "exchange_rate": {
+    "parameter_name": "exchange_rate",
+    "parameter_type": "float",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "exclude_skins": {
+    "parameter_name": "exclude_skins",
+    "parameter_type": "string",
+    "parameter_value": "0",
+    "client_require": 1
+  },
+  "explore_items": {
+    "parameter_name": "explore_items",
+    "parameter_type": "string",
+    "parameter_value": "1:4001,4002,4003,4004|2:4001,4002,4003,4004|3:6001,6004,6007|4:6002,6003,6005,6006,6008,6009,6010,6011,6012,6013",
+    "client_require": 1
+  },
+  "explore_mall_limit": {
+    "parameter_name": "explore_mall_limit",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "explore_time_span": {
+    "parameter_name": "explore_time_span",
+    "parameter_type": "int",
+    "parameter_value": "10800",
+    "client_require": 1
+  },
+  "fairy_armor_grow": {
+    "parameter_name": "fairy_armor_grow",
+    "parameter_type": "string",
+    "parameter_value": "5,0.05,100,100",
+    "client_require": 1
+  },
+  "fairy_buff_ratio": {
+    "parameter_name": "fairy_buff_ratio",
+    "parameter_type": "float",
+    "parameter_value": "0.1",
+    "client_require": 1
+  },
+  "fairy_critical_harm_rate_grow": {
+    "parameter_name": "fairy_critical_harm_rate_grow",
+    "parameter_type": "string",
+    "parameter_value": "10,0.101,100,100",
+    "client_require": 1
+  },
+  "fairy_dodge_grow": {
+    "parameter_name": "fairy_dodge_grow",
+    "parameter_type": "string",
+    "parameter_value": "20,0.202,100,100",
+    "client_require": 1
+  },
+  "fairy_exp_simulation": {
+    "parameter_name": "fairy_exp_simulation",
+    "parameter_type": "Int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "fairy_hit_grow": {
+    "parameter_name": "fairy_hit_grow",
+    "parameter_type": "string",
+    "parameter_value": "25,0.252,100,100",
+    "client_require": 1
+  },
+  "fairy_image_type": {
+    "parameter_name": "fairy_image_type",
+    "parameter_type": "string",
+    "parameter_value": "1:1,2;2:3,4;3:5",
+    "client_require": 1
+  },
+  "fairy_pow_grow": {
+    "parameter_name": "fairy_pow_grow",
+    "parameter_type": "string",
+    "parameter_value": "7,0.076,100,100",
+    "client_require": 1
+  },
+  "fairy_quality_exp_M": {
+    "parameter_name": "fairy_quality_exp_M",
+    "parameter_type": "string",
+    "parameter_value": "1,0.1",
+    "client_require": 1
+  },
+  "fairy_quality_exp_N": {
+    "parameter_name": "fairy_quality_exp_N",
+    "parameter_type": "string",
+    "parameter_value": "1.5,1",
+    "client_require": 1
+  },
+  "fairy_quality_need_level": {
+    "parameter_name": "fairy_quality_need_level",
+    "parameter_type": "string",
+    "parameter_value": "1:1,2:20,3:40,4:70,5:100",
+    "client_require": 1
+  },
+  "fairy_rectify_cost": {
+    "parameter_name": "fairy_rectify_cost",
+    "parameter_type": "string",
+    "parameter_value": "600,600,600,200,60",
+    "client_require": 1
+  },
+  "fairy_switch": {
+    "parameter_name": "fairy_switch",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "favor_attribute_0_9": {
+    "parameter_name": "favor_attribute_0_9",
+    "parameter_type": "float",
+    "parameter_value": "-0.05",
+    "client_require": 1
+  },
+  "favor_attribute_10_89": {
+    "parameter_name": "favor_attribute_10_89",
+    "parameter_type": "float",
+    "parameter_value": "0",
+    "client_require": 1
+  },
+  "favor_attribute_140": {
+    "parameter_name": "favor_attribute_140",
+    "parameter_type": "float",
+    "parameter_value": "0.1",
+    "client_require": 1
+  },
+  "favor_attribute_190": {
+    "parameter_name": "favor_attribute_190",
+    "parameter_type": "float",
+    "parameter_value": "0.15",
+    "client_require": 1
+  },
+  "favor_attribute_90_139": {
+    "parameter_name": "favor_attribute_90_139",
+    "parameter_type": "float",
+    "parameter_value": "0.05",
+    "client_require": 1
+  },
+  "favor_click": {
+    "parameter_name": "favor_click",
+    "parameter_type": "int",
+    "parameter_value": "2500",
+    "client_require": 1
+  },
+  "favor_enemy_boss": {
+    "parameter_name": "favor_enemy_boss",
+    "parameter_type": "int",
+    "parameter_value": "2",
+    "client_require": 1
+  },
+  "favor_enemy_common": {
+    "parameter_name": "favor_enemy_common",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "favor_fight_active_m": {
+    "parameter_name": "favor_fight_active_m",
+    "parameter_type": "int",
+    "parameter_value": "2",
+    "client_require": 1
+  },
+  "favor_fight_byboss_die": {
+    "parameter_name": "favor_fight_byboss_die",
+    "parameter_type": "int",
+    "parameter_value": "0",
+    "client_require": 1
+  },
+  "favor_fight_byboss_notdie": {
+    "parameter_name": "favor_fight_byboss_notdie",
+    "parameter_type": "int",
+    "parameter_value": "0",
+    "client_require": 1
+  },
+  "favor_fight_bynotboss_die": {
+    "parameter_name": "favor_fight_bynotboss_die",
+    "parameter_type": "int",
+    "parameter_value": "100000",
+    "client_require": 1
+  },
+  "favor_fight_bynotboss_notdie": {
+    "parameter_name": "favor_fight_bynotboss_notdie",
+    "parameter_type": "int",
+    "parameter_value": "50000",
+    "client_require": 1
+  },
+  "favor_fight_mvp": {
+    "parameter_name": "favor_fight_mvp",
+    "parameter_type": "float",
+    "parameter_value": "0.7",
+    "client_require": 1
+  },
+  "favor_fight_no_mvp": {
+    "parameter_name": "favor_fight_no_mvp",
+    "parameter_type": "float",
+    "parameter_value": "0",
+    "client_require": 1
+  },
+  "favor_furniture_basic": {
+    "parameter_name": "favor_furniture_basic",
+    "parameter_type": "int",
+    "parameter_value": "8",
+    "client_require": 1
+  },
+  "favor_init": {
+    "parameter_name": "favor_init",
+    "parameter_type": "int",
+    "parameter_value": "500000",
+    "client_require": 1
+  },
+  "favor_mindupdate_toplimit": {
+    "parameter_name": "favor_mindupdate_toplimit",
+    "parameter_type": "int",
+    "parameter_value": "2000000",
+    "client_require": 1
+  },
+  "favor_soulbind_toplimit": {
+    "parameter_name": "favor_soulbind_toplimit",
+    "parameter_type": "int",
+    "parameter_value": "1500000",
+    "client_require": 1
+  },
+  "favor_team_leader": {
+    "parameter_name": "favor_team_leader",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "favor_team_member_less50": {
+    "parameter_name": "favor_team_member_less50",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "favor_team_member_more50": {
+    "parameter_name": "favor_team_member_more50",
+    "parameter_type": "float",
+    "parameter_value": "0.3",
+    "client_require": 1
+  },
+  "favor_toplimit": {
+    "parameter_name": "favor_toplimit",
+    "parameter_type": "int",
+    "parameter_value": "1000000",
+    "client_require": 1
+  },
+  "fix_cost_damage": {
+    "parameter_name": "fix_cost_damage",
+    "parameter_type": "string",
+    "parameter_value": "0.5,1,10,0.7,40",
+    "client_require": 1
+  },
+  "fix_cost_normal": {
+    "parameter_name": "fix_cost_normal",
+    "parameter_type": "string",
+    "parameter_value": "0.5,1,10",
+    "client_require": 1
+  },
+  "fix_cost_squad1": {
+    "parameter_name": "fix_cost_squad1",
+    "parameter_type": "string",
+    "parameter_value": "20;1200",
+    "client_require": 1
+  },
+  "fix_cost_squad2": {
+    "parameter_name": "fix_cost_squad2",
+    "parameter_type": "string",
+    "parameter_value": "900;900;0.7;3600",
+    "client_require": 1
+  },
+  "fix_time_damage": {
+    "parameter_name": "fix_time_damage",
+    "parameter_type": "string",
+    "parameter_value": "20,5,400,35000,0.7,150",
+    "client_require": 1
+  },
+  "fix_time_normal": {
+    "parameter_name": "fix_time_normal",
+    "parameter_type": "string",
+    "parameter_value": "20,40",
+    "client_require": 1
+  },
+  "fix_time_squad_HP": {
+    "parameter_name": "fix_time_squad_HP",
+    "parameter_type": "string",
+    "parameter_value": "960;960;0.7;1440;5400",
+    "client_require": 1
+  },
+  "fix_time_squad_noHP": {
+    "parameter_name": "fix_time_squad_noHP",
+    "parameter_type": "string",
+    "parameter_value": "20;1440;3600",
+    "client_require": 1
+  },
+  "force_open_mission": {
+    "parameter_name": "force_open_mission",
+    "parameter_type": "string",
+    "parameter_value": "10160",
+    "client_require": 1
+  },
+  "foreign_switch": {
+    "parameter_name": "foreign_switch",
+    "parameter_type": "string",
+    "parameter_value": "0,0,0",
+    "client_require": 1
+  },
+  "friends_coefficients": {
+    "parameter_name": "friends_coefficients",
+    "parameter_type": "string",
+    "parameter_value": "10,10",
+    "client_require": 1
+  },
+  "friend_cosmetic_filter_type": {
+    "parameter_name": "friend_cosmetic_filter_type",
+    "parameter_type": "string",
+    "parameter_value": "1:1554,Activity;2:1555,Griffin;3:1556,Sangvis;4:1558,Skin;5:1559,Original;6:1560,Live2D;7:1561,Hot;8:1562,Rare;9:1563,New",
+    "client_require": 1
+  },
+  "friend_itemstore_switch": {
+    "parameter_name": "friend_itemstore_switch",
+    "parameter_type": "int",
+    "parameter_value": "0",
+    "client_require": 1
+  },
+  "friend_limit": {
+    "parameter_name": "friend_limit",
+    "parameter_type": "int",
+    "parameter_value": "100",
+    "client_require": 1
+  },
+  "friend_supported_prize": {
+    "parameter_name": "friend_supported_prize",
+    "parameter_type": "int",
+    "parameter_value": "72",
+    "client_require": 1
+  },
+  "friend_support_prize": {
+    "parameter_name": "friend_support_prize",
+    "parameter_type": "int",
+    "parameter_value": "70",
+    "client_require": 1
+  },
+  "furniture_coin_toplimit": {
+    "parameter_name": "furniture_coin_toplimit",
+    "parameter_type": "int",
+    "parameter_value": "300000",
+    "client_require": 1
+  },
+  "giftbag_limit": {
+    "parameter_name": "giftbag_limit",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "gizp_output": {
+    "parameter_name": "gizp_output",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "guild_application_check_limit": {
+    "parameter_name": "guild_application_check_limit",
+    "parameter_type": "int",
+    "parameter_value": "100",
+    "client_require": 1
+  },
+  "guild_application_limit": {
+    "parameter_name": "guild_application_limit",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "guild_change_name_cost": {
+    "parameter_name": "guild_change_name_cost",
+    "parameter_type": "int",
+    "parameter_value": "300",
+    "client_require": 1
+  },
+  "guild_create_cost": {
+    "parameter_name": "guild_create_cost",
+    "parameter_type": "string",
+    "parameter_value": "1000,1000,1000,1000",
+    "client_require": 1
+  },
+  "guild_furniture_donate_rate": {
+    "parameter_name": "guild_furniture_donate_rate",
+    "parameter_type": "string",
+    "parameter_value": "5:42-10,4:43-8,3:44-6,2:45-4",
+    "client_require": 1
+  },
+  "guild_furniture_score_rate": {
+    "parameter_name": "guild_furniture_score_rate",
+    "parameter_type": "string",
+    "parameter_value": "5:10,4:8,3:6,2:4",
+    "client_require": 1
+  },
+  "guild_impeach_last_time": {
+    "parameter_name": "guild_impeach_last_time",
+    "parameter_type": "int",
+    "parameter_value": "72",
+    "client_require": 1
+  },
+  "guild_impeach_limit": {
+    "parameter_name": "guild_impeach_limit",
+    "parameter_type": "int",
+    "parameter_value": "15",
+    "client_require": 1
+  },
+  "guild_invite_check_limit": {
+    "parameter_name": "guild_invite_check_limit",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "guild_invite_last_time": {
+    "parameter_name": "guild_invite_last_time",
+    "parameter_type": "int",
+    "parameter_value": "86400",
+    "client_require": 1
+  },
+  "guild_invite_limit": {
+    "parameter_name": "guild_invite_limit",
+    "parameter_type": "int",
+    "parameter_value": "100",
+    "client_require": 1
+  },
+  "guild_max_contribution_week": {
+    "parameter_name": "guild_max_contribution_week",
+    "parameter_type": "int",
+    "parameter_value": "1000",
+    "client_require": 1
+  },
+  "guild_name_change_gem": {
+    "parameter_name": "guild_name_change_gem",
+    "parameter_type": "int",
+    "parameter_value": "500",
+    "client_require": 1
+  },
+  "guild_quit_cd": {
+    "parameter_name": "guild_quit_cd",
+    "parameter_type": "int",
+    "parameter_value": "86400",
+    "client_require": 1
+  },
+  "gun_disassembly": {
+    "parameter_name": "gun_disassembly",
+    "parameter_type": "string",
+    "parameter_value": "1-0,2-0,3-1,4-3,5-5,6-10",
+    "client_require": 1
+  },
+  "gun_grow_M": {
+    "parameter_name": "gun_grow_M",
+    "parameter_type": "string",
+    "parameter_value": "100,300,50,50",
+    "client_require": 1
+  },
+  "gun_grow_N": {
+    "parameter_name": "gun_grow_N",
+    "parameter_type": "float",
+    "parameter_value": "1.2",
+    "client_require": 1
+  },
+  "gun_max_level": {
+    "parameter_name": "gun_max_level",
+    "parameter_type": "string",
+    "parameter_value": "100,110,115,120",
+    "client_require": 1
+  },
+  "gun_mindupdate_indexs": {
+    "parameter_name": "gun_mindupdate_indexs",
+    "parameter_type": "int",
+    "parameter_value": "20000",
+    "client_require": 1
+  },
+  "gun_preset_max": {
+    "parameter_name": "gun_preset_max",
+    "parameter_type": "int",
+    "parameter_value": "4",
+    "client_require": 1
+  },
+  "gun_recover_core": {
+    "parameter_name": "gun_recover_core",
+    "parameter_type": "string",
+    "parameter_value": "1:15,2:1,3:3,4:9,5:15",
+    "client_require": 1
+  },
+  "gun_tag_like_color": {
+    "parameter_name": "gun_tag_like_color",
+    "parameter_type": "int",
+    "parameter_value": "2",
+    "client_require": 1
+  },
+  "gun_tag_like_limit": {
+    "parameter_name": "gun_tag_like_limit",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "hg_effect_grow": {
+    "parameter_name": "hg_effect_grow",
+    "parameter_type": "string",
+    "parameter_value": "0.75,0.25",
+    "client_require": 1
+  },
+  "hit_basic": {
+    "parameter_name": "hit_basic",
+    "parameter_type": "string",
+    "parameter_value": "5,100",
+    "client_require": 1
+  },
+  "hit_grow": {
+    "parameter_name": "hit_grow",
+    "parameter_type": "string",
+    "parameter_value": "0.303,100,100,0",
+    "client_require": 1
+  },
+  "hit_grow_after100": {
+    "parameter_name": "hit_grow_after100",
+    "parameter_type": "string",
+    "parameter_value": "0.075,100,100,22.572",
+    "client_require": 1
+  },
+  "hostage_power_rate": {
+    "parameter_name": "hostage_power_rate",
+    "parameter_type": "float",
+    "parameter_value": "0.15",
+    "client_require": 1
+  },
+  "jp_reset_first_pay_time": {
+    "parameter_name": "jp_reset_first_pay_time",
+    "parameter_type": "int",
+    "parameter_value": "-1",
+    "client_require": 1
+  },
+  "kalina_favor_click": {
+    "parameter_name": "kalina_favor_click",
+    "parameter_type": "int",
+    "parameter_value": "5",
+    "client_require": 1
+  },
+  "kalina_favor_n": {
+    "parameter_name": "kalina_favor_n",
+    "parameter_type": "int",
+    "parameter_value": "5",
+    "client_require": 1
+  },
+  "kr_reset_first_pay_time": {
+    "parameter_name": "kr_reset_first_pay_time",
+    "parameter_type": "int",
+    "parameter_value": "1531463400",
+    "client_require": 1
+  },
+  "life_basic": {
+    "parameter_name": "life_basic",
+    "parameter_type": "string",
+    "parameter_value": "55,0.555,100",
+    "client_require": 1
+  },
+  "life_basic_after100": {
+    "parameter_name": "life_basic_after100",
+    "parameter_type": "string",
+    "parameter_value": "96.283,0.138,100",
+    "client_require": 1
+  },
+  "limited_pool": {
+    "parameter_name": "limited_pool",
+    "parameter_type": "string",
+    "parameter_value": "6:1,5:4,4:18,3:27",
+    "client_require": 1
+  },
+  "live_efficien": {
+    "parameter_name": "live_efficien",
+    "parameter_type": "float",
+    "parameter_value": "0.5",
+    "client_require": 1
+  },
+  "max_attack_rate": {
+    "parameter_name": "max_attack_rate",
+    "parameter_type": "int",
+    "parameter_value": "120",
+    "client_require": 1
+  },
+  "max_fairy": {
+    "parameter_name": "max_fairy",
+    "parameter_type": "int",
+    "parameter_value": "200",
+    "client_require": 1
+  },
+  "max_gun_exp": {
+    "parameter_name": "max_gun_exp",
+    "parameter_type": "string",
+    "parameter_value": "3263300,5263300,10083300,30283300",
+    "client_require": 1
+  },
+  "max_research_slot": {
+    "parameter_name": "max_research_slot",
+    "parameter_type": "int",
+    "parameter_value": "4",
+    "client_require": 1
+  },
+  "medal_on_card": {
+    "parameter_name": "medal_on_card",
+    "parameter_type": "int",
+    "parameter_value": "3",
+    "client_require": 1
+  },
+  "medal_switch": {
+    "parameter_name": "medal_switch",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "Memory_pieces_max": {
+    "parameter_name": "Memory_pieces_max",
+    "parameter_type": "int",
+    "parameter_value": "9999",
+    "client_require": 1
+  },
+  "messagelist_refresh_rate": {
+    "parameter_name": "messagelist_refresh_rate",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "message_content_limit": {
+    "parameter_name": "message_content_limit",
+    "parameter_type": "int",
+    "parameter_value": "200",
+    "client_require": 1
+  },
+  "message_frequency": {
+    "parameter_name": "message_frequency",
+    "parameter_type": "int",
+    "parameter_value": "3",
+    "client_require": 1
+  },
+  "message_limit": {
+    "parameter_name": "message_limit",
+    "parameter_type": "int",
+    "parameter_value": "50",
+    "client_require": 1
+  },
+  "message_storage_time": {
+    "parameter_name": "message_storage_time",
+    "parameter_type": "int",
+    "parameter_value": "60",
+    "client_require": 1
+  },
+  "mica_bind_date": {
+    "parameter_name": "mica_bind_date",
+    "parameter_type": "string",
+    "parameter_value": "2013-11-02 00:00:00;2013-10-30 10:00:00",
+    "client_require": 1
+  },
+  "mindupdate_condition": {
+    "parameter_name": "mindupdate_condition",
+    "parameter_type": "string",
+    "parameter_value": "1-100-1000000,2-110-1000000,3-115-1000000",
+    "client_require": 1
+  },
+  "mindupdate_exp_double": {
+    "parameter_name": "mindupdate_exp_double",
+    "parameter_type": "float",
+    "parameter_value": "2",
+    "client_require": 1
+  },
+  "min_attack_rate": {
+    "parameter_name": "min_attack_rate",
+    "parameter_type": "int",
+    "parameter_value": "15",
+    "client_require": 1
+  },
+  "min_attribute": {
+    "parameter_name": "min_attribute",
+    "parameter_type": "string",
+    "parameter_value": "pow:0,hit:1,dodge:0,speed:0,rate:1,critical_harm_rate:0,critical_percent:0,armor_piercing:0,armor:0,def:0,defBreak:0",
+    "client_require": 1
+  },
+  "min_hit": {
+    "parameter_name": "min_hit",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "mission_event_opentime_white_list": {
+    "parameter_name": "mission_event_opentime_white_list",
+    "parameter_type": "string",
+    "parameter_value": "",
+    "client_require": 1
+  },
+  "mission_group_reset_draw_max": {
+    "parameter_name": "mission_group_reset_draw_max",
+    "parameter_type": "string",
+    "parameter_value": "1,100000;2,100000;3,100000;4,100000;5,100000;6,100000;7,100000;8,100000;9,100000",
+    "client_require": 1
+  },
+  "mission_group_reset_draw_max_client": {
+    "parameter_name": "mission_group_reset_draw_max_client",
+    "parameter_type": "string",
+    "parameter_value": "1,0;2,0;3,0;4,100000;5,100000;6,100000;7,0;8,100000;9,100000",
+    "client_require": 1
+  },
+  "naive_build_gun_formula": {
+    "parameter_name": "naive_build_gun_formula",
+    "parameter_type": "string",
+    "parameter_value": "",
+    "client_require": 1
+  },
+  "night_ai_weight": {
+    "parameter_name": "night_ai_weight",
+    "parameter_type": "string",
+    "parameter_value": "1:40,2:30,3:8,4:8,5:1",
+    "client_require": 1
+  },
+  "night_friend_team_condition": {
+    "parameter_name": "night_friend_team_condition",
+    "parameter_type": "string",
+    "parameter_value": "0,0",
+    "client_require": 1
+  },
+  "night_hand_gun_range": {
+    "parameter_name": "night_hand_gun_range",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "night_hit_debuff": {
+    "parameter_name": "night_hit_debuff",
+    "parameter_type": "float",
+    "parameter_value": "-0.9",
+    "client_require": 1
+  },
+  "night_radar_range": {
+    "parameter_name": "night_radar_range",
+    "parameter_type": "int",
+    "parameter_value": "2",
+    "client_require": 1
+  },
+  "normal_combat_campaign_isopen": {
+    "parameter_name": "normal_combat_campaign_isopen",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "normal_develop_gun_balance_para": {
+    "parameter_name": "normal_develop_gun_balance_para",
+    "parameter_type": "int",
+    "parameter_value": "100",
+    "client_require": 1
+  },
+  "normal_develop_type_T": {
+    "parameter_name": "normal_develop_type_T",
+    "parameter_type": "string",
+    "parameter_value": "1,1,1,1,1.5",
+    "client_require": 1
+  },
+  "not_certified_user": {
+    "parameter_name": "not_certified_user",
+    "parameter_type": "int",
+    "parameter_value": "10800",
+    "client_require": 1
+  },
+  "offset_fairy_id": {
+    "parameter_name": "offset_fairy_id",
+    "parameter_type": "int",
+    "parameter_value": "1000",
+    "client_require": 1
+  },
+  "offset_gun_id": {
+    "parameter_name": "offset_gun_id",
+    "parameter_type": "int",
+    "parameter_value": "1000",
+    "client_require": 1
+  },
+  "pay_value": {
+    "parameter_name": "pay_value",
+    "parameter_type": "float",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "permanent_pool": {
+    "parameter_name": "permanent_pool",
+    "parameter_type": "string",
+    "parameter_value": "6:1,5:4,4:18,3:27",
+    "client_require": 1
+  },
+  "pet_decorate_limit": {
+    "parameter_name": "pet_decorate_limit",
+    "parameter_type": "int",
+    "parameter_value": "3000",
+    "client_require": 1
+  },
+  "plan_mode_limit": {
+    "parameter_name": "plan_mode_limit",
+    "parameter_type": "int",
+    "parameter_value": "40",
+    "client_require": 1
+  },
+  "plan_mode_off": {
+    "parameter_name": "plan_mode_off",
+    "parameter_type": "int",
+    "parameter_value": "0",
+    "client_require": 1
+  },
+  "plan_mode_permit_array": {
+    "parameter_name": "plan_mode_permit_array",
+    "parameter_type": "string",
+    "parameter_value": "1:2,2:2,0:0,1:0,1:1,1:3,2:0,2:1,2:3,3:0,3:1,3:3,4:0,4:1,4:3,5:0,5:1,5:3,6:0,6:1,6:3,7:0,7:1,8:0,8:1,9:0,9:1,10:0,10:1",
+    "client_require": 1
+  },
+  "power_basic": {
+    "parameter_name": "power_basic",
+    "parameter_type": "string",
+    "parameter_value": "16,100",
+    "client_require": 1
+  },
+  "power_grow": {
+    "parameter_name": "power_grow",
+    "parameter_type": "string",
+    "parameter_value": "0.242,100,100,0",
+    "client_require": 1
+  },
+  "power_grow_after100": {
+    "parameter_name": "power_grow_after100",
+    "parameter_type": "string",
+    "parameter_value": "0.06,100,100,18.018",
+    "client_require": 1
+  },
+  "precise_coef": {
+    "parameter_name": "precise_coef",
+    "parameter_type": "float",
+    "parameter_value": "8",
+    "client_require": 1
+  },
+  "precise_min": {
+    "parameter_name": "precise_min",
+    "parameter_type": "float",
+    "parameter_value": "0.4",
+    "client_require": 1
+  },
+  "property_rate": {
+    "parameter_name": "property_rate",
+    "parameter_type": "string",
+    "parameter_value": "0.01,1,1,0.01,1,1",
+    "client_require": 1
+  },
+  "random_get_a": {
+    "parameter_name": "random_get_a",
+    "parameter_type": "float",
+    "parameter_value": "0.4",
+    "client_require": 1
+  },
+  "random_get_b": {
+    "parameter_name": "random_get_b",
+    "parameter_type": "float",
+    "parameter_value": "0.045",
+    "client_require": 1
+  },
+  "random_get_c": {
+    "parameter_name": "random_get_c",
+    "parameter_type": "int",
+    "parameter_value": "32",
+    "client_require": 1
+  },
+  "ranking_onlist_number": {
+    "parameter_name": "ranking_onlist_number",
+    "parameter_type": "int",
+    "parameter_value": "20000",
+    "client_require": 1
+  },
+  "rank_hunting_switch": {
+    "parameter_name": "rank_hunting_switch",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "rank_switch": {
+    "parameter_name": "rank_switch",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "rate_basic": {
+    "parameter_name": "rate_basic",
+    "parameter_type": "string",
+    "parameter_value": "45,100",
+    "client_require": 1
+  },
+  "rate_grow": {
+    "parameter_name": "rate_grow",
+    "parameter_type": "string",
+    "parameter_value": "0.181,100,100,0",
+    "client_require": 1
+  },
+  "rate_grow_after100": {
+    "parameter_name": "rate_grow_after100",
+    "parameter_type": "string",
+    "parameter_value": "0.022,100,100,15.741",
+    "client_require": 1
+  },
+  "rate_limit": {
+    "parameter_name": "rate_limit",
+    "parameter_type": "string",
+    "parameter_value": "120,120,120,120,1000,60",
+    "client_require": 1
+  },
+  "recharge_img": {
+    "parameter_name": "recharge_img",
+    "parameter_type": "string",
+    "parameter_value": "recharge_20180330.png,rechargeBG_20180330.png",
+    "client_require": 1
+  },
+  "rectify_cost": {
+    "parameter_name": "rectify_cost",
+    "parameter_type": "string",
+    "parameter_value": "100,100,100,30,15",
+    "client_require": 1
+  },
+  "rectify_pre_mission": {
+    "parameter_name": "rectify_pre_mission",
+    "parameter_type": "int",
+    "parameter_value": "90008",
+    "client_require": 1
+  },
+  "rectify_voucher_cost": {
+    "parameter_name": "rectify_voucher_cost",
+    "parameter_type": "string",
+    "parameter_value": "1-5,2-10",
+    "client_require": 1
+  },
+  "reload_coef1": {
+    "parameter_name": "reload_coef1",
+    "parameter_type": "int",
+    "parameter_value": "1500",
+    "client_require": 1
+  },
+  "reload_coef2": {
+    "parameter_name": "reload_coef2",
+    "parameter_type": "int",
+    "parameter_value": "300",
+    "client_require": 1
+  },
+  "rename_control": {
+    "parameter_name": "rename_control",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "ricochet_coef": {
+    "parameter_name": "ricochet_coef",
+    "parameter_type": "float",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "room_decorate_limit": {
+    "parameter_name": "room_decorate_limit",
+    "parameter_type": "int",
+    "parameter_value": "10000",
+    "client_require": 1
+  },
+  "same_equip_exp_rate": {
+    "parameter_name": "same_equip_exp_rate",
+    "parameter_type": "int",
+    "parameter_value": "3",
+    "client_require": 1
+  },
+  "same_furniture_limit": {
+    "parameter_name": "same_furniture_limit",
+    "parameter_type": "string",
+    "parameter_value": "299:3",
+    "client_require": 1
+  },
+  "server_time_switch": {
+    "parameter_name": "server_time_switch",
+    "parameter_type": "int",
+    "parameter_value": "0",
+    "client_require": 1
+  },
+  "sg_reload_time": {
+    "parameter_name": "sg_reload_time",
+    "parameter_type": "string",
+    "parameter_value": "0.5,1.5",
+    "client_require": 1
+  },
+  "sg_target_num": {
+    "parameter_name": "sg_target_num",
+    "parameter_type": "int",
+    "parameter_value": "3",
+    "client_require": 1
+  },
+  "share_global_switch": {
+    "parameter_name": "share_global_switch",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "share_qrcode_switch ": {
+    "parameter_name": "share_qrcode_switch ",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "show_additional_index": {
+    "parameter_name": "show_additional_index",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "show_fairy_additional_index": {
+    "parameter_name": "show_fairy_additional_index",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "simple_battle_switch": {
+    "parameter_name": "simple_battle_switch",
+    "parameter_type": "string",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "skill2_effect": {
+    "parameter_name": "skill2_effect",
+    "parameter_type": "string",
+    "parameter_value": "15,2",
+    "client_require": 1
+  },
+  "skill_cd_reduction_limit": {
+    "parameter_name": "skill_cd_reduction_limit",
+    "parameter_type": "int",
+    "parameter_value": "30",
+    "client_require": 1
+  },
+  "skill_effect": {
+    "parameter_name": "skill_effect",
+    "parameter_type": "string",
+    "parameter_value": "35,5",
+    "client_require": 1
+  },
+  "skill_efficien1": {
+    "parameter_name": "skill_efficien1",
+    "parameter_type": "int",
+    "parameter_value": "120",
+    "client_require": 1
+  },
+  "skill_efficien2": {
+    "parameter_name": "skill_efficien2",
+    "parameter_type": "int",
+    "parameter_value": "120",
+    "client_require": 1
+  },
+  "skill_lv_efficien1": {
+    "parameter_name": "skill_lv_efficien1",
+    "parameter_type": "int",
+    "parameter_value": "30",
+    "client_require": 1
+  },
+  "skill_lv_efficien2": {
+    "parameter_name": "skill_lv_efficien2",
+    "parameter_type": "int",
+    "parameter_value": "30",
+    "client_require": 1
+  },
+  "soulbind_global_switch": {
+    "parameter_name": "soulbind_global_switch",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "soul_bond_time_range": {
+    "parameter_name": "soul_bond_time_range",
+    "parameter_type": "string",
+    "parameter_value": "2016-09-23 00:00:00,2018-05-03 23:59:59",
+    "client_require": 1
+  },
+  "spare_dorm_decoration": {
+    "parameter_name": "spare_dorm_decoration",
+    "parameter_type": "string",
+    "parameter_value": "207:0|0,204:0|0",
+    "client_require": 1
+  },
+  "special_develop_guarantee": {
+    "parameter_name": "special_develop_guarantee",
+    "parameter_type": "string",
+    "parameter_value": "10000,3",
+    "client_require": 1
+  },
+  "special_develop_gun": {
+    "parameter_name": "special_develop_gun",
+    "parameter_type": "string",
+    "parameter_value": "100,1",
+    "client_require": 1
+  },
+  "special_develop_input": {
+    "parameter_name": "special_develop_input",
+    "parameter_type": "string",
+    "parameter_value": "1:3,20:5,50:10",
+    "client_require": 1
+  },
+  "special_develop_quickInput": {
+    "parameter_name": "special_develop_quickInput",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "special_develop_switch": {
+    "parameter_name": "special_develop_switch",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "special_equip_build": {
+    "parameter_name": "special_equip_build",
+    "parameter_type": "int",
+    "parameter_value": "60",
+    "client_require": 1
+  },
+  "special_equip_develop_switch": {
+    "parameter_name": "special_equip_develop_switch",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "special_equip_input": {
+    "parameter_name": "special_equip_input",
+    "parameter_type": "string",
+    "parameter_value": "1:2,20:4,50:6",
+    "client_require": 1
+  },
+  "special_equip_quickinput": {
+    "parameter_name": "special_equip_quickinput",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "special_equip_resource_range": {
+    "parameter_name": "special_equip_resource_range",
+    "parameter_type": "string",
+    "parameter_value": "500,5000",
+    "client_require": 1
+  },
+  "speed_basic": {
+    "parameter_name": "speed_basic",
+    "parameter_type": "string",
+    "parameter_value": "10,100",
+    "client_require": 1
+  },
+  "spendpoint_max": {
+    "parameter_name": "spendpoint_max",
+    "parameter_type": "string",
+    "parameter_value": "1,5000;2,20000;3,-1",
+    "client_require": 1
+  },
+  "squad_advanced_data_cell": {
+    "parameter_name": "squad_advanced_data_cell",
+    "parameter_type": "int",
+    "parameter_value": "20",
+    "client_require": 1
+  },
+  "squad_ap": {
+    "parameter_name": "squad_ap",
+    "parameter_type": "string",
+    "parameter_value": "1,2,1",
+    "client_require": 1
+  },
+  "squad_atk_speed_coef": {
+    "parameter_name": "squad_atk_speed_coef",
+    "parameter_type": "int",
+    "parameter_value": "50",
+    "client_require": 1
+  },
+  "squad_basic_lv": {
+    "parameter_name": "squad_basic_lv",
+    "parameter_type": "int",
+    "parameter_value": "50",
+    "client_require": 1
+  },
+  "squad_battle_attack_cost": {
+    "parameter_name": "squad_battle_attack_cost",
+    "parameter_type": "string",
+    "parameter_value": "2,1",
+    "client_require": 1
+  },
+  "squad_battle_exp_damping": {
+    "parameter_name": "squad_battle_exp_damping",
+    "parameter_type": "string",
+    "parameter_value": "10,5",
+    "client_require": 1
+  },
+  "squad_battle_exp_M1": {
+    "parameter_name": "squad_battle_exp_M1",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "squad_battle_exp_M2": {
+    "parameter_name": "squad_battle_exp_M2",
+    "parameter_type": "string",
+    "parameter_value": "10,3",
+    "client_require": 1
+  },
+  "squad_battle_grade": {
+    "parameter_name": "squad_battle_grade",
+    "parameter_type": "string",
+    "parameter_value": "1,0.8",
+    "client_require": 1
+  },
+  "squad_chip_abandon_resource": {
+    "parameter_name": "squad_chip_abandon_resource",
+    "parameter_type": "string",
+    "parameter_value": "2:2,2,2,2|3:3,3,3,3|4:4,4,4,4|5:5,5,5,5",
+    "client_require": 1
+  },
+  "squad_chip_exp_basic_ratio": {
+    "parameter_name": "squad_chip_exp_basic_ratio",
+    "parameter_type": "string",
+    "parameter_value": "2:50,3:100,4:200,5:300",
+    "client_require": 1
+  },
+  "squad_chip_exp_change_ratio": {
+    "parameter_name": "squad_chip_exp_change_ratio",
+    "parameter_type": "float",
+    "parameter_value": "0.8",
+    "client_require": 1
+  },
+  "squad_chip_exp_indeed_ratio": {
+    "parameter_name": "squad_chip_exp_indeed_ratio",
+    "parameter_type": "string",
+    "parameter_value": "2:1,3:1,4:2,5:3",
+    "client_require": 1
+  },
+  "squad_chip_level_limit": {
+    "parameter_name": "squad_chip_level_limit",
+    "parameter_type": "string",
+    "parameter_value": "2:0,3:20,4:40,5:60",
+    "client_require": 1
+  },
+  "squad_chip_max_lv": {
+    "parameter_name": "squad_chip_max_lv",
+    "parameter_type": "int",
+    "parameter_value": "30",
+    "client_require": 1
+  },
+  "squad_chip_rotate_cost": {
+    "parameter_name": "squad_chip_rotate_cost",
+    "parameter_type": "string",
+    "parameter_value": "2:20,3:30,4:40,5:50",
+    "client_require": 1
+  },
+  "squad_chip_same_color_bonus": {
+    "parameter_name": "squad_chip_same_color_bonus",
+    "parameter_type": "int",
+    "parameter_value": "120",
+    "client_require": 1
+  },
+  "squad_chip_strengthen_cost": {
+    "parameter_name": "squad_chip_strengthen_cost",
+    "parameter_type": "string",
+    "parameter_value": "0.2,0.2,0.2,0.07",
+    "client_require": 1
+  },
+  "squad_dodge_coef": {
+    "parameter_name": "squad_dodge_coef",
+    "parameter_type": "int",
+    "parameter_value": "23",
+    "client_require": 1
+  },
+  "squad_hit_coef": {
+    "parameter_name": "squad_hit_coef",
+    "parameter_type": "int",
+    "parameter_value": "35",
+    "client_require": 1
+  },
+  "squad_lv_max": {
+    "parameter_name": "squad_lv_max",
+    "parameter_type": "int",
+    "parameter_value": "100",
+    "client_require": 1
+  },
+  "squad_mission_attack_cost": {
+    "parameter_name": "squad_mission_attack_cost",
+    "parameter_type": "string",
+    "parameter_value": "2,2",
+    "client_require": 1
+  },
+  "squad_mission_standby_cost": {
+    "parameter_name": "squad_mission_standby_cost",
+    "parameter_type": "string",
+    "parameter_value": "0,1",
+    "client_require": 1
+  },
+  "squad_population": {
+    "parameter_name": "squad_population",
+    "parameter_type": "int",
+    "parameter_value": "3",
+    "client_require": 1
+  },
+  "squad_primary_data_cell": {
+    "parameter_name": "squad_primary_data_cell",
+    "parameter_type": "int",
+    "parameter_value": "20",
+    "client_require": 1
+  },
+  "squad_rate_max": {
+    "parameter_name": "squad_rate_max",
+    "parameter_type": "int",
+    "parameter_value": "50",
+    "client_require": 1
+  },
+  "squad_rate_min": {
+    "parameter_name": "squad_rate_min",
+    "parameter_type": "int",
+    "parameter_value": "5",
+    "client_require": 1
+  },
+  "squad_repair_cost": {
+    "parameter_name": "squad_repair_cost",
+    "parameter_type": "string",
+    "parameter_value": "10,50,50",
+    "client_require": 1
+  },
+  "squad_repair_lv_coef": {
+    "parameter_name": "squad_repair_lv_coef",
+    "parameter_type": "int",
+    "parameter_value": "50",
+    "client_require": 1
+  },
+  "squad_repair_resource_coef": {
+    "parameter_name": "squad_repair_resource_coef",
+    "parameter_type": "string",
+    "parameter_value": "100,50",
+    "client_require": 1
+  },
+  "squad_repair_time_coef": {
+    "parameter_name": "squad_repair_time_coef",
+    "parameter_type": "int",
+    "parameter_value": "1728",
+    "client_require": 1
+  },
+  "squad_skill_training_battery": {
+    "parameter_name": "squad_skill_training_battery",
+    "parameter_type": "string",
+    "parameter_value": "1:50,2:80,3:100",
+    "client_require": 1
+  },
+  "squad_spreport_battery": {
+    "parameter_name": "squad_spreport_battery",
+    "parameter_type": "int",
+    "parameter_value": "3",
+    "client_require": 1
+  },
+  "squad_spreport_exp": {
+    "parameter_name": "squad_spreport_exp",
+    "parameter_type": "int",
+    "parameter_value": "3000",
+    "client_require": 1
+  },
+  "squad_strengthen_number": {
+    "parameter_name": "squad_strengthen_number",
+    "parameter_type": "string",
+    "parameter_value": "1,3,3,2,1,10,5,1",
+    "client_require": 1
+  },
+  "squad_training_battery": {
+    "parameter_name": "squad_training_battery",
+    "parameter_type": "int",
+    "parameter_value": "5",
+    "client_require": 1
+  },
+  "squad_training_time_limit": {
+    "parameter_name": "squad_training_time_limit",
+    "parameter_type": "int",
+    "parameter_value": "24",
+    "client_require": 1
+  },
+  "squad_type_classify": {
+    "parameter_name": "squad_type_classify",
+    "parameter_type": "string",
+    "parameter_value": "1:1,2,3|2:4,5|3:",
+    "client_require": 1
+  },
+  "ssoc_change_unit_time": {
+    "parameter_name": "ssoc_change_unit_time",
+    "parameter_type": "int",
+    "parameter_value": "21600",
+    "client_require": 1
+  },
+  "stamina_recover_max": {
+    "parameter_name": "stamina_recover_max",
+    "parameter_type": "int",
+    "parameter_value": "6",
+    "client_require": 1
+  },
+  "storage_limit": {
+    "parameter_name": "storage_limit",
+    "parameter_type": "int",
+    "parameter_value": "2500",
+    "client_require": 1
+  },
+  "support_daily_limit": {
+    "parameter_name": "support_daily_limit",
+    "parameter_type": "int",
+    "parameter_value": "20",
+    "client_require": 1
+  },
+  "support_limit": {
+    "parameter_name": "support_limit",
+    "parameter_type": "int",
+    "parameter_value": "100",
+    "client_require": 1
+  },
+  "support_reward_limit": {
+    "parameter_name": "support_reward_limit",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "theater_adaptive_coef": {
+    "parameter_name": "theater_adaptive_coef",
+    "parameter_type": "string",
+    "parameter_value": "500,3",
+    "client_require": 1
+  },
+  "theater_adaptive_limit": {
+    "parameter_name": "theater_adaptive_limit",
+    "parameter_type": "int",
+    "parameter_value": "24",
+    "client_require": 1
+  },
+  "theater_boss_pt_rank_coef": {
+    "parameter_name": "theater_boss_pt_rank_coef",
+    "parameter_type": "string",
+    "parameter_value": "0.4,0.3,0.2,0.1",
+    "client_require": 1
+  },
+  "theater_defeated_coef": {
+    "parameter_name": "theater_defeated_coef",
+    "parameter_type": "int",
+    "parameter_value": "60",
+    "client_require": 1
+  },
+  "theater_scout_limit_coef": {
+    "parameter_name": "theater_scout_limit_coef",
+    "parameter_type": "int",
+    "parameter_value": "3",
+    "client_require": 1
+  },
+  "trail_switch": {
+    "parameter_name": "trail_switch",
+    "parameter_type": "int",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "translate_lv": {
+    "parameter_name": "translate_lv",
+    "parameter_type": "int",
+    "parameter_value": "10",
+    "client_require": 1
+  },
+  "translate_switch": {
+    "parameter_name": "translate_switch",
+    "parameter_type": "int",
+    "parameter_value": "0",
+    "client_require": 1
+  },
+  "translate_time_config": {
+    "parameter_name": "translate_time_config",
+    "parameter_type": "string",
+    "parameter_value": "1504800000,1506787199",
+    "client_require": 1
+  },
+  "trial_stamina_cost": {
+    "parameter_name": "trial_stamina_cost",
+    "parameter_type": "int",
+    "parameter_value": "5",
+    "client_require": 1
+  },
+  "trial_unlock_mission": {
+    "parameter_name": "trial_unlock_mission",
+    "parameter_type": "int",
+    "parameter_value": "90008",
+    "client_require": 1
+  },
+  "tutorial_guide_switch": {
+    "parameter_name": "tutorial_guide_switch",
+    "parameter_type": "string",
+    "parameter_value": "1",
+    "client_require": 1
+  },
+  "tw_reset_first_pay_time": {
+    "parameter_name": "tw_reset_first_pay_time",
+    "parameter_type": "int",
+    "parameter_value": "1531449000",
+    "client_require": 1
+  },
+  "use_friend_team_cd": {
+    "parameter_name": "use_friend_team_cd",
+    "parameter_type": "int",
+    "parameter_value": "21600",
+    "client_require": 1
+  },
+  "visit_period": {
+    "parameter_name": "visit_period",
+    "parameter_type": "int",
+    "parameter_value": "8",
+    "client_require": 1
+  }
+}

@@ -1,0 +1,1334 @@
+﻿<UserControl 
+    x:Class="GFAlarm.View.Option.SettingAlarmView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:ls="clr-namespace:LocalizationResources;assembly=LocalizationResources"
+    xmlns:uc="http://www.quickzip.org/BaseControls"
+    xmlns:local="clr-namespace:GFAlarm.View.Option"
+    mc:Ignorable="d" 
+    
+    SnapsToDevicePixels="True"
+    d:DesignHeight="2500" 
+    d:DesignWidth="225">
+    <UserControl.Resources>
+        <!-- [그룹] 스타일 -->
+        <Style x:Key="GroupBorderStyle" TargetType="Border">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Background" Value="{StaticResource BackgroundBrightBrush}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BackgroundBrush}"/>
+            <Setter Property="BorderThickness" Value="0,0,2,2"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <!--<Setter Property="BitmapEffect">
+                <Setter.Value>
+                    <DropShadowBitmapEffect Color="Black" Direction="0"  ShadowDepth="0" Opacity="0.25" Softness="0.3"/>
+                </Setter.Value>
+            </Setter>-->
+        </Style>
+        <!-- [그룹] > [아이콘] 스타일 -->
+        <Style x:Key="GroupIconStyle" TargetType="iconPacks:PackIconMaterial" BasedOn="{StaticResource IconStyle}">
+            <!--<Setter Property="Margin" Value="5,0,0,0"/>-->
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+        </Style>
+        <!-- [그룹] > [제목] 스타일 -->
+        <Style x:Key="GroupTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+        </Style>
+        <!-- [그룹] > [부제목] 스타일 -->
+        <Style x:Key="GroupSubtitleStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+        </Style>
+        <!-- [그룹] > [화살표] 스타일 -->
+        <Style x:Key="GroupArrowStyle" TargetType="iconPacks:PackIconMaterial">
+            <Setter Property="Width" Value="11"/>
+            <Setter Property="Height" Value="11"/>
+            <Setter Property="Margin" Value="0,0,5,0"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+        </Style>
+        <!-- [목록] > [큰 제목] 스타일 -->
+        <Style x:Key="ContentBigTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+        </Style>
+        <!-- [목록] > [작은 제목] 스타일 -->
+        <Style x:Key="ContentSmallTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+        </Style>
+        <!-- [목록] > [텍스트박스] 스타일 -->
+        <Style x:Key="ContentTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Margin" Value="0,5,0,0"/>
+            <Setter Property="Padding" Value="3"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontFamily" Value="Segoe UI, Meiryo UI, Malgun Gothic"/>
+            <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="Gray"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <!-- [목록] > [체크박스] 스타일 -->
+        <Style x:Key="ContentCheckBoxStyle" TargetType="CheckBox" BasedOn="{StaticResource CheckBoxBaseStyle}">
+            <Setter Property="Margin" Value="0,0,-6,0"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <!-- [목록] > [경계선] 스타일 -->
+        <Style x:Key="ContentBorderStyle" TargetType="Border">
+            <Setter Property="Margin" Value="10,0"/>
+            <Setter Property="BorderBrush" Value="#40FFFFFF"/>
+            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+        </Style>
+        <!-- [툴팁] > [판넬] 스타일 -->
+        <Style x:Key="ToolTipPanelStyle" TargetType="StackPanel">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="MaxWidth" Value="250"/>
+            <Setter Property="Orientation" Value="Vertical"/>
+        </Style>
+        <!-- [툴팁] > [텍스트] 스타일 -->
+        <Style x:Key="ToolTipTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+            <Setter Property="TextTrimming" Value="None"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Visible">
+            <StackPanel Orientation="Vertical">
+                <!-- [그룹] 완료 알림 -->
+                <Border
+                    x:Name="CompleteGroupBox"
+                    Style="{StaticResource GroupBorderStyle}"
+                    MouseLeftButtonDown="GroupBox_MouseLeftButtonDown">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="28"/> <!-- icon -->
+                            <ColumnDefinition Width="*"/> <!-- title -->
+                            <ColumnDefinition Width="Auto"/> <!-- arrow -->
+                        </Grid.ColumnDefinitions>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource IconStyle}"
+                            Width="16" Height="10" Margin="5,1,0,0" VerticalAlignment="Center"
+                            Foreground="#FFFFFF" Kind="Check"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_GROUP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="2"
+                            x:Name="CompleteGroupBox_Arrow"
+                            Style="{StaticResource GroupArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
+                <!-- [목록] 완료 알림 -->
+                <StackPanel 
+                    x:Name="CompleteListBox"
+                    Orientation="Vertical">
+                    <!-- 지원현황 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_DISPATCHED_ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="DispatchedEchelonCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="DispatchedEchelonCheckBox_Checked" Unchecked="DispatchedEchelonCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_DISPATCHED_ECHELON_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 탐색현황 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_EXPLORE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="ExploreCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="ExploreCheckBox_Checked" Unchecked="ExploreCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_EXPLORE_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 인형제조 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_PRODUCE_DOLL], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="ProduceDollCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="ProduceDollCheckBox_Checked" Unchecked="ProduceDollCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_PRODUCE_DOLL_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 장비제조 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_PRODUCE_EQUIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="ProduceEquipCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="ProduceEquipCheckBox_Checked" Unchecked="ProduceEquipCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_PRODUCE_EQUIP_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 훈련현황 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_TRAIN], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="SkillTrainCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="SkillTrainCheckBox_Checked" Unchecked="SkillTrainCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_TRAIN_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 수복현황 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_RESTORE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="RestoreCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="RestoreCheckBox_Checked" Unchecked="RestoreCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_RESTORE_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 분석현황 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_DATA_ANALYSIS], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="DataAnalysisCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="DataAnalysisCheckBox_Checked" Unchecked="DataAnalysisCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_DATA_ANALYSIS_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 작전보고서 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_COMBAT_REPORT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="BattleReportCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="BattleReportCheckBox_Checked" Unchecked="BattleReportCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_COMBAT_REPORT_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 임무달성 -->
+                    <Grid Margin="20,10,20,10" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_QUEST], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="QuestCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="QuestCheckBox_Checked" Unchecked="QuestCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_COMPLETE_QUEST_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                </StackPanel>
+                <!-- [그룹] 상한 알림 -->
+                <Border
+                    x:Name="MaximumGroupBox"
+                    Style="{StaticResource GroupBorderStyle}"
+                    MouseLeftButtonDown="GroupBox_MouseLeftButtonDown">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="28"/>
+                            <!-- icon -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- title -->
+                            <ColumnDefinition Width="Auto"/>
+                            <!-- arrow -->
+                        </Grid.ColumnDefinitions>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource IconStyle}"
+                            Width="12" Height="16" Margin="7,1,0,0" VerticalAlignment="Center"
+                            Foreground="#FFFFFF" Kind="ArrowCollapseUp"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_MAXIMUM_GROUP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="2"
+                            x:Name="MaximumGroupBox_Arrow"
+                            Style="{StaticResource GroupArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
+                <!-- [목록] 상한 알림 -->
+                <StackPanel 
+                    x:Name="MaximumListBox"
+                    Orientation="Vertical">
+                    <!-- 모의작전점수 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Row="0" Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_MAXIMUM_SIM_POINT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Row="0" Grid.Column="1"
+                            x:Name="MaxPointCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="MaxPointCheckBox_Checked" Unchecked="MaxPointCheckBox_Unchecked"/>
+                        <!-- slider -->
+                        <Slider
+                            Grid.Row="1" Grid.Column="0"
+                            x:Name="MaxPointSlider"
+                            Style="{StaticResource SliderBaseStyle}"
+                            MinHeight="8" Height="8" VerticalAlignment="Center"
+                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                            ValueChanged="MaxPointSlider_ValueChanged"/>
+                        <!-- counter -->
+                        <TextBlock
+                            Grid.Row="1" Grid.Column="1"
+                            Style="{StaticResource TextBlockBaseStyle}"
+                            Margin="15,0,0,0" VerticalAlignment="Center">
+                            <Run Text="{Binding Path=Value, ElementName=MaxPointSlider}"/><Run Text="{Binding Path=[SETTING_NOTIFICATION_MAXIMUM_SIM_POINT_UNIT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_MAXIMUM_SIM_POINT_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 인형창고 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_MAXIMUM_DOLL], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="MaxDollCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="MaxDollCheckBox_Checked" Unchecked="MaxDollCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_MAXIMUM_DOLL_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 장비창고 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_MAXIMUM_EQUIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="MaxEquipCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="MaxEquipCheckBox_Checked" Unchecked="MaxEquipCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_MAXIMUM_EQUIP_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 자유경험치 -->
+                    <Grid Margin="20,10,20,10" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_MAXIMUM_SURPLUS_EXP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="MaxGlobalExpCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="MaxGlobalExpCheckBox_Checked" Unchecked="MaxGlobalExpCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_MAXIMUM_SURPLUS_EXP_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                </StackPanel>
+                <!-- [그룹] 전역 알림 -->
+                <Border
+                    x:Name="MissionGroupBox"
+                    Style="{StaticResource GroupBorderStyle}"
+                    MouseLeftButtonDown="GroupBox_MouseLeftButtonDown">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="28"/>
+                            <!-- icon -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- title -->
+                            <ColumnDefinition Width="Auto"/>
+                            <!-- arrow -->
+                        </Grid.ColumnDefinitions>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource IconStyle}"
+                            Width="14" Height="13" Margin="6,1,0,0" VerticalAlignment="Center"
+                            Foreground="#FFFFFF" Kind="VectorPolyline"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_MISSION_GROUP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="2"
+                            x:Name="MissionGroupBox_Arrow"
+                            Style="{StaticResource GroupArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
+                <!-- [목록] 전역 알림 -->
+                <StackPanel 
+                    x:Name="MissionListBox"
+                    Orientation="Vertical">
+                    <!-- 인형 획득 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Row="0" Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_MISSION_RESCUE_DOLL], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Row="0" Grid.Column="1"
+                            x:Name="GetDollCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="GetDollCheckBox_Checked" Unchecked="GetDollCheckBox_Unchecked"/>
+                        <!-- slider -->
+                        <Slider
+                            Grid.Row="1" Grid.Column="0"
+                            x:Name="GetDollSlider"
+                            Style="{StaticResource SliderBaseStyle}"
+                            MinHeight="8" Height="8" VerticalAlignment="Center"
+                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                            ValueChanged="GetDollSlider_ValueChanged"/>
+                        <!-- counter -->
+                        <TextBlock
+                            Grid.Row="1" Grid.Column="1"
+                            Style="{StaticResource TextBlockBaseStyle}"
+                            Margin="15,0,0,0" VerticalAlignment="Center">
+                            <Run Text="{Binding Path=Value, ElementName=GetDollSlider}"/><Run Text="{Binding Path=[SETTING_NOTIFICATION_MISSION_RESCUE_DOLL_UNIT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_MISSION_RESCUE_DOLL_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 장비 획득 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Row="0" Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_MISSION_GET_EQUIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Row="0" Grid.Column="1"
+                            x:Name="GetEquipCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="GetEquipCheckBox_Checked" Unchecked="GetEquipCheckBox_Unchecked"/>
+                        <!-- slider -->
+                        <Slider
+                            Grid.Row="1" Grid.Column="0"
+                            x:Name="GetEquipSlider"
+                            Style="{StaticResource SliderBaseStyle}"
+                            MinHeight="8" Height="8" VerticalAlignment="Center"
+                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                            ValueChanged="GetEquipSlider_ValueChanged"/>
+                        <!-- counter -->
+                        <TextBlock
+                            Grid.Row="1" Grid.Column="1"
+                            Style="{StaticResource TextBlockBaseStyle}"
+                            Margin="15,0,0,0" VerticalAlignment="Center">
+                            <Run Text="{Binding Path=Value, ElementName=GetEquipSlider}"/><Run Text="{Binding Path=[SETTING_NOTIFICATION_MISSION_GET_EQUIP_UNIT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_MISSION_GET_EQUIP_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 전역승리 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_MISSION_WIN], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="MissionSuccessCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="MissionSuccessCheckBox_Checked" Unchecked="MissionSuccessCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_MISSION_WIN_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 제대이동 완료 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Row="0" Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_MISSION_MOVE_TEAM], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Row="0" Grid.Column="1"
+                            x:Name="MoveFinishCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="MoveFinishCheckBox_Checked" Unchecked="MoveFinishCheckBox_Unchecked"/>
+                        <!-- slider -->
+                        <Slider
+                            Grid.Row="1" Grid.Column="0"
+                            x:Name="MoveFinishSlider"
+                            Style="{StaticResource SliderBaseStyle}"
+                            MinHeight="8" Height="8" VerticalAlignment="Center"
+                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                            ValueChanged="MoveFinishSlider_ValueChanged"/>
+                        <!-- counter -->
+                        <TextBlock
+                            Grid.Row="1" Grid.Column="1"
+                            Style="{StaticResource TextBlockBaseStyle}"
+                            Margin="15,0,0,0" VerticalAlignment="Center">
+                            <Run Text="{Binding Path=Value, ElementName=MoveFinishSlider}"/><Run Text="{Binding Path=[SETTING_NOTIFICATION_MISSION_MOVE_TEAM_UNIT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_MISSION_MOVE_TEAM_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 전투 후 알림 -->
+                    <Grid Margin="20,10,20,10" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_MISSION_MOVE_TEAM_AND_WIN_BATTLE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="MoveAndBattleFinishCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="MoveAndBattleFinishCheckBox_Checked" Unchecked="MoveAndBattleFinishCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_MISSION_MOVE_TEAM_AND_WIN_BATTLE_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                </StackPanel>
+                <!-- [그룹] 인형 알림 -->
+                <Border
+                    x:Name="DollGroupBox"
+                    Style="{StaticResource GroupBorderStyle}"
+                    MouseLeftButtonDown="GroupBox_MouseLeftButtonDown">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="28"/>
+                            <!-- icon -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- title -->
+                            <ColumnDefinition Width="Auto"/>
+                            <!-- arrow -->
+                        </Grid.ColumnDefinitions>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource IconStyle}"
+                            Width="14" Height="14" Margin="5,1,0,0" VerticalAlignment="Center"
+                            Foreground="#FFFFFF" Kind="HumanFemaleFemale"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_DOLL_GROUP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="2"
+                            x:Name="DollGroupBox_Arrow"
+                            Style="{StaticResource GroupArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
+                <!-- [목록] 인형 알림 -->
+                <StackPanel
+                    x:Name="DollListBox"
+                    Orientation="Vertical">
+                    <!-- 편제확대 필요 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_DOLL_NEED_DUMMY_LINK], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="NeedExpandCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="NeedExpandCheckBox_Checked" Unchecked="NeedExpandCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_DOLL_NEED_DUMMY_LINK_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 최대 레벨 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_DOLL_MAX_LEVEL], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="MaxLevelCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="MaxLevelCheckBox_Checked" Unchecked="MaxLevelCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_DOLL_MAX_LEVEL_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 체력 경고 -->
+                    <Grid Margin="20,10,20,10" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Row="0" Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_DOLL_HP_WARNING], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Row="0" Grid.Column="1"
+                            x:Name="HpWarningCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="HpWarningCheckBox_Checked" Unchecked="HpWarningCheckBox_Unchecked"/>
+                        <!-- slider -->
+                        <Slider
+                            Grid.Row="1" Grid.Column="0"
+                            x:Name="HpWarningSlider"
+                            Style="{StaticResource SliderBaseStyle}"
+                            MinHeight="8" Height="8" VerticalAlignment="Center"
+                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                            ValueChanged="HpWarningSlider_ValueChanged"/>
+                        <!-- counter -->
+                        <TextBlock
+                            Grid.Row="1" Grid.Column="1"
+                            Style="{StaticResource TextBlockBaseStyle}"
+                            Margin="15,0,0,0" VerticalAlignment="Center">
+                           <Run Text="{Binding Path=Value, ElementName=HpWarningSlider}"/><Run Text="%"/>
+                        </TextBlock>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_DOLL_HP_WARNING_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                </StackPanel>
+                <!-- [그룹] 제조 알림 -->
+                <Border
+                    x:Name="ProduceGroupBox"
+                    Style="{StaticResource GroupBorderStyle}"
+                    MouseLeftButtonDown="GroupBox_MouseLeftButtonDown">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="28"/>
+                            <!-- icon -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- title -->
+                            <ColumnDefinition Width="Auto"/>
+                            <!-- arrow -->
+                        </Grid.ColumnDefinitions>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource IconStyle}"
+                            Width="14" Height="16" Margin="5,3,0,0" VerticalAlignment="Center"
+                            Foreground="#FFFFFF" Kind="Forklift"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_PRODUCE_GROUP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="2"
+                            x:Name="ProduceGroupBox_Arrow"
+                            Style="{StaticResource GroupArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
+                <!-- [목록] 제조 알림 -->
+                <StackPanel
+                    x:Name="ProduceListBox"
+                    Orientation="Vertical">
+                    <!-- 인형 제조 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_PRODUCE_DOLL], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="ProducedDollCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="ProducedDollCheckBox_Checked" Unchecked="ProducedDollCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_PRODUCE_DOLL_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 인형 제조 (5성) -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_PRODUCE_DOLL_5_STAR], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="ProducedDoll5StarCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="ProducedDoll5StarCheckBox_Checked" Unchecked="ProducedDoll5StarCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_PRODUCE_DOLL_5_STAR_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 장비 제조 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_PRODUCE_EQUIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="ProducedEquipCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="ProducedEquipCheckBox_Checked" Unchecked="ProducedEquipCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_PRODUCE_EQUIP_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 장비 제조 (5성) -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_PRODUCE_EQUIP_5_STAR], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="ProducedEquip5StarCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="ProducedEquip5StarCheckBox_Checked" Unchecked="ProducedEquip5StarCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_PRODUCE_EQUIP_5_STAR_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 샷건 제조 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_PRODUCE_SHOTGUN], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="ProducedShotgunCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="ProducedShotgunCheckBox_Checked" Unchecked="ProducedShotgunCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_PRODUCE_SHOTGUN_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 요정 제조 -->
+                    <Grid Margin="20,10,20,10" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_PRODUCE_FAIRY], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="ProducedFairyCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="ProducedFairyCheckBox_Checked" Unchecked="ProducedFairyCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_PRODUCE_FAIRY_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                </StackPanel>
+                <!-- [그룹] 코스튬 -->
+                <Border
+                    x:Name="CostumeGroupBox"
+                    Style="{StaticResource GroupBorderStyle}"
+                    MouseLeftButtonDown="GroupBox_MouseLeftButtonDown">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="28"/>
+                            <!-- icon -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- title -->
+                            <ColumnDefinition Width="Auto"/>
+                            <!-- arrow -->
+                        </Grid.ColumnDefinitions>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource IconStyle}"
+                            Width="16" Height="12" Margin="4,1,0,0" VerticalAlignment="Center"
+                            Foreground="#FFFFFF" Kind="AccountStar"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_COSTUME_GROUP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="2"
+                            x:Name="CostumeGroupBox_Arrow"
+                            Style="{StaticResource GroupArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
+                <!-- [목록] 코스튬 -->
+                <StackPanel
+                    x:Name="CostumeListBox"
+                    Orientation="Vertical">
+                    <!-- 경험치 보너스 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Row="0" Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_COSTUME_DOLL_EXP_BONUS], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Row="0" Grid.Column="1"
+                            x:Name="DollExpBonusCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="DollExpBonusCheckBox_Checked" Unchecked="DollExpBonusCheckBox_Unchecked"/>
+                        <!-- slider -->
+                        <Slider
+                            Grid.Row="1" Grid.Column="0"
+                            x:Name="DollExpBonusSlider"
+                            Style="{StaticResource SliderBaseStyle}"
+                            MinHeight="8" Height="8" VerticalAlignment="Center"
+                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                            ValueChanged="DollExpBonusSlider_ValueChanged"/>
+                        <!-- counter -->
+                        <TextBlock
+                            Grid.Row="1" Grid.Column="1"
+                            Style="{StaticResource TextBlockBaseStyle}"
+                            Margin="15,0,0,0" VerticalAlignment="Center">
+                            <Run Text="{Binding Path=Value, ElementName=DollExpBonusSlider}"/><Run Text="%"/>
+                        </TextBlock>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_COSTUME_DOLL_EXP_BONUS_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 수복 보너스 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Row="0" Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_COSTUME_RESTORE_TIME], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Row="0" Grid.Column="1"
+                            x:Name="RestoreTimeBonusCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="RestoreTimeBonusCheckBox_Checked" Unchecked="RestoreTimeBonusCheckBox_Unchecked"/>
+                        <!-- slider -->
+                        <Slider
+                            Grid.Row="1" Grid.Column="0"
+                            x:Name="RestoreTimeBonusSlider"
+                            Style="{StaticResource SliderBaseStyle}"
+                            MinHeight="8" Height="8" VerticalAlignment="Center"
+                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                            ValueChanged="RestoreTimeBonusSlider_ValueChanged"/>
+                        <!-- counter -->
+                        <TextBlock
+                            Grid.Row="1" Grid.Column="1"
+                            Style="{StaticResource TextBlockBaseStyle}"
+                            Margin="15,0,0,0" VerticalAlignment="Center">
+                            <Run Text="{Binding Path=Value, ElementName=RestoreTimeBonusSlider}"/><Run Text="%"/>
+                        </TextBlock>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_COSTUME_RESTORE_TIME_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                    <!-- 스킬훈련 시간 보너스 -->
+                    <Grid Margin="20,10,20,10" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Row="0" Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_COSTUME_SKILL_TIME], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Row="0" Grid.Column="1"
+                            x:Name="SkillTimeBonusCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="SkillTimeBonusCheckBox_Checked" Unchecked="SkillTimeBonusCheckBox_Unchecked"/>
+                        <!-- slider -->
+                        <Slider
+                            Grid.Row="1" Grid.Column="0"
+                            x:Name="SkillTimeBonusSlider"
+                            Style="{StaticResource SliderBaseStyle}"
+                            MinHeight="8" Height="8" VerticalAlignment="Center"
+                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                            ValueChanged="SkillTimeBonusSlider_ValueChanged"/>
+                        <!-- counter -->
+                        <TextBlock
+                            Grid.Row="1" Grid.Column="1"
+                            Style="{StaticResource TextBlockBaseStyle}"
+                            Margin="15,0,0,0" VerticalAlignment="Center">
+                            <Run Text="{Binding Path=Value, ElementName=SkillTimeBonusSlider}"/><Run Text="%"/>
+                        </TextBlock>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_COSTUME_SKILL_TIME_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                </StackPanel>
+                <!-- [그룹] 기타 -->
+                <Border
+                    x:Name="ExtraGroupBox"
+                    Style="{StaticResource GroupBorderStyle}"
+                    MouseLeftButtonDown="GroupBox_MouseLeftButtonDown">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="28"/>
+                            <!-- icon -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- title -->
+                            <ColumnDefinition Width="Auto"/>
+                            <!-- arrow -->
+                        </Grid.ColumnDefinitions>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource IconStyle}"
+                            Width="16" Height="12" Margin="5,1,0,0" VerticalAlignment="Center"
+                            Foreground="#FFFFFF" Kind="DiamondStone"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_EXTRA_GROUP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="2"
+                            x:Name="ExtraGroupBox_Arrow"
+                            Style="{StaticResource GroupArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
+                <!-- [목록] 기타 -->
+                <StackPanel
+                    x:Name="ExtraListBox"
+                    Orientation="Vertical">
+                    <!-- 미리 알림 -->
+                    <Grid Margin="20,10,20,10" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Row="0" Grid.Column="0"
+                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Text="{Binding Path=[SETTING_NOTIFICATION_EXTRA_ADVANCED_NOTIFICATION], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Row="0" Grid.Column="1"
+                            x:Name="EarlyNotifyCheckBox"
+                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Checked="EarlyNotifyCheckBox_Checked" Unchecked="EarlyNotifyCheckBox_Unchecked"/>
+                        <!-- slider -->
+                        <Slider
+                            Grid.Row="1" Grid.Column="0"
+                            x:Name="EarlyNotifySlider"
+                            Style="{StaticResource SliderBaseStyle}"
+                            MinHeight="8" Height="8" VerticalAlignment="Center"
+                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                            ValueChanged="EarlyNotifySlider_ValueChanged"/>
+                        <!-- counter -->
+                        <TextBlock
+                            Grid.Row="1" Grid.Column="1"
+                            Style="{StaticResource TextBlockBaseStyle}"
+                            Margin="15,0,0,0" VerticalAlignment="Center">
+                            <Run Text="{Binding Path=Value, ElementName=EarlyNotifySlider}"/><Run Text="{Binding Path=[SETTING_NOTIFICATION_EXTRA_ADVANCED_NOTIFICATION_UNIT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </TextBlock>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
+                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                                  Html="{Binding Path=[SETTING_NOTIFICATION_EXTRA_ADVANCED_NOTIFICATION_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -3383,7 +3383,7 @@ namespace GFAlarm.Data
                     // 획득인형 저장
                     if (Config.Setting.exportRescuedDoll)
                     {
-                        Csv.WriteGetDollInfo(doll.no);
+                        CsvExporter.WriteGetDollInfo(doll.no);
                     }
                 }
                 UserData.dollCount = dictionary.Count();
@@ -4806,16 +4806,15 @@ namespace GFAlarm.Data
             /// <param name="id"></param>
             /// <param name="exp"></param>
             /// <returns></returns>
-            public static int GetRunCountToMaxLevel(long id, long exp)
+            public static long GetRunCountToMaxLevel(long id, long exp)
             {
-                int totalCount = 0;
+                long totalCount = 0;
                 if (dictionary.ContainsKey(id))
                 {
                     long currentExp = dictionary[id].exp;
                     long sumExp = GameData.Fairy.Exp.GetTotalExp(100);
 
-                    totalCount = Convert.ToInt32(((double)sumExp - (double)currentExp) / (double)exp + 1);
-                    //log.Info("요정 {0} 남은 경험치 {1} 거지런 1회 경험치 {2}", id, sumExp - currentExp, exp);
+                    totalCount = Convert.ToInt64(((double)sumExp - (double)currentExp) / (double)exp + 1);
                 }
                 return totalCount;
             }

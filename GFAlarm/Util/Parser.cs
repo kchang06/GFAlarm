@@ -42,29 +42,6 @@ namespace GFAlarm.Util
             }
 
             /// <summary>
-            /// JObject 포맷 여부
-            /// </summary>
-            /// <param name="text"></param>
-            /// <returns></returns>
-            public static bool IsJObject(string text)
-            {
-                try
-                {
-                    if (string.IsNullOrEmpty(text))
-                        return false;
-
-                    text = text.Trim();
-                    if (text.StartsWith("{") && text.EndsWith("}"))
-                        return true;
-                }
-                catch (Exception ex)
-                {
-                    log.Error(ex, "failed to check text - text={0}", text);
-                }
-                return false;
-            }
-
-            /// <summary>
             /// string => JArray
             /// </summary>
             /// <param name="text"></param>
@@ -90,29 +67,6 @@ namespace GFAlarm.Util
                     log.Error(ex, "failed to parse text - text={0}", text);
                 }
                 return new JArray();
-            }
-
-            /// <summary>
-            /// JArray 포맷 여부 
-            /// </summary>
-            /// <param name="text"></param>
-            /// <returns></returns>
-            public static bool IsJArray(string text)
-            {
-                try
-                {
-                    if (string.IsNullOrEmpty(text))
-                        return false;
-
-                    text = text.Trim();
-                    if (text.StartsWith("[") && text.EndsWith("]"))
-                        return true;
-                }
-                catch (Exception ex)
-                {
-                    log.Error(ex, "failed to check text - text={0}", text);
-                }
-                return false;
             }
 
             /// <summary>
@@ -161,12 +115,6 @@ namespace GFAlarm.Util
                     return token.Value<bool>();
                 return false;
             }
-            public static bool ParseBool(JToken token, string key1)
-            {
-                if (token != null && token[key1] != null)
-                    return token[key1].Value<bool>();
-                return false;
-            }
 
             /// <summary>
             /// JToken => int
@@ -179,16 +127,6 @@ namespace GFAlarm.Util
                 if (token != null)
                 {
                     string temp = ParseString(token);
-                    int.TryParse(temp, out result);
-                }
-                return result;
-            }
-            public static int ParseInt(JToken token, string key1)
-            {
-                int result = 0;
-                if (token != null && token[key1] != null)
-                {
-                    string temp = ParseString(token[key1]);
                     int.TryParse(temp, out result);
                 }
                 return result;

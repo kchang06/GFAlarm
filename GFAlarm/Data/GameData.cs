@@ -1465,6 +1465,28 @@ namespace GFAlarm.Data
             }
 
             /// <summary>
+            /// 인형 스킨 가져오기
+            /// </summary>
+            /// <param name="isLive2d"></param>
+            /// <param name="isChild"></param>
+            /// <returns></returns>
+            public static List<int> GetDollSkin(bool isLive2d, bool isChild)
+            {
+                List<int> result = new List<int>();
+                string sql = string.Format("SELECT * FROM skin WHERE 1 = 1");
+                if (isLive2d)
+                    sql += " AND is_live2d = true ";
+                if (isChild)
+                    sql += " AND is_child = true ";
+                List<JObject> items = GetDbs(sql, "GFData");
+                foreach (JObject item in items)
+                {
+                    result.Add(Parser.Json.ParseInt(item["skin_id"]));
+                }
+                return result;
+            }
+
+            /// <summary>
             /// 인형 스킨 가져오기 (보유 스킨 중에서)
             /// </summary>
             /// <param name="no"></param>
@@ -2525,10 +2547,6 @@ namespace GFAlarm.Data
                 {
                     expBonusEvent = 1.5;
                 }
-                //if (Config.Extra.expBonusEvent)
-                //{
-                //    expBonusEvent = Convert.ToDouble(Config.Extra.expBonusEventPercent) / 100 + 1.0;
-                //}
 
                 return Convert.ToInt32(Math.Truncate(baseExp * linkBonus * leaderBonus * expPenalty * marriedBonus * commanderBonus * expBonusEvent));
             }

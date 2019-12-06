@@ -335,11 +335,11 @@ namespace GFAlarm.View.DataTemplate
         /// <summary>
         /// 전역 횟수
         /// </summary>
-        public int[] runCount { get; set; } = new int[] { 0, 0, 0 };
+        public long[] runCount { get; set; } = new long[] { 0, 0, 0 };
         /// <summary>
         /// 작보 갯수
         /// </summary>
-        public int[] reportCount { get; set; } = new int[] { 0, 0, 0 };
+        public long[] reportCount { get; set; } = new long[] { 0, 0, 0 };
 
         #endregion
 
@@ -533,8 +533,8 @@ namespace GFAlarm.View.DataTemplate
 
                     if (data.remainExp == 0)
                     {
-                        this.runCount = new int[] { 0, 0, 0 };
-                        this.reportCount = new int[] { 0, 0, 0 };
+                        this.runCount = new long[] { 0, 0, 0 };
+                        this.reportCount = new long[] { 0, 0, 0 };
                     }
                     else
                     {

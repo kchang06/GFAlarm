@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Media;
+using System.Reflection;
 using System.Threading;
 using System.Windows.Media;
 
@@ -27,7 +28,7 @@ namespace GFAlarm.Notifier
         public static Queue<Message> notifyQueue = new Queue<Message>();
 
         /// <summary>
-        /// 타이머 틱
+        /// 타이머
         /// </summary>
         /// <param name="state"></param>
         private static void Tick(object state)
@@ -120,44 +121,21 @@ namespace GFAlarm.Notifier
             Mail.Send(msg);
         }
 
-        /// <summary>
-        /// 인형 음성 폴더 가져오기
-        /// </summary>
-        /// <param name="msg"></param>
-        /// <returns></returns>
-        private static string GetVoiceFilename(int gun_id, int skin_id, MessageType msg_type)
+        private static string GetVoiceFile(int gunId, int skinId = 0, MessageType msgType = MessageType.other)
         {
             string filename = "";
-            string gun_dir = string.Format("{0}", gun_id);
 
-            switch (skin_id)
+            string path = string.Format("{0}", gunId);
+
+            // 아동절 스킨 여부
+            List<int> childSkinIds = GameData.Doll.GetDollSkin(false, true);
+            if (childSkinIds.Contains(skinId))
             {
-                // 1차 페도절
-                case 901: // enfield
-                case 902: // mp40
-                case 903: // grizzly
-                case 904: // negev
-                case 905: // g36
-                // 2차 페도절
-                case 2201: // c1891
-                case 2202: // c1938
-                case 2203: // 57
-                case 2204: // pp19
-                case 2205: // cbjms
-                case 2206: // thunder
-                case 2806: // g36 (xmas)
-                // 3차 페도절
-                //case 3401: // hk416
-                case 3402: // k11
-                //case 3403: // ump45
-                //case 3404: // ump9
-                case 3405: // ksvk
-                //case 3406: // oc44
-                    gun_dir += "_pedo";
-                    break;
+                path += "_pedo";
             }
+
             string voice = "";
-            switch (msg_type)
+            switch (msgType)
             {
                 // 일간임무
                 case MessageType.acheive_daily_combat_sim:              // 모의작전 임무 달성
@@ -380,14 +358,46 @@ namespace GFAlarm.Notifier
                 case MessageType.test:
                     voice = "complete_operation";
                     break;
+                case MessageType.random:
+                    string tempPath = "";
+                    if (gunId == 0)
+                    {
+                        tempPath = string.Format("{0}\\Resource\\Sound\\{1}",
+                            Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), Config.Setting.language);
+                    }
+                    else
+                    {
+                        tempPath = string.Format("{0}\\Resource\\Sound\\Voice\\{1}",
+                            Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), path);
+                    }
+                    string[] file = Directory.GetFiles(tempPath, "*.wav", SearchOption.TopDirectoryOnly);
+                    if (file.Length > 0)
+                    {
+                        int randIdx = new Random().Next(0, file.Length);
+                        voice = file[randIdx];
+                        return voice;
+                    }
+                    else
+                    {
+                        voice = "notify";
+                    }
+                    break;
                 default:
                     voice = "notify";
                     break;
             }
-            if (gun_id == 0)
-                filename = string.Format("{0}\\Resource\\Sound\\{2}\\{1}.wav", Util.Common.GetAbsolutePath(), voice, Config.Setting.language);
+
+            if (gunId == 0)
+            {
+                filename = string.Format("{0}\\Resource\\Sound\\{2}\\{1}.wav", 
+                    Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), voice, Config.Setting.language);
+            }
             else
-                filename = string.Format("{0}\\Resource\\Sound\\Voice\\{1}\\{2}.wav", Util.Common.GetAbsolutePath(), gun_dir, voice);
+            {
+                filename = string.Format("{0}\\Resource\\Sound\\Voice\\{1}\\{2}.wav", 
+                    Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), path, voice);
+            }
+
             return filename;
         }
 
@@ -417,7 +427,7 @@ namespace GFAlarm.Notifier
                 skinId = UserData.adjutantDollSkin;
             }
 
-            string filename = GetVoiceFilename(gunId, skinId, msgType);
+            string filename = GetVoiceFile(gunId, skinId, msgType);
             if (!File.Exists(filename))
             {
                 /// 개조 음성이 없는 경우
@@ -425,15 +435,17 @@ namespace GFAlarm.Notifier
                 {
                     gunId = gunId % 20000;
                 }
-                filename = GetVoiceFilename(gunId, skinId, msgType);
+                filename = GetVoiceFile(gunId, skinId, msgType);
                 /// 인형 음성이 없는 경우
                 if (!File.Exists(filename))
                 {
-                    filename = GetVoiceFilename(0, 0, msgType);
+                    filename = GetVoiceFile(0, 0, msgType);
                     /// TTS 음성도 없는 경우
                     if (!File.Exists(filename))
                     {
-                        filename = string.Format("{0}\\Resource\\Sound\\notify.wav", Util.Common.GetAbsolutePath());
+                        filename = string.Format("{0}\\Resource\\Sound\\notify.wav", 
+                            Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+                        // 출발 알림 제외
                         switch (msgType)
                         {
                             case MessageType.start_auto_mission:

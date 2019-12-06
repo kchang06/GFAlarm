@@ -1,0 +1,2592 @@
+{
+  "1": {
+    "id": 1,
+    "name": "gun-10000001",
+    "en_name": "M1873",
+    "code": "M1873",
+    "rank": 4
+  },
+  "2": {
+    "id": 2,
+    "name": "gun-10000002",
+    "en_name": "M1911",
+    "code": "M1911",
+    "rank": 2
+  },
+  "3": {
+    "id": 3,
+    "name": "gun-10000003",
+    "en_name": "M9",
+    "code": "M9",
+    "rank": 3
+  },
+  "4": {
+    "id": 4,
+    "name": "gun-10000004",
+    "en_name": "Python",
+    "code": "Python",
+    "rank": 5
+  },
+  "5": {
+    "id": 5,
+    "name": "gun-10000005",
+    "en_name": "M1895",
+    "code": "M1895",
+    "rank": 2
+  },
+  "6": {
+    "id": 6,
+    "name": "gun-10000006",
+    "en_name": "TT33",
+    "code": "TT33",
+    "rank": 3
+  },
+  "7": {
+    "id": 7,
+    "name": "gun-10000007",
+    "en_name": "APS",
+    "code": "APS",
+    "rank": 4
+  },
+  "8": {
+    "id": 8,
+    "name": "gun-10000008",
+    "en_name": "PM",
+    "code": "PM",
+    "rank": 3
+  },
+  "9": {
+    "id": 9,
+    "name": "gun-10000009",
+    "en_name": "P38",
+    "code": "P38",
+    "rank": 2
+  },
+  "10": {
+    "id": 10,
+    "name": "gun-10000010",
+    "en_name": "PPK",
+    "code": "PPK",
+    "rank": 2
+  },
+  "11": {
+    "id": 11,
+    "name": "gun-10000011",
+    "en_name": "P08",
+    "code": "P08",
+    "rank": 3
+  },
+  "12": {
+    "id": 12,
+    "name": "gun-10000012",
+    "en_name": "C96",
+    "code": "C96",
+    "rank": 3
+  },
+  "13": {
+    "id": 13,
+    "name": "gun-10000013",
+    "en_name": "Type 92",
+    "code": "92type",
+    "rank": 3
+  },
+  "14": {
+    "id": 14,
+    "name": "gun-10000014",
+    "en_name": "357",
+    "code": "357",
+    "rank": 3
+  },
+  "15": {
+    "id": 15,
+    "name": "gun-10000015",
+    "en_name": "Glock 17",
+    "code": "Glock17",
+    "rank": 3
+  },
+  "16": {
+    "id": 16,
+    "name": "gun-10000016",
+    "en_name": "M1928A1",
+    "code": "M1928A1",
+    "rank": 5
+  },
+  "17": {
+    "id": 17,
+    "name": "gun-10000017",
+    "en_name": "M3",
+    "code": "M3",
+    "rank": 2
+  },
+  "18": {
+    "id": 18,
+    "name": "gun-10000018",
+    "en_name": "MAC-10",
+    "code": "MAC10",
+    "rank": 3
+  },
+  "19": {
+    "id": 19,
+    "name": "gun-10000019",
+    "en_name": "FMG-9",
+    "code": "FMG9",
+    "rank": 3
+  },
+  "20": {
+    "id": 20,
+    "name": "gun-10000020",
+    "en_name": "Vector",
+    "code": "Vector",
+    "rank": 5
+  },
+  "21": {
+    "id": 21,
+    "name": "gun-10000021",
+    "en_name": "PPSh-41",
+    "code": "PPsh41",
+    "rank": 2
+  },
+  "22": {
+    "id": 22,
+    "name": "gun-10000022",
+    "en_name": "PPS-43",
+    "code": "PPS43",
+    "rank": 3
+  },
+  "23": {
+    "id": 23,
+    "name": "gun-10000023",
+    "en_name": "PP-90",
+    "code": "PP90",
+    "rank": 4
+  },
+  "24": {
+    "id": 24,
+    "name": "gun-10000024",
+    "en_name": "PP-2000",
+    "code": "PP2000",
+    "rank": 2
+  },
+  "25": {
+    "id": 25,
+    "name": "gun-10000025",
+    "en_name": "MP40",
+    "code": "MP40",
+    "rank": 2
+  },
+  "26": {
+    "id": 26,
+    "name": "gun-10000026",
+    "en_name": "MP5",
+    "code": "MP5",
+    "rank": 4
+  },
+  "27": {
+    "id": 27,
+    "name": "gun-10000027",
+    "en_name": "Vz. 61",
+    "code": "VZ61",
+    "rank": 3
+  },
+  "28": {
+    "id": 28,
+    "name": "gun-10000028",
+    "en_name": "MP7",
+    "code": "MP7",
+    "rank": 5
+  },
+  "29": {
+    "id": 29,
+    "name": "gun-10000029",
+    "en_name": "Sten Mk Ⅱ",
+    "code": "StenMK2",
+    "rank": 3
+  },
+  "31": {
+    "id": 31,
+    "name": "gun-10000031",
+    "en_name": "MAB 38",
+    "code": "MAB38",
+    "rank": 2
+  },
+  "32": {
+    "id": 32,
+    "name": "gun-10000032",
+    "en_name": "Micro Uzi",
+    "code": "MicroUZI",
+    "rank": 3
+  },
+  "33": {
+    "id": 33,
+    "name": "gun-10000033",
+    "en_name": "m45",
+    "code": "m45",
+    "rank": 2
+  },
+  "34": {
+    "id": 34,
+    "name": "gun-10000034",
+    "en_name": "M1",
+    "code": "M1",
+    "rank": 3
+  },
+  "35": {
+    "id": 35,
+    "name": "gun-10000035",
+    "en_name": "M1A1",
+    "code": "M1A1",
+    "rank": 3
+  },
+  "36": {
+    "id": 36,
+    "name": "gun-10000036",
+    "en_name": "M1903",
+    "code": "M1903",
+    "rank": 4
+  },
+  "37": {
+    "id": 37,
+    "name": "gun-10000037",
+    "en_name": "M14",
+    "code": "M14",
+    "rank": 3
+  },
+  "38": {
+    "id": 38,
+    "name": "gun-10000038",
+    "en_name": "M21",
+    "code": "M21",
+    "rank": 3
+  },
+  "39": {
+    "id": 39,
+    "name": "gun-10000039",
+    "en_name": "M1891",
+    "code": "M1891",
+    "rank": 4
+  },
+  "40": {
+    "id": 40,
+    "name": "gun-10000040",
+    "en_name": "SVT-38",
+    "code": "SVT38",
+    "rank": 2
+  },
+  "41": {
+    "id": 41,
+    "name": "gun-10000041",
+    "en_name": "SKS",
+    "code": "SKS",
+    "rank": 2
+  },
+  "42": {
+    "id": 42,
+    "name": "gun-10000042",
+    "en_name": "PTRD",
+    "code": "PTRD",
+    "rank": 4
+  },
+  "43": {
+    "id": 43,
+    "name": "gun-10000043",
+    "en_name": "SVD",
+    "code": "SVD",
+    "rank": 4
+  },
+  "44": {
+    "id": 44,
+    "name": "gun-10000044",
+    "en_name": "SV-98",
+    "code": "SV98",
+    "rank": 3
+  },
+  "46": {
+    "id": 46,
+    "name": "gun-10000046",
+    "en_name": "Kar98k",
+    "code": "98K",
+    "rank": 5
+  },
+  "47": {
+    "id": 47,
+    "name": "gun-10000047",
+    "en_name": "G43",
+    "code": "G43",
+    "rank": 2
+  },
+  "48": {
+    "id": 48,
+    "name": "gun-10000048",
+    "en_name": "WA2000",
+    "code": "WA2000",
+    "rank": 5
+  },
+  "49": {
+    "id": 49,
+    "name": "gun-10000049",
+    "en_name": "Type 56 R",
+    "code": "56typeR",
+    "rank": 3
+  },
+  "50": {
+    "id": 50,
+    "name": "gun-10000050",
+    "en_name": "MLE Mk I",
+    "code": "MLEMK1",
+    "rank": 5
+  },
+  "51": {
+    "id": 51,
+    "name": "gun-10000051",
+    "en_name": "FN-49",
+    "code": "FN49",
+    "rank": 2
+  },
+  "52": {
+    "id": 52,
+    "name": "gun-10000052",
+    "en_name": "BM59",
+    "code": "BM59",
+    "rank": 2
+  },
+  "53": {
+    "id": 53,
+    "name": "gun-10000053",
+    "en_name": "NTW-20",
+    "code": "NTW20",
+    "rank": 5
+  },
+  "54": {
+    "id": 54,
+    "name": "gun-10000054",
+    "en_name": "M16A1",
+    "code": "M16A1",
+    "rank": 4
+  },
+  "55": {
+    "id": 55,
+    "name": "gun-10000055",
+    "en_name": "M4A1",
+    "code": "M4A1",
+    "rank": 4
+  },
+  "56": {
+    "id": 56,
+    "name": "gun-10000056",
+    "en_name": "M4 SOPMOD II",
+    "code": "M4 SOPMOD II",
+    "rank": 4
+  },
+  "57": {
+    "id": 57,
+    "name": "gun-10000057",
+    "en_name": "ST AR-15",
+    "code": "AR15",
+    "rank": 4
+  },
+  "58": {
+    "id": 58,
+    "name": "gun-10000058",
+    "en_name": "AK-47",
+    "code": "AK47",
+    "rank": 3
+  },
+  "59": {
+    "id": 59,
+    "name": "gun-10000059",
+    "en_name": "AKS-74U",
+    "code": "AK74U",
+    "rank": 5
+  },
+  "60": {
+    "id": 60,
+    "name": "gun-10000060",
+    "en_name": "AS Val",
+    "code": "ASVAL",
+    "rank": 4
+  },
+  "61": {
+    "id": 61,
+    "name": "gun-10000061",
+    "en_name": "StG44",
+    "code": "STG44",
+    "rank": 3
+  },
+  "62": {
+    "id": 62,
+    "name": "gun-10000062",
+    "en_name": "G41",
+    "code": "G41",
+    "rank": 5
+  },
+  "63": {
+    "id": 63,
+    "name": "gun-10000063",
+    "en_name": "G3",
+    "code": "G3",
+    "rank": 2
+  },
+  "64": {
+    "id": 64,
+    "name": "gun-10000064",
+    "en_name": "G36",
+    "code": "G36",
+    "rank": 4
+  },
+  "65": {
+    "id": 65,
+    "name": "gun-10000065",
+    "en_name": "HK416",
+    "code": "HK416",
+    "rank": 5
+  },
+  "66": {
+    "id": 66,
+    "name": "gun-10000066",
+    "en_name": "Type 56-1 A",
+    "code": "56-1type",
+    "rank": 4
+  },
+  "68": {
+    "id": 68,
+    "name": "gun-10000068",
+    "en_name": "L85A1",
+    "code": "L85A1",
+    "rank": 2
+  },
+  "69": {
+    "id": 69,
+    "name": "gun-10000069",
+    "en_name": "FAMAS",
+    "code": "FAMAS",
+    "rank": 4
+  },
+  "70": {
+    "id": 70,
+    "name": "gun-10000070",
+    "en_name": "FNC",
+    "code": "FNFNC",
+    "rank": 3
+  },
+  "71": {
+    "id": 71,
+    "name": "gun-10000071",
+    "en_name": "AR",
+    "code": "AR",
+    "rank": 2
+  },
+  "72": {
+    "id": 72,
+    "name": "gun-10000072",
+    "en_name": "TAR-21",
+    "code": "TAR21",
+    "rank": 4
+  },
+  "73": {
+    "id": 73,
+    "name": "gun-10000073",
+    "en_name": "AUG",
+    "code": "AUG",
+    "rank": 5
+  },
+  "74": {
+    "id": 74,
+    "name": "gun-10000074",
+    "en_name": "SIG-510",
+    "code": "SIG510",
+    "rank": 2
+  },
+  "75": {
+    "id": 75,
+    "name": "gun-10000075",
+    "en_name": "M1918",
+    "code": "M1918",
+    "rank": 4
+  },
+  "77": {
+    "id": 77,
+    "name": "gun-10000077",
+    "en_name": "M2HB ",
+    "code": "M2HB",
+    "rank": 3
+  },
+  "78": {
+    "id": 78,
+    "name": "gun-10000078",
+    "en_name": "M60",
+    "code": "M60",
+    "rank": 4
+  },
+  "79": {
+    "id": 79,
+    "name": "gun-10000079",
+    "en_name": "M249 SAW",
+    "code": "M249SAW",
+    "rank": 3
+  },
+  "80": {
+    "id": 80,
+    "name": "gun-10000080",
+    "en_name": "M1919A4",
+    "code": "M1919A4",
+    "rank": 3
+  },
+  "81": {
+    "id": 81,
+    "name": "gun-10000081",
+    "en_name": "LWMMG",
+    "code": "LWMMG",
+    "rank": 2
+  },
+  "82": {
+    "id": 82,
+    "name": "gun-10000082",
+    "en_name": "DP28",
+    "code": "DP28",
+    "rank": 2
+  },
+  "84": {
+    "id": 84,
+    "name": "gun-10000084",
+    "en_name": "RPD",
+    "code": "RPD",
+    "rank": 3
+  },
+  "85": {
+    "id": 85,
+    "name": "gun-10000085",
+    "en_name": "PK",
+    "code": "PK",
+    "rank": 4
+  },
+  "86": {
+    "id": 86,
+    "name": "gun-10000086",
+    "en_name": "MG42",
+    "code": "MG42",
+    "rank": 3
+  },
+  "87": {
+    "id": 87,
+    "name": "gun-10000087",
+    "en_name": "MG34",
+    "code": "MG34",
+    "rank": 2
+  },
+  "88": {
+    "id": 88,
+    "name": "gun-10000088",
+    "en_name": "MG3",
+    "code": "MG3",
+    "rank": 4
+  },
+  "89": {
+    "id": 89,
+    "name": "gun-10000089",
+    "en_name": "Bren MK I",
+    "code": "BrenMK",
+    "rank": 3
+  },
+  "90": {
+    "id": 90,
+    "name": "gun-10000090",
+    "en_name": "FNP-9",
+    "code": "FNP9",
+    "rank": 2
+  },
+  "91": {
+    "id": 91,
+    "name": "gun-10000091",
+    "en_name": "MP-446",
+    "code": "MP446",
+    "rank": 2
+  },
+  "92": {
+    "id": 92,
+    "name": "gun-10000092",
+    "en_name": "Spectre M4",
+    "code": "SpectreM4",
+    "rank": 2
+  },
+  "93": {
+    "id": 93,
+    "name": "gun-10000093",
+    "en_name": "IDW",
+    "code": "IDW",
+    "rank": 2
+  },
+  "94": {
+    "id": 94,
+    "name": "gun-10000094",
+    "en_name": "Type 64",
+    "code": "64type",
+    "rank": 2
+  },
+  "95": {
+    "id": 95,
+    "name": "gun-10000095",
+    "en_name": "Type 88",
+    "code": "88type",
+    "rank": 3
+  },
+  "96": {
+    "id": 96,
+    "name": "gun-10000096",
+    "en_name": "Grizzly",
+    "code": "Grizzly",
+    "rank": 5
+  },
+  "97": {
+    "id": 97,
+    "name": "gun-10000097",
+    "en_name": "M950A",
+    "code": "M950A",
+    "rank": 5
+  },
+  "98": {
+    "id": 98,
+    "name": "gun-10000098",
+    "en_name": "SPP-1",
+    "code": "SPP1",
+    "rank": 4
+  },
+  "99": {
+    "id": 99,
+    "name": "gun-10000099",
+    "en_name": "Mk23",
+    "code": "Mk23",
+    "rank": 4
+  },
+  "100": {
+    "id": 100,
+    "name": "gun-10000100",
+    "en_name": "P7",
+    "code": "P7",
+    "rank": 4
+  },
+  "101": {
+    "id": 101,
+    "name": "gun-10000101",
+    "en_name": "UMP9",
+    "code": "UMP9",
+    "rank": 4
+  },
+  "102": {
+    "id": 102,
+    "name": "gun-10000102",
+    "en_name": "UMP40",
+    "code": "UMP40",
+    "rank": 4
+  },
+  "103": {
+    "id": 103,
+    "name": "gun-10000103",
+    "en_name": "UMP45",
+    "code": "UMP45",
+    "rank": 4
+  },
+  "104": {
+    "id": 104,
+    "name": "gun-10000104",
+    "en_name": "G36C",
+    "code": "G36C",
+    "rank": 5
+  },
+  "105": {
+    "id": 105,
+    "name": "gun-10000105",
+    "en_name": "OTs-12",
+    "code": "OTs12",
+    "rank": 3
+  },
+  "106": {
+    "id": 106,
+    "name": "gun-10000106",
+    "en_name": "FAL",
+    "code": "FNFAL",
+    "rank": 5
+  },
+  "107": {
+    "id": 107,
+    "name": "gun-10000107",
+    "en_name": "F2000",
+    "code": "F2000",
+    "rank": 2
+  },
+  "108": {
+    "id": 108,
+    "name": "gun-10000108",
+    "en_name": "CZ-805",
+    "code": "CZ805",
+    "rank": 3
+  },
+  "109": {
+    "id": 109,
+    "name": "gun-10000109",
+    "en_name": "MG5",
+    "code": "MG5",
+    "rank": 5
+  },
+  "110": {
+    "id": 110,
+    "name": "gun-10000110",
+    "en_name": "FG42",
+    "code": "FG42",
+    "rank": 2
+  },
+  "111": {
+    "id": 111,
+    "name": "gun-10000111",
+    "en_name": "AAT-52",
+    "code": "AAT52",
+    "rank": 2
+  },
+  "112": {
+    "id": 112,
+    "name": "gun-10000112",
+    "en_name": "NEGEV",
+    "code": "NEGEV",
+    "rank": 5
+  },
+  "113": {
+    "id": 113,
+    "name": "gun-10000113",
+    "en_name": "SPS",
+    "code": "SPS",
+    "rank": 3
+  },
+  "114": {
+    "id": 114,
+    "name": "gun-10000114",
+    "en_name": "Welrod Mk Ⅱ",
+    "code": "Welrod",
+    "rank": 5
+  },
+  "115": {
+    "id": 115,
+    "name": "gun-10000115",
+    "en_name": "KP/-31 ",
+    "code": "KP31",
+    "rank": 5
+  },
+  "116": {
+    "id": 116,
+    "name": "gun-10000116",
+    "en_name": "Z-62",
+    "code": "Z62",
+    "rank": 3
+  },
+  "117": {
+    "id": 117,
+    "name": "gun-10000117",
+    "en_name": "PSG-1",
+    "code": "PSG1",
+    "rank": 4
+  },
+  "118": {
+    "id": 118,
+    "name": "gun-10000118",
+    "en_name": "9A-91",
+    "code": "9A91",
+    "rank": 4
+  },
+  "119": {
+    "id": 119,
+    "name": "gun-10000119",
+    "en_name": "OTs-14",
+    "code": "OTs14",
+    "rank": 5
+  },
+  "120": {
+    "id": 120,
+    "name": "gun-10000120",
+    "en_name": "ARX-160",
+    "code": "ARX160",
+    "rank": 3
+  },
+  "121": {
+    "id": 121,
+    "name": "gun-10000121",
+    "en_name": "Mk48",
+    "code": "Mk48",
+    "rank": 4
+  },
+  "122": {
+    "id": 122,
+    "name": "gun-10000122",
+    "en_name": "G11",
+    "code": "G11",
+    "rank": 5
+  },
+  "123": {
+    "id": 123,
+    "name": "gun-10000123",
+    "en_name": "P99",
+    "code": "P99",
+    "rank": 3
+  },
+  "124": {
+    "id": 124,
+    "name": "gun-10000124",
+    "en_name": "Super SASS",
+    "code": "SuperSASS",
+    "rank": 3
+  },
+  "125": {
+    "id": 125,
+    "name": "gun-10000125",
+    "en_name": "MG4",
+    "code": "MG4",
+    "rank": 5
+  },
+  "126": {
+    "id": 126,
+    "name": "gun-10000126",
+    "en_name": "NZ75",
+    "code": "NZ75",
+    "rank": 5
+  },
+  "127": {
+    "id": 127,
+    "name": "gun-10000127",
+    "en_name": "Type 79",
+    "code": "79type",
+    "rank": 5
+  },
+  "128": {
+    "id": 128,
+    "name": "gun-10000128",
+    "en_name": "M99",
+    "code": "M99",
+    "rank": 5
+  },
+  "129": {
+    "id": 129,
+    "name": "gun-10000129",
+    "en_name": "Type 95",
+    "code": "95type",
+    "rank": 5
+  },
+  "130": {
+    "id": 130,
+    "name": "gun-10000130",
+    "en_name": "Type 97",
+    "code": "97type",
+    "rank": 5
+  },
+  "131": {
+    "id": 131,
+    "name": "gun-10000131",
+    "en_name": "EVO 3",
+    "code": "EVO3",
+    "rank": 3
+  },
+  "132": {
+    "id": 132,
+    "name": "gun-10000132",
+    "en_name": "Type 59",
+    "code": "59type",
+    "rank": 3
+  },
+  "133": {
+    "id": 133,
+    "name": "gun-10000133",
+    "en_name": "Type 63",
+    "code": "63type",
+    "rank": 2
+  },
+  "134": {
+    "id": 134,
+    "name": "gun-10000134",
+    "en_name": "AR70",
+    "code": "AR70",
+    "rank": 3
+  },
+  "135": {
+    "id": 135,
+    "name": "gun-10000135",
+    "en_name": "SR-3MP",
+    "code": "SR3MP",
+    "rank": 5
+  },
+  "136": {
+    "id": 136,
+    "name": "gun-10000136",
+    "en_name": "PP-19",
+    "code": "PP19",
+    "rank": 4
+  },
+  "137": {
+    "id": 137,
+    "name": "gun-10000137",
+    "en_name": "PP1901",
+    "code": "PP1901",
+    "rank": 4
+  },
+  "138": {
+    "id": 138,
+    "name": "gun-10000138",
+    "en_name": "6P62",
+    "code": "6P62",
+    "rank": 3
+  },
+  "139": {
+    "id": 139,
+    "name": "gun-10000139",
+    "en_name": "Bren Ten",
+    "code": "BrenTen",
+    "rank": 2
+  },
+  "140": {
+    "id": 140,
+    "name": "gun-10000140",
+    "en_name": "PSM",
+    "code": "PSM",
+    "rank": 3
+  },
+  "141": {
+    "id": 141,
+    "name": "gun-10000141",
+    "en_name": "USP Compact",
+    "code": "USPCompact",
+    "rank": 2
+  },
+  "142": {
+    "id": 142,
+    "name": "gun-10000142",
+    "en_name": "Five-seveN",
+    "code": "FN57",
+    "rank": 5
+  },
+  "143": {
+    "id": 143,
+    "name": "gun-10000143",
+    "en_name": "RO635",
+    "code": "RO635",
+    "rank": 5
+  },
+  "144": {
+    "id": 144,
+    "name": "gun-10000144",
+    "en_name": "MT-9",
+    "code": "MT9",
+    "rank": 3
+  },
+  "145": {
+    "id": 145,
+    "name": "gun-10000145",
+    "en_name": "OTs-44",
+    "code": "OC44",
+    "rank": 3
+  },
+  "146": {
+    "id": 146,
+    "name": "gun-10000146",
+    "en_name": "G28",
+    "code": "G28",
+    "rank": 4
+  },
+  "147": {
+    "id": 147,
+    "name": "gun-10000147",
+    "en_name": "SSG 69",
+    "code": "SSG69",
+    "rank": 3
+  },
+  "148": {
+    "id": 148,
+    "name": "gun-10000148",
+    "en_name": "IWS 2000",
+    "code": "IWS2000",
+    "rank": 5
+  },
+  "149": {
+    "id": 149,
+    "name": "gun-10000149",
+    "en_name": "AEK-999",
+    "code": "AEK999",
+    "rank": 4
+  },
+  "150": {
+    "id": 150,
+    "name": "gun-10000150",
+    "en_name": "Shipka",
+    "code": "Shipka",
+    "rank": 4
+  },
+  "151": {
+    "id": 151,
+    "name": "gun-10000151",
+    "en_name": "M1887",
+    "code": "M1887",
+    "rank": 5
+  },
+  "152": {
+    "id": 152,
+    "name": "gun-10000152",
+    "en_name": "M1897",
+    "code": "M1897",
+    "rank": 3
+  },
+  "153": {
+    "id": 153,
+    "name": "gun-10000153",
+    "en_name": "M37",
+    "code": "Ithaca37",
+    "rank": 4
+  },
+  "154": {
+    "id": 154,
+    "name": "gun-10000154",
+    "en_name": "M500",
+    "code": "M500",
+    "rank": 3
+  },
+  "155": {
+    "id": 155,
+    "name": "gun-10000155",
+    "en_name": "M590",
+    "code": "M590",
+    "rank": 4
+  },
+  "156": {
+    "id": 156,
+    "name": "gun-10000156",
+    "en_name": "Super-Shorty",
+    "code": "SuperShorty",
+    "rank": 4
+  },
+  "157": {
+    "id": 157,
+    "name": "gun-10000157",
+    "en_name": "KSG",
+    "code": "KSG",
+    "rank": 5
+  },
+  "158": {
+    "id": 158,
+    "name": "gun-10000158",
+    "en_name": "KS-23",
+    "code": "KS23",
+    "rank": 3
+  },
+  "159": {
+    "id": 159,
+    "name": "gun-10000159",
+    "en_name": "RMB-93",
+    "code": "RMB93",
+    "rank": 3
+  },
+  "160": {
+    "id": 160,
+    "name": "gun-10000160",
+    "en_name": "Saiga-12",
+    "code": "Saiga12",
+    "rank": 5
+  },
+  "161": {
+    "id": 161,
+    "name": "gun-10000161",
+    "en_name": "Type 97 S",
+    "code": "97typeS",
+    "rank": 4
+  },
+  "162": {
+    "id": 162,
+    "name": "gun-10000162",
+    "en_name": "SPAS-12",
+    "code": "SPAS12",
+    "rank": 4
+  },
+  "163": {
+    "id": 163,
+    "name": "gun-10000163",
+    "en_name": "AA-12",
+    "code": "AA12",
+    "rank": 5
+  },
+  "164": {
+    "id": 164,
+    "name": "gun-10000164",
+    "en_name": "FP-6",
+    "code": "FP6",
+    "rank": 5
+  },
+  "165": {
+    "id": 165,
+    "name": "gun-10000165",
+    "en_name": "M1014",
+    "code": "M1014",
+    "rank": 4
+  },
+  "166": {
+    "id": 166,
+    "name": "gun-10000166",
+    "en_name": "CZ75",
+    "code": "CZ75",
+    "rank": 5
+  },
+  "167": {
+    "id": 167,
+    "name": "gun-10000167",
+    "en_name": "HK45",
+    "code": "HK45",
+    "rank": 3
+  },
+  "168": {
+    "id": 168,
+    "name": "gun-10000168",
+    "en_name": "Spitfire",
+    "code": "Spitfire",
+    "rank": 4
+  },
+  "169": {
+    "id": 169,
+    "name": "gun-10000169",
+    "en_name": "Colt SCW",
+    "code": "ColtSCW",
+    "rank": 3
+  },
+  "170": {
+    "id": 170,
+    "name": "gun-10000170",
+    "en_name": "ASh-12.7",
+    "code": "Ash127",
+    "rank": 3
+  },
+  "171": {
+    "id": 171,
+    "name": "gun-10000171",
+    "en_name": "Ribeyrolles1918",
+    "code": "Ribeyrolles",
+    "rank": 4
+  },
+  "172": {
+    "id": 172,
+    "name": "gun-10000172",
+    "en_name": "RFB",
+    "code": "RFB",
+    "rank": 5
+  },
+  "173": {
+    "id": 173,
+    "name": "gun-10000173",
+    "en_name": "Pecheneg",
+    "code": "PKP",
+    "rank": 5
+  },
+  "174": {
+    "id": 174,
+    "name": "gun-10000174",
+    "en_name": "type 81 R",
+    "code": "81typeR",
+    "rank": 3
+  },
+  "175": {
+    "id": 175,
+    "name": "gun-10000175",
+    "en_name": "ART556",
+    "code": "ART556",
+    "rank": 5
+  },
+  "176": {
+    "id": 176,
+    "name": "gun-10000176",
+    "en_name": "TMP",
+    "code": "TMP",
+    "rank": 3
+  },
+  "177": {
+    "id": 177,
+    "name": "gun-10000177",
+    "en_name": "KLIN",
+    "code": "KLIN",
+    "rank": 4
+  },
+  "178": {
+    "id": 178,
+    "name": "gun-10000178",
+    "en_name": "F1",
+    "code": "F1",
+    "rank": 3
+  },
+  "179": {
+    "id": 179,
+    "name": "gun-10000179",
+    "en_name": "DSR-50",
+    "code": "DSR50",
+    "rank": 5
+  },
+  "180": {
+    "id": 180,
+    "name": "gun-10000180",
+    "en_name": "PzB39",
+    "code": "PzB39",
+    "rank": 4
+  },
+  "181": {
+    "id": 181,
+    "name": "gun-10000181",
+    "en_name": "T91",
+    "code": "T91",
+    "rank": 5
+  },
+  "182": {
+    "id": 182,
+    "name": "gun-10000182",
+    "en_name": "wz.29",
+    "code": "wz29",
+    "rank": 3
+  },
+  "183": {
+    "id": 183,
+    "name": "gun-10000183",
+    "en_name": "Contender",
+    "code": "Contender",
+    "rank": 5
+  },
+  "184": {
+    "id": 184,
+    "name": "gun-10000184",
+    "en_name": "T-5000",
+    "code": "T5000",
+    "rank": 4
+  },
+  "185": {
+    "id": 185,
+    "name": "gun-10000185",
+    "en_name": "Ameli",
+    "code": "Ameli",
+    "rank": 4
+  },
+  "186": {
+    "id": 186,
+    "name": "gun-10000186",
+    "en_name": "P226",
+    "code": "P226",
+    "rank": 3
+  },
+  "187": {
+    "id": 187,
+    "name": "gun-10000187",
+    "en_name": "Ak5",
+    "code": "Ak5",
+    "rank": 4
+  },
+  "188": {
+    "id": 188,
+    "name": "gun-10000188",
+    "en_name": "SAT8",
+    "code": "SAT8",
+    "rank": 5
+  },
+  "189": {
+    "id": 189,
+    "name": "gun-10000189",
+    "en_name": "USAS12",
+    "code": "USAS12",
+    "rank": 4
+  },
+  "190": {
+    "id": 190,
+    "name": "gun-10000190",
+    "en_name": "NS2000",
+    "code": "NS2000",
+    "rank": 3
+  },
+  "191": {
+    "id": 191,
+    "name": "gun-10000191",
+    "en_name": "M12",
+    "code": "M12",
+    "rank": 3
+  },
+  "192": {
+    "id": 192,
+    "name": "gun-10000192",
+    "en_name": "JS05",
+    "code": "JS-127",
+    "rank": 5
+  },
+  "193": {
+    "id": 193,
+    "name": "gun-10000193",
+    "en_name": "T65",
+    "code": "T65",
+    "rank": 3
+  },
+  "194": {
+    "id": 194,
+    "name": "gun-10000194",
+    "en_name": "K2",
+    "code": "K2",
+    "rank": 5
+  },
+  "195": {
+    "id": 195,
+    "name": "gun-10000195",
+    "en_name": "HK23",
+    "code": "HK23",
+    "rank": 3
+  },
+  "196": {
+    "id": 196,
+    "name": "gun-10000196",
+    "en_name": "Zastava M21",
+    "code": "ZastavaM21",
+    "rank": 5
+  },
+  "197": {
+    "id": 197,
+    "name": "gun-10000197",
+    "en_name": "Carcano M1891",
+    "code": "Carcano1891",
+    "rank": 5
+  },
+  "198": {
+    "id": 198,
+    "name": "gun-10000198",
+    "en_name": "Carcano M91/38",
+    "code": "Carcano1938",
+    "rank": 5
+  },
+  "199": {
+    "id": 199,
+    "name": "gun-10000199",
+    "en_name": "80type",
+    "code": "80type",
+    "rank": 4
+  },
+  "200": {
+    "id": 200,
+    "name": "gun-10000200",
+    "en_name": "XM3",
+    "code": "xm3",
+    "rank": 4
+  },
+  "201": {
+    "id": 201,
+    "name": "gun-10000201",
+    "en_name": "Gepard M1",
+    "code": "GepardM1",
+    "rank": 3
+  },
+  "202": {
+    "id": 202,
+    "name": "gun-10000202",
+    "en_name": "Thunder.50",
+    "code": "Thunder50",
+    "rank": 4
+  },
+  "203": {
+    "id": 203,
+    "name": "gun-10000203",
+    "en_name": "PDW",
+    "code": "PDW",
+    "rank": 4
+  },
+  "204": {
+    "id": 204,
+    "name": "gun-10000204",
+    "en_name": "Ballista",
+    "code": "Ballista",
+    "rank": 5
+  },
+  "205": {
+    "id": 205,
+    "name": "gun-10000205",
+    "en_name": "AN94",
+    "code": "AN94",
+    "rank": 5
+  },
+  "206": {
+    "id": 206,
+    "name": "gun-10000206",
+    "en_name": "AK12",
+    "code": "AK12",
+    "rank": 5
+  },
+  "207": {
+    "id": 207,
+    "name": "gun-10000207",
+    "en_name": "CZ2000",
+    "code": "CZ2000",
+    "rank": 4
+  },
+  "208": {
+    "id": 208,
+    "name": "gun-10000208",
+    "en_name": "HK21",
+    "code": "HK21",
+    "rank": 5
+  },
+  "209": {
+    "id": 209,
+    "name": "gun-10000209",
+    "en_name": "OTs-39",
+    "code": "OTs39",
+    "rank": 3
+  },
+  "210": {
+    "id": 210,
+    "name": "gun-10000210",
+    "en_name": "CZ52",
+    "code": "CZ52",
+    "rank": 3
+  },
+  "211": {
+    "id": 211,
+    "name": "gun-10000211",
+    "en_name": "DTASRS",
+    "code": "DTASRS",
+    "rank": 5
+  },
+  "212": {
+    "id": 212,
+    "name": "gun-10000212",
+    "en_name": "K5",
+    "code": "K5",
+    "rank": 4
+  },
+  "213": {
+    "id": 213,
+    "name": "gun-10000213",
+    "en_name": "C-MS",
+    "code": "CBJMS",
+    "rank": 5
+  },
+  "214": {
+    "id": 214,
+    "name": "gun-10000214",
+    "en_name": "ADS",
+    "code": "ADS",
+    "rank": 5
+  },
+  "215": {
+    "id": 215,
+    "name": "gun-10000215",
+    "en_name": "MDR",
+    "code": "MDR",
+    "rank": 5
+  },
+  "216": {
+    "id": 216,
+    "name": "gun-10000216",
+    "en_name": "XM8",
+    "code": "XM8",
+    "rank": 4
+  },
+  "217": {
+    "id": 217,
+    "name": "gun-10000217",
+    "en_name": "SM-1",
+    "code": "HEZISM1",
+    "rank": 3
+  },
+  "218": {
+    "id": 218,
+    "name": "gun-10000218",
+    "en_name": "T77",
+    "code": "T77",
+    "rank": 3
+  },
+  "220": {
+    "id": 220,
+    "name": "gun-10000220",
+    "en_name": "MP-443",
+    "code": "MP443",
+    "rank": 3
+  },
+  "221": {
+    "id": 221,
+    "name": "gun-10000221",
+    "en_name": "GSh-18",
+    "code": "GSH18",
+    "rank": 3
+  },
+  "222": {
+    "id": 222,
+    "name": "gun-10000222",
+    "en_name": "TAC-50",
+    "code": "TAC50",
+    "rank": 5
+  },
+  "223": {
+    "id": 223,
+    "name": "gun-10000223",
+    "en_name": "Model L",
+    "code": "CETME556",
+    "rank": 3
+  },
+  "224": {
+    "id": 224,
+    "name": "gun-10000224",
+    "en_name": "PM-06",
+    "code": "PM06",
+    "rank": 5
+  },
+  "225": {
+    "id": 225,
+    "name": "gun-10000225",
+    "en_name": "Cx4 Storm",
+    "code": "Cx4Storm",
+    "rank": 4
+  },
+  "226": {
+    "id": 226,
+    "name": "gun-10000226",
+    "en_name": "Mk.12 Mod 01",
+    "code": "Mk12",
+    "rank": 4
+  },
+  "227": {
+    "id": 227,
+    "name": "gun-10000227",
+    "en_name": "A-91",
+    "code": "A91",
+    "rank": 4
+  },
+  "228": {
+    "id": 228,
+    "name": "gun-10000228",
+    "en_name": "Sakura",
+    "code": "Type100",
+    "rank": 5
+  },
+  "229": {
+    "id": 229,
+    "name": "gun-10000229",
+    "en_name": "M870P",
+    "code": "M870P",
+    "rank": 5
+  },
+  "230": {
+    "id": 230,
+    "name": "gun-10000230",
+    "en_name": "OBR",
+    "code": "OBR",
+    "rank": 3
+  },
+  "231": {
+    "id": 231,
+    "name": "gun-10000231",
+    "en_name": "M82A1",
+    "code": "M82A1",
+    "rank": 5
+  },
+  "232": {
+    "id": 232,
+    "name": "gun-10000232",
+    "en_name": "MP-448",
+    "code": "MP448",
+    "rank": 3
+  },
+  "233": {
+    "id": 233,
+    "name": "gun-10000233",
+    "en_name": "Px4 Storm",
+    "code": "Px4Storm",
+    "rank": 5
+  },
+  "234": {
+    "id": 234,
+    "name": "gun-10000234",
+    "en_name": "JS 9 mm",
+    "code": "JS9mm",
+    "rank": 5
+  },
+  "235": {
+    "id": 235,
+    "name": "gun-10000235",
+    "en_name": "SPR A3G",
+    "code": "FNSPR",
+    "rank": 4
+  },
+  "236": {
+    "id": 236,
+    "name": "gun-10000236",
+    "en_name": "K11",
+    "code": "K11",
+    "rank": 5
+  },
+  "237": {
+    "id": 237,
+    "name": "gun-10000237",
+    "en_name": "SAR-21",
+    "code": "SAR21",
+    "rank": 4
+  },
+  "238": {
+    "id": 238,
+    "name": "gun-10000238",
+    "en_name": "Type88",
+    "code": "Type88",
+    "rank": 5
+  },
+  "239": {
+    "id": 239,
+    "name": "gun-10000239",
+    "en_name": "Type03",
+    "code": "Type03",
+    "rank": 3
+  },
+  "240": {
+    "id": 240,
+    "name": "gun-10000240",
+    "en_name": "Mk46",
+    "code": "Mk46",
+    "rank": 4
+  },
+  "241": {
+    "id": 241,
+    "name": "gun-10000241",
+    "en_name": "RT-20",
+    "code": "RT20",
+    "rank": 3
+  },
+  "242": {
+    "id": 242,
+    "name": "gun-10000242",
+    "en_name": "P22",
+    "code": "P22",
+    "rank": 5
+  },
+  "243": {
+    "id": 243,
+    "name": "gun-10000243",
+    "en_name": "Type64",
+    "code": "Type64-AR",
+    "rank": 5
+  },
+  "244": {
+    "id": 244,
+    "name": "gun-10000244",
+    "en_name": "TEC-9",
+    "code": "TEC9",
+    "rank": 3
+  },
+  "245": {
+    "id": 245,
+    "name": "gun-10000245",
+    "en_name": "P90",
+    "code": "P90",
+    "rank": 5
+  },
+  "247": {
+    "id": 247,
+    "name": "gun-10000247",
+    "en_name": "K31",
+    "code": "K31",
+    "rank": 4
+  },
+  "248": {
+    "id": 248,
+    "name": "gun-10000248",
+    "en_name": "Jericho",
+    "code": "Jericho",
+    "rank": 4
+  },
+  "249": {
+    "id": 249,
+    "name": "gun-10000249",
+    "en_name": "Type62",
+    "code": "Type62",
+    "rank": 3
+  },
+  "250": {
+    "id": 250,
+    "name": "gun-10000250",
+    "en_name": "HS2000",
+    "code": "HS2000",
+    "rank": 5
+  },
+  "251": {
+    "id": 251,
+    "name": "gun-10000251",
+    "en_name": "X95",
+    "code": "X95",
+    "rank": 5
+  },
+  "252": {
+    "id": 252,
+    "name": "gun-10000252",
+    "en_name": "KSVK",
+    "code": "KSVK",
+    "rank": 4
+  },
+  "253": {
+    "id": 253,
+    "name": "gun-10000253",
+    "en_name": "Lewis",
+    "code": "Lewis",
+    "rank": 5
+  },
+  "254": {
+    "id": 254,
+    "name": "gun-10000254",
+    "en_name": "UKM-2000",
+    "code": "UKM2000",
+    "rank": 4
+  },
+  "255": {
+    "id": 255,
+    "name": "gun-10000255",
+    "en_name": "Scout",
+    "code": "scout",
+    "rank": 3
+  },
+  "256": {
+    "id": 256,
+    "name": "gun-10000256",
+    "en_name": "Falcon",
+    "code": "Falcon",
+    "rank": 3
+  },
+  "257": {
+    "id": 257,
+    "name": "gun-10000257",
+    "en_name": "M200",
+    "code": "M200",
+    "rank": 5
+  },
+  "258": {
+    "id": 258,
+    "name": "gun-10000258",
+    "en_name": "Magal",
+    "code": "Magal",
+    "rank": 3
+  },
+  "259": {
+    "id": 259,
+    "name": "gun-10000259",
+    "en_name": "PM-9",
+    "code": "PM9",
+    "rank": 5
+  },
+  "260": {
+    "id": 260,
+    "name": "gun-10000260",
+    "en_name": "PA-15",
+    "code": "PA15",
+    "rank": 5
+  },
+  "261": {
+    "id": 261,
+    "name": "gun-10000261",
+    "en_name": "QBU-88",
+    "code": "QBU88",
+    "rank": 5
+  },
+  "262": {
+    "id": 262,
+    "name": "gun-10000262",
+    "en_name": "EM-2",
+    "code": "EM2",
+    "rank": 4
+  },
+  "263": {
+    "id": 263,
+    "name": "gun-10000263",
+    "en_name": "MG36",
+    "code": "MG36",
+    "rank": 5
+  },
+  "264": {
+    "id": 264,
+    "name": "gun-10000264",
+    "en_name": "Chauchat",
+    "code": "ChauchatM1915",
+    "rank": 4
+  },
+  "265": {
+    "id": 265,
+    "name": "gun-10000265",
+    "en_name": "HK33",
+    "code": "HK33",
+    "rank": 3
+  },
+  "266": {
+    "id": 266,
+    "name": "gun-10000266",
+    "en_name": "R93",
+    "code": "R93",
+    "rank": 5
+  },
+  "267": {
+    "id": 267,
+    "name": "gun-10000267",
+    "en_name": "MP41",
+    "code": "MP41",
+    "rank": 3
+  },
+  "268": {
+    "id": 268,
+    "name": "gun-10000268",
+    "en_name": "T-CMS",
+    "code": "TCMS",
+    "rank": 3
+  },
+  "269": {
+    "id": 269,
+    "name": "gun-10000269",
+    "en_name": "P30",
+    "code": "P30",
+    "rank": 4
+  },
+  "270": {
+    "id": 270,
+    "name": "gun-10000270",
+    "en_name": "Type 4",
+    "code": "4type",
+    "rank": 4
+  },
+  "271": {
+    "id": 271,
+    "name": "gun-10000271",
+    "en_name": "K3",
+    "code": "K3",
+    "rank": 3
+  },
+  "272": {
+    "id": 272,
+    "name": "gun-10000272",
+    "en_name": "DesertEagle",
+    "code": "DesertEagle",
+    "rank": 5
+  },
+  "273": {
+    "id": 273,
+    "name": "gun-10000273",
+    "en_name": "SSG3000",
+    "code": "SSG3000",
+    "rank": 4
+  },
+  "274": {
+    "id": 274,
+    "name": "gun-10000274",
+    "en_name": "ACR",
+    "code": "ACR",
+    "rank": 5
+  },
+  "275": {
+    "id": 275,
+    "name": "gun-10000275",
+    "en_name": "M1895",
+    "code": "M1895MG",
+    "rank": 4
+  },
+  "276": {
+    "id": 276,
+    "name": "gun-10000276",
+    "en_name": "Kord",
+    "code": "Kord",
+    "rank": 5
+  },
+  "277": {
+    "id": 277,
+    "name": "gun-10000277",
+    "en_name": "VP70",
+    "code": "VP70",
+    "rank": 3
+  },
+  "278": {
+    "id": 278,
+    "name": "gun-10000278",
+    "en_name": "Six12",
+    "code": "Six12",
+    "rank": 3
+  },
+  "279": {
+    "id": 279,
+    "name": "gun-10000279",
+    "en_name": "INSAS",
+    "code": "INSAS",
+    "rank": 3
+  },
+  "281": {
+    "id": 281,
+    "name": "gun-10000281",
+    "en_name": "CAWS",
+    "code": "HKCAWS",
+    "rank": 5
+  },
+  "282": {
+    "id": 282,
+    "name": "gun-10000282",
+    "en_name": "DP-12",
+    "code": "DP12",
+    "rank": 5
+  },
+  "283": {
+    "id": 283,
+    "name": "gun-10000283",
+    "en_name": "Liberator",
+    "code": "Liberator",
+    "rank": 4
+  },
+  "284": {
+    "id": 284,
+    "name": "gun-10000284",
+    "en_name": "Zas M76",
+    "code": "ZasM76",
+    "rank": 3
+  },
+  "1001": {
+    "id": 1001,
+    "name": "gun-10001001",
+    "en_name": "Noel",
+    "code": "BB_Noel",
+    "rank": 5
+  },
+  "1002": {
+    "id": 1002,
+    "name": "gun-10001002",
+    "en_name": "Elphelt",
+    "code": "GG_elfeldt",
+    "rank": 5
+  },
+  "1003": {
+    "id": 1003,
+    "name": "gun-10001003",
+    "en_name": "Kiana",
+    "code": "Kiana",
+    "rank": 5
+  },
+  "1004": {
+    "id": 1004,
+    "name": "gun-10001004",
+    "en_name": "Mei",
+    "code": "RaidenMei",
+    "rank": 5
+  },
+  "1005": {
+    "id": 1005,
+    "name": "gun-10001005",
+    "en_name": "Bronya",
+    "code": "Bronya",
+    "rank": 5
+  },
+  "1006": {
+    "id": 1006,
+    "name": "gun-10001006",
+    "en_name": "Theresa",
+    "code": "Theresa",
+    "rank": 5
+  },
+  "1007": {
+    "id": 1007,
+    "name": "gun-10001007",
+    "en_name": "Himeko",
+    "code": "Himeko",
+    "rank": 5
+  },
+  "1008": {
+    "id": 1008,
+    "name": "gun-10001008",
+    "en_name": "Seele",
+    "code": "Seele",
+    "rank": 5
+  },
+  "1009": {
+    "id": 1009,
+    "name": "gun-10001009",
+    "en_name": "CLEAR",
+    "code": "CLEAR",
+    "rank": 5
+  },
+  "1010": {
+    "id": 1010,
+    "name": "gun-10001010",
+    "en_name": "FAIL",
+    "code": "FAIL",
+    "rank": 5
+  },
+  "1017": {
+    "id": 1017,
+    "name": "gun-10001017",
+    "en_name": "Jill Stingray",
+    "code": "Jill",
+    "rank": 5
+  },
+  "1018": {
+    "id": 1018,
+    "name": "gun-10001018",
+    "en_name": "Sei Asagiri",
+    "code": "SEI",
+    "rank": 5
+  },
+  "1019": {
+    "id": 1019,
+    "name": "gun-10001019",
+    "en_name": "Dorothy Haze",
+    "code": "Dorothy",
+    "rank": 5
+  },
+  "1020": {
+    "id": 1020,
+    "name": "gun-10001020",
+    "en_name": "Stella Hoshii",
+    "code": "Stella",
+    "rank": 5
+  },
+  "1021": {
+    "id": 1021,
+    "name": "gun-10001021",
+    "en_name": "Alma Armas",
+    "code": "Alma",
+    "rank": 5
+  },
+  "1022": {
+    "id": 1022,
+    "name": "gun-10001022",
+    "en_name": "Dana Zane",
+    "code": "Dana",
+    "rank": 5
+  },
+  "9001": {
+    "id": 9001,
+    "name": "gun-10009001",
+    "en_name": "Cyclops",
+    "code": "Cyclops_F",
+    "rank": 5
+  },
+  "9002": {
+    "id": 9002,
+    "name": "gun-10009002",
+    "en_name": "Cyclops_SG",
+    "code": "Cyclops_SG_F",
+    "rank": 5
+  },
+  "9003": {
+    "id": 9003,
+    "name": "gun-10009003",
+    "en_name": "Cerynitis",
+    "code": "Cerynitis_F",
+    "rank": 5
+  },
+  "9004": {
+    "id": 9004,
+    "name": "gun-10009004",
+    "en_name": "Hydra",
+    "code": "Hydra_F",
+    "rank": 5
+  },
+  "9005": {
+    "id": 9005,
+    "name": "gun-10009005",
+    "en_name": "Aegis_GA",
+    "code": "Aegis_GA_F",
+    "rank": 5
+  },
+  "9006": {
+    "id": 9006,
+    "name": "gun-10009006",
+    "en_name": "Cyclops",
+    "code": "Cyclops_F",
+    "rank": 5
+  },
+  "9007": {
+    "id": 9007,
+    "name": "gun-10009007",
+    "en_name": "Cyclops",
+    "code": "Cyclops_F",
+    "rank": 5
+  },
+  "9008": {
+    "id": 9008,
+    "name": "gun-10009008",
+    "en_name": "Cyclops_SG",
+    "code": "Cyclops_SG_F",
+    "rank": 5
+  },
+  "9009": {
+    "id": 9009,
+    "name": "gun-10009009",
+    "en_name": "Cyclops_SG",
+    "code": "Cyclops_SG_F",
+    "rank": 5
+  },
+  "9010": {
+    "id": 9010,
+    "name": "gun-10009010",
+    "en_name": "Hydra",
+    "code": "Hydra_F",
+    "rank": 5
+  },
+  "9011": {
+    "id": 9011,
+    "name": "gun-10009011",
+    "en_name": "Hydra",
+    "code": "Hydra_F",
+    "rank": 5
+  },
+  "9012": {
+    "id": 9012,
+    "name": "gun-10009012",
+    "en_name": "M4A1",
+    "code": "M4A1Mod",
+    "rank": 5
+  },
+  "9013": {
+    "id": 9013,
+    "name": "gun-10009013",
+    "en_name": "M950A",
+    "code": "M950A",
+    "rank": 5
+  },
+  "9014": {
+    "id": 9014,
+    "name": "gun-10009014",
+    "en_name": "Thunder .50",
+    "code": "Thunder50",
+    "rank": 4
+  },
+  "9015": {
+    "id": 9015,
+    "name": "gun-10009015",
+    "en_name": "AEK999",
+    "code": "AEK999",
+    "rank": 4
+  },
+  "9016": {
+    "id": 9016,
+    "name": "gun-10009016",
+    "en_name": "TMP",
+    "code": "TMP",
+    "rank": 3
+  },
+  "9017": {
+    "id": 9017,
+    "name": "gun-10009017",
+    "en_name": "K2",
+    "code": "K2",
+    "rank": 5
+  },
+  "9018": {
+    "id": 9018,
+    "name": "gun-10009018",
+    "en_name": "Thunder .50",
+    "code": "Thunder50",
+    "rank": 4
+  },
+  "9019": {
+    "id": 9019,
+    "name": "gun-10009019",
+    "en_name": "AEK999",
+    "code": "AEK999",
+    "rank": 4
+  },
+  "9020": {
+    "id": 9020,
+    "name": "gun-10009020",
+    "en_name": "TMP",
+    "code": "TMP",
+    "rank": 3
+  },
+  "9021": {
+    "id": 9021,
+    "name": "gun-10009021",
+    "en_name": "K2",
+    "code": "K2",
+    "rank": 5
+  },
+  "9022": {
+    "id": 9022,
+    "name": "gun-10009022",
+    "en_name": "M950A",
+    "code": "M950A",
+    "rank": 5
+  },
+  "9023": {
+    "id": 9023,
+    "name": "gun-10009023",
+    "en_name": "Thunder .50",
+    "code": "Thunder50",
+    "rank": 4
+  },
+  "9024": {
+    "id": 9024,
+    "name": "gun-10009024",
+    "en_name": "AEK999",
+    "code": "AEK999",
+    "rank": 4
+  },
+  "9025": {
+    "id": 9025,
+    "name": "gun-10009025",
+    "en_name": "K2",
+    "code": "K2",
+    "rank": 5
+  },
+  "9026": {
+    "id": 9026,
+    "name": "gun-10009026",
+    "en_name": "M950A",
+    "code": "M950A",
+    "rank": 5
+  },
+  "9027": {
+    "id": 9027,
+    "name": "gun-10009027",
+    "en_name": "Thunder .50",
+    "code": "Thunder50",
+    "rank": 4
+  },
+  "9028": {
+    "id": 9028,
+    "name": "gun-10009028",
+    "en_name": "TMP",
+    "code": "TMP",
+    "rank": 3
+  },
+  "9029": {
+    "id": 9029,
+    "name": "gun-10009029",
+    "en_name": "K2",
+    "code": "K2",
+    "rank": 5
+  },
+  "9030": {
+    "id": 9030,
+    "name": "gun-10009030",
+    "en_name": "M950A",
+    "code": "M950A",
+    "rank": 5
+  },
+  "9031": {
+    "id": 9031,
+    "name": "gun-10009031",
+    "en_name": "AEK999",
+    "code": "AEK999",
+    "rank": 4
+  },
+  "9032": {
+    "id": 9032,
+    "name": "gun-10009032",
+    "en_name": "TMP",
+    "code": "TMP",
+    "rank": 3
+  },
+  "9034": {
+    "id": 9034,
+    "name": "gun-10009034",
+    "en_name": "AK12",
+    "code": "AK12",
+    "rank": 5
+  },
+  "9035": {
+    "id": 9035,
+    "name": "gun-10009035",
+    "en_name": "AN94",
+    "code": "AN94",
+    "rank": 5
+  },
+  "9036": {
+    "id": 9036,
+    "name": "gun-10009036",
+    "en_name": "M4A1_Motor",
+    "code": "M4A1_Motor",
+    "rank": 4
+  },
+  "9037": {
+    "id": 9037,
+    "name": "gun-10009037",
+    "en_name": "AR15_Motor",
+    "code": "AR15_Motor",
+    "rank": 4
+  },
+  "9038": {
+    "id": 9038,
+    "name": "gun-10009038",
+    "en_name": "AK12_Motor",
+    "code": "AK12_Motor",
+    "rank": 5
+  },
+  "9039": {
+    "id": 9039,
+    "name": "gun-10009039",
+    "en_name": "AN94_Motor",
+    "code": "AN94_Motor",
+    "rank": 5
+  },
+  "9040": {
+    "id": 9040,
+    "name": "gun-10009040",
+    "en_name": "M4A1",
+    "code": "M4A1_Motor",
+    "rank": 5
+  },
+  "9041": {
+    "id": 9041,
+    "name": "gun-10009041",
+    "en_name": "M4A1",
+    "code": "M4A1_Motor",
+    "rank": 5
+  },
+  "9042": {
+    "id": 9042,
+    "name": "gun-10009042",
+    "en_name": "M4A1",
+    "code": "M4A1_Motor",
+    "rank": 5
+  },
+  "9043": {
+    "id": 9043,
+    "name": "gun-10009043",
+    "en_name": "M4A1",
+    "code": "M4A1_Motor",
+    "rank": 5
+  },
+  "9044": {
+    "id": 9044,
+    "name": "gun-10009044",
+    "en_name": "M16A1",
+    "code": "M16A1_NPC",
+    "rank": 4
+  },
+  "9045": {
+    "id": 9045,
+    "name": "gun-10009045",
+    "en_name": "Carina",
+    "code": "Tank_R_Ally",
+    "rank": 4
+  },
+  "9046": {
+    "id": 9046,
+    "name": "gun-10009046",
+    "en_name": "Vela ",
+    "code": "Tank_M_Ally",
+    "rank": 4
+  },
+  "9047": {
+    "id": 9047,
+    "name": "gun-10009047",
+    "en_name": "Puppis",
+    "code": "Tank_L_Ally",
+    "rank": 4
+  },
+  "9048": {
+    "id": 9048,
+    "name": "gun-10009048",
+    "en_name": "M4A1",
+    "code": "M4A1Mod_Ogas",
+    "rank": 5
+  },
+  "20001": {
+    "id": 20001,
+    "name": "gun-10020001",
+    "en_name": "M1873",
+    "code": "M1873Mod",
+    "rank": 5
+  },
+  "20002": {
+    "id": 20002,
+    "name": "gun-10020002",
+    "en_name": "M1911",
+    "code": "M1911Mod",
+    "rank": 4
+  },
+  "20005": {
+    "id": 20005,
+    "name": "gun-10020005",
+    "en_name": "M1895",
+    "code": "M1895Mod",
+    "rank": 4
+  },
+  "20007": {
+    "id": 20007,
+    "name": "gun-10020007",
+    "en_name": "APS",
+    "code": "APSMod",
+    "rank": 5
+  },
+  "20012": {
+    "id": 20012,
+    "name": "gun-10020012",
+    "en_name": "C96",
+    "code": "C96Mod",
+    "rank": 4
+  },
+  "20026": {
+    "id": 20026,
+    "name": "gun-10020026",
+    "en_name": "MP5",
+    "code": "MP5Mod",
+    "rank": 5
+  },
+  "20029": {
+    "id": 20029,
+    "name": "gun-10020029",
+    "en_name": "Sten Mk Ⅱ",
+    "code": "StenMK2Mod",
+    "rank": 4
+  },
+  "20031": {
+    "id": 20031,
+    "name": "gun-10020031",
+    "en_name": "MAB 38",
+    "code": "MAB38Mod",
+    "rank": 4
+  },
+  "20032": {
+    "id": 20032,
+    "name": "gun-10020032",
+    "en_name": "Micro Uzi",
+    "code": "MicroUZIMod",
+    "rank": 4
+  },
+  "20037": {
+    "id": 20037,
+    "name": "gun-10020037",
+    "en_name": "M14",
+    "code": "M14Mod",
+    "rank": 4
+  },
+  "20039": {
+    "id": 20039,
+    "name": "gun-10020039",
+    "en_name": "M1891",
+    "code": "M1891Mod",
+    "rank": 5
+  },
+  "20044": {
+    "id": 20044,
+    "name": "gun-10020044",
+    "en_name": "SV-98",
+    "code": "SV98Mod",
+    "rank": 4
+  },
+  "20051": {
+    "id": 20051,
+    "name": "gun-10020051",
+    "en_name": "FN-49",
+    "code": "FN49Mod",
+    "rank": 4
+  },
+  "20053": {
+    "id": 20053,
+    "name": "gun-10020053",
+    "en_name": "NTW-20",
+    "code": "NTW20Mod",
+    "rank": 6
+  },
+  "20055": {
+    "id": 20055,
+    "name": "gun-10020055",
+    "en_name": "M4A1",
+    "code": "M4A1Mod",
+    "rank": 5
+  },
+  "20056": {
+    "id": 20056,
+    "name": "gun-10020056",
+    "en_name": "M4 SOPMOD II",
+    "code": "M4 SOPMOD IIMod",
+    "rank": 5
+  },
+  "20057": {
+    "id": 20057,
+    "name": "gun-10020057",
+    "en_name": "ST AR-15",
+    "code": "AR15Mod",
+    "rank": 5
+  },
+  "20060": {
+    "id": 20060,
+    "name": "gun-10020060",
+    "en_name": "AS Val",
+    "code": "ASVALMod",
+    "rank": 5
+  },
+  "20061": {
+    "id": 20061,
+    "name": "gun-10020061",
+    "en_name": "StG44",
+    "code": "STG44Mod",
+    "rank": 4
+  },
+  "20063": {
+    "id": 20063,
+    "name": "gun-10020063",
+    "en_name": "G3",
+    "code": "G3Mod",
+    "rank": 4
+  },
+  "20064": {
+    "id": 20064,
+    "name": "gun-10020064",
+    "en_name": "G36",
+    "code": "G36Mod",
+    "rank": 5
+  },
+  "20065": {
+    "id": 20065,
+    "name": "gun-10020065",
+    "en_name": "HK416",
+    "code": "HK416Mod",
+    "rank": 6
+  },
+  "20075": {
+    "id": 20075,
+    "name": "gun-10020075",
+    "en_name": "M1918",
+    "code": "M1918Mod",
+    "rank": 5
+  },
+  "20081": {
+    "id": 20081,
+    "name": "gun-10020081",
+    "en_name": "LWMMG",
+    "code": "LWMMGMod",
+    "rank": 4
+  },
+  "20089": {
+    "id": 20089,
+    "name": "gun-10020089",
+    "en_name": "Bren MK I",
+    "code": "BrenMKMod",
+    "rank": 4
+  },
+  "20091": {
+    "id": 20091,
+    "name": "gun-10020091",
+    "en_name": "MP-446",
+    "code": "MP446Mod",
+    "rank": 4
+  },
+  "20093": {
+    "id": 20093,
+    "name": "gun-10020093",
+    "en_name": "IDW",
+    "code": "IDWMod",
+    "rank": 4
+  },
+  "20094": {
+    "id": 20094,
+    "name": "gun-10020094",
+    "en_name": "Type 64",
+    "code": "64typeMod",
+    "rank": 4
+  },
+  "20095": {
+    "id": 20095,
+    "name": "gun-10020095",
+    "en_name": "Type 88",
+    "code": "88typeMod",
+    "rank": 4
+  },
+  "20101": {
+    "id": 20101,
+    "name": "gun-10020101",
+    "en_name": "UMP9",
+    "code": "UMP9Mod",
+    "rank": 5
+  },
+  "20103": {
+    "id": 20103,
+    "name": "gun-10020103",
+    "en_name": "UMP45",
+    "code": "UMP45Mod",
+    "rank": 5
+  }
+}

@@ -1,16 +1,19 @@
 ﻿ <UserControl 
-    x:Class="GFAlarm.View.Menu.DashboardView"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-    xmlns:data="clr-namespace:GFAlarm.Data"
-    xmlns:sys="clr-namespace:System;assembly=mscorlib"
-    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-    xmlns:ls="clr-namespace:LocalizationResources;assembly=LocalizationResources"
-    xmlns:uc="http://www.quickzip.org/BaseControls"
-    mc:Ignorable="d" SnapsToDevicePixels="True"
-    d:DesignHeight="300" d:DesignWidth="200">
+     x:Class="GFAlarm.View.Menu.DashboardView"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+     xmlns:data="clr-namespace:GFAlarm.Data"
+     xmlns:sys="clr-namespace:System;assembly=mscorlib"
+     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+     xmlns:ls="clr-namespace:LocalizationResources;assembly=LocalizationResources"
+     xmlns:uc="http://www.quickzip.org/BaseControls"
+     mc:Ignorable="d" 
+     
+     SnapsToDevicePixels="True"
+     d:DesignHeight="300" 
+     d:DesignWidth="200">
     <Grid>
         
         <!-- 오버레이 -->
@@ -29,79 +32,99 @@
                 
                 <!-- 공유보석 -->
                 <StackPanel x:Name="ShareGem">
-                    <Grid x:Name="ShareGem_GroupBox" Visibility="Collapsed"
-                          Style="{StaticResource GroupGridStyle}">
-                        <!-- border -->
-                        <Border Style="{StaticResource GroupBorderStyle}"/>
-                        <!-- icon -->
-                        <iconPacks:PackIconMaterial 
-                            Style="{StaticResource GroupIconStyle}"
-                            Width="16" Height="13" Foreground="{StaticResource OrangeBrush}" 
-                            Kind="DiamondStone"/>
-                        <!-- title -->
-                        <TextBlock Style="{StaticResource GroupTitleStyle}">
-                            <Run Text="{Binding Path=[UNRECEIVE_SHARE_GEM], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
-                    </Grid>
+                    <!-- groupbox -->
+                    <Border x:Name="ShareGemGroupBox" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxBorderStyle}">
+                        <Grid Margin="10,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <!-- icon -->
+                            <iconPacks:PackIconMaterial
+                                Grid.Column="0"
+                                Style="{StaticResource GroupBoxIconStyle}"
+                                Foreground="{StaticResource OrangeBrush}"
+                                Width="16" Height="13" Kind="DiamondStone"/>
+                            <!-- title -->
+                            <TextBlock 
+                                Grid.Column="1" 
+                                Style="{StaticResource GroupBoxTitleStyle}"
+                                Text="{Binding Path=[UNRECEIVE_SHARE_GEM], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </Grid>
+                    </Border>
                 </StackPanel>
                 
                 <!-- 공유전지 -->
                 <StackPanel x:Name="ShareBattery">
-                    <Grid x:Name="ShareBattery_GroupBox" Visibility="Collapsed"
-                          Style="{StaticResource GroupGridStyle}">
-                        <!-- border -->
-                        <Border Style="{StaticResource GroupBorderStyle}"/>
-                        <!-- icon -->
-                        <iconPacks:PackIconMaterial 
-                            Style="{StaticResource GroupIconStyle}"
-                            Width="16" Height="14" Foreground="{StaticResource OrangeBrush}" 
-                            Kind="BatteryCharging"/>
-                        <!-- title -->
-                        <TextBlock Style="{StaticResource GroupTitleStyle}">
-                            <Run Text="{Binding Path=[UNRECEIVE_SHARE_BATTERY], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
-                    </Grid>
+                    <!-- groupbox -->
+                    <Border x:Name="ShareBatteryGroupBox" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxBorderStyle}">
+                        <Grid Margin="10,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <!-- icon -->
+                            <iconPacks:PackIconMaterial
+                                Grid.Column="0"
+                                Style="{StaticResource GroupBoxIconStyle}"
+                                Foreground="{StaticResource OrangeBrush}"
+                                Width="16" Height="14" Kind="BatteryCharging"/>
+                            <!-- title -->
+                            <TextBlock 
+                                Grid.Column="1" 
+                                Style="{StaticResource GroupBoxTitleStyle}"
+                                Text="{Binding Path=[UNRECEIVE_SHARE_BATTERY], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        </Grid>
+                    </Border>
                 </StackPanel>
                 
                 <!-- 지원현황 -->
                 <StackPanel x:Name="DispatchedEchelon">
                     <!-- lower guide -->
-                    <Border x:Name="DispatchedEchelon_LowerGuide" Visibility="Collapsed"
+                    <Border x:Name="DispatchedEchelonLowerGuide" Visibility="Collapsed"
                             Style="{StaticResource GroupGuideStyle}"/>
                     <!-- groupbox -->
-                    <Grid x:Name="DispatchedEchelon_GroupBox" Visibility="Collapsed"
-                          Style="{StaticResource GroupGridStyle}" 
-                          MouseLeftButtonDown="GroupBox_MouseDown" MouseLeftButtonUp="GroupBox_MouseUp" MouseMove="Group_MouseMove">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <!-- border -->
-                        <Border Grid.ColumnSpan="2" 
-                                Style="{StaticResource GroupBorderStyle}"/>
-                        <!-- icon -->
-                        <iconPacks:PackIconMaterial Grid.Column="0" 
-                                                    Style="{StaticResource GroupIconStyle}"
-                                                    Width="16" Height="15" 
-                                                    Kind="ChessKnight"/>
-                        <!-- title -->
-                        <TextBlock Grid.Column="0" 
-                                   Style="{StaticResource GroupTitleStyle}">
-                            <Run Text="{Binding Path=[DASHBOARD_GROUP_DISPATCHED_ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
-                        <!-- count -->
-                        <TextBlock Grid.Column="1"
-                                   Style="{StaticResource GroupCountStyle}">
-                            <Run x:Name="DispatchedEchelon_Count" Text="0"/><Run Text="{Binding Path=[COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
-                        <!-- arrow -->
-                        <iconPacks:PackIconMaterial Grid.Column="1" 
-                                                    x:Name="DispatchedEchelon_Arrow"
-                                                    Style="{StaticResource GroupArrowStyle}"
-                                                    Kind="ChevronDown"/>
-                    </Grid>
+                    <Border x:Name="DispatchedEchelonGroupBox" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxBorderStyle}"
+                            MouseDown="GroupBox_MouseDown" MouseMove="Group_MouseMove" MouseUp="GroupBox_MouseUp">
+                        <Grid Margin="10,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <!-- icon -->
+                            <iconPacks:PackIconMaterial
+                                Grid.Column="0"
+                                Style="{StaticResource GroupBoxIconStyle}"
+                                Width="16" Height="15" Kind="ChessKnight"/>
+                            <!-- title -->
+                            <TextBlock
+                                Grid.Column="1"
+                                Style="{StaticResource GroupBoxTitleStyle}"
+                                Text="{Binding Path=[DASHBOARD_GROUP_DISPATCHED_ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            <!-- count -->
+                            <Border 
+                                Grid.Column="2" 
+                                Style="{StaticResource GroupBoxCountBorderStyle}">
+                                <TextBlock 
+                                    x:Name="DispatchedEchelonGroupBox_Count"
+                                    Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                    Text="0"/>
+                            </Border>
+                            <!-- arrow -->
+                            <iconPacks:PackIconMaterial 
+                                Grid.Column="3" 
+                                x:Name="DispatchedEchelonGroupBox_Arrow"
+                                Style="{StaticResource GroupBoxArrowStyle}"
+                                Kind="ChevronDown"/>
+                        </Grid>
+                    </Border>
                     <!-- listbox -->
-                    <ListBox x:Name="DispatchedEchelon_ListBox" Visibility="Collapsed">
+                    <ListBox x:Name="DispatchedEchelonListBox" Visibility="Collapsed">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid x:Name="TemplateGrid" 
@@ -466,49 +489,55 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <!-- upper guide -->
-                    <Border x:Name="DispatchedEchelon_UpperGuide" Visibility="Collapsed"
+                    <Border x:Name="DispatchedEchelonUpperGuide" Visibility="Collapsed"
                             Style="{StaticResource GroupGuideStyle}"/>
                 </StackPanel>
                 
                 <!-- 인형제조 -->
                 <StackPanel x:Name="ProduceDoll">
                     <!-- lower guide -->
-                    <Border x:Name="ProduceDoll_LowerGuide" Visibility="Collapsed"
+                    <Border x:Name="ProduceDollLowerGuide" Visibility="Collapsed"
                             Style="{StaticResource GroupGuideStyle}"/>
                     <!-- groupbox -->
-                    <Grid x:Name="ProduceDoll_GroupBox" Visibility="Collapsed" 
-                          Style="{StaticResource GroupGridStyle}"
-                          MouseLeftButtonDown="GroupBox_MouseDown" MouseLeftButtonUp="GroupBox_MouseUp" MouseMove="Group_MouseMove">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <!-- border -->
-                        <Border Grid.ColumnSpan="2" 
-                                Style="{StaticResource GroupBorderStyle}"/>
-                        <!-- icon -->
-                        <iconPacks:PackIconMaterial Grid.ColumnSpan="2"
-                                                    Style="{StaticResource GroupIconStyle}"
-                                                    Width="16" Height="12" 
-                                                    Kind="HumanGreeting"/>
-                        <!-- title -->
-                        <TextBlock Grid.Column="0" 
-                                   Style="{StaticResource GroupTitleStyle}">
-                            <Run Text="{Binding Path=[DASHBOARD_GROUP_PRODUCE_DOLL], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
-                        <!-- count -->
-                        <TextBlock Grid.Column="1"
-                                   Style="{StaticResource GroupCountStyle}">
-                            <Run x:Name="ProduceDoll_Count" Text="0"/><Run Text="{Binding Path=[COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
-                        <!-- arrow -->
-                        <iconPacks:PackIconMaterial Grid.Column="1" 
-                                                    x:Name="ProduceDoll_Arrow"
-                                                    Style="{StaticResource GroupArrowStyle}"
-                                                    Kind="ChevronDown"/>
-                    </Grid>
+                    <Border x:Name="ProduceDollGroupBox" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxBorderStyle}"
+                            MouseDown="GroupBox_MouseDown" MouseMove="Group_MouseMove" MouseUp="GroupBox_MouseUp">
+                        <Grid Margin="10,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <!-- icon -->
+                            <iconPacks:PackIconMaterial
+                                Grid.Column="0"
+                                Style="{StaticResource GroupBoxIconStyle}"
+                                Width="16" Height="12" Kind="HumanGreeting"/>
+                            <!-- title -->
+                            <TextBlock
+                                Grid.Column="1"
+                                Style="{StaticResource GroupBoxTitleStyle}"
+                                Text="{Binding Path=[DASHBOARD_GROUP_PRODUCE_DOLL], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            <!-- count -->
+                            <Border 
+                                Grid.Column="2" 
+                                Style="{StaticResource GroupBoxCountBorderStyle}">
+                                <TextBlock 
+                                    x:Name="ProduceDollGroupBox_Count"
+                                    Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                    Text="0"/>
+                            </Border>
+                            <!-- arrow -->
+                            <iconPacks:PackIconMaterial 
+                                Grid.Column="3" 
+                                x:Name="ProduceDollGroupBox_Arrow"
+                                Style="{StaticResource GroupBoxArrowStyle}"
+                                Kind="ChevronDown"/>
+                        </Grid>
+                    </Border>
                     <!-- listbox -->
-                    <ListBox x:Name="ProduceDoll_ListBox">
+                    <ListBox x:Name="ProduceDollListBox">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid x:Name="TemplateGrid" 
@@ -709,49 +738,55 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <!-- upper guide -->
-                    <Border x:Name="ProduceDoll_UpperGuide" Visibility="Collapsed"
+                    <Border x:Name="ProduceDollUpperGuide" Visibility="Collapsed"
                             Style="{StaticResource GroupGuideStyle}"/>
                 </StackPanel>
                 
                 <!-- 장비제조 -->
                 <StackPanel x:Name="ProduceEquip">
                     <!-- lower guide -->
-                    <Border x:Name="ProduceEquip_LowerGuide" Visibility="Collapsed"
+                    <Border x:Name="ProduceEquipLowerGuide" Visibility="Collapsed"
                             Style="{StaticResource GroupGuideStyle}"/>
                     <!-- groupbox -->
-                    <Grid x:Name="ProduceEquip_GroupBox" Visibility="Collapsed"
-                          Style="{StaticResource GroupGridStyle}"
-                          MouseLeftButtonDown="GroupBox_MouseDown" MouseLeftButtonUp="GroupBox_MouseUp" MouseMove="Group_MouseMove">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <!-- border -->
-                        <Border Grid.ColumnSpan="2" 
-                                Style="{StaticResource GroupBorderStyle}"/>
-                        <!-- icon -->
-                        <iconPacks:PackIconMaterial Grid.Column="0" 
-                                                    Style="{StaticResource GroupIconStyle}"
-                                                    Width="16" Height="12" 
-                                                    Kind="Package"/>
-                        <!-- title -->
-                        <TextBlock Grid.Column="0" 
-                                   Style="{StaticResource GroupTitleStyle}">
-                            <Run Text="{Binding Path=[DASHBOARD_GROUP_PRODUCE_EQUIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
-                        <!-- count -->
-                        <TextBlock Grid.Column="1"
-                                   Style="{StaticResource GroupCountStyle}">
-                            <Run x:Name="ProduceEquip_Count" Text="0"/><Run Text="{Binding Path=[COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
-                        <!-- arrow -->
-                        <iconPacks:PackIconMaterial Grid.Column="1" 
-                                                    x:Name="ProduceEquip_Arrow"
-                                                    Style="{StaticResource GroupArrowStyle}"
-                                                    Kind="ChevronDown"/>
-                    </Grid>
+                    <Border x:Name="ProduceEquipGroupBox" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxBorderStyle}"
+                            MouseDown="GroupBox_MouseDown" MouseMove="Group_MouseMove" MouseUp="GroupBox_MouseUp">
+                        <Grid Margin="10,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <!-- icon -->
+                            <iconPacks:PackIconMaterial
+                                Grid.Column="0"
+                                Style="{StaticResource GroupBoxIconStyle}"
+                                Width="16" Height="12" Kind="Package"/>
+                            <!-- title -->
+                            <TextBlock
+                                Grid.Column="1"
+                                Style="{StaticResource GroupBoxTitleStyle}"
+                                Text="{Binding Path=[DASHBOARD_GROUP_PRODUCE_EQUIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            <!-- count -->
+                            <Border 
+                                Grid.Column="2" 
+                                Style="{StaticResource GroupBoxCountBorderStyle}">
+                                <TextBlock 
+                                    x:Name="ProduceEquipGroupBox_Count"
+                                    Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                    Text="0"/>
+                            </Border>
+                            <!-- arrow -->
+                            <iconPacks:PackIconMaterial 
+                                Grid.Column="3" 
+                                x:Name="ProduceEquipGroupBox_Arrow"
+                                Style="{StaticResource GroupBoxArrowStyle}"
+                                Kind="ChevronDown"/>
+                        </Grid>
+                    </Border>
                     <!-- listbox -->
-                    <ListBox x:Name="ProduceEquip_ListBox">
+                    <ListBox x:Name="ProduceEquipListBox">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid x:Name="TemplateGrid"
@@ -944,49 +979,55 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <!-- upper guide -->
-                    <Border x:Name="ProduceEquip_UpperGuide" Visibility="Collapsed"
+                    <Border x:Name="ProduceEquipUpperGuide" Visibility="Collapsed"
                         Style="{StaticResource GroupGuideStyle}"/>
                 </StackPanel>
                 
                 <!-- 스킬훈련 -->
                 <StackPanel x:Name="SkillTrain">
                     <!-- lower guide -->
-                    <Border x:Name="SkillTrain_LowerGuide" Visibility="Collapsed"
+                    <Border x:Name="SkillTrainLowerGuide" Visibility="Collapsed"
                             Style="{StaticResource GroupGuideStyle}"/>
                     <!-- groupbox -->
-                    <Grid x:Name="SkillTrain_GroupBox" Visibility="Collapsed"
-                          Style="{StaticResource GroupGridStyle}" 
-                          MouseLeftButtonDown="GroupBox_MouseDown" MouseLeftButtonUp="GroupBox_MouseUp" MouseMove="Group_MouseMove">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <!-- border -->
-                        <Border Grid.ColumnSpan="2" 
-                                Style="{StaticResource GroupBorderStyle}"/>
-                        <!-- icon -->
-                        <iconPacks:PackIconMaterial Grid.Column="0" 
-                                                    Style="{StaticResource GroupIconStyle}" 
-                                                    Width="16" Height="15" 
-                                                    Kind="Microscope"/>
-                        <!-- title -->
-                        <TextBlock Grid.Column="0" 
-                                   Style="{StaticResource GroupTitleStyle}">
-                            <Run Text="{Binding Path=[DASHBOARD_GROUP_SKILL_TRAIN], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
-                        <!-- count -->
-                        <TextBlock Grid.Column="1"
-                                   Style="{StaticResource GroupCountStyle}">
-                            <Run x:Name="SkillTrain_Count" Text="0"/><Run Text="{Binding Path=[COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
-                        <!-- arrow -->
-                        <iconPacks:PackIconMaterial Grid.Column="1" 
-                                                    x:Name="SkillTrain_Arrow"
-                                                    Style="{StaticResource GroupArrowStyle}"
-                                                    Kind="ChevronDown"/>
-                    </Grid>
+                    <Border x:Name="SkillTrainGroupBox" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxBorderStyle}"
+                            MouseDown="GroupBox_MouseDown" MouseMove="Group_MouseMove" MouseUp="GroupBox_MouseUp">
+                        <Grid Margin="10,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <!-- icon -->
+                            <iconPacks:PackIconMaterial
+                                Grid.Column="0"
+                                Style="{StaticResource GroupBoxIconStyle}"
+                                Width="16" Height="15" Kind="Microscope"/>
+                            <!-- title -->
+                            <TextBlock
+                                Grid.Column="1"
+                                Style="{StaticResource GroupBoxTitleStyle}"
+                                Text="{Binding Path=[DASHBOARD_GROUP_SKILL_TRAIN], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            <!-- count -->
+                            <Border 
+                                Grid.Column="2" 
+                                Style="{StaticResource GroupBoxCountBorderStyle}">
+                                <TextBlock 
+                                    x:Name="SkillTrainGroupBox_Count"
+                                    Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                    Text="0"/>
+                            </Border>
+                            <!-- arrow -->
+                            <iconPacks:PackIconMaterial 
+                                Grid.Column="3" 
+                                x:Name="SkillTrainGroupBox_Arrow"
+                                Style="{StaticResource GroupBoxArrowStyle}"
+                                Kind="ChevronDown"/>
+                        </Grid>
+                    </Border>
                     <!-- listbox -->
-                    <ListBox x:Name="SkillTrain_ListBox">
+                    <ListBox x:Name="SkillTrainListBox">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid x:Name="TemplateGrid" 
@@ -1051,49 +1092,55 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <!-- upper guide -->
-                    <Border x:Name="SkillTrain_UpperGuide" Visibility="Collapsed"
+                    <Border x:Name="SkillTrainUpperGuide" Visibility="Collapsed"
                         Style="{StaticResource GroupGuideStyle}"/>
                 </StackPanel>
                 
                 <!-- 정보분석 -->
                 <StackPanel x:Name="DataAnalysis">
                     <!-- lower guide -->
-                    <Border x:Name="DataAnalysis_LowerGuide" Visibility="Collapsed"
+                    <Border x:Name="DataAnalysisLowerGuide" Visibility="Collapsed"
                         Style="{StaticResource GroupGuideStyle}"/>
                     <!-- groupbox -->
-                    <Grid x:Name="DataAnalysis_GroupBox" 
-                          Style="{StaticResource GroupGridStyle}" Visibility="Collapsed"
-                          MouseLeftButtonDown="GroupBox_MouseDown" MouseLeftButtonUp="GroupBox_MouseUp" MouseMove="Group_MouseMove">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <!-- border -->
-                        <Border Grid.ColumnSpan="2" 
-                                Style="{StaticResource GroupBorderStyle}"/>
-                        <!-- icon -->
-                        <iconPacks:PackIconMaterial Grid.Column="0" 
-                                                    Style="{StaticResource GroupIconStyle}"
-                                                    Width="16" Height="15" 
-                                                    Kind="HexagonMultiple"/>
-                        <!-- title -->
-                        <TextBlock Grid.Column="0" 
-                                   Style="{StaticResource GroupTitleStyle}">
-                            <Run Text="{Binding Path=[DASHBOARD_GROUP_DATA_ANALYSIS], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
-                        <!-- count -->
-                        <TextBlock Grid.Column="1"
-                                   Style="{StaticResource GroupCountStyle}">
-                            <Run x:Name="DataAnalysis_Count" Text="0"/><Run Text="{Binding Path=[COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
-                        <!-- arrow -->
-                        <iconPacks:PackIconMaterial Grid.Column="1" 
-                                                    x:Name="DataAnalysis_Arrow"
-                                                    Style="{StaticResource GroupArrowStyle}"
-                                                    Kind="ChevronDown"/>
-                    </Grid>
+                    <Border x:Name="DataAnalysisGroupBox" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxBorderStyle}"
+                            MouseDown="GroupBox_MouseDown" MouseMove="Group_MouseMove" MouseUp="GroupBox_MouseUp">
+                        <Grid Margin="10,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <!-- icon -->
+                            <iconPacks:PackIconMaterial
+                                Grid.Column="0"
+                                Style="{StaticResource GroupBoxIconStyle}"
+                                Width="16" Height="15" Kind="HexagonMultiple"/>
+                            <!-- title -->
+                            <TextBlock
+                                Grid.Column="1"
+                                Style="{StaticResource GroupBoxTitleStyle}"
+                                Text="{Binding Path=[DASHBOARD_GROUP_DATA_ANALYSIS], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            <!-- count -->
+                            <Border 
+                                Grid.Column="2" 
+                                Style="{StaticResource GroupBoxCountBorderStyle}">
+                                <TextBlock 
+                                    x:Name="DataAnalysisGroupBox_Count"
+                                    Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                    Text="0"/>
+                            </Border>
+                            <!-- arrow -->
+                            <iconPacks:PackIconMaterial 
+                                Grid.Column="3" 
+                                x:Name="DataAnalysisGroupBox_Arrow"
+                                Style="{StaticResource GroupBoxArrowStyle}"
+                                Kind="ChevronDown"/>
+                        </Grid>
+                    </Border>
                     <!-- listbox -->
-                    <ListBox x:Name="DataAnalysis_ListBox">
+                    <ListBox x:Name="DataAnalysisListBox">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid x:Name="TemplateGrid" 
@@ -1214,49 +1261,55 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <!-- upper guide -->
-                    <Border x:Name="DataAnalysis_UpperGuide" Visibility="Collapsed"
+                    <Border x:Name="DataAnalysisUpperGuide" Visibility="Collapsed"
                         Style="{StaticResource GroupGuideStyle}"/>
                 </StackPanel>
                 
                 <!-- 탐색현황 -->
                 <StackPanel x:Name="Explore">
                     <!-- lower guide -->
-                    <Border x:Name="Explore_LowerGuide" Visibility="Collapsed"
+                    <Border x:Name="ExploreLowerGuide" Visibility="Collapsed"
                             Style="{StaticResource GroupGuideStyle}"/>
                     <!-- groupbox -->
-                    <Grid x:Name="Explore_GroupBox" Visibility="Collapsed"
-                          Style="{StaticResource GroupGridStyle}" 
-                          MouseLeftButtonDown="GroupBox_MouseDown" MouseLeftButtonUp="GroupBox_MouseUp" MouseMove="Group_MouseMove">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <!-- border -->
-                        <Border Grid.ColumnSpan="2" 
-                                Style="{StaticResource GroupBorderStyle}"/>
-                        <!-- icon -->
-                        <iconPacks:PackIconMaterial Grid.Column="0" 
-                                                    Style="{StaticResource GroupIconStyle}"
-                                                    Width="16" Height="13" 
-                                                    Kind="MapOutline"/>
-                        <!-- title -->
-                        <TextBlock Grid.Column="0" 
-                                   Style="{StaticResource GroupTitleStyle}">
-                            <Run Text="{Binding Path=[DASHBOARD_GROUP_EXPLORE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
-                        <!-- count -->
-                        <TextBlock Grid.Column="1"
-                                   Style="{StaticResource GroupCountStyle}">
-                            <Run x:Name="Explore_Count" Text="0"/><Run Text="{Binding Path=[COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
-                        <!-- arrow -->
-                        <iconPacks:PackIconMaterial Grid.Column="1" 
-                                                    x:Name="Explore_Arrow"
-                                                    Style="{StaticResource GroupArrowStyle}"
-                                                    Kind="ChevronDown"/>
-                    </Grid>
+                    <Border x:Name="ExploreGroupBox" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxBorderStyle}"
+                            MouseDown="GroupBox_MouseDown" MouseMove="Group_MouseMove" MouseUp="GroupBox_MouseUp">
+                        <Grid Margin="10,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <!-- icon -->
+                            <iconPacks:PackIconMaterial
+                                Grid.Column="0"
+                                Style="{StaticResource GroupBoxIconStyle}"
+                                Width="16" Height="13" Kind="MapOutline"/>
+                            <!-- title -->
+                            <TextBlock
+                                Grid.Column="1"
+                                Style="{StaticResource GroupBoxTitleStyle}"
+                                Text="{Binding Path=[DASHBOARD_GROUP_EXPLORE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            <!-- count -->
+                            <Border 
+                                Grid.Column="2" 
+                                Style="{StaticResource GroupBoxCountBorderStyle}">
+                                <TextBlock 
+                                    x:Name="ExploreGroupBox_Count"
+                                    Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                    Text="0"/>
+                            </Border>
+                            <!-- arrow -->
+                            <iconPacks:PackIconMaterial 
+                                Grid.Column="3" 
+                                x:Name="ExploreGroupBox_Arrow"
+                                Style="{StaticResource GroupBoxArrowStyle}"
+                                Kind="ChevronDown"/>
+                        </Grid>
+                    </Border>
                     <!-- listbox --> 
-                    <ListBox x:Name="Explore_ListBox">
+                    <ListBox x:Name="ExploreListBox">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid x:Name="TemplateGrid"
@@ -1398,7 +1451,7 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <!-- upper guide -->
-                    <Border x:Name="Explore_UpperGuide" Visibility="Collapsed"
+                    <Border x:Name="ExploreUpperGuide" Visibility="Collapsed"
                             Style="{StaticResource GroupGuideStyle}"/>
                 </StackPanel>
                 
@@ -1406,43 +1459,48 @@
                 <StackPanel x:Name="RestoreDoll">
                     <!-- lower guide -->
                     <Border 
-                        x:Name="RestoreDoll_LowerGuide" Visibility="Collapsed"
+                        x:Name="RestoreDollLowerGuide" Visibility="Collapsed"
                         Style="{StaticResource GroupGuideStyle}"/>
                     <!-- groupbox -->
-                    <Grid 
-                        x:Name="RestoreDoll_GroupBox" Visibility="Collapsed"
-                        Style="{StaticResource GroupGridStyle}"
-                        MouseLeftButtonDown="GroupBox_MouseDown" MouseLeftButtonUp="GroupBox_MouseUp" MouseMove="Group_MouseMove">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <!-- border -->
-                        <Border Grid.ColumnSpan="2" 
-                                Style="{StaticResource GroupBorderStyle}"/>
-                        <!-- icon -->
-                        <iconPacks:PackIconMaterial Grid.Column="0" 
-                                                    Style="{StaticResource GroupIconStyle}"
-                                                    Width="16" Height="15" 
-                                                    Kind="SeatFlat"/>
-                        <!-- title -->
-                        <TextBlock Grid.Column="0" 
-                                   Style="{StaticResource GroupTitleStyle}">
-                            <Run Text="{Binding Path=[DASHBOARD_GROUP_RESTORE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
-                        <!-- count -->
-                        <TextBlock Grid.Column="1"
-                                   Style="{StaticResource GroupCountStyle}">
-                            <Run x:Name="RestoreDoll_Count" Text="0"/><Run Text="{Binding Path=[COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
-                        <!-- arrow -->
-                        <iconPacks:PackIconMaterial Grid.Column="1" 
-                                                    x:Name="RestoreDoll_Arrow"
-                                                    Style="{StaticResource GroupArrowStyle}"
-                                                    Kind="ChevronDown"/>
-                    </Grid>
+                    <Border x:Name="RestoreDollGroupBox" Visibility="Collapsed"
+                            Style="{StaticResource GroupBoxBorderStyle}"
+                            MouseDown="GroupBox_MouseDown" MouseMove="Group_MouseMove" MouseUp="GroupBox_MouseUp">
+                        <Grid Margin="10,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <!-- icon -->
+                            <iconPacks:PackIconMaterial
+                                Grid.Column="0"
+                                Style="{StaticResource GroupBoxIconStyle}"
+                                Width="16" Height="15" Kind="SeatFlat"/>
+                            <!-- title -->
+                            <TextBlock
+                                Grid.Column="1"
+                                Style="{StaticResource GroupBoxTitleStyle}"
+                                Text="{Binding Path=[DASHBOARD_GROUP_RESTORE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            <!-- count -->
+                            <Border 
+                                Grid.Column="2" 
+                                Style="{StaticResource GroupBoxCountBorderStyle}">
+                                <TextBlock 
+                                    x:Name="RestoreDollGroupBox_Count"
+                                    Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                    Text="0"/>
+                            </Border>
+                            <!-- arrow -->
+                            <iconPacks:PackIconMaterial 
+                                Grid.Column="3" 
+                                x:Name="RestoreDollGroupBox_Arrow"
+                                Style="{StaticResource GroupBoxArrowStyle}"
+                                Kind="ChevronDown"/>
+                        </Grid>
+                    </Border>
                     <!-- listbox -->
-                    <ListBox x:Name="RestoreDoll_ListBox">
+                    <ListBox x:Name="RestoreDollListBox">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid x:Name="TemplateGrid" 
@@ -1491,7 +1549,7 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <!-- upper guide -->
-                    <Border x:Name="RestoreDoll_UpperGuide" Visibility="Collapsed"
+                    <Border x:Name="RestoreDollUpperGuide" Visibility="Collapsed"
                         Style="{StaticResource GroupGuideStyle}"/>
                 </StackPanel>
                 

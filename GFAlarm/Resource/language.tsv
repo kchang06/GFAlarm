@@ -1,1161 +1,1162 @@
-key	ko-KR	zh-CN	en-US	ja-JP	type	id
-PROGRAM_TITLE	소녀전선 알리미	少女前线通知器	Girls Frontline Alarm	ドルフロ アラート	window	10000
-PROGRAM_TITLE_SHORT	소녀전선 알리미	少女前线通知器	GFAlarm	ドルフロ アラート	window	10001
-TRANSLATED_BY		CN translated by 'Jenitak'[br]Voice translated by 'Jenitak'	EN translated by 'Seyren'[br]Voice translated by 'Seyren'	JP translated by 'リリア'[br]Voice translated by 'FlamBerry'	window	10002
-PROGRAM_DESCRIPTION	소녀전선 알리미 프로그램은 모바일 게임 [font color='#ffb400']소녀전선[/font]의 패킷과 게임 데이터를 기반으로 동작됩니다.					
-PROGRAM_COPYRIGHT	모든 저작권과 권리는 [a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a]에 귀속되어 있습니다.					
-PROGRAM_BUG_REPORT	버그 발견 시, 제작자 email 또는 [a href='{0}']최신버전[/a] 글로 리포트 바랍니다.		When you find a bug, please report to developer email or [a href='{0}']latest version thread[/a].			
-OPEN_FOLDER	폴더 열기	打开文件夹	Open Folder	フォルダーを開く	window	10003
-ALWAYS_ON_TOP	항상 위	一直在前端	Always On Top	常に最前面に表示	window	10004
-STICK_TO_LEFT	좌측 붙이기	靠左	Stick To Left	左側に寄せる	window	10005
-STICK_TO_RIGHT	우측 붙이기	靠右	Stick To Right	右側に寄せる	window	10006
-WINDOW_MINIMIZE	최소화	关闭	Minimize	最小化	window	10007
-WINDOW_CLOSE	종료	退出	Close	終了	window	10008
-TRAY_CLOSE	종료	退出	Close	終了	window	10100
-TRAY_RESET_POSITION	위치 리셋	重定位	Position Reset	リセット	window	10101
-VERSION_CHECK_TITLE	버전 확인	版本更新	Version Check	バージョン確認	window	10200
-VERSION_CHECK_CONTENT	최신버전 {0}가 존재합니다. 다운로드 링크로 이동합니까?	发现新版本 {0}. 打开下载网页吗?	Lastest version {0} exists. Will you open download link?	最新バージョン 「{0}」が存在します。ダウンロードリンクへ移動しますか？	window	10201
-TIME	시간	时间	Time	時間		10300
-REQUIRE_TIME	소요 시간	所需时间	Require Time	残り時間		10301
-END_TIME	완료 시간	完成时间	Complete Time	完了時間		10302
-MANPOWER	인력	人力	Manpower	人力		10303
-AMMO	탄약	弹药	Ammunition	弾薬		10304
-MRE	식량	粮食	Ration	配給		10305
-PART	부품	零件	Parts	部品		10306
-ECHELON	제대	梯队	Echelon	部隊		10307
-COUNT	건	个	Count	件		10308
-RUN_43E	4-3e	4-3e	4-3e	4-3e		10309
-RUN_02	0-2	0-2	0-2	0-2		10310
-RUN_SG_32	4드라	4九头蛇	SG 3-2	4ドラ		10311
-RUN_104E	10-4e	10-4e	10-4e	10-4e		10312
-RUN_81N	8-1n	8-1n	8-1n	8-1n		10313
-RUN_115	11-5	11-5	11-5	11-5		10314
-COMBAT_REPORT	작전보고서	作战报告	Combat Report	作戦報告書		10315
-COMBAT_REPORT_SHORT	작보	报告	C.Report	作報		10316
-UNKNOWN	알 수 없음	未知道	Unknown	不明		10317
-NEED_RELOGIN	재로그인 필요	需要在登录	Need Relogin	再ログインしてください		10318
-UNRECEIVE_SHARE_GEM	공유보석 미수령	未领取共用宝石	Unreceived Share Gem	シェアダイヤを受け取っていません		10319
-UNRECEIVE_SHARE_BATTERY	공유전지 미수령	未领取共用电池	Unreceived Share Battery	戦友宿舎バッテリーを受け取っていません		10320
-SPEND_RESOURCE	투입 자원	投入资源	Spend Resources	投入資源		10321
-REWARD_RESOURCE	획득 보상	获得奖励	Reward Resources	獲得報酬		10322
-REQUIRE_EXP	필요 경험치	需要经验值	Require Exp	必要経験値		10323
-NO_MVP_BONUS	[font color='#F44336'](MVP 보너스 미적용)[/font]	[font color='#F44336'](未考虑MVP)[/font]	[font color='#F44336'](No MVP Bonus)[/font]	[font color='#F44336'](MVP ボーナス未適用)[/font]		10324
-TO_NEXT_LEVEL	다음 레벨	其次等级	Next Level	次のレベルまで		10325
-TO_NEXT_EXPAND	다음 편제	其次编制	Next Link	次の編拡まで		10326
-TO_MAX_LEVEL	최대 레벨	最大等级	Max Level	最大レベルまで		10327
-REQUIRE_RESTORE	수복 정보	修复信息	Restore Info	修理情報		10328
-DISPATCHED_ECHELON	투입 제대	Echelon	Echelon	Echelon		10329
-EXPLORE_8_HOUR_GUIDE	(8시간 기준)	(标准是8个小时)	(8 Hours)	(8時間基準)		10330
-EXPLORE_REWARD_GUIDE	획득 보상을 보려면 전진기지-제어콘솔을 열어주십시오	如果想获得奖励,请打开前进营地-储物柜	Open Gate Console in Forward Basecamp to check exploration rewards	獲得報酬を見たい場合、キャンプの制御コンソルを開いてください		10331
-NEXT_EVENT	다음 발견	其次发现	Next Event	次の発見		10332
-NOW_EXPLORE	탐색 중	正在探索	Exploring	探索中		10333
-DAILY_QUEST	일간임무	日常任务	Daily Quest	デイリー任務		10334
-WEEKLY_QUEST	주간임무	周常任务	Weekly Quest	ウィークリー任務		10335
-RESEARCH_QUEST	정보임무	情报任务	Research Quest	情報任務		10336
-LOGISTICS	군수지원	后勤支援	Logistics	後方支援		10337
-AUTO_BATTLE	자율작전	自律作战	Auto-Battle	自立作戦		10338
-LOGISTICS_SHORT	군수	后勤	Logistcis	後方		10339
-AUTO_BATTLE_SHORT	자율	自律	Auto	自立		10340
-MISSION_SHORT	작전	作战	Mission	作戦		10341
-SKILL_TRAIN	스킬훈련	技能训练	Skill Training	スキル訓練		10342
-EXP_TRAIN	경험훈련	经验训练	Exp Training	経験訓練		10343
-COMBAT_FAIRY	전투요정	战斗妖精	Combat Fairy	戦闘妖精		10344
-STRATEGY_FAIRY	전략요정	战略妖精	Strategy Fairy	戦略妖精		10345
-EXPLORE_CITY	도시	城市	City	都市		10346
-EXPLORE_SNOW_LAND	설원	雪原	Snowfield	雪原		10347
-EXPLORE_FOREST	숲	树林	Forest	森		10348
-EXPLORE_WASTE_LAND	황무지	荒地	Wasteland	荒蕪地		10349
-DATA_PIECE	핵심데이터	芯片	Data Piece	核心データ		10350
-TAB_DASHBOARD	알림	通知	Alarm	アラート	tab	11000
-TAB_ECHELON	제대	梯队	Echelon	部隊	tab	11001
-TAB_QUEST	임무	任务	Quest	任務	tab	11002
-TAB_WAREHOUSE	창고	仓库	Warehouse	倉庫	tab	11003
-TAB_RECORD_MISSION	전역 녹화	作战绿化	Record Mission	録画	tab	11004
-TAB_PROXY	연결	连接	Proxy	連結	tab	11005
-TAB_NOTIFICATION_SETTING	알림 설정	通知设置	Notification Settings	アラート設定	tab	11006
-TAB_SETTING	설정	设置	Settings	設定	tab	11007
-HEADER_EXPCAL_BUTTON	경험치 계산기		Exp Calculator		header	12000
-HEADER_EXPCAL_PRESET	프리셋		Preset			
-HEADER_EXPCAL_BASE_EXP	기본 경험치		Base Exp		header	12001
-HEADER_EXPCAL_BATTLE_COUNT	교전 횟수		Battle Count		header	12002
-HEADER_EXPCAL_LEVEL_PENALTY	레벨 패널티		Level Penalty		header	12003
-HEADER_EXPCAL_EXPUP_EVENT	경험치 업 이벤트	经验值提升活动	Exp Up Event	経験値アップイベント	header	12004
-HEADER_EXPCAL_EXPUP_EVENT_TOOLTIP	경험치 업 이벤트를 설정	设定经验值提升活动	Apply Exp Rate-up Event	経験値アップイベント設定	header	12005
-HEADER_EXPCAL_APPLY_BUTTON	적용		Apply			
-HEADER_SORT_BUTTON	정렬	排序	Sort	ソート	header	12010
-HEADER_SORT_BY_SLOT	슬롯 순	位置	Slot	スロット順	header	12011
-HEADER_SORT_BY_REMAIN_TIME	남은 시간 순	剩余时间	Remaining Time	残り時間順	header	12012
-HEADER_FILTER_BUTTON	필터	过滤	Filter	フィルター	header	12020
-HEADER_COLLAPSE_EXPAND_BUTTON	일괄 접기/펴기	一总 关/开	Collapse/Expand All	一括で閉じる/開く	header	12030
-FOOTER_SIM_POINT	모의작전점수	模拟作战体力	Sim Energy	基礎AP	footer	13000
-FOOTER_SIM_POINT_TOOLTIP	오늘 충전가능한 점수 [b]{0}[/b]점[br](출석시간 {1} 기준)	今天可充的体力 [b]{0}[/b]点[br](连接时间 {1} 标准)	Today's Available Sim Energy [b]{0}[/b] [br](Attendance Time {1})	今日回復できる基礎AP [b]{0}[/b][br](ログイン時間 {1} 基準)	footer	13001
-FOOTER_SURPLUS_EXP	자유경험치	全局经验值	Surplus Exp	トータル経験値	footer	13010
-FOOTER_SURPLUS_EXP_TOOLTILP	자유경험치	全局经验值	Surplus Exp	トータル経験値	footer	13011
-STATUS_REINFORCE_COUNT	지원	支援	Support	支援部隊	status	14000
-STATUS_DOLL_COUNT	인형	人形	T-Doll	人形	status	14010
-STATUS_EQUIP_COUNT	장비	装备	Equip	装備	status	14020
-OVERLAY_EMPTY_DASHBOARD	알림 정보가[br]존재하지 않습니다	不存在[br]通知信息	Dashboard[br]is empty	情報が[br]ありません	overlay	15000
-OVERLAY_EMPTY_ECHELON	제대 정보가[br]존재하지 않습니다	不存在[br]梯队信息	Echelon Info[br]Not Found	部隊情報が[br]ありません	overlay	15010
-OVERLAY_EMPTY_QUEST	메인화면 [font color='#ffb400']임무[/font] 버튼을[br] 눌러주십시오	在主页选择[font color='#ffb400']任务[/font]	Press [font color='#ffb400']QUEST[/font] Button[br]on Main Menu	メイン画面 [font color='#ffb400']任務[/font] ボタンを[br]押してください	overlay	15020
-OVERLAY_COMPLETE_QUEST	모든 임무가[br]완료되었습니다	完成所有任务	All Quests[br]Completed	全ての任務が[br]完了しました	overlay	15021
-DASHBOARD_GROUP_DISPATCHED_ECHELON	지원현황	支援现况	Dispatched Echelon	後方状況	dashboard	20000
-DASHBOARD_GROUP_PRODUCE_DOLL	인형제조	人形制造	T-Doll Production	人形製造	dashboard	20001
-DASHBOARD_GROUP_PRODUCE_EQUIP	장비제조	装备制造	Equip Production	装備製造	dashboard	20002
-DASHBOARD_GROUP_SKILL_TRAIN	훈련현황	训练现况	Skill Training	訓練状況	dashboard	20003
-DASHBOARD_GROUP_DATA_ANALYSIS	분석현황	解析现况	Data Analysis	分析状況	dashboard	20004
-DASHBOARD_GROUP_RESTORE	수복현황	修复现况	Repair T-Doll	修理状況	dashboard	20005
-DASHBOARD_GROUP_EXPLORE	탐색현황	探索现况	Explore	探索状況	dashboard	20006
-SETTING_PROXY_SERVER_GROUP	프록시 서버	代理服务器	Proxy Server	プロキシサーバー	proxy_setting	30100
-SETTING_PROXY_SERVER_USE_PROXY_SERVER	프록시 서버	代理服务器	Proxy Server	プロキシサーバー	proxy_setting	30101
-SETTING_PROXY_SERVER_USE_AUTO_START	자동시작	自动运行代理服务器	Auto Start	プロキシ自動スタート	proxy_setting	30102
-SETTING_PROXY_SERVER_PORT_NUMBER	포트번호	代理服务器端口编号	Port Number	プロキシポート番号	proxy_setting	30103
-SETTING_PROXY_SERVER_USE_SSL_DECRYPT	HTTPS 복호화	代理服务器 HTTPS 复护化	HTTPS Decryption	プロキシHTTPS復号化	proxy_setting	30104
-SETTING_PROXY_SERVER_USE_SSL_DECRYPT_WARNING	[font color='#F44336']대만 서버에서만 사용할 것[/font]	[font color='#F44336']只在台服使用[/font]	[font color='#F44336']TW Server Only[/font]	[font color='#F44336']台湾サーバーユーザー様だけ使ってください[/font]	proxy_setting	30105
-SETTING_PROXY_SERVER_USE_SSL_DECRYPT_COMMENT	[a href='{0}']링크[/a]를 참고해서 인증서 설치 후 사용 가능	参考[a href='{0}']链接[/a]可在设置认证书后使用	Refer to [a href='{0}']link[/a] to install certificate before use	[a href='{0}']サイト[/a]を参考して認証書をインストールした後使えます	proxy_setting	30106
-SETTING_PAC_SERVER_GROUP	PAC 서버		PAC Server			
-SETTING_PAC_SERVER_USE	PAC 서버		PAC Server			
-SETTING_PAC_SERVER_USE_TOOLTIP	PAC(Proxy Auto Config)를 사용하기 위한 서버[br][font color='#F44336']관리자 권한이 필요[/font]					
-SETTING_PAC_SERVER_SET_DOMAIN	PAC 도메인		PAC Domain			
-SETTING_PAC_SERVER_SET_DOMAIN_TOOLTIP	외부 네트워크에서 도메인을 사용해서 접속할 경우 설정할 것					
-SETTING_PAC_SERVER_PORT_NUMBER	PAC 포트번호		PAC Port Number		proxy_setting	30107
-SETTING_PAC_SERVER_NOW_ADMIN	관리자 권한 사용중		Admin Privilege Enabled			
-SETTING_PAC_SERVER_NEED_ADMIN	관리자 권한 필요		Admin Privilege Disabled		proxy_setting	
-SETTING_UPSTREAM_PROXY_GROUP	경유 프록시	经由代理服务器	Upstream Proxy	경유 프록시	proxy_setting	30300
-SETTING_UPSTREAM_PROXY_USE_UPSTREAM_PROXY	경유 프록시	经由代理服务器	Upstream Proxy	경유 프록시	proxy_setting	30301
-SETTING_UPSTREAM_PROXY_ADDRESS	경유 프록시 주소	经由的代理服务器地址	Upstream Proxy Address	경유 프록시 주소	proxy_setting	30302
-SETTING_UPSTREAM_PROXY_USE_UPSTREAM_PROXY_TOOLTIP	설정 시 프록시를 사용하는 타 프로그램을 경유하여 소녀전선 서버에 접속	设置时，经由使用代理服务器的其他程序连接游戏	설정 시 프록시를 사용하는 타 프로그램을 경유하여 소녀전선 서버에 접속	설정 시 프록시를 사용하는 타 프로그램을 경유하여 소녀전선 서버에 접속	proxy_setting	30303
-SETTING_PROXY_SERVER_GUIDE	사용 가이드	使用指南	Proxy Guide	使用ガイド	proxy_setting	30400
-SETTING_PROXY_SERVER_GUIDE_COMMENT	[font size='14']■ Android[/font][br]→ 설정[br]→ 네트워크 및 인터넷[br]→ Wi-Fi[br]→ 연결된 AP 설정[br]→ 고급 옵션[br]→ 프록시 '수동' 설정[br]→ 프록시 호스트 [font color='#8ec127']{0}[/font][br]→ 프록시 포트 [font color='#8ec127']{1}[/font][br]→ 소녀전선 (재)로그인[br][br] [font size='14']■ iOS[/font][br]→ 설정[br]→ Wi-Fi[br]→ 연결된 AP 설정[br]→ 프록시 구성[br]→ '수동' 설정[br]→ 서버 [font color='#8ec127']{0}[/font][br]→ 포트 [font color='#8ec127']{1}[/font][br]→ 소녀전선 (재)로그인[br] [br] [font size='14' color='#ff4500']■ 접속 불가 시[/font][br]→ 시작[br]→ 실행[br]→ cmd[br]→ ipconfig[br]→ 표시된 IPv4 주소로 시도[br] [br] [font size='14' color='#ff4500']■ 보안 정책 위반(코드 22) 발생 시[/font][br]→ 기기 프록시 설정 끄기[br]→ 소녀전선 실행[br]→ 로그인 직전까지 진행[br]→ 기기 프록시 설정 켜기[br]→ 소녀전선 (재)로그인	[font size='14']■ Android[/font][br]→ 设置[br]→ 网络与互联网[br]→ Wi-Fi[br]→ 连接的AP设置[br]→ 高级期权[br]→ 代理服务器设置提示‘被动’[br]→ 代理服务器主机 [font color='#8ec127']{0}[/font][br]→ 代理服务器端口编号 [font color='#8ec127']{1}[/font][br]→ 再登录少女前线[br][br] [font size='14']■ iOS[/font][br]→ 设置[br]→ Wi-Fi[br]→ 连接的AP设置[br]→ 代理服务器构成[br]→ ‘被动’设置[br]→ 服务器 [font color='#8ec127']{0}[/font][br]→ 端口 [font color='#8ec127']{1}[/font][br]→ 再登录少女前线[br] [br] [font size='14' color='#ff4500']■ 无法连接时[/font][br]→ 开始[br]→ 执行[br]→ cmd[br]→ ipconfig[br]→ 试图用表示的IPv4地址[br] [br] [font size='14' color='#ff4500']■ 违反安全政策(代码22)时[/font][br]→ 关闭代理服务器设置[br]→ 实行少女前线[br]→ 进行到登录前[br]→ 再打开代理服务器设置[br]→ 再登录少女前线	[font size='14']■ Android[/font][br]→ Settings[br]→ Network & Internet[br]→ Wi-Fi[br]→ Connected AP Setting[br]→ Advanced Options[br]→ Proxy 'Manual'[br]→ Proxy Hostname [font color='#8ec127']{0}[/font][br]→ Proxy Port [font color='#8ec127']{1}[/font][br]→ Girls Frontline (Re)Login[br][br] [font size='14']■ iOS[/font][br]→ Settings[br]→ Wi-Fi[br]→ Connected AP Setting[br]→ Configure Proxy[br]→ Set 'Manual'[br]→ Server [font color='#8ec127']{0}[/font][br]→ Port [font color='#8ec127']{1}[/font][br]→ Girls Frontline (Re)Login[br] [br] [font size='14' color='#ff4500']■ Can't Connect?[/font][br]→ Start[br]→ run[br]→ cmd[br]→ ipconfig[br]→ connect to IPv4 address[br] [br] [font size='14' color='#ff4500']■ If Security Policy Violation(Code 22) occurs[/font][br]→ Turn off Proxy setting from device[br]→ Launch Girls Frontline[br]→ Proceed until right before logging in[br]→ Turn on Proxy setting from device[br]→ Relaunch Girls Frontline	[font size='14']■ Android[/font][br]→ 設定[br]→ ネットワーク及びインターネット[br]→ Wi-Fi[br]→ 繋がったAP設定[br]→ 詳細設定項目[br]→ プロキシ '手動' 設定[br]→ プロキシホスト [font color='#8ec127']{0}[/font][br]→ プロキシポート [font color='#8ec127']{1}[/font][br]→ ドルフロ (再)ログイン[br][br] [font size='14']■ iOS[/font][br]→ 設定[br]→ Wi-Fi[br]→ 接続中のWi-fiをタップ[br]→ プロキシを構成[br]→ '手動' 設定[br]→ サーバー [font color='#8ec127']{0}[/font][br]→ ポート [font color='#8ec127']{1}[/font][br]→ ドルフロ (再)ログイン[br] [br] [font size='14' color='#ff4500']■ 接続ができない場合[/font][br]→ スタート[br]→ Windows システムツール[br]→ cmd[br]→ ipconfig[br]→ 表示された IPv4 アドレスで試してください[br] [br] [font size='14' color='#ff4500']■ セキュリティ政策違反(コード 22)が発生した場合[/font][br]→ 端末のプロキシ設定を切る[br]→ ドルフロ起動[br]→ ログイン直前まで進む[br]→ 端末のプロキシ設定[br]→ ドルフロ (再)ログイン	proxy_setting	30401
-SETTING_PACKET_FORGER_GROUP	패킷 변조		Packet Forger		proxy_setting	30500
-SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT	랜덤 부관		Random Adjutant		proxy_setting	30501
-SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_COMMENT	인형 [font color='#ffb400']{0}[/font] 스킨 [font color='#ffb400']{1}[/font]				proxy_setting	30502
-SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_TOOLTIP	소속 인형 중 랜덤한 인형으로 부관 설정				proxy_setting	30503
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_WHITELIST	부관 화이트리스트		Adjutant Whitelist		proxy_setting	30504
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_WHITELIST_TOOLTIP	소속 인형 중 선택된 인형만 부관으로 등장하도록 설정[br][font color='#FFF44336']소속되지 않은 인형은 출현하지 않음[/font]					
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_BLACKLIST	부관 블랙리스트		Adjutant Blacklist		proxy_setting	30505
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_BLACKLIST_TOOLTIP	설정된 인형은 등장하지 않음					
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_WHITELITE	스킨 화이트리스트		Skin Whitelist		proxy_setting	30506
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_WHITELITE_TOOLTIP	보유 스킨 중 선택된 스킨만 입고 등장하도록 설정[br][font color='#FFF44336']보유하지 않은 스킨은 입지 않음[/font]					
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_BLACKLIST	스킨 블랙리스트		Skin Blacklist		proxy_setting	30507
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_BLACKLIST_TOOLTIP	설정된 스킨은 등장하지 않음					
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN	부관 스킨		Adjutant Skin			
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_TOOLTIP	부관 스킨을 설정					
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_NORMAL	통상만		Normal			
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_SKIN	스킨만		Skin			
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_SKIN_LIVE2D	Live2D 스킨만		Live2D Skin			
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_SKIN_CHILD	아동절 스킨만		Child Skin			
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_SKIN_MOD	개조 스킨만		Mod Skin			
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_RANDOM	랜덤		Random			
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE	부관 상태		Adjutant Shape		proxy_setting	30508
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_TOOLTIP	부관 상태를 설정				proxy_setting	30509
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_NORMAL	통상만		Normal			
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_WOUND	중상만		Wound			
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_RANDOM	랜덤		Random			
-SETTING_PACKET_FORGER_USE_RANDOM_SKIN	랜덤 부관 스킨		Random Adjutant Skin		proxy_setting	30510
-SETTING_PACKET_FORGER_USE_RANDOM_SKIN_TOOLTIP	설정된 부관의 스킨만 랜덤 설정				proxy_setting	30511
-SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR	검열해제 모드	666模式	Uncensor Mode	規制解禁モード	proxy_setting	30512
-SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR_COMMENT	[a href='{0}']검열해제 패치[/a]로 추가 해제	[a href='{0}']用解除审查修补[/a]追加解除	Refer to [a href='{0}']link[/a] for additional uncensored patch	[a href='{0}']規制解禁アップデート[/a]で追加解禁(JPサーバーは規制されてません）	proxy_setting	30513
-SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR_TOOLTIP	설정한 상태로 로그인 한 뒤 130/130/130/30 인형제조 후 재로그인 시 검열해제[br][font color='#F44336'](검열해제 확인 후 반드시 검열해제 설정을 체크해제할 것)[/font]	以设定的状态登录后 130/130/130/30 人形制造后再登录时解除审查[br][font color='#F44336'](确认解除审查后应该解除设置)[/font]	Log in after enabling and produce a T-Doll with 130/130/130/30 then re-log in to enable uncensor[br][font color='#F44336'](Uncheck after uncensor is enabled)[/font]	設定した状態でログインした後「130/130/130/30」人形製造して再ログインすると規制解禁[br][font color='#F44336'](規制解禁が確認できた後、必ず規制解禁ボタンチェックを外してください)[/font]	proxy_setting	30514
-SETTING_NOTIFICATION_COMPLETE_GROUP	완료 알림	完成通知	Complete	完了アラート	alarm_setting	40000
-SETTING_NOTIFICATION_COMPLETE_DISPATCHED_ECHELON	지원현황	支援现况	Dispatched Echelon	支援状況	alarm_setting	40001
-SETTING_NOTIFICATION_COMPLETE_DISPATCHED_ECHELON_TOOLTIP	군수지원/자율작전 완료를 알림	通知完成后勤支援/自律作战	Notify Logistics/Auto-Battle completion)	後方支援/自立作戦完了をアラート	alarm_setting	40002
-SETTING_NOTIFICATION_COMPLETE_EXPLORE	탐색현황	探索现状	Explore	探索状況	alarm_setting	40003
-SETTING_NOTIFICATION_COMPLETE_EXPLORE_TOOLTIP	탐색 완료를 알림	通知完成探索	Notify Exploration completion	探索完了をアラート	alarm_setting	40004
-SETTING_NOTIFICATION_COMPLETE_PRODUCE_DOLL	인형제조	人形制造	T-Doll Production	人形製造	alarm_setting	40005
-SETTING_NOTIFICATION_COMPLETE_PRODUCE_DOLL_TOOLTIP	인형제조 완료를 알림	通知完成人形制造	Notify T-Doll Production completion	人形製造完了をアラート	alarm_setting	40006
-SETTING_NOTIFICATION_COMPLETE_PRODUCE_EQUIP	장비제조	装备制造	Equip Production	装備製造	alarm_setting	40007
-SETTING_NOTIFICATION_COMPLETE_PRODUCE_EQUIP_TOOLTIP	장비제조 완료를 알림	通知完成装备制造	Notify Equip Production completion	装備製造完了をアラート	alarm_setting	40008
-SETTING_NOTIFICATION_COMPLETE_TRAIN	훈련현황	训练现状	Skill Training	訓練状況	alarm_setting	40009
-SETTING_NOTIFICATION_COMPLETE_TRAIN_TOOLTIP	훈련 완료를 알림	通知完成训练	Nofity Skill Training completion	訓練完了をアラート	alarm_setting	40010
-SETTING_NOTIFICATION_COMPLETE_RESTORE	수복현황	修复现况	Restore Doll	修理状況	alarm_setting	40011
-SETTING_NOTIFICATION_COMPLETE_RESTORE_TOOLTIP	수복 완료를 알림	通知完成修复	Notify T-Doll Restore completion	修理完了をアラート	alarm_setting	40012
-SETTING_NOTIFICATION_COMPLETE_DATA_ANALYSIS	분석현황	解析现况	Data Analysis	分析状況	alarm_setting	40013
-SETTING_NOTIFICATION_COMPLETE_DATA_ANALYSIS_TOOLTIP	정보분석 완료를 알림	通知完成情报解析	Notify Data Analysis completion	情報分析完了をアラート	alarm_setting	40014
-SETTING_NOTIFICATION_COMPLETE_COMBAT_REPORT	작전보고서	作战报告	Combat Report	作戦報告書	alarm_setting	40015
-SETTING_NOTIFICATION_COMPLETE_COMBAT_REPORT_TOOLTIP	작전보고서 완료를 알림	通知完成作战报告	Notify Combat Report Production completion	作戦報告書の作成完了をアラート	alarm_setting	40016
-SETTING_NOTIFICATION_COMPLETE_QUEST	임무 달성	完成任务	Quest Complete	任務達成	alarm_setting	40017
-SETTING_NOTIFICATION_COMPLETE_QUEST_TOOLTIP	임무 달성 시 알림	完成任务时通知	Notify when a Quest is completed	任務達成した場合アラート	alarm_setting	40018
-SETTING_NOTIFICATION_MAXIMUM_GROUP	상한 알림	上限通知	Maximum	上限アラート	alarm_setting	40100
-SETTING_NOTIFICATION_MAXIMUM_SIM_POINT	모의작전점수	模拟作战体力	Max Sim Point	模擬作戦基礎AP	alarm_setting	40101
-SETTING_NOTIFICATION_MAXIMUM_SIM_POINT_TOOLTIP	설정된 모의작전점수 도달 시 알림	到设置的模拟作战体力时通知	Notify when set Sim Energy Point has reached	基礎APが設定した値に到達した場合にアラート	alarm_setting	40102
-SETTING_NOTIFICATION_MAXIMUM_SIM_POINT_UNIT	점	点	P	AP	alarm_setting	40103
-SETTING_NOTIFICATION_MAXIMUM_DOLL	인형창고	人形仓库	Max T-Doll	人形倉庫	alarm_setting	40104
-SETTING_NOTIFICATION_MAXIMUM_DOLL_TOOLTIP	인형창고 상한 도달 시 알림	人形仓库到上限时通知	Notify when T-Doll Slot limit has reached	人形倉庫上限になる場合アラート	alarm_setting	40105
-SETTING_NOTIFICATION_MAXIMUM_EQUIP	장비창고	装备仓库	Max Equip	装備倉庫	alarm_setting	40106
-SETTING_NOTIFICATION_MAXIMUM_EQUIP_TOOLTIP	장비창고 상한 도달 시 알림	装备仓库到上限时通知	Notify when Equip Depot limit has reached	装備倉庫上限になる場合アラート	alarm_setting	40107
-SETTING_NOTIFICATION_MAXIMUM_SURPLUS_EXP	자유경험치	全局经验值	Max Surplus Exp	トータル経験値	alarm_setting	40108
-SETTING_NOTIFICATION_MAXIMUM_SURPLUS_EXP_TOOLTIP	자유경험치 상한 도달 시 알림	全局经验值到上限时通知	Notify when Surplus Exp limit has reached	トータル経験値上限になる場合アラート	alarm_setting	40109
-SETTING_NOTIFICATION_MISSION_GROUP	전역 알림	作战通知	Mission	戦役アラート	alarm_setting	40200
-SETTING_NOTIFICATION_MISSION_RESCUE_DOLL	인형 획득	获得人形	Rescue T-Doll	人形獲得	alarm_setting	40201
-SETTING_NOTIFICATION_MISSION_RESCUE_DOLL_TOOLTIP	설정된 레어도 이상 인형 획득 시 알림[br][font color='#ffb400'](콜라보 인형은 5성으로 취급)[/font]	获得设定的稀有度以上的人形时通知[br][font color='#ffb400'](特典人形视为5星人形)[/font]	Notify when T-Doll above set Rarity has rescued[br][font color='#ffb400'](Collb T-Doll counts as 5 Star)[/font]	設定されたレアリティ以上の人形を獲得した場合アラート[br][font color='#ffb400'](コラボ人形は星5扱い)[/font]	alarm_setting	40202
-SETTING_NOTIFICATION_MISSION_RESCUE_DOLL_UNIT	성	星	S	星	alarm_setting	40203
-SETTING_NOTIFICATION_MISSION_GET_EQUIP	장비 획득	获得装备	Get Equip	装備獲得	alarm_setting	40204
-SETTING_NOTIFICATION_MISSION_GET_EQUIP_TOOLTIP	설정된 레어도 이상 장비 획득 시 알림[br][font color='#ffb400'](전용장비는 5성으로 취급)[/font]	获得设定的稀有度以上的装备时通知[br][font color='#ffb400'](专属装备视为5星装备)[/font]	Notify when Equip above set Rarity has obtained[br][font color='#ffb400'](Sp. Equip counts as 5 Star)[/font]	設定されたレアリティ以上の装備を獲得した場合アラート[br][font color='#ffb400'](専用装備は星5扱い)[/font]	alarm_setting	40205
-SETTING_NOTIFICATION_MISSION_GET_EQUIP_UNIT	성	星	S	星	alarm_setting	40206
-SETTING_NOTIFICATION_MISSION_WIN	전역 승리	作战胜利	Mission Success	戦役勝利	alarm_setting	40207
-SETTING_NOTIFICATION_MISSION_WIN_TOOLTIP	전역 승리 시 알림	作战胜利时通知	Notify when Mission is success	戦役勝利した場合アラート	alarm_setting	40208
-SETTING_NOTIFICATION_MISSION_MOVE_TEAM	제대이동 완료	梯队移动结束	Move Complete	部隊移動完了	alarm_setting	40209
-SETTING_NOTIFICATION_MISSION_MOVE_TEAM_TOOLTIP	설정된 횟수만큼 제대이동 후 알림	按设定的次数梯队移动后通知	Notify after set amount of Echelon movement has completed	設定された回数分部隊移動後アラート	alarm_setting	40210
-SETTING_NOTIFICATION_MISSION_MOVE_TEAM_UNIT	회	回	T	回	alarm_setting	40211
-SETTING_NOTIFICATION_MISSION_MOVE_TEAM_AND_WIN_BATTLE	전투 후 알림	战后通知	Post-Battle Complete	戦闘後アラート	alarm_setting	40212
-SETTING_NOTIFICATION_MISSION_MOVE_TEAM_AND_WIN_BATTLE_TOOLTIP	설정된 횟수만큼 제대이동 후 전투가 완료되면 알림	按设定的次数梯队移动后战斗结束时通知	Notify after set amount of Echelon movements and battle has completed	設定された回数分部隊移動後戦闘終わったらアラート	alarm_setting	40213
-SETTING_NOTIFICATION_DOLL_GROUP	인형 알림	人形通知	Doll	人形アラート	alarm_setting	40300
-SETTING_NOTIFICATION_DOLL_NEED_DUMMY_LINK	편제확대 필요	需要编制扩大	Dummy Link	編制拡大必要	alarm_setting	40301
-SETTING_NOTIFICATION_DOLL_NEED_DUMMY_LINK_TOOLTIP	편제확대 필요한 인형 알림[br][font color='#ffb400'](1링크 자스는 알리지 않음)[/font]	通知需要编制扩大的人形[br][font color='#ffb400'](不通知1编制的Zas)[/font]	Notify T-Doll requiring Dummy Link[br][font color='#ffb400'](Excludes x1 Zas M21)[/font]	人形が編制拡大可能になった場合アラート[br][font color='#ffb400'](1リンクZasは除く)[/font]	alarm_setting	40302
-SETTING_NOTIFICATION_DOLL_HP_WARNING	체력 경고	体力警告	HP Warning	体力警告	alarm_setting	40303
-SETTING_NOTIFICATION_DOLL_HP_WARNING_TOOLTIP	설정된 체력 이하로 떨어진 인형 알림[br][font color='#ffb400'](중상 기준 30%)[/font]	通知降到设定体力以下的人形[br][font color='#ffb400'](重伤标准 30%)[/font]	Notify when T-Doll's HP drops below set amount[br][font color='#ffb400'](Critically Damaged at 30%)[/font]	設定した体力の割合まで人形が損傷した場合アラート[br][font color='#ffb400'](重傷基準30%)[/font]	alarm_setting	40304
-SETTING_NOTIFICATION_DOLL_MAX_LEVEL	최대 레벨	最大等级	Maximum Level	最大レベル	alarm_setting	40305
-SETTING_NOTIFICATION_DOLL_MAX_LEVEL_TOOLTIP	최대 레벨 도달 인형 알림	通知达到最大等级的人形	Notify when T-Doll's level reaches maximum level	最大レベル到達した人形アラート	alarm_setting	40306
-SETTING_NOTIFICATION_PRODUCE_GROUP	제조 알림	制造通知	Production	製造アラート	alarm_setting	40400
-SETTING_NOTIFICATION_PRODUCE_DOLL	인형 제조	人形制造	T-Doll Production	人形製造	alarm_setting	40401
-SETTING_NOTIFICATION_PRODUCE_DOLL_TOOLTIP	제조된 인형을 알림	通知制造的人形	Notify when T-Doll production has completed	製造完了した人形をアラート	alarm_setting	40402
-SETTING_NOTIFICATION_PRODUCE_DOLL_5_STAR	인형 제조 (5성)	制造5星人形	T-Doll Production (5 Star)	星5人形製造	alarm_setting	40403
-SETTING_NOTIFICATION_PRODUCE_DOLL_5_STAR_TOOLTIP	제조된 5성 인형을 알림	通知制造5星人形	Notify when 5 Star T-Doll production has completed	製造完了した星5人形をアラート	alarm_setting	40404
-SETTING_NOTIFICATION_PRODUCE_EQUIP	장비제조	装备制造	Equip Production	装備製造	alarm_setting	40405
-SETTING_NOTIFICATION_PRODUCE_EQUIP_TOOLTIP	제조된 장비를 알림	通知制造的装备	Notify when Equip production has completed	製造完了した装備をアラート	alarm_setting	40406
-SETTING_NOTIFICATION_PRODUCE_EQUIP_5_STAR	장비 제조 (5성)	制造5星装备	Equip Production (5 Star)	星5装備製造	alarm_setting	40407
-SETTING_NOTIFICATION_PRODUCE_EQUIP_5_STAR_TOOLTIP	제조된 5성 장비를 알림	通知制造5星装备	Notify when 5 Star Equip production has completed	製造完了した星5装備をアラート	alarm_setting	40408
-SETTING_NOTIFICATION_PRODUCE_SHOTGUN	샷건 제조	霰弹枪制造	Shotgun Production	ショットガン製造	alarm_setting	40409
-SETTING_NOTIFICATION_PRODUCE_SHOTGUN_TOOLTIP	제조된 샷건 인형을 알림	通知制造的霰弹枪	Notify when Shotgun T-Doll production has completed	製造完了したショットガン人形をアラート	alarm_setting	40410
-SETTING_NOTIFICATION_PRODUCE_FAIRY	요정 제조	妖精制造	Fairy Production	妖精製造	alarm_setting	40411
-SETTING_NOTIFICATION_PRODUCE_FAIRY_TOOLTIP	제조된 요정을 알림	通知制造的妖精	Notify when Fairy production has completed	製造完了した妖精をアラート	alarm_setting	40412
-SETTING_NOTIFICATION_COSTUME_GROUP	지휘관 복장 효과	指挥官服装效果	Costume	指揮官アバター効果	alarm_setting	40500
-SETTING_NOTIFICATION_COSTUME_DOLL_EXP_BONUS	브리핑 능력	作战总结	Briefing Skill	ブリーフィング能力	alarm_setting	40501
-SETTING_NOTIFICATION_COSTUME_DOLL_EXP_BONUS_TOOLTIP	전투에서 얻는 인형 경험치 상승[br][font color='#ffb400'](상승 보너스)[/font]	战斗产生的人形经验[br][font color='#ffb400'](上升)[/font]	Increase T-Doll Exp earned during battle[br][font color='#ffb400'](Increase Bonus)[/font]	戦闘で得る人形経験値上昇[br][font color='#ffb400'](上昇ボーナス)[/font]	alarm_setting	40502
-SETTING_NOTIFICATION_COSTUME_RESTORE_TIME	자장가	摇篮曲	Lullaby	子守歌	alarm_setting	40503
-SETTING_NOTIFICATION_COSTUME_RESTORE_TIME_TOOLTIP	인형/중장비 수복 시간 단축[br][font color='#ffb400'](단축 보너스)[/font]	重装人形和普通人形的修复时间减少[br][font color='#ffb400'](减少)[/font]	Decrease T-Doll/HOC Repair time[br][font color='#ffb400'](Decrease Bonus)[/font]	人形/重装備部隊修理時間短縮[br][font color='#ffb400'](短縮ボーナス)[/font]	alarm_setting	40504
-SETTING_NOTIFICATION_COSTUME_SKILL_TIME	속성 훈련	速成培训	Haste Training	速成訓練	alarm_setting	40505
-SETTING_NOTIFICATION_COSTUME_SKILL_TIME_TOOLTIP	인형/요정/중장비 스킬 훈련 시간 단축[br][font color='#ffb400'](단축 보너스)[/font]	减少技能训练时间[br][font color='#ffb400'](减少)[/font]	Decrease T-Doll/Fairy/HOC Skill Training time[br][font color='#ffb400'](Decrease Bonus)[/font]	人形/妖精/重装備部隊　スキル訓練時間短縮[br][font color='#ffb400'](短縮ボーナス)[/font]	alarm_setting	40506
-SETTING_NOTIFICATION_EXTRA_GROUP	기타	其他	Extra	その他	alarm_setting	40600
-SETTING_NOTIFICATION_EXTRA_ADVANCED_NOTIFICATION	미리 알림	预先通知	Advanced Notification	事前アラート	alarm_setting	40601
-SETTING_NOTIFICATION_EXTRA_ADVANCED_NOTIFICATION_TOOLTIP	알림들이 설정된 시간만큼 일찍 울리게 설정	设定让通知像设定的时间一样早点响起	Notify in advance for set amount of time	設定した秒数分事前にアラートを行う	alarm_setting	40602
-SETTING_NOTIFICATION_EXTRA_ADVANCED_NOTIFICATION_UNIT	초	秒	Sec	秒	alarm_setting	40603
-SETTING_LANGUAGE_GROUP	언어	语言设置	Language	言語設定	setting	50000
-SETTING_NOTIFICATION_GROUP	알림 설정	通知设置	Notification	アラート設定	setting	50100
-SETTING_TOAST_GROUP	윈도우 알림	操作系统设置	Windows Toast	WINDOWSアラート	setting	50200
-SETTING_TOAST_USE_WIN_TOAST	윈도우 알림	操作系统设置	Windows Toast	WINDOWSアラート	setting	50201
-SETTING_TOAST_USE_WIN_TOAST_TOOLTIP	윈도우 토스트 또는 트레이 풍선 알림을 사용	启用Windows Toast或工具提示通知	Use Windows Toast Notification or System Tray Bubble Notification	通知バナー、もしくはタスクトレイからのアラートを行う	setting	50202
-SETTING_TOAST_USE_STRONG_WIN_TOAST	+강한 알림	+强烈的通知	+Strong Toast	+アラートパワーアップ	setting	50203
-SETTING_TOAST_USE_STRONG_WIN_TOAST_TOOLTIP	알림에 집중되도록 시스템 소리를 일시적으로 줄이고 알림을 오랫동안 띄움 (운영체제 지원 시 가능)	暂时减少系统语音,以便集中通知(操作系统支持时可用)	Lowers System Volume temporarily and increases pop-up time to strengthen notification (Available only if supported by OS)	アラートが聞こえやすくなるようにシステム音を一時的に小さくしてアラートを長くする	setting	50204
-SETTING_TOAST_USE_VOICE	+음성 알림[br][font size='11px'](별도 소리 알림)[/font]	+语音通知[br][font size='11px'](附加语音通知)[/font]	+Voice Notification[br][font size='11px'](Alternate Sound Notification)[/font]	+ボイスアラート[br][font size='11px'](別途のサウンドでアラート)[/font]	setting	50205
-SETTING_TOAST_USE_VOICE_TOOLTIP	소리가 나지 않는 경우 대체 알림으로 사용 가능, 음성 데이터 미설치 또는 해당 인형 음성이 존재하지 않을 경우 기본 알림 소리를 출력함	不出语音时可使用代替通知, 未设置语音数据或不存在相应人形语音时,输出基本提示语音	Plays default sound if voice data is not installed or missing. Can replace with personalized sound if voice data is missing	サウンドが出ない場合、代替のアラートで設定可能、音声データ設置してないか該当人形の音声データが存在してない場合基本アラートサウンドを出力する	setting	50206
-SETTING_TOAST_USE_VOICE_COMMENT	[a href='{0}']링크[/a]의 음성데이터 설치 시 인형 음성 알림 사용가능	安装[a href='{0}']链接[/a]的语音数据时可使用人形语音通知	Download T-Doll voice data from [a href='{0}']link[/a] to use T-Doll Voice Notification	[a href='{0}']アドレス[/a]の音声データをインストールした場合、人形ボイスアラート設定可能	setting	50207
-SETTING_TOAST_USE_ONLY_ADJUTANT_VOICE	음성 알림 부관만	只要副官的语音	Adjutant Voice Only	アラート設定（副官）	setting	50208
-SETTING_TOAST_USE_ONLY_ADJUTANT_VOICE_TOOLTIP	모든 인형 음성을 부관 음성으로 변경	所有人形的语音换成副官的语音	Play all T-Doll voice notifications as Adjutant's voice	全ての人形ボイスを副官ボイスに変更	setting	50209
-SETTING_TOAST_USE_START_VOICE	군수/자율 출발 음성	后勤支援/自律作战执行语音			setting	50210
-SETTING_TOAST_USE_START_VOICE_TOOLTIP	군수/자율 출발 시 음성 알림	后勤支援/自律作战执行时，语音通知			setting	50211
-SETTING_TOAST_VOICE_VOLUME	음성 알림 볼륨	语音通知音量	Voice Volume	ボイスアラートのボリューム	setting	50212
-SETTING_TOAST_VOICE_VOLUME_TOOLTIP	음성 알림 볼륨 설정	设定语音通知音量	Set voice volume	ボイスアラートのボリューム設定	setting	50213
-SETTING_TOAST_USE_SOUNDPLAYER_API	구버전 소리 API	旧版本语音API	Use SoundPlayerAPI	古いバージョンのサウンドAPI	setting	50214
-SETTING_TOAST_USE_SOUNDPLAYER_API_TOOLTIP	음성 알림 소리에 문제가 있는 경우에만 사용할 것[br][font color='#F44336'](사용 시 볼륨 설정 사용 불가)[/font]	只在语音通知有问题时使用[br][font color='#F44336'](使用时不可设定音量)[/font]	Use only if there is a problem with voice notification[br][font color='#F44336'](Can't adjust volume if enabled)[/font]	ボイスアラートに問題がある場合設定してください[br][font color='#F44336'](設定した場合ボリューム設定不可)[/font]	setting	50215
-SETTING_TOAST_TEST_BUTTON	테스트 알림	测试通知	TEST	テストアラート	setting	50216
-SETTING_MAIL_GROUP	메일 알림	邮件通知	Mail Notification	メールアラート	setting	50300
-SETTING_MAIL_USE_MAIL	메일 알림	邮件通知	Mail Notification	メールアラート	setting	50301
-SETTING_MAIL_USE_MAIL_TOOLTIP	Android/iOS 기기 사용자가 사용할 수 있는 메일 알림	Android/iOS机器用户可以使用的邮件通知	Sends email notification for Android/iOS device users	Android/iOS 端末利用者が使えるメールアラート	setting	50302
-SETTING_MAIL_USE_MAIL_COMMENT	[a href='{0}']링크[/a]를 참고해서 메일주소 설정 후 사용가능	按[a href='{0}']链接[/a]设定邮件后可使用	Can be used after referring to [a href='{0}']link[/a] to set email	[a href='{0}']サイト[/a]を参考してメールアドレス設定後使える	setting	50303
-SETTING_MAIL_SMTP_ADDRESS	SMTP 주소	SMTP 地址	SMTP Address	SMTP 住所	setting	50304
-SETTING_MAIL_FROM_MAIL_ADDRESS	알림 보낼 메일주소 (알리미용)	发送通知的邮件地址 (通知器专用)	From Mail Address (For GFAlarm)	アラートを受けるメールアドレス(アラート用)	setting	50305
-SETTING_MAIL_FROM_MAIL_PASSWORD	알림 보낼 메일 앱 비밀번호 (알리미용)	发送通知的邮件的密码 (通知器专用)	From Mail App Password (For GFAlarm)	アラートを受けるメールパスワード (アラート用)	setting	50306
-SETTING_MAIL_TO_MAIL_ADDRESS	알림 받을 메일주소	收到通知的邮件地址	To Mail Address	アラートを受けるメールアドレス	setting	50307
-SETTING_MAIL_TEST_BUTTON	테스트 메일	测试邮件	Test	テストメール	setting	50308
-SETTING_TOAST_USE_TAB	탭 알림	页签通知	Tab Notification	タップアラート	setting	50401
-SETTING_TOAST_USE_TAB_TOOLTIP	완료된 알림 존재 시 탭을 하이라이트	已完成的提示存在时,以页签为重要标志	Highlights Tab with completed notification	完了したアラートがある場合タブをハイライトする	setting	50402
-SETTING_FILE_GROUP	파일 저장	储存文件	File Save	ファイル保存	setting	50500
-SETTING_FILE_ENCODING	인코딩	编码	Encoding	エンコディング	setting	50501
-SETTING_FILE_SAVE_USER_INFO	사용자정보 저장	储存用户信息	Save User Info	ユーザー情報保存	setting	50502
-SETTING_FILE_SAVE_USER_INFO_TOOLTIP	로그인 시 전체 사용자정보 저장[br](user_info.json)	登录时存用户的所有信息[br](user_info.json)	Save User Info when logging in[br](user_info.json)	ログインする際、全てのユーザー情報保存[br](user_info.json)	setting	50503
-SETTING_FILE_SAVE_USER_INFO_COMMENT	[a href='{0}']칩셋조합기[/a]에서 사용가능	[a href='{0}']芯片组合机[/a]可使用	Used for [a href='{0}']GFChipCalc[/a]	[a href='{0}']テトリス組み合わせツール[/a]で使える	setting	50504
-SETTING_FILE_SAVE_ITEM_INFO	아이템정보 저장	储存物品信息	Save Item Info	アイテム情報保存	setting	50505
-SETTING_FILE_SAVE_ITEM_INFO_TOOLTIP	로그인 시 아이템정보 저장[br](item_info.csv)	登录时存储存物品信息[br](item_info.csv)	Save Item Info when logging in[br](item_info.csv)	ログインする際、アイテム情報保存[br](item_info.csv)	setting	50506
-SETTING_FILE_SAVE_DOLL_INFO	인형정보 저장	储存人形信息	Save Doll Info	人形情報保存	setting	50507
-SETTING_FILE_SAVE_DOLL_INFO_TOOLTIP	로그인 시 인형정보 저장[br](doll_info.csv)	登录时储存人形信息[br](doll_info.csv)	Save T-Doll Info when logging in[br](doll_info.csv)	ログインする際、人形情報保存[br](doll_info.csv)	setting	50508
-SETTING_FILE_SAVE_EQUIP_INFO	장비정보 저장	储存装备信息	Save Equip Info	装備情報保存	setting	50509
-SETTING_FILE_SAVE_EQUIP_INFO_TOOLTIP	로그인 시 장비정보 저장[br](equip_info.csv)	登录时储存装备信息[br](equip_info.csv)	Save Equip Info when logging in[br](equip_info.csv)	ログインする際、装備情報保存[br](equip_info.csv)	setting	50510
-SETTING_FILE_SAVE_FAIRY_INFO	요정정보 저장	储存妖精信息	Save Fairy Info	妖精情報保存	setting	50511
-SETTING_FILE_SAVE_FAIRY_INFO_TOOLTIP	로그인 시 요정정보 저장[br](fairy_info.csv)	登录时储存妖精信息[br](fairy_info.csv)	Save Fairy Info when logging in[br](fairy_info.csv)	ログインする際、妖精情報保存[br](fairy_info.csv)	setting	50512
-SETTING_FILE_SAVE_RESCUE_DOLL	획득인형 저장	储存获得的人形	Save Rescue Doll	獲得人形情報保存	setting	50513
-SETTING_FILE_SAVE_RESCUE_DOLL_TOOLTIP	전역 중 획득한 인형 저장[br](rescued_doll.csv)	储存作战中获得的人形[br](rescued_doll.csv)	Save Rescued T-Dolls list[br](rescued_doll.csv)	戦役クリア中獲得した人形情報保存[br](rescued_doll.csv)	setting	50514
-SETTING_FILE_SAVE_THEATER_EXERCISE_WAVE	국지전 웨이브 저장	储存战区攻略系统的波	Save Theater Exercise	戦区Wave情報保存	setting	50515
-SETTING_FILE_SAVE_THEATER_EXERCISE_WAVE_TOOLTIP	국지전 웨이브 정보 저장[br](theater_exercise.csv)	储存波的信息[br](theater_exercise.csv)	Save Theater wave info[br](theater_exercise.csv)	戦区Wave情報保存[br](theater_exercise.csv)	setting	50516
-SETTING_FILE_SAVE_THEATER_EXERCISE_WAVE_COMMENT	[a href='{0}']국지전 시트[/a]에서 배치확인	[a href='{0}']在战区攻略系统的Sheet[/a]可以看敌人的安排	Refer to [a href='{0}']Theater Sheet[/a] for layout	[a href='{0}']戦区シート[/a]で配置確認	setting	50517
-SETTING_FILE_SAVE_BATTLE_TESTER	테스터 프리셋 저장	储存测试者预置	Save Battle Tester Preset	テストプリセット	setting	50518
-SETTING_FILE_SAVE_BATTLE_TESTER_TOOLTIP	전투 테스터용 프리셋 저장[br](battle_tester_echelon_preset.gun)[br](battle_tester_squad_preset.sqd)[br](battle_tester_equip_preset.equip)	储存战斗测试者预置[br](battle_tester_echelon_preset.gun)[br](battle_tester_squad_preset.sqd)[br](battle_tester_equip_preset.equip)	Save preset for Batter Tester[br](battle_tester_echelon_preset.gun)[br](battle_tester_squad_preset.sqd)[br](battle_tester_equip_preset.equip)	戦闘テスター用プリセット保存[br](battle_tester_echelon_preset.gun)[br](battle_tester_squad_preset.sqd)[br](battle_tester_equip_preset.equip)	setting	50519
-SETTING_FILE_SAVE_BATTLE_TESTER_COMMENT	[a href='{0}']전투 테스터[/a]에서 사용가능	[a href='{0}']在战斗测试[/a]可使用	Used for [a href='{0}']Battle Tester[/a]	[a href='{0}']戦闘テスター[/a]で使える	setting	50520
-SETTING_WINDOW_GROUP	윈도우	窗口	Window	ツール	setting	50600
-SETTING_WINDOW_HIDE_TO_TRAY	트레이 숨김	隐藏到任务栏托盘	Hide to Tray	タスクトレイに置く	setting	50601
-SETTING_WINDOW_HIDE_TO_TRAY_TOOLTIP	최소화 시 트레이로 숨김	关闭时隐藏到任务栏托盘	Hides to System Tray when Minimized	最小化する場合タスクトレイに置く	setting	50602
-SETTING_WINDOW_OPACITY	창 투명도	窗口透明度	Window Opacity	ツールの透明度	setting	50603
-SETTING_WINDOW_OPACITY_TOOLTIP	알리미 창 투명도 설정	设定通知器的窗口透明度	Set Opacity for GFAlarm	アラートツールの透明度設定	setting	50604
-SETTING_WINDOW_COLOR	창 색상	窗口颜色	Window Color	ツールの色	setting	50605
-SETTING_WINDOW_COLOR_TOOLTIP	창 색상 설정[br](기본값 [font color='#007acc']#007ACC[/font])	设定窗口颜色[br](标准值 [font color='#007acc']#007ACC[/font])	Set window color[br](Default [font color='#007acc']#007ACC[/font])	ツールの色設定[br](デフォルト [font color='#007acc']#007ACC[/font])	setting	50606
-SETTING_WINDOW_STICKY_WINDOW	창 자석	窗口磁铁功能	Sticky Window	ツールの磁石機能	setting	50607
-SETTING_WINDOW_STICKY_WINDOW_TOOLTIP	알리미 창이 화면 가장자리에 붙도록 설정	设定通知器的窗口贴在屏幕边缘	Enable GFAlarm to stick to edge of screen	アラートのツールが画面の隅っこにつけるように設定	setting	50608
-SETTING_EXTRA_GROUP	기타	其他	Extra	その他	setting	50700
-SETTING_EXTRA_USE_CHECK_UPDATE	업데이트 확인	版本更新	Check for Update	アップデートチェック	setting	50701
-SETTING_EXTRA_USE_CHECK_UPDATE_TOOLTIP	알리미 실행 시 최신 업데이트가 있는지 확인	运行通知器时版本更新	Check for latest version of GFAlarm during launch	アラートツール起動する時最新バージョンがあるか確認	setting	50702
-SETTING_EXTRA_LOG_LEVEL_TOOLTIP	로그 레벨[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	日志等级[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	Log Level[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	ログレベル[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	setting	50703
-SETTING_EXTRA_LOG_PACKET_TOOLTIP	로그에 패킷 출력[br]로그 레벨을 Info 이하로 설정할 것[br][font color='#F44336'](속도가 느려질 수 있음)[/font]	对日志输出包[br]日志等级设定到Info以下[br][font color='#F44336'](速度可能会变慢)[/font]	Print packets on log[br]Set Log Level to below Info[br][font color='#F44336'](Can slow down system)[/font]	ログにパケット出力[br]ログレベルをInfo以下に設定してください[br][font color='#F44336'](アプリが重くなるかも知れません)[/font]	setting	50704
-MESSAGE_CONNECT_SUBJECT	연결 상태	连接现况	Connection	連結状態	message	80000
-MESSAGE_CONNECT_CONTENT	연결 성공	连接成功	Connection Success	連結成功	message	80001
-MESSAGE_COMPLETE_LOGISTICS_SUBJECT	군수지원	后勤支援	Logistics	後方支援	message	80010
-MESSAGE_COMPLETE_LOGISTICS_CONTENT	군수지원 {0} 도착	到达 {0} 后勤支援	Logistic support {0} completed	後方支援 {0} 完了	message	80011
-MESSAGE_COMPLETE_AUTO_BATTLE_SUBJECT	자율작전	自律作战	Auto-Battle	自立作戦	message	80020
-MESSAGE_COMPLETE_AUTO_BATTLE_CONTENT	자율작전 {0} 복귀	回归 {0} 自律作战	Auto-Battle {0} completed	自立作戦 {0} 完了	message	80021
-MESSAGE_COMPLETE_COMBAT_REPORT_SUBJECT	작전보고서	作战报告	Combat Report	作戦報告書	message	80030
-MESSAGE_COMPLETE_COMBAT_REPORT_CONTENT	작전보고서 {0}장 작성완료	制成了 {0}张 作战报告	Combat Report ({0} Sheets) completed	作戦報告書 {0}枚 作成完了	message	80031
-MESSAGE_COMPLETE_PRODUCE_DOLL_SUBJECT	인형제조	人形制造	T-Doll Production	人形製造	message	80040
-MESSAGE_COMPLETE_PRODUCE_DOLL_CONTENT	{0}성 인형 {1} ({2}) 제조완료	{0}星 人形 {1} ({2}) 完成制造	{1} ({0} Star) Production completed	星{0} 人形 {1} ({2}) 製造完了	message	80041
-MESSAGE_COMPLETE_PRODUCE_EQUIP_SUBJECT	장비제조	装备制造	Equip Production	装備製造	message	80050
-MESSAGE_COMPLETE_PRODUCE_EQUIP_CONTENT	{0}성 장비 {1} 제조완료	{0}星 装备 {1} 完成制造	{1} ({0} Star) Production completed	星{0} 装備 {1} 製造完了	message	80051
-MESSAGE_COMPLETE_PRODUCE_FAIRY_CONTENT	요정 {0} 제조완료	妖精 {0} 完成制造	{0} Production completed	妖精 {0} 製造完了	message	80052
-MESSAGE_COMPLETE_TRAIN_SKILL_SUBJECT	스킬훈련	技能训练	Skill Training	スキル訓練	message	80060
-MESSAGE_COMPLETE_TRAIN_EXP_SUBJECT	경험훈련	经验训练	Exp Training	経験訓練	message	80061
-MESSAGE_COMPLETE_TRAIN_DOLL_CONTENT	인형 {0} 훈련완료	人形 {0} 完成训练	{0} Training completed	人形 {0} 訓練完了	message	80062
-MESSAGE_COMPLETE_TRAIN_FAIRY_CONTENT	요정 {0} 훈련완료	妖精 {0} 完成训练	{0} Training completed	妖精 {0} 訓練完了	message	80063
-MESSAGE_COMPLETE_TRAIN_SQUAD_CONTENT	중장비 {0} 훈련완료	重装部队 {0} 完成训练	{0} Training completed	중装備 {0} 訓練完了	message	80064
-MESSAGE_COMPLETE_DATA_ANALYSIS_SUBJECT	정보분석	情报解析	Data Analysis	情報分析	message	80070
-MESSAGE_COMPLETE_DATA_ANALYSIS_CONTENT	정보분석 완료	完成情报解析	Data Analysis completed	情報分析完了	message	80071
-MESSAGE_COMPLETE_RESTORE_SUBJECT	인형수복	人性修复	T-Doll Repair	人形修理	message	80080
-MESSAGE_COMPLETE_RESTORE_CONTENT	인형 {0} 수복 완료	人形 {0} 修复成功	{0} Repair completed	人形 {0} 修理完了	message	80081
-MESSAGE_COMPLETE_EXPLORE_SUBJECT	전진기지	前进营地	Forward Basecamp	前進基地	message	80090
-MESSAGE_COMPLETE_EXPLORE_CONTENT	탐색제대 귀환	探索梯队返回	Explore completed	探索部隊帰還	message	80091
-MESSAGE_MAX_SIM_POINT_SUBJECT	모의작전	模拟作战	Combat Simulation	模擬作戦	message	80100
-MESSAGE_MAX_SIM_POINT_CONTENT	모의작전점수 {0}점 도달	模拟作战体力达到{0}点	Sim Energy {0} Point reached	模擬作戦基礎AP {0}になりました	message	80101
-MESSAGE_MAX_SURPLUS_EXP_SUBJECT	자유경험치	全局经验值	Surplus Exp	トータル経験値	message	80110
-MESSAGE_MAX_SURPLUS_EXP_CONTENT	자유경험치 상한 도달	全局经验值达到上限	Maximum Surplus Exp reached	トータル経験値上限到達	message	80111
-MESSAGE_MAX_DOLL_SUBJECT	창고	人形仓库	Armory	倉庫	message	80120
-MESSAGE_MAX_DOLL_CONTENT	인형 상한 도달	人形数达到上限	T-Doll Slot limit reached	人形上限到達	message	80121
-MESSAGE_MAX_EQUIP_SUBJECT	창고	装备仓库	Armory	倉庫	message	80130
-MESSAGE_MAX_EQUIP_CONTENT	장비 상한 도달	装备数达到上限	Equip Depot limit reached	装備上限到達	message	80131
-MESSAGE_MISSION_RESCUE_DOLL_SUBJECT	창고	妖精仓库	T-Doll Slot	倉庫	message	80200
-MESSAGE_MISSION_RESCUE_DOLL_CONTENT	{0}성 인형 {1} 획득	获得 {0}星 人形{1}	T-Doll {1} ({0} Star) rescued	星{0} 人形 {1} 獲得	message	80201
-MESSAGE_MISSION_GET_EQUIP_SUBJECT	창고	装备仓库	Equip Depot	倉庫	message	80210
-MESSAGE_MISSION_GET_EQUIP_CONTENT	장비 {0} ({1}성 {2}) 획득	获得 装备 {0} ({1}星 {2})	Equip {0} ({1} Star) obtained	装備 {0} (星{1} {2}) 獲得	message	80211
-MESSAGE_MISSION_WIN_SUBJECT	전역	作战	Mission	戦役	message	80220
-MESSAGE_MISSION_WIN_CONTENT	전역 승리	作战胜利	Mission completed	戦役勝利	message	80221
-MESSAGE_MISSION_MOVE_TEAM_SUBJECT	전역	作战	Mission	戦役	message	80230
-MESSAGE_MISSION_MOVE_TEAM_CONTENT	제대이동 완료 ({0}회 이동)	梯队移动完成 ({0}回 移动)	Planning Mode completed ({0} times moved)	部隊移動完了({0}回移動)	message	80231
-MESSAGE_MISSION_MOVE_TEAM_AND_BATTLE_COMPLETE_SUBJECT	전역	作战	Mission	戦役	message	80240
-MESSAGE_MISSION_MOVE_TEAM_AND_BATTLE_COMPLETE_CONTENT	제대이동 완료 (전투 완료)	梯队移动完成 (战斗结束)	Planning Mode completed (Battle complete)	部隊移動完了(戦闘完了)	message	80241
-MESSAGE_DOLL_NEED_DUMMY_LINK_SUBJECT	인형	人形	T-Doll	人形	message	80300
-MESSAGE_DOLL_NEED_DUMMY_LINK_CONTENT	{0}제대 {1} 편제확대 필요	{0}梯队 {1} 需要编制扩大	{0} Echelon {1} requires Dummy Link	{0}部隊 {1} 編制拡大必要	message	80301
-MESSAGE_DOLL_MAX_LEVEL_SUBJECT	인형	人形	T-Doll	人形	message	80310
-MESSAGE_DOLL_MAX_LEVEL_CONTENT	{0}제대 {1} 최대 레벨 도달	{0}梯队 {1} 达到最大等级	{0} Echelon {1} Max Level reached	{0}部隊 {1} レベルカンスト	message	80311
-MESSAGE_DOLL_HP_WARNING_SUBJECT	인형	T-Doll	T-Doll	人形	message	80320
-MESSAGE_DOLL_HP_WARNING_CONTENT	{0}제대 {1} 체력 경고 ({2}% 이하)	{0} Echelon {1} HP Warning	{0} Echelon {1} HP Warning	{0}部隊 {1} 修復が必要	message	80321
-MESSAGE_PRODUCE_DOLL_SUBJECT	인형제조	人形制造	T-Doll Production	人形製造	message	80400
-MESSAGE_PRODUCE_DOLL_CONTENT	{0}성 인형 {1} ({2}) 제조	制造 {0}星 人形 {1} ({2})	{2} {1} ({0} Star) Production completed	星{0} 人形 {1} ({2}) 製造	message	80401
-MESSAGE_PRODUCE_EQUIP_SUBJECT	장비제조	装备制造	Equip Production	装備製造	message	80410
-MESSAGE_PRODUCE_EQUIP_CONTENT	{0}성 장비 {1} 제조	制造{0}星 装备 {1}	{1} ({0} Star) Production completed	星{0} 装備 {1} 製造	message	80411
-MESSAGE_PRODUCE_FAIRY_CONTENT	요정 {0} 제조	妖精 {0} 制造	{0} Production complete	妖精 {0} 製造	message	80412
-MESSAGE_THEATER_EXERCISE_SAVE_WAVE_SUBJECT	국지전	战区攻略系统	Theater	戦区	message	80500
-MESSAGE_THEATER_EXERCISE_SAVE_WAVE_CONTENT	국지전 웨이브 정보를 확인하려면 재로그인 필요	要确认战区攻略系统的信息时需要重新登录	Requires re-log in to check Theater Wave info	戦区Wave情報を確認したい場合は再ログイン必要	message	80501
-MESSAGE_QUEST_DAILY_SUBJECT	일간임무	日常任务	Daily Quest	デイリー任務	message	80600
-MESSAGE_QUEST_WEEKLY_SUBJECT	주간임무	周常任务	Weekly Quest	ウィークリー任務	message	80601
-MESSAGE_QUEST_RESEARCH_SUBJECT	정보임무	情报任务	Research Quest	情報任務	message	80602
-MESSAGE_QUEST_CONTENT	{0} 달성	达到 {0}	{0} Complete	{0} 達成	message	80603
-MESSAGE_TEST_SUBJECT	테스트 알림	测试通知	Test Notification	テスト	message	80700
-MESSAGE_TEST_CONTENT	테스트 알림 성공	测试通知成功	Test Notification Success	テストアラート OK	message	80701
-MESSAGE_TEST_WITH_VOICE_CONTENT	인형 {0} 음성	人形 {0} 语音	Doll {0} Voice	人形 {0} ボイス	message	80702
-MAIL_FORMAT	[소녀전선] {0}	[少女前线] {0}	[Girls Frontline] {0}	[ドルフロ] {0}	message	80800
-MARRIED	서약	誓约	Married	誓約		90000
-LOCKED	잠김	锁定	Locked	ロック		90001
-DOLL_INFO_ID	ID	ID	ID	ID	csv_doll_info	90002
-DOLL_INFO_NO	도감번호	图鉴编号	No	図鑑番号	csv_doll_info	90003
-DOLL_INFO_TYPE	종류	类型	Type	種類	csv_doll_info	90004
-DOLL_INFO_STAR	레어도	稀有度	Star	レアリティ	csv_doll_info	90005
-DOLL_INFO_NAME	인형	人形	Name	人形	csv_doll_info	90006
-DOLL_INFO_LEVEL	레벨	等级	Level	レベル	csv_doll_info	90007
-DOLL_INFO_SUM_EXP	누적 경험치	累积经验值	Total Exp	累計経験値	csv_doll_info	90008
-DOLL_INFO_CURRENT_EXP	현재 경험치	现在经验值	Current Exp	現在経験値	csv_doll_info	90009
-DOLL_INFO_REQUIRE_EXP	필요 경험치	需要经验值	Required Exp	必要経験値	csv_doll_info	90010
-DOLL_INFO_DUMMY_LINK	편제 수	编制数	Link	リンク数	csv_doll_info	90011
-DOLL_INFO_MOD	개조	心智升级	MOD	改造	csv_doll_info	90012
-DOLL_INFO_MAX_HP	최대 체력	最大生命	Max HP	最大HP	csv_doll_info	90013
-DOLL_INFO_HP	체력	生命	HP	HP	csv_doll_info	90014
-DOLL_INFO_POW	화력	伤害	Damage	火力	csv_doll_info	90015
-DOLL_INFO_HIT	명중	命中	Accuracy	命中	csv_doll_info	90016
-DOLL_INFO_DODGE	회피	回避	Evasion	回避	csv_doll_info	90017
-DOLL_INFO_RATE	사속	射速	Rate of Fire	射速	csv_doll_info	90018
-DOLL_INFO_SPEED	이동속도	移速	Move Speed	移動速度	csv_doll_info	90019
-DOLL_INFO_ARMOR	장갑	护甲	Armor	防御	csv_doll_info	90020
-DOLL_INFO_BULLET	장탄	上弹数	Rounds	弾約数	csv_doll_info	90021
-DOLL_INFO_SKILL1	스킬1	技能1	Skill1	スキル1	csv_doll_info	90022
-DOLL_INFO_SKILL2	스킬2	技能2	Skill2	スキル2	csv_doll_info	90023
-DOLL_INFO_EQUIP1_ID	장비1 ID	装备1 ID	Equip1 ID	装備1 ID	csv_doll_info	90024
-DOLL_INFO_EQUIP1_NAME	장비1	装备1	Equip1	装備1	csv_doll_info	90025
-DOLL_INFO_EQUIP2_ID	장비2 ID	装备2 ID	Equip2 ID	装備2 ID	csv_doll_info	90026
-DOLL_INFO_EQUIP2_NAME	장비2	装备2	Equip2	装備2	csv_doll_info	90027
-DOLL_INFO_EQUIP3_ID	장비3 ID	装备3 ID	Equip3 ID	装備3 ID	csv_doll_info	90028
-DOLL_INFO_EQUIP3_NAME	장비3	装备3	Equip3	装備3	csv_doll_info	90029
-DOLL_INFO_FAVOR	호감도	好感	Affection	好感度	csv_doll_info	90030
-DOLL_INFO_IS_MARRIED	서약여부	是否誓约	Oathed	誓約チェック	csv_doll_info	90031
-DOLL_INFO_MARRIED_DATETIME	서약일	誓约日	Oathed Datetime	誓約日	csv_doll_info	90032
-DOLL_INFO_IS_LOCK	잠김여부	是否锁定	Locked	ロックチェック	csv_doll_info	90033
-EQUIP_INFO_ID	ID	ID	ID	ID	csv_equip_info	90034
-EQUIP_INFO_NO	도감번호	图鉴编号	No.	図鑑番号	csv_equip_info	90035
-EQUIP_INFO_TYPE	종류	类型	Type	種類	csv_equip_info	90036
-EQUIP_INFO_STAR	레어도	稀有度	Star	レアリティ	csv_equip_info	90037
-EQUIP_INFO_NAME	장비	装备	Name	装備	csv_equip_info	90038
-EQUIP_INFO_USE_DOLL_ID	착용인형 ID	穿戴人形ID	Doll ID	着用人形 ID	csv_equip_info	90039
-EQUIP_INFO_USE_DOLL_NAME	착용인형	穿戴人形	Doll	着用人形	csv_equip_info	90040
-EQUIP_INFO_POW	화력	伤害	Damage	火力	csv_equip_info	90041
-EQUIP_INFO_HIT	명중	命中	Accuracy	命中	csv_equip_info	90042
-EQUIP_INFO_DODGE	회피	回避	Evasion	回避	csv_equip_info	90043
-EQUIP_INFO_RATE	사속	射速	Rate of Fire	射速	csv_equip_info	90044
-EQUIP_INFO_SPEED	이동속도	移速	Move Speed	移動速度	csv_equip_info	90045
-EQUIP_INFO_CRIT_PERCENT	치명상	暴击	Crit.Rate	会心ダメージ	csv_equip_info	90046
-EQUIP_INFO_CRIT_HARM_RATE	치명률	暴击概率	Crit.Damage	会心率	csv_equip_info	90047
-EQUIP_INFO_ARMOR_PIERCING	관통	穿甲	Armor Pen.	破甲	csv_equip_info	90048
-EQUIP_INFO_ARMOR	장갑	护甲	Armor	防御	csv_equip_info	90049
-EQUIP_INFO_SHIELD	보호막	护盾	Shield	シールド	csv_equip_info	90050
-EQUIP_INFO_DAMAGE_AMPLIFY	피해 증폭	伤害提升	Damage Amplify	被害増幅	csv_equip_info	90051
-EQUIP_INFO_DAMAGE_REDUCTION	피해 감쇄	伤害降低	Damage Reduction	被害減殺	csv_equip_info	90052
-EQUIP_INFO_NIGHT_VIEW_PERCENT	야시능력	夜视能力	Night View	暗視能力	csv_equip_info	90053
-EQUIP_INFO_BULLET_NUMBER_UP	장탄수	上弹数	Rounds	弾薬数	csv_equip_info	90054
-EQUIP_INFO_EXP	장비경험치	装备经验值	Equip Exp	装備経験値	csv_equip_info	90055
-EQUIP_INFO_LEVEL	강화레벨	强化等级	Equip Level	強化レベル	csv_equip_info	90056
-EQUIP_INFO_ADJUST_COUNT	교정횟수	矫正次数	Adjust Count	校正回数	csv_equip_info	90057
-EQUIP_INFO_IS_LOCKED	잠김여부	是否锁定	Locked	ロックチェック	csv_equip_info	90058
-FAIRY_INFO_ID	ID	ID	ID	ID	csv_fairy_info	90059
-FAIRY_INFO_NO	도감번호	图鉴编号	No	図鑑番号	csv_fairy_info	90060
-FAIRY_INFO_NAME	요정	妖精	Name	妖精	csv_fairy_info	90061
-FAIRY_INFO_QUALITY_LEVEL	레어도	稀有度	Star	レアリティ	csv_fairy_info	90062
-FAIRY_INFO_QUALITY_EXP	개발수치	开发值	Dev. Rate	開発値	csv_fairy_info	90063
-FAIRY_INFO_LEVEL	레벨	等级	Level	レベル	csv_fairy_info	90064
-FAIRY_INFO_TRAIT	특성	特性	Talent	天賦	csv_fairy_info	90065
-FAIRY_INFO_SKILL	스킬	技能	Skill	スキル	csv_fairy_info	90066
-FAIRY_INFO_IS_LOCKED	잠김여부	是否锁定	Locked	ロックチェック	csv_fairy_info	90067
-RESCUE_DOLL_DATETIME	날짜시각	日期时间	Datetime	日付	csv_rescue_doll	90068
-RESCUE_DOLL_MISSION_ID	전역 ID	作战 ID	Mission ID	戦役ID	csv_rescue_doll	90069
-RESCUE_DOLL_MISSION_NAME	전역	作战	Mission	戦役	csv_rescue_doll	90070
-RESCUE_DOLL_MISSION_COUNT	전역횟수	作战次数	Mission Attempt	戦役回数	csv_rescue_doll	90071
-RESCUE_DOLL_DOLL_ID	인형 ID	人形ID	Doll ID	人形ID	csv_rescue_doll	90072
-RESCUE_DOLL_DOLL_NAME	인형	人形	Doll	人形	csv_rescue_doll	90073
-RESCUE_DOLL_DOLL_STAR	레어도	稀有度	Star	レアリティ	csv_rescue_doll	90074
-RESCUE_DOLL_DOLL_CORE	코어	核心	Core	コア	csv_rescue_doll	90075
-DOLL_1	콜트 리볼버	柯尔特左轮	SAA	コルトSAA	doll	90076
-DOLL_2	M1911	M1911	M1911	M1911	doll	90077
-DOLL_3	M9	M9	M9	M9	doll	90078
-DOLL_4	콜트 파이슨	蟒蛇	Colt Python	Python	doll	90079
-DOLL_5	나강 리볼버	纳甘左轮	M1895	M1895	doll	90080
-DOLL_6	토카레프	托卡列夫	Tokarev	トカレフ	doll	90081
-DOLL_7	스테츠킨	斯捷奇金	Stechkin	スチェッキン	doll	90082
-DOLL_8	마카로프	马卡洛夫	Makarov	マカロフ	doll	90083
-DOLL_9	P38	P38	P38	P38	doll	90084
-DOLL_10	PPK	PPK	PPK	PPK	doll	90085
-DOLL_11	P08	P08	P08	P08	doll	90086
-DOLL_12	C96	C96	C96	C96	doll	90087
-DOLL_13	92식	92式	Type92	92式	doll	90088
-DOLL_14	아스트라 리볼버	阿斯特拉左轮	Astra	アストラ	doll	90089
-DOLL_15	글록17	格洛克17	G17	G17	doll	90090
-DOLL_16	톰슨	汤姆森	Thompson	トンプソン	doll	90091
-DOLL_17	M3	M3	M3	M3	doll	90092
-DOLL_18	MAC-10	MAC-10	Ingram	イングラム	doll	90093
-DOLL_19	FMG-9	FMG-9	FMG-9	FMG-9	doll	90094
-DOLL_20	Vector	Vector	Vector	Vector	doll	90095
-DOLL_21	PPSh-41	PPSh-41	PPSh-41	PPSh-41	doll	90096
-DOLL_22	PPS-43	PPS-43	PPS-43	PPS-43	doll	90097
-DOLL_23	PP-90	PP-90	PP-90	PP-90	doll	90098
-DOLL_24	PP-2000	PP-2000	PP-2000	PP-2000	doll	90099
-DOLL_25	MP40	MP40	MP40	MP40	doll	90100
-DOLL_26	MP5	MP5	Gr MP5	Gr MP5	doll	90101
-DOLL_27	스콜피온	蝎式	Skorpion	スコーピオン	doll	90102
-DOLL_28	MP7	MP7	MP7	Gr MP7	doll	90103
-DOLL_29	스텐Mk II	司登MkⅡ	STEN MkII	ステンMK-II	doll	90104
-DOLL_30					doll	90105
-DOLL_31	베레타 38형	伯莱塔38型	M38	M38	doll	90106
-DOLL_32	마이크로 우지	微型乌兹	Micro Uzi	Micro Uzi	doll	90107
-DOLL_33	m45	m45	m45	m45	doll	90108
-DOLL_34	M1 개런드	M1加兰德	M1 Garand	M1ガーランド	doll	90109
-DOLL_35	M1A1	M1A1	M1A1	M1A1	doll	90110
-DOLL_36	스프링필드	春田	Springfield	スプリングフィールド	doll	90111
-DOLL_37	M14	M14	M14	M14	doll	90112
-DOLL_38	M21	M21	M21	M21	doll	90113
-DOLL_39	모신나강	莫辛-纳甘	Mosin-Nagant	モシン・ナガン	doll	90114
-DOLL_40	SVT-38	SVT-38	SVT-38	SVT-38	doll	90115
-DOLL_41	시모노프	西蒙诺夫	SKS	SKS	doll	90116
-DOLL_42	PTRD	PTRD	PTRD	PTRD	doll	90117
-DOLL_43	SVD	SVD	SVD	SVD	doll	90118
-DOLL_44	SV-98	SV-98	SV-98	SV-98	doll	90119
-DOLL_45					doll	90120
-DOLL_46	Kar98k	Kar98k	Kar98k	Kar98k	doll	90121
-DOLL_47	G43	G43	G43	G43	doll	90122
-DOLL_48	WA2000	WA2000	WA2000	WA2000	doll	90123
-DOLL_49	56식 반	56式半	Type 56	56式半	doll	90124
-DOLL_50	리엔필드	李-恩菲尔德	Lee Enfield	リー・エンフィールド	doll	90125
-DOLL_51	FN-49	FN-49	FF FN49	FF FN-49	doll	90126
-DOLL_52	BM59	BM59	VM59	It BM59	doll	90127
-DOLL_53	NTW-20	NTW-20	NTW-20	NTW-20	doll	90128
-DOLL_54	M16A1	M16A1	M16A1	M16A1	doll	90129
-DOLL_55	M4A1	M4A1	M4A1	M4A1	doll	90130
-DOLL_56	M4 SOPMOD II	M4 SOPMOD II	M4 SOPMOD II	M4 SOPMOD II	doll	90131
-DOLL_57	ST AR-15	ST AR-15	ST AR-15	ST AR-15	doll	90132
-DOLL_58	AK-47	AK-47	AK-47	AK-47	doll	90133
-DOLL_59	AK-74U	AK-74U	AK-74U	AK74U	doll	90134
-DOLL_60	AS Val	AS Val	AS Val	AS Val	doll	90135
-DOLL_61	StG44	StG44	StG44	StG44	doll	90136
-DOLL_62	G41	G41	Gr G41	Gr G41	doll	90137
-DOLL_63	G3	G3	Gr G3	Gr G3	doll	90138
-DOLL_64	G36	G36	Gr G36	Gr G36	doll	90139
-DOLL_65	HK416	HK416	416	416	doll	90140
-DOLL_66	56-1식	56-1式	Type56-1	56-1式	doll	90141
-DOLL_67					doll	90142
-DOLL_68	L85A1	L85A1	L85A1	L85A1	doll	90143
-DOLL_69	FAMAS	FAMAS	Fr FAMAS	Fr FAMAS	doll	90144
-DOLL_70	FNC	FNC	FF FNC	FF FNC	doll	90145
-DOLL_71	갈릴	加利尔	Galil	ガリル	doll	90146
-DOLL_72	TAR-21	TAR-21	TAR-21	TAR-21	doll	90147
-DOLL_73	AUG	AUG	AUG	AUG	doll	90148
-DOLL_74	SIG-510	SIG-510	SIG-510	SIG-510	doll	90149
-DOLL_75	M1918	M1918	M1918	M1918	doll	90150
-DOLL_76					doll	90151
-DOLL_77	M2HB	M2HB	M2HB	M2HB	doll	90152
-DOLL_78	M60	M60	M60	M60	doll	90153
-DOLL_79	M249 SAW	M249 SAW	FF M249SAW	FF M249 SAW	doll	90154
-DOLL_80	M1919A4	M1919A4	M1919A4	M1919A4	doll	90155
-DOLL_81	LWMMG	LWMMG	LWMMG	LWMMG	doll	90156
-DOLL_82	DP28	DP28	DP28	DP28	doll	90157
-DOLL_83					doll	90158
-DOLL_84	RPD	RPD	RPD	RPD	doll	90159
-DOLL_85	PK	PK	PK	PK	doll	90160
-DOLL_86	MG42	MG42	MG42	MG42	doll	90161
-DOLL_87	MG34	MG34	MG34	MG34	doll	90162
-DOLL_88	MG3	MG3	MG3	MG3	doll	90163
-DOLL_89	브렌	布伦	Bren	ブレン	doll	90164
-DOLL_90	FNP-9	FNP-9	FF FNP9	FF FNP-9	doll	90165
-DOLL_91	MP-446	MP-446	MP-446	MP-446	doll	90166
-DOLL_92	Spectre M4	Spectre M4	Spectre M4	スペクトラM4	doll	90167
-DOLL_93	IDW	IDW	IDW	IDW	doll	90168
-DOLL_94	64식	64式	Type64	64式	doll	90169
-DOLL_95	한양조 88식	汉阳造88式	Type88	漢陽88式	doll	90170
-DOLL_96	그리즐리Mk V	灰熊Mk Ⅴ	Grizzly	グリズリー	doll	90171
-DOLL_97	M950A	M950A	M950A	M950A	doll	90172
-DOLL_98	SPP-1	SPP-1	SPP-1	SPP-1	doll	90173
-DOLL_99	Mk23	Mk23	Gr Mk23	Gr Mk23	doll	90174
-DOLL_100	P7	P7	P7	P7	doll	90175
-DOLL_101	UMP9	UMP9	UMP9	UMP9	doll	90176
-DOLL_102	UMP40	UMP40	UMP40	UMP40	doll	90177
-DOLL_103	UMP45	UMP45	UMP45	UMP45	doll	90178
-DOLL_104	G36C	G36C	Gr G36C	Gr G36c	doll	90179
-DOLL_105	OTs-12	OTs-12	OTs-12	OTs-12	doll	90180
-DOLL_106	FAL	FAL	FAL	FAL	doll	90181
-DOLL_107	F2000	F2000	FF F2000	FF F2000	doll	90182
-DOLL_108	CZ-805	CZ-805	CZ-805	CZ-805	doll	90183
-DOLL_109	MG5	MG5	Gr MG5	Gr MG5	doll	90184
-DOLL_110	FG42	FG42	FG42	FG42	doll	90185
-DOLL_111	AAT-52	AAT-52	AAT-52	AAT-52	doll	90186
-DOLL_112	네게브	内格夫	Negev	ネゲヴ	doll	90187
-DOLL_113	세르듀코프	谢尔久科夫	Serdyukov	セルジュコフ	doll	90188
-DOLL_114	웰로드Mk II	维尔德MkⅡ	Welrod MkII	ウェルロッドMkII	doll	90189
-DOLL_115	수오미	索米	Suomi	スオミ	doll	90190
-DOLL_116	Z-62	Z-62	Z-62	Z-62	doll	90191
-DOLL_117	PSG-1	PSG-1	Gr PSG-1	Gr PSG-1	doll	90192
-DOLL_118	9A-91	9A-91	9A-91	9A-91	doll	90193
-DOLL_119	OTs-14	OTs-14	OTs-14	OTs-14	doll	90194
-DOLL_120	ARX-160	ARX-160	ARX-160	ARX-160	doll	90195
-DOLL_121	Mk48	Mk48	Mk48	Mk48	doll	90196
-DOLL_122	G11	G11	Gr G11	Gr G11	doll	90197
-DOLL_123	P99	P99	P99	P99	doll	90198
-DOLL_124	Super SASS	Super SASS	Super SASS	Super SASS	doll	90199
-DOLL_125	MG4	MG4	Gr MG4	Gr MG4	doll	90200
-DOLL_126	NZ75	NZ75	NZ75	NZ75	doll	90201
-DOLL_127	79식	79式	Type79	79式	doll	90202
-DOLL_128	M99	M99	M99	M99	doll	90203
-DOLL_129	95식	95式	Type95	95式	doll	90204
-DOLL_130	97식	97式	Type97	97式	doll	90205
-DOLL_131	EVO 3	EVO 3	EVO 3	EVO 3	doll	90206
-DOLL_132	59식	59式	Type59	59式	doll	90207
-DOLL_133	63식	63式	Type63	63式	doll	90208
-DOLL_134	AR70	AR70	AR70	AR70	doll	90209
-DOLL_135	SR-3MP	SR-3MP	SR-3MP	SR-3MP	doll	90210
-DOLL_136	PP-19	PP-19	PP-19	PP-19	doll	90211
-DOLL_137	PP-19-01	PP-19-01	PP-19-01	PP-19-01	doll	90212
-DOLL_138	6P62	6P62	6P62	6P62	doll	90213
-DOLL_139	Bren Ten	Bren Ten	Bren Ten	ブレン・テン	doll	90214
-DOLL_140	PSM	PSM	PSM	PSM	doll	90215
-DOLL_141	USP Compact	USP Compact	Gr USPCompact	Gr USPコンパクト	doll	90216
-DOLL_142	Five-seveN	Five-seveN	Five-seveN	Five-seven	doll	90217
-DOLL_143	RO635	RO635	RO635	RO635	doll	90218
-DOLL_144	MT-9	MT-9	MT-9	MT-9	doll	90219
-DOLL_145	OTs-44	OTs-44	OTs-44	OTs-44	doll	90220
-DOLL_146	G28	G28	Gr G28	Gr G28	doll	90221
-DOLL_147	SSG 69	SSG 69	SSG 69	SSG 69	doll	90222
-DOLL_148	IWS 2000	IWS 2000	IWS 2000	IWS 2000	doll	90223
-DOLL_149	AEK-999	AEK-999	AEK-999	AEK-999	doll	90224
-DOLL_150	시프카	希普卡	Shipka	シプカ	doll	90225
-DOLL_151	M1887	M1887	M1887	M1887	doll	90226
-DOLL_152	M1897	M1897	M1897	M1897	doll	90227
-DOLL_153	M37	M37	M37	M37	doll	90228
-DOLL_154	M500	M500	M500	M500	doll	90229
-DOLL_155	M590	M590	M590	M590	doll	90230
-DOLL_156	Super-Shorty	Super-Shorty	Super-Shorty	Super-Shorty	doll	90231
-DOLL_157	KSG	KSG	Am KSG	Am KSG	doll	90232
-DOLL_158	KS-23	KS-23	KS-23	KS-23	doll	90233
-DOLL_159	RMB-93	RMB-93	RMB-93	RMB-93	doll	90234
-DOLL_160	Saiga-12	Saiga-12	Saiga-12	Saiga-12	doll	90235
-DOLL_161	97식 산탄총	97式霰	Type97S	97式散	doll	90236
-DOLL_162	SPAS-12	SPAS-12	SPAS-12	SPAS-12	doll	90237
-DOLL_163	AA-12	AA-12	AA-12	AA-12	doll	90238
-DOLL_164	FP-6	FP-6	FP-6	FP6	doll	90239
-DOLL_165	M1014	M1014	M1014	M1014	doll	90240
-DOLL_166	CZ75	CZ75	CZ75	CZ75	doll	90241
-DOLL_167	HK45	HK45	Gr HK45	Gr HK45	doll	90242
-DOLL_168	Spitfire	Spitfire	Spitfire	Spitfire	doll	90243
-DOLL_169	SCW	SCW	SCW	SCW	doll	90244
-DOLL_170	Ash-12.7	Ash-12.7	Ash-12.7	Ash-12.7	doll	90245
-DOLL_171	리베롤	利贝罗勒	Ribeyrolles	リベロール	doll	90246
-DOLL_172	RFB	RFB	Am RFB	Am RFB	doll	90247
-DOLL_173	PKP	PKP	PKP	PKP	doll	90248
-DOLL_174	81식 카빈	八一式马	Type81R	81式カービン	doll	90249
-DOLL_175	ART556	ART556	ART556	ART556	doll	90250
-DOLL_176	TMP	TMP	TMP	TMP	doll	90251
-DOLL_177	KLIN	KLIN	KLIN	KLIN	doll	90252
-DOLL_178	F1	F1	F1	F1	doll	90253
-DOLL_179	DSR-50	DSR-50	Gd DSR-50	Gd DSR-50	doll	90254
-DOLL_180	PzB39	PzB39	PzB39	PzB39	doll	90255
-DOLL_181	T91	T91	T91	T91	doll	90256
-DOLL_182	wz.29	wz.29	wz.29	wz.29	doll	90257
-DOLL_183	컨텐더	竞争者	Contender	コンテンダー	doll	90258
-DOLL_184	T-5000	T-5000	T-5000	T-5000	doll	90259
-DOLL_185	아멜리	阿梅利	Ameli	Ameli	doll	90260
-DOLL_186	P226	P226	P226	P226	doll	90261
-DOLL_187	Ak 5	Ak 5	Ak 5	Ak 5	doll	90262
-DOLL_188	S.A.T.8	S.A.T.8	S.A.T.8	S.A.T.8	doll	90263
-DOLL_189	USAS-12	USAS-12	USAS-12	USAS-12	doll	90264
-DOLL_190	NS2000	NS2000	NS2000	NS2000	doll	90265
-DOLL_191	M12	M12	M12	M12	doll	90266
-DOLL_192	JS05	JS05	JS05	JS05	doll	90267
-DOLL_193	T65	T65	T65	T65	doll	90268
-DOLL_194	K2	K2	K2	K2	doll	90269
-DOLL_195	HK23	HK23	HK23	Gr MG23	doll	90270
-DOLL_196	Zas M21	Zas M21	Zas M21	Zas M21	doll	90271
-DOLL_197	카르카노M1891	卡尔卡诺M1891	Carcano M1891	カルカノM1891	doll	90272
-DOLL_198	카르카노M91/38	卡尔卡诺M91/38	Carcano M91/38	カルカノM91/38	doll	90273
-DOLL_199	80식	80式	Type80	80式	doll	90274
-DOLL_200	XM3	XM3	XM3	XM3	doll	90275
-DOLL_201	게파드 M1	猎豹M1	Gepard M1	ゲパードM1	doll	90276
-DOLL_202	썬더	雷电	Thunder	サンダー	doll	90277
-DOLL_203	허니뱃저	蜜獾	Honey Badger	ハニー・バジャー	doll	90278
-DOLL_204	발리스타	芭莉斯塔	Ballista	バリスタ	doll	90279
-DOLL_205	AN-94	AN-94	AN-94	AN-94	doll	90280
-DOLL_206	AK-12	AK-12	AK-12	AK-12	doll	90281
-DOLL_207	CZ2000	CZ2000	CZ2000	CZ2000	doll	90282
-DOLL_208	HK21	HK21	HK21	HK21	doll	90283
-DOLL_209	OTs-39	OTs-39	OTs-39	OTs-39	doll	90284
-DOLL_210	CZ52	CZ52	CZ52	CZ52	doll	90285
-DOLL_211	SRS	SRS	SRS	SRS	doll	90286
-DOLL_212	K5	K5	K5	K5	doll	90287
-DOLL_213	C-MS	C-MS	C-MS	C-MS	doll	90288
-DOLL_214	ADS	ADS	ADS	ADS	doll	90289
-DOLL_215	MDR	MDR	MDR	MDR	doll	90290
-DOLL_216	XM8	XM8	XM8	XM8	doll	90291
-DOLL_217	SM-1	SM-1	SM-1	SM-1	doll	90292
-DOLL_218	T77	T77	T77	T77	doll	90293
-DOLL_219					doll	90294
-DOLL_220	MP-443	MP-443	MP-443	MP-443	doll	90295
-DOLL_221	GSh-18	GSh-18	GSh-18	GSh-18	doll	90296
-DOLL_222	TAC-50	TAC-50	TAC-50	TAC-50	doll	90297
-DOLL_223	Model L	Model L	Model L	CETME556	doll	90298
-DOLL_224	PM-06	PM-06	PM-06	PM-06	doll	90299
-DOLL_225	Cx4 스톰	Cx4 风暴	Cx4 Storm	Cx4 Storm	doll	90300
-DOLL_226	Mk 12	Mk 12	Mk 12	Mk12	doll	90301
-DOLL_227	A-91	A-91	A-91	A-91	doll	90302
-DOLL_228	100식	100式	100 Shiki	一〇〇式	doll	90303
-DOLL_229	M870	M870	M870	M870P	doll	90304
-DOLL_230	OBR	OBR	OBR	OBR	doll	90305
-DOLL_231	M82A1	M82A1	M82A1	M82A1	doll	90306
-DOLL_232	MP-448	MP-448	MP-448	MP-448	doll	90307
-DOLL_233	Px4 스톰	Px4 风暴	Px4 Storm	Px4 Storm	doll	90308
-DOLL_234	JS 9	JS 9	JS 9	JS 9	doll	90309
-DOLL_235	SPR A3G	SPR A3G	SPR A3G	SPR A3G	doll	90310
-DOLL_236	K11	K11	K11	K11	doll	90311
-DOLL_237	SAR-21	SAR-21	SAR-21	SAR21	doll	90312
-DOLL_238	88식	88式	QJY-88	88式	doll	90313
-DOLL_239	03식	03式	Type 03	03式	doll	90314
-DOLL_240	Mk46	Mk46	Mk46	Mk46	doll	90315
-DOLL_241	RT-20	RT-20	RT-20	RT20	doll	90316
-DOLL_242	P22	P22	P22	P22	doll	90317
-DOLL_243	64식 소총	64式自	64 Shiki	64式自	doll	90318
-DOLL_244	TEC-9	TEC-9	TEC-9	TEC-9	doll	90319
-DOLL_245	P90	P90	P90	P90	doll	90320
-DOLL_246					doll	90321
-DOLL_247	K31	K31	K31	K31	doll	90322
-DOLL_248	제리코	杰里科	Jericho	ジェリコ	doll	90323
-DOLL_249	62식	62式	62 Shiki	62式	doll	90324
-DOLL_250	HS2000	HS2000	HS2000	HS2000	doll	90325
-DOLL_251	X95	X95	X95	X95	doll	90326
-DOLL_252	KSVK	KSVK	KSVK	KSVK	doll	90327
-DOLL_253	루이스	刘易斯	Lewis Gun	ルイス	doll	90328
-DOLL_254	UKM-2000	UKM-2000	UKM-2000	UKM-2000	doll	90329
-DOLL_255	스카웃	侦察者	Steyr Scout	スカウト	doll	90330
-DOLL_256	팔콘	隼	Falcon	ファルコン	doll	90331
-DOLL_257	M200	M200	M200	M200	doll	90332
-DOLL_258	마갈	马盖尔	Magal	マガル	doll	90333
-DOLL_259	PM-9	PM-9	PM-9	PM-9	doll	90334
-DOLL_260	PA-15	PA-15	PA-15	PA-15	doll	90335
-DOLL_261	QBU-88	QBU-88	QBU-88	QBU-88	doll	90336
-DOLL_262	EM-2	EM-2	EM-2	EM-2	doll	90337
-DOLL_263	MG36	MG36	MG36	MG36	doll	90338
-DOLL_264	쇼샤	绍沙	Chauchat	ショーシャ	doll	90339
-DOLL_265	HK33	HK33	HK33	HK33	doll	90340
-DOLL_266	R93	R93	R93	R93	doll	90341
-DOLL_267	MP41	MP41	MP41	MP41	doll	90342
-DOLL_268	T-CMS	T-CMS	T-CMS	T-CMS	doll	90343
-DOLL_269	P30	P30	P30	P30	doll	90344
-DOLL_270	4식	四式	Type 4	四式	doll	90345
-DOLL_271	K3	K3	K3	K3	doll	90346
-DOLL_272	데저트 이글	沙漠之鹰	Desert Eagle	デザートイーグル	doll	90347
-DOLL_273	SSG3000	SSG3000	SSG3000	SSG3000	doll	90348
-DOLL_274	ACR	ACR	ACR	ACR	doll	90349
-DOLL_275	M1895	M1895	M1895	M1895 CB	doll	90350
-DOLL_276	Kord	Kord	Kord	Kord	doll	90351
-DOLL_277	VP70	VP70	VP70	VP70	doll	90352
-DOLL_278	Six12	Six12	Six12	Six12	doll	90353
-DOLL_279	INSAS	INSAS	INSAS	INSAS	doll	90354
-DOLL_280						
-DOLL_281	CAWS	CAWS	CAWS	CAWS		
-DOLL_282	DP-12	DP-12	DP-12	DP-12		
-DOLL_283	리버레이터	Liberator	Liberator	Liberator		
-DOLL_284	Zas M76	Zas M76	Zas M76	Zas M76		
-DOLL_1001	노엘	诺爱尔	Noel	ノエル	doll	90355
-DOLL_1002	엘펠트	艾尔菲尔特	Elphelt	エルフェルト	doll	90356
-DOLL_1003	키아나 카스라나	琪亚娜	Kiana	キアナ・カスラナ	doll	90357
-DOLL_1004	라이덴 메이	雷电芽衣	Raiden Mei	雷電 芽衣	doll	90358
-DOLL_1005	브로냐 자이칙	布洛妮娅	Bronya	ブローニャ・ザイチク	doll	90359
-DOLL_1006	테레사 아포칼립스	德丽莎	Theresa	テレサ・アポカリプス	doll	90360
-DOLL_1007	무라타 히메코	无量塔姬子	Murata Himeko	無量塔 姫子	doll	90361
-DOLL_1008	제레 발레리	希儿·芙乐艾	Seele	ゼーレ・フェレライ	doll	90362
-DOLL_1009	클리어	克莉尔	Clear	クリア	doll	90363
-DOLL_1010	페일	菲尔	Fail	フェイル	doll	90364
-DOLL_1017	질 스팅레이	吉尔·斯汀雷	Jill Stingray	ジル・スティングレイ	doll	90365
-DOLL_1018	세이 아사기리	赛伊·朝雾	Sei Asagiri	セイ・P・アサギリ	doll	90366
-DOLL_1019	도로시 헤이즈	多萝西·海兹	Dorothy Haze	ドロシー・ヘイズ	doll	90367
-DOLL_1020	스텔라 호시이	史黛拉·星井	Stella Hoshii	ステラ・星井	doll	90368
-DOLL_1021	알마 알머스	阿尔玛·阿玛斯	Alma Armas	アルマ・アルマス	doll	90369
-DOLL_1022	다나 제인	达娜·赞恩	Dana Zane	デイナ・ゼイン	doll	90370
-DOLL_20001	콜트 리볼버	柯尔特左轮 Mod	SAA	コルトSAA	doll	90371
-DOLL_20002	M1911	M1911 Mod	M1911	M1911	doll	90372
-DOLL_20005	나강 리볼버	纳甘左轮 Mod	M1895	M1895	doll	90373
-DOLL_20007	스테츠킨	斯捷奇金 Mod	Stechkin	スチェッキン		
-DOLL_20012	C96	C96 Mod	C96	C96		
-DOLL_20026	MP5	MP5 Mod	Gr MP5	Gr MP5	doll	90374
-DOLL_20029	스텐Mk II	司登MkⅡ Mod	STEN MkII	ステンMK-II	doll	90375
-DOLL_20031	베레타 38형	伯莱塔38型 Mod	M38	M38		
-DOLL_20032	마이크로 우지	微型乌兹 Mod	Micro Uzi	Micro Uzi	doll	90376
-DOLL_20037	M14	M14 Mod	M14	M14	doll	90377
-DOLL_20039	모신나강	莫辛-纳甘 Mod	Mosin-Nagant	モシン・ナガン	doll	90378
-DOLL_20044	SV-98	SV-98 Mod	SV-98	SV-98	doll	90379
-DOLL_20051	FN-49	FN-49 Mod	FN-49	FF FN-49	doll	90380
-DOLL_20053	NTW-20	NTW-20 Mod	NTW-20	NTW-20		
-DOLL_20055	M4A1	M4A1 Mod	M4A1	M4A1	doll	90381
-DOLL_20056	M4 SOPMOD II	M4 SOPMOD II Mod	M4 SOPMOD II	M4 SOPMOD II	doll	90382
-DOLL_20057	ST AR-15	ST AR-15 Mod	ST AR-15	ST AR-15	doll	90383
-DOLL_20060	AS Val	AS Val Mod	AS Val	AS Val	doll	90384
-DOLL_20061	StG44	StG44 Mod	StG44	StG44	doll	90385
-DOLL_20063	G3	G3 Mod	Gr G3	Gr G3	doll	90386
-DOLL_20064	G36	G36 Mod	Gr G36	Gr G36	doll	90387
-DOLL_20065	HK416	HK416 Mod	416	416	doll	90388
-DOLL_20075	M1918	M1918 Mod	M1918	M1918	doll	90389
-DOLL_20081	LWMMG	LWMMG Mod	LWMMG	LWMMG	doll	90390
-DOLL_20089	브렌	布伦 Mod	Bren	ブレン	doll	90391
-DOLL_20091	MP-446	MP-446 Mod	MP-446	MP-446	doll	90392
-DOLL_20093	IDW	IDW Mod	IDW	IDW	doll	90393
-DOLL_20094	64식	64式 Mod	Type64	64式	doll	90394
-DOLL_20095	한양조 88식	汉阳造88式 Mod	Type88	漢陽88式	doll	90395
-DOLL_20101	UMP9	UMP9 Mod	UMP9	UMP9	doll	90396
-DOLL_20103	UMP45	UMP45 Mod	UMP45	UMP45	doll	90397
-EQUIP_1	BM 3-12X40	BM 3-12X40	BM 3-12X40	BM 3-12X40	equip	90398
-EQUIP_2	LRA 2-12X50	LRA 2-12X50	LRA 2-12X50	LRA 2-12X50	equip	90399
-EQUIP_3	PSO-1	PSO-1	PSO-1	PSO-1	equip	90400
-EQUIP_4	VFL 6-24X56	VFL 6-24X56	VFL 6-24X56	VFL 6-24X56	equip	90401
-EQUIP_5	EOT 506	EOT 506	EOT 506	EOT 506	equip	90402
-EQUIP_6	EOT 512	EOT 512	EOT 512	EOT 512	equip	90403
-EQUIP_7	EOT 516	EOT 516	EOT 516	EOT 516	equip	90404
-EQUIP_8	EOT 518	EOT 518	EOT 518	EOT 518	equip	90405
-EQUIP_9	AMP COMPM2	AMP COMPM2	AMP COMPM2	AMP COMPM2	equip	90406
-EQUIP_10	AMP COMPM4	AMP COMPM4	AMP COMPM4	AMP COMPM4	equip	90407
-EQUIP_11	COG M150	COG M150	COG M150	COG M150	equip	90408
-EQUIP_12	ITI MARS	ITI MARS	ITI MARS	ITI MARS	equip	90409
-EQUIP_13	PEQ-2	PEQ-2	PEQ-2	PEQ-2	equip	90410
-EQUIP_14	PEQ-5	PEQ-5	PEQ-5	PEQ-5	equip	90411
-EQUIP_15	PEQ-15	PEQ-15	PEQ-15	PEQ-15	equip	90412
-EQUIP_16	PEQ-16A	PEQ-16A	PEQ-16A	PEQ-16A	equip	90413
-EQUIP_17	M16 철갑탄	M16 穿甲弹	M16 Armor-Piercing Ammo	M16徹甲弾	equip	90414
-EQUIP_18	M993 철갑탄	M993 穿甲弹	M993 Armor-Piercing Ammo	M993徹甲弾	equip	90415
-EQUIP_19	Mk169 철갑탄	Mk169 穿甲弹	Mk169 Armor-Piercing Ammo	Mk169徹甲弾	equip	90416
-EQUIP_20	Mk211 고폭철갑탄	Mk211 高爆穿甲弹	Mk211 High-Explosive Armor-Piercing Ammo	Mk211高爆徹甲弾	equip	90417
-EQUIP_29	FMJ 고속탄	FMJ 高速弹	FMJ High-Velocity Ammo	FMJ高速弾	equip	90418
-EQUIP_30	JSP 고속탄	JSP 高速弹	JSP High-Velocity Ammo	JSP高速弾	equip	90419
-EQUIP_31	JHP 고속탄	JHP 高速弹	JHP High-Velocity Ammo	JHP高速弾	equip	90420
-EQUIP_32	APCR 고속탄	APCR 高速弹	APCR High-Velocity Ammo	APCR高速弾	equip	90421
-EQUIP_37	IOP T1 외골격	IOP T1 外骨骼	IOP T1 Exoskeleton	IOP T1外骨格	equip	90422
-EQUIP_38	IOP T2 외골격	IOP T2 外骨骼	IOP T2 Exoskeleton	IOP T2外骨格	equip	90423
-EQUIP_39	IOP T3 외골격	IOP T3 外骨骼	IOP T3 Exoskeleton	IOP T3外骨格	equip	90424
-EQUIP_40	IOP T4 외골격	IOP T4 外骨骼	IOP T4 Exoskeleton	IOP T4外骨格	equip	90425
-EQUIP_42	Type1 방탄판	Type1 防弹插板	Type 1 Armor Plate	Type1防弾ベスト	equip	90426
-EQUIP_43	Type2 방탄판	Type2 防弹插板	Type 2 Armor Plate	Type2防弾ベスト	equip	90427
-EQUIP_44	Type3 방탄판	Type3 防弹插板	Type 3 Armor Plate	Type3防弾ベスト	equip	90428
-EQUIP_49	16Lab 적외선지시기	16Lab 红外指示器	16Lab Infrared Designator	16Lab赤外線レーザーサイト	equip	90429
-EQUIP_50	16Lab 차구경철갑탄	16Lab 次口径穿甲弹	16Lab Sub-Caliber Armor-Piercing Ammo	16Lab硬芯徹甲弾	equip	90430
-EQUIP_55	IOP X1 외골격	IOP X1 外骨骼	IOP X1 Exoskeleton	IOP X1外骨格	equip	90431
-EQUIP_56	IOP X2 외골격	IOP X2 外骨骼	IOP X2 Exoskeleton	IOP X2外骨格	equip	90432
-EQUIP_57	IOP X3 외골격	IOP X3 外骨骼	IOP X3 Exoskeleton	IOP X3外骨格	equip	90433
-EQUIP_58	IOP X4 외골격	IOP X4 外骨骼	IOP X4 Exoskeleton	IOP X4外骨格	equip	90434
-EQUIP_59	사격경기용 철갑탄	国家竞赛穿甲弹	National Match-Grade Armor-Piercing Ammo	ナショナルマッチ徹甲弾	equip	90435
-EQUIP_60	.300BLK고속탄	.300BLK高速弹	.300BLK High-Velocity Ammo	.300BLK高速弾	equip	90436
-EQUIP_61	Titan사격제어칩	Titan火控芯片	Titan Fire-Control Chip	Titan射撃管制チップ	equip	90437
-EQUIP_62	GSG UX외골격	GSG UX外骨骼	GSG UX Exoskeleton	GSG UX外骨格	equip	90438
-EQUIP_63	AC1 소음기	AC1消音器	AC1 Suppressor	AC1サイレンサー	equip	90439
-EQUIP_64	AC2 소음기	AC2消音器	AC2 Suppressor	AC2サイレンサー	equip	90440
-EQUIP_65	AC3 소음기	AC3消音器	AC3 Suppressor	AC3サイレンサー	equip	90441
-EQUIP_66	AC4 소음기	AC4消音器	AC4 Suppressor	AC4サイレンサー	equip	90442
-EQUIP_67	IOP 보급형 탄약통	IOP普及性弹链箱	IOP High-Capacity Ammo Box	IOP多弾倉アサルトパック	equip	90443
-EQUIP_68	IOP 대용량 탄약통	IOP大容量弹链箱	IOP Maximum Ammo Box	IOP多弾倉アサルトパック改	equip	90444
-EQUIP_69	ILM HP탄	ILM空尖弹	ILM Hollow Point Ammo	ILM ホローポイント弾	equip	90445
-EQUIP_70	ILM HP탄	ILM空尖弹	ILM Hollow Point Ammo	ILM ホローポイント弾	equip	90446
-EQUIP_71	ILM HP탄	ILM空尖弹	ILM Hollow Point Ammo	ILM ホローポイント弾	equip	90447
-EQUIP_72	ILM HP탄	ILM空尖弹	ILM Hollow Point Ammo	ILM ホローポイント弾	equip	90448
-EQUIP_73	#1 벅 샷	#1猎鹿弹	#1 Buckshot	#1 バックショット	equip	90449
-EQUIP_74	#0 벅 샷	#0猎鹿弹	#0 Buckshot	#0 バックショット	equip	90450
-EQUIP_75	#00 벅 샷	#00猎鹿弹	#00 Buckshot	#00 バックショット	equip	90451
-EQUIP_76	#000 벅 샷	#000猎鹿弹	#000 Buckshot	#000 バックショット	equip	90452
-EQUIP_77	BK 슬러그탄	BK独头弹	BK Slug	BKスラッグ弾	equip	90453
-EQUIP_78	FST 슬러그탄	FST独头弹	FST Slug	FSTスラッグ弾	equip	90454
-EQUIP_79	WAD 슬러그탄	WAD独头弹	WAD Slug	WADスラッグ弾	equip	90455
-EQUIP_80	SABOT 슬러그탄	SABOT独头弹	SABOT Slug	SABOTスラッグ弾	equip	90456
-EQUIP_81	16Lab 방탄판	16Lab防弹插板	16Lab Armor Plate	16LAB防弾ベスト	equip	90457
-EQUIP_82	16Lab 벅 샷	16Lab猎鹿弹	16Lab Buckshot	16LABバックショット	equip	90458
-EQUIP_83	KSTSP	KSTSP	KSTSP	KSTSP	equip	90459
-EQUIP_84	KST1P8	KST1P8	KST1P8	KST1P8	equip	90460
-EQUIP_85	KST1P7	KST1P7	KST1P7	KST1P7	equip	90461
-EQUIP_86	Hayha 메모리 칩	Hayha记忆芯片	Hayha Memory Chip	Hayhaメモリーチップ	equip	90462
-EQUIP_87	낡은 슈트	破旧披风	Ragged Cape	ぼろぼろのマント	equip	90463
-EQUIP_88	길리슈트	伪装披风	Camouflage Cape	カモフラージュマント	equip	90464
-EQUIP_89	도시 미채 슈트	城市迷彩披风	Urban Camouflage Cape	都市迷彩マント	equip	90465
-EQUIP_90	열광학 미채 슈트	热光学迷彩披风	Thermoptic Camouflage Cape	熱光学迷彩マント	equip	90466
-EQUIP_91	특수 전술기동장갑	特殊战机动装甲	Custom Exoskeletal Armor	特殊戦術機動装甲	equip	90467
-EQUIP_92	UMP UX외골격	UMP UX外骨骼	UMP UX Exoskeleton	UMP UX外骨格	equip	90468
-EQUIP_93	PKN03M야간조준경	PKN03M夜视瞄具	PKN03M Night Scope	PKN03M暗視スコープ	equip	90469
-EQUIP_94	전술용 메모리 칩	专用战术内存	Dedicated Tactical Memory	戦術用メモリチップ	equip	90470
-EQUIP_95	16Lab HP탄	16Lab 空尖弹	16Lab Hollow Point Ammo	16Lab ホローポイント弾	equip	90471
-EQUIP_96	16Lab 열광학 슈트	16Lab 热光学披风	16Lab Thermoptic Camouflage Cape	16Lab熱光学迷彩マント	equip	90472
-EQUIP_99	남겨진 무기상자	遗留的武器库	Inherited Weapon Arsenal	残された武器箱	equip	90473
-EQUIP_100	경량화 레일 킷	轻量化导轨套件	Light Weight Rail System	軽量化レイルキット	equip	90474
-EQUIP_101	XM261 탄약	XM261短弹	XM261 ACP	XM261弾薬	equip	90475
-EQUIP_102	강화 카트리지	性能升级卡带	Ability Upgrade Cartridge	強化カートリッジ	equip	90476
-EQUIP_103	64식용 소음기	64专用消音器	Type64 Exclusive Suppressor	64式サイレンサー	equip	90477
-EQUIP_104	조정간 트리거셋	快慢机扳机组	Fire Selector	調整間トリガセット	equip	90478
-EQUIP_105	PM 5-25X56	PM 5-25X56	PM 5-25X56	PM 5-25X56	equip	90479
-EQUIP_106	EOT XPS3	EOT XPS3	EOT XPS3	EOT XPS3	equip	90480
-EQUIP_107	무한 탄약통	无限弹链箱	Infinite Ammo Box	無限アサルトパック	equip	90481
-EQUIP_108	두꺼운 푸른 슈트	蓝色加厚披风	Blue Thickened Cape	厚い青いマント	equip	90482
-EQUIP_109	16Lab 6-24X56	16Lab 6-24X56	16Lab 6-24X56	16Lab 6-24X56	equip	90483
-EQUIP_110	16Lab 고속탄	16Lab 高速弹	16Lab High-Velocity Ammo	16Lab 高速弾	equip	90484
-EQUIP_111	K6-24X56	K6-24X56	K6-24X56	K6-24X56	equip	90485
-EQUIP_112	CT 4X20	CT 4X20	CT 4X20	CT 4X20	equip	90486
-EQUIP_113	나강 리볼버용 소음기	纳甘左轮消音器	M1895 Silencer	M1895サイレンサー	equip	90487
-EQUIP_114	MP446C 경기용 총신	MP446C比赛枪管	MP446C Competition Barrel	MP446C ナショナルマッチ銃身	equip	90488
-EQUIP_115	디지털 미채 슈트	数码迷彩披风	Digital Camouflage Cape	デジタル迷彩マント	equip	90489
-EQUIP_117	Glory Light	荣耀之光	Glory Light	Glory Light	equip	90490
-EQUIP_118	Black Cat	漆黑之猫	Black Cat	Black Cat	equip	90491
-EQUIP_119	FÉLIN 조준경	FÉLIN系统瞄具	FÉLIN System Sight	FÉLINスコープ	equip	90492
-EQUIP_120	16Lab MARS	16Lab MARS	16Lab MARS	16Lab MARS	equip	90493
-EQUIP_121	16Lab T4 외골격	16Lab T4 外骨骼	16Lab T4 Exoskeleton	16Lab T4外骨格	equip	90494
-EQUIP_122	콜트 리볼버 연장총열	柯尔特左轮长枪管	SAA Long Barrel	コルトSAA 延長銃身	equip	90495
-EQUIP_123	브렌 L4 총열뭉치	布伦L4枪管组	Bren L4 Barrel Group	ブレンL4銃身	equip	90496
-EQUIP_124	G3 개량 총열뭉치	G3改良枪管组	Gr G3 Improved Barrel Group	G3改良銃身	equip	90497
-EQUIP_125	추가 연산 모듈	附加运算模块	Additional Process Module	追加演算モジュール	equip	90498
-EQUIP_126	디너게이트 RO	兵蚁型RO	Dinergate-Type RO	ディナーゲートRO	equip	90499
-EQUIP_127	고성능 전술 헤어핀	高性能战术发饰	High Performance Tactical Hair Decoration	高性能戦術ヘアピン	equip	90500
-EQUIP_128	스텐 전용 소음기	司登专用消音器	Sten Exclusive Silencer	ステン専用サイレンサー	equip	90501
-EQUIP_129	M2 양각대	M2两脚架	M2 Bipod	M2両角帯	equip	90502
-EQUIP_130	G36 복합 조준경	G36混合瞄准镜	G36 Hybrid Optics	G36複合スコープ	equip	90503
-EQUIP_131	MGO 6X48	MGO 6X48	MGO 6X48	MGO 6X48	equip	90504
-EQUIP_132	MG4 전용 MGO	MG4用MGO	MG4 Exclusive MGO	MG4専用 MGO	equip	90505
-EQUIP_133	APS 전용 개머리판	APS专用枪托	Stechkin Exclusive Stock	APS専用 台じり	equip	90506
-EQUIP_134	MPL M21	MPL M21	MPL M21	MPL M21	equip	90507
-EQUIP_135	SP6 아음속탄	SP6亚音速弹	SP-6 Subsonic Rounds	SP6 亜音速弾	equip	90508
-EQUIP_136	7.92 KURZ	7.92 KURZ	7.92 KURZ	7.92 KURZ	equip	90509
-EQUIP_137	아델하이드	Adelhyde	Adelhyde	アデルハイド	equip	90510
-EQUIP_138	프래너자이드	Flanergide	Flanergide	フラナガイド	equip	90511
-EQUIP_139	아델하이드	Adelhyde	Adelhyde	アデルハイド	equip	90512
-EQUIP_140	브론순 추출액	Bronson Ext	Bronson Extract	ブロンソンエキス	equip	90513
-EQUIP_141	델타 가루	Pwd Delta	Powdered Delta	デルタパウダー	equip	90514
-EQUIP_142	카모트린	Karmotrine	Karmotrine	カルモトリン	equip	90515
-EQUIP_143	카모트린	Karmotrine	Karmotrine	カルモトリン	equip	90516
-EQUIP_144	카모트린	Karmotrine	Karmotrine	カルモトリン	equip	90517
-EQUIP_145	다나의 기계팔	机械手臂	Prosthetic Arm	機械の義腕	equip	90518
-EQUIP_146	MIRD 5등급 탄약	MIRD5级弹药	MIRD5-Class Ammo	MIRD クラス5弾薬	equip	90519
-EQUIP_147	화이트 나이트 제식 갑옷	白骑士制式铠甲	White Knight's Armor	ホワイトナイト制式アーマー	equip	90520
-EQUIP_148	스텔라의 의안	电子义眼	Prosthetic Eye	電子の目	equip	90521
-EQUIP_149	알마의 의수	机械义手	Cybernetic Hands	機械の義手	equip	90522
-EQUIP_150	ZFG42	ZFG42	ZFG42	ZFG42	equip	90523
-EQUIP_151	20GA 벅샷	20GA猎鹿弹	20GA Buckshot	20GAバックショット	equip	90524
-EQUIP_152	SIG510 트리거셋	SIG510快慢机	SIG-510 Fire Selector	SIG510 トリガセット	equip	90525
-EQUIP_153	BM59 중형 총열	BM59重管	BM59 Heavy Barrel	BM59 中型銃身	equip	90526
-EQUIP_154	OSS 소음기	OSS消音器	OSS Suppressor	OSS サイレンサー	equip	90527
-EQUIP_155	PPK 소음기	PPK消音器	PPK Suppressor	PPK サイレンサー	equip	90528
-EQUIP_156	AMP COMPSP	AMP COMPSP	AMP COMPSP	AMP COMPSP	equip	90529
-EQUIP_157	LED 플래시	LED武器灯	LED Tactical Flashlight	LEDフラッシュ	equip	90530
-EQUIP_158	가속 코일	加速线圈	Acceleration Coil	加速コイル	equip	90531
-EQUIP_159	전술 머리띠	战术发卡	Tactical Headband	戦術鉢巻き	equip	90532
-EQUIP_160	No32 MKI	No32 MKI	No32 MKI	No32 MKI	equip	90533
-EQUIP_161	첨단 복합 조준경	先进单兵瞄具	Advanced individual Optic	先端複合スコープ	equip	90534
-EQUIP_162	RPD 특수 군장	RPD 특수 군장	RPD 특수 군장	RPD 특수 군장	equip	90535
-EQUIP_163	MAC10 레일 총몸	MAC10 레일 총몸	MAC10 레일 총몸	MAC10 레일 총몸	equip	90536
-EQUIP_164	M9 BC2 손잡이	M9 BC2 손잡이	M9 BC2 손잡이	M9 BC2 손잡이	equip	90537
-EQUIP_165	전술 헤드셋	전술 헤드셋	전술 헤드셋	전술 헤드셋		
-EQUIP_TYPE_1	옵티컬	光学瞄具	Optical	オプティカル	equip_type	90538
-EQUIP_TYPE_2	옵티컬	光学瞄具	Optical	オプティカル	equip_type	90539
-EQUIP_TYPE_3	옵티컬	光学瞄具	Optical	オプティカル	equip_type	90540
-EQUIP_TYPE_4	옵티컬	光学瞄具	Optical	オプティカル	equip_type	90541
-EQUIP_TYPE_5	이오텍	全息瞄具	Holographic	ホロサイト	equip_type	90542
-EQUIP_TYPE_6	이오텍	全息瞄具	Holographic	ホロサイト	equip_type	90543
-EQUIP_TYPE_7	이오텍	全息瞄具	Holographic	ホロサイト	equip_type	90544
-EQUIP_TYPE_8	이오텍	全息瞄具	Holographic	ホロサイト	equip_type	90545
-EQUIP_TYPE_9	레드닷	红点瞄具	Red Dot	ドットサイト	equip_type	90546
-EQUIP_TYPE_10	레드닷	红点瞄具	Red Dot	ドットサイト	equip_type	90547
-EQUIP_TYPE_11	레드닷	红点瞄具	Red Dot	ドットサイト	equip_type	90548
-EQUIP_TYPE_12	레드닷	红点瞄具	Red Dot	ドットサイト	equip_type	90549
-EQUIP_TYPE_13	야시장비	夜战装备	Night Equip	暗視装備	equip_type	90550
-EQUIP_TYPE_14	야시장비	夜战装备	Night Equip	暗視装備	equip_type	90551
-EQUIP_TYPE_15	야시장비	夜战装备	Night Equip	暗視装備	equip_type	90552
-EQUIP_TYPE_16	야시장비	夜战装备	Night Equip	暗視装備	equip_type	90553
-EQUIP_TYPE_17	철갑탄	穿甲弹	AP Round	徹甲弾	equip_type	90554
-EQUIP_TYPE_18	철갑탄	穿甲弹	AP Round	徹甲弾	equip_type	90555
-EQUIP_TYPE_19	철갑탄	穿甲弹	AP Round	徹甲弾	equip_type	90556
-EQUIP_TYPE_20	철갑탄	穿甲弹	AP Round	徹甲弾	equip_type	90557
-EQUIP_TYPE_29	고속탄	高速弹	HV Round	高速弾	equip_type	90558
-EQUIP_TYPE_30	고속탄	高速弹	HV Round	高速弾	equip_type	90559
-EQUIP_TYPE_31	고속탄	高速弹	HV Round	高速弾	equip_type	90560
-EQUIP_TYPE_32	고속탄	高速弹	HV Round	高速弾	equip_type	90561
-EQUIP_TYPE_37	T외골격	T外骨骼	T-Exo	T外骨格	equip_type	90562
-EQUIP_TYPE_38	T외골격	T外骨骼	T-Exo	T外骨格	equip_type	90563
-EQUIP_TYPE_39	T외골격	T外骨骼	T-Exo	T外骨格	equip_type	90564
-EQUIP_TYPE_40	T외골격	T外骨骼	T-Exo	T外骨格	equip_type	90565
-EQUIP_TYPE_42	방탄판	防弹插板	Armor Plate	防弾ベスト	equip_type	90566
-EQUIP_TYPE_43	방탄판	防弹插板	Armor Plate	防弾ベスト	equip_type	90567
-EQUIP_TYPE_44	방탄판	防弹插板	Armor Plate	防弾ベスト	equip_type	90568
-EQUIP_TYPE_49	야시장비	夜战装备	Night Equip	暗視装備	equip_type	90569
-EQUIP_TYPE_50	철갑탄	穿甲弹	AP Round	徹甲弾	equip_type	90570
-EQUIP_TYPE_55	X외골격	X外骨骼	X-Exo	X外骨格	equip_type	90571
-EQUIP_TYPE_56	X외골격	X外骨骼	X-Exo	X外骨格	equip_type	90572
-EQUIP_TYPE_57	X외골격	X外骨骼	X-Exo	X外骨格	equip_type	90573
-EQUIP_TYPE_58	X외골격	X外骨骼	X-Exo	X外骨格	equip_type	90574
-EQUIP_TYPE_59	전용장비	专属装备	Exclusive	専用装備	equip_type	90575
-EQUIP_TYPE_60	전용장비	专属装备	Exclusive	専用装備	equip_type	90576
-EQUIP_TYPE_61	전용장비	专属装备	Exclusive	専用装備	equip_type	90577
-EQUIP_TYPE_62	전용장비	专属装备	Exclusive	専用装備	equip_type	90578
-EQUIP_TYPE_63	소음기	消音器	Silencer	サイレンサー	equip_type	90579
-EQUIP_TYPE_64	소음기	消音器	Silencer	サイレンサー	equip_type	90580
-EQUIP_TYPE_65	소음기	消音器	Silencer	サイレンサー	equip_type	90581
-EQUIP_TYPE_66	소음기	消音器	Silencer	サイレンサー	equip_type	90582
-EQUIP_TYPE_67	탄약통	弹链箱	Ammo Box	アサルトパック	equip_type	90583
-EQUIP_TYPE_68	탄약통	弹链箱	Ammo Box	アサルトパック	equip_type	90584
-EQUIP_TYPE_69	HP탄	空尖弹	HP Round	ホローポイント弾	equip_type	90585
-EQUIP_TYPE_70	HP탄	空尖弹	HP Round	ホローポイント弾	equip_type	90586
-EQUIP_TYPE_71	HP탄	空尖弹	HP Round	ホローポイント弾	equip_type	90587
-EQUIP_TYPE_72	HP탄	空尖弹	HP Round	ホローポイント弾	equip_type	90588
-EQUIP_TYPE_73	벅 샷	猎鹿弹	Buckshot Shell	バックショット	equip_type	90589
-EQUIP_TYPE_74	벅 샷	猎鹿弹	Buckshot Shell	バックショット	equip_type	90590
-EQUIP_TYPE_75	벅 샷	猎鹿弹	Buckshot Shell	バックショット	equip_type	90591
-EQUIP_TYPE_76	벅 샷	猎鹿弹	Buckshot Shell	バックショット	equip_type	90592
-EQUIP_TYPE_77	슬러그탄	独头弹	Slug Shell	スラッグ弾	equip_type	90593
-EQUIP_TYPE_78	슬러그탄	独头弹	Slug Shell	スラッグ弾	equip_type	90594
-EQUIP_TYPE_79	슬러그탄	独头弹	Slug Shell	スラッグ弾	equip_type	90595
-EQUIP_TYPE_80	슬러그탄	独头弹	Slug Shell	スラッグ弾	equip_type	90596
-EQUIP_TYPE_81	방탄판	防弹插板	Armor Plate	防弾ベスト	equip_type	90597
-EQUIP_TYPE_82	벅 샷	猎鹿弹	Buckshot Shell	バックショット	equip_type	90598
-EQUIP_TYPE_83	전용장비	专属装备	Exclusive	専用装備	equip_type	90599
-EQUIP_TYPE_84	전용장비	专属装备	Exclusive	専用装備	equip_type	90600
-EQUIP_TYPE_85	전용장비	专属装备	Exclusive	専用装備	equip_type	90601
-EQUIP_TYPE_86	전용장비	专属装备	Exclusive	専用装備	equip_type	90602
-EQUIP_TYPE_87	슈트	伪装披风	Camo Cloak	マント	equip_type	90603
-EQUIP_TYPE_88	슈트	伪装披风	Camo Cloak	マント	equip_type	90604
-EQUIP_TYPE_89	슈트	伪装披风	Camo Cloak	マント	equip_type	90605
-EQUIP_TYPE_90	슈트	伪装披风	Camo Cloak	マント	equip_type	90606
-EQUIP_TYPE_91	전용장비	专属装备	Exclusive	専用装備	equip_type	90607
-EQUIP_TYPE_92	전용장비	专属装备	Exclusive	専用装備	equip_type	90608
-EQUIP_TYPE_93	전용장비	专属装备	Exclusive	専用装備	equip_type	90609
-EQUIP_TYPE_94	전용장비	专属装备	Exclusive	専用装備	equip_type	90610
-EQUIP_TYPE_95	HP탄	空尖弹	HP Round	ホローポイント弾	equip_type	90611
-EQUIP_TYPE_96	슈트	伪装披风	Camo Cloak	マント	equip_type	90612
-EQUIP_TYPE_99	전용장비	专属装备	Exclusive	専用装備	equip_type	90613
-EQUIP_TYPE_100	전용장비	专属装备	Exclusive	専用装備	equip_type	90614
-EQUIP_TYPE_101	전용장비	专属装备	Exclusive	専用装備	equip_type	90615
-EQUIP_TYPE_102	전용장비	专属装备	Exclusive	専用装備	equip_type	90616
-EQUIP_TYPE_103	전용장비	专属装备	Exclusive	専用装備	equip_type	90617
-EQUIP_TYPE_104	전용장비	专属装备	Exclusive	専用装備	equip_type	90618
-EQUIP_TYPE_105	전용장비	专属装备	Exclusive	専用装備	equip_type	90619
-EQUIP_TYPE_106	전용장비	专属装备	Exclusive	専用装備	equip_type	90620
-EQUIP_TYPE_107	전용장비	专属装备	Exclusive	専用装備	equip_type	90621
-EQUIP_TYPE_108	전용장비	专属装备	Exclusive	専用装備	equip_type	90622
-EQUIP_TYPE_109	옵티컬	光学瞄具	Optical	オプティカル	equip_type	90623
-EQUIP_TYPE_110	고속탄	高速弹	HV Round	高速弾	equip_type	90624
-EQUIP_TYPE_111	전용장비	专属装备	Exclusive	専用装備	equip_type	90625
-EQUIP_TYPE_112	전용장비	专属装备	Exclusive	専用装備	equip_type	90626
-EQUIP_TYPE_113	전용장비	专属装备	Exclusive	専用装備	equip_type	90627
-EQUIP_TYPE_114	전용장비	专属装备	Exclusive	専用装備	equip_type	90628
-EQUIP_TYPE_115	전용장비	专属装备	Exclusive	専用装備	equip_type	90629
-EQUIP_TYPE_117	전용장비	专属装备	Exclusive	専用装備	equip_type	90630
-EQUIP_TYPE_118	전용장비	专属装备	Exclusive	専用装備	equip_type	90631
-EQUIP_TYPE_119	전용장비	专属装备	Exclusive	専用装備	equip_type	90632
-EQUIP_TYPE_120	레드닷	红点瞄具	Red Dot	ドットサイト	equip_type	90633
-EQUIP_TYPE_121	T외골격	T外骨骼	T-Exo	T外骨格	equip_type	90634
-EQUIP_TYPE_122	전용장비	专属装备	Exclusive	専用装備	equip_type	90635
-EQUIP_TYPE_123	전용장비	专属装备	Exclusive	専用装備	equip_type	90636
-EQUIP_TYPE_124	전용장비	专属装备	Exclusive	専用装備	equip_type	90637
-EQUIP_TYPE_125	전용장비	专属装备	Exclusive	専用装備	equip_type	90638
-EQUIP_TYPE_126	전용장비	专属装备	Exclusive	専用装備	equip_type	90639
-EQUIP_TYPE_127	전용장비	专属装备	Exclusive	専用装備	equip_type	90640
-EQUIP_TYPE_128	전용장비	专属装备	Exclusive	専用装備	equip_type	90641
-EQUIP_TYPE_129	전용장비	专属装备	Exclusive	専用装備	equip_type	90642
-EQUIP_TYPE_130	전용장비	专属装备	Exclusive	専用装備	equip_type	90643
-EQUIP_TYPE_131	전용장비	专属装备	Exclusive	専用装備	equip_type	90644
-EQUIP_TYPE_132	전용장비	专属装备	Exclusive	専用装備	equip_type	90645
-EQUIP_TYPE_133	전용장비	专属装备	Exclusive	専用装備	equip_type	90646
-EQUIP_TYPE_134	전용장비	专属装备	Exclusive	専用装備	equip_type	90647
-EQUIP_TYPE_135	전용장비	专属装备	Exclusive	専用装備	equip_type	90648
-EQUIP_TYPE_136	전용장비	专属装备	Exclusive	専用装備	equip_type	90649
-EQUIP_TYPE_137	전용장비	专属装备	Exclusive	専用装備	equip_type	90650
-EQUIP_TYPE_138	전용장비	专属装备	Exclusive	専用装備	equip_type	90651
-EQUIP_TYPE_139	전용장비	专属装备	Exclusive	専用装備	equip_type	90652
-EQUIP_TYPE_140	전용장비	专属装备	Exclusive	専用装備	equip_type	90653
-EQUIP_TYPE_141	전용장비	专属装备	Exclusive	専用装備	equip_type	90654
-EQUIP_TYPE_142	전용장비	专属装备	Exclusive	専用装備	equip_type	90655
-EQUIP_TYPE_143	전용장비	专属装备	Exclusive	専用装備	equip_type	90656
-EQUIP_TYPE_144	전용장비	专属装备	Exclusive	専用装備	equip_type	90657
-EQUIP_TYPE_145	전용장비	专属装备	Exclusive	専用装備	equip_type	90658
-EQUIP_TYPE_146	전용장비	专属装备	Exclusive	専用装備	equip_type	90659
-EQUIP_TYPE_147	전용장비	专属装备	Exclusive	専用装備	equip_type	90660
-EQUIP_TYPE_148	전용장비	专属装备	Exclusive	専用装備	equip_type	90661
-EQUIP_TYPE_149	전용장비	专属装备	Exclusive	専用装備	equip_type	90662
-EQUIP_TYPE_150	전용장비	专属装备	Exclusive	専用装備	equip_type	90663
-EQUIP_TYPE_151	전용장비	专属装备	Exclusive	専用装備	equip_type	90664
-EQUIP_TYPE_152	전용장비	专属装备	Exclusive	専用装備	equip_type	90665
-EQUIP_TYPE_153	전용장비	专属装备	Exclusive	専用装備	equip_type	90666
-EQUIP_TYPE_154	전용장비	专属装备	Exclusive	専用装備	equip_type	90667
-EQUIP_TYPE_155	전용장비	专属装备	Exclusive	専用装備	equip_type	90668
-EQUIP_TYPE_156	전용장비	专属装备	Exclusive	専用装備	equip_type	90669
-EQUIP_TYPE_157	전용장비	专属装备	Exclusive	専用装備	equip_type	90670
-EQUIP_TYPE_158	전용장비	专属装备	Exclusive	専用装備	equip_type	90671
-EQUIP_TYPE_159	전용장비	专属装备	Exclusive	専用装備	equip_type	90672
-EQUIP_TYPE_160	전용장비	专属装备	Exclusive	専用装備	equip_type	90673
-EQUIP_TYPE_161	전용장비	专属装备	Exclusive	専用装備	equip_type	90674
-EQUIP_TYPE_162	전용장비	专属装备	Exclusive	専用装備	equip_type	90675
-EQUIP_TYPE_163	전용장비	专属装备	Exclusive	専用装備	equip_type	90676
-EQUIP_TYPE_164	전용장비	专属装备	Exclusive	専用装備	equip_type	90677
-EQUIP_TYPE_165	전용장비	专属装备	Exclusive	専用装備		
-FAIRY_1	용사요정	勇士妖精	Warrior Fairy	勇士妖精	fairy	90678
-FAIRY_2	격노요정	暴怒妖精	Fury Fairy	激怒妖精	fairy	90679
-FAIRY_3	방패요정	盾甲妖精	Armor Fairy	装甲妖精	fairy	90680
-FAIRY_4	수호요정	护盾妖精	Shield Fairy	守護妖精	fairy	90681
-FAIRY_5	방어요정	防御妖精	Defense Fairy	防御妖精	fairy	90682
-FAIRY_6	도발요정	嘲讽妖精	Taunt Fairy	挑発妖精	fairy	90683
-FAIRY_7	저격요정	狙击妖精	Sniper Fairy	狙撃妖精	fairy	90684
-FAIRY_8	포격요정	炮击妖精	Artillery Fairy	砲撃妖精	fairy	90685
-FAIRY_9	공습요정	空袭妖精	Airstrike Fairy	空襲妖精	fairy	90686
-FAIRY_10	증원요정	增援妖精	Reinforcement Fairy	増援妖精	fairy	90687
-FAIRY_11	공수요정	空降妖精	Parachute Fairy	空挺妖精	fairy	90688
-FAIRY_12	매설요정	布雷妖精	Landmine Fairy	地雷妖精	fairy	90689
-FAIRY_13	로켓요정	火箭妖精	Rocket Fairy	火箭妖精	fairy	90690
-FAIRY_14	공사요정	工事妖精	Construction Fairy	工事妖精	fairy	90691
-FAIRY_15	지휘요정	指挥妖精	Command Fairy	指揮妖精	fairy	90692
-FAIRY_16	수색요정	搜救妖精	Rescue Fairy	捜索妖精	fairy	90693
-FAIRY_17	조명요정	照明妖精	Illumination Fairy	照明妖精	fairy	90694
-FAIRY_18	황금요정	黄金妖精	Golden Fairy	黄金妖精	fairy	90695
-FAIRY_19	취사요정	炊事妖精	Cooking Fairy	料理妖精	fairy	90696
-FAIRY_20	폭죽요정	花火妖精	Firework Fairy	花火妖精	fairy	90697
-FAIRY_21	도깨비 요정	年兽妖精	Nian Fairy	鬼妖精	fairy	90698
-FAIRY_22	해변요정	海滩妖精	Beach Fairy	海辺妖精	fairy	90699
-FAIRY_23	연타요정	连击妖精	Combo Fairy	連撃妖精	fairy	90700
-FAIRY_24	장벽요정	立盾妖精	Barrier Fairy	障壁妖精	fairy	90701
-FAIRY_25	쌍둥이요정	双生妖精	Twin Fairy	双子妖精	fairy	90702
-FAIRY_1001	야에 사쿠라	八重樱	Yae Sakura	八重 桜	fairy	90703
-FAIRY_1002	카구야	耀夜姬	Kaguya Hime	カグヤ	fairy	90704
-FAIRY_1003	클로에	柯萝伊	Chloe	クロエ	fairy	90705
-FAIRY_1004	스이	希依	Suee	スイ	fairy	90706
-FAIRY_1005	세나&리나	世拉＆妮娜	Sehra&Nina	セナ&リナ	fairy	90707
-FAIRY_1006	프레이야&카밀리아	普蕾娅＆卡米莉娅	Preiya&Camilla	プレイア&カミリア	fairy	90708
-FAIRY_1007	안나 그램	安娜·格雷姆	Anna Graem	アナ・グレアム	fairy	90709
-TRAIT_910101	살상계I	杀伤型I	Damage I	殺傷型I	trait	90710
-TRAIT_910102	살상계II	杀伤型II	Damage II	殺傷型II	trait	90711
-TRAIT_910103	정밀계I	精准型I	Accuracy I	精確型I	trait	90712
-TRAIT_910104	정밀계II	精准型II	Accuracy II	精確型II	trait	90713
-TRAIT_910105	회피계I	回避型I	Evasion I	回避型I	trait	90714
-TRAIT_910106	회피계II	回避型II	Evasion II	回避型II	trait	90715
-TRAIT_910107	장갑계I	护甲型I	Armor I	防護型I	trait	90716
-TRAIT_910108	장갑계II	护甲型II	Armor II	防護型II	trait	90717
-TRAIT_910109	필살계I	必杀型I	Critical I	必殺型I	trait	90718
-TRAIT_910110	필살계II	必杀型II	Critical II	必殺型II	trait	90719
-TRAIT_910111	선봉계	冲锋型	Charge	先鋒型	trait	90720
-TRAIT_910112	돌격계	突击型	Assault	突撃型	trait	90721
-TRAIT_910113	조준계	瞄准型	Aim	照準型	trait	90722
-TRAIT_910114	완강계	坚韧型	Sturdy	強靭型	trait	90723
-TRAIT_910115	진압계	镇压型	Suppression	鎮圧型	trait	90724
-TRAIT_910116	예민계	敏锐型	Keen	鋭敏型	trait	90725
-TRAIT_910117	격양계	激昂型	Fervor	激昂系	trait	90726
-TRAIT_910118	황금계	黄金型	Golden	黄金型	trait	90727
-TRAIT_910119	급양계	厨神型	급양계	給養型	trait	90728
-TRAIT_910120	현란계	绚烂型	현란계	絢爛型	trait	90729
-TRAIT_910121	연하계	贺岁型	연하계	煙霞型	trait	90730
-TRAIT_910122	청량계	清凉型	청량계	清凉型	trait	90731
-QUEST_101	전역승리	作战胜利	Clear Any Map	戦役勝利	quest	90732
-QUEST_102	전역승리	作战胜利	Clear Any Map	戦役勝利	quest	90733
-QUEST_103	전역승리	作战胜利	Clear Any Map	戦役勝利	quest	90734
-QUEST_104	인형제조	战术少女制造	Produce T-Doll	人形製造	quest	90735
-QUEST_105	인형제조	战术少女制造	Produce T-Doll	人形製造	quest	90736
-QUEST_106	군수지원	后勤支援	Logistic Support	後方支援	quest	90737
-QUEST_107	군수지원	后勤支援	Logistic Support	後方支援	quest	90738
-QUEST_108	군수지원	后勤支援	Logistic Support	後方支援	quest	90739
-QUEST_109	인형강화	战术少女强化	Enhance T-Doll	人形強化	quest	90740
-QUEST_110	인형강화	战术少女强化	Enhance T-Doll	人形強化	quest	90741
-QUEST_111	인형수복	战术少女修复	Repair T-Doll	人形修理	quest	90742
-QUEST_112	인형수복	战术少女修复	Repair T-Doll	人形修理	quest	90743
-QUEST_113	인형수복	战术少女修复	Repair T-Doll	人形修理	quest	90744
-QUEST_115	모의작전	模拟作战	Combat Simulation	模擬作戦	quest	90745
-QUEST_116	모의작전	模拟作战	Combat Simulation	模擬作戦	quest	90746
-QUEST_117	장비제조	装备制造	Produce Equip	装備製造	quest	90747
-QUEST_118	장비제조	装备制造	Produce Equip	装備製造	quest	90748
-QUEST_125	장비강화	装备强化	Enhance Equip	装備強化	quest	90749
-QUEST_126	장비강화	装备强化	Enhance Equip	装備強化	quest	90750
-QUEST_127	공유전지 획득	获得共用电池	Collect Battery	戦友宿舎バッテリー獲得	quest	90751
-QUEST_128	지원제대 호출	使用支援梯队	Friend Support	支援部隊使用	quest	90752
-QUEST_129	정보분석	情报解析	Data Analysis	情報分析	quest	90753
-QUEST_130	정보분석	情报解析	Data Analysis	情報分析	quest	90754
-QUEST_201	인형수복	战术少女修复	Repair T-Doll	人形修理	quest	90755
-QUEST_202	철혈기계 처치	消灭普通机械铁血兵	Kill Machine S.F.	鉄血機械討伐	quest	90756
-QUEST_203	철혈인형 처치	消灭普通人形铁血兵	Kill Humanoid S.F.	鉄血人形討伐	quest	90757
-QUEST_204	철혈보스 처치	消灭BOSS	Kill Boss S.F.	鉄血ボス討伐	quest	90758
-QUEST_205	군수지원	后勤支援	Logistic Support	後方支援	quest	90759
-QUEST_206	S랭크 전투	以S评价完成战斗	S Rank Battle	Sランク戦闘	quest	90760
-QUEST_207	인형강화	战术少女强化	Enhance T-Doll	人形強化	quest	90761
-QUEST_208	인형제조	战术少女制造	Produce T-Doll	人形製造	quest	90762
-QUEST_209	스킬훈련	人形技能训练	Skill Training	スキル訓練	quest	90763
-QUEST_210	모의작전	模拟作战	Combat Simulation	模擬作戦	quest	90764
-QUEST_211	장비제조	装备制造	Produce Equip	装備製造	quest	90765
-QUEST_212	장갑기계 처치	消灭装甲机械铁血兵	Kill Armored Machine S.F.	装甲機械討伐	quest	90766
-QUEST_213	장갑인형 처치	消灭装甲人形铁血兵	Kill Armored Humanoid S.F.	装甲人形討伐	quest	90767
-QUEST_214	중형인형제조	人形重型制造	Equip Heavy Production	大型人形製造	quest	90768
-QUEST_215	장비교정	装备校准	Equip Calibration	装備校正	quest	90769
-QUEST_216	장비강화	装备强化	Equip Enhancement	装備強化	quest	90770
-QUEST_217	중형장비제조	装备重型制造	Equip Heavy Production	大型装備製造	quest	90771
-QUEST_218	요정교정	妖精校准	Fairy Calibration	妖精校正	quest	90772
-QUEST_219	요정강화	妖精强化	Fairy Enhancement	妖精強化	quest	90773
-QUEST_220	정보분석	情报解析	Data Analysis	情報分析	quest	90774
-QUEST_221	칩셋강화	强化消耗芯片	Enhance Chip	テトリス校正	quest	90775
-QUEST_301	아무 전역 승리	完成任何作战	Clear Any Mission	無作為の戦役勝利	quest	90776
-QUEST_302	아무 적 처치	消灭任何敌人	Kill Any Enemy	無作為の敵討伐	quest	90777
-QUEST_303	일반 4-6 승리	通过普通4-6	Clear Mission 4-6	通常4-6勝利	quest	90778
-QUEST_304	일반 5-6 승리	通过普通5-6	Clear Mission 5-6	通常5-6勝利	quest	90779
-QUEST_305	일반 6-6 승리	通过普通6-6	Clear Mission 6-6	通常6-6勝利	quest	90780
-QUEST_306	일반 7-6 승리	通过普通7-6	Clear Mission 7-6	通常7-6勝利	quest	90781
-QUEST_307	철혈보스 처치	消灭BOSS	Kill Boss S.F.	鉄血ボス討伐	quest	90782
-QUEST_308	장갑인형 처치	消灭装甲人形铁血兵	Kill Armored Humanoid S.F.	装甲人形討伐	quest	90783
-QUEST_309	장갑기계 처치	消灭装甲机械铁血兵	Kill Armored Machine S.F.	装甲機械討伐	quest	90784
-QUEST_310	철혈인형 처치	消灭普通人形铁血兵	Kill Humanoid S.F.	鉄血人形討伐	quest	90785
-QUEST_311	철혈기계 처치	消灭普通机械铁血兵	Kill Machine S.F.	鉄血機械討伐	quest	90786
-QUEST_312	일반 전역승리	通过普通战役	Clear Normal Mission	通常戦役勝利	quest	90787
-QUEST_313	긴급 전역승리	通过紧急战役	Clear Emergency Mission	緊急戦役勝利	quest	90788
-QUEST_314	야간 전역승리	通过夜战战役	Clear Night Mission	夜戦戦役勝利	quest	90789
+key	ko-KR	zh-CN	en-US	ja-JP
+PROGRAM_TITLE	소녀전선 알리미	少女前线通知器	Girls Frontline Alarm	ドルフロ アラート
+PROGRAM_TITLE_SHORT	소녀전선 알리미	少女前线通知器	GFAlarm	ドルフロ アラート
+TRANSLATED_BY		CN translated by 'Jenitak'[br]Voice translated by 'Jenitak'	EN translated by 'Seyren'[br]Voice translated by 'Seyren'	JP translated by 'リリア'[br]Voice translated by 'FlamBerry'
+PROGRAM_DESCRIPTION	소녀전선 알리미 프로그램은 모바일 게임 [font color='#ffb400']소녀전선[/font]의 패킷과 게임 데이터를 기반으로 동작됩니다.			
+PROGRAM_COPYRIGHT	모든 저작권과 권리는 [a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a]에 귀속되어 있습니다.			
+PROGRAM_BUG_REPORT	버그 발견 시, 제작자 email 또는 [a href='{0}']최신버전 글[/a]로 리포트 바랍니다.	When you find a bug, please report to developer email or [a href='{0}']latest version post[/a].	When you find a bug, please report to developer email or [a href='{0}']latest version post[/a].	When you find a bug, please report to developer email or [a href='{0}']latest version post[/a].
+OPEN_FOLDER	폴더 열기	打开文件夹	Open Folder	フォルダーを開く
+ALWAYS_ON_TOP	항상 위	一直在前端	Always On Top	常に最前面に表示
+STICK_TO_LEFT	좌측 붙이기	靠左	Stick To Left	左側に寄せる
+STICK_TO_RIGHT	우측 붙이기	靠右	Stick To Right	右側に寄せる
+WINDOW_MINIMIZE	최소화	关闭	Minimize	最小化
+WINDOW_CLOSE	종료	退出	Close	終了
+TRAY_CLOSE	종료	退出	Close	終了
+TRAY_RESET_POSITION	위치 리셋	重定位	Position Reset	リセット
+VERSION_CHECK_TITLE	버전 확인	版本更新	Version Check	バージョン確認
+VERSION_CHECK_CONTENT	최신버전 {0}가 존재합니다. 다운로드 링크로 이동합니까?	发现新版本 {0}. 打开下载网页吗?	Lastest version {0} exists. Will you open download link?	最新バージョン 「{0}」が存在します。ダウンロードリンクへ移動しますか？
+TIME	시간	时间	Time	時間
+REQUIRE_TIME	소요 시간	所需时间	Require Time	残り時間
+END_TIME	완료 시간	完成时间	Complete Time	完了時間
+MANPOWER	인력	人力	Manpower	人力
+AMMO	탄약	弹药	Ammunition	弾薬
+MRE	식량	粮食	Ration	配給
+PART	부품	零件	Parts	部品
+ECHELON	제대	梯队	Echelon	部隊
+COUNT	건	个	Count	件
+RUN_43E	4-3e	4-3e	4-3e	4-3e
+RUN_02	0-2	0-2	0-2	0-2
+RUN_SG_32	4드라	4九头蛇	SG 3-2	4ドラ
+RUN_104E	10-4e	10-4e	10-4e	10-4e
+RUN_81N	8-1n	8-1n	8-1n	8-1n
+RUN_115	11-5	11-5	11-5	11-5
+COMBAT_REPORT	작전보고서	作战报告	Combat Report	作戦報告書
+COMBAT_REPORT_SHORT	작보	报告	C.Report	作報
+UNKNOWN	알 수 없음	未知道	Unknown	不明
+NEED_RELOGIN	재로그인 필요	需要在登录	Need Relogin	再ログインしてください
+UNRECEIVE_SHARE_GEM	공유보석 미수령	未领取共用宝石	Unreceived Share Gem	シェアダイヤを受け取っていません
+UNRECEIVE_SHARE_BATTERY	공유전지 미수령	未领取共用电池	Unreceived Share Battery	戦友宿舎バッテリーを受け取っていません
+SPEND_RESOURCE	투입 자원	投入资源	Spend Resources	投入資源
+REWARD_RESOURCE	획득 보상	获得奖励	Reward Resources	獲得報酬
+REQUIRE_EXP	필요 경험치	需要经验值	Require Exp	必要経験値
+NO_MVP_BONUS	[font color='#F44336'](MVP 보너스 미적용)[/font]	[font color='#F44336'](未考虑MVP)[/font]	[font color='#F44336'](No MVP Bonus)[/font]	[font color='#F44336'](MVP ボーナス未適用)[/font]
+TO_NEXT_LEVEL	다음 레벨	其次等级	Next Level	次のレベルまで
+TO_NEXT_EXPAND	다음 편제	其次编制	Next Link	次の編拡まで
+TO_MAX_LEVEL	최대 레벨	最大等级	Max Level	最大レベルまで
+REQUIRE_RESTORE	수복 정보	修复信息	Restore Info	修理情報
+DISPATCHED_ECHELON	투입 제대	Echelon	Echelon	Echelon
+EXPLORE_8_HOUR_GUIDE	(8시간 기준)	(标准是8个小时)	(8 Hours)	(8時間基準)
+EXPLORE_REWARD_GUIDE	획득 보상을 보려면 전진기지-제어콘솔을 열어주십시오	如果想获得奖励,请打开前进营地-储物柜	Open Gate Console in Forward Basecamp to check exploration rewards	獲得報酬を見たい場合、キャンプの制御コンソルを開いてください
+NEXT_EVENT	다음 발견	其次发现	Next Event	次の発見
+NOW_EXPLORE	탐색 중	正在探索	Exploring	探索中
+DAILY_QUEST	일간임무	日常任务	Daily Quest	デイリー任務
+WEEKLY_QUEST	주간임무	周常任务	Weekly Quest	ウィークリー任務
+RESEARCH_QUEST	정보임무	情报任务	Research Quest	情報任務
+LOGISTICS	군수지원	后勤支援	Logistics	後方支援
+AUTO_BATTLE	자율작전	自律作战	Auto-Battle	自立作戦
+MISSION	작전	作战	Mission	作戦
+LOGISTICS_SHORT	군수	后勤	Logistcis	後方
+AUTO_BATTLE_SHORT	자율	自律	Auto	自立
+MISSION_SHORT	작전	作战	Mission	作戦
+SKILL_TRAIN	스킬훈련	技能训练	Skill Training	スキル訓練
+EXP_TRAIN	경험훈련	经验训练	Exp Training	経験訓練
+COMBAT_FAIRY	전투요정	战斗妖精	Combat Fairy	戦闘妖精
+STRATEGY_FAIRY	전략요정	战略妖精	Strategy Fairy	戦略妖精
+EXPLORE_CITY	도시	城市	City	都市
+EXPLORE_SNOW_LAND	설원	雪原	Snowfield	雪原
+EXPLORE_FOREST	숲	树林	Forest	森
+EXPLORE_WASTE_LAND	황무지	荒地	Wasteland	荒蕪地
+DATA_PIECE	핵심데이터	芯片	Data Piece	核心データ
+TAB_DASHBOARD	알림	通知	Alarm	アラート
+TAB_ECHELON	제대	梯队	Echelon	部隊
+TAB_QUEST	임무	任务	Quest	任務
+TAB_WAREHOUSE	창고	仓库	Warehouse	倉庫
+TAB_RECORD_MISSION	전역 녹화	作战绿化	Record Mission	録画
+TAB_PROXY	연결	连接	Proxy	連結
+TAB_NOTIFICATION_SETTING	알림 설정	通知设置	Notification Settings	アラート設定
+TAB_SETTING	설정	设置	Settings	設定
+HEADER_EXPCAL_BUTTON	경험치 계산기		Exp Calculator	
+HEADER_EXPCAL_PRESET	프리셋		Preset	
+HEADER_EXPCAL_BASE_EXP	기본 경험치		Base Exp	
+HEADER_EXPCAL_BATTLE_COUNT	교전 횟수		Battle Count	
+HEADER_EXPCAL_LEVEL_PENALTY	레벨 패널티		Level Penalty	
+HEADER_EXPCAL_EXPUP_EVENT	경험치 이벤트	经验值提升活动	Exp Up Event	経験値アップイベント
+HEADER_EXPCAL_EXPUP_EVENT_TOOLTIP	경험치 이벤트를 설정	设定经验值提升活动	Apply Exp Rate-up Event	経験値アップイベント設定
+HEADER_EXPCAL_APPLY_BUTTON	적용		Apply	
+HEADER_SORT_BUTTON	정렬	排序	Sort	ソート
+HEADER_SORT_BY_SLOT	슬롯 순	位置	Slot	スロット順
+HEADER_SORT_BY_REMAIN_TIME	남은 시간 순	剩余时间	Remaining Time	残り時間順
+HEADER_FILTER_BUTTON	필터	过滤	Filter	フィルター
+HEADER_COLLAPSE_EXPAND_BUTTON	일괄 접기/펴기	一总 关/开	Collapse/Expand All	一括で閉じる/開く
+FOOTER_SIM_POINT	모의작전점수	模拟作战体力	Sim Energy	基礎AP
+FOOTER_SIM_POINT_TOOLTIP	오늘 충전가능한 점수 [b]{0}[/b]점[br](출석시간 {1} 기준)	今天可充的体力 [b]{0}[/b]点[br](连接时间 {1} 标准)	Today's Available Sim Energy [b]{0}[/b] [br](Attendance Time {1})	今日回復できる基礎AP [b]{0}[/b][br](ログイン時間 {1} 基準)
+FOOTER_SURPLUS_EXP	자유경험치	全局经验值	Surplus Exp	トータル経験値
+FOOTER_SURPLUS_EXP_TOOLTILP	자유경험치	全局经验值	Surplus Exp	トータル経験値
+STATUS_REINFORCE_COUNT	지원	支援	Support	支援部隊
+STATUS_DOLL_COUNT	인형	人形	T-Doll	人形
+STATUS_EQUIP_COUNT	장비	装备	Equip	装備
+OVERLAY_EMPTY_DASHBOARD	알림 정보가[br]존재하지 않습니다	不存在[br]通知信息	Dashboard[br]is empty	情報が[br]ありません
+OVERLAY_EMPTY_ECHELON	제대 정보가[br]존재하지 않습니다	不存在[br]梯队信息	Echelon Info[br]Not Found	部隊情報が[br]ありません
+OVERLAY_EMPTY_QUEST	메인화면 [font color='#ffb400']임무[/font] 버튼을[br] 눌러주십시오	在主页选择[font color='#ffb400']任务[/font]	Press [font color='#ffb400']QUEST[/font] Button[br]on Main Menu	メイン画面 [font color='#ffb400']任務[/font] ボタンを[br]押してください
+OVERLAY_COMPLETE_QUEST	모든 임무가[br]완료되었습니다	完成所有任务	All Quests[br]Completed	全ての任務が[br]完了しました
+DASHBOARD_GROUP_DISPATCHED_ECHELON	지원현황	支援现况	Dispatched Echelon	後方状況
+DASHBOARD_GROUP_PRODUCE_DOLL	인형제조	人形制造	T-Doll Production	人形製造
+DASHBOARD_GROUP_PRODUCE_EQUIP	장비제조	装备制造	Equip Production	装備製造
+DASHBOARD_GROUP_SKILL_TRAIN	훈련현황	训练现况	Skill Training	訓練状況
+DASHBOARD_GROUP_DATA_ANALYSIS	분석현황	解析现况	Data Analysis	分析状況
+DASHBOARD_GROUP_RESTORE	수복현황	修复现况	Repair T-Doll	修理状況
+DASHBOARD_GROUP_EXPLORE	탐색현황	探索现况	Explore	探索状況
+SETTING_PROXY_SERVER_GROUP	프록시 서버	代理服务器	Proxy Server	プロキシサーバー
+SETTING_PROXY_SERVER_USE_PROXY_SERVER	프록시 서버	代理服务器	Proxy Server	プロキシサーバー
+SETTING_PROXY_SERVER_USE_AUTO_START	자동시작	自动运行代理服务器	Auto Start	プロキシ自動スタート
+SETTING_PROXY_SERVER_PORT_NUMBER	포트번호	代理服务器端口编号	Port Number	プロキシポート番号
+SETTING_PROXY_SERVER_USE_SSL_DECRYPT	HTTPS 복호화	代理服务器 HTTPS 复护化	HTTPS Decryption	プロキシHTTPS復号化
+SETTING_PROXY_SERVER_USE_SSL_DECRYPT_WARNING	[font color='#F44336']대만 서버에서만 사용할 것[/font]	[font color='#F44336']只在台服使用[/font]	[font color='#F44336']TW Server Only[/font]	[font color='#F44336']台湾サーバーユーザー様だけ使ってください[/font]
+SETTING_PROXY_SERVER_USE_SSL_DECRYPT_COMMENT	[a href='{0}']링크[/a]를 참고해서 인증서 설치 후 사용 가능	参考[a href='{0}']链接[/a]可在设置认证书后使用	Refer to [a href='{0}']link[/a] to install certificate before use	[a href='{0}']サイト[/a]を参考して認証書をインストールした後使えます
+SETTING_PAC_SERVER_GROUP	PAC 서버		PAC Server	
+SETTING_PAC_SERVER_USE	PAC 서버		PAC Server	
+SETTING_PAC_SERVER_USE_TOOLTIP	PAC(Proxy Auto Config)를 사용하기 위한 서버[br][font color='#F44336']관리자 권한이 필요[/font]			
+SETTING_PAC_SERVER_SET_DOMAIN	PAC 도메인		PAC Domain	
+SETTING_PAC_SERVER_SET_DOMAIN_TOOLTIP	외부 네트워크에서 도메인을 사용해서 접속할 경우 설정할 것			
+SETTING_PAC_SERVER_PORT_NUMBER	PAC 포트번호		PAC Port Number	
+SETTING_PAC_SERVER_NOW_ADMIN	관리자 권한 사용중		Admin Privilege Enabled	
+SETTING_PAC_SERVER_NEED_ADMIN	관리자 권한 필요		Admin Privilege Disabled	
+SETTING_UPSTREAM_PROXY_GROUP	경유 프록시	经由代理服务器	Upstream Proxy	경유 프록시
+SETTING_UPSTREAM_PROXY_USE_UPSTREAM_PROXY	경유 프록시	经由代理服务器	Upstream Proxy	경유 프록시
+SETTING_UPSTREAM_PROXY_ADDRESS	경유 프록시 주소	经由的代理服务器地址	Upstream Proxy Address	경유 프록시 주소
+SETTING_UPSTREAM_PROXY_USE_UPSTREAM_PROXY_TOOLTIP	설정 시 프록시를 사용하는 타 프로그램을 경유하여 소녀전선 서버에 접속	设置时，经由使用代理服务器的其他程序连接游戏	설정 시 프록시를 사용하는 타 프로그램을 경유하여 소녀전선 서버에 접속	설정 시 프록시를 사용하는 타 프로그램을 경유하여 소녀전선 서버에 접속
+SETTING_PROXY_SERVER_GUIDE	사용 가이드	使用指南	Proxy Guide	使用ガイド
+SETTING_PROXY_SERVER_GUIDE_COMMENT	[font size='14']■ Android[/font][br]→ 설정[br]→ 네트워크 및 인터넷[br]→ Wi-Fi[br]→ 연결된 AP 설정[br]→ 고급 옵션[br]→ 프록시 '수동' 설정[br]→ 프록시 호스트 [font color='#8ec127']{0}[/font][br]→ 프록시 포트 [font color='#8ec127']{1}[/font][br]→ 소녀전선 (재)로그인[br][br] [font size='14']■ iOS[/font][br]→ 설정[br]→ Wi-Fi[br]→ 연결된 AP 설정[br]→ 프록시 구성[br]→ '수동' 설정[br]→ 서버 [font color='#8ec127']{0}[/font][br]→ 포트 [font color='#8ec127']{1}[/font][br]→ 소녀전선 (재)로그인[br] [br] [font size='14' color='#ff4500']■ 접속 불가 시[/font][br]→ 시작[br]→ 실행[br]→ cmd[br]→ ipconfig[br]→ 표시된 IPv4 주소로 시도[br] [br] [font size='14' color='#ff4500']■ 보안 정책 위반(코드 22) 발생 시[/font][br]→ 기기 프록시 설정 끄기[br]→ 소녀전선 실행[br]→ 로그인 직전까지 진행[br]→ 기기 프록시 설정 켜기[br]→ 소녀전선 (재)로그인	[font size='14']■ Android[/font][br]→ 设置[br]→ 网络与互联网[br]→ Wi-Fi[br]→ 连接的AP设置[br]→ 高级期权[br]→ 代理服务器设置提示‘被动’[br]→ 代理服务器主机 [font color='#8ec127']{0}[/font][br]→ 代理服务器端口编号 [font color='#8ec127']{1}[/font][br]→ 再登录少女前线[br][br] [font size='14']■ iOS[/font][br]→ 设置[br]→ Wi-Fi[br]→ 连接的AP设置[br]→ 代理服务器构成[br]→ ‘被动’设置[br]→ 服务器 [font color='#8ec127']{0}[/font][br]→ 端口 [font color='#8ec127']{1}[/font][br]→ 再登录少女前线[br] [br] [font size='14' color='#ff4500']■ 无法连接时[/font][br]→ 开始[br]→ 执行[br]→ cmd[br]→ ipconfig[br]→ 试图用表示的IPv4地址[br] [br] [font size='14' color='#ff4500']■ 违反安全政策(代码22)时[/font][br]→ 关闭代理服务器设置[br]→ 实行少女前线[br]→ 进行到登录前[br]→ 再打开代理服务器设置[br]→ 再登录少女前线	[font size='14']■ Android[/font][br]→ Settings[br]→ Network & Internet[br]→ Wi-Fi[br]→ Connected AP Setting[br]→ Advanced Options[br]→ Proxy 'Manual'[br]→ Proxy Hostname [font color='#8ec127']{0}[/font][br]→ Proxy Port [font color='#8ec127']{1}[/font][br]→ Girls Frontline (Re)Login[br][br] [font size='14']■ iOS[/font][br]→ Settings[br]→ Wi-Fi[br]→ Connected AP Setting[br]→ Configure Proxy[br]→ Set 'Manual'[br]→ Server [font color='#8ec127']{0}[/font][br]→ Port [font color='#8ec127']{1}[/font][br]→ Girls Frontline (Re)Login[br] [br] [font size='14' color='#ff4500']■ Can't Connect?[/font][br]→ Start[br]→ run[br]→ cmd[br]→ ipconfig[br]→ connect to IPv4 address[br] [br] [font size='14' color='#ff4500']■ If Security Policy Violation(Code 22) occurs[/font][br]→ Turn off Proxy setting from device[br]→ Launch Girls Frontline[br]→ Proceed until right before logging in[br]→ Turn on Proxy setting from device[br]→ Relaunch Girls Frontline	[font size='14']■ Android[/font][br]→ 設定[br]→ ネットワーク及びインターネット[br]→ Wi-Fi[br]→ 繋がったAP設定[br]→ 詳細設定項目[br]→ プロキシ '手動' 設定[br]→ プロキシホスト [font color='#8ec127']{0}[/font][br]→ プロキシポート [font color='#8ec127']{1}[/font][br]→ ドルフロ (再)ログイン[br][br] [font size='14']■ iOS[/font][br]→ 設定[br]→ Wi-Fi[br]→ 接続中のWi-fiをタップ[br]→ プロキシを構成[br]→ '手動' 設定[br]→ サーバー [font color='#8ec127']{0}[/font][br]→ ポート [font color='#8ec127']{1}[/font][br]→ ドルフロ (再)ログイン[br] [br] [font size='14' color='#ff4500']■ 接続ができない場合[/font][br]→ スタート[br]→ Windows システムツール[br]→ cmd[br]→ ipconfig[br]→ 表示された IPv4 アドレスで試してください[br] [br] [font size='14' color='#ff4500']■ セキュリティ政策違反(コード 22)が発生した場合[/font][br]→ 端末のプロキシ設定を切る[br]→ ドルフロ起動[br]→ ログイン直前まで進む[br]→ 端末のプロキシ設定[br]→ ドルフロ (再)ログイン
+SETTING_PACKET_FORGER_GROUP	패킷 변조		Packet Forger	
+SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT	랜덤 부관		Random Adjutant	
+SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_COMMENT	인형 [font color='#ffb400']{0}[/font] 스킨 [font color='#ffb400']{1}[/font]	人形 [font color='#ffb400']{0}[/font] Skin [font color='#ffb400']{1}[/font]	Doll [font color='#ffb400']{0}[/font] Skin [font color='#ffb400']{1}[/font]	人形 [font color='#ffb400']{0}[/font] Skin [font color='#ffb400']{1}[/font]
+SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_TOOLTIP	소속 인형 중 랜덤한 인형으로 부관 설정			
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_WHITELIST	부관 화이트리스트		Adjutant Whitelist	
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_WHITELIST_TOOLTIP	소속 인형 중 선택된 인형만 부관으로 등장하도록 설정[br][font color='#FFF44336']소속되지 않은 인형은 출현하지 않음[/font]			
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_BLACKLIST	부관 블랙리스트		Adjutant Blacklist	
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_BLACKLIST_TOOLTIP	설정된 인형은 등장하지 않음			
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_WHITELITE	스킨 화이트리스트		Skin Whitelist	
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_WHITELITE_TOOLTIP	보유 스킨 중 선택된 스킨만 입고 등장하도록 설정[br][font color='#FFF44336']보유하지 않은 스킨은 입지 않음[/font]			
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_BLACKLIST	스킨 블랙리스트		Skin Blacklist	
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_BLACKLIST_TOOLTIP	설정된 스킨은 등장하지 않음			
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN	부관 스킨		Adjutant Skin	
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_TOOLTIP	부관 스킨을 설정			
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_NORMAL	통상만		Normal	
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_SKIN	스킨만		Skin	
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_SKIN_LIVE2D	Live2D 스킨만		Live2D Skin	
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_SKIN_CHILD	아동절 스킨만		Child Skin	
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_SKIN_MOD	개조 스킨만		Mod Skin	
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_RANDOM	랜덤		Random	
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE	부관 상태		Adjutant Shape	
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_TOOLTIP	부관 상태를 설정			
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_NORMAL	통상만		Normal	
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_WOUND	중상만		Wound	
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_RANDOM	랜덤		Random	
+SETTING_PACKET_FORGER_USE_RANDOM_SKIN	랜덤 부관 스킨		Random Adjutant Skin	
+SETTING_PACKET_FORGER_USE_RANDOM_SKIN_TOOLTIP	설정된 부관의 스킨만 랜덤 설정			
+SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR	검열해제 모드	666模式	Uncensor Mode	規制解禁モード
+SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR_COMMENT	[a href='{0}']검열해제 패치[/a]로 추가 해제	[a href='{0}']用解除审查修补[/a]追加解除	Refer to [a href='{0}']link[/a] for additional uncensored patch	[a href='{0}']規制解禁アップデート[/a]で追加解禁(JPサーバーは規制されてません）
+SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR_TOOLTIP	설정한 상태로 로그인 한 뒤 130/130/130/30 인형제조 후 재로그인 시 검열해제[br][font color='#F44336'](검열해제 확인 후 반드시 검열해제 설정을 체크해제할 것)[/font]	以设定的状态登录后 130/130/130/30 人形制造后再登录时解除审查[br][font color='#F44336'](确认解除审查后应该解除设置)[/font]	Log in after enabling and produce a T-Doll with 130/130/130/30 then re-log in to enable uncensor[br][font color='#F44336'](Uncheck after uncensor is enabled)[/font]	設定した状態でログインした後「130/130/130/30」人形製造して再ログインすると規制解禁[br][font color='#F44336'](規制解禁が確認できた後、必ず規制解禁ボタンチェックを外してください)[/font]
+SETTING_NOTIFICATION_COMPLETE_GROUP	완료 알림	完成通知	Complete	完了アラート
+SETTING_NOTIFICATION_COMPLETE_DISPATCHED_ECHELON	지원현황	支援现况	Dispatched Echelon	支援状況
+SETTING_NOTIFICATION_COMPLETE_DISPATCHED_ECHELON_TOOLTIP	군수지원/자율작전 완료를 알림	通知完成后勤支援/自律作战	Notify Logistics/Auto-Battle completion)	後方支援/自立作戦完了をアラート
+SETTING_NOTIFICATION_COMPLETE_EXPLORE	탐색현황	探索现状	Explore	探索状況
+SETTING_NOTIFICATION_COMPLETE_EXPLORE_TOOLTIP	탐색 완료를 알림	通知完成探索	Notify Exploration completion	探索完了をアラート
+SETTING_NOTIFICATION_COMPLETE_PRODUCE_DOLL	인형제조	人形制造	T-Doll Production	人形製造
+SETTING_NOTIFICATION_COMPLETE_PRODUCE_DOLL_TOOLTIP	인형제조 완료를 알림	通知完成人形制造	Notify T-Doll Production completion	人形製造完了をアラート
+SETTING_NOTIFICATION_COMPLETE_PRODUCE_EQUIP	장비제조	装备制造	Equip Production	装備製造
+SETTING_NOTIFICATION_COMPLETE_PRODUCE_EQUIP_TOOLTIP	장비제조 완료를 알림	通知完成装备制造	Notify Equip Production completion	装備製造完了をアラート
+SETTING_NOTIFICATION_COMPLETE_TRAIN	훈련현황	训练现状	Skill Training	訓練状況
+SETTING_NOTIFICATION_COMPLETE_TRAIN_TOOLTIP	훈련 완료를 알림	通知完成训练	Nofity Skill Training completion	訓練完了をアラート
+SETTING_NOTIFICATION_COMPLETE_RESTORE	수복현황	修复现况	Restore Doll	修理状況
+SETTING_NOTIFICATION_COMPLETE_RESTORE_TOOLTIP	수복 완료를 알림	通知完成修复	Notify T-Doll Restore completion	修理完了をアラート
+SETTING_NOTIFICATION_COMPLETE_DATA_ANALYSIS	분석현황	解析现况	Data Analysis	分析状況
+SETTING_NOTIFICATION_COMPLETE_DATA_ANALYSIS_TOOLTIP	정보분석 완료를 알림	通知完成情报解析	Notify Data Analysis completion	情報分析完了をアラート
+SETTING_NOTIFICATION_COMPLETE_COMBAT_REPORT	작전보고서	作战报告	Combat Report	作戦報告書
+SETTING_NOTIFICATION_COMPLETE_COMBAT_REPORT_TOOLTIP	작전보고서 완료를 알림	通知完成作战报告	Notify Combat Report Production completion	作戦報告書の作成完了をアラート
+SETTING_NOTIFICATION_COMPLETE_QUEST	임무 달성	完成任务	Quest Complete	任務達成
+SETTING_NOTIFICATION_COMPLETE_QUEST_TOOLTIP	임무 달성 시 알림	完成任务时通知	Notify when a Quest is completed	任務達成した場合アラート
+SETTING_NOTIFICATION_MAXIMUM_GROUP	상한 알림	上限通知	Maximum	上限アラート
+SETTING_NOTIFICATION_MAXIMUM_SIM_POINT	모의작전점수	模拟作战体力	Max Sim Point	模擬作戦基礎AP
+SETTING_NOTIFICATION_MAXIMUM_SIM_POINT_TOOLTIP	설정된 모의작전점수 도달 시 알림	到设置的模拟作战体力时通知	Notify when set Sim Energy Point has reached	基礎APが設定した値に到達した場合にアラート
+SETTING_NOTIFICATION_MAXIMUM_SIM_POINT_UNIT	점	点	P	AP
+SETTING_NOTIFICATION_MAXIMUM_DOLL	인형창고	人形仓库	Max T-Doll	人形倉庫
+SETTING_NOTIFICATION_MAXIMUM_DOLL_TOOLTIP	인형창고 상한 도달 시 알림	人形仓库到上限时通知	Notify when T-Doll Slot limit has reached	人形倉庫上限になる場合アラート
+SETTING_NOTIFICATION_MAXIMUM_EQUIP	장비창고	装备仓库	Max Equip	装備倉庫
+SETTING_NOTIFICATION_MAXIMUM_EQUIP_TOOLTIP	장비창고 상한 도달 시 알림	装备仓库到上限时通知	Notify when Equip Depot limit has reached	装備倉庫上限になる場合アラート
+SETTING_NOTIFICATION_MAXIMUM_SURPLUS_EXP	자유경험치	全局经验值	Max Surplus Exp	トータル経験値
+SETTING_NOTIFICATION_MAXIMUM_SURPLUS_EXP_TOOLTIP	자유경험치 상한 도달 시 알림	全局经验值到上限时通知	Notify when Surplus Exp limit has reached	トータル経験値上限になる場合アラート
+SETTING_NOTIFICATION_MISSION_GROUP	전역 알림	作战通知	Mission	戦役アラート
+SETTING_NOTIFICATION_MISSION_RESCUE_DOLL	인형 획득	获得人形	Rescue T-Doll	人形獲得
+SETTING_NOTIFICATION_MISSION_RESCUE_DOLL_TOOLTIP	설정된 레어도 이상 인형 획득 시 알림[br][font color='#ffb400'](콜라보 인형은 5성으로 취급)[/font]	获得设定的稀有度以上的人形时通知[br][font color='#ffb400'](特典人形视为5星人形)[/font]	Notify when T-Doll above set Rarity has rescued[br][font color='#ffb400'](Collb T-Doll counts as 5 Star)[/font]	設定されたレアリティ以上の人形を獲得した場合アラート[br][font color='#ffb400'](コラボ人形は星5扱い)[/font]
+SETTING_NOTIFICATION_MISSION_RESCUE_DOLL_UNIT	성	星	S	星
+SETTING_NOTIFICATION_MISSION_GET_EQUIP	장비 획득	获得装备	Get Equip	装備獲得
+SETTING_NOTIFICATION_MISSION_GET_EQUIP_TOOLTIP	설정된 레어도 이상 장비 획득 시 알림[br][font color='#ffb400'](전용장비는 5성으로 취급)[/font]	获得设定的稀有度以上的装备时通知[br][font color='#ffb400'](专属装备视为5星装备)[/font]	Notify when Equip above set Rarity has obtained[br][font color='#ffb400'](Sp. Equip counts as 5 Star)[/font]	設定されたレアリティ以上の装備を獲得した場合アラート[br][font color='#ffb400'](専用装備は星5扱い)[/font]
+SETTING_NOTIFICATION_MISSION_GET_EQUIP_UNIT	성	星	S	星
+SETTING_NOTIFICATION_MISSION_WIN	전역 승리	作战胜利	Mission Success	戦役勝利
+SETTING_NOTIFICATION_MISSION_WIN_TOOLTIP	전역 승리 시 알림	作战胜利时通知	Notify when Mission is success	戦役勝利した場合アラート
+SETTING_NOTIFICATION_MISSION_MOVE_TEAM	제대이동 완료	梯队移动结束	Move Complete	部隊移動完了
+SETTING_NOTIFICATION_MISSION_MOVE_TEAM_TOOLTIP	설정된 횟수만큼 제대이동 후 알림	按设定的次数梯队移动后通知	Notify after set amount of Echelon movement has completed	設定された回数分部隊移動後アラート
+SETTING_NOTIFICATION_MISSION_MOVE_TEAM_UNIT	회	回	T	回
+SETTING_NOTIFICATION_MISSION_MOVE_TEAM_AND_WIN_BATTLE	전투 후 알림	战后通知	Post-Battle Complete	戦闘後アラート
+SETTING_NOTIFICATION_MISSION_MOVE_TEAM_AND_WIN_BATTLE_TOOLTIP	설정된 횟수만큼 제대이동 후 전투가 완료되면 알림	按设定的次数梯队移动后战斗结束时通知	Notify after set amount of Echelon movements and battle has completed	設定された回数分部隊移動後戦闘終わったらアラート
+SETTING_NOTIFICATION_DOLL_GROUP	인형 알림	人形通知	Doll	人形アラート
+SETTING_NOTIFICATION_DOLL_NEED_DUMMY_LINK	편제확대 필요	需要编制扩大	Dummy Link	編制拡大必要
+SETTING_NOTIFICATION_DOLL_NEED_DUMMY_LINK_TOOLTIP	편제확대 필요한 인형 알림[br][font color='#ffb400'](1링크 자스는 알리지 않음)[/font]	通知需要编制扩大的人形[br][font color='#ffb400'](不通知1编制的Zas)[/font]	Notify T-Doll requiring Dummy Link[br][font color='#ffb400'](Excludes x1 Zas M21)[/font]	人形が編制拡大可能になった場合アラート[br][font color='#ffb400'](1リンクZasは除く)[/font]
+SETTING_NOTIFICATION_DOLL_HP_WARNING	체력 경고	体力警告	HP Warning	体力警告
+SETTING_NOTIFICATION_DOLL_HP_WARNING_TOOLTIP	설정된 체력 이하로 떨어진 인형 알림[br][font color='#ffb400'](중상 기준 30%)[/font]	通知降到设定体力以下的人形[br][font color='#ffb400'](重伤标准 30%)[/font]	Notify when T-Doll's HP drops below set amount[br][font color='#ffb400'](Critically Damaged at 30%)[/font]	設定した体力の割合まで人形が損傷した場合アラート[br][font color='#ffb400'](重傷基準30%)[/font]
+SETTING_NOTIFICATION_DOLL_MAX_LEVEL	최대 레벨	最大等级	Maximum Level	最大レベル
+SETTING_NOTIFICATION_DOLL_MAX_LEVEL_TOOLTIP	최대 레벨 도달 인형 알림	通知达到最大等级的人形	Notify when T-Doll's level reaches maximum level	最大レベル到達した人形アラート
+SETTING_NOTIFICATION_PRODUCE_GROUP	제조 알림	制造通知	Production	製造アラート
+SETTING_NOTIFICATION_PRODUCE_DOLL	인형 제조	人形制造	T-Doll Production	人形製造
+SETTING_NOTIFICATION_PRODUCE_DOLL_TOOLTIP	제조된 인형을 알림	通知制造的人形	Notify when T-Doll production has completed	製造完了した人形をアラート
+SETTING_NOTIFICATION_PRODUCE_DOLL_5_STAR	인형 제조 (5성)	制造5星人形	T-Doll Production (5 Star)	星5人形製造
+SETTING_NOTIFICATION_PRODUCE_DOLL_5_STAR_TOOLTIP	제조된 5성 인형을 알림	通知制造5星人形	Notify when 5 Star T-Doll production has completed	製造完了した星5人形をアラート
+SETTING_NOTIFICATION_PRODUCE_EQUIP	장비제조	装备制造	Equip Production	装備製造
+SETTING_NOTIFICATION_PRODUCE_EQUIP_TOOLTIP	제조된 장비를 알림	通知制造的装备	Notify when Equip production has completed	製造完了した装備をアラート
+SETTING_NOTIFICATION_PRODUCE_EQUIP_5_STAR	장비 제조 (5성)	制造5星装备	Equip Production (5 Star)	星5装備製造
+SETTING_NOTIFICATION_PRODUCE_EQUIP_5_STAR_TOOLTIP	제조된 5성 장비를 알림	通知制造5星装备	Notify when 5 Star Equip production has completed	製造完了した星5装備をアラート
+SETTING_NOTIFICATION_PRODUCE_SHOTGUN	샷건 제조	霰弹枪制造	Shotgun Production	ショットガン製造
+SETTING_NOTIFICATION_PRODUCE_SHOTGUN_TOOLTIP	제조된 샷건 인형을 알림	通知制造的霰弹枪	Notify when Shotgun T-Doll production has completed	製造完了したショットガン人形をアラート
+SETTING_NOTIFICATION_PRODUCE_FAIRY	요정 제조	妖精制造	Fairy Production	妖精製造
+SETTING_NOTIFICATION_PRODUCE_FAIRY_TOOLTIP	제조된 요정을 알림	通知制造的妖精	Notify when Fairy production has completed	製造完了した妖精をアラート
+SETTING_NOTIFICATION_COSTUME_GROUP	지휘관 복장 효과	指挥官服装效果	Costume	指揮官アバター効果
+SETTING_NOTIFICATION_COSTUME_DOLL_EXP_BONUS	브리핑 능력	作战总结	Briefing Skill	ブリーフィング能力
+SETTING_NOTIFICATION_COSTUME_DOLL_EXP_BONUS_TOOLTIP	전투에서 얻는 인형 경험치 상승[br][font color='#ffb400'](상승 보너스)[/font]	战斗产生的人形经验[br][font color='#ffb400'](上升)[/font]	Increase T-Doll Exp earned during battle[br][font color='#ffb400'](Increase Bonus)[/font]	戦闘で得る人形経験値上昇[br][font color='#ffb400'](上昇ボーナス)[/font]
+SETTING_NOTIFICATION_COSTUME_RESTORE_TIME	자장가	摇篮曲	Lullaby	子守歌
+SETTING_NOTIFICATION_COSTUME_RESTORE_TIME_TOOLTIP	인형/중장비 수복 시간 단축[br][font color='#ffb400'](단축 보너스)[/font]	重装人形和普通人形的修复时间减少[br][font color='#ffb400'](减少)[/font]	Decrease T-Doll/HOC Repair time[br][font color='#ffb400'](Decrease Bonus)[/font]	人形/重装備部隊修理時間短縮[br][font color='#ffb400'](短縮ボーナス)[/font]
+SETTING_NOTIFICATION_COSTUME_SKILL_TIME	속성 훈련	速成培训	Haste Training	速成訓練
+SETTING_NOTIFICATION_COSTUME_SKILL_TIME_TOOLTIP	인형/요정/중장비 스킬 훈련 시간 단축[br][font color='#ffb400'](단축 보너스)[/font]	减少技能训练时间[br][font color='#ffb400'](减少)[/font]	Decrease T-Doll/Fairy/HOC Skill Training time[br][font color='#ffb400'](Decrease Bonus)[/font]	人形/妖精/重装備部隊　スキル訓練時間短縮[br][font color='#ffb400'](短縮ボーナス)[/font]
+SETTING_NOTIFICATION_EXTRA_GROUP	기타	其他	Extra	その他
+SETTING_NOTIFICATION_EXTRA_ADVANCED_NOTIFICATION	미리 알림	预先通知	Advanced Notification	事前アラート
+SETTING_NOTIFICATION_EXTRA_ADVANCED_NOTIFICATION_TOOLTIP	알림들이 설정된 시간만큼 일찍 울리게 설정	设定让通知像设定的时间一样早点响起	Notify in advance for set amount of time	設定した秒数分事前にアラートを行う
+SETTING_NOTIFICATION_EXTRA_ADVANCED_NOTIFICATION_UNIT	초	秒	Sec	秒
+SETTING_LANGUAGE_GROUP	언어	语言设置	Language	言語設定
+SETTING_NOTIFICATION_GROUP	알림 설정	通知设置	Notification	アラート設定
+SETTING_TOAST_GROUP	윈도우 알림	操作系统设置	Windows Toast	WINDOWSアラート
+SETTING_TOAST_USE_WIN_TOAST	윈도우 알림	操作系统设置	Windows Toast	WINDOWSアラート
+SETTING_TOAST_USE_WIN_TOAST_TOOLTIP	윈도우 토스트 또는 트레이 풍선 알림을 사용	启用Windows Toast或工具提示通知	Use Windows Toast Notification or System Tray Bubble Notification	通知バナー、もしくはタスクトレイからのアラートを行う
+SETTING_TOAST_USE_STRONG_WIN_TOAST	+강한 알림	+强烈的通知	+Strong Toast	+アラートパワーアップ
+SETTING_TOAST_USE_STRONG_WIN_TOAST_TOOLTIP	알림에 집중되도록 시스템 소리를 일시적으로 줄이고 알림을 오랫동안 띄움 (운영체제 지원 시 가능)	暂时减少系统语音,以便集中通知(操作系统支持时可用)	Lowers System Volume temporarily and increases pop-up time to strengthen notification (Available only if supported by OS)	アラートが聞こえやすくなるようにシステム音を一時的に小さくしてアラートを長くする
+SETTING_TOAST_USE_VOICE	+음성 알림[br][font size='11px'](별도 소리 알림)[/font]	+语音通知[br][font size='11px'](附加语音通知)[/font]	+Voice Notification[br][font size='11px'](Alternate Sound Notification)[/font]	+ボイスアラート[br][font size='11px'](別途のサウンドでアラート)[/font]
+SETTING_TOAST_USE_VOICE_TOOLTIP	소리가 나지 않는 경우 대체 알림으로 사용 가능, 음성 데이터 미설치 또는 해당 인형 음성이 존재하지 않을 경우 기본 알림 소리를 출력함	不出语音时可使用代替通知, 未设置语音数据或不存在相应人形语音时,输出基本提示语音	Plays default sound if voice data is not installed or missing. Can replace with personalized sound if voice data is missing	サウンドが出ない場合、代替のアラートで設定可能、音声データ設置してないか該当人形の音声データが存在してない場合基本アラートサウンドを出力する
+SETTING_TOAST_USE_VOICE_COMMENT	[a href='{0}']링크[/a]의 음성데이터 설치 시 인형 음성 알림 사용가능	安装[a href='{0}']链接[/a]的语音数据时可使用人形语音通知	Download T-Doll voice data from [a href='{0}']link[/a] to use T-Doll Voice Notification	[a href='{0}']アドレス[/a]の音声データをインストールした場合、人形ボイスアラート設定可能
+SETTING_TOAST_USE_ONLY_ADJUTANT_VOICE	음성 알림 부관만	只要副官的语音	Adjutant Voice Only	アラート設定（副官）
+SETTING_TOAST_USE_ONLY_ADJUTANT_VOICE_TOOLTIP	모든 인형 음성을 부관 음성으로 변경	所有人形的语音换成副官的语音	Play all T-Doll voice notifications as Adjutant's voice	全ての人形ボイスを副官ボイスに変更
+SETTING_TOAST_USE_START_VOICE	군수/자율 출발 음성	后勤支援/自律作战执行语音		
+SETTING_TOAST_USE_START_VOICE_TOOLTIP	군수/자율 출발 시 음성 알림	后勤支援/自律作战执行时，语音通知		
+SETTING_TOAST_VOICE_VOLUME	음성 알림 볼륨	语音通知音量	Voice Volume	ボイスアラートのボリューム
+SETTING_TOAST_VOICE_VOLUME_TOOLTIP	음성 알림 볼륨 설정	设定语音通知音量	Set voice volume	ボイスアラートのボリューム設定
+SETTING_TOAST_USE_SOUNDPLAYER_API	구버전 소리 API	旧版本语音API	Use SoundPlayerAPI	古いバージョンのサウンドAPI
+SETTING_TOAST_USE_SOUNDPLAYER_API_TOOLTIP	음성 알림 소리에 문제가 있는 경우에만 사용할 것[br][font color='#F44336'](사용 시 볼륨 설정 사용 불가)[/font]	只在语音通知有问题时使用[br][font color='#F44336'](使用时不可设定音量)[/font]	Use only if there is a problem with voice notification[br][font color='#F44336'](Can't adjust volume if enabled)[/font]	ボイスアラートに問題がある場合設定してください[br][font color='#F44336'](設定した場合ボリューム設定不可)[/font]
+SETTING_TOAST_TEST_BUTTON	테스트 알림	测试通知	TEST	テストアラート
+SETTING_MAIL_GROUP	메일 알림	邮件通知	Mail Notification	メールアラート
+SETTING_MAIL_USE_MAIL	메일 알림	邮件通知	Mail Notification	メールアラート
+SETTING_MAIL_USE_MAIL_TOOLTIP	Android/iOS 기기 사용자가 사용할 수 있는 메일 알림	Android/iOS机器用户可以使用的邮件通知	Sends email notification for Android/iOS device users	Android/iOS 端末利用者が使えるメールアラート
+SETTING_MAIL_USE_MAIL_COMMENT	[a href='{0}']링크[/a]를 참고해서 메일주소 설정 후 사용가능	按[a href='{0}']链接[/a]设定邮件后可使用	Can be used after referring to [a href='{0}']link[/a] to set email	[a href='{0}']サイト[/a]を参考してメールアドレス設定後使える
+SETTING_MAIL_SMTP_ADDRESS	SMTP 주소	SMTP 地址	SMTP Address	SMTP 住所
+SETTING_MAIL_FROM_MAIL_ADDRESS	알림 보낼 메일주소 (알리미용)	发送通知的邮件地址 (通知器专用)	From Mail Address (For GFAlarm)	アラートを受けるメールアドレス(アラート用)
+SETTING_MAIL_FROM_MAIL_PASSWORD	알림 보낼 메일 앱 비밀번호 (알리미용)	发送通知的邮件的密码 (通知器专用)	From Mail App Password (For GFAlarm)	アラートを受けるメールパスワード (アラート用)
+SETTING_MAIL_TO_MAIL_ADDRESS	알림 받을 메일주소	收到通知的邮件地址	To Mail Address	アラートを受けるメールアドレス
+SETTING_MAIL_TEST_BUTTON	테스트 메일	测试邮件	Test	テストメール
+SETTING_TOAST_USE_TAB	탭 알림	页签通知	Tab Notification	タップアラート
+SETTING_TOAST_USE_TAB_TOOLTIP	완료된 알림 존재 시 탭을 하이라이트	已完成的提示存在时,以页签为重要标志	Highlights Tab with completed notification	完了したアラートがある場合タブをハイライトする
+SETTING_FILE_GROUP	파일 저장	储存文件	File Save	ファイル保存
+SETTING_FILE_ENCODING	인코딩	编码	Encoding	エンコディング
+SETTING_FILE_SAVE_USER_INFO	사용자정보 저장	储存用户信息	Save User Info	ユーザー情報保存
+SETTING_FILE_SAVE_USER_INFO_TOOLTIP	로그인 시 전체 사용자정보 저장[br](user_info.json)	登录时存用户的所有信息[br](user_info.json)	Save User Info when logging in[br](user_info.json)	ログインする際、全てのユーザー情報保存[br](user_info.json)
+SETTING_FILE_SAVE_USER_INFO_COMMENT	[a href='{0}']칩셋조합기[/a]에서 사용가능	[a href='{0}']芯片组合机[/a]可使用	Used for [a href='{0}']GFChipCalc[/a]	[a href='{0}']テトリス組み合わせツール[/a]で使える
+SETTING_FILE_SAVE_ITEM_INFO	아이템정보 저장	储存物品信息	Save Item Info	アイテム情報保存
+SETTING_FILE_SAVE_ITEM_INFO_TOOLTIP	로그인 시 아이템정보 저장[br](item_info.csv)	登录时存储存物品信息[br](item_info.csv)	Save Item Info when logging in[br](item_info.csv)	ログインする際、アイテム情報保存[br](item_info.csv)
+SETTING_FILE_SAVE_DOLL_INFO	인형정보 저장	储存人形信息	Save Doll Info	人形情報保存
+SETTING_FILE_SAVE_DOLL_INFO_TOOLTIP	로그인 시 인형정보 저장[br](doll_info.csv)	登录时储存人形信息[br](doll_info.csv)	Save T-Doll Info when logging in[br](doll_info.csv)	ログインする際、人形情報保存[br](doll_info.csv)
+SETTING_FILE_SAVE_EQUIP_INFO	장비정보 저장	储存装备信息	Save Equip Info	装備情報保存
+SETTING_FILE_SAVE_EQUIP_INFO_TOOLTIP	로그인 시 장비정보 저장[br](equip_info.csv)	登录时储存装备信息[br](equip_info.csv)	Save Equip Info when logging in[br](equip_info.csv)	ログインする際、装備情報保存[br](equip_info.csv)
+SETTING_FILE_SAVE_FAIRY_INFO	요정정보 저장	储存妖精信息	Save Fairy Info	妖精情報保存
+SETTING_FILE_SAVE_FAIRY_INFO_TOOLTIP	로그인 시 요정정보 저장[br](fairy_info.csv)	登录时储存妖精信息[br](fairy_info.csv)	Save Fairy Info when logging in[br](fairy_info.csv)	ログインする際、妖精情報保存[br](fairy_info.csv)
+SETTING_FILE_SAVE_RESCUE_DOLL	획득인형 저장	储存获得的人形	Save Rescue Doll	獲得人形情報保存
+SETTING_FILE_SAVE_RESCUE_DOLL_TOOLTIP	전역 중 획득한 인형 저장[br](rescued_doll.csv)	储存作战中获得的人形[br](rescued_doll.csv)	Save Rescued T-Dolls list[br](rescued_doll.csv)	戦役クリア中獲得した人形情報保存[br](rescued_doll.csv)
+SETTING_FILE_SAVE_THEATER_EXERCISE_WAVE	국지전 웨이브 저장	储存战区攻略系统的波	Save Theater Exercise	戦区Wave情報保存
+SETTING_FILE_SAVE_THEATER_EXERCISE_WAVE_TOOLTIP	국지전 웨이브 정보 저장[br](theater_exercise.csv)	储存波的信息[br](theater_exercise.csv)	Save Theater wave info[br](theater_exercise.csv)	戦区Wave情報保存[br](theater_exercise.csv)
+SETTING_FILE_SAVE_THEATER_EXERCISE_WAVE_COMMENT	[a href='{0}']국지전 시트[/a]에서 배치확인	[a href='{0}']在战区攻略系统的Sheet[/a]可以看敌人的安排	Refer to [a href='{0}']Theater Sheet[/a] for layout	[a href='{0}']戦区シート[/a]で配置確認
+SETTING_FILE_SAVE_BATTLE_TESTER	테스터 프리셋 저장	储存测试者预置	Save Battle Tester Preset	テストプリセット
+SETTING_FILE_SAVE_BATTLE_TESTER_TOOLTIP	전투 테스터용 프리셋 저장[br](battle_tester_echelon_preset.gun)[br](battle_tester_squad_preset.sqd)[br](battle_tester_equip_preset.equip)	储存战斗测试者预置[br](battle_tester_echelon_preset.gun)[br](battle_tester_squad_preset.sqd)[br](battle_tester_equip_preset.equip)	Save preset for Batter Tester[br](battle_tester_echelon_preset.gun)[br](battle_tester_squad_preset.sqd)[br](battle_tester_equip_preset.equip)	戦闘テスター用プリセット保存[br](battle_tester_echelon_preset.gun)[br](battle_tester_squad_preset.sqd)[br](battle_tester_equip_preset.equip)
+SETTING_FILE_SAVE_BATTLE_TESTER_COMMENT	[a href='{0}']전투 테스터[/a]에서 사용가능	[a href='{0}']在战斗测试[/a]可使用	Used for [a href='{0}']Battle Tester[/a]	[a href='{0}']戦闘テスター[/a]で使える
+SETTING_WINDOW_GROUP	윈도우	窗口	Window	ツール
+SETTING_WINDOW_HIDE_TO_TRAY	트레이 숨김	隐藏到任务栏托盘	Hide to Tray	タスクトレイに置く
+SETTING_WINDOW_HIDE_TO_TRAY_TOOLTIP	최소화 시 트레이로 숨김	关闭时隐藏到任务栏托盘	Hides to System Tray when Minimized	最小化する場合タスクトレイに置く
+SETTING_WINDOW_OPACITY	창 투명도	窗口透明度	Window Opacity	ツールの透明度
+SETTING_WINDOW_OPACITY_TOOLTIP	알리미 창 투명도 설정	设定通知器的窗口透明度	Set Opacity for GFAlarm	アラートツールの透明度設定
+SETTING_WINDOW_COLOR	창 색상	窗口颜色	Window Color	ツールの色
+SETTING_WINDOW_COLOR_TOOLTIP	창 색상 설정[br](기본값 [font color='#007acc']#007ACC[/font])	设定窗口颜色[br](标准值 [font color='#007acc']#007ACC[/font])	Set window color[br](Default [font color='#007acc']#007ACC[/font])	ツールの色設定[br](デフォルト [font color='#007acc']#007ACC[/font])
+SETTING_WINDOW_STICKY_WINDOW	창 자석	窗口磁铁功能	Sticky Window	ツールの磁石機能
+SETTING_WINDOW_STICKY_WINDOW_TOOLTIP	알리미 창이 화면 가장자리에 붙도록 설정	设定通知器的窗口贴在屏幕边缘	Enable GFAlarm to stick to edge of screen	アラートのツールが画面の隅っこにつけるように設定
+SETTING_EXTRA_GROUP	기타	其他	Extra	その他
+SETTING_EXTRA_USE_CHECK_UPDATE	업데이트 확인	版本更新	Check for Update	アップデートチェック
+SETTING_EXTRA_USE_CHECK_UPDATE_TOOLTIP	알리미 실행 시 최신 업데이트가 있는지 확인	运行通知器时版本更新	Check for latest version of GFAlarm during launch	アラートツール起動する時最新バージョンがあるか確認
+SETTING_EXTRA_LOG_LEVEL_TOOLTIP	로그 레벨[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	日志等级[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	Log Level[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	ログレベル[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]
+SETTING_EXTRA_LOG_PACKET_TOOLTIP	로그에 패킷 출력[br]로그 레벨을 Info 이하로 설정할 것[br][font color='#F44336'](속도가 느려질 수 있음)[/font]	对日志输出包[br]日志等级设定到Info以下[br][font color='#F44336'](速度可能会变慢)[/font]	Print packets on log[br]Set Log Level to below Info[br][font color='#F44336'](Can slow down system)[/font]	ログにパケット出力[br]ログレベルをInfo以下に設定してください[br][font color='#F44336'](アプリが重くなるかも知れません)[/font]
+MESSAGE_CONNECT_SUBJECT	연결 상태	连接现况	Connection	連結状態
+MESSAGE_CONNECT_CONTENT	연결 성공	连接成功	Connection Success	連結成功
+MESSAGE_COMPLETE_LOGISTICS_SUBJECT	군수지원	后勤支援	Logistics	後方支援
+MESSAGE_COMPLETE_LOGISTICS_CONTENT	군수지원 {0} 도착	到达 {0} 后勤支援	Logistic support {0} completed	後方支援 {0} 完了
+MESSAGE_COMPLETE_AUTO_BATTLE_SUBJECT	자율작전	自律作战	Auto-Battle	自立作戦
+MESSAGE_COMPLETE_AUTO_BATTLE_CONTENT	자율작전 {0} 복귀	回归 {0} 自律作战	Auto-Battle {0} completed	自立作戦 {0} 完了
+MESSAGE_COMPLETE_COMBAT_REPORT_SUBJECT	작전보고서	作战报告	Combat Report	作戦報告書
+MESSAGE_COMPLETE_COMBAT_REPORT_CONTENT	작전보고서 {0}장 작성완료	制成了 {0}张 作战报告	Combat Report ({0} Sheets) completed	作戦報告書 {0}枚 作成完了
+MESSAGE_COMPLETE_PRODUCE_DOLL_SUBJECT	인형제조	人形制造	T-Doll Production	人形製造
+MESSAGE_COMPLETE_PRODUCE_DOLL_CONTENT	{0}성 인형 {1} ({2}) 제조완료	{0}星 人形 {1} ({2}) 完成制造	{1} ({0} Star) Production completed	星{0} 人形 {1} ({2}) 製造完了
+MESSAGE_COMPLETE_PRODUCE_EQUIP_SUBJECT	장비제조	装备制造	Equip Production	装備製造
+MESSAGE_COMPLETE_PRODUCE_EQUIP_CONTENT	{0}성 장비 {1} 제조완료	{0}星 装备 {1} 完成制造	{1} ({0} Star) Production completed	星{0} 装備 {1} 製造完了
+MESSAGE_COMPLETE_PRODUCE_FAIRY_CONTENT	요정 {0} 제조완료	妖精 {0} 完成制造	{0} Production completed	妖精 {0} 製造完了
+MESSAGE_COMPLETE_TRAIN_SKILL_SUBJECT	스킬훈련	技能训练	Skill Training	スキル訓練
+MESSAGE_COMPLETE_TRAIN_EXP_SUBJECT	경험훈련	经验训练	Exp Training	経験訓練
+MESSAGE_COMPLETE_TRAIN_DOLL_CONTENT	인형 {0} 훈련완료	人形 {0} 完成训练	{0} Training completed	人形 {0} 訓練完了
+MESSAGE_COMPLETE_TRAIN_FAIRY_CONTENT	요정 {0} 훈련완료	妖精 {0} 完成训练	{0} Training completed	妖精 {0} 訓練完了
+MESSAGE_COMPLETE_TRAIN_SQUAD_CONTENT	중장비 {0} 훈련완료	重装部队 {0} 完成训练	{0} Training completed	중装備 {0} 訓練完了
+MESSAGE_COMPLETE_DATA_ANALYSIS_SUBJECT	정보분석	情报解析	Data Analysis	情報分析
+MESSAGE_COMPLETE_DATA_ANALYSIS_CONTENT	정보분석 완료	完成情报解析	Data Analysis completed	情報分析完了
+MESSAGE_COMPLETE_RESTORE_SUBJECT	인형수복	人性修复	T-Doll Repair	人形修理
+MESSAGE_COMPLETE_RESTORE_CONTENT	인형 {0} 수복 완료	人形 {0} 修复成功	{0} Repair completed	人形 {0} 修理完了
+MESSAGE_COMPLETE_EXPLORE_SUBJECT	전진기지	前进营地	Forward Basecamp	前進基地
+MESSAGE_COMPLETE_EXPLORE_CONTENT	탐색제대 귀환	探索梯队返回	Explore completed	探索部隊帰還
+MESSAGE_MAX_SIM_POINT_SUBJECT	모의작전	模拟作战	Combat Simulation	模擬作戦
+MESSAGE_MAX_SIM_POINT_CONTENT	모의작전점수 {0}점 도달	模拟作战体力达到{0}点	Sim Energy {0} Point reached	模擬作戦基礎AP {0}になりました
+MESSAGE_MAX_SURPLUS_EXP_SUBJECT	자유경험치	全局经验值	Surplus Exp	トータル経験値
+MESSAGE_MAX_SURPLUS_EXP_CONTENT	자유경험치 상한 도달	全局经验值达到上限	Maximum Surplus Exp reached	トータル経験値上限到達
+MESSAGE_MAX_DOLL_SUBJECT	창고	人形仓库	Armory	倉庫
+MESSAGE_MAX_DOLL_CONTENT	인형 상한 도달	人形数达到上限	T-Doll Slot limit reached	人形上限到達
+MESSAGE_MAX_EQUIP_SUBJECT	창고	装备仓库	Armory	倉庫
+MESSAGE_MAX_EQUIP_CONTENT	장비 상한 도달	装备数达到上限	Equip Depot limit reached	装備上限到達
+MESSAGE_MISSION_RESCUE_DOLL_SUBJECT	창고	妖精仓库	T-Doll Slot	倉庫
+MESSAGE_MISSION_RESCUE_DOLL_CONTENT	{0}성 인형 {1} 획득	获得 {0}星 人形{1}	T-Doll {1} ({0} Star) rescued	星{0} 人形 {1} 獲得
+MESSAGE_MISSION_GET_EQUIP_SUBJECT	창고	装备仓库	Equip Depot	倉庫
+MESSAGE_MISSION_GET_EQUIP_CONTENT	장비 {0} ({1}성 {2}) 획득	获得 装备 {0} ({1}星 {2})	Equip {0} ({1} Star) obtained	装備 {0} (星{1} {2}) 獲得
+MESSAGE_MISSION_WIN_SUBJECT	전역	作战	Mission	戦役
+MESSAGE_MISSION_WIN_CONTENT	전역 승리	作战胜利	Mission completed	戦役勝利
+MESSAGE_MISSION_MOVE_TEAM_SUBJECT	전역	作战	Mission	戦役
+MESSAGE_MISSION_MOVE_TEAM_CONTENT	제대이동 완료 ({0}회 이동)	梯队移动完成 ({0}回 移动)	Planning Mode completed ({0} times moved)	部隊移動完了({0}回移動)
+MESSAGE_MISSION_MOVE_TEAM_AND_BATTLE_COMPLETE_SUBJECT	전역	作战	Mission	戦役
+MESSAGE_MISSION_MOVE_TEAM_AND_BATTLE_COMPLETE_CONTENT	제대이동 완료 (전투 완료)	梯队移动完成 (战斗结束)	Planning Mode completed (Battle complete)	部隊移動完了(戦闘完了)
+MESSAGE_DOLL_NEED_DUMMY_LINK_SUBJECT	인형	人形	T-Doll	人形
+MESSAGE_DOLL_NEED_DUMMY_LINK_CONTENT	{0}제대 {1} 편제확대 필요	{0}梯队 {1} 需要编制扩大	{0} Echelon {1} requires Dummy Link	{0}部隊 {1} 編制拡大必要
+MESSAGE_DOLL_MAX_LEVEL_SUBJECT	인형	人形	T-Doll	人形
+MESSAGE_DOLL_MAX_LEVEL_CONTENT	{0}제대 {1} 최대 레벨 도달	{0}梯队 {1} 达到最大等级	{0} Echelon {1} Max Level reached	{0}部隊 {1} レベルカンスト
+MESSAGE_DOLL_HP_WARNING_SUBJECT	인형	T-Doll	T-Doll	人形
+MESSAGE_DOLL_HP_WARNING_CONTENT	{0}제대 {1} 체력 경고 ({2}% 이하)	{0} Echelon {1} HP Warning	{0} Echelon {1} HP Warning	{0}部隊 {1} 修復が必要
+MESSAGE_PRODUCE_DOLL_SUBJECT	인형제조	人形制造	T-Doll Production	人形製造
+MESSAGE_PRODUCE_DOLL_CONTENT	{0}성 인형 {1} ({2}) 제조	制造 {0}星 人形 {1} ({2})	{2} {1} ({0} Star) Production completed	星{0} 人形 {1} ({2}) 製造
+MESSAGE_PRODUCE_EQUIP_SUBJECT	장비제조	装备制造	Equip Production	装備製造
+MESSAGE_PRODUCE_EQUIP_CONTENT	{0}성 장비 {1} 제조	制造{0}星 装备 {1}	{1} ({0} Star) Production completed	星{0} 装備 {1} 製造
+MESSAGE_PRODUCE_FAIRY_CONTENT	요정 {0} 제조	妖精 {0} 制造	{0} Production complete	妖精 {0} 製造
+MESSAGE_THEATER_EXERCISE_SAVE_WAVE_SUBJECT	국지전	战区攻略系统	Theater	戦区
+MESSAGE_THEATER_EXERCISE_SAVE_WAVE_CONTENT	국지전 웨이브 정보를 확인하려면 재로그인 필요	要确认战区攻略系统的信息时需要重新登录	Requires re-log in to check Theater Wave info	戦区Wave情報を確認したい場合は再ログイン必要
+MESSAGE_QUEST_DAILY_SUBJECT	일간임무	日常任务	Daily Quest	デイリー任務
+MESSAGE_QUEST_WEEKLY_SUBJECT	주간임무	周常任务	Weekly Quest	ウィークリー任務
+MESSAGE_QUEST_RESEARCH_SUBJECT	정보임무	情报任务	Research Quest	情報任務
+MESSAGE_QUEST_CONTENT	{0} 달성	达到 {0}	{0} Complete	{0} 達成
+MESSAGE_TEST_SUBJECT	테스트 알림	测试通知	Test Notification	テスト
+MESSAGE_TEST_CONTENT	테스트 알림 성공	测试通知成功	Test Notification Success	テストアラート OK
+MESSAGE_TEST_WITH_VOICE_CONTENT	인형 {0} 음성	人形 {0} 语音	Doll {0} Voice	人形 {0} ボイス
+MAIL_FORMAT	[소녀전선] {0}	[少女前线] {0}	[Girls Frontline] {0}	[ドルフロ] {0}
+MARRIED	서약	誓约	Married	誓約
+LOCKED	잠김	锁定	Locked	ロック
+DOLL_INFO_ID	ID	ID	ID	ID
+DOLL_INFO_NO	도감번호	图鉴编号	No	図鑑番号
+DOLL_INFO_TYPE	종류	类型	Type	種類
+DOLL_INFO_STAR	레어도	稀有度	Star	レアリティ
+DOLL_INFO_NAME	인형	人形	Name	人形
+DOLL_INFO_LEVEL	레벨	等级	Level	レベル
+DOLL_INFO_SUM_EXP	누적 경험치	累积经验值	Total Exp	累計経験値
+DOLL_INFO_CURRENT_EXP	현재 경험치	现在经验值	Current Exp	現在経験値
+DOLL_INFO_REQUIRE_EXP	필요 경험치	需要经验值	Required Exp	必要経験値
+DOLL_INFO_DUMMY_LINK	편제 수	编制数	Link	リンク数
+DOLL_INFO_MOD	개조	心智升级	MOD	改造
+DOLL_INFO_MAX_HP	최대 체력	最大生命	Max HP	最大HP
+DOLL_INFO_HP	체력	生命	HP	HP
+DOLL_INFO_POW	화력	伤害	Damage	火力
+DOLL_INFO_HIT	명중	命中	Accuracy	命中
+DOLL_INFO_DODGE	회피	回避	Evasion	回避
+DOLL_INFO_RATE	사속	射速	Rate of Fire	射速
+DOLL_INFO_SPEED	이동속도	移速	Move Speed	移動速度
+DOLL_INFO_ARMOR	장갑	护甲	Armor	防御
+DOLL_INFO_BULLET	장탄	上弹数	Rounds	弾約数
+DOLL_INFO_SKILL1	스킬1	技能1	Skill1	スキル1
+DOLL_INFO_SKILL2	스킬2	技能2	Skill2	スキル2
+DOLL_INFO_EQUIP1_ID	장비1 ID	装备1 ID	Equip1 ID	装備1 ID
+DOLL_INFO_EQUIP1_NAME	장비1	装备1	Equip1	装備1
+DOLL_INFO_EQUIP2_ID	장비2 ID	装备2 ID	Equip2 ID	装備2 ID
+DOLL_INFO_EQUIP2_NAME	장비2	装备2	Equip2	装備2
+DOLL_INFO_EQUIP3_ID	장비3 ID	装备3 ID	Equip3 ID	装備3 ID
+DOLL_INFO_EQUIP3_NAME	장비3	装备3	Equip3	装備3
+DOLL_INFO_FAVOR	호감도	好感	Affection	好感度
+DOLL_INFO_IS_MARRIED	서약여부	是否誓约	Oathed	誓約チェック
+DOLL_INFO_MARRIED_DATETIME	서약일	誓约日	Oathed Datetime	誓約日
+DOLL_INFO_IS_LOCK	잠김여부	是否锁定	Locked	ロックチェック
+EQUIP_INFO_ID	ID	ID	ID	ID
+EQUIP_INFO_NO	도감번호	图鉴编号	No.	図鑑番号
+EQUIP_INFO_TYPE	종류	类型	Type	種類
+EQUIP_INFO_STAR	레어도	稀有度	Star	レアリティ
+EQUIP_INFO_NAME	장비	装备	Name	装備
+EQUIP_INFO_USE_DOLL_ID	착용인형 ID	穿戴人形ID	Doll ID	着用人形 ID
+EQUIP_INFO_USE_DOLL_NAME	착용인형	穿戴人形	Doll	着用人形
+EQUIP_INFO_POW	화력	伤害	Damage	火力
+EQUIP_INFO_HIT	명중	命中	Accuracy	命中
+EQUIP_INFO_DODGE	회피	回避	Evasion	回避
+EQUIP_INFO_RATE	사속	射速	Rate of Fire	射速
+EQUIP_INFO_SPEED	이동속도	移速	Move Speed	移動速度
+EQUIP_INFO_CRIT_PERCENT	치명상	暴击	Crit.Rate	会心ダメージ
+EQUIP_INFO_CRIT_HARM_RATE	치명률	暴击概率	Crit.Damage	会心率
+EQUIP_INFO_ARMOR_PIERCING	관통	穿甲	Armor Pen.	破甲
+EQUIP_INFO_ARMOR	장갑	护甲	Armor	防御
+EQUIP_INFO_SHIELD	보호막	护盾	Shield	シールド
+EQUIP_INFO_DAMAGE_AMPLIFY	피해 증폭	伤害提升	Damage Amplify	被害増幅
+EQUIP_INFO_DAMAGE_REDUCTION	피해 감쇄	伤害降低	Damage Reduction	被害減殺
+EQUIP_INFO_NIGHT_VIEW_PERCENT	야시능력	夜视能力	Night View	暗視能力
+EQUIP_INFO_BULLET_NUMBER_UP	장탄수	上弹数	Rounds	弾薬数
+EQUIP_INFO_EXP	장비경험치	装备经验值	Equip Exp	装備経験値
+EQUIP_INFO_LEVEL	강화레벨	强化等级	Equip Level	強化レベル
+EQUIP_INFO_ADJUST_COUNT	교정횟수	矫正次数	Adjust Count	校正回数
+EQUIP_INFO_IS_LOCKED	잠김여부	是否锁定	Locked	ロックチェック
+FAIRY_INFO_ID	ID	ID	ID	ID
+FAIRY_INFO_NO	도감번호	图鉴编号	No	図鑑番号
+FAIRY_INFO_NAME	요정	妖精	Name	妖精
+FAIRY_INFO_QUALITY_LEVEL	레어도	稀有度	Star	レアリティ
+FAIRY_INFO_QUALITY_EXP	개발수치	开发值	Dev. Rate	開発値
+FAIRY_INFO_LEVEL	레벨	等级	Level	レベル
+FAIRY_INFO_TRAIT	특성	特性	Talent	天賦
+FAIRY_INFO_SKILL	스킬	技能	Skill	スキル
+FAIRY_INFO_IS_LOCKED	잠김여부	是否锁定	Locked	ロックチェック
+RESCUE_DOLL_DATETIME	날짜시각	日期时间	Datetime	日付
+RESCUE_DOLL_MISSION_ID	전역 ID	作战 ID	Mission ID	戦役ID
+RESCUE_DOLL_MISSION_NAME	전역	作战	Mission	戦役
+RESCUE_DOLL_MISSION_COUNT	전역횟수	作战次数	Mission Attempt	戦役回数
+RESCUE_DOLL_DOLL_ID	인형 ID	人形ID	Doll ID	人形ID
+RESCUE_DOLL_DOLL_NAME	인형	人形	Doll	人形
+RESCUE_DOLL_DOLL_STAR	레어도	稀有度	Star	レアリティ
+RESCUE_DOLL_DOLL_CORE	코어	核心	Core	コア
+DOLL_1	콜트 리볼버	柯尔特左轮	SAA	コルトSAA
+DOLL_2	M1911	M1911	M1911	M1911
+DOLL_3	M9	M9	M9	M9
+DOLL_4	콜트 파이슨	蟒蛇	Colt Python	Python
+DOLL_5	나강 리볼버	纳甘左轮	M1895	M1895
+DOLL_6	토카레프	托卡列夫	Tokarev	トカレフ
+DOLL_7	스테츠킨	斯捷奇金	Stechkin	スチェッキン
+DOLL_8	마카로프	马卡洛夫	Makarov	マカロフ
+DOLL_9	P38	P38	P38	P38
+DOLL_10	PPK	PPK	PPK	PPK
+DOLL_11	P08	P08	P08	P08
+DOLL_12	C96	C96	C96	C96
+DOLL_13	92식	92式	Type92	92式
+DOLL_14	아스트라 리볼버	阿斯特拉左轮	Astra	アストラ
+DOLL_15	글록17	格洛克17	G17	G17
+DOLL_16	톰슨	汤姆森	Thompson	トンプソン
+DOLL_17	M3	M3	M3	M3
+DOLL_18	MAC-10	MAC-10	Ingram	イングラム
+DOLL_19	FMG-9	FMG-9	FMG-9	FMG-9
+DOLL_20	Vector	Vector	Vector	Vector
+DOLL_21	PPSh-41	PPSh-41	PPSh-41	PPSh-41
+DOLL_22	PPS-43	PPS-43	PPS-43	PPS-43
+DOLL_23	PP-90	PP-90	PP-90	PP-90
+DOLL_24	PP-2000	PP-2000	PP-2000	PP-2000
+DOLL_25	MP40	MP40	MP40	MP40
+DOLL_26	MP5	MP5	Gr MP5	Gr MP5
+DOLL_27	스콜피온	蝎式	Skorpion	スコーピオン
+DOLL_28	MP7	MP7	MP7	Gr MP7
+DOLL_29	스텐Mk II	司登MkⅡ	STEN MkII	ステンMK-II
+DOLL_30				
+DOLL_31	베레타 38형	伯莱塔38型	M38	M38
+DOLL_32	마이크로 우지	微型乌兹	Micro Uzi	Micro Uzi
+DOLL_33	m45	m45	m45	m45
+DOLL_34	M1 개런드	M1加兰德	M1 Garand	M1ガーランド
+DOLL_35	M1A1	M1A1	M1A1	M1A1
+DOLL_36	스프링필드	春田	Springfield	スプリングフィールド
+DOLL_37	M14	M14	M14	M14
+DOLL_38	M21	M21	M21	M21
+DOLL_39	모신나강	莫辛-纳甘	Mosin-Nagant	モシン・ナガン
+DOLL_40	SVT-38	SVT-38	SVT-38	SVT-38
+DOLL_41	시모노프	西蒙诺夫	SKS	SKS
+DOLL_42	PTRD	PTRD	PTRD	PTRD
+DOLL_43	SVD	SVD	SVD	SVD
+DOLL_44	SV-98	SV-98	SV-98	SV-98
+DOLL_45				
+DOLL_46	Kar98k	Kar98k	Kar98k	Kar98k
+DOLL_47	G43	G43	G43	G43
+DOLL_48	WA2000	WA2000	WA2000	WA2000
+DOLL_49	56식 반	56式半	Type 56	56式半
+DOLL_50	리엔필드	李-恩菲尔德	Lee Enfield	リー・エンフィールド
+DOLL_51	FN-49	FN-49	FF FN49	FF FN-49
+DOLL_52	BM59	BM59	VM59	It BM59
+DOLL_53	NTW-20	NTW-20	NTW-20	NTW-20
+DOLL_54	M16A1	M16A1	M16A1	M16A1
+DOLL_55	M4A1	M4A1	M4A1	M4A1
+DOLL_56	M4 SOPMOD II	M4 SOPMOD II	M4 SOPMOD II	M4 SOPMOD II
+DOLL_57	ST AR-15	ST AR-15	ST AR-15	ST AR-15
+DOLL_58	AK-47	AK-47	AK-47	AK-47
+DOLL_59	AK-74U	AK-74U	AK-74U	AK74U
+DOLL_60	AS Val	AS Val	AS Val	AS Val
+DOLL_61	StG44	StG44	StG44	StG44
+DOLL_62	G41	G41	Gr G41	Gr G41
+DOLL_63	G3	G3	Gr G3	Gr G3
+DOLL_64	G36	G36	Gr G36	Gr G36
+DOLL_65	HK416	HK416	416	416
+DOLL_66	56-1식	56-1式	Type56-1	56-1式
+DOLL_67				
+DOLL_68	L85A1	L85A1	L85A1	L85A1
+DOLL_69	FAMAS	FAMAS	Fr FAMAS	Fr FAMAS
+DOLL_70	FNC	FNC	FF FNC	FF FNC
+DOLL_71	갈릴	加利尔	Galil	ガリル
+DOLL_72	TAR-21	TAR-21	TAR-21	TAR-21
+DOLL_73	AUG	AUG	AUG	AUG
+DOLL_74	SIG-510	SIG-510	SIG-510	SIG-510
+DOLL_75	M1918	M1918	M1918	M1918
+DOLL_76				
+DOLL_77	M2HB	M2HB	M2HB	M2HB
+DOLL_78	M60	M60	M60	M60
+DOLL_79	M249 SAW	M249 SAW	FF M249SAW	FF M249 SAW
+DOLL_80	M1919A4	M1919A4	M1919A4	M1919A4
+DOLL_81	LWMMG	LWMMG	LWMMG	LWMMG
+DOLL_82	DP28	DP28	DP28	DP28
+DOLL_83				
+DOLL_84	RPD	RPD	RPD	RPD
+DOLL_85	PK	PK	PK	PK
+DOLL_86	MG42	MG42	MG42	MG42
+DOLL_87	MG34	MG34	MG34	MG34
+DOLL_88	MG3	MG3	MG3	MG3
+DOLL_89	브렌	布伦	Bren	ブレン
+DOLL_90	FNP-9	FNP-9	FF FNP9	FF FNP-9
+DOLL_91	MP-446	MP-446	MP-446	MP-446
+DOLL_92	Spectre M4	Spectre M4	Spectre M4	スペクトラM4
+DOLL_93	IDW	IDW	IDW	IDW
+DOLL_94	64식	64式	Type64	64式
+DOLL_95	한양조 88식	汉阳造88式	Type88	漢陽88式
+DOLL_96	그리즐리Mk V	灰熊Mk Ⅴ	Grizzly	グリズリー
+DOLL_97	M950A	M950A	M950A	M950A
+DOLL_98	SPP-1	SPP-1	SPP-1	SPP-1
+DOLL_99	Mk23	Mk23	Gr Mk23	Gr Mk23
+DOLL_100	P7	P7	P7	P7
+DOLL_101	UMP9	UMP9	UMP9	UMP9
+DOLL_102	UMP40	UMP40	UMP40	UMP40
+DOLL_103	UMP45	UMP45	UMP45	UMP45
+DOLL_104	G36C	G36C	Gr G36C	Gr G36c
+DOLL_105	OTs-12	OTs-12	OTs-12	OTs-12
+DOLL_106	FAL	FAL	FAL	FAL
+DOLL_107	F2000	F2000	FF F2000	FF F2000
+DOLL_108	CZ-805	CZ-805	CZ-805	CZ-805
+DOLL_109	MG5	MG5	Gr MG5	Gr MG5
+DOLL_110	FG42	FG42	FG42	FG42
+DOLL_111	AAT-52	AAT-52	AAT-52	AAT-52
+DOLL_112	네게브	内格夫	Negev	ネゲヴ
+DOLL_113	세르듀코프	谢尔久科夫	Serdyukov	セルジュコフ
+DOLL_114	웰로드Mk II	维尔德MkⅡ	Welrod MkII	ウェルロッドMkII
+DOLL_115	수오미	索米	Suomi	スオミ
+DOLL_116	Z-62	Z-62	Z-62	Z-62
+DOLL_117	PSG-1	PSG-1	Gr PSG-1	Gr PSG-1
+DOLL_118	9A-91	9A-91	9A-91	9A-91
+DOLL_119	OTs-14	OTs-14	OTs-14	OTs-14
+DOLL_120	ARX-160	ARX-160	ARX-160	ARX-160
+DOLL_121	Mk48	Mk48	Mk48	Mk48
+DOLL_122	G11	G11	Gr G11	Gr G11
+DOLL_123	P99	P99	P99	P99
+DOLL_124	Super SASS	Super SASS	Super SASS	Super SASS
+DOLL_125	MG4	MG4	Gr MG4	Gr MG4
+DOLL_126	NZ75	NZ75	NZ75	NZ75
+DOLL_127	79식	79式	Type79	79式
+DOLL_128	M99	M99	M99	M99
+DOLL_129	95식	95式	Type95	95式
+DOLL_130	97식	97式	Type97	97式
+DOLL_131	EVO 3	EVO 3	EVO 3	EVO 3
+DOLL_132	59식	59式	Type59	59式
+DOLL_133	63식	63式	Type63	63式
+DOLL_134	AR70	AR70	AR70	AR70
+DOLL_135	SR-3MP	SR-3MP	SR-3MP	SR-3MP
+DOLL_136	PP-19	PP-19	PP-19	PP-19
+DOLL_137	PP-19-01	PP-19-01	PP-19-01	PP-19-01
+DOLL_138	6P62	6P62	6P62	6P62
+DOLL_139	Bren Ten	Bren Ten	Bren Ten	ブレン・テン
+DOLL_140	PSM	PSM	PSM	PSM
+DOLL_141	USP Compact	USP Compact	Gr USPCompact	Gr USPコンパクト
+DOLL_142	Five-seveN	Five-seveN	Five-seveN	Five-seven
+DOLL_143	RO635	RO635	RO635	RO635
+DOLL_144	MT-9	MT-9	MT-9	MT-9
+DOLL_145	OTs-44	OTs-44	OTs-44	OTs-44
+DOLL_146	G28	G28	Gr G28	Gr G28
+DOLL_147	SSG 69	SSG 69	SSG 69	SSG 69
+DOLL_148	IWS 2000	IWS 2000	IWS 2000	IWS 2000
+DOLL_149	AEK-999	AEK-999	AEK-999	AEK-999
+DOLL_150	시프카	希普卡	Shipka	シプカ
+DOLL_151	M1887	M1887	M1887	M1887
+DOLL_152	M1897	M1897	M1897	M1897
+DOLL_153	M37	M37	M37	M37
+DOLL_154	M500	M500	M500	M500
+DOLL_155	M590	M590	M590	M590
+DOLL_156	Super-Shorty	Super-Shorty	Super-Shorty	Super-Shorty
+DOLL_157	KSG	KSG	Am KSG	Am KSG
+DOLL_158	KS-23	KS-23	KS-23	KS-23
+DOLL_159	RMB-93	RMB-93	RMB-93	RMB-93
+DOLL_160	Saiga-12	Saiga-12	Saiga-12	Saiga-12
+DOLL_161	97식 산탄총	97式霰	Type97S	97式散
+DOLL_162	SPAS-12	SPAS-12	SPAS-12	SPAS-12
+DOLL_163	AA-12	AA-12	AA-12	AA-12
+DOLL_164	FP-6	FP-6	FP-6	FP6
+DOLL_165	M1014	M1014	M1014	M1014
+DOLL_166	CZ75	CZ75	CZ75	CZ75
+DOLL_167	HK45	HK45	Gr HK45	Gr HK45
+DOLL_168	Spitfire	Spitfire	Spitfire	Spitfire
+DOLL_169	SCW	SCW	SCW	SCW
+DOLL_170	Ash-12.7	Ash-12.7	Ash-12.7	Ash-12.7
+DOLL_171	리베롤	利贝罗勒	Ribeyrolles	リベロール
+DOLL_172	RFB	RFB	Am RFB	Am RFB
+DOLL_173	PKP	PKP	PKP	PKP
+DOLL_174	81식 카빈	八一式马	Type81R	81式カービン
+DOLL_175	ART556	ART556	ART556	ART556
+DOLL_176	TMP	TMP	TMP	TMP
+DOLL_177	KLIN	KLIN	KLIN	KLIN
+DOLL_178	F1	F1	F1	F1
+DOLL_179	DSR-50	DSR-50	Gd DSR-50	Gd DSR-50
+DOLL_180	PzB39	PzB39	PzB39	PzB39
+DOLL_181	T91	T91	T91	T91
+DOLL_182	wz.29	wz.29	wz.29	wz.29
+DOLL_183	컨텐더	竞争者	Contender	コンテンダー
+DOLL_184	T-5000	T-5000	T-5000	T-5000
+DOLL_185	아멜리	阿梅利	Ameli	Ameli
+DOLL_186	P226	P226	P226	P226
+DOLL_187	Ak 5	Ak 5	Ak 5	Ak 5
+DOLL_188	S.A.T.8	S.A.T.8	S.A.T.8	S.A.T.8
+DOLL_189	USAS-12	USAS-12	USAS-12	USAS-12
+DOLL_190	NS2000	NS2000	NS2000	NS2000
+DOLL_191	M12	M12	M12	M12
+DOLL_192	JS05	JS05	JS05	JS05
+DOLL_193	T65	T65	T65	T65
+DOLL_194	K2	K2	K2	K2
+DOLL_195	HK23	HK23	HK23	Gr MG23
+DOLL_196	Zas M21	Zas M21	Zas M21	Zas M21
+DOLL_197	카르카노M1891	卡尔卡诺M1891	Carcano M1891	カルカノM1891
+DOLL_198	카르카노M91/38	卡尔卡诺M91/38	Carcano M91/38	カルカノM91/38
+DOLL_199	80식	80式	Type80	80式
+DOLL_200	XM3	XM3	XM3	XM3
+DOLL_201	게파드 M1	猎豹M1	Gepard M1	ゲパードM1
+DOLL_202	썬더	雷电	Thunder	サンダー
+DOLL_203	허니뱃저	蜜獾	Honey Badger	ハニー・バジャー
+DOLL_204	발리스타	芭莉斯塔	Ballista	バリスタ
+DOLL_205	AN-94	AN-94	AN-94	AN-94
+DOLL_206	AK-12	AK-12	AK-12	AK-12
+DOLL_207	CZ2000	CZ2000	CZ2000	CZ2000
+DOLL_208	HK21	HK21	HK21	HK21
+DOLL_209	OTs-39	OTs-39	OTs-39	OTs-39
+DOLL_210	CZ52	CZ52	CZ52	CZ52
+DOLL_211	SRS	SRS	SRS	SRS
+DOLL_212	K5	K5	K5	K5
+DOLL_213	C-MS	C-MS	C-MS	C-MS
+DOLL_214	ADS	ADS	ADS	ADS
+DOLL_215	MDR	MDR	MDR	MDR
+DOLL_216	XM8	XM8	XM8	XM8
+DOLL_217	SM-1	SM-1	SM-1	SM-1
+DOLL_218	T77	T77	T77	T77
+DOLL_219				
+DOLL_220	MP-443	MP-443	MP-443	MP-443
+DOLL_221	GSh-18	GSh-18	GSh-18	GSh-18
+DOLL_222	TAC-50	TAC-50	TAC-50	TAC-50
+DOLL_223	Model L	Model L	Model L	CETME556
+DOLL_224	PM-06	PM-06	PM-06	PM-06
+DOLL_225	Cx4 스톰	Cx4 风暴	Cx4 Storm	Cx4 Storm
+DOLL_226	Mk 12	Mk 12	Mk 12	Mk12
+DOLL_227	A-91	A-91	A-91	A-91
+DOLL_228	100식	100式	100 Shiki	一〇〇式
+DOLL_229	M870	M870	M870	M870P
+DOLL_230	OBR	OBR	OBR	OBR
+DOLL_231	M82A1	M82A1	M82A1	M82A1
+DOLL_232	MP-448	MP-448	MP-448	MP-448
+DOLL_233	Px4 스톰	Px4 风暴	Px4 Storm	Px4 Storm
+DOLL_234	JS 9	JS 9	JS 9	JS 9
+DOLL_235	SPR A3G	SPR A3G	SPR A3G	SPR A3G
+DOLL_236	K11	K11	K11	K11
+DOLL_237	SAR-21	SAR-21	SAR-21	SAR21
+DOLL_238	88식	88式	QJY-88	88式
+DOLL_239	03식	03式	Type 03	03式
+DOLL_240	Mk46	Mk46	Mk46	Mk46
+DOLL_241	RT-20	RT-20	RT-20	RT20
+DOLL_242	P22	P22	P22	P22
+DOLL_243	64식 소총	64式自	64 Shiki	64式自
+DOLL_244	TEC-9	TEC-9	TEC-9	TEC-9
+DOLL_245	P90	P90	P90	P90
+DOLL_246				
+DOLL_247	K31	K31	K31	K31
+DOLL_248	제리코	杰里科	Jericho	ジェリコ
+DOLL_249	62식	62式	62 Shiki	62式
+DOLL_250	HS2000	HS2000	HS2000	HS2000
+DOLL_251	X95	X95	X95	X95
+DOLL_252	KSVK	KSVK	KSVK	KSVK
+DOLL_253	루이스	刘易斯	Lewis Gun	ルイス
+DOLL_254	UKM-2000	UKM-2000	UKM-2000	UKM-2000
+DOLL_255	스카웃	侦察者	Steyr Scout	スカウト
+DOLL_256	팔콘	隼	Falcon	ファルコン
+DOLL_257	M200	M200	M200	M200
+DOLL_258	마갈	马盖尔	Magal	マガル
+DOLL_259	PM-9	PM-9	PM-9	PM-9
+DOLL_260	PA-15	PA-15	PA-15	PA-15
+DOLL_261	QBU-88	QBU-88	QBU-88	QBU-88
+DOLL_262	EM-2	EM-2	EM-2	EM-2
+DOLL_263	MG36	MG36	MG36	MG36
+DOLL_264	쇼샤	绍沙	Chauchat	ショーシャ
+DOLL_265	HK33	HK33	HK33	HK33
+DOLL_266	R93	R93	R93	R93
+DOLL_267	MP41	MP41	MP41	MP41
+DOLL_268	T-CMS	T-CMS	T-CMS	T-CMS
+DOLL_269	P30	P30	P30	P30
+DOLL_270	4식	四式	Type 4	四式
+DOLL_271	K3	K3	K3	K3
+DOLL_272	데저트 이글	沙漠之鹰	Desert Eagle	デザートイーグル
+DOLL_273	SSG3000	SSG3000	SSG3000	SSG3000
+DOLL_274	ACR	ACR	ACR	ACR
+DOLL_275	M1895	M1895	M1895	M1895 CB
+DOLL_276	Kord	Kord	Kord	Kord
+DOLL_277	VP70	VP70	VP70	VP70
+DOLL_278	Six12	Six12	Six12	Six12
+DOLL_279	INSAS	INSAS	INSAS	INSAS
+DOLL_280				
+DOLL_281	CAWS	CAWS	CAWS	CAWS
+DOLL_282	DP-12	DP-12	DP-12	DP-12
+DOLL_283	리버레이터	Liberator	Liberator	Liberator
+DOLL_284	Zas M76	Zas M76	Zas M76	Zas M76
+DOLL_1001	노엘	诺爱尔	Noel	ノエル
+DOLL_1002	엘펠트	艾尔菲尔特	Elphelt	エルフェルト
+DOLL_1003	키아나 카스라나	琪亚娜	Kiana	キアナ・カスラナ
+DOLL_1004	라이덴 메이	雷电芽衣	Raiden Mei	雷電 芽衣
+DOLL_1005	브로냐 자이칙	布洛妮娅	Bronya	ブローニャ・ザイチク
+DOLL_1006	테레사 아포칼립스	德丽莎	Theresa	テレサ・アポカリプス
+DOLL_1007	무라타 히메코	无量塔姬子	Murata Himeko	無量塔 姫子
+DOLL_1008	제레 발레리	希儿·芙乐艾	Seele	ゼーレ・フェレライ
+DOLL_1009	클리어	克莉尔	Clear	クリア
+DOLL_1010	페일	菲尔	Fail	フェイル
+DOLL_1017	질 스팅레이	吉尔·斯汀雷	Jill Stingray	ジル・スティングレイ
+DOLL_1018	세이 아사기리	赛伊·朝雾	Sei Asagiri	セイ・P・アサギリ
+DOLL_1019	도로시 헤이즈	多萝西·海兹	Dorothy Haze	ドロシー・ヘイズ
+DOLL_1020	스텔라 호시이	史黛拉·星井	Stella Hoshii	ステラ・星井
+DOLL_1021	알마 알머스	阿尔玛·阿玛斯	Alma Armas	アルマ・アルマス
+DOLL_1022	다나 제인	达娜·赞恩	Dana Zane	デイナ・ゼイン
+DOLL_20001	콜트 리볼버	柯尔特左轮 Mod	SAA	コルトSAA
+DOLL_20002	M1911	M1911 Mod	M1911	M1911
+DOLL_20005	나강 리볼버	纳甘左轮 Mod	M1895	M1895
+DOLL_20007	스테츠킨	斯捷奇金 Mod	Stechkin	スチェッキン
+DOLL_20012	C96	C96 Mod	C96	C96
+DOLL_20026	MP5	MP5 Mod	Gr MP5	Gr MP5
+DOLL_20029	스텐Mk II	司登MkⅡ Mod	STEN MkII	ステンMK-II
+DOLL_20031	베레타 38형	伯莱塔38型 Mod	M38	M38
+DOLL_20032	마이크로 우지	微型乌兹 Mod	Micro Uzi	Micro Uzi
+DOLL_20037	M14	M14 Mod	M14	M14
+DOLL_20039	모신나강	莫辛-纳甘 Mod	Mosin-Nagant	モシン・ナガン
+DOLL_20044	SV-98	SV-98 Mod	SV-98	SV-98
+DOLL_20051	FN-49	FN-49 Mod	FN-49	FF FN-49
+DOLL_20053	NTW-20	NTW-20 Mod	NTW-20	NTW-20
+DOLL_20055	M4A1	M4A1 Mod	M4A1	M4A1
+DOLL_20056	M4 SOPMOD II	M4 SOPMOD II Mod	M4 SOPMOD II	M4 SOPMOD II
+DOLL_20057	ST AR-15	ST AR-15 Mod	ST AR-15	ST AR-15
+DOLL_20060	AS Val	AS Val Mod	AS Val	AS Val
+DOLL_20061	StG44	StG44 Mod	StG44	StG44
+DOLL_20063	G3	G3 Mod	Gr G3	Gr G3
+DOLL_20064	G36	G36 Mod	Gr G36	Gr G36
+DOLL_20065	HK416	HK416 Mod	416	416
+DOLL_20075	M1918	M1918 Mod	M1918	M1918
+DOLL_20081	LWMMG	LWMMG Mod	LWMMG	LWMMG
+DOLL_20089	브렌	布伦 Mod	Bren	ブレン
+DOLL_20091	MP-446	MP-446 Mod	MP-446	MP-446
+DOLL_20093	IDW	IDW Mod	IDW	IDW
+DOLL_20094	64식	64式 Mod	Type64	64式
+DOLL_20095	한양조 88식	汉阳造88式 Mod	Type88	漢陽88式
+DOLL_20101	UMP9	UMP9 Mod	UMP9	UMP9
+DOLL_20103	UMP45	UMP45 Mod	UMP45	UMP45
+EQUIP_1	BM 3-12X40	BM 3-12X40	BM 3-12X40	BM 3-12X40
+EQUIP_2	LRA 2-12X50	LRA 2-12X50	LRA 2-12X50	LRA 2-12X50
+EQUIP_3	PSO-1	PSO-1	PSO-1	PSO-1
+EQUIP_4	VFL 6-24X56	VFL 6-24X56	VFL 6-24X56	VFL 6-24X56
+EQUIP_5	EOT 506	EOT 506	EOT 506	EOT 506
+EQUIP_6	EOT 512	EOT 512	EOT 512	EOT 512
+EQUIP_7	EOT 516	EOT 516	EOT 516	EOT 516
+EQUIP_8	EOT 518	EOT 518	EOT 518	EOT 518
+EQUIP_9	AMP COMPM2	AMP COMPM2	AMP COMPM2	AMP COMPM2
+EQUIP_10	AMP COMPM4	AMP COMPM4	AMP COMPM4	AMP COMPM4
+EQUIP_11	COG M150	COG M150	COG M150	COG M150
+EQUIP_12	ITI MARS	ITI MARS	ITI MARS	ITI MARS
+EQUIP_13	PEQ-2	PEQ-2	PEQ-2	PEQ-2
+EQUIP_14	PEQ-5	PEQ-5	PEQ-5	PEQ-5
+EQUIP_15	PEQ-15	PEQ-15	PEQ-15	PEQ-15
+EQUIP_16	PEQ-16A	PEQ-16A	PEQ-16A	PEQ-16A
+EQUIP_17	M16 철갑탄	M16 穿甲弹	M16 Armor-Piercing Ammo	M16徹甲弾
+EQUIP_18	M993 철갑탄	M993 穿甲弹	M993 Armor-Piercing Ammo	M993徹甲弾
+EQUIP_19	Mk169 철갑탄	Mk169 穿甲弹	Mk169 Armor-Piercing Ammo	Mk169徹甲弾
+EQUIP_20	Mk211 고폭철갑탄	Mk211 高爆穿甲弹	Mk211 High-Explosive Armor-Piercing Ammo	Mk211高爆徹甲弾
+EQUIP_29	FMJ 고속탄	FMJ 高速弹	FMJ High-Velocity Ammo	FMJ高速弾
+EQUIP_30	JSP 고속탄	JSP 高速弹	JSP High-Velocity Ammo	JSP高速弾
+EQUIP_31	JHP 고속탄	JHP 高速弹	JHP High-Velocity Ammo	JHP高速弾
+EQUIP_32	APCR 고속탄	APCR 高速弹	APCR High-Velocity Ammo	APCR高速弾
+EQUIP_37	IOP T1 외골격	IOP T1 外骨骼	IOP T1 Exoskeleton	IOP T1外骨格
+EQUIP_38	IOP T2 외골격	IOP T2 外骨骼	IOP T2 Exoskeleton	IOP T2外骨格
+EQUIP_39	IOP T3 외골격	IOP T3 外骨骼	IOP T3 Exoskeleton	IOP T3外骨格
+EQUIP_40	IOP T4 외골격	IOP T4 外骨骼	IOP T4 Exoskeleton	IOP T4外骨格
+EQUIP_42	Type1 방탄판	Type1 防弹插板	Type 1 Armor Plate	Type1防弾ベスト
+EQUIP_43	Type2 방탄판	Type2 防弹插板	Type 2 Armor Plate	Type2防弾ベスト
+EQUIP_44	Type3 방탄판	Type3 防弹插板	Type 3 Armor Plate	Type3防弾ベスト
+EQUIP_49	16Lab 적외선지시기	16Lab 红外指示器	16Lab Infrared Designator	16Lab赤外線レーザーサイト
+EQUIP_50	16Lab 차구경철갑탄	16Lab 次口径穿甲弹	16Lab Sub-Caliber Armor-Piercing Ammo	16Lab硬芯徹甲弾
+EQUIP_55	IOP X1 외골격	IOP X1 外骨骼	IOP X1 Exoskeleton	IOP X1外骨格
+EQUIP_56	IOP X2 외골격	IOP X2 外骨骼	IOP X2 Exoskeleton	IOP X2外骨格
+EQUIP_57	IOP X3 외골격	IOP X3 外骨骼	IOP X3 Exoskeleton	IOP X3外骨格
+EQUIP_58	IOP X4 외골격	IOP X4 外骨骼	IOP X4 Exoskeleton	IOP X4外骨格
+EQUIP_59	사격경기용 철갑탄	国家竞赛穿甲弹	National Match-Grade Armor-Piercing Ammo	ナショナルマッチ徹甲弾
+EQUIP_60	.300BLK고속탄	.300BLK高速弹	.300BLK High-Velocity Ammo	.300BLK高速弾
+EQUIP_61	Titan사격제어칩	Titan火控芯片	Titan Fire-Control Chip	Titan射撃管制チップ
+EQUIP_62	GSG UX외골격	GSG UX外骨骼	GSG UX Exoskeleton	GSG UX外骨格
+EQUIP_63	AC1 소음기	AC1消音器	AC1 Suppressor	AC1サイレンサー
+EQUIP_64	AC2 소음기	AC2消音器	AC2 Suppressor	AC2サイレンサー
+EQUIP_65	AC3 소음기	AC3消音器	AC3 Suppressor	AC3サイレンサー
+EQUIP_66	AC4 소음기	AC4消音器	AC4 Suppressor	AC4サイレンサー
+EQUIP_67	IOP 보급형 탄약통	IOP普及性弹链箱	IOP High-Capacity Ammo Box	IOP多弾倉アサルトパック
+EQUIP_68	IOP 대용량 탄약통	IOP大容量弹链箱	IOP Maximum Ammo Box	IOP多弾倉アサルトパック改
+EQUIP_69	ILM HP탄	ILM空尖弹	ILM Hollow Point Ammo	ILM ホローポイント弾
+EQUIP_70	ILM HP탄	ILM空尖弹	ILM Hollow Point Ammo	ILM ホローポイント弾
+EQUIP_71	ILM HP탄	ILM空尖弹	ILM Hollow Point Ammo	ILM ホローポイント弾
+EQUIP_72	ILM HP탄	ILM空尖弹	ILM Hollow Point Ammo	ILM ホローポイント弾
+EQUIP_73	#1 벅 샷	#1猎鹿弹	#1 Buckshot	#1 バックショット
+EQUIP_74	#0 벅 샷	#0猎鹿弹	#0 Buckshot	#0 バックショット
+EQUIP_75	#00 벅 샷	#00猎鹿弹	#00 Buckshot	#00 バックショット
+EQUIP_76	#000 벅 샷	#000猎鹿弹	#000 Buckshot	#000 バックショット
+EQUIP_77	BK 슬러그탄	BK独头弹	BK Slug	BKスラッグ弾
+EQUIP_78	FST 슬러그탄	FST独头弹	FST Slug	FSTスラッグ弾
+EQUIP_79	WAD 슬러그탄	WAD独头弹	WAD Slug	WADスラッグ弾
+EQUIP_80	SABOT 슬러그탄	SABOT独头弹	SABOT Slug	SABOTスラッグ弾
+EQUIP_81	16Lab 방탄판	16Lab防弹插板	16Lab Armor Plate	16LAB防弾ベスト
+EQUIP_82	16Lab 벅 샷	16Lab猎鹿弹	16Lab Buckshot	16LABバックショット
+EQUIP_83	KSTSP	KSTSP	KSTSP	KSTSP
+EQUIP_84	KST1P8	KST1P8	KST1P8	KST1P8
+EQUIP_85	KST1P7	KST1P7	KST1P7	KST1P7
+EQUIP_86	Hayha 메모리 칩	Hayha记忆芯片	Hayha Memory Chip	Hayhaメモリーチップ
+EQUIP_87	낡은 슈트	破旧披风	Ragged Cape	ぼろぼろのマント
+EQUIP_88	길리슈트	伪装披风	Camouflage Cape	カモフラージュマント
+EQUIP_89	도시 미채 슈트	城市迷彩披风	Urban Camouflage Cape	都市迷彩マント
+EQUIP_90	열광학 미채 슈트	热光学迷彩披风	Thermoptic Camouflage Cape	熱光学迷彩マント
+EQUIP_91	특수 전술기동장갑	特殊战机动装甲	Custom Exoskeletal Armor	特殊戦術機動装甲
+EQUIP_92	UMP UX외골격	UMP UX外骨骼	UMP UX Exoskeleton	UMP UX外骨格
+EQUIP_93	PKN03M야간조준경	PKN03M夜视瞄具	PKN03M Night Scope	PKN03M暗視スコープ
+EQUIP_94	전술용 메모리 칩	专用战术内存	Dedicated Tactical Memory	戦術用メモリチップ
+EQUIP_95	16Lab HP탄	16Lab 空尖弹	16Lab Hollow Point Ammo	16Lab ホローポイント弾
+EQUIP_96	16Lab 열광학 슈트	16Lab 热光学披风	16Lab Thermoptic Camouflage Cape	16Lab熱光学迷彩マント
+EQUIP_99	남겨진 무기상자	遗留的武器库	Inherited Weapon Arsenal	残された武器箱
+EQUIP_100	경량화 레일 킷	轻量化导轨套件	Light Weight Rail System	軽量化レイルキット
+EQUIP_101	XM261 탄약	XM261短弹	XM261 ACP	XM261弾薬
+EQUIP_102	강화 카트리지	性能升级卡带	Ability Upgrade Cartridge	強化カートリッジ
+EQUIP_103	64식용 소음기	64专用消音器	Type64 Exclusive Suppressor	64式サイレンサー
+EQUIP_104	조정간 트리거셋	快慢机扳机组	Fire Selector	調整間トリガセット
+EQUIP_105	PM 5-25X56	PM 5-25X56	PM 5-25X56	PM 5-25X56
+EQUIP_106	EOT XPS3	EOT XPS3	EOT XPS3	EOT XPS3
+EQUIP_107	무한 탄약통	无限弹链箱	Infinite Ammo Box	無限アサルトパック
+EQUIP_108	두꺼운 푸른 슈트	蓝色加厚披风	Blue Thickened Cape	厚い青いマント
+EQUIP_109	16Lab 6-24X56	16Lab 6-24X56	16Lab 6-24X56	16Lab 6-24X56
+EQUIP_110	16Lab 고속탄	16Lab 高速弹	16Lab High-Velocity Ammo	16Lab 高速弾
+EQUIP_111	K6-24X56	K6-24X56	K6-24X56	K6-24X56
+EQUIP_112	CT 4X20	CT 4X20	CT 4X20	CT 4X20
+EQUIP_113	나강 리볼버용 소음기	纳甘左轮消音器	M1895 Silencer	M1895サイレンサー
+EQUIP_114	MP446C 경기용 총신	MP446C比赛枪管	MP446C Competition Barrel	MP446C ナショナルマッチ銃身
+EQUIP_115	디지털 미채 슈트	数码迷彩披风	Digital Camouflage Cape	デジタル迷彩マント
+EQUIP_117	Glory Light	荣耀之光	Glory Light	Glory Light
+EQUIP_118	Black Cat	漆黑之猫	Black Cat	Black Cat
+EQUIP_119	FÉLIN 조준경	FÉLIN系统瞄具	FÉLIN System Sight	FÉLINスコープ
+EQUIP_120	16Lab MARS	16Lab MARS	16Lab MARS	16Lab MARS
+EQUIP_121	16Lab T4 외골격	16Lab T4 外骨骼	16Lab T4 Exoskeleton	16Lab T4外骨格
+EQUIP_122	콜트 리볼버 연장총열	柯尔特左轮长枪管	SAA Long Barrel	コルトSAA 延長銃身
+EQUIP_123	브렌 L4 총열뭉치	布伦L4枪管组	Bren L4 Barrel Group	ブレンL4銃身
+EQUIP_124	G3 개량 총열뭉치	G3改良枪管组	Gr G3 Improved Barrel Group	G3改良銃身
+EQUIP_125	추가 연산 모듈	附加运算模块	Additional Process Module	追加演算モジュール
+EQUIP_126	디너게이트 RO	兵蚁型RO	Dinergate-Type RO	ディナーゲートRO
+EQUIP_127	고성능 전술 헤어핀	高性能战术发饰	High Performance Tactical Hair Decoration	高性能戦術ヘアピン
+EQUIP_128	스텐 전용 소음기	司登专用消音器	Sten Exclusive Silencer	ステン専用サイレンサー
+EQUIP_129	M2 양각대	M2两脚架	M2 Bipod	M2両角帯
+EQUIP_130	G36 복합 조준경	G36混合瞄准镜	G36 Hybrid Optics	G36複合スコープ
+EQUIP_131	MGO 6X48	MGO 6X48	MGO 6X48	MGO 6X48
+EQUIP_132	MG4 전용 MGO	MG4用MGO	MG4 Exclusive MGO	MG4専用 MGO
+EQUIP_133	APS 전용 개머리판	APS专用枪托	Stechkin Exclusive Stock	APS専用 台じり
+EQUIP_134	MPL M21	MPL M21	MPL M21	MPL M21
+EQUIP_135	SP6 아음속탄	SP6亚音速弹	SP-6 Subsonic Rounds	SP6 亜音速弾
+EQUIP_136	7.92 KURZ	7.92 KURZ	7.92 KURZ	7.92 KURZ
+EQUIP_137	아델하이드	Adelhyde	Adelhyde	アデルハイド
+EQUIP_138	프래너자이드	Flanergide	Flanergide	フラナガイド
+EQUIP_139	아델하이드	Adelhyde	Adelhyde	アデルハイド
+EQUIP_140	브론순 추출액	Bronson Ext	Bronson Extract	ブロンソンエキス
+EQUIP_141	델타 가루	Pwd Delta	Powdered Delta	デルタパウダー
+EQUIP_142	카모트린	Karmotrine	Karmotrine	カルモトリン
+EQUIP_143	카모트린	Karmotrine	Karmotrine	カルモトリン
+EQUIP_144	카모트린	Karmotrine	Karmotrine	カルモトリン
+EQUIP_145	다나의 기계팔	机械手臂	Prosthetic Arm	機械の義腕
+EQUIP_146	MIRD 5등급 탄약	MIRD5级弹药	MIRD5-Class Ammo	MIRD クラス5弾薬
+EQUIP_147	화이트 나이트 제식 갑옷	白骑士制式铠甲	White Knight's Armor	ホワイトナイト制式アーマー
+EQUIP_148	스텔라의 의안	电子义眼	Prosthetic Eye	電子の目
+EQUIP_149	알마의 의수	机械义手	Cybernetic Hands	機械の義手
+EQUIP_150	ZFG42	ZFG42	ZFG42	ZFG42
+EQUIP_151	20GA 벅샷	20GA猎鹿弹	20GA Buckshot	20GAバックショット
+EQUIP_152	SIG510 트리거셋	SIG510快慢机	SIG-510 Fire Selector	SIG510 トリガセット
+EQUIP_153	BM59 중형 총열	BM59重管	BM59 Heavy Barrel	BM59 中型銃身
+EQUIP_154	OSS 소음기	OSS消音器	OSS Suppressor	OSS サイレンサー
+EQUIP_155	PPK 소음기	PPK消音器	PPK Suppressor	PPK サイレンサー
+EQUIP_156	AMP COMPSP	AMP COMPSP	AMP COMPSP	AMP COMPSP
+EQUIP_157	LED 플래시	LED武器灯	LED Tactical Flashlight	LEDフラッシュ
+EQUIP_158	가속 코일	加速线圈	Acceleration Coil	加速コイル
+EQUIP_159	전술 머리띠	战术发卡	Tactical Headband	戦術鉢巻き
+EQUIP_160	No32 MKI	No32 MKI	No32 MKI	No32 MKI
+EQUIP_161	첨단 복합 조준경	先进单兵瞄具	Advanced individual Optic	先端複合スコープ
+EQUIP_162	RPD 특수 군장	RPD 특수 군장	RPD 특수 군장	RPD 특수 군장
+EQUIP_163	MAC10 레일 총몸	MAC10 레일 총몸	MAC10 레일 총몸	MAC10 레일 총몸
+EQUIP_164	M9 BC2 손잡이	M9 BC2 손잡이	M9 BC2 손잡이	M9 BC2 손잡이
+EQUIP_165	전술 헤드셋	전술 헤드셋	전술 헤드셋	전술 헤드셋
+EQUIP_TYPE_1	옵티컬	光学瞄具	Optical	オプティカル
+EQUIP_TYPE_2	옵티컬	光学瞄具	Optical	オプティカル
+EQUIP_TYPE_3	옵티컬	光学瞄具	Optical	オプティカル
+EQUIP_TYPE_4	옵티컬	光学瞄具	Optical	オプティカル
+EQUIP_TYPE_5	이오텍	全息瞄具	Holographic	ホロサイト
+EQUIP_TYPE_6	이오텍	全息瞄具	Holographic	ホロサイト
+EQUIP_TYPE_7	이오텍	全息瞄具	Holographic	ホロサイト
+EQUIP_TYPE_8	이오텍	全息瞄具	Holographic	ホロサイト
+EQUIP_TYPE_9	레드닷	红点瞄具	Red Dot	ドットサイト
+EQUIP_TYPE_10	레드닷	红点瞄具	Red Dot	ドットサイト
+EQUIP_TYPE_11	레드닷	红点瞄具	Red Dot	ドットサイト
+EQUIP_TYPE_12	레드닷	红点瞄具	Red Dot	ドットサイト
+EQUIP_TYPE_13	야시장비	夜战装备	Night Equip	暗視装備
+EQUIP_TYPE_14	야시장비	夜战装备	Night Equip	暗視装備
+EQUIP_TYPE_15	야시장비	夜战装备	Night Equip	暗視装備
+EQUIP_TYPE_16	야시장비	夜战装备	Night Equip	暗視装備
+EQUIP_TYPE_17	철갑탄	穿甲弹	AP Round	徹甲弾
+EQUIP_TYPE_18	철갑탄	穿甲弹	AP Round	徹甲弾
+EQUIP_TYPE_19	철갑탄	穿甲弹	AP Round	徹甲弾
+EQUIP_TYPE_20	철갑탄	穿甲弹	AP Round	徹甲弾
+EQUIP_TYPE_29	고속탄	高速弹	HV Round	高速弾
+EQUIP_TYPE_30	고속탄	高速弹	HV Round	高速弾
+EQUIP_TYPE_31	고속탄	高速弹	HV Round	高速弾
+EQUIP_TYPE_32	고속탄	高速弹	HV Round	高速弾
+EQUIP_TYPE_37	T외골격	T外骨骼	T-Exo	T外骨格
+EQUIP_TYPE_38	T외골격	T外骨骼	T-Exo	T外骨格
+EQUIP_TYPE_39	T외골격	T外骨骼	T-Exo	T外骨格
+EQUIP_TYPE_40	T외골격	T外骨骼	T-Exo	T外骨格
+EQUIP_TYPE_42	방탄판	防弹插板	Armor Plate	防弾ベスト
+EQUIP_TYPE_43	방탄판	防弹插板	Armor Plate	防弾ベスト
+EQUIP_TYPE_44	방탄판	防弹插板	Armor Plate	防弾ベスト
+EQUIP_TYPE_49	야시장비	夜战装备	Night Equip	暗視装備
+EQUIP_TYPE_50	철갑탄	穿甲弹	AP Round	徹甲弾
+EQUIP_TYPE_55	X외골격	X外骨骼	X-Exo	X外骨格
+EQUIP_TYPE_56	X외골격	X外骨骼	X-Exo	X外骨格
+EQUIP_TYPE_57	X외골격	X外骨骼	X-Exo	X外骨格
+EQUIP_TYPE_58	X외골격	X外骨骼	X-Exo	X外骨格
+EQUIP_TYPE_59	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_60	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_61	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_62	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_63	소음기	消音器	Silencer	サイレンサー
+EQUIP_TYPE_64	소음기	消音器	Silencer	サイレンサー
+EQUIP_TYPE_65	소음기	消音器	Silencer	サイレンサー
+EQUIP_TYPE_66	소음기	消音器	Silencer	サイレンサー
+EQUIP_TYPE_67	탄약통	弹链箱	Ammo Box	アサルトパック
+EQUIP_TYPE_68	탄약통	弹链箱	Ammo Box	アサルトパック
+EQUIP_TYPE_69	HP탄	空尖弹	HP Round	ホローポイント弾
+EQUIP_TYPE_70	HP탄	空尖弹	HP Round	ホローポイント弾
+EQUIP_TYPE_71	HP탄	空尖弹	HP Round	ホローポイント弾
+EQUIP_TYPE_72	HP탄	空尖弹	HP Round	ホローポイント弾
+EQUIP_TYPE_73	벅 샷	猎鹿弹	Buckshot Shell	バックショット
+EQUIP_TYPE_74	벅 샷	猎鹿弹	Buckshot Shell	バックショット
+EQUIP_TYPE_75	벅 샷	猎鹿弹	Buckshot Shell	バックショット
+EQUIP_TYPE_76	벅 샷	猎鹿弹	Buckshot Shell	バックショット
+EQUIP_TYPE_77	슬러그탄	独头弹	Slug Shell	スラッグ弾
+EQUIP_TYPE_78	슬러그탄	独头弹	Slug Shell	スラッグ弾
+EQUIP_TYPE_79	슬러그탄	独头弹	Slug Shell	スラッグ弾
+EQUIP_TYPE_80	슬러그탄	独头弹	Slug Shell	スラッグ弾
+EQUIP_TYPE_81	방탄판	防弹插板	Armor Plate	防弾ベスト
+EQUIP_TYPE_82	벅 샷	猎鹿弹	Buckshot Shell	バックショット
+EQUIP_TYPE_83	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_84	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_85	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_86	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_87	슈트	伪装披风	Camo Cloak	マント
+EQUIP_TYPE_88	슈트	伪装披风	Camo Cloak	マント
+EQUIP_TYPE_89	슈트	伪装披风	Camo Cloak	マント
+EQUIP_TYPE_90	슈트	伪装披风	Camo Cloak	マント
+EQUIP_TYPE_91	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_92	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_93	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_94	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_95	HP탄	空尖弹	HP Round	ホローポイント弾
+EQUIP_TYPE_96	슈트	伪装披风	Camo Cloak	マント
+EQUIP_TYPE_99	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_100	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_101	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_102	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_103	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_104	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_105	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_106	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_107	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_108	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_109	옵티컬	光学瞄具	Optical	オプティカル
+EQUIP_TYPE_110	고속탄	高速弹	HV Round	高速弾
+EQUIP_TYPE_111	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_112	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_113	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_114	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_115	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_117	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_118	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_119	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_120	레드닷	红点瞄具	Red Dot	ドットサイト
+EQUIP_TYPE_121	T외골격	T外骨骼	T-Exo	T外骨格
+EQUIP_TYPE_122	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_123	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_124	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_125	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_126	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_127	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_128	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_129	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_130	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_131	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_132	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_133	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_134	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_135	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_136	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_137	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_138	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_139	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_140	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_141	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_142	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_143	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_144	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_145	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_146	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_147	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_148	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_149	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_150	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_151	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_152	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_153	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_154	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_155	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_156	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_157	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_158	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_159	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_160	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_161	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_162	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_163	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_164	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_165	전용장비	专属装备	Exclusive	専用装備
+FAIRY_1	용사요정	勇士妖精	Warrior Fairy	勇士妖精
+FAIRY_2	격노요정	暴怒妖精	Fury Fairy	激怒妖精
+FAIRY_3	방패요정	盾甲妖精	Armor Fairy	装甲妖精
+FAIRY_4	수호요정	护盾妖精	Shield Fairy	守護妖精
+FAIRY_5	방어요정	防御妖精	Defense Fairy	防御妖精
+FAIRY_6	도발요정	嘲讽妖精	Taunt Fairy	挑発妖精
+FAIRY_7	저격요정	狙击妖精	Sniper Fairy	狙撃妖精
+FAIRY_8	포격요정	炮击妖精	Artillery Fairy	砲撃妖精
+FAIRY_9	공습요정	空袭妖精	Airstrike Fairy	空襲妖精
+FAIRY_10	증원요정	增援妖精	Reinforcement Fairy	増援妖精
+FAIRY_11	공수요정	空降妖精	Parachute Fairy	空挺妖精
+FAIRY_12	매설요정	布雷妖精	Landmine Fairy	地雷妖精
+FAIRY_13	로켓요정	火箭妖精	Rocket Fairy	火箭妖精
+FAIRY_14	공사요정	工事妖精	Construction Fairy	工事妖精
+FAIRY_15	지휘요정	指挥妖精	Command Fairy	指揮妖精
+FAIRY_16	수색요정	搜救妖精	Rescue Fairy	捜索妖精
+FAIRY_17	조명요정	照明妖精	Illumination Fairy	照明妖精
+FAIRY_18	황금요정	黄金妖精	Golden Fairy	黄金妖精
+FAIRY_19	취사요정	炊事妖精	Cooking Fairy	料理妖精
+FAIRY_20	폭죽요정	花火妖精	Firework Fairy	花火妖精
+FAIRY_21	도깨비 요정	年兽妖精	Nian Fairy	鬼妖精
+FAIRY_22	해변요정	海滩妖精	Beach Fairy	海辺妖精
+FAIRY_23	연타요정	连击妖精	Combo Fairy	連撃妖精
+FAIRY_24	장벽요정	立盾妖精	Barrier Fairy	障壁妖精
+FAIRY_25	쌍둥이요정	双生妖精	Twin Fairy	双子妖精
+FAIRY_1001	야에 사쿠라	八重樱	Yae Sakura	八重 桜
+FAIRY_1002	카구야	耀夜姬	Kaguya Hime	カグヤ
+FAIRY_1003	클로에	柯萝伊	Chloe	クロエ
+FAIRY_1004	스이	希依	Suee	スイ
+FAIRY_1005	세나&리나	世拉＆妮娜	Sehra&Nina	セナ&リナ
+FAIRY_1006	프레이야&카밀리아	普蕾娅＆卡米莉娅	Preiya&Camilla	プレイア&カミリア
+FAIRY_1007	안나 그램	安娜·格雷姆	Anna Graem	アナ・グレアム
+TRAIT_910101	살상계I	杀伤型I	Damage I	殺傷型I
+TRAIT_910102	살상계II	杀伤型II	Damage II	殺傷型II
+TRAIT_910103	정밀계I	精准型I	Accuracy I	精確型I
+TRAIT_910104	정밀계II	精准型II	Accuracy II	精確型II
+TRAIT_910105	회피계I	回避型I	Evasion I	回避型I
+TRAIT_910106	회피계II	回避型II	Evasion II	回避型II
+TRAIT_910107	장갑계I	护甲型I	Armor I	防護型I
+TRAIT_910108	장갑계II	护甲型II	Armor II	防護型II
+TRAIT_910109	필살계I	必杀型I	Critical I	必殺型I
+TRAIT_910110	필살계II	必杀型II	Critical II	必殺型II
+TRAIT_910111	선봉계	冲锋型	Charge	先鋒型
+TRAIT_910112	돌격계	突击型	Assault	突撃型
+TRAIT_910113	조준계	瞄准型	Aim	照準型
+TRAIT_910114	완강계	坚韧型	Sturdy	強靭型
+TRAIT_910115	진압계	镇压型	Suppression	鎮圧型
+TRAIT_910116	예민계	敏锐型	Keen	鋭敏型
+TRAIT_910117	격양계	激昂型	Fervor	激昂系
+TRAIT_910118	황금계	黄金型	Golden	黄金型
+TRAIT_910119	급양계	厨神型	급양계	給養型
+TRAIT_910120	현란계	绚烂型	현란계	絢爛型
+TRAIT_910121	연하계	贺岁型	연하계	煙霞型
+TRAIT_910122	청량계	清凉型	청량계	清凉型
+QUEST_101	전역승리	作战胜利	Clear Any Map	戦役勝利
+QUEST_102	전역승리	作战胜利	Clear Any Map	戦役勝利
+QUEST_103	전역승리	作战胜利	Clear Any Map	戦役勝利
+QUEST_104	인형제조	战术少女制造	Produce T-Doll	人形製造
+QUEST_105	인형제조	战术少女制造	Produce T-Doll	人形製造
+QUEST_106	군수지원	后勤支援	Logistic Support	後方支援
+QUEST_107	군수지원	后勤支援	Logistic Support	後方支援
+QUEST_108	군수지원	后勤支援	Logistic Support	後方支援
+QUEST_109	인형강화	战术少女强化	Enhance T-Doll	人形強化
+QUEST_110	인형강화	战术少女强化	Enhance T-Doll	人形強化
+QUEST_111	인형수복	战术少女修复	Repair T-Doll	人形修理
+QUEST_112	인형수복	战术少女修复	Repair T-Doll	人形修理
+QUEST_113	인형수복	战术少女修复	Repair T-Doll	人形修理
+QUEST_115	모의작전	模拟作战	Combat Simulation	模擬作戦
+QUEST_116	모의작전	模拟作战	Combat Simulation	模擬作戦
+QUEST_117	장비제조	装备制造	Produce Equip	装備製造
+QUEST_118	장비제조	装备制造	Produce Equip	装備製造
+QUEST_125	장비강화	装备强化	Enhance Equip	装備強化
+QUEST_126	장비강화	装备强化	Enhance Equip	装備強化
+QUEST_127	공유전지 획득	获得共用电池	Collect Battery	戦友宿舎バッテリー獲得
+QUEST_128	지원제대 호출	使用支援梯队	Friend Support	支援部隊使用
+QUEST_129	정보분석	情报解析	Data Analysis	情報分析
+QUEST_130	정보분석	情报解析	Data Analysis	情報分析
+QUEST_201	인형수복	战术少女修复	Repair T-Doll	人形修理
+QUEST_202	철혈기계 처치	消灭普通机械铁血兵	Kill Machine S.F.	鉄血機械討伐
+QUEST_203	철혈인형 처치	消灭普通人形铁血兵	Kill Humanoid S.F.	鉄血人形討伐
+QUEST_204	철혈보스 처치	消灭BOSS	Kill Boss S.F.	鉄血ボス討伐
+QUEST_205	군수지원	后勤支援	Logistic Support	後方支援
+QUEST_206	S랭크 전투	以S评价完成战斗	S Rank Battle	Sランク戦闘
+QUEST_207	인형강화	战术少女强化	Enhance T-Doll	人形強化
+QUEST_208	인형제조	战术少女制造	Produce T-Doll	人形製造
+QUEST_209	스킬훈련	人形技能训练	Skill Training	スキル訓練
+QUEST_210	모의작전	模拟作战	Combat Simulation	模擬作戦
+QUEST_211	장비제조	装备制造	Produce Equip	装備製造
+QUEST_212	장갑기계 처치	消灭装甲机械铁血兵	Kill Armored Machine S.F.	装甲機械討伐
+QUEST_213	장갑인형 처치	消灭装甲人形铁血兵	Kill Armored Humanoid S.F.	装甲人形討伐
+QUEST_214	중형인형제조	人形重型制造	Equip Heavy Production	大型人形製造
+QUEST_215	장비교정	装备校准	Equip Calibration	装備校正
+QUEST_216	장비강화	装备强化	Equip Enhancement	装備強化
+QUEST_217	중형장비제조	装备重型制造	Equip Heavy Production	大型装備製造
+QUEST_218	요정교정	妖精校准	Fairy Calibration	妖精校正
+QUEST_219	요정강화	妖精强化	Fairy Enhancement	妖精強化
+QUEST_220	정보분석	情报解析	Data Analysis	情報分析
+QUEST_221	칩셋강화	强化消耗芯片	Enhance Chip	テトリス校正
+QUEST_301	아무 전역 승리	完成任何作战	Clear Any Mission	無作為の戦役勝利
+QUEST_302	아무 적 처치	消灭任何敌人	Kill Any Enemy	無作為の敵討伐
+QUEST_303	일반 4-6 승리	通过普通4-6	Clear Mission 4-6	通常4-6勝利
+QUEST_304	일반 5-6 승리	通过普通5-6	Clear Mission 5-6	通常5-6勝利
+QUEST_305	일반 6-6 승리	通过普通6-6	Clear Mission 6-6	通常6-6勝利
+QUEST_306	일반 7-6 승리	通过普通7-6	Clear Mission 7-6	通常7-6勝利
+QUEST_307	철혈보스 처치	消灭BOSS	Kill Boss S.F.	鉄血ボス討伐
+QUEST_308	장갑인형 처치	消灭装甲人形铁血兵	Kill Armored Humanoid S.F.	装甲人形討伐
+QUEST_309	장갑기계 처치	消灭装甲机械铁血兵	Kill Armored Machine S.F.	装甲機械討伐
+QUEST_310	철혈인형 처치	消灭普通人形铁血兵	Kill Humanoid S.F.	鉄血人形討伐
+QUEST_311	철혈기계 처치	消灭普通机械铁血兵	Kill Machine S.F.	鉄血機械討伐
+QUEST_312	일반 전역승리	通过普通战役	Clear Normal Mission	通常戦役勝利
+QUEST_313	긴급 전역승리	通过紧急战役	Clear Emergency Mission	緊急戦役勝利
+QUEST_314	야간 전역승리	通过夜战战役	Clear Night Mission	夜戦戦役勝利

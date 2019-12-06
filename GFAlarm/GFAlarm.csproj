@@ -195,7 +195,6 @@
     <Compile Include="Util\AuthCode.cs" />
     <Compile Include="Util\BattleTesterExporter.cs" />
     <Compile Include="Util\Config.cs" />
-    <Compile Include="Util\GFFile.cs" />
     <Compile Include="Util\MultiKeyDictionary.cs" />
     <Compile Include="Util\Parser.cs" />
     <Compile Include="Util\TimeUtil.cs" />
@@ -214,8 +213,7 @@
     <Compile Include="Notifier\ShellHelpers.cs" />
     <Compile Include="Transaction\ProxyController.cs" />
     <Compile Include="Util\Common.cs" />
-    <Compile Include="Util\Console.cs" />
-    <Compile Include="Util\Csv.cs" />
+    <Compile Include="Util\CsvExporter.cs" />
     <Compile Include="Util\Os.cs" />
     <Compile Include="Util\Taskbar.cs" />
     <Compile Include="View\Animations.cs" />
@@ -231,14 +229,14 @@
     <Compile Include="View\Menu\EchelonView.xaml.cs">
       <DependentUpon>EchelonView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Option\ProxyView2.xaml.cs">
-      <DependentUpon>ProxyView2.xaml</DependentUpon>
+    <Compile Include="View\Option\ProxyView.xaml.cs">
+      <DependentUpon>ProxyView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Option\SettingAlarmView2.xaml.cs">
-      <DependentUpon>SettingAlarmView2.xaml</DependentUpon>
+    <Compile Include="View\Option\SettingAlarmView.xaml.cs">
+      <DependentUpon>SettingAlarmView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Option\SettingView2.xaml.cs">
-      <DependentUpon>SettingView2.xaml</DependentUpon>
+    <Compile Include="View\Option\SettingView.xaml.cs">
+      <DependentUpon>SettingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Window\SubWindow.xaml.cs">
       <DependentUpon>SubWindow.xaml</DependentUpon>
@@ -252,15 +250,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Option\ProxyView2.xaml">
+    <Page Include="View\Option\ProxyView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Option\SettingAlarmView2.xaml">
+    <Page Include="View\Option\SettingAlarmView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Option\SettingView2.xaml">
+    <Page Include="View\Option\SettingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -305,6 +303,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Resource\font\Segoe UI.ttf" />
     <None Include="Resource\language.tsv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -515,16 +514,6 @@
     <None Include="Resource\sound\zh-CN\test.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resource\database\enemy_character_type_info.json" />
-    <None Include="Resource\database\enemy_in_team_info.json" />
-    <None Include="Resource\database\enemy_team_info.json" />
-    <None Include="Resource\database\equip_info.json" />
-    <None Include="Resource\database\explore_return_reward.json" />
-    <None Include="Resource\database\fairy_info.json" />
-    <None Include="Resource\database\mission_info.json" />
-    <None Include="Resource\database\operation_info.json" />
-    <None Include="Resource\database\doll_info.json" />
-    <None Include="Resource\database\quest_info.json" />
     <None Include="Resource\sound\ko-KR\mission_get_doll.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -3442,9 +3431,6 @@
     <None Include="Resource\sound\ko-KR\connect.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resource\database\squad_info.json" />
-    <None Include="Resource\database\squad_data_piece_info.json" />
-    <None Include="Resource\database\trait_info.json" />
     <None Include="Resource\battle_tester\userinfo.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

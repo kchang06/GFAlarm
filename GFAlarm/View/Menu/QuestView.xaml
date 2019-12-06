@@ -9,7 +9,10 @@
     xmlns:ls="clr-namespace:LocalizationResources;assembly=LocalizationResources"
     xmlns:uc="http://www.quickzip.org/BaseControls"
     mc:Ignorable="d" 
-    d:DesignHeight="300" d:DesignWidth="200">
+    
+    SnapsToDevicePixels="True"
+    d:DesignHeight="300" 
+    d:DesignWidth="200">
     <UserControl.Resources>
         <!-- 그룹 아이콘 스타일 -->
         <Style x:Key="GroupIconStyle" TargetType="iconPacks:PackIconMaterial" BasedOn="{StaticResource IconStyle}">
@@ -25,16 +28,6 @@
             <Setter Property="Margin" Value="30,0,0,0"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
-        </Style>
-        <!-- 그룹 화살표 스타일  -->
-        <Style x:Key="GroupArrowStyle" TargetType="iconPacks:PackIconMaterial">
-            <Setter Property="Width" Value="11"/>
-            <Setter Property="Height" Value="11"/>
-            <Setter Property="Margin" Value="0,0,8,0"/>
-            <Setter Property="HorizontalAlignment" Value="Right"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Foreground" Value="#FFFFFF"/>
-            <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
         </Style>
         <!-- 임무 목록 템플릿 -->
         <DataTemplate x:Key="QuestTemplate">
@@ -285,103 +278,127 @@
             <StackPanel x:Name="QuestStackPanel" Orientation="Vertical">
                 
                 <!-- 정보임무 그룹 -->
-                <Grid x:Name="ResearchGroupBox" Visibility="Collapsed"
-                      Style="{StaticResource GroupGridStyle}"
-                      MouseLeftButtonUp="GroupBox_MouseUp">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <!-- border -->
-                    <Border Grid.ColumnSpan="2" 
-                            Style="{StaticResource GroupBorderStyle}"/>
-                    <!-- icon -->
-                    <iconPacks:PackIconMaterial Grid.Column="0" 
-                                                Style="{StaticResource GroupIconStyle}"
-                                                Kind="HexagonMultiple"/>
-                    <!-- title -->
-                    <TextBlock Grid.Column="0" 
-                               Style="{StaticResource GroupTextStyle}">
-                        <Run Text="{Binding Path=[RESEARCH_QUEST], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                    </TextBlock>
-                    <!-- count -->
-                    <TextBlock Grid.Column="1"
-                               Style="{StaticResource GroupCountStyle}">
-                        <Run x:Name="ResearchCount" FontSize="11" Foreground="#666666">0</Run><Run Text="{Binding Path=[COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}" FontSize="11" Foreground="#666666"/>
-                    </TextBlock>
-                    <!-- arrow -->
-                    <iconPacks:PackIconMaterial x:Name="ResearchArrow" Grid.Column="1"
-                                                Style="{StaticResource GroupArrowStyle}"
-                                                Kind="ChevronDown"/>
-                </Grid>
+                <Border
+                    x:Name="ResearchGroupBox" Visibility="Collapsed"
+                    Style="{StaticResource GroupBoxBorderStyle}"
+                    MouseLeftButtonUp="GroupBox_MouseUp">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource GroupBoxIconStyle}"
+                            Width="16" Height="12" Kind="HexagonMultiple"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Text="{Binding Path=[RESEARCH_QUEST], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- count -->
+                        <Border
+                            Grid.Column="2"
+                            Style="{StaticResource GroupBoxCountBorderStyle}">
+                            <TextBlock x:Name="ResearchCount" 
+                                       Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                       Text="0"/>
+                        </Border>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="3"
+                            x:Name="ResearchArrow"
+                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
                 <!-- 정보임무 목록 -->
                 <ListBox x:Name="ResearchListBox"
                          ItemTemplate="{StaticResource QuestTemplate}"/>
                 
                 <!-- 일간임무 그룹 -->
-                <Grid x:Name="QuestGroupBox" Visibility="Collapsed"
-                      Style="{StaticResource GroupGridStyle}"
-                      MouseLeftButtonUp="GroupBox_MouseUp">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <!-- border -->
-                    <Border Grid.ColumnSpan="2" 
-                            Style="{StaticResource GroupBorderStyle}"/>
-                    <!-- icon -->
-                    <iconPacks:PackIconMaterial Grid.Column="0" 
-                                                Style="{StaticResource GroupIconStyle}"
-                                                Kind="CalendarToday"/>
-                    <!-- title -->
-                    <TextBlock Grid.Column="0" 
-                               Style="{StaticResource GroupTextStyle}">
-                        <Run Text="{Binding Path=[DAILY_QUEST], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                    </TextBlock>
-                    <!-- count -->
-                    <TextBlock Grid.Column="1"
-                               Style="{StaticResource GroupCountStyle}">
-                        <Run x:Name="QuestCount" FontSize="11" Foreground="#666666">0</Run><Run Text="{Binding Path=[COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}" FontSize="11" Foreground="#666666"/>
-                    </TextBlock>
-                    <!-- arrow -->
-                    <iconPacks:PackIconMaterial x:Name="QuestArrow" Grid.Column="1"
-                                                Style="{StaticResource GroupArrowStyle}"
-                                                Kind="ChevronDown"/>
-                </Grid>
+                <Border
+                    x:Name="QuestGroupBox" Visibility="Collapsed"
+                    Style="{StaticResource GroupBoxBorderStyle}"
+                    MouseLeftButtonUp="GroupBox_MouseUp">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource GroupBoxIconStyle}"
+                            Width="16" Height="12" Kind="CalendarToday"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Text="{Binding Path=[DAILY_QUEST], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- count -->
+                        <Border
+                            Grid.Column="2"
+                            Style="{StaticResource GroupBoxCountBorderStyle}">
+                            <TextBlock x:Name="QuestCount" 
+                                       Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                       Text="0"/>
+                        </Border>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="3"
+                            x:Name="QuestArrow"
+                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
                 <!-- 일간임무 목록 -->
                 <ListBox x:Name="QuestListBox"
                          ItemTemplate="{StaticResource QuestTemplate}"/>
                 
                 <!-- 주간임무 그룹 -->
-                <Grid x:Name="WeeklyGroupBox" Visibility="Collapsed"
-                      Style="{StaticResource GroupGridStyle}"
-                      MouseLeftButtonUp="GroupBox_MouseUp">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <!-- border -->
-                    <Border Grid.ColumnSpan="2" 
-                            Style="{StaticResource GroupBorderStyle}"/>
-                    <!-- icon -->
-                    <iconPacks:PackIconMaterial Grid.Column="0" 
-                                                Style="{StaticResource GroupIconStyle}"
-                                                Kind="CalendarWeek"/>
-                    <!-- title -->
-                    <TextBlock Grid.Column="0" 
-                               Style="{StaticResource GroupTextStyle}">
-                        <Run Text="{Binding Path=[WEEKLY_QUEST], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                    </TextBlock>
-                    <!-- count -->
-                    <TextBlock Grid.Column="1"
-                               Style="{StaticResource GroupCountStyle}">
-                        <Run x:Name="WeeklyCount" FontSize="11" Foreground="#666666">0</Run><Run Text="{Binding Path=[COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}" FontSize="11" Foreground="#666666"/>
-                    </TextBlock>
-                    <!-- arrow -->
-                    <iconPacks:PackIconMaterial x:Name="WeeklyArrow" Grid.Column="1"
-                                                Style="{StaticResource GroupArrowStyle}"
-                                                Kind="ChevronDown"/>
-                </Grid>
+                <Border
+                    x:Name="WeeklyGroupBox" Visibility="Collapsed"
+                    Style="{StaticResource GroupBoxBorderStyle}"
+                    MouseLeftButtonUp="GroupBox_MouseUp">
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- icon -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="0"
+                            Style="{StaticResource GroupBoxIconStyle}"
+                            Width="16" Height="12" Kind="CalendarWeek"/>
+                        <!-- title -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Text="{Binding Path=[WEEKLY_QUEST], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                        <!-- count -->
+                        <Border
+                            Grid.Column="2"
+                            Style="{StaticResource GroupBoxCountBorderStyle}">
+                            <TextBlock x:Name="WeeklyCount" 
+                                       Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                       Text="0"/>
+                        </Border>
+                        <!-- arrow -->
+                        <iconPacks:PackIconMaterial
+                            Grid.Column="3"
+                            x:Name="WeeklyArrow"
+                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Kind="ChevronDown"/>
+                    </Grid>
+                </Border>
                 <!-- 주간 목록 -->
                 <ListBox x:Name="WeeklyListBox"
                          ItemTemplate="{StaticResource QuestTemplate}"/>

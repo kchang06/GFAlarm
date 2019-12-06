@@ -24,7 +24,7 @@ namespace GFAlarm.View.Menu
     {
         private static readonly Logger log = LogManager.GetCurrentClassLogger();
 
-        #region 그룹 관련
+        #region GroupBoxControl
 
         public static class GroupIdx
         {
@@ -50,58 +50,6 @@ namespace GFAlarm.View.Menu
             { GroupIdx.EXPLORE, "Explore" },
         };
 
-        #endregion
-
-        #region 알림 리스트
-
-        // 지원현황
-        public ObservableCollection<DispatchedEchleonTemplate> DispatchedEchelonList { get; set; } = new ObservableCollection<DispatchedEchleonTemplate>();
-        // 인형제조
-        public ObservableCollection<ProduceDollTemplate> ProduceDollList { get; set; } = new ObservableCollection<ProduceDollTemplate>();
-        // 장비제조
-        public ObservableCollection<ProduceEquipTemplate> ProduceEquipList { get; set; } = new ObservableCollection<ProduceEquipTemplate>();
-        // 스킬훈련
-        public ObservableCollection<SkillTrainTemplate> SkillTrainList { get; set; } = new ObservableCollection<SkillTrainTemplate>();
-        // 정보분석
-        public ObservableCollection<DataAnalysisTemplate> DataAnalysisList { get; set; } = new ObservableCollection<DataAnalysisTemplate>();
-        public HashSet<int> DataAnalysisEndTimes = new HashSet<int>();
-        // 수복현황
-        public ObservableCollection<RestoreDollTemplate> RestoreDollList { get; set; } = new ObservableCollection<RestoreDollTemplate>();
-        // 탐색현황
-        public ObservableCollection<ExploreTemplate> ExploreList { get; set; } = new ObservableCollection<ExploreTemplate>();
-
-        /// <summary>
-        /// 공유보석 수령 여부
-        /// </summary>
-        public bool isSharedGem
-        {
-            set
-            {
-                Dispatcher.Invoke(() =>
-                {
-                    this.ShareGem_GroupBox.Visibility = value == true ? Visibility.Collapsed : Visibility.Visible;
-                });
-            }
-        }
-
-        /// <summary>
-        /// 공유전지 수령 여부
-        /// </summary>
-        public bool isSharedBattery
-        {
-            set
-            {
-                Dispatcher.Invoke(() =>
-                {
-                    this.ShareBattery_GroupBox.Visibility = value == true ? Visibility.Collapsed : Visibility.Visible;
-                });
-            }
-        }
-
-        #endregion
-
-        #region 그룹박스 컨트롤
-
         /// <summary>
         /// 그룹 박스 보이기/숨기기
         /// </summary>
@@ -109,7 +57,7 @@ namespace GFAlarm.View.Menu
         /// <param name="visible"></param>
         public void SetGroupVisible(int index, bool visible)
         {
-            Grid groupBox = this.FindName(string.Format("{0}_GroupBox", GroupNms[index])) as Grid;
+            Border groupBox = this.FindName(string.Format("{0}GroupBox", GroupNms[index])) as Border;
 
             /// 그룹 박스가 비활성화 상태면 안 보이게
             if (groupBox.IsEnabled == false)
@@ -185,6 +133,10 @@ namespace GFAlarm.View.Menu
                             break;
                     }
                 }
+                // 그룹 박스 화살표
+                PackIconMaterial arrow = this.FindName(string.Format("{0}GroupBox_Arrow", GroupNms[i])) as PackIconMaterial;
+                arrow.Kind = collapse == false ? PackIconMaterialKind.ChevronDown : PackIconMaterialKind.ChevronUp;
+
                 SetListBoxHeight(i, count);
             }
         }
@@ -196,8 +148,8 @@ namespace GFAlarm.View.Menu
         /// <param name="count"></param>
         public void SetListBoxHeight(int idx, int count)
         {
-            Grid groupBox = this.FindName(string.Format("{0}_GroupBox", GroupNms[idx])) as Grid;
-            ListBox listBox = this.FindName(string.Format("{0}_ListBox", GroupNms[idx])) as ListBox;
+            Border groupBox = this.FindName(string.Format("{0}GroupBox", GroupNms[idx])) as Border;
+            ListBox listBox = this.FindName(string.Format("{0}ListBox", GroupNms[idx])) as ListBox;
             //Storyboard sb = new Storyboard();
             DoubleAnimation ChangeHeight = new DoubleAnimation
             {
@@ -221,9 +173,6 @@ namespace GFAlarm.View.Menu
             listBox.BeginAnimation(ListBox.HeightProperty, ChangeHeight);
         }
 
-        #endregion
-
-        #region groupbox order
 
         bool isDragging = false;
         private Point startPosition;
@@ -239,7 +188,7 @@ namespace GFAlarm.View.Menu
         /// <param name="e"></param>
         private void GroupBox_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Grid groupBox = sender as Grid;
+            Border groupBox = sender as Border;
 
             isDragging = false;
             startPosition = e.GetPosition(this);
@@ -265,7 +214,7 @@ namespace GFAlarm.View.Menu
                 if (Math.Abs(position.X - startPosition.X) > SystemParameters.MinimumHorizontalDragDistance || Math.Abs(position.Y - startPosition.Y) > SystemParameters.MinimumVerticalDragDistance)
                 {
                     isDragging = true;
-                    StackPanel group = (sender as Grid).Parent as StackPanel;
+                    StackPanel group = (sender as Border).Parent as StackPanel;
                     group.BeginAnimation(StackPanel.OpacityProperty, null);
                     group.Opacity = 0.25;
                 }
@@ -273,7 +222,7 @@ namespace GFAlarm.View.Menu
                 // 드래그인 경우
                 if (isDragging)
                 {
-                    currentGroupIdx = this.DashboardStackPanel.Children.IndexOf((sender as Grid).Parent as StackPanel);
+                    currentGroupIdx = this.DashboardStackPanel.Children.IndexOf((sender as Border).Parent as StackPanel);
                     upperGroupIdx = -1;
                     lowerGroupIdx = int.MaxValue;
                     foreach (KeyValuePair<int, string> item in GroupNms)
@@ -304,15 +253,15 @@ namespace GFAlarm.View.Menu
                     foreach (KeyValuePair<int, string> item in GroupNms)
                     {
                         StackPanel group = this.FindName(string.Format("{0}", item.Value)) as StackPanel;
-                        Grid groupBox = this.FindName(string.Format("{0}_GroupBox", item.Value)) as Grid;
+                        Border groupBox = this.FindName(string.Format("{0}GroupBox", item.Value)) as Border;
                         groupBox.BeginAnimation(Grid.OpacityProperty, null);
                         groupBox.Visibility = Visibility.Visible;
                         groupBox.Opacity = 1;
-                        ListBox listBox = this.FindName(string.Format("{0}_ListBox", item.Value)) as ListBox;
+                        ListBox listBox = this.FindName(string.Format("{0}ListBox", item.Value)) as ListBox;
                         listBox.BeginAnimation(ListBox.HeightProperty, null);
                         listBox.Height = 0;
-                        Border upperGuideLine = this.FindName(string.Format("{0}_UpperGuide", item.Value)) as Border;
-                        Border lowerGuideLine = this.FindName(string.Format("{0}_LowerGuide", item.Value)) as Border;
+                        Border upperGuideLine = this.FindName(string.Format("{0}UpperGuide", item.Value)) as Border;
+                        Border lowerGuideLine = this.FindName(string.Format("{0}LowerGuide", item.Value)) as Border;
                         int upperGuideLineIdx = this.DashboardStackPanel.Children.IndexOf(group);
                         int lowerGuideLineIdx = upperGuideLineIdx;
                         upperGuideLine.Visibility = Visibility.Collapsed;
@@ -354,7 +303,7 @@ namespace GFAlarm.View.Menu
         /// <param name="e"></param>
         private void GroupBox_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            Grid groupBox = sender as Grid;
+            Border groupBox = sender as Border;
 
             Mouse.Capture(null);
             groupBox.ReleaseMouseCapture();
@@ -366,31 +315,31 @@ namespace GFAlarm.View.Menu
             bool expand;
             switch (name)
             {
-                case "DispatchedEchelon_GroupBox":
+                case "DispatchedEchelonGroupBox":
                     idx = GroupIdx.DISPATCHED_ECHELON;
                     count = this.DispatchedEchelonList.Count();
                     break;
-                case "ProduceDoll_GroupBox":
+                case "ProduceDollGroupBox":
                     idx = GroupIdx.PRODUCE_DOLL;
                     count = this.ProduceDollList.Count();
                     break;
-                case "ProduceEquip_GroupBox":
+                case "ProduceEquipGroupBox":
                     idx = GroupIdx.PRODUCE_EQUIP;
                     count = this.ProduceEquipList.Count();
                     break;
-                case "SkillTrain_GroupBox":
+                case "SkillTrainGroupBox":
                     idx = GroupIdx.SKILL_TRAIN;
                     count = this.SkillTrainList.Count();
                     break;
-                case "DataAnalysis_GroupBox":
+                case "DataAnalysisGroupBox":
                     idx = GroupIdx.DATA_ANALYSIS;
                     count = this.DataAnalysisList.Count();
                     break;
-                case "RestoreDoll_GroupBox":
+                case "RestoreDollGroupBox":
                     idx = GroupIdx.RESTORE_DOLL;
                     count = this.RestoreDollList.Count();
                     break;
-                case "Explore_GroupBox":
+                case "ExploreGroupBox":
                     idx = GroupIdx.EXPLORE;
                     count = this.ExploreList.Count();
                     break;
@@ -423,8 +372,8 @@ namespace GFAlarm.View.Menu
 
                 foreach (KeyValuePair<int, string> item in GroupNms)
                 {
-                    Border upperGuideLine = this.FindName(string.Format("{0}_UpperGuide", item.Value)) as Border;
-                    Border lowerGuideLine = this.FindName(string.Format("{0}_LowerGuide", item.Value)) as Border;
+                    Border upperGuideLine = this.FindName(string.Format("{0}UpperGuide", item.Value)) as Border;
+                    Border lowerGuideLine = this.FindName(string.Format("{0}LowerGuide", item.Value)) as Border;
                     upperGuideLine.Visibility = Visibility.Collapsed;
                     lowerGuideLine.Visibility = Visibility.Collapsed;
 
@@ -443,7 +392,7 @@ namespace GFAlarm.View.Menu
 
                 SetListBoxHeight(idx, count);
 
-                PackIconMaterial arrow = this.FindName(string.Format("{0}_Arrow", GroupNms[idx])) as PackIconMaterial;
+                PackIconMaterial arrow = this.FindName(string.Format("{0}GroupBox_Arrow", GroupNms[idx])) as PackIconMaterial;
                 arrow.Kind = expand == true ? PackIconMaterialKind.ChevronDown : PackIconMaterialKind.ChevronUp;
 
                 MainWindow.view.CheckExpandCollapseButtonStatus();
@@ -473,7 +422,55 @@ namespace GFAlarm.View.Menu
 
         #endregion
 
-        #region listbox add/remove/sort/check
+        #region DashboardList
+
+        // 지원현황
+        public ObservableCollection<DispatchedEchleonTemplate> DispatchedEchelonList { get; set; } = new ObservableCollection<DispatchedEchleonTemplate>();
+        // 인형제조
+        public ObservableCollection<ProduceDollTemplate> ProduceDollList { get; set; } = new ObservableCollection<ProduceDollTemplate>();
+        // 장비제조
+        public ObservableCollection<ProduceEquipTemplate> ProduceEquipList { get; set; } = new ObservableCollection<ProduceEquipTemplate>();
+        // 스킬훈련
+        public ObservableCollection<SkillTrainTemplate> SkillTrainList { get; set; } = new ObservableCollection<SkillTrainTemplate>();
+        // 정보분석
+        public ObservableCollection<DataAnalysisTemplate> DataAnalysisList { get; set; } = new ObservableCollection<DataAnalysisTemplate>();
+        public HashSet<int> DataAnalysisEndTimes = new HashSet<int>();
+        // 수복현황
+        public ObservableCollection<RestoreDollTemplate> RestoreDollList { get; set; } = new ObservableCollection<RestoreDollTemplate>();
+        // 탐색현황
+        public ObservableCollection<ExploreTemplate> ExploreList { get; set; } = new ObservableCollection<ExploreTemplate>();
+
+        /// <summary>
+        /// 공유보석 수령 여부
+        /// </summary>
+        public bool isSharedGem
+        {
+            set
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    this.ShareGemGroupBox.Visibility = value == true ? Visibility.Collapsed : Visibility.Visible;
+                });
+            }
+        }
+
+        /// <summary>
+        /// 공유전지 수령 여부
+        /// </summary>
+        public bool isSharedBattery
+        {
+            set
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    this.ShareBatteryGroupBox.Visibility = value == true ? Visibility.Collapsed : Visibility.Visible;
+                });
+            }
+        }
+
+        #endregion
+
+        #region ListBox Add/Remove/Sort/Check
 
         /// <summary>
         /// 알림 추가
@@ -976,43 +973,43 @@ namespace GFAlarm.View.Menu
                 {
                     idx = GroupIdx.DISPATCHED_ECHELON;
                     count = this.DispatchedEchelonList.Count();
-                    this.DispatchedEchelon_Count.Text = count.ToString();
+                    this.DispatchedEchelonGroupBox_Count.Text = count.ToString();
                 }
                 else if (data is ProduceDollTemplate)
                 {
                     idx = GroupIdx.PRODUCE_DOLL;
                     count = this.ProduceDollList.Count();
-                    this.ProduceDoll_Count.Text = count.ToString();
+                    this.ProduceDollGroupBox_Count.Text = count.ToString();
                 }
                 else if (data is ProduceEquipTemplate)
                 {
                     idx = GroupIdx.PRODUCE_EQUIP;
                     count = this.ProduceEquipList.Count();
-                    this.ProduceEquip_Count.Text = count.ToString();
+                    this.ProduceEquipGroupBox_Count.Text = count.ToString();
                 }
                 else if (data is SkillTrainTemplate)
                 {
                     idx = GroupIdx.SKILL_TRAIN;
                     count = this.SkillTrainList.Count();
-                    this.SkillTrain_Count.Text = count.ToString();
+                    this.SkillTrainGroupBox_Count.Text = count.ToString();
                 }
                 else if (data is DataAnalysisTemplate)
                 {
                     idx = GroupIdx.DATA_ANALYSIS;
                     count = this.DataAnalysisList.Count();
-                    this.DataAnalysis_Count.Text = count.ToString();
+                    this.DataAnalysisGroupBox_Count.Text = count.ToString();
                 }
                 else if (data is RestoreDollTemplate)
                 {
                     idx = GroupIdx.RESTORE_DOLL;
                     count = this.RestoreDollList.Count();
-                    this.RestoreDoll_Count.Text = count.ToString();
+                    this.RestoreDollGroupBox_Count.Text = count.ToString();
                 }
                 else if (data is ExploreTemplate)
                 {
                     idx = GroupIdx.EXPLORE;
                     count = this.ExploreList.Count();
-                    this.Explore_Count.Text = count.ToString();
+                    this.ExploreGroupBox_Count.Text = count.ToString();
                 }
 
                 if (count > 0)
@@ -1054,19 +1051,19 @@ namespace GFAlarm.View.Menu
         public void CheckAllCount()
         {
             int count = 0;
-            if (this.DispatchedEchelon_GroupBox.IsEnabled)
+            if (this.DispatchedEchelonGroupBox.IsEnabled)
                 count += this.DispatchedEchelonList.Count();
-            if (this.ProduceDoll_GroupBox.IsEnabled)
+            if (this.ProduceDollGroupBox.IsEnabled)
                 count += this.ProduceDollList.Count();
-            if (this.ProduceEquip_GroupBox.IsEnabled)
+            if (this.ProduceEquipGroupBox.IsEnabled)
                 count += this.ProduceEquipList.Count();
-            if (this.SkillTrain_GroupBox.IsEnabled)
+            if (this.SkillTrainGroupBox.IsEnabled)
                 count += this.SkillTrainList.Count();
-            if (this.DataAnalysis_GroupBox.IsEnabled)
+            if (this.DataAnalysisGroupBox.IsEnabled)
                 count += this.DataAnalysisList.Count();
-            if (this.RestoreDoll_GroupBox.IsEnabled)
+            if (this.RestoreDollGroupBox.IsEnabled)
                 count += this.RestoreDollList.Count();
-            if (this.Explore_GroupBox.IsEnabled)
+            if (this.ExploreGroupBox.IsEnabled)
                 count += this.ExploreList.Count();
 
             if (count > 0)
@@ -1169,7 +1166,7 @@ namespace GFAlarm.View.Menu
 
         #endregion
 
-        #region listbox search
+        #region ListBoxControl
 
         /// <summary>
         /// 수복현황 인형 찾기
@@ -1240,7 +1237,7 @@ namespace GFAlarm.View.Menu
 
         #endregion
 
-        #region chipset
+        #region Chip
 
         /// <summary>
         /// 칩셋 모양 가져오기
@@ -1670,7 +1667,7 @@ namespace GFAlarm.View.Menu
             foreach (KeyValuePair<int, string> item in GroupNms)
             {
                 bool expand = Config.Dashboard.expand[item.Key];
-                PackIconMaterial arrow = this.DashboardStackPanel.FindName(string.Format("{0}_Arrow", GroupNms[item.Key])) as PackIconMaterial;
+                PackIconMaterial arrow = this.DashboardStackPanel.FindName(string.Format("{0}GroupBox_Arrow", GroupNms[item.Key])) as PackIconMaterial;
                 arrow.Kind = expand == true ? PackIconMaterialKind.ChevronDown : PackIconMaterialKind.ChevronUp;
 
                 StackPanel itemGroup = this.DashboardStackPanel.FindName(string.Format("{0}", item.Value)) as StackPanel;
@@ -1681,13 +1678,13 @@ namespace GFAlarm.View.Menu
             StackPanel shareGemGroup = this.DashboardStackPanel.FindName("ShareGem") as StackPanel;
             MoveElement(0, shareGemGroup);
 
-            this.DispatchedEchelon_ListBox.ItemsSource = this.DispatchedEchelonList;
-            this.ProduceDoll_ListBox.ItemsSource = this.ProduceDollList;
-            this.ProduceEquip_ListBox.ItemsSource = this.ProduceEquipList;
-            this.SkillTrain_ListBox.ItemsSource = this.SkillTrainList;
-            this.DataAnalysis_ListBox.ItemsSource = this.DataAnalysisList;
-            this.RestoreDoll_ListBox.ItemsSource = this.RestoreDollList;
-            this.Explore_ListBox.ItemsSource = this.ExploreList;
+            this.DispatchedEchelonListBox.ItemsSource = this.DispatchedEchelonList;
+            this.ProduceDollListBox.ItemsSource = this.ProduceDollList;
+            this.ProduceEquipListBox.ItemsSource = this.ProduceEquipList;
+            this.SkillTrainListBox.ItemsSource = this.SkillTrainList;
+            this.DataAnalysisListBox.ItemsSource = this.DataAnalysisList;
+            this.RestoreDollListBox.ItemsSource = this.RestoreDollList;
+            this.ExploreListBox.ItemsSource = this.ExploreList;
         }
     }
 }
