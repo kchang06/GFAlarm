@@ -1434,7 +1434,7 @@ namespace GFAlarm
         private void FilterButton_Click(object sender, RoutedEventArgs e)
         {
             string name = (sender as ToggleButton).Name;
-            log.Debug("click {0}", name);
+            //log.Debug("click {0}", name);
             //log.Info("click togglebutton");
             if (isClickCheckBox)
             {
@@ -1506,7 +1506,7 @@ namespace GFAlarm
                     }
                 }
 
-                Grid groupBox = dashboardView.FindName(string.Format("{0}GroupBox", GroupNms[item.Key])) as Grid;
+                Border groupBox = dashboardView.FindName(string.Format("{0}GroupBox", GroupNms[item.Key])) as Border;
                 CheckBox checkBox = this.FindName(string.Format("{0}FilterCheckBox", GroupNms[item.Key])) as CheckBox;
 
                 groupBox.IsEnabled = Config.Dashboard.filter[item.Key];
@@ -1562,7 +1562,7 @@ namespace GFAlarm
 
             Config.Dashboard.filter[idx] = Config.Dashboard.filter[idx] == true ? false : true;
 
-            Grid groupBox = dashboardView.FindName(string.Format("{0}GroupBox", GroupNms[idx])) as Grid;
+            Border groupBox = dashboardView.FindName(string.Format("{0}GroupBox", GroupNms[idx])) as Border;
             CheckBox checkBox = this.FindName(string.Format("{0}FilterCheckBox", GroupNms[idx])) as CheckBox;
 
             groupBox.IsEnabled = Config.Dashboard.filter[idx];
