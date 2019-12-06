@@ -4809,7 +4809,7 @@ namespace GFAlarm.Data
             public static long GetRunCountToMaxLevel(long id, long exp)
             {
                 long totalCount = 0;
-                if (dictionary.ContainsKey(id))
+                if (dictionary.ContainsKey(id) && exp > 0)
                 {
                     long currentExp = dictionary[id].exp;
                     long sumExp = GameData.Fairy.Exp.GetTotalExp(100);

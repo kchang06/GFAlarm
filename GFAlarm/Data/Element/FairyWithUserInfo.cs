@@ -221,10 +221,16 @@ namespace GFAlarm.Data.Element
                         try
                         {
                             runEarnExp = UserData.Fairy.GetTeamRunEarnExp(team);
-                            if (runEarnExp > 0)
+                            if (runEarnExp == 0)
+                            {
+                                runCount = new long[] { 0, 0, 0 };
+                            }
+                            else
+                            {
                                 runCount[0] = (int)((double)remainExp / runEarnExp + 1);
-                            runCount[1] = UserData.Fairy.GetRunCountToMaxLevel(id, runEarnExp);
-                            runCount[2] = runCount[1];
+                                runCount[1] = UserData.Fairy.GetRunCountToMaxLevel(id, runEarnExp);
+                                runCount[2] = runCount[1];
+                            }
                             reportCount[0] = UserData.Fairy.GetBattleReportCountToMaxLevel(id, level + 1);
                             reportCount[1] = UserData.Fairy.GetBattleReportCountToMaxLevel(id);
                             reportCount[2] = reportCount[1];

@@ -161,7 +161,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Constants\Menus.cs" />
-    <Compile Include="Data\Constant.cs" />
     <Compile Include="Data\Element\DollWithUserInfo.cs" />
     <Compile Include="Data\Element\FairyWithUserInfo.cs" />
     <Compile Include="Data\Element\SpotInfo.cs" />

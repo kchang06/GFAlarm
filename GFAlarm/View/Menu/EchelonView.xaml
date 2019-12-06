@@ -488,7 +488,7 @@
                 <MultiDataTrigger>
                     <MultiDataTrigger.Conditions>
                         <!--<Condition Binding="{Binding Path=toNextLevelRunCount[0], Mode=OneWay}" Value="0"/>-->
-                        <Condition Binding="{Binding Path=runCount[0], Mode=OneWay}" Value="0"/>
+                        <Condition Binding="{Binding Path=reportCount[0], Mode=OneWay}" Value="0"/>
                         <Condition Binding="{Binding Path=TBRestoreRequireTime, Mode=OneWay}" Value="00:00:00"/>
                     </MultiDataTrigger.Conditions>
                     <Setter TargetName="TemplateGrid" Property="ToolTipService.IsEnabled" Value="False"/>
