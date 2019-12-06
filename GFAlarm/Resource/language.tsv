@@ -735,37 +735,37 @@ DOLL_1019	도로시 헤이즈	多萝西·海兹	Dorothy Haze	ドロシー・ヘ�
 DOLL_1020	스텔라 호시이	史黛拉·星井	Stella Hoshii	ステラ・星井
 DOLL_1021	알마 알머스	阿尔玛·阿玛斯	Alma Armas	アルマ・アルマス
 DOLL_1022	다나 제인	达娜·赞恩	Dana Zane	デイナ・ゼイン
-DOLL_20001	콜트 리볼버	柯尔特左轮 Mod	SAA	コルトSAA
-DOLL_20002	M1911	M1911 Mod	M1911	M1911
-DOLL_20005	나강 리볼버	纳甘左轮 Mod	M1895	M1895
-DOLL_20007	스테츠킨	斯捷奇金 Mod	Stechkin	スチェッキン
-DOLL_20012	C96	C96 Mod	C96	C96
-DOLL_20026	MP5	MP5 Mod	Gr MP5	Gr MP5
-DOLL_20029	스텐Mk II	司登MkⅡ Mod	STEN MkII	ステンMK-II
-DOLL_20031	베레타 38형	伯莱塔38型 Mod	M38	M38
-DOLL_20032	마이크로 우지	微型乌兹 Mod	Micro Uzi	Micro Uzi
-DOLL_20037	M14	M14 Mod	M14	M14
-DOLL_20039	모신나강	莫辛-纳甘 Mod	Mosin-Nagant	モシン・ナガン
-DOLL_20044	SV-98	SV-98 Mod	SV-98	SV-98
-DOLL_20051	FN-49	FN-49 Mod	FN-49	FF FN-49
-DOLL_20053	NTW-20	NTW-20 Mod	NTW-20	NTW-20
-DOLL_20055	M4A1	M4A1 Mod	M4A1	M4A1
-DOLL_20056	M4 SOPMOD II	M4 SOPMOD II Mod	M4 SOPMOD II	M4 SOPMOD II
-DOLL_20057	ST AR-15	ST AR-15 Mod	ST AR-15	ST AR-15
-DOLL_20060	AS Val	AS Val Mod	AS Val	AS Val
-DOLL_20061	StG44	StG44 Mod	StG44	StG44
-DOLL_20063	G3	G3 Mod	Gr G3	Gr G3
-DOLL_20064	G36	G36 Mod	Gr G36	Gr G36
-DOLL_20065	HK416	HK416 Mod	416	416
-DOLL_20075	M1918	M1918 Mod	M1918	M1918
-DOLL_20081	LWMMG	LWMMG Mod	LWMMG	LWMMG
-DOLL_20089	브렌	布伦 Mod	Bren	ブレン
-DOLL_20091	MP-446	MP-446 Mod	MP-446	MP-446
-DOLL_20093	IDW	IDW Mod	IDW	IDW
-DOLL_20094	64식	64式 Mod	Type64	64式
-DOLL_20095	한양조 88식	汉阳造88式 Mod	Type88	漢陽88式
-DOLL_20101	UMP9	UMP9 Mod	UMP9	UMP9
-DOLL_20103	UMP45	UMP45 Mod	UMP45	UMP45
+DOLL_20001	콜트 리볼버 Mod	柯尔特左轮 Mod	SAA	コルトSAA
+DOLL_20002	M1911 Mod	M1911 Mod	M1911	M1911
+DOLL_20005	나강 리볼버 Mod	纳甘左轮 Mod	M1895	M1895
+DOLL_20007	스테츠킨 Mod	斯捷奇金 Mod	Stechkin	スチェッキン
+DOLL_20012	C96 Mod	C96 Mod	C96	C96
+DOLL_20026	MP5 Mod	MP5 Mod	Gr MP5	Gr MP5
+DOLL_20029	스텐Mk II Mod	司登MkⅡ Mod	STEN MkII	ステンMK-II
+DOLL_20031	베레타 38형 Mod	伯莱塔38型 Mod	M38	M38
+DOLL_20032	마이크로 우지 Mod	微型乌兹 Mod	Micro Uzi	Micro Uzi
+DOLL_20037	M14 Mod	M14 Mod	M14	M14
+DOLL_20039	모신나강 Mod	莫辛-纳甘 Mod	Mosin-Nagant	モシン・ナガン
+DOLL_20044	SV-98 Mod	SV-98 Mod	SV-98	SV-98
+DOLL_20051	FN-49 Mod	FN-49 Mod	FN-49	FF FN-49
+DOLL_20053	NTW-20 Mod	NTW-20 Mod	NTW-20	NTW-20
+DOLL_20055	M4A1 Mod	M4A1 Mod	M4A1	M4A1
+DOLL_20056	M4 SOPMOD II Mod	M4 SOPMOD II Mod	M4 SOPMOD II	M4 SOPMOD II
+DOLL_20057	ST AR-15 Mod	ST AR-15 Mod	ST AR-15	ST AR-15
+DOLL_20060	AS Val Mod	AS Val Mod	AS Val	AS Val
+DOLL_20061	StG44 Mod	StG44 Mod	StG44	StG44
+DOLL_20063	G3 Mod	G3 Mod	Gr G3	Gr G3
+DOLL_20064	G36 Mod	G36 Mod	Gr G36	Gr G36
+DOLL_20065	HK416 Mod	HK416 Mod	416	416
+DOLL_20075	M1918 Mod	M1918 Mod	M1918	M1918
+DOLL_20081	LWMMG Mod	LWMMG Mod	LWMMG	LWMMG
+DOLL_20089	브렌 Mod	布伦 Mod	Bren	ブレン
+DOLL_20091	MP-446 Mod	MP-446 Mod	MP-446	MP-446
+DOLL_20093	IDW Mod	IDW Mod	IDW	IDW
+DOLL_20094	64식 Mod	64式 Mod	Type64	64式
+DOLL_20095	한양조 88식 Mod	汉阳造88式 Mod	Type88	漢陽88式
+DOLL_20101	UMP9 Mod	UMP9 Mod	UMP9	UMP9
+DOLL_20103	UMP45 Mod	UMP45 Mod	UMP45	UMP45
 EQUIP_1	BM 3-12X40	BM 3-12X40	BM 3-12X40	BM 3-12X40
 EQUIP_2	LRA 2-12X50	LRA 2-12X50	LRA 2-12X50	LRA 2-12X50
 EQUIP_3	PSO-1	PSO-1	PSO-1	PSO-1
@@ -907,6 +907,12 @@ EQUIP_162	RPD 특수 군장	RPD 특수 군장	RPD 특수 군장	RPD 특수 군�
 EQUIP_163	MAC10 레일 총몸	MAC10 레일 총몸	MAC10 레일 총몸	MAC10 레일 총몸
 EQUIP_164	M9 BC2 손잡이	M9 BC2 손잡이	M9 BC2 손잡이	M9 BC2 손잡이
 EQUIP_165	전술 헤드셋	전술 헤드셋	전술 헤드셋	전술 헤드셋
+EQUIP_166	DO 반사조준경	DO 반사조준경	DO 반사조준경	DO 반사조준경
+EQUIP_167	C96 참나무 개머리판	C96 참나무 개머리판	C96 참나무 개머리판	C96 참나무 개머리판
+EQUIP_168	100식 접이식 개머리판	100식 접이식 개머리판	100식 접이식 개머리판	100식 접이식 개머리판
+EQUIP_169	RFB 전방 레일	RFB 전방 레일	RFB 전방 레일	RFB 전방 레일
+EQUIP_170	20mm HEI	20mm HEI	20mm HEI	20mm HEI
+EQUIP_171	전술 번개 안테나	전술 번개 안테나	전술 번개 안테나	전술 번개 안테나
 EQUIP_TYPE_1	옵티컬	光学瞄具	Optical	オプティカル
 EQUIP_TYPE_2	옵티컬	光学瞄具	Optical	オプティカル
 EQUIP_TYPE_3	옵티컬	光学瞄具	Optical	オプティカル
@@ -1048,6 +1054,12 @@ EQUIP_TYPE_162	전용장비	专属装备	Exclusive	専用装備
 EQUIP_TYPE_163	전용장비	专属装备	Exclusive	専用装備
 EQUIP_TYPE_164	전용장비	专属装备	Exclusive	専用装備
 EQUIP_TYPE_165	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_166	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_167	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_168	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_169	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_170	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_171	전용장비	专属装备	Exclusive	専用装備
 FAIRY_1	용사요정	勇士妖精	Warrior Fairy	勇士妖精
 FAIRY_2	격노요정	暴怒妖精	Fury Fairy	激怒妖精
 FAIRY_3	방패요정	盾甲妖精	Armor Fairy	装甲妖精
