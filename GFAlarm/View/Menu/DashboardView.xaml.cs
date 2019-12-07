@@ -1,7 +1,6 @@
 ﻿using GFAlarm.Constants;
 using GFAlarm.Util;
 using GFAlarm.View.DataTemplate;
-using LocalizationResources;
 using MahApps.Metro.IconPacks;
 using NLog;
 using System;

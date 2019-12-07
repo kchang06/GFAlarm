@@ -114,6 +114,8 @@ namespace GFAlarm.Transaction
                 return false;
             }
             _rootDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\resource\\http";
+            if (!Directory.Exists(_rootDir))
+                Directory.CreateDirectory(_rootDir);
             string pacDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\resource";
             string pacFilename = pacDir + "\\GFPAC.js";
             if (File.Exists(pacFilename))

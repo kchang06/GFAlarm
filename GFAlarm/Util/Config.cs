@@ -12,7 +12,7 @@ namespace GFAlarm.Util
     {
         private static readonly Logger log = LogManager.GetCurrentClassLogger();
 
-        public static string version = "2.51";
+        public static string version = "2.52";
 
         private static ReaderWriterLockSlim _lock = new ReaderWriterLockSlim();
         public static JObject data = null;

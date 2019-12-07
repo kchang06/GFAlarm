@@ -1097,7 +1097,6 @@ namespace GFAlarm
             }
             set
             {
-                _expandFooter = value;
                 if (value)
                 {
                     Animations.ChangeHeight.From = this.FooterGrid.Height;
@@ -1105,14 +1104,17 @@ namespace GFAlarm
                 }
                 else
                 {
+                    if (Config.Footer.expand)
+                        return;
                     Animations.ChangeHeight.From = this.FooterGrid.Height;
                     Animations.ChangeHeight.To = 32;
                 }
                 this.FooterGrid.BeginAnimation(Grid.HeightProperty, null);
                 this.FooterGrid.BeginAnimation(Grid.HeightProperty, Animations.ChangeHeight);
+                _expandFooter = value;
             }
         }
-        private bool _expandFooter = Config.Footer.expand;
+        private bool _expandFooter = false;
 
         /// <summary>
         /// 푸터 클릭
