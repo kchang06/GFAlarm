@@ -246,7 +246,7 @@
             </DataTemplate.Triggers>
         </DataTemplate>
     </UserControl.Resources>
-    <Grid>
+    <Grid Margin="0,0,2,0">
         <!-- 임무 버튼 눌러달라 오버레이 -->
         <Grid x:Name="EmptyOverlay" Panel.ZIndex="100" Visibility="Visible"
               Background="{StaticResource BackgroundBrush}">

@@ -116,7 +116,7 @@
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
     </UserControl.Resources>
-    <Grid>
+    <Grid Margin="0,0,2,0">
         <ScrollViewer VerticalScrollBarVisibility="Visible">
             <StackPanel Orientation="Vertical">
                 <!-- [그룹] 완료 알림 -->
@@ -354,7 +354,7 @@
                         </Grid.ToolTip>
                     </Grid>
                     <!-- 임무달성 -->
-                    <Grid Margin="20,10,20,10" Background="Transparent">
+                    <Grid Margin="20,10,20,15" Background="Transparent">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
@@ -438,20 +438,34 @@
                             Style="{StaticResource ContentCheckBoxStyle}"
                             Checked="MaxPointCheckBox_Checked" Unchecked="MaxPointCheckBox_Unchecked"/>
                         <!-- slider -->
-                        <Slider
-                            Grid.Row="1" Grid.Column="0"
-                            x:Name="MaxPointSlider"
-                            Style="{StaticResource SliderBaseStyle}"
-                            MinHeight="8" Height="8" VerticalAlignment="Center"
-                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
-                            ValueChanged="MaxPointSlider_ValueChanged"/>
-                        <!-- counter -->
-                        <TextBlock
-                            Grid.Row="1" Grid.Column="1"
-                            Style="{StaticResource TextBlockBaseStyle}"
-                            Margin="15,0,0,0" VerticalAlignment="Center">
-                            <Run Text="{Binding Path=Value, ElementName=MaxPointSlider}"/><Run Text="{Binding Path=[SETTING_NOTIFICATION_MAXIMUM_SIM_POINT_UNIT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
+                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+                            <!-- slider -->
+                            <Slider
+                                Grid.Column="0"
+                                x:Name="MaxPointSlider"
+                                Style="{StaticResource SliderBaseStyle}"
+                                MinHeight="8" VerticalAlignment="Center"
+                                TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                                ValueChanged="MaxPointSlider_ValueChanged"/>
+                            <!-- counter -->
+                            <TextBox
+                                Grid.Column="1"
+                                x:Name="MaxPointTextBox"
+                                Margin="8 0 0 1" Padding="0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent"
+                                HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                TextAlignment="Right"
+                                LostFocus="MaxPointTextBox_LostFocus"/>
+                            <!--<TextBlock
+                                Grid.Column="1"
+                                Style="{StaticResource TextBlockBaseStyle}"
+                                Margin="15,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <Run Text="{Binding Path=Value, ElementName=MaxPointSlider}"/><Run Text="{Binding Path=[SETTING_NOTIFICATION_MAXIMUM_SIM_POINT_UNIT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </TextBlock>-->
+                        </Grid>
                         <!-- tooltip -->
                         <Grid.ToolTip>
                             <StackPanel Style="{StaticResource ToolTipPanelStyle}">
@@ -511,7 +525,7 @@
                         </Grid.ToolTip>
                     </Grid>
                     <!-- 자유경험치 -->
-                    <Grid Margin="20,10,20,10" Background="Transparent">
+                    <Grid Margin="20,10,20,15" Background="Transparent">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
@@ -595,20 +609,33 @@
                             Style="{StaticResource ContentCheckBoxStyle}"
                             Checked="GetDollCheckBox_Checked" Unchecked="GetDollCheckBox_Unchecked"/>
                         <!-- slider -->
-                        <Slider
-                            Grid.Row="1" Grid.Column="0"
-                            x:Name="GetDollSlider"
-                            Style="{StaticResource SliderBaseStyle}"
-                            MinHeight="8" Height="8" VerticalAlignment="Center"
-                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
-                            ValueChanged="GetDollSlider_ValueChanged"/>
-                        <!-- counter -->
-                        <TextBlock
-                            Grid.Row="1" Grid.Column="1"
-                            Style="{StaticResource TextBlockBaseStyle}"
-                            Margin="15,0,0,0" VerticalAlignment="Center">
-                            <Run Text="{Binding Path=Value, ElementName=GetDollSlider}"/><Run Text="{Binding Path=[SETTING_NOTIFICATION_MISSION_RESCUE_DOLL_UNIT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
+                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+                            <Slider
+                                Grid.Column="0"
+                                x:Name="GetDollSlider"
+                                Style="{StaticResource SliderBaseStyle}"
+                                MinHeight="8" VerticalAlignment="Center"
+                                TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                                ValueChanged="GetDollSlider_ValueChanged"/>
+                            <!-- counter -->
+                            <TextBox
+                                Grid.Column="1"
+                                x:Name="GetDollTextBox"
+                                Margin="8 0 0 1" Padding="0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent"
+                                HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                TextAlignment="Right"
+                                LostFocus="GetDollTextBox_LostFocus"/>
+                            <!--<TextBlock
+                                Grid.Row="1" Grid.Column="1"
+                                Style="{StaticResource TextBlockBaseStyle}"
+                                Margin="15,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <Run Text="{Binding Path=Value, ElementName=GetDollSlider}"/><Run Text="{Binding Path=[SETTING_NOTIFICATION_MISSION_RESCUE_DOLL_UNIT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </TextBlock>-->
+                        </Grid>
                         <!-- tooltip -->
                         <Grid.ToolTip>
                             <StackPanel Style="{StaticResource ToolTipPanelStyle}">
@@ -639,20 +666,33 @@
                             Style="{StaticResource ContentCheckBoxStyle}"
                             Checked="GetEquipCheckBox_Checked" Unchecked="GetEquipCheckBox_Unchecked"/>
                         <!-- slider -->
-                        <Slider
-                            Grid.Row="1" Grid.Column="0"
-                            x:Name="GetEquipSlider"
-                            Style="{StaticResource SliderBaseStyle}"
-                            MinHeight="8" Height="8" VerticalAlignment="Center"
-                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
-                            ValueChanged="GetEquipSlider_ValueChanged"/>
-                        <!-- counter -->
-                        <TextBlock
-                            Grid.Row="1" Grid.Column="1"
-                            Style="{StaticResource TextBlockBaseStyle}"
-                            Margin="15,0,0,0" VerticalAlignment="Center">
-                            <Run Text="{Binding Path=Value, ElementName=GetEquipSlider}"/><Run Text="{Binding Path=[SETTING_NOTIFICATION_MISSION_GET_EQUIP_UNIT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
+                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+                            <Slider
+                                Grid.Column="0"
+                                x:Name="GetEquipSlider"
+                                Style="{StaticResource SliderBaseStyle}"
+                                MinHeight="8" VerticalAlignment="Center"
+                                TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                                ValueChanged="GetEquipSlider_ValueChanged"/>
+                            <!-- counter -->
+                            <TextBox
+                                Grid.Column="1"
+                                x:Name="GetEquipTextBox"
+                                Margin="8 0 0 1" Padding="0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent"
+                                HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                TextAlignment="Right"
+                                LostFocus="GetEquipTextBox_LostFocus"/>
+                            <!--<TextBlock
+                                Grid.Row="1" Grid.Column="1"
+                                Style="{StaticResource TextBlockBaseStyle}"
+                                Margin="15,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <Run Text="{Binding Path=Value, ElementName=GetEquipSlider}"/><Run Text="{Binding Path=[SETTING_NOTIFICATION_MISSION_GET_EQUIP_UNIT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </TextBlock>-->
+                        </Grid>
                         <!-- tooltip -->
                         <Grid.ToolTip>
                             <StackPanel Style="{StaticResource ToolTipPanelStyle}">
@@ -708,20 +748,34 @@
                             Style="{StaticResource ContentCheckBoxStyle}"
                             Checked="MoveFinishCheckBox_Checked" Unchecked="MoveFinishCheckBox_Unchecked"/>
                         <!-- slider -->
-                        <Slider
-                            Grid.Row="1" Grid.Column="0"
-                            x:Name="MoveFinishSlider"
-                            Style="{StaticResource SliderBaseStyle}"
-                            MinHeight="8" Height="8" VerticalAlignment="Center"
-                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
-                            ValueChanged="MoveFinishSlider_ValueChanged"/>
-                        <!-- counter -->
-                        <TextBlock
-                            Grid.Row="1" Grid.Column="1"
+                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+                            <Slider
+                                Grid.Column="0"
+                                x:Name="MoveFinishSlider"
+                                Style="{StaticResource SliderBaseStyle}"
+                                MinHeight="8" VerticalAlignment="Center"
+                                TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                                ValueChanged="MoveFinishSlider_ValueChanged"/>
+                            <!-- counter -->
+                            <TextBox
+                                Grid.Column="1"
+                                x:Name="MoveFinishTextBox"
+                                Margin="8 0 0 1" Padding="0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent"
+                                HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                TextAlignment="Right"
+                                LostFocus="MoveFinishTextBox_LostFocus"/>
+                                <!--Text="{Binding Path=Value, ElementName=MoveFinishSlider, StringFormat={}{0}T}"-->
+                            <!--<TextBlock
+                            Grid.Column="1"
                             Style="{StaticResource TextBlockBaseStyle}"
-                            Margin="15,0,0,0" VerticalAlignment="Center">
+                            Margin="15,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center">
                             <Run Text="{Binding Path=Value, ElementName=MoveFinishSlider}"/><Run Text="{Binding Path=[SETTING_NOTIFICATION_MISSION_MOVE_TEAM_UNIT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
+                            </TextBlock>-->
+                        </Grid>
                         <!-- tooltip -->
                         <Grid.ToolTip>
                             <StackPanel Style="{StaticResource ToolTipPanelStyle}">
@@ -731,7 +785,7 @@
                         </Grid.ToolTip>
                     </Grid>
                     <!-- 전투 후 알림 -->
-                    <Grid Margin="20,10,20,10" Background="Transparent">
+                    <Grid Margin="20,10,20,15" Background="Transparent">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
@@ -844,7 +898,7 @@
                         </Grid.ToolTip>
                     </Grid>
                     <!-- 체력 경고 -->
-                    <Grid Margin="20,10,20,10" Background="Transparent">
+                    <Grid Margin="20,10,20,10">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
@@ -865,25 +919,34 @@
                             Style="{StaticResource ContentCheckBoxStyle}"
                             Checked="HpWarningCheckBox_Checked" Unchecked="HpWarningCheckBox_Unchecked"/>
                         <!-- slider -->
-                        <Slider
-                            Grid.Row="1" Grid.Column="0"
-                            x:Name="HpWarningSlider"
-                            Style="{StaticResource SliderBaseStyle}"
-                            MinHeight="8" Height="8" VerticalAlignment="Center"
-                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
-                            ValueChanged="HpWarningSlider_ValueChanged"/>
-                        <!-- counter -->
-                        <TextBlock
-                            Grid.Row="1" Grid.Column="1"
-                            Style="{StaticResource TextBlockBaseStyle}"
-                            Margin="15,0,0,0" VerticalAlignment="Center">
-                           <Run Text="{Binding Path=Value, ElementName=HpWarningSlider}"/><Run Text="%"/>
-                        </TextBlock>
+                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+                            <Slider
+                                Grid.Column="0"
+                                x:Name="HpWarningSlider"
+                                Style="{StaticResource SliderBaseStyle}"
+                                MinHeight="8" VerticalAlignment="Center"
+                                TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                                ValueChanged="HpWarningSlider_ValueChanged"/>
+                            <!-- counter -->
+                            <TextBox
+                                Grid.Column="1"
+                                x:Name="HpWarningTextBox"
+                                Margin="8 0 0 1" Padding="0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent" 
+                                HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                TextAlignment="Right"
+                                LostFocus="HpWarningTextBox_LostFocus"/>
+                                <!--Text="{Binding Path=Value, ElementName=HpWarningSlider, StringFormat={}{0}%}"-->
+                        </Grid>
                         <!-- tooltip -->
                         <Grid.ToolTip>
                             <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
-                                                  Html="{Binding Path=[SETTING_NOTIFICATION_DOLL_HP_WARNING_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                                <uc:HtmlTextBlock 
+                                    Style="{StaticResource ToolTipTextBlockStyle}"
+                                    Html="{Binding Path=[SETTING_NOTIFICATION_DOLL_HP_WARNING_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
                     </Grid>
@@ -1051,7 +1114,7 @@
                         </Grid.ToolTip>
                     </Grid>
                     <!-- 요정 제조 -->
-                    <Grid Margin="20,10,20,10" Background="Transparent">
+                    <Grid Margin="20,10,20,15" Background="Transparent">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
@@ -1135,20 +1198,33 @@
                             Style="{StaticResource ContentCheckBoxStyle}"
                             Checked="DollExpBonusCheckBox_Checked" Unchecked="DollExpBonusCheckBox_Unchecked"/>
                         <!-- slider -->
-                        <Slider
-                            Grid.Row="1" Grid.Column="0"
-                            x:Name="DollExpBonusSlider"
-                            Style="{StaticResource SliderBaseStyle}"
-                            MinHeight="8" Height="8" VerticalAlignment="Center"
-                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
-                            ValueChanged="DollExpBonusSlider_ValueChanged"/>
-                        <!-- counter -->
-                        <TextBlock
-                            Grid.Row="1" Grid.Column="1"
-                            Style="{StaticResource TextBlockBaseStyle}"
-                            Margin="15,0,0,0" VerticalAlignment="Center">
-                            <Run Text="{Binding Path=Value, ElementName=DollExpBonusSlider}"/><Run Text="%"/>
-                        </TextBlock>
+                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+                            <Slider
+                                Grid.Column="0"
+                                x:Name="DollExpBonusSlider"
+                                Style="{StaticResource SliderBaseStyle}"
+                                MinHeight="8" VerticalAlignment="Center"
+                                TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                                ValueChanged="DollExpBonusSlider_ValueChanged"/>
+                            <!-- counter -->
+                            <TextBox
+                                Grid.Column="1"
+                                x:Name="DollExpBonusTextBox"
+                                Margin="8 0 0 1" Padding="0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent"
+                                HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                TextAlignment="Right"
+                                LostFocus="DollExpBonusTextBox_LostFocus"/>
+                            <!--<TextBlock
+                                Grid.Column="1"
+                                Style="{StaticResource TextBlockBaseStyle}"
+                                Margin="15,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <Run Text="{Binding Path=Value, ElementName=DollExpBonusSlider}"/><Run Text="%"/>
+                            </TextBlock>-->
+                        </Grid>
                         <!-- tooltip -->
                         <Grid.ToolTip>
                             <StackPanel Style="{StaticResource ToolTipPanelStyle}">
@@ -1179,20 +1255,33 @@
                             Style="{StaticResource ContentCheckBoxStyle}"
                             Checked="RestoreTimeBonusCheckBox_Checked" Unchecked="RestoreTimeBonusCheckBox_Unchecked"/>
                         <!-- slider -->
-                        <Slider
-                            Grid.Row="1" Grid.Column="0"
-                            x:Name="RestoreTimeBonusSlider"
-                            Style="{StaticResource SliderBaseStyle}"
-                            MinHeight="8" Height="8" VerticalAlignment="Center"
-                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
-                            ValueChanged="RestoreTimeBonusSlider_ValueChanged"/>
-                        <!-- counter -->
-                        <TextBlock
-                            Grid.Row="1" Grid.Column="1"
-                            Style="{StaticResource TextBlockBaseStyle}"
-                            Margin="15,0,0,0" VerticalAlignment="Center">
-                            <Run Text="{Binding Path=Value, ElementName=RestoreTimeBonusSlider}"/><Run Text="%"/>
-                        </TextBlock>
+                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+                            <Slider
+                                Grid.Column="0"
+                                x:Name="RestoreTimeBonusSlider"
+                                Style="{StaticResource SliderBaseStyle}"
+                                MinHeight="8" VerticalAlignment="Center"
+                                TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                                ValueChanged="RestoreTimeBonusSlider_ValueChanged"/>
+                            <!-- counter -->
+                            <TextBox
+                                Grid.Column="1"
+                                x:Name="RestoreTimeBonusTextBox"
+                                Margin="8 0 0 1" Padding="0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent"
+                                HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                TextAlignment="Right"
+                                LostFocus="RestoreTimeBonusTextBox_LostFocus"/>
+                            <!--<TextBlock
+                                Grid.Column="1"
+                                Style="{StaticResource TextBlockBaseStyle}"
+                                Margin="15,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <Run Text="{Binding Path=Value, ElementName=RestoreTimeBonusSlider}"/><Run Text="%"/>
+                            </TextBlock>-->
+                        </Grid>
                         <!-- tooltip -->
                         <Grid.ToolTip>
                             <StackPanel Style="{StaticResource ToolTipPanelStyle}">
@@ -1223,20 +1312,33 @@
                             Style="{StaticResource ContentCheckBoxStyle}"
                             Checked="SkillTimeBonusCheckBox_Checked" Unchecked="SkillTimeBonusCheckBox_Unchecked"/>
                         <!-- slider -->
-                        <Slider
-                            Grid.Row="1" Grid.Column="0"
-                            x:Name="SkillTimeBonusSlider"
-                            Style="{StaticResource SliderBaseStyle}"
-                            MinHeight="8" Height="8" VerticalAlignment="Center"
-                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
-                            ValueChanged="SkillTimeBonusSlider_ValueChanged"/>
-                        <!-- counter -->
-                        <TextBlock
-                            Grid.Row="1" Grid.Column="1"
-                            Style="{StaticResource TextBlockBaseStyle}"
-                            Margin="15,0,0,0" VerticalAlignment="Center">
-                            <Run Text="{Binding Path=Value, ElementName=SkillTimeBonusSlider}"/><Run Text="%"/>
-                        </TextBlock>
+                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+                            <Slider
+                                Grid.Column="0"
+                                x:Name="SkillTimeBonusSlider"
+                                Style="{StaticResource SliderBaseStyle}"
+                                MinHeight="8" VerticalAlignment="Center"
+                                TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                                ValueChanged="SkillTimeBonusSlider_ValueChanged"/>
+                            <!-- counter -->
+                            <TextBox
+                                Grid.Column="1"
+                                x:Name="SkillTimeBonusTextBox"
+                                Margin="8 0 0 1" Padding="0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent"
+                                HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                TextAlignment="Right"
+                                LostFocus="SkillTimeBonusTextBox_LostFocus"/>
+                            <!--<TextBlock
+                                Grid.Column="1"
+                                Style="{StaticResource TextBlockBaseStyle}"
+                                Margin="15,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <Run Text="{Binding Path=Value, ElementName=SkillTimeBonusSlider}"/><Run Text="%"/>
+                            </TextBlock>-->
+                        </Grid>
                         <!-- tooltip -->
                         <Grid.ToolTip>
                             <StackPanel Style="{StaticResource ToolTipPanelStyle}">
@@ -1305,20 +1407,33 @@
                             Style="{StaticResource ContentCheckBoxStyle}"
                             Checked="EarlyNotifyCheckBox_Checked" Unchecked="EarlyNotifyCheckBox_Unchecked"/>
                         <!-- slider -->
-                        <Slider
-                            Grid.Row="1" Grid.Column="0"
-                            x:Name="EarlyNotifySlider"
-                            Style="{StaticResource SliderBaseStyle}"
-                            MinHeight="8" Height="8" VerticalAlignment="Center"
-                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
-                            ValueChanged="EarlyNotifySlider_ValueChanged"/>
-                        <!-- counter -->
-                        <TextBlock
-                            Grid.Row="1" Grid.Column="1"
-                            Style="{StaticResource TextBlockBaseStyle}"
-                            Margin="15,0,0,0" VerticalAlignment="Center">
-                            <Run Text="{Binding Path=Value, ElementName=EarlyNotifySlider}"/><Run Text="{Binding Path=[SETTING_NOTIFICATION_EXTRA_ADVANCED_NOTIFICATION_UNIT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                        </TextBlock>
+                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+                            <Slider
+                                Grid.Column="0"
+                                x:Name="EarlyNotifySlider"
+                                Style="{StaticResource SliderBaseStyle}"
+                                MinHeight="8" VerticalAlignment="Center"
+                                TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                                ValueChanged="EarlyNotifySlider_ValueChanged"/>
+                            <!-- counter -->
+                            <TextBox
+                                Grid.Column="1"
+                                x:Name="EarlyNotifyTextBox"
+                                Margin="8 0 0 1" Padding="0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent"
+                                HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                TextAlignment="Right"
+                                LostFocus="EarlyNotifyTextBox_LostFocus"/>
+                            <!--<TextBlock
+                                Grid.Column="1"
+                                Style="{StaticResource TextBlockBaseStyle}"
+                                Margin="15,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <Run Text="{Binding Path=Value, ElementName=EarlyNotifySlider}"/><Run Text="{Binding Path=[SETTING_NOTIFICATION_EXTRA_ADVANCED_NOTIFICATION_UNIT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </TextBlock>-->
+                        </Grid>
                         <!-- tooltip -->
                         <Grid.ToolTip>
                             <StackPanel Style="{StaticResource ToolTipPanelStyle}">

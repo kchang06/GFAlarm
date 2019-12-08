@@ -119,7 +119,7 @@
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
     </UserControl.Resources>
-    <Grid>
+    <Grid Margin="0,0,2,0">
         <ScrollViewer VerticalScrollBarVisibility="Visible">
             <StackPanel Orientation="Vertical">
                 <!-- [그룹] 언어 -->
@@ -393,20 +393,34 @@
                             Style="{StaticResource ContentSmallTitleStyle}"
                             Text="{Binding Path=[SETTING_TOAST_VOICE_VOLUME], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- slider -->
-                        <Slider
-                            Grid.Row="1" Grid.Column="0"
-                            x:Name="VolumeSlider"
-                            Style="{StaticResource SliderBaseStyle}"
-                            MinHeight="8" Height="8" VerticalAlignment="Center"
-                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
-                            ValueChanged="VolumeSlider_ValueChanged"/>
-                        <!-- counter -->
-                        <TextBlock
-                            Grid.Row="1" Grid.Column="1"
-                            Style="{StaticResource TextBlockBaseStyle}"
-                            Margin="15,0,0,0" VerticalAlignment="Center">
-                            <Run Text="{Binding Path=Value, ElementName=VolumeSlider}"/><Run Text="%"/>
-                        </TextBlock>
+                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+                            <Slider
+                                Grid.Column="0"
+                                x:Name="VolumeSlider"
+                                Style="{StaticResource SliderBaseStyle}"
+                                MinHeight="8" Height="8" VerticalAlignment="Center"
+                                TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                                ValueChanged="VolumeSlider_ValueChanged"/>
+                            <!-- counter -->
+                            <TextBox
+                                Grid.Column="1"
+                                x:Name="VolumeTextBox"
+                                Margin="8 0 0 1" Padding="0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent"
+                                HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                TextAlignment="Right"
+                                LostFocus="VolumeTextBox_LostFocus"/>
+                            <!--<TextBlock
+                                Grid.Column="1"
+                                Grid.Row="1" Grid.Column="1"
+                                Style="{StaticResource TextBlockBaseStyle}"
+                                Margin="15,0,0,0" VerticalAlignment="Center">
+                                <Run Text="{Binding Path=Value, ElementName=VolumeSlider}"/><Run Text="%"/>
+                            </TextBlock>-->
+                        </Grid>
                         <!-- tooltip -->
                         <Grid.ToolTip>
                             <StackPanel Style="{StaticResource ToolTipPanelStyle}">
@@ -1032,7 +1046,7 @@
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
-                            <RowDefinition/>
+                            <RowDefinition Height="25"/>
                         </Grid.RowDefinitions>
                         <!-- title -->
                         <TextBlock
@@ -1040,20 +1054,33 @@
                             Style="{StaticResource ContentSmallTitleStyle}"
                             Text="{Binding Path=[SETTING_WINDOW_OPACITY], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- slider -->
-                        <Slider
-                            Grid.Row="1" Grid.Column="0"
-                            x:Name="WindowOpacitySlider"
-                            Style="{StaticResource SliderBaseStyle}"
-                            MinHeight="8" Height="8" VerticalAlignment="Center"
-                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
-                            ValueChanged="WindowOpacitySlider_ValueChanged"/>
-                        <!-- counter -->
-                        <TextBlock
-                            Grid.Row="1" Grid.Column="1"
-                            Style="{StaticResource TextBlockBaseStyle}"
-                            Margin="15,0,0,0" VerticalAlignment="Center">
-                           <Run Text="{Binding Path=Value, ElementName=WindowOpacitySlider}"/><Run Text="%"/>
-                        </TextBlock>
+                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+                            <Slider
+                                Grid.Column="0"
+                                x:Name="WindowOpacitySlider"
+                                Style="{StaticResource SliderBaseStyle}"
+                                MinHeight="8" Height="8" VerticalAlignment="Center"
+                                TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                                ValueChanged="WindowOpacitySlider_ValueChanged"/>
+                            <!-- counter -->
+                            <TextBox
+                                Grid.Column="1"
+                                x:Name="WindowOpacityTextBox"
+                                Margin="8 0 0 1" Padding="0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent"
+                                HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                TextAlignment="Right"
+                                LostFocus="WindowOpacityTextBox_LostFocus"/>
+                            <!--<TextBlock
+                                Grid.Column="1"
+                                Style="{StaticResource TextBlockBaseStyle}"
+                                Margin="15,0,0,0" VerticalAlignment="Center">
+                               <Run Text="{Binding Path=Value, ElementName=WindowOpacitySlider}"/><Run Text="%"/>
+                            </TextBlock>-->
+                        </Grid>
                         <!-- tooltip -->
                         <Grid.ToolTip>
                             <StackPanel Style="{StaticResource ToolTipPanelStyle}">
@@ -1177,7 +1204,7 @@
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
-                            <RowDefinition/>
+                            <RowDefinition Height="25"/>
                         </Grid.RowDefinitions>
                         <!-- title -->
                         <TextBlock
@@ -1185,20 +1212,33 @@
                             Style="{StaticResource ContentSmallTitleStyle}"
                             Text="Print Log (Level)"/>
                         <!-- slider -->
-                        <Slider
-                            Grid.Row="1" Grid.Column="0"
-                            x:Name="LogLevelSlider"
-                            Style="{StaticResource SliderBaseStyle}"
-                            MinHeight="8" Height="8" VerticalAlignment="Center"
-                            TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
-                            ValueChanged="LogLevelSlider_ValueChanged"/>
-                        <!-- counter -->
-                        <TextBlock
-                            Grid.Row="1" Grid.Column="1"
-                            Style="{StaticResource TextBlockBaseStyle}"
-                            Margin="15,0,0,0" VerticalAlignment="Center">
-                            <Run Text="{Binding Path=Value, ElementName=LogLevelSlider}"/><Run Text="L"/>
-                        </TextBlock>
+                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+                            <Slider
+                                Grid.Column="0"
+                                x:Name="LogLevelSlider"
+                                Style="{StaticResource SliderBaseStyle}"
+                                MinHeight="8" Height="8" VerticalAlignment="Center"
+                                TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                                ValueChanged="LogLevelSlider_ValueChanged"/>
+                            <!-- counter -->
+                            <TextBox
+                                Grid.Column="1"
+                                x:Name="LogLevelTextBox"
+                                Margin="8 0 0 1" Padding="0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent"
+                                HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                TextAlignment="Right"
+                                LostFocus="LogLevelTextBox_LostFocus"/>
+                            <!--<TextBlock
+                                Grid.Column="1"
+                                Style="{StaticResource TextBlockBaseStyle}"
+                                Margin="15,0,0,0" VerticalAlignment="Center">
+                                <Run Text="{Binding Path=Value, ElementName=LogLevelSlider}"/><Run Text="L"/>
+                            </TextBlock>-->
+                        </Grid>
                         <!-- tooltip -->
                         <Grid.ToolTip>
                             <StackPanel

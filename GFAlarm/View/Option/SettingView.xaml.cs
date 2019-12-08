@@ -3,6 +3,7 @@ using GFAlarm.Notifier;
 using GFAlarm.Util;
 using LocalizationResources;
 using MahApps.Metro.IconPacks;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,6 +22,10 @@ namespace GFAlarm.View.Option
     /// </summary>
     public partial class SettingView : UserControl
     {
+        private static readonly Logger log = LogManager.GetCurrentClassLogger();
+
+        Regex exceptNumberRegex = new Regex("[^a-zA-Z0-9 -]");
+
         public SettingView()
         {
             InitializeComponent();
@@ -37,7 +42,7 @@ namespace GFAlarm.View.Option
             this.useVoiceNotification = Config.Setting.voiceNotification;
             this.useAdjutantVoice = Config.Setting.adjutantVoiceOnly;
             this.useStartVoice = Config.Setting.startVoice;
-            this.VolumeSlider.Value = Config.Setting.voiceVolume;
+            this.setVoiceVolume = Config.Setting.voiceVolume.ToString();
             this.VolumeSlider.Minimum = 0;
             this.VolumeSlider.Maximum = 100;
             this.useSoundPlayerApi = Config.Setting.useSoundPlayerApi;
@@ -64,7 +69,7 @@ namespace GFAlarm.View.Option
             // 윈도우
             this.useHideToTray = Config.Window.minimizeToTray;
             this.useStickyWindow = Config.Window.stickyWindow;
-            this.WindowOpacitySlider.Value = Config.Window.windowOpacity;
+            this.setWindowOpacity = Config.Window.windowOpacity.ToString();
             this.WindowOpacitySlider.Minimum = 30;
             this.WindowOpacitySlider.Maximum = 100;
             this.WindowColorTextBox.Text = Config.Window.windowColor;
@@ -75,7 +80,7 @@ namespace GFAlarm.View.Option
 
             // 기타
             this.useCheckUpdate = Config.Setting.checkUpdate;
-            this.LogLevelSlider.Value = Config.Setting.logLevel;
+            this.setLogLevel = Config.Setting.logLevel.ToString();
             this.LogLevelSlider.Minimum = 0;
             this.LogLevelSlider.Maximum = 5;
             this.useLogPacket = Config.Setting.logPacket;
@@ -222,6 +227,7 @@ namespace GFAlarm.View.Option
                             this.AdjutantVoiceCheckBox.IsEnabled = false;
                             this.StartVoiceCheckBox.IsEnabled = false;
                             this.VolumeSlider.IsEnabled = false;
+                            this.VolumeTextBox.IsEnabled = false;
                             this.SoundPlayerApiCheckBox.IsEnabled = false;
                         }
                         // 음성 알림 사용
@@ -235,10 +241,12 @@ namespace GFAlarm.View.Option
                             if (this.SoundPlayerApiCheckBox.IsChecked == true)
                             {
                                 this.VolumeSlider.IsEnabled = false;
+                                this.VolumeTextBox.IsEnabled = false;
                             }
                             else
                             {
                                 this.VolumeSlider.IsEnabled = true;
+                                this.VolumeTextBox.IsEnabled = true;
                             }
                         }
                         // 둘 다 미사용
@@ -247,6 +255,7 @@ namespace GFAlarm.View.Option
                             this.AdjutantVoiceCheckBox.IsEnabled = false;
                             this.StartVoiceCheckBox.IsEnabled = false;
                             this.VolumeSlider.IsEnabled = false;
+                            this.VolumeTextBox.IsEnabled = false;
                             this.SoundPlayerApiCheckBox.IsEnabled = false;
                         }
                     }
@@ -261,6 +270,7 @@ namespace GFAlarm.View.Option
                         this.AdjutantVoiceCheckBox.IsEnabled = false;
                         this.StartVoiceCheckBox.IsEnabled = false;
                         this.VolumeSlider.IsEnabled = false;
+                        this.VolumeTextBox.IsEnabled = false;
                         this.SoundPlayerApiCheckBox.IsEnabled = false;
                         this.ToastTestButton.IsEnabled = false;
                     }
@@ -472,9 +482,34 @@ namespace GFAlarm.View.Option
             this.useStartVoice = false;
         }
 
+        /// <summary>
+        /// 음성 볼륨 설정
+        /// </summary>
+        public string setVoiceVolume
+        {
+            set
+            {
+                int tempValue = 0;
+                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                if (0 <= tempValue && tempValue <= 100)
+                {
+                    Config.Setting.voiceVolume = tempValue;
+                }
+                else
+                {
+                    tempValue = Config.Setting.voiceVolume;
+                }
+                this.VolumeSlider.Value = tempValue;
+                this.VolumeTextBox.Text = string.Format("{0}%", tempValue);
+            }
+        }
         private void VolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            Config.Setting.voiceVolume = (int)this.VolumeSlider.Value;
+            setVoiceVolume = e.NewValue.ToString();
+        }
+        private void VolumeTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            setVoiceVolume = (sender as TextBox).Text;
         }
 
         /// <summary>
@@ -902,17 +937,37 @@ namespace GFAlarm.View.Option
         }
 
         /// <summary>
-        /// 창 투명도
+        /// 창 투명도 설정
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        public string setWindowOpacity
+        {
+            set
+            {
+                int tempValue = 0;
+                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                if (30 <= tempValue && tempValue <= 100)
+                {
+                    Config.Window.windowOpacity = tempValue;
+                }
+                else
+                {
+                    tempValue = Config.Window.windowOpacity;
+                }
+                this.WindowOpacitySlider.Value = tempValue;
+                this.WindowOpacityTextBox.Text = string.Format("{0}%", tempValue);
+                if (MainWindow.view != null)
+                    MainWindow.view.WindowOpacity = tempValue;
+                if (SubWindow.view != null)
+                    SubWindow.view.WindowOpacity = tempValue;
+            }
+        }
         private void WindowOpacitySlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            Config.Window.windowOpacity = (int)e.NewValue;
-            if (MainWindow.view != null)
-                MainWindow.view.WindowOpacity = Config.Window.windowOpacity;
-            if (SubWindow.view != null)
-                SubWindow.view.WindowOpacity = Config.Window.windowOpacity;
+            setWindowOpacity = e.NewValue.ToString();
+        }
+        private void WindowOpacityTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            setWindowOpacity = (sender as TextBox).Text;
         }
 
         /// <summary>
@@ -962,13 +1017,34 @@ namespace GFAlarm.View.Option
         /// <summary>
         /// 로그 레벨 설정
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        public string setLogLevel
+        {
+            set
+            {
+                int tempValue = 0;
+                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                if (0 <= tempValue && tempValue <= 5)
+                {
+                    Config.Setting.logLevel = tempValue;
+                }
+                else
+                {
+                    tempValue = Config.Setting.logLevel;
+                }
+                this.LogLevelSlider.Value = tempValue;
+                this.LogLevelTextBox.Text = string.Format("{0}L", tempValue);
+                App.LogLevel = tempValue;
+            }
+        }
         private void LogLevelSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            App.LogLevel = Convert.ToInt32(e.NewValue);
-            Config.Setting.logLevel = Convert.ToInt32(e.NewValue);
+            setLogLevel = e.NewValue.ToString();
         }
+        private void LogLevelTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            setLogLevel = (sender as TextBox).Text;
+        }
+
 
         /// <summary>
         /// 패킷 로그 사용

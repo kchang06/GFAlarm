@@ -72,17 +72,26 @@
             <SolidColorBrush x:Key="EchelonAutoBattleBrush" Color="#388E3C"/>
             <SolidColorBrush x:Key="EchelonMissionBrush" Color="#1E88E5"/>
 
+            <!-- 툴팁 스타일 -->
+            <Style TargetType="ToolTip">
+                <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
+            </Style>
+            <!-- 슬라이더 스타일 -->
+
             <!-- 슬라이더 스타일 -->
             <Style x:Key="SliderBaseStyle" TargetType="{x:Type Slider}" BasedOn="{StaticResource FlatSlider}">
+            <!--<Style x:Key="SliderBaseStyle" TargetType="{x:Type Slider}">-->
                 <Setter Property="Cursor" Value="Hand"/>
                 <Setter Property="SnapsToDevicePixels" Value="True"/>
             </Style>
             <!-- 체크박스 스타일 -->
             <Style x:Key="CheckBoxBaseStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource MetroCheckBox}">
+            <!--<Style x:Key="CheckBoxBaseStyle" TargetType="{x:Type CheckBox}">-->
                 <Setter Property="Cursor" Value="Hand"/>
                 <Setter Property="SnapsToDevicePixels" Value="True"/>
             </Style>
             <!-- 버튼 -->
+            <!--<Style x:Key="ButtonBaseStyle" TargetType="Button">-->
             <Style x:Key="ButtonBaseStyle" TargetType="Button" BasedOn="{StaticResource SquareButtonStyle}">
                 <Setter Property="Cursor" Value="Hand"/>
                 <Setter Property="FontSize" Value="12"/>
@@ -384,6 +393,12 @@
                 <Setter Property="CaretBrush" Value="#FFFFFF"/>
                 <Setter Property="BorderThickness" Value="2"/>
                 <Setter Property="SnapsToDevicePixels" Value="True"/>
+                <Style.Triggers>
+                    <Trigger Property="IsFocused" Value="True">
+                        <Setter Property="BorderBrush" Value="Blue"/>
+                        <Setter Property="BorderThickness" Value="2"/>
+                    </Trigger>
+                </Style.Triggers>
             </Style>
             
             <!-- PasswordBox -->
@@ -398,6 +413,7 @@
             
             <!-- Button -->
             <Style TargetType="Button" BasedOn="{StaticResource SquareButtonStyle}">
+            <!--<Style TargetType="Button">-->
                 <Setter Property="Cursor" Value="Hand"/>
                 <Setter Property="FontSize" Value="12"/>
                 <Setter Property="FontFamily" Value="./Resource/font/#Segoe UI, Meiryo UI, Malgun Gothic"/>
@@ -408,12 +424,14 @@
             
             <!-- CheckBox -->
             <Style TargetType="CheckBox" BasedOn="{StaticResource MetroCheckBox}">
+            <!--<Style TargetType="CheckBox">-->
                 <Setter Property="Cursor" Value="Hand"/>
                 <Setter Property="SnapsToDevicePixels" Value="True"/>
             </Style>
             
             <!-- Slider --> 
             <Style TargetType="Slider" BasedOn="{StaticResource FlatSlider}">
+            <!--<Style TargetType="Slider">-->
                 <Setter Property="Cursor" Value="Hand"/>
                 <Setter Property="SnapsToDevicePixels" Value="True"/>
             </Style>
@@ -593,7 +611,7 @@
                 <Setter Property="Background" Value="{StaticResource GrayBrush}"/>
                 <Setter Property="Margin" Value="5,-2,8,0"/>
                 <Setter Property="Padding" Value="5,0"/>
-                <Setter Property="Width" Value="24"/>
+                <!--<Setter Property="Width" Value="24"/>-->
                 <Setter Property="Height" Value="18"/>
                 <Setter Property="BorderThickness" Value="0"/>
                 <Setter Property="BorderBrush" Value="Transparent"/>

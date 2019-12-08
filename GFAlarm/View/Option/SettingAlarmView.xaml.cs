@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,6 +26,8 @@ namespace GFAlarm.View.Option
     {
         private static readonly Logger log = LogManager.GetCurrentClassLogger();
 
+        Regex exceptNumberRegex = new Regex("[^a-zA-Z0-9 -]");
+
         public SettingAlarmView()
         {
             InitializeComponent();
@@ -42,7 +45,7 @@ namespace GFAlarm.View.Option
 
             // 상한 알림
             this.useMaxPoint = Config.Alarm.notifyMaxBp;
-            this.MaxPointSlider.Value = Config.Alarm.notifyMaxBpPoint;
+            this.setMaxPoint = Config.Alarm.notifyMaxBpPoint.ToString();
             this.MaxPointSlider.Minimum = 1;
             this.MaxPointSlider.Maximum = 6;
             this.useMaxDoll = Config.Alarm.notifyMaxDoll;
@@ -51,16 +54,16 @@ namespace GFAlarm.View.Option
 
             // 전역 알림
             this.useGetDoll = Config.Alarm.notifyRescueDoll;
-            this.GetDollSlider.Value = Config.Alarm.notifyRescueDollStar;
+            this.setGetDoll = Config.Alarm.notifyRescueDollStar.ToString();
             this.GetDollSlider.Minimum = 2;
             this.GetDollSlider.Maximum = 5;
             this.useGetEquip = Config.Alarm.notifyGetEquip;
-            this.GetEquipSlider.Value = Config.Alarm.notifyGetEquipStar;
+            this.setGetEquip = Config.Alarm.notifyGetEquipStar.ToString();
             this.GetEquipSlider.Minimum = 2;
             this.GetEquipSlider.Maximum = 5;
             this.useMissionSuccess = Config.Alarm.notifyMissionSuccess;
             this.useMoveFinish = Config.Alarm.notifyTeamMove;
-            this.MoveFinishSlider.Value = Config.Alarm.notifyTeamMoveCount;
+            this.setMoveFinish = Config.Alarm.notifyTeamMoveCount.ToString();
             this.MoveFinishSlider.Minimum = 1;
             this.MoveFinishSlider.Maximum = 40;
             this.useMoveAndBattleFinish = Config.Alarm.notifyTeamMoveAndBattleFinish;
@@ -68,7 +71,7 @@ namespace GFAlarm.View.Option
             // 인형 알림
             this.useNeedExpand = Config.Alarm.notifyDollNeedDummyLink;
             this.useHpWarning = Config.Alarm.notifyDollWounded;
-            this.HpWarningSlider.Value = Config.Alarm.notifyDollWoundedPercent;
+            this.setHpWarning = Config.Alarm.notifyDollWoundedPercent.ToString();
             this.HpWarningSlider.Minimum = 1;
             this.HpWarningSlider.Maximum = 100;
             this.useMaxLevel = Config.Alarm.notifyMaxLevel;
@@ -83,21 +86,21 @@ namespace GFAlarm.View.Option
 
             // 지휘관 보너스
             this.useDollExpBonus = Config.Costume.coBonusDollExp;
+            this.setDollExpBonus = Config.Costume.coBonusDollExpPercent.ToString();
             this.DollExpBonusSlider.Minimum = 1;
             this.DollExpBonusSlider.Maximum = 100;
-            this.DollExpBonusSlider.Value = Config.Costume.coBonusDollExpPercent;
             this.useRestoreTimeBonus = Config.Costume.coBonusRestoreTime;
+            this.setRestoreTimeBonus = Config.Costume.coBonusRestoreTimePercent.ToString();
             this.RestoreTimeBonusSlider.Minimum = 1;
             this.RestoreTimeBonusSlider.Maximum = 100;
-            this.RestoreTimeBonusSlider.Value = Config.Costume.coBonusRestoreTimePercent;
             this.useSkillTimeBonus = Config.Costume.coBonusSkillTrainTime;
+            this.setSkillTimeBonus = Config.Costume.coBonusSkillTrainTimePercent.ToString();
             this.SkillTimeBonusSlider.Minimum = 1;
             this.SkillTimeBonusSlider.Maximum = 100;
-            this.SkillTimeBonusSlider.Value = Config.Costume.coBonusSkillTrainTimePercent;
 
             // 기타
             this.useEarlyNotify = Config.Extra.earlyNotify;
-            this.EarlyNotifySlider.Value = Config.Extra.earlyNotifySeconds;
+            this.setEarlyNotify = Config.Extra.earlyNotifySeconds.ToString();
             this.EarlyNotifySlider.Minimum = 1;
             this.EarlyNotifySlider.Maximum = 300;
 
@@ -404,7 +407,26 @@ namespace GFAlarm.View.Option
             {
                 this.MaxPointCheckBox.IsChecked = value;
                 this.MaxPointSlider.IsEnabled = value;
+                this.MaxPointTextBox.IsEnabled = value;
                 Config.Alarm.notifyMaxBp = value;
+            }
+        }
+        public string setMaxPoint
+        {
+            set
+            {
+                int tempValue = 0;
+                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                if (1 <= tempValue && tempValue <= 6)
+                {
+                    Config.Alarm.notifyMaxBpPoint = tempValue;
+                }
+                else
+                {
+                    tempValue = Config.Alarm.notifyMaxBpPoint;
+                }
+                this.MaxPointSlider.Value = tempValue;
+                this.MaxPointTextBox.Text = string.Format("{0}P", tempValue);
             }
         }
         private void MaxPointCheckBox_Checked(object sender, RoutedEventArgs e)
@@ -417,7 +439,11 @@ namespace GFAlarm.View.Option
         }
         private void MaxPointSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            Config.Alarm.notifyMaxBpPoint = (int)this.MaxPointSlider.Value;
+            setMaxPoint = e.NewValue.ToString();
+        }
+        private void MaxPointTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            setMaxPoint = (sender as TextBox).Text;
         }
 
         /// <summary>
@@ -493,7 +519,26 @@ namespace GFAlarm.View.Option
             {
                 this.GetDollCheckBox.IsChecked = value;
                 this.GetDollSlider.IsEnabled = value;
+                this.GetDollTextBox.IsEnabled = value;
                 Config.Alarm.notifyRescueDoll = value;
+            }
+        }
+        public string setGetDoll
+        {
+            set
+            {
+                int tempValue = 0;
+                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                if (2 <= tempValue && tempValue <= 5)
+                {
+                    Config.Alarm.notifyRescueDollStar = tempValue;
+                }
+                else
+                {
+                    tempValue = Config.Alarm.notifyRescueDollStar;
+                }
+                this.GetDollSlider.Value = tempValue;
+                this.GetDollTextBox.Text = string.Format("{0}S", tempValue);
             }
         }
         private void GetDollCheckBox_Checked(object sender, RoutedEventArgs e)
@@ -506,8 +551,13 @@ namespace GFAlarm.View.Option
         }
         private void GetDollSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            Config.Alarm.notifyRescueDollStar = (int)this.GetDollSlider.Value;
+            setGetDoll = e.NewValue.ToString();
         }
+        private void GetDollTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            setGetDoll = (sender as TextBox).Text;
+        }
+
 
         /// <summary>
         /// 획득 장비 알림
@@ -518,7 +568,26 @@ namespace GFAlarm.View.Option
             {
                 this.GetEquipCheckBox.IsChecked = value;
                 this.GetEquipSlider.IsEnabled = value;
+                this.GetEquipTextBox.IsEnabled = value;
                 Config.Alarm.notifyGetEquip = value;
+            }
+        }
+        public string setGetEquip
+        {
+            set
+            {
+                int tempValue = 0;
+                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                if (2 <= tempValue && tempValue <= 5)
+                {
+                    Config.Alarm.notifyGetEquipStar = tempValue;
+                }
+                else
+                {
+                    tempValue = Config.Alarm.notifyGetEquipStar;
+                }
+                this.GetEquipSlider.Value = tempValue;
+                this.GetEquipTextBox.Text = string.Format("{0}S", tempValue);
             }
         }
         private void GetEquipCheckBox_Checked(object sender, RoutedEventArgs e)
@@ -531,7 +600,11 @@ namespace GFAlarm.View.Option
         }
         private void GetEquipSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            Config.Alarm.notifyGetEquipStar = (int)this.GetEquipSlider.Value;
+            setGetEquip = e.NewValue.ToString();
+        }
+        private void GetEquipTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            setGetEquip = (sender as TextBox).Text;
         }
 
         /// <summary>
@@ -583,8 +656,27 @@ namespace GFAlarm.View.Option
             {
                 this.MoveFinishCheckBox.IsChecked = value;
                 this.MoveFinishSlider.IsEnabled = value;
+                this.MoveFinishTextBox.IsEnabled = value;
                 this.MoveAndBattleFinishCheckBox.IsEnabled = value;
                 Config.Alarm.notifyTeamMove = value;
+            }
+        }
+        public string setMoveFinish
+        {
+            set
+            {
+                int tempValue = 0;
+                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                if (1 <= tempValue && tempValue <= 40)
+                {
+                    Config.Alarm.notifyTeamMoveCount = tempValue;
+                }
+                else
+                {
+                    tempValue = Config.Alarm.notifyTeamMoveCount;
+                }
+                this.MoveFinishSlider.Value = tempValue;
+                this.MoveFinishTextBox.Text = string.Format("{0}T", tempValue);
             }
         }
         private void MoveFinishCheckBox_Checked(object sender, RoutedEventArgs e)
@@ -597,8 +689,25 @@ namespace GFAlarm.View.Option
         }
         private void MoveFinishSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            Config.Alarm.notifyTeamMoveCount = (int)this.MoveFinishSlider.Value;
+            setMoveFinish = e.NewValue.ToString();
         }
+        private void MoveFinishTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            setMoveFinish = (sender as TextBox).Text;
+        }
+        //private void MoveFinishSlider_MouseWheel(object sender, MouseWheelEventArgs e)
+        //{
+        //    int tempValue = Config.Alarm.notifyTeamMoveCount;
+        //    if (e.Delta > 0)
+        //    {
+        //        tempValue += 1;
+        //    }
+        //    else if (e.Delta < 0)
+        //    {
+        //        tempValue -= 1;
+        //    }
+        //    setMoveFinish = tempValue.ToString();
+        //}
 
         #endregion
 
@@ -653,7 +762,26 @@ namespace GFAlarm.View.Option
             {
                 this.HpWarningCheckBox.IsChecked = value;
                 this.HpWarningSlider.IsEnabled = value;
+                this.HpWarningTextBox.IsEnabled = value;
                 Config.Alarm.notifyDollWounded = value;
+            }
+        }
+        public string setHpWarning
+        {
+            set
+            {
+                int tempValue = 0;
+                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                if (1 <= tempValue && tempValue <= 100)
+                {
+                    Config.Alarm.notifyDollWoundedPercent = tempValue;
+                }
+                else
+                {
+                    tempValue = Config.Alarm.notifyDollWoundedPercent;
+                }
+                this.HpWarningSlider.Value = tempValue;
+                this.HpWarningTextBox.Text = string.Format("{0}%", tempValue);
             }
         }
         private void HpWarningCheckBox_Checked(object sender, RoutedEventArgs e)
@@ -666,7 +794,11 @@ namespace GFAlarm.View.Option
         }
         private void HpWarningSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            Config.Alarm.notifyDollWoundedPercent = (int)this.HpWarningSlider.Value;
+            setHpWarning = e.NewValue.ToString();
+        }
+        private void HpWarningTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            setHpWarning = (sender as TextBox).Text;
         }
 
         #endregion
@@ -807,6 +939,25 @@ namespace GFAlarm.View.Option
                 Config.Costume.coBonusDollExp = value;
                 this.DollExpBonusCheckBox.IsChecked = value;
                 this.DollExpBonusSlider.IsEnabled = value;
+                this.DollExpBonusTextBox.IsEnabled = value;
+            }
+        }
+        public string setDollExpBonus
+        {
+            set
+            {
+                int tempValue = 0;
+                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                if (1 <= tempValue && tempValue <= 100)
+                {
+                    Config.Costume.coBonusDollExpPercent = tempValue;
+                }
+                else
+                {
+                    tempValue = Config.Costume.coBonusDollExpPercent;
+                }
+                this.DollExpBonusSlider.Value = tempValue;
+                this.DollExpBonusTextBox.Text = string.Format("{0}%", tempValue);
             }
         }
         private void DollExpBonusCheckBox_Checked(object sender, RoutedEventArgs e)
@@ -819,7 +970,11 @@ namespace GFAlarm.View.Option
         }
         private void DollExpBonusSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            Config.Costume.coBonusDollExpPercent = (int)this.DollExpBonusSlider.Value;
+            setDollExpBonus = e.NewValue.ToString();
+        }
+        private void DollExpBonusTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            setDollExpBonus = (sender as TextBox).Text;
         }
 
         /// <summary>
@@ -832,6 +987,25 @@ namespace GFAlarm.View.Option
                 Config.Costume.coBonusRestoreTime = value;
                 this.RestoreTimeBonusCheckBox.IsChecked = value;
                 this.RestoreTimeBonusSlider.IsEnabled = value;
+                this.RestoreTimeBonusTextBox.IsEnabled = value;
+            }
+        }
+        public string setRestoreTimeBonus
+        {
+            set
+            {
+                int tempValue = 0;
+                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                if (1 <= tempValue && tempValue <= 100)
+                {
+                    Config.Costume.coBonusRestoreTimePercent = tempValue;
+                }
+                else
+                {
+                    tempValue = Config.Costume.coBonusRestoreTimePercent;
+                }
+                this.RestoreTimeBonusSlider.Value = tempValue;
+                this.RestoreTimeBonusTextBox.Text = string.Format("{0}%", tempValue);
             }
         }
         private void RestoreTimeBonusCheckBox_Checked(object sender, RoutedEventArgs e)
@@ -844,7 +1018,11 @@ namespace GFAlarm.View.Option
         }
         private void RestoreTimeBonusSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            Config.Costume.coBonusRestoreTimePercent = (int)this.RestoreTimeBonusSlider.Value;
+            setRestoreTimeBonus = e.NewValue.ToString();
+        }
+        private void RestoreTimeBonusTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            setRestoreTimeBonus = (sender as TextBox).Text;
         }
 
         /// <summary>
@@ -857,6 +1035,25 @@ namespace GFAlarm.View.Option
                 Config.Costume.coBonusSkillTrainTime = value;
                 this.SkillTimeBonusCheckBox.IsChecked = value;
                 this.SkillTimeBonusSlider.IsEnabled = value;
+                this.SkillTimeBonusTextBox.IsEnabled = value;
+            }
+        }
+        public string setSkillTimeBonus
+        {
+            set
+            {
+                int tempValue = 0;
+                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                if (1 <= tempValue && tempValue <= 100)
+                {
+                    Config.Costume.coBonusSkillTrainTimePercent = tempValue;
+                }
+                else
+                {
+                    tempValue = Config.Costume.coBonusSkillTrainTimePercent;
+                }
+                this.SkillTimeBonusSlider.Value = tempValue;
+                this.SkillTimeBonusTextBox.Text = string.Format("{0}%", tempValue);
             }
         }
         private void SkillTimeBonusCheckBox_Checked(object sender, RoutedEventArgs e)
@@ -869,7 +1066,11 @@ namespace GFAlarm.View.Option
         }
         private void SkillTimeBonusSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            Config.Costume.coBonusSkillTrainTimePercent = (int)this.SkillTimeBonusSlider.Value;
+            setSkillTimeBonus = e.NewValue.ToString();
+        }
+        private void SkillTimeBonusTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            setSkillTimeBonus = (sender as TextBox).Text;
         }
 
         #endregion
@@ -883,9 +1084,28 @@ namespace GFAlarm.View.Option
         {
             set
             {
+                Config.Extra.earlyNotify = value;
                 this.EarlyNotifyCheckBox.IsChecked = value;
                 this.EarlyNotifySlider.IsEnabled = value;
-                Config.Extra.earlyNotify = value;
+                this.EarlyNotifyTextBox.IsEnabled = value;
+            }
+        }
+        public string setEarlyNotify
+        {
+            set
+            {
+                int tempValue = 0;
+                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                if (1 <= tempValue && tempValue <= 300)
+                {
+                    Config.Extra.earlyNotifySeconds = tempValue;
+                }
+                else
+                {
+                    tempValue = Config.Extra.earlyNotifySeconds;
+                }
+                this.EarlyNotifySlider.Value = tempValue;
+                this.EarlyNotifyTextBox.Text = string.Format("{0}S", tempValue);
             }
         }
         private void EarlyNotifyCheckBox_Checked(object sender, RoutedEventArgs e)
@@ -898,7 +1118,11 @@ namespace GFAlarm.View.Option
         }
         private void EarlyNotifySlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            Config.Extra.earlyNotifySeconds = (int)this.EarlyNotifySlider.Value;
+            setEarlyNotify = e.NewValue.ToString();
+        }
+        private void EarlyNotifyTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            setEarlyNotify = (sender as TextBox).Text;
         }
 
         #endregion

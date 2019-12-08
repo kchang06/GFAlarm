@@ -110,7 +110,7 @@
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
     </UserControl.Resources>
-    <Grid>
+    <Grid Margin="0,0,2,0">
         <ScrollViewer VerticalScrollBarVisibility="Visible">
             <StackPanel Orientation="Vertical">
                 <!-- [그룹] 프록시 서버 -->

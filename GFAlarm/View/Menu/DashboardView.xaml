@@ -14,8 +14,7 @@
      SnapsToDevicePixels="True"
      d:DesignHeight="300" 
      d:DesignWidth="200">
-    <Grid>
-        
+    <Grid Margin="0,0,2,0">
         <!-- 오버레이 -->
         <Grid x:Name="EmptyOverlay" Panel.ZIndex="100" Visibility="Visible"
               Background="{StaticResource BackgroundBrush}">

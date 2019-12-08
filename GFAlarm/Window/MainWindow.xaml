@@ -597,7 +597,8 @@
                         <StackPanel Orientation="Vertical"
                                     Style="{StaticResource ToolTipStackPanelStyle}">
                             <!-- 오늘 충전가능한 모의작전점수 -->
-                            <uc:HtmlTextBlock x:Name= "BpPointToolTipTextBlock" Grid.ColumnSpan="2"
+                            <uc:HtmlTextBlock x:Name="BpPointToolTipTextBlock" Grid.ColumnSpan="2"
+                                              Foreground="{StaticResource NormalBrush}"
                                               Width="Auto" Margin="0" Padding="0"/>
                         </StackPanel>
                     </Grid.ToolTip>

@@ -1,9 +1,9 @@
 key	ko-KR	zh-CN	en-US	ja-JP
-PROGRAM_TITLE	소녀전선 알리미	少女前线通知器	Girls Frontline Alarm	ドルフロ アラート
-PROGRAM_TITLE_SHORT	소녀전선 알리미	少女前线通知器	GFAlarm	ドルフロ アラート
+PROGRAM_TITLE	소녀전선 알리미	少女前线通知器	Girls Frontline Alarm	ドルフロ アラーム
+PROGRAM_TITLE_SHORT	소녀전선 알리미	少女前线通知器	GFAlarm	ドルフロ アラーム
 TRANSLATED_BY		CN translated by 'Jenitak'[br]Voice translated by 'Jenitak'	EN translated by 'Seyren'[br]Voice translated by 'Seyren'	JP translated by 'リリア'[br]Voice translated by 'FlamBerry'
-PROGRAM_DESCRIPTION	소녀전선 알리미 프로그램은 모바일 게임 [font color='#ffb400']소녀전선[/font]의 패킷과 게임 데이터를 기반으로 동작됩니다.			
-PROGRAM_COPYRIGHT	모든 저작권과 권리는 [a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a]에 귀속되어 있습니다.			
+PROGRAM_DESCRIPTION	소녀전선 알리미 프로그램은 모바일 게임 [font color='#ffb400']소녀전선[/font]의 패킷과 게임 데이터를 기반으로 동작됩니다.		Girls Frontline Alarm runs based on packets and game data from a mobile game [font color='#ffb400']Girls' Frontline[/font].	
+PROGRAM_COPYRIGHT	모든 저작권과 권리는 [a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a]에 귀속되어 있습니다.		All rights reserved to [a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a].	
 PROGRAM_BUG_REPORT	버그 발견 시, 제작자 email 또는 [a href='{0}']최신버전 글[/a]로 리포트 바랍니다.	When you find a bug, please report to developer email or [a href='{0}']latest version post[/a].	When you find a bug, please report to developer email or [a href='{0}']latest version post[/a].	When you find a bug, please report to developer email or [a href='{0}']latest version post[/a].
 OPEN_FOLDER	폴더 열기	打开文件夹	Open Folder	フォルダーを開く
 ALWAYS_ON_TOP	항상 위	一直在前端	Always On Top	常に最前面に表示
@@ -14,7 +14,7 @@ WINDOW_CLOSE	종료	退出	Close	終了
 TRAY_CLOSE	종료	退出	Close	終了
 TRAY_RESET_POSITION	위치 리셋	重定位	Position Reset	リセット
 VERSION_CHECK_TITLE	버전 확인	版本更新	Version Check	バージョン確認
-VERSION_CHECK_CONTENT	최신버전 {0}가 존재합니다. 다운로드 링크로 이동합니까?	发现新版本 {0}. 打开下载网页吗?	Lastest version {0} exists. Will you open download link?	最新バージョン 「{0}」が存在します。ダウンロードリンクへ移動しますか？
+VERSION_CHECK_CONTENT	최신버전 {0}가 존재합니다. 다운로드 링크로 이동합니까?	发现新版本 {0}. 打开下载网页吗?	Latest version {0} is available. Would you like to open download link?	最新バージョン 「{0}」が存在します。ダウンロードリンクへ移動しますか？
 TIME	시간	时间	Time	時間
 REQUIRE_TIME	소요 시간	所需时间	Require Time	残り時間
 END_TIME	완료 시간	完成时间	Complete Time	完了時間
@@ -46,7 +46,7 @@ TO_MAX_LEVEL	최대 레벨	最大等级	Max Level	最大レベルまで
 REQUIRE_RESTORE	수복 정보	修复信息	Restore Info	修理情報
 DISPATCHED_ECHELON	투입 제대	Echelon	Echelon	Echelon
 EXPLORE_8_HOUR_GUIDE	(8시간 기준)	(标准是8个小时)	(8 Hours)	(8時間基準)
-EXPLORE_REWARD_GUIDE	획득 보상을 보려면 전진기지-제어콘솔을 열어주십시오	如果想获得奖励,请打开前进营地-储物柜	Open Gate Console in Forward Basecamp to check exploration rewards	獲得報酬を見たい場合、キャンプの制御コンソルを開いてください
+EXPLORE_REWARD_GUIDE	획득 보상을 보려면 전진기지-제어콘솔을 열어주십시오	如果想获得奖励,请打开前进营地-储物柜	Open Gate Console in Forward Basecamp to check exploration rewards	獲得報酬を見たい場合、キャンプの制御コンソールを開いてください
 NEXT_EVENT	다음 발견	其次发现	Next Event	次の発見
 NOW_EXPLORE	탐색 중	正在探索	Exploring	探索中
 DAILY_QUEST	일간임무	日常任务	Daily Quest	デイリー任務
@@ -65,15 +65,15 @@ STRATEGY_FAIRY	전략요정	战略妖精	Strategy Fairy	戦略妖精
 EXPLORE_CITY	도시	城市	City	都市
 EXPLORE_SNOW_LAND	설원	雪原	Snowfield	雪原
 EXPLORE_FOREST	숲	树林	Forest	森
-EXPLORE_WASTE_LAND	황무지	荒地	Wasteland	荒蕪地
+EXPLORE_WASTE_LAND	황무지	荒地	Wasteland	荒野
 DATA_PIECE	핵심데이터	芯片	Data Piece	核心データ
-TAB_DASHBOARD	알림	通知	Alarm	アラート
+TAB_DASHBOARD	알림	通知	Alarm	通知
 TAB_ECHELON	제대	梯队	Echelon	部隊
 TAB_QUEST	임무	任务	Quest	任務
 TAB_WAREHOUSE	창고	仓库	Warehouse	倉庫
 TAB_RECORD_MISSION	전역 녹화	作战绿化	Record Mission	録画
 TAB_PROXY	연결	连接	Proxy	連結
-TAB_NOTIFICATION_SETTING	알림 설정	通知设置	Notification Settings	アラート設定
+TAB_NOTIFICATION_SETTING	알림 설정	通知设置	Notification Settings	通知設定
 TAB_SETTING	설정	设置	Settings	設定
 HEADER_EXPCAL_BUTTON	경험치 계산기		Exp Calculator	
 HEADER_EXPCAL_PRESET	프리셋		Preset	
@@ -115,47 +115,47 @@ SETTING_PROXY_SERVER_USE_SSL_DECRYPT_WARNING	[font color='#F44336']대만 서버
 SETTING_PROXY_SERVER_USE_SSL_DECRYPT_COMMENT	[a href='{0}']링크[/a]를 참고해서 인증서 설치 후 사용 가능	参考[a href='{0}']链接[/a]可在设置认证书后使用	Refer to [a href='{0}']link[/a] to install certificate before use	[a href='{0}']サイト[/a]を参考して認証書をインストールした後使えます
 SETTING_PAC_SERVER_GROUP	PAC 서버		PAC Server	
 SETTING_PAC_SERVER_USE	PAC 서버		PAC Server	
-SETTING_PAC_SERVER_USE_TOOLTIP	PAC(Proxy Auto Config)를 사용하기 위한 서버[br][font color='#F44336']관리자 권한이 필요[/font]			
+SETTING_PAC_SERVER_USE_TOOLTIP	PAC(Proxy Auto Config)를 사용하기 위한 서버[br][font color='#F44336']관리자 권한이 필요[/font]		[font color='#F44336']Server Admin's Privilege[/font][br]is required to use PAC(Proxy Auto Config)	
 SETTING_PAC_SERVER_SET_DOMAIN	PAC 도메인		PAC Domain	
-SETTING_PAC_SERVER_SET_DOMAIN_TOOLTIP	외부 네트워크에서 도메인을 사용해서 접속할 경우 설정할 것			
+SETTING_PAC_SERVER_SET_DOMAIN_TOOLTIP	외부 네트워크에서 도메인을 사용해서 접속할 경우 설정할 것		Set if accessing through domain by external network	
 SETTING_PAC_SERVER_PORT_NUMBER	PAC 포트번호		PAC Port Number	
 SETTING_PAC_SERVER_NOW_ADMIN	관리자 권한 사용중		Admin Privilege Enabled	
 SETTING_PAC_SERVER_NEED_ADMIN	관리자 권한 필요		Admin Privilege Disabled	
-SETTING_UPSTREAM_PROXY_GROUP	경유 프록시	经由代理服务器	Upstream Proxy	경유 프록시
-SETTING_UPSTREAM_PROXY_USE_UPSTREAM_PROXY	경유 프록시	经由代理服务器	Upstream Proxy	경유 프록시
-SETTING_UPSTREAM_PROXY_ADDRESS	경유 프록시 주소	经由的代理服务器地址	Upstream Proxy Address	경유 프록시 주소
-SETTING_UPSTREAM_PROXY_USE_UPSTREAM_PROXY_TOOLTIP	설정 시 프록시를 사용하는 타 프로그램을 경유하여 소녀전선 서버에 접속	设置时，经由使用代理服务器的其他程序连接游戏	설정 시 프록시를 사용하는 타 프로그램을 경유하여 소녀전선 서버에 접속	설정 시 프록시를 사용하는 타 프로그램을 경유하여 소녀전선 서버에 접속
+SETTING_UPSTREAM_PROXY_GROUP	경유 프록시	经由代理服务器	Upstream Proxy	プロキシサーバー経由
+SETTING_UPSTREAM_PROXY_USE_UPSTREAM_PROXY	경유 프록시	经由代理服务器	Upstream Proxy	プロキシサーバー経由
+SETTING_UPSTREAM_PROXY_ADDRESS	경유 프록시 주소	经由的代理服务器地址	Upstream Proxy Address	プロキシサーバーのアドレス
+SETTING_UPSTREAM_PROXY_USE_UPSTREAM_PROXY_TOOLTIP	설정 시 프록시를 사용하는 타 프로그램을 경유하여 소녀전선 서버에 접속	设置时，经由使用代理服务器的其他程序连接游戏	Connect to GF server via third-party program using Proxy when enabled	セットアップ時に、プロキシサーバーを使用して別のプログラム経由でゲームに接続します
 SETTING_PROXY_SERVER_GUIDE	사용 가이드	使用指南	Proxy Guide	使用ガイド
 SETTING_PROXY_SERVER_GUIDE_COMMENT	[font size='14']■ Android[/font][br]→ 설정[br]→ 네트워크 및 인터넷[br]→ Wi-Fi[br]→ 연결된 AP 설정[br]→ 고급 옵션[br]→ 프록시 '수동' 설정[br]→ 프록시 호스트 [font color='#8ec127']{0}[/font][br]→ 프록시 포트 [font color='#8ec127']{1}[/font][br]→ 소녀전선 (재)로그인[br][br] [font size='14']■ iOS[/font][br]→ 설정[br]→ Wi-Fi[br]→ 연결된 AP 설정[br]→ 프록시 구성[br]→ '수동' 설정[br]→ 서버 [font color='#8ec127']{0}[/font][br]→ 포트 [font color='#8ec127']{1}[/font][br]→ 소녀전선 (재)로그인[br] [br] [font size='14' color='#ff4500']■ 접속 불가 시[/font][br]→ 시작[br]→ 실행[br]→ cmd[br]→ ipconfig[br]→ 표시된 IPv4 주소로 시도[br] [br] [font size='14' color='#ff4500']■ 보안 정책 위반(코드 22) 발생 시[/font][br]→ 기기 프록시 설정 끄기[br]→ 소녀전선 실행[br]→ 로그인 직전까지 진행[br]→ 기기 프록시 설정 켜기[br]→ 소녀전선 (재)로그인	[font size='14']■ Android[/font][br]→ 设置[br]→ 网络与互联网[br]→ Wi-Fi[br]→ 连接的AP设置[br]→ 高级期权[br]→ 代理服务器设置提示‘被动’[br]→ 代理服务器主机 [font color='#8ec127']{0}[/font][br]→ 代理服务器端口编号 [font color='#8ec127']{1}[/font][br]→ 再登录少女前线[br][br] [font size='14']■ iOS[/font][br]→ 设置[br]→ Wi-Fi[br]→ 连接的AP设置[br]→ 代理服务器构成[br]→ ‘被动’设置[br]→ 服务器 [font color='#8ec127']{0}[/font][br]→ 端口 [font color='#8ec127']{1}[/font][br]→ 再登录少女前线[br] [br] [font size='14' color='#ff4500']■ 无法连接时[/font][br]→ 开始[br]→ 执行[br]→ cmd[br]→ ipconfig[br]→ 试图用表示的IPv4地址[br] [br] [font size='14' color='#ff4500']■ 违反安全政策(代码22)时[/font][br]→ 关闭代理服务器设置[br]→ 实行少女前线[br]→ 进行到登录前[br]→ 再打开代理服务器设置[br]→ 再登录少女前线	[font size='14']■ Android[/font][br]→ Settings[br]→ Network & Internet[br]→ Wi-Fi[br]→ Connected AP Setting[br]→ Advanced Options[br]→ Proxy 'Manual'[br]→ Proxy Hostname [font color='#8ec127']{0}[/font][br]→ Proxy Port [font color='#8ec127']{1}[/font][br]→ Girls Frontline (Re)Login[br][br] [font size='14']■ iOS[/font][br]→ Settings[br]→ Wi-Fi[br]→ Connected AP Setting[br]→ Configure Proxy[br]→ Set 'Manual'[br]→ Server [font color='#8ec127']{0}[/font][br]→ Port [font color='#8ec127']{1}[/font][br]→ Girls Frontline (Re)Login[br] [br] [font size='14' color='#ff4500']■ Can't Connect?[/font][br]→ Start[br]→ run[br]→ cmd[br]→ ipconfig[br]→ connect to IPv4 address[br] [br] [font size='14' color='#ff4500']■ If Security Policy Violation(Code 22) occurs[/font][br]→ Turn off Proxy setting from device[br]→ Launch Girls Frontline[br]→ Proceed until right before logging in[br]→ Turn on Proxy setting from device[br]→ Relaunch Girls Frontline	[font size='14']■ Android[/font][br]→ 設定[br]→ ネットワーク及びインターネット[br]→ Wi-Fi[br]→ 繋がったAP設定[br]→ 詳細設定項目[br]→ プロキシ '手動' 設定[br]→ プロキシホスト [font color='#8ec127']{0}[/font][br]→ プロキシポート [font color='#8ec127']{1}[/font][br]→ ドルフロ (再)ログイン[br][br] [font size='14']■ iOS[/font][br]→ 設定[br]→ Wi-Fi[br]→ 接続中のWi-fiをタップ[br]→ プロキシを構成[br]→ '手動' 設定[br]→ サーバー [font color='#8ec127']{0}[/font][br]→ ポート [font color='#8ec127']{1}[/font][br]→ ドルフロ (再)ログイン[br] [br] [font size='14' color='#ff4500']■ 接続ができない場合[/font][br]→ スタート[br]→ Windows システムツール[br]→ cmd[br]→ ipconfig[br]→ 表示された IPv4 アドレスで試してください[br] [br] [font size='14' color='#ff4500']■ セキュリティ政策違反(コード 22)が発生した場合[/font][br]→ 端末のプロキシ設定を切る[br]→ ドルフロ起動[br]→ ログイン直前まで進む[br]→ 端末のプロキシ設定[br]→ ドルフロ (再)ログイン
 SETTING_PACKET_FORGER_GROUP	패킷 변조		Packet Forger	
 SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT	랜덤 부관		Random Adjutant	
-SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_COMMENT	인형 [font color='#ffb400']{0}[/font] 스킨 [font color='#ffb400']{1}[/font]	人形 [font color='#ffb400']{0}[/font] Skin [font color='#ffb400']{1}[/font]	Doll [font color='#ffb400']{0}[/font] Skin [font color='#ffb400']{1}[/font]	人形 [font color='#ffb400']{0}[/font] Skin [font color='#ffb400']{1}[/font]
-SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_TOOLTIP	소속 인형 중 랜덤한 인형으로 부관 설정			
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_WHITELIST	부관 화이트리스트		Adjutant Whitelist	
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_WHITELIST_TOOLTIP	소속 인형 중 선택된 인형만 부관으로 등장하도록 설정[br][font color='#FFF44336']소속되지 않은 인형은 출현하지 않음[/font]			
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_BLACKLIST	부관 블랙리스트		Adjutant Blacklist	
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_BLACKLIST_TOOLTIP	설정된 인형은 등장하지 않음			
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_WHITELITE	스킨 화이트리스트		Skin Whitelist	
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_WHITELITE_TOOLTIP	보유 스킨 중 선택된 스킨만 입고 등장하도록 설정[br][font color='#FFF44336']보유하지 않은 스킨은 입지 않음[/font]			
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_BLACKLIST	스킨 블랙리스트		Skin Blacklist	
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_BLACKLIST_TOOLTIP	설정된 스킨은 등장하지 않음			
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN	부관 스킨		Adjutant Skin	
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_TOOLTIP	부관 스킨을 설정			
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_NORMAL	통상만		Normal	
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_SKIN	스킨만		Skin	
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_SKIN_LIVE2D	Live2D 스킨만		Live2D Skin	
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_SKIN_CHILD	아동절 스킨만		Child Skin	
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_SKIN_MOD	개조 스킨만		Mod Skin	
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_RANDOM	랜덤		Random	
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE	부관 상태		Adjutant Shape	
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_TOOLTIP	부관 상태를 설정			
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_NORMAL	통상만		Normal	
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_WOUND	중상만		Wound	
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_RANDOM	랜덤		Random	
-SETTING_PACKET_FORGER_USE_RANDOM_SKIN	랜덤 부관 스킨		Random Adjutant Skin	
-SETTING_PACKET_FORGER_USE_RANDOM_SKIN_TOOLTIP	설정된 부관의 스킨만 랜덤 설정			
-SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR	검열해제 모드	666模式	Uncensor Mode	規制解禁モード
-SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR_COMMENT	[a href='{0}']검열해제 패치[/a]로 추가 해제	[a href='{0}']用解除审查修补[/a]追加解除	Refer to [a href='{0}']link[/a] for additional uncensored patch	[a href='{0}']規制解禁アップデート[/a]で追加解禁(JPサーバーは規制されてません）
+SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_COMMENT	인형 [font color='#ffb400']{0}[/font] 스킨 [font color='#ffb400']{1}[/font]	人形 [font color='#ffb400']{0}[/font] Skin [font color='#ffb400']{1}[/font]	T-Doll [font color='#ffb400']{0}[/font] Skin [font color='#ffb400']{1}[/font]	人形 [font color='#ffb400']{0}[/font] Skin [font color='#ffb400']{1}[/font]
+SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_TOOLTIP	소속 인형 중 랜덤한 인형으로 부관 설정		Set random T-Doll as Adjutant on Login	所属人形の中からランダムに副官を設定
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_WHITELIST	부관 화이트리스트		Adjutant Whitelist	副官ホワイトリスト
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_WHITELIST_TOOLTIP	소속 인형 중 선택된 인형만 부관으로 등장하도록 설정[br][font color='#FFF44336']소속되지 않은 인형은 출현하지 않음[/font]		Allow whitelisted T-Dolls as Adjutant[br][font color='#FFF44336']Locked T-Dolls will not appear[/font]	選択された人形が、副官に登場するように設定する[br][font color='#FFF44336']所属していない人形は出現していない[/ font]
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_BLACKLIST	부관 블랙리스트		Adjutant Blacklist	副官ブラックリスト
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_BLACKLIST_TOOLTIP	설정된 인형은 등장하지 않음		Deny blacklisted T-Dolls as Adjutant	設定された人形は登場しない
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_WHITELITE	스킨 화이트리스트		Skin Whitelist	スキンホワイトリスト
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_WHITELITE_TOOLTIP	보유 스킨 중 선택된 스킨만 입고 등장하도록 설정[br][font color='#FFF44336']보유하지 않은 스킨은 입지 않음[/font]		Allow whitelisted Skins for Adjutant[br][font color='#FFF44336']Locked Skins will not appear[/font]	選択されたスキンのみ着て登場するように設定[br][font color='#FFF44336']保有していないスキンは選択できない[/ font]
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_BLACKLIST	스킨 블랙리스트		Skin Blacklist	スキンブラックリスト
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_BLACKLIST_TOOLTIP	설정된 스킨은 등장하지 않음		Deny blacklisted Skins for Adjutant	設定されたスキンは登場しない
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN	부관 스킨		Adjutant Skin	副官スキン
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_TOOLTIP	부관 스킨을 설정		Set Adjutant's Skin	副官のスキンを設定
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_NORMAL	통상만		Normal	通常
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_SKIN	스킨만		Skin	スキン
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_SKIN_LIVE2D	Live2D 스킨만		Live2D Skin	Live2D スキン
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_SKIN_CHILD	아동절 스킨만		Child Skin	子供スキン
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_SKIN_MOD	개조 스킨만		Mod Skin	Modスキン
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_RANDOM	랜덤		Random	ランダム
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE	부관 상태		Adjutant Status	副官の状態
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_TOOLTIP	부관 상태를 설정		Set Adjutant's Status	副官の状態を設定
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_NORMAL	통상만		Normal	通常
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_WOUND	중상만		Damaged	大破
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_RANDOM	랜덤		Random	ランダム
+SETTING_PACKET_FORGER_USE_RANDOM_SKIN	랜덤 부관 스킨		Random Adjutant Skin	ランダム副官スキン
+SETTING_PACKET_FORGER_USE_RANDOM_SKIN_TOOLTIP	설정된 부관의 스킨만 랜덤 설정		Set random Skins for selected T-Dolls	設定された副官のスキンだけランダムに設定
+SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR	검열해제 모드	666模式	Uncensor Mode	規制解除モード
+SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR_COMMENT	[a href='{0}']검열해제 패치[/a]로 추가 해제	[a href='{0}']用解除审查修补[/a]追加解除	Refer to [a href='{0}']link[/a] for additional uncensored patch	[a href='{0}']規制解除アップデート[/a]で追加解除(JPサーバーは規制されてません）
 SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR_TOOLTIP	설정한 상태로 로그인 한 뒤 130/130/130/30 인형제조 후 재로그인 시 검열해제[br][font color='#F44336'](검열해제 확인 후 반드시 검열해제 설정을 체크해제할 것)[/font]	以设定的状态登录后 130/130/130/30 人形制造后再登录时解除审查[br][font color='#F44336'](确认解除审查后应该解除设置)[/font]	Log in after enabling and produce a T-Doll with 130/130/130/30 then re-log in to enable uncensor[br][font color='#F44336'](Uncheck after uncensor is enabled)[/font]	設定した状態でログインした後「130/130/130/30」人形製造して再ログインすると規制解禁[br][font color='#F44336'](規制解禁が確認できた後、必ず規制解禁ボタンチェックを外してください)[/font]
 SETTING_NOTIFICATION_COMPLETE_GROUP	완료 알림	完成通知	Complete	完了アラート
 SETTING_NOTIFICATION_COMPLETE_DISPATCHED_ECHELON	지원현황	支援现况	Dispatched Echelon	支援状況
@@ -243,8 +243,8 @@ SETTING_TOAST_USE_VOICE_TOOLTIP	소리가 나지 않는 경우 대체 알림으�
 SETTING_TOAST_USE_VOICE_COMMENT	[a href='{0}']링크[/a]의 음성데이터 설치 시 인형 음성 알림 사용가능	安装[a href='{0}']链接[/a]的语音数据时可使用人形语音通知	Download T-Doll voice data from [a href='{0}']link[/a] to use T-Doll Voice Notification	[a href='{0}']アドレス[/a]の音声データをインストールした場合、人形ボイスアラート設定可能
 SETTING_TOAST_USE_ONLY_ADJUTANT_VOICE	음성 알림 부관만	只要副官的语音	Adjutant Voice Only	アラート設定（副官）
 SETTING_TOAST_USE_ONLY_ADJUTANT_VOICE_TOOLTIP	모든 인형 음성을 부관 음성으로 변경	所有人形的语音换成副官的语音	Play all T-Doll voice notifications as Adjutant's voice	全ての人形ボイスを副官ボイスに変更
-SETTING_TOAST_USE_START_VOICE	군수/자율 출발 음성	后勤支援/自律作战执行语音		
-SETTING_TOAST_USE_START_VOICE_TOOLTIP	군수/자율 출발 시 음성 알림	后勤支援/自律作战执行时，语音通知		
+SETTING_TOAST_USE_START_VOICE	군수/자율 출발 음성	后勤支援/自律作战执行语音	Logistics/Auto-Battle	
+SETTING_TOAST_USE_START_VOICE_TOOLTIP	군수/자율 출발 시 음성 알림	后勤支援/自律作战执行时，语音通知	Enable T-Doll voice notification when starting Logistics/Auto-Battle	
 SETTING_TOAST_VOICE_VOLUME	음성 알림 볼륨	语音通知音量	Voice Volume	ボイスアラートのボリューム
 SETTING_TOAST_VOICE_VOLUME_TOOLTIP	음성 알림 볼륨 설정	设定语音通知音量	Set voice volume	ボイスアラートのボリューム設定
 SETTING_TOAST_USE_SOUNDPLAYER_API	구버전 소리 API	旧版本语音API	Use SoundPlayerAPI	古いバージョンのサウンドAPI
@@ -285,11 +285,11 @@ SETTING_FILE_SAVE_BATTLE_TESTER_COMMENT	[a href='{0}']전투 테스터[/a]에서
 SETTING_WINDOW_GROUP	윈도우	窗口	Window	ツール
 SETTING_WINDOW_HIDE_TO_TRAY	트레이 숨김	隐藏到任务栏托盘	Hide to Tray	タスクトレイに置く
 SETTING_WINDOW_HIDE_TO_TRAY_TOOLTIP	최소화 시 트레이로 숨김	关闭时隐藏到任务栏托盘	Hides to System Tray when Minimized	最小化する場合タスクトレイに置く
-SETTING_WINDOW_OPACITY	창 투명도	窗口透明度	Window Opacity	ツールの透明度
+SETTING_WINDOW_OPACITY	창 투명도	窗口透明度	Opacity	ツールの透明度
 SETTING_WINDOW_OPACITY_TOOLTIP	알리미 창 투명도 설정	设定通知器的窗口透明度	Set Opacity for GFAlarm	アラートツールの透明度設定
-SETTING_WINDOW_COLOR	창 색상	窗口颜色	Window Color	ツールの色
+SETTING_WINDOW_COLOR	창 색상	窗口颜色	Color	ツールの色
 SETTING_WINDOW_COLOR_TOOLTIP	창 색상 설정[br](기본값 [font color='#007acc']#007ACC[/font])	设定窗口颜色[br](标准值 [font color='#007acc']#007ACC[/font])	Set window color[br](Default [font color='#007acc']#007ACC[/font])	ツールの色設定[br](デフォルト [font color='#007acc']#007ACC[/font])
-SETTING_WINDOW_STICKY_WINDOW	창 자석	窗口磁铁功能	Sticky Window	ツールの磁石機能
+SETTING_WINDOW_STICKY_WINDOW	창 자석	窗口磁铁功能	Sticky	ツールの磁石機能
 SETTING_WINDOW_STICKY_WINDOW_TOOLTIP	알리미 창이 화면 가장자리에 붙도록 설정	设定通知器的窗口贴在屏幕边缘	Enable GFAlarm to stick to edge of screen	アラートのツールが画面の隅っこにつけるように設定
 SETTING_EXTRA_GROUP	기타	其他	Extra	その他
 SETTING_EXTRA_USE_CHECK_UPDATE	업데이트 확인	版本更新	Check for Update	アップデートチェック
@@ -359,7 +359,7 @@ MESSAGE_TEST_SUBJECT	테스트 알림	测试通知	Test Notification	テスト
 MESSAGE_TEST_CONTENT	테스트 알림 성공	测试通知成功	Test Notification Success	テストアラート OK
 MESSAGE_TEST_WITH_VOICE_CONTENT	인형 {0} 음성	人形 {0} 语音	Doll {0} Voice	人形 {0} ボイス
 MAIL_FORMAT	[소녀전선] {0}	[少女前线] {0}	[Girls Frontline] {0}	[ドルフロ] {0}
-MARRIED	서약	誓约	Married	誓約
+MARRIED	서약	誓约	Oathed	誓約
 LOCKED	잠김	锁定	Locked	ロック
 DOLL_INFO_ID	ID	ID	ID	ID
 DOLL_INFO_NO	도감번호	图鉴编号	No	図鑑番号
