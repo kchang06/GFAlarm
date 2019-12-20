@@ -1779,6 +1779,7 @@ namespace GFAlarm
                     this.OverlayUpdate.Visibility = Visibility.Visible;
                     new Thread(delegate ()
                     {
+                        bool isSuccess = false;
                         string[] updateFiles = new string[] {
                             "doll.json",
                             "equip.json",
@@ -1801,15 +1802,18 @@ namespace GFAlarm
                             {
                                 this.UpdateFileTextBlock.Text = updateFile;
                             });
-                            WebUtil.RequestAndSaveDatabase(
+                            isSuccess = WebUtil.RequestAndSaveDatabase(
                                 string.Format("https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/{0}", updateFile),
                                 string.Format("{0}/Resource/db/{1}", dir, updateFile)
                             );
                         }
-                        WebUtil.RequestAndSaveDatabase(
-                            string.Format("https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/{0}", "db_version"),
-                            string.Format("{0}/Resource/db/{1}", dir, "db_version")
-                        );
+                        if (isSuccess != false)
+                        {
+                            WebUtil.RequestAndSaveDatabase(
+                                string.Format("https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/{0}", "db_version"),
+                                string.Format("{0}/Resource/db/{1}", dir, "db_version")
+                            );
+                        }
                         Dispatcher.Invoke(() =>
                         {
                             this.OverlayUpdate.Visibility = Visibility.Collapsed;
