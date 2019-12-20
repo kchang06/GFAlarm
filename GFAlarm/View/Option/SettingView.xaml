@@ -1085,6 +1085,34 @@
                             </StackPanel>
                         </Grid.ToolTip>
                     </Grid>
+                    <!-- 데이터베이스 확인 -->
+                    <Grid Margin="20,10,20,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- title -->
+                        <TextBlock 
+                            Grid.Column="0"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
+                            Text="{Binding Path=[SETTING_EXTRA_USE_CHECK_DATABASE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}">
+                        </TextBlock>
+                        <!-- checkbox -->
+                        <CheckBox
+                            Grid.Column="1"
+                            x:Name="CheckDatabaseCheckBox"
+                            Style="{StaticResource Base.CheckBox}"
+                            Checked="CheckDatabaseCheckBox_Checked" Unchecked="CheckDatabaseCheckBox_Unchecked"/>
+                        <!-- tooltip -->
+                        <Grid.ToolTip>
+                            <StackPanel
+                                Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <uc:HtmlTextBlock
+                                    Style="{StaticResource Content.ToolTip.TextBlock}"
+                                    Html="{Binding Path=[SETTING_EXTRA_USE_CHECK_DATABASE_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                            </StackPanel>
+                        </Grid.ToolTip>
+                    </Grid>
                     <!-- 로그 출력 -->
                     <Grid Margin="20,10,20,0" Background="Transparent">
                         <Grid.ColumnDefinitions>

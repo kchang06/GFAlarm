@@ -1504,7 +1504,6 @@ namespace GFAlarm.Data
 
                 HashSet<int> result = new HashSet<int>();
                 JObject json = GetJsonDb("skin");
-                log.Debug("skin_db={0}", json.ToString());
                 string[] keys = json.Properties().Select(p => p.Name).ToArray();
                 foreach (string key in keys)
                 {

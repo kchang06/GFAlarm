@@ -294,6 +294,8 @@ SETTING_WINDOW_STICKY_WINDOW_TOOLTIP	알리미 창이 화면 가장자리에 붙
 SETTING_EXTRA_GROUP	기타	其他	Extra	その他
 SETTING_EXTRA_USE_CHECK_UPDATE	업데이트 확인	版本更新	Check for Update	アップデートチェック
 SETTING_EXTRA_USE_CHECK_UPDATE_TOOLTIP	알리미 실행 시 최신 업데이트가 있는지 확인	运行通知器时版本更新	Check for latest version of GFAlarm during launch	アラートツール起動する時最新バージョンがあるか確認
+SETTING_EXTRA_USE_CHECK_DATABASE	데이터베이스 업데이트	Database Update	Database Update	Database Update
+SETTING_EXTRA_USE_CHECK_DATABASE_TOOLTIP	알리미 실행 시 최신 데이터베이스로 업데이트	Database Update	Database Update	Database Update
 SETTING_EXTRA_LOG_LEVEL_TOOLTIP	로그 레벨[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	日志等级[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	Log Level[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	ログレベル[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]
 SETTING_EXTRA_LOG_PACKET_TOOLTIP	로그에 패킷 출력[br]로그 레벨을 Info 이하로 설정할 것[br][font color='#F44336'](속도가 느려질 수 있음)[/font]	对日志输出包[br]日志等级设定到Info以下[br][font color='#F44336'](速度可能会变慢)[/font]	Print packets on log[br]Set Log Level to below Info[br][font color='#F44336'](Can slow down system)[/font]	ログにパケット出力[br]ログレベルをInfo以下に設定してください[br][font color='#F44336'](アプリが重くなるかも知れません)[/font]
 MESSAGE_CONNECT_SUBJECT	연결 상태	连接现况	Connection	連結状態

@@ -196,12 +196,16 @@
     <Compile Include="Util\MultiKeyDictionary.cs" />
     <Compile Include="Util\Parser.cs" />
     <Compile Include="Util\TimeUtil.cs" />
+    <Compile Include="Util\WebUtil.cs" />
     <Compile Include="View\DataTemplate\DispatchedEchelonTemplate.cs" />
     <Compile Include="View\DataTemplate\ExploreTemplate.cs" />
     <Compile Include="View\DataTemplate\QuestTemplate.cs" />
     <Compile Include="View\DataTemplate\RestoreDollTemplate.cs" />
     <Compile Include="View\Guide\ProxyGuideView.xaml.cs">
       <DependentUpon>ProxyGuideView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\UpdateView.xaml.cs">
+      <DependentUpon>UpdateView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Menu\QuestView.xaml.cs">
       <DependentUpon>QuestView.xaml</DependentUpon>
@@ -241,6 +245,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\Guide\ProxyGuideView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\UpdateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -302,6 +310,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Resource Include="Resource\font\Segoe UI.ttf" />
+    <None Include="Resource\db\db_version" />
     <None Include="Resource\db\doll.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

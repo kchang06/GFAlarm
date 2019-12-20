@@ -89,6 +89,7 @@ namespace GFAlarm.View.Option
 
             // 기타
             this.useCheckUpdate = Config.Setting.checkUpdate;
+            this.useCheckDatabase = Config.Setting.checkUpdateDb;
             this.setLogLevel = Config.Setting.logLevel.ToString();
             this.LogLevelSlider.Maximum = 5;
             this.LogLevelSlider.Minimum = 0;
@@ -1024,6 +1025,27 @@ namespace GFAlarm.View.Option
         private void CheckUpdateCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
             this.useCheckUpdate = false;
+        }
+
+        /// <summary>
+        /// 데이터베이스 확인 사용
+        /// </summary>
+        public bool useCheckDatabase
+        {
+            set
+            {
+                Config.Setting.checkUpdateDb = value;
+                this.CheckDatabaseCheckBox.IsChecked = value;
+            }
+        }
+        private void CheckDatabaseCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            this.useCheckDatabase = true;
+        }
+
+        private void CheckDatabaseCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            this.useCheckDatabase = false;
         }
 
         /// <summary>

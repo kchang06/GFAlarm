@@ -6,6 +6,8 @@ using NLog.Config;
 using NLog.Layouts;
 using NLog.Targets;
 using System;
+using System.IO;
+using System.Reflection;
 using System.Security.Principal;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -89,6 +91,80 @@ namespace GFAlarm
                         Application.Current.Shutdown();
                     }
                 }
+            }
+
+            /// 데이터베이스 업데이트
+            /*
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/doll.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/equip.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/fairy.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/fairy_trait.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/gfdb_ally_team.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/gfdb_building.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/gfdb_enemy_team.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/gfdb_mission.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/gfdb_spot.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/mission.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/operation.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/quest.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/skin.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/squad.json
+             */
+            if (Config.Setting.checkUpdateDb)
+            {
+                UpdateView updateView = new UpdateView();
+
+                updateView.Show();
+                updateView.Topmost = true;
+
+                new Thread(delegate ()
+                {
+                    string dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                    bool isNeedUpdate = WebUtil.RequestDatabaseVersion(
+                        string.Format("https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/{0}", "db_version"),
+                        string.Format("{0}/Resource/db/{1}", dir, "db_version")
+                    );
+
+                    if (isNeedUpdate)
+                    {
+                        string[] updateFiles = new string[] {
+                            "doll.json",
+                            "equip.json",
+                            "fairy.json",
+                            "fairy_trait.json",
+                            "gfdb_ally_team.json",
+                            "gfdb_building.json",
+                            "gfdb_enemy_team.json",
+                            "gfdb_mission.json",
+                            "gfdb_spot.json",
+                            "mission.json",
+                            "operation.json",
+                            "quest.json",
+                            "skin.json",
+                            "squad.json",
+                        };
+                        foreach (string updateFile in updateFiles)
+                        {
+                            log.Debug("update_file={0}", updateFile);
+                            Dispatcher.Invoke(() =>
+                            {
+                                updateView.UpdateFileTextBlock.Text = updateFile;
+                            });
+                            WebUtil.RequestAndSaveDatabase(
+                                string.Format("https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/{0}", updateFile),
+                                string.Format("{0}/Resource/db/{1}", dir, updateFile)
+                            );
+                        }
+                        WebUtil.RequestAndSaveDatabase(
+                            string.Format("https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/{0}", "db_version"),
+                            string.Format("{0}/Resource/db/{1}", dir, "db_version")
+                        );
+                    }
+                    Dispatcher.Invoke(() =>
+                    {
+                        updateView.Hide();
+                    });
+                }).Start();
             }
 
             /// 툴팁 지속시간 무한

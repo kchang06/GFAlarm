@@ -62,7 +62,7 @@ namespace GFAlarm.Util
             {
                 if (isLoaded)
                     return;
-                string txt = Util.Common.RequestWeb("https://pastebin.com/raw/R2nrVUh4");
+                string txt = WebUtil.RequestFile("https://pastebin.com/raw/R2nrVUh4");
                 JObject json = Parser.Json.ParseJObject(txt);
                 if (json != null)
                 {
@@ -282,11 +282,13 @@ namespace GFAlarm.Util
 
             /// <summary>
             /// 윈도우 위치
+            /// Left, Top, Width, Height
             /// </summary>
             public static DoubleArray windowPosition = new DoubleArray("position", "window", new double[] { 100, 100, 225, 720 });
 
             /// <summary>
             /// 서브 윈도우 위치
+            /// Left, Top, Width, Height
             /// </summary>
             public static DoubleArray subWindowPosition = new DoubleArray("sub_position", "window", new double[] { 100, 100, 225, 720 });
 
@@ -746,6 +748,20 @@ namespace GFAlarm.Util
                 {
                     _checkUpdate = value;
                     SetConfig("check_update", value, "");
+                }
+            }
+
+            /// <summary>
+            /// 데이터베이스 업데이트
+            /// </summary>
+            private static bool _checkUpdateDb = GetConfig("check_update_db", true, "");
+            public static bool checkUpdateDb
+            {
+                get { return _checkUpdateDb; }
+                set
+                {
+                    _checkUpdateDb = value;
+                    SetConfig("check_update_db", value, "");
                 }
             }
 

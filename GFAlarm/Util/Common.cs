@@ -21,38 +21,6 @@ namespace GFAlarm.Util
         private static readonly Logger log = LogManager.GetCurrentClassLogger();
 
         /// <summary>
-        /// 웹 요청
-        /// </summary>
-        /// <param name="url"></param>
-        /// <returns></returns>
-        public static string RequestWeb(string url)
-        {
-            string responseString = "";
-
-            try
-            {
-                WebRequest request = WebRequest.Create(url);
-                request.Timeout = 3000;
-                request.Credentials = CredentialCache.DefaultCredentials;
-
-                WebResponse response = request.GetResponse();
-                using (Stream stream = response.GetResponseStream())
-                {
-                    StreamReader reader = new StreamReader(stream);
-                    responseString = reader.ReadToEnd();
-                }
-
-                response.Close();
-            }
-            catch(Exception ex)
-            {
-                log.Error(ex, "웹 요청 에러");
-            }
-
-            return responseString;
-        }
-
-        /// <summary>
         /// 모든 사설 IP 가져오기
         /// </summary>
         /// <returns></returns>
