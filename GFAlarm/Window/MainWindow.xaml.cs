@@ -1748,6 +1748,75 @@ namespace GFAlarm
 
             // 타이머 셋팅
             timer = new Timer(Tick, null, 0, 1000);
+
+            /// 데이터베이스 업데이트
+            /*
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/doll.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/equip.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/fairy.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/fairy_trait.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/gfdb_ally_team.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/gfdb_building.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/gfdb_enemy_team.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/gfdb_mission.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/gfdb_spot.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/mission.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/operation.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/quest.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/skin.json
+                https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/squad.json
+             */
+            if (Config.Setting.checkUpdateDb)
+            {
+                string dir = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                bool isNeedUpdate = WebUtil.RequestDatabaseVersion(
+                    string.Format("https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/{0}", "db_version"),
+                    string.Format("{0}/Resource/db/{1}", dir, "db_version")
+                );
+
+                if (isNeedUpdate)
+                {
+                    this.OverlayUpdate.Visibility = Visibility.Visible;
+                    new Thread(delegate ()
+                    {
+                        string[] updateFiles = new string[] {
+                            "doll.json",
+                            "equip.json",
+                            "fairy.json",
+                            "fairy_trait.json",
+                            "gfdb_ally_team.json",
+                            "gfdb_building.json",
+                            "gfdb_enemy_team.json",
+                            "gfdb_mission.json",
+                            "gfdb_spot.json",
+                            "mission.json",
+                            "operation.json",
+                            "quest.json",
+                            "skin.json",
+                            "squad.json",
+                        };
+                        foreach (string updateFile in updateFiles)
+                        {
+                            Dispatcher.Invoke(() =>
+                            {
+                                this.UpdateFileTextBlock.Text = updateFile;
+                            });
+                            WebUtil.RequestAndSaveDatabase(
+                                string.Format("https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/{0}", updateFile),
+                                string.Format("{0}/Resource/db/{1}", dir, updateFile)
+                            );
+                        }
+                        WebUtil.RequestAndSaveDatabase(
+                            string.Format("https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/{0}", "db_version"),
+                            string.Format("{0}/Resource/db/{1}", dir, "db_version")
+                        );
+                        Dispatcher.Invoke(() =>
+                        {
+                            this.OverlayUpdate.Visibility = Visibility.Collapsed;
+                        });
+                    }).Start();
+                }
+            }
         }
 
         #region Window

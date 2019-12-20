@@ -191,7 +191,7 @@ namespace GFAlarm.Util
                 string filename = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Resource\\BattleTester\\userinfo.json";
                 if (File.Exists(filename))
                 {
-                    JObject user_info = JObject.Parse(File.ReadAllText(filename));
+                    JObject user_info = JObject.Parse(FileUtil.GetFile(filename));
                     if (user_info.ContainsKey("chip_with_user_info"))
                     {
                         user_info["chip_with_user_info"] = preset;

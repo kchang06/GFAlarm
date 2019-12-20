@@ -125,6 +125,20 @@
             <RowDefinition Height="16"/> <!-- statusbar -->
         </Grid.RowDefinitions>
         <!-- ================================================= -->
+        <!-- =============== 업데이트 오버레이 =============== -->
+        <!-- ================================================= -->
+        <Grid x:Name="OverlayUpdate" Visibility="Collapsed"
+              Grid.ColumnSpan="2" Grid.RowSpan="4" Panel.ZIndex="9999">
+            <Border Background="{StaticResource Brush.Black}" Opacity="0.9"/>
+            <TextBlock Style="{StaticResource Base.TextBlock}"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       FontSize="14" TextAlignment="Center">
+                <Run>Updating Database...</Run>
+                <LineBreak/>
+                <Run x:Name="UpdateFileTextBlock" Foreground="{StaticResource OrangeBrush}">...</Run>
+            </TextBlock>
+        </Grid>
+        <!-- ================================================= -->
         <!-- ================== 사이드 메뉴 ================== -->
         <!-- ================================================= -->
         <Grid x:Name="SideMenuGrid"

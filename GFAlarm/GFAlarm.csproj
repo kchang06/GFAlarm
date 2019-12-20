@@ -193,6 +193,7 @@
     <Compile Include="Util\BattleTesterExporter.cs" />
     <Compile Include="Util\CompressUtil.cs" />
     <Compile Include="Util\Config.cs" />
+    <Compile Include="Util\FileUtil.cs" />
     <Compile Include="Util\MultiKeyDictionary.cs" />
     <Compile Include="Util\Parser.cs" />
     <Compile Include="Util\TimeUtil.cs" />
@@ -203,9 +204,6 @@
     <Compile Include="View\DataTemplate\RestoreDollTemplate.cs" />
     <Compile Include="View\Guide\ProxyGuideView.xaml.cs">
       <DependentUpon>ProxyGuideView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Window\UpdateView.xaml.cs">
-      <DependentUpon>UpdateView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Menu\QuestView.xaml.cs">
       <DependentUpon>QuestView.xaml</DependentUpon>
@@ -245,10 +243,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\Guide\ProxyGuideView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Window\UpdateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -310,7 +304,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Resource Include="Resource\font\Segoe UI.ttf" />
-    <None Include="Resource\db\db_version" />
+    <None Include="Resource\db\db_version">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resource\db\doll.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -3580,9 +3576,6 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Resource\GFData.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resource\lib\Windows.winmd" />
   </ItemGroup>

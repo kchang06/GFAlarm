@@ -2868,7 +2868,7 @@ namespace GFAlarm.Data
             {
                 try
                 {
-                    string str = CompressUtil.Decompress(File.ReadAllText(file));
+                    string str = CompressUtil.Decompress(FileUtil.GetFile(file));
                     JObject json = JObject.Parse(str);
                     jsonDb.Add(db, json);
                     return jsonDb[db];

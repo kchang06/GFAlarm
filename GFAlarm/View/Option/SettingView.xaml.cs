@@ -495,9 +495,7 @@ namespace GFAlarm.View.Option
         {
             set
             {
-                log.Debug("set volume string {0}", value);
                 int tempValue = 0;
-                //int.TryParse(-exceptNumberRegex.Replace(value, ""), out tempValue);
                 int.TryParse(Regex.Match(value, @"\d+").Value, out tempValue);
                 if (0 <= tempValue && tempValue <= 100)
                 {
@@ -509,7 +507,6 @@ namespace GFAlarm.View.Option
                 }
                 this.VolumeSlider.Value = tempValue;
                 this.VolumeTextBox.Text = string.Format("{0}%", tempValue);
-                log.Debug("set volume {0}", tempValue);
             }
         }
         private void VolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)

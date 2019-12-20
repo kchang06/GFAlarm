@@ -2149,7 +2149,7 @@ namespace GFAlarm.Util
                 filename = string.Format("{0}/Config.json", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
                 if (File.Exists(filename))
                 {
-                    data = JObject.Parse(File.ReadAllText(filename));
+                    data = JObject.Parse(FileUtil.GetFile(filename));
                 }
                 else
                 {

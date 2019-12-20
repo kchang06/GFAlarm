@@ -56,7 +56,7 @@ namespace GFAlarm.Util
             try
             {
                 string lastVer = RequestFile(url);
-                string currVer = File.ReadAllText(path);
+                string currVer = FileUtil.GetFile(path);
                 if (lastVer != currVer)
                     return true;
             }

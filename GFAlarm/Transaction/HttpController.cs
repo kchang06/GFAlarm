@@ -120,7 +120,7 @@ namespace GFAlarm.Transaction
             string pacFilename = pacDir + "\\GFPAC.js";
             if (File.Exists(pacFilename))
             {
-                string pacFilestream = File.ReadAllText(pacFilename);
+                string pacFilestream = FileUtil.GetFile(pacFilename);
                 try
                 {
                     string pacAddress = "";
@@ -150,7 +150,7 @@ namespace GFAlarm.Transaction
                 _listener.Start();
                 _serverThread = new Thread(this.Listen);
                 _serverThread.Start();
-                log.Debug("http server started (port: {0}, path: {1}", _port, _rootDir);
+                log.Debug("http server started (port: {0}, path: {1})", _port, _rootDir);
                 return true;
             }
             catch (Exception ex)
