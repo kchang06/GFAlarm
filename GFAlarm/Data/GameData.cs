@@ -1579,6 +1579,7 @@ namespace GFAlarm.Data
                             continue;
                         result.Add(item["gun_id"].Value<int>());
                     }
+                    return result.ToList();
                 }
                 catch { }
                 return new List<int>();

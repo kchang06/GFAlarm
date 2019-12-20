@@ -222,7 +222,7 @@ namespace GFAlarm.View.Menu
                 // 드래그인 경우
                 if (isDragging)
                 {
-                    currentGroupIdx = this.DashboardStackPanel.Children.IndexOf((sender as Border).Parent as StackPanel);
+                    currentGroupIdx = this.AlarmStackPanel.Children.IndexOf((sender as Border).Parent as StackPanel);
                     upperGroupIdx = -1;
                     lowerGroupIdx = int.MaxValue;
                     foreach (KeyValuePair<int, string> item in GroupNms)
@@ -232,7 +232,7 @@ namespace GFAlarm.View.Menu
                         {
                             continue;
                         }
-                        int groupIdx = this.DashboardStackPanel.Children.IndexOf(group);
+                        int groupIdx = this.AlarmStackPanel.Children.IndexOf(group);
                         Point groupPoint = group.TransformToAncestor(this).Transform(new Point(0, 0));
                         if (groupPoint.Y + 16 > position.Y)
                         {
@@ -262,7 +262,7 @@ namespace GFAlarm.View.Menu
                         listBox.Height = 0;
                         Border upperGuideLine = this.FindName(string.Format("{0}UpperGuide", item.Value)) as Border;
                         Border lowerGuideLine = this.FindName(string.Format("{0}LowerGuide", item.Value)) as Border;
-                        int upperGuideLineIdx = this.DashboardStackPanel.Children.IndexOf(group);
+                        int upperGuideLineIdx = this.AlarmStackPanel.Children.IndexOf(group);
                         int lowerGuideLineIdx = upperGuideLineIdx;
                         upperGuideLine.Visibility = Visibility.Collapsed;
                         lowerGuideLine.Visibility = Visibility.Collapsed;
@@ -378,7 +378,7 @@ namespace GFAlarm.View.Menu
                     lowerGuideLine.Visibility = Visibility.Collapsed;
 
                     StackPanel itemGroup = this.FindName(string.Format("{0}", item.Value)) as StackPanel;
-                    int index = this.DashboardStackPanel.Children.IndexOf(itemGroup);
+                    int index = this.AlarmStackPanel.Children.IndexOf(itemGroup);
                     Config.Dashboard.index[item.Key] = index;
                 }
                 CheckAll();
@@ -407,15 +407,15 @@ namespace GFAlarm.View.Menu
         public void MoveElement(int moveIdx, UIElement element)
         {
             //log.Info("move_idx {0}", moveIdx);
-            int currentSelectedIndex = this.DashboardStackPanel.Children.IndexOf(element);
-            int childCount = this.DashboardStackPanel.Children.Count;
+            int currentSelectedIndex = this.AlarmStackPanel.Children.IndexOf(element);
+            int childCount = this.AlarmStackPanel.Children.Count;
             if (moveIdx < 0)
                 moveIdx = 0;
             else if (moveIdx > childCount)
                 moveIdx = childCount;
             //log.Info("current_selected_index {0} child_count {1}", currentSelectedIndex, childCount);
-            this.DashboardStackPanel.Children.RemoveAt(currentSelectedIndex);
-            this.DashboardStackPanel.Children.Insert(moveIdx, element);
+            this.AlarmStackPanel.Children.RemoveAt(currentSelectedIndex);
+            this.AlarmStackPanel.Children.Insert(moveIdx, element);
             element.Opacity = 0;
             element.BeginAnimation(StackPanel.OpacityProperty, Animations.FadeIn);
         }
@@ -1682,16 +1682,26 @@ namespace GFAlarm.View.Menu
             foreach (KeyValuePair<int, string> item in GroupNms)
             {
                 bool expand = Config.Dashboard.expand[item.Key];
-                PackIconMaterial arrow = this.DashboardStackPanel.FindName(string.Format("{0}GroupBox_Arrow", GroupNms[item.Key])) as PackIconMaterial;
+                PackIconMaterial arrow = this.AlarmStackPanel.FindName(string.Format("{0}GroupBox_Arrow", GroupNms[item.Key])) as PackIconMaterial;
                 arrow.Kind = expand == true ? PackIconMaterialKind.ChevronDown : PackIconMaterialKind.ChevronUp;
-
-                StackPanel itemGroup = this.DashboardStackPanel.FindName(string.Format("{0}", item.Value)) as StackPanel;
-                MoveElement(Config.Dashboard.index[item.Key] - 2, itemGroup); // 공유전지, 공유보석 그룹박스가 존재하므로 -2
             }
-            StackPanel shareBatteryGroup = this.DashboardStackPanel.FindName("ShareBattery") as StackPanel;
-            MoveElement(0, shareBatteryGroup);
-            StackPanel shareGemGroup = this.DashboardStackPanel.FindName("ShareGem") as StackPanel;
-            MoveElement(0, shareGemGroup);
+
+            /// 그룹 박스
+            /// 설정된 위치로 이동
+            int index = 0;
+            while (index < GroupNms.Count())
+            {
+                for (int i = 0; i < Config.Dashboard.index.Length; i++)
+                {
+                    if (index == Config.Dashboard.index[i])
+                    {
+                        StackPanel itemGroup = this.AlarmStackPanel.FindName(string.Format("{0}", GroupNms[i])) as StackPanel;
+                        MoveElement(index, itemGroup);
+                        break;
+                    }
+                }
+                index++;
+            }
 
             this.DispatchedEchelonListBox.ItemsSource = this.DispatchedEchelonList;
             this.ProduceDollListBox.ItemsSource = this.ProduceDollList;
