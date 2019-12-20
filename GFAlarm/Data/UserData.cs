@@ -2979,6 +2979,83 @@ namespace GFAlarm.Data
                         log.Debug("적 {0} 제대 이동 - 위치 {1}", enemy_team_id, to_spot_id);
                 }
             }
+            public static void MoveEnemyTeam(JObject enemy_move)
+            {
+                #region Packet Example
+                /*
+                    "enemy_move": {
+                        "6217": {
+                            "from_spot_id": "6223",
+                            "to_spot_id": "6217",
+                            "enemy_team_id": "1725",
+                            "enemy_instance_id": "7",
+                            "enemy_hp_percent": "1",
+                            "boss_hp": "0",
+                            "enemy_ai": "102",
+                            "enemy_ai_para": "6223,2,6223-6217-6231-6233-6255-6216-6221-6218-6232-6234-6254",
+                            "hostage_id": "0",
+                            "hostage_hp": "0",
+                            "squad_instance_id": "0"
+                        },
+                        "6221": {
+                            "from_spot_id": "6222",
+                            "to_spot_id": "6221",
+                            "enemy_team_id": "1725",
+                            "enemy_instance_id": "6",
+                            "enemy_hp_percent": "1",
+                            "boss_hp": "0",
+                            "enemy_ai": "102",
+                            "enemy_ai_para": "6222,2,6222-6221-6235-6237-6257-6216-6220-6217-6236-6238-6256",
+                            "hostage_id": "0",
+                            "hostage_hp": "0",
+                            "squad_instance_id": "0"
+                        },
+                        "6261": {
+                            "from_spot_id": "6225",
+                            "to_spot_id": "6261",
+                            "enemy_team_id": "1726",
+                            "enemy_instance_id": "45",
+                            "enemy_hp_percent": "1",
+                            "boss_hp": "0",
+                            "enemy_ai": "102",
+                            "enemy_ai_para": "6261,2,6261-6260-6225-6228-6219-6243-6245",
+                            "hostage_id": "0",
+                            "hostage_hp": "0",
+                            "squad_instance_id": "0"
+                        }
+                    },
+                 */
+                #endregion
+
+                Dictionary<int, long> tempEnemySpots = new Dictionary<int, long>();
+                foreach (KeyValuePair<int, long> enemySpot in enemySpots)
+                {
+                    tempEnemySpots.Add(enemySpot.Key, enemySpot.Value);
+                }
+                string[] keys = enemy_move.Properties().Select(p => p.Name).ToArray();
+                foreach (string key in keys)
+                {
+                    JObject item = enemy_move[key].Value<JObject>();
+                    int from_spot_id = Parser.Json.ParseInt(item["from_spot_id"]);
+                    int to_spot_id = Parser.Json.ParseInt(item["to_spot_id"]);
+                    long enemy_team_id = -9999;
+                    if (item.ContainsKey("enemy_team_id"))
+                        enemy_team_id = Parser.Json.ParseLong(item["enemy_team_id"]);
+                    else if (item.ContainsKey("enemy_instance_id"))
+                        enemy_team_id = Parser.Json.ParseLong(item["enemy_instance_id"]);
+                    else if (enemySpots.ContainsKey(from_spot_id))
+                        enemy_team_id = enemySpots[from_spot_id];
+                    if (enemy_team_id != -9999)
+                    {
+                        log.Debug("적 {0} 제대 이동 - 위치 {1} -> {2}", enemy_team_id, from_spot_id, to_spot_id);
+                        if (tempEnemySpots.ContainsKey(to_spot_id))
+                            tempEnemySpots[to_spot_id] = enemy_team_id;
+                        else
+                            tempEnemySpots.Add(to_spot_id, enemy_team_id);
+                    }
+                }
+                enemySpots = tempEnemySpots;
+            }
             public static void MoveEnemyTeam(JArray enemyMoveInfo)
             {
                 #region Packet Example

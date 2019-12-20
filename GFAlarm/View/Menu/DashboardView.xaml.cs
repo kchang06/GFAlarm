@@ -1691,6 +1691,7 @@ namespace GFAlarm.View.Menu
             int index = 0;
             while (index < GroupNms.Count())
             {
+                // 빠른 순서부터 배치
                 for (int i = 0; i < Config.Dashboard.index.Length; i++)
                 {
                     if (index == Config.Dashboard.index[i])

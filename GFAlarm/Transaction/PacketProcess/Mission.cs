@@ -438,6 +438,11 @@ namespace GFAlarm.Transaction.PacketProcess
                 JArray enemyMove = response["enemy_move"].Value<JArray>();
                 UserData.CurrentMission.MoveEnemyTeam(enemyMove);
             }
+            else if (response.ContainsKey("enemy_move") && response["enemy_move"] is JObject)
+            {
+                JObject enemy_move = response["enemy_move"].Value<JObject>();
+                UserData.CurrentMission.MoveEnemyTeam(enemy_move);
+            }
 
             // 적 제대 위치 (야간)
             if (response.ContainsKey("night_enemy") && response["night_enemy"] is JArray)
