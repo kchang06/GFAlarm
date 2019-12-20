@@ -14,90 +14,6 @@
     d:DesignHeight="2500" 
     d:DesignWidth="200">
     <UserControl.Resources>
-        <!-- [그룹] 스타일 -->
-        <Style x:Key="GroupBorderStyle" TargetType="Border">
-            <Setter Property="Height" Value="50"/>
-            <Setter Property="Background" Value="{StaticResource BackgroundBrightBrush}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource BackgroundBrush}"/>
-            <!--<Setter Property="BorderThickness" Value="0,0,1,1"/>-->
-            <Setter Property="BorderThickness" Value="0,0,2,2"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <!--<Setter Property="BitmapEffect">
-                <Setter.Value>
-                    <DropShadowBitmapEffect Color="Black" Direction="0"  ShadowDepth="0" Opacity="0.25" Softness="0.3"/>
-                </Setter.Value>
-            </Setter>-->
-        </Style>
-        <!-- [그룹] > [제목] 스타일 -->
-        <Style x:Key="GroupTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
-            <Setter Property="VerticalAlignment" Value="Bottom"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="TextWrapping" Value="NoWrap"/>
-            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
-        </Style>
-        <!-- [그룹] > [부제목] 스타일 -->
-        <Style x:Key="GroupSubtitleStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
-            <Setter Property="VerticalAlignment" Value="Top"/>
-            <Setter Property="FontSize" Value="11"/>
-            <Setter Property="TextWrapping" Value="NoWrap"/>
-            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
-        </Style>
-        <!-- [그룹] > [화살표] 스타일 -->
-        <Style x:Key="GroupArrowStyle" TargetType="iconPacks:PackIconMaterial">
-            <Setter Property="Width" Value="11"/>
-            <Setter Property="Height" Value="11"/>
-            <Setter Property="Margin" Value="0"/>
-            <Setter Property="HorizontalAlignment" Value="Right"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Foreground" Value="#FFFFFF"/>
-            <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
-            <Setter Property="SnapsToDevicePixels" Value="True"/>
-        </Style>
-        <!-- [목록] > [큰 제목] 스타일 -->
-        <Style x:Key="ContentBigTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="TextWrapping" Value="NoWrap"/>
-            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
-        </Style>
-        <!-- [목록] > [작은 제목] 스타일 -->
-        <Style x:Key="ContentSmallTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
-            <Setter Property="FontSize" Value="12"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="TextWrapping" Value="NoWrap"/>
-            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
-        </Style>
-        <!-- [목록] > [텍스트박스] 스타일 -->
-        <Style x:Key="ContentTextBoxStyle" TargetType="TextBox">
-            <Setter Property="Margin" Value="0,5,0,0"/>
-            <Setter Property="Padding" Value="3"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="BorderThickness" Value="2"/>
-            <Setter Property="FontFamily" Value="Segoe UI, Meiryo UI, Malgun Gothic"/>
-            <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Style.Triggers>
-                <Trigger Property="IsEnabled" Value="False">
-                    <Setter Property="Background" Value="Gray"/>
-                    <Setter Property="Foreground" Value="White"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-        <!-- [목록] > [체크박스] 스타일 -->
-        <Style x:Key="ContentCheckBoxStyle" TargetType="CheckBox" BasedOn="{StaticResource CheckBoxBaseStyle}">
-            <Setter Property="Margin" Value="0,0,-6,0"/>
-            <Setter Property="HorizontalAlignment" Value="Right"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-        </Style>
-        <!-- [목록] > [경계선] 스타일 -->
-        <Style x:Key="ContentBorderStyle" TargetType="Border">
-            <Setter Property="Margin" Value="10,0"/>
-            <Setter Property="BorderBrush" Value="#40FFFFFF"/>
-            <Setter Property="BorderThickness" Value="0,0,0,1"/>
-            <Setter Property="SnapsToDevicePixels" Value="True"/>
-        </Style>
         <!-- [툴팁] > [판넬] 스타일 -->
         <Style x:Key="ToolTipPanelStyle" TargetType="StackPanel">
             <Setter Property="Margin" Value="5"/>
@@ -105,10 +21,10 @@
             <Setter Property="Orientation" Value="Vertical"/>
         </Style>
         <!-- [툴팁] > [텍스트] 스타일 -->
-        <Style x:Key="ToolTipTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+        <!--<Style x:Key="ToolTipTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource Base.TextBlock}">
             <Setter Property="TextTrimming" Value="None"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
-        </Style>
+        </Style>-->
     </UserControl.Resources>
     <Grid Margin="0,0,2,0">
         <ScrollViewer VerticalScrollBarVisibility="Visible">
@@ -116,7 +32,7 @@
                 <!-- [그룹] 프록시 서버 -->
                 <Border 
                     x:Name="ProxyServerGroupBox" 
-                    Style="{StaticResource GroupBorderStyle}"
+                    Style="{StaticResource GroupBox.Border}"
                     MouseLeftButtonDown="GroupBox_MouseLeftButtonDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -131,13 +47,13 @@
                         <TextBlock 
                             Grid.Row="0" Grid.Column="0"
                             x:Name="ProxyServerGroupBox_Title"
-                            Style="{StaticResource GroupTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[SETTING_PROXY_SERVER_GROUP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- content -->
                         <TextBlock
                             Grid.Row="1" Grid.Column="0"
                             x:Name="ProxyServerGroupBox_Content"
-                            Style="{StaticResource GroupSubtitleStyle}">
+                            Style="{StaticResource GroupBox.Subtitle.TextBlock}">
                             <Run Text="OFF" Foreground="{StaticResource RedBrush}"/>
                             <!--<Run Text="192.168.0.10:9000" Foreground="{StaticResource GreenBrush}"/>-->
                         </TextBlock>
@@ -145,7 +61,7 @@
                         <iconPacks:PackIconMaterial
                             Grid.RowSpan="2" Grid.Column="1"
                             x:Name="ProxyServerGroupBox_Arrow"
-                            Style="{StaticResource GroupArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -162,17 +78,17 @@
                         <!-- title -->
                         <TextBlock 
                             Grid.Column="0"
-                            Style="{StaticResource ContentBigTitleStyle}"
+                            Style="{StaticResource Content.Title.Big.TextBlock}"
                             Text="{Binding Path=[SETTING_PROXY_SERVER_USE_PROXY_SERVER], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Column="1"
                             x:Name="ProxyServerCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="ProxyServerCheckBox_Checked" Unchecked="ProxyServerCheckBox_Unchecked"/>
                     </Grid>
                     <!-- border -->
-                    <Border Margin="10,0" Style="{StaticResource ContentBorderStyle}"/>
+                    <Border Margin="10,0" Style="{StaticResource Content.Border}"/>
                     <!-- 자동 시작 -->
                     <Grid Margin="20,10,20,0" Background="Transparent">
                         <Grid.ColumnDefinitions>
@@ -182,13 +98,13 @@
                         <!-- title -->
                         <TextBlock 
                             Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_PROXY_SERVER_USE_AUTO_START], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Column="1"
                             x:Name="AutoStartCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="AutoStartCheckBox_Checked" Unchecked="AutoStartCheckBox_Unchecked"/>
                     </Grid>
                     <!-- 포트 번호 -->
@@ -200,17 +116,17 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_PROXY_SERVER_PORT_NUMBER], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- textbox -->
                         <TextBox
                             Grid.Row="1"
                             x:Name="PortNumberTextBox"
-                            Style="{StaticResource ContentTextBoxStyle}" 
+                            Style="{StaticResource Content.TextBox}" 
                             LostFocus="PortNumberTextBox_LostFocus"/>
                     </Grid>
                     <!-- border -->
-                    <Border Margin="10,0" Style="{StaticResource ContentBorderStyle}"/>
+                    <Border Margin="10,0" Style="{StaticResource Content.Border}"/>
                     <!-- SSL 복호화 -->
                     <Grid Margin="20,10,20,10" Background="Transparent">
                         <Grid.ColumnDefinitions>
@@ -225,18 +141,18 @@
                         <!-- title -->
                         <TextBlock 
                             Grid.Row="0" Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_PROXY_SERVER_USE_SSL_DECRYPT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Row="0" Grid.Column="1"
                             x:Name="SslDecryptCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="SslDecryptCheckBox_Checked" Unchecked="SslDecryptCheckBox_Unchecked"/>
                         <!-- warning -->
                         <uc:HtmlTextBlock
                             Grid.Row="1" Grid.ColumnSpan="2"
-                            Style="{StaticResource TextBlockBaseStyle}"
+                            Style="{StaticResource Base.TextBlock}"
                             Margin="0,3,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
                             FontSize="11" Foreground="{StaticResource RedBrush}" TextWrapping="Wrap"
                             Html="{Binding Path=[SETTING_PROXY_SERVER_USE_SSL_DECRYPT_WARNING], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
@@ -244,13 +160,13 @@
                         <uc:HtmlTextBlock
                             Grid.Row="2" Grid.ColumnSpan="2"
                             x:Name="SslDecryptCommentTextBlock"
-                            Style="{StaticResource TextBlockBaseStyle}"
+                            Style="{StaticResource Base.TextBlock}"
                             Margin="0,3,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
                             FontSize="11" Foreground="#666666" TextWrapping="Wrap"
                             Hyperlink.RequestNavigate="Hyperlink_RequestNavigate"/>
                     </Grid>
                     <!-- border -->
-                    <Border x:Name="ProxyGuideBorder" Margin="10,0" Style="{StaticResource ContentBorderStyle}"/>
+                    <Border x:Name="ProxyGuideBorder" Margin="10,0" Style="{StaticResource Content.Border}"/>
                     <!-- 사용 가이드 -->
                     <Border 
                         x:Name="ProxyGuide" 
@@ -265,18 +181,18 @@
                             </Grid.ColumnDefinitions>
                             <iconPacks:PackIconMaterial
                                 Grid.Column="0"
-                                Style="{StaticResource IconStyle}"
+                                Style="{StaticResource Base.Icon}"
                                 Height="20" VerticalAlignment="Center"
                                 Foreground="{StaticResource OrangeBrush}"
                                 Kind="HelpCircleOutline"/>
                             <TextBlock 
                                 Grid.Column="1"
-                                Style="{StaticResource ContentBigTitleStyle}"
+                                Style="{StaticResource Content.Title.Big.TextBlock}"
                                 Margin="8,0"
                                 Text="{Binding Path=[SETTING_PROXY_SERVER_GUIDE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             <iconPacks:PackIconMaterial
                                 Grid.Column="2"
-                                Style="{StaticResource GroupArrowStyle}"
+                                Style="{StaticResource GroupBox.Arrow.Icon}"
                                 Kind="ChevronRight"/>
                         </Grid>
                     </Border>
@@ -284,7 +200,7 @@
                 <!-- [그룹] PAC 서버 -->
                 <Border 
                     x:Name="PacServerGroupBox"
-                    Style="{StaticResource GroupBorderStyle}"
+                    Style="{StaticResource GroupBox.Border}"
                     MouseLeftButtonDown="GroupBox_MouseLeftButtonDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -299,13 +215,13 @@
                         <TextBlock 
                             Grid.Row="0" Grid.Column="0"
                             x:Name="PacServerGroupBox_Title"
-                            Style="{StaticResource GroupTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[SETTING_PAC_SERVER_GROUP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- subtitle -->
                         <TextBlock
                             Grid.Row="1" Grid.Column="0"
                             x:Name="PacServerGroupBox_Content"
-                            Style="{StaticResource GroupSubtitleStyle}">
+                            Style="{StaticResource GroupBox.Subtitle.TextBlock}">
                             <Run Text="OFF" Foreground="{StaticResource RedBrush}"/>
                             <!--<Run Text="192.168.0.10:9001" Foreground="{StaticResource GreenBrush}"/>-->
                         </TextBlock>
@@ -313,7 +229,7 @@
                         <iconPacks:PackIconMaterial
                             Grid.RowSpan="2" Grid.Column="1"
                             x:Name="PacServerGroupBox_Arrow"
-                            Style="{StaticResource GroupArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -333,32 +249,32 @@
                         <!-- title -->
                         <TextBlock 
                             Grid.Row="0" Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_PAC_SERVER_USE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Row="0" Grid.Column="1"
                             x:Name="UsePacCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="UsePacCheckBox_Checked" Unchecked="UsePacCheckBox_Unchecked"/>
                         <!-- comment -->
                         <uc:HtmlTextBlock
                             Grid.Row="1"
                             x:Name="PacAdminPrivilegeTextBlock"
-                            Style="{StaticResource TextBlockBaseStyle}"
+                            Style="{StaticResource Base.TextBlock}"
                             Margin="0,3,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
                             FontSize="11" TextWrapping="Wrap"
                             Hyperlink.RequestNavigate="Hyperlink_RequestNavigate"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
                             <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_PAC_SERVER_USE_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
                     </Grid>
                     <!-- border -->
-                    <Border Margin="10,10,10,0" Style="{StaticResource ContentBorderStyle}"/>
+                    <Border Margin="10,10,10,0" Style="{StaticResource Content.Border}"/>
                     <!-- PAC 서버 도메인 -->
                     <Grid Margin="20,10,20,0" Background="Transparent">
                         <Grid.RowDefinitions>
@@ -368,18 +284,18 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_PAC_SERVER_SET_DOMAIN], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- textbox -->
                         <TextBox
                             Grid.Row="1"
                             x:Name="PacDomainTextBox"
-                            Style="{StaticResource ContentTextBoxStyle}" 
+                            Style="{StaticResource Content.TextBox}" 
                             LostFocus="PacDomainTextBox_LostFocus"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
                             <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_PAC_SERVER_SET_DOMAIN_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -394,20 +310,20 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_PAC_SERVER_PORT_NUMBER], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- textbox -->
                         <TextBox
                             Grid.Row="1"
                             x:Name="PacPortNumberTextBox"
-                            Style="{StaticResource ContentTextBoxStyle}" 
+                            Style="{StaticResource Content.TextBox}" 
                             LostFocus="PacPortNumberTextBox_LostFocus"/>
                     </Grid>
                 </StackPanel>
                 <!-- [그룹] 경유 프록시 -->
                 <Border 
                     x:Name="UpstreamProxyGroupBox"
-                    Style="{StaticResource GroupBorderStyle}"
+                    Style="{StaticResource GroupBox.Border}"
                     MouseLeftButtonDown="GroupBox_MouseLeftButtonDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -422,13 +338,13 @@
                         <TextBlock 
                             Grid.Row="0" Grid.Column="0"
                             x:Name="UpstreamProxyGroupBox_Title"
-                            Style="{StaticResource GroupTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[SETTING_UPSTREAM_PROXY_GROUP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- subtitle -->
                         <TextBlock
                             Grid.Row="1" Grid.Column="0"
                             x:Name="UpstreamProxyGroupBox_Content"
-                            Style="{StaticResource GroupSubtitleStyle}">
+                            Style="{StaticResource GroupBox.Subtitle.TextBlock}">
                             <Run Text="OFF" Foreground="{StaticResource RedBrush}"/>
                             <!--<Run Text="192.168.0.10:9001" Foreground="{StaticResource GreenBrush}"/>-->
                         </TextBlock>
@@ -436,7 +352,7 @@
                         <iconPacks:PackIconMaterial
                             Grid.RowSpan="2" Grid.Column="1"
                             x:Name="UpstreamProxyGroupBox_Arrow"
-                            Style="{StaticResource GroupArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -453,13 +369,13 @@
                         <!-- title -->
                         <TextBlock 
                             Grid.Column="0"
-                            Style="{StaticResource ContentBigTitleStyle}"
+                            Style="{StaticResource Content.Title.Big.TextBlock}"
                             Text="{Binding Path=[SETTING_UPSTREAM_PROXY_USE_UPSTREAM_PROXY], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}">
                             <!-- tooltip -->
                             <TextBlock.ToolTip>
                                 <StackPanel Style="{StaticResource ToolTipPanelStyle}">
                                     <uc:HtmlTextBlock
-                                        Style="{StaticResource ToolTipTextBlockStyle}"
+                                        Style="{StaticResource Content.ToolTip.TextBlock}"
                                         Text="{Binding Path=[SETTING_UPSTREAM_PROXY_USE_UPSTREAM_PROXY_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                 </StackPanel>
                             </TextBlock.ToolTip>
@@ -468,11 +384,11 @@
                         <CheckBox
                             Grid.Column="1"
                             x:Name="UpstreamProxyCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="UpstreamProxyCheckBox_Checked" Unchecked="UpstreamProxyCheckBox_Unchecked"/>
                     </Grid>
                     <!-- border -->
-                    <Border Margin="10,10,10,0" Style="{StaticResource ContentBorderStyle}"/>
+                    <Border Margin="10,10,10,0" Style="{StaticResource Content.Border}"/>
                     <!-- 경유 프록시 주소 -->
                     <Grid Margin="20,10,20,15" Background="Transparent">
                         <Grid.ColumnDefinitions>
@@ -487,25 +403,25 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0" Grid.ColumnSpan="3"
-                            Style="{StaticResource TextBlockBaseStyle}"
+                            Style="{StaticResource Base.TextBlock}"
                             Text="{Binding Path=[SETTING_UPSTREAM_PROXY_ADDRESS], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- host -->
                         <TextBox
                             Grid.Row="1" Grid.Column="0"
                             x:Name="UpstreamProxyHostTextBox"
-                            Style="{StaticResource ContentTextBoxStyle}"
+                            Style="{StaticResource Content.TextBox}"
                             LostFocus="UpstreamProxyHostTextBox_LostFocus"/>
                         <!-- colon -->
                         <TextBlock
                             Grid.Row="1" Grid.Column="1"
-                            Style="{StaticResource TextBlockBaseStyle}"
+                            Style="{StaticResource Base.TextBlock}"
                             Margin="5,0" VerticalAlignment="Center"
                             Text=":"/>
                         <!-- port -->
                         <TextBox
                             Grid.Row="1" Grid.Column="2"
                             x:Name="UpstreamProxyPortTextBox"
-                            Style="{StaticResource ContentTextBoxStyle}"
+                            Style="{StaticResource Content.TextBox}"
                             Width="50"
                             LostFocus="UpstreamProxyPortTextBox_LostFocus"/>
                     </Grid>
@@ -513,7 +429,7 @@
                 <!-- [그룹] 패킷 변조 -->
                 <Border 
                     x:Name="PacketForgerGroupBox" 
-                    Style="{StaticResource GroupBorderStyle}"
+                    Style="{StaticResource GroupBox.Border}"
                     MouseLeftButtonDown="GroupBox_MouseLeftButtonDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -528,13 +444,13 @@
                         <TextBlock 
                             Grid.Row="0" Grid.Column="0"
                             x:Name="PacketForgerGroupBox_Title"
-                            Style="{StaticResource GroupTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[SETTING_PACKET_FORGER_GROUP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- subtitle -->
                         <TextBlock
                             Grid.Row="1" Grid.Column="0"
                             x:Name="PacketForgerGroupBox_Content"
-                            Style="{StaticResource GroupSubtitleStyle}">
+                            Style="{StaticResource GroupBox.Subtitle.TextBlock}">
                             <Run Text="OFF" Foreground="{StaticResource RedBrush}"/>
                             <!--<Run Text="ON" Foreground="{StaticResource GreenBrush}"/>-->
                         </TextBlock>
@@ -542,7 +458,7 @@
                         <iconPacks:PackIconMaterial
                             Grid.RowSpan="2" Grid.Column="1"
                             x:Name="PacketForgerGroupBox_Arrow"
-                            Style="{StaticResource GroupArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -563,14 +479,14 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0" Grid.Column="0"
-                            Style="{StaticResource ContentBigTitleStyle}"
+                            Style="{StaticResource Content.Title.Big.TextBlock}"
                             Background="Transparent"
                             Text="{Binding Path=[SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}">
                             <!-- tooltip -->
                             <TextBlock.ToolTip>
                                 <StackPanel Style="{StaticResource ToolTipPanelStyle}">
                                     <uc:HtmlTextBlock
-                                        Style="{StaticResource ToolTipTextBlockStyle}"
+                                        Style="{StaticResource Content.ToolTip.TextBlock}"
                                         Html="{Binding Path=[SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                 </StackPanel>
                             </TextBlock.ToolTip>
@@ -579,19 +495,19 @@
                         <CheckBox
                             Grid.Row="0" Grid.Column="1"
                             x:Name="UncensorModeCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="UncensorModeCheckBox_Checked" Unchecked="UncensorModeCheckBox_Unchecked"/>
                         <!-- comment -->
                         <uc:HtmlTextBlock
                             Grid.Row="1" Grid.ColumnSpan="2"
                             x:Name="UncensorModeCommentTextBlock"
-                            Style="{StaticResource TextBlockBaseStyle}"
+                            Style="{StaticResource Base.TextBlock}"
                             Margin="0,3,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"
                             FontSize="11" Foreground="#666666" TextWrapping="Wrap" 
                             Hyperlink.RequestNavigate="Hyperlink_RequestNavigate"/>
                     </Grid>
                     <!-- border -->
-                    <Border Margin="10,0" Style="{StaticResource ContentBorderStyle}"/>
+                    <Border Margin="10,0" Style="{StaticResource Content.Border}"/>
                     <!-- 랜덤 부관 -->
                     <Grid Margin="20,10,20,0" Background="Transparent">
                         <Grid.ColumnDefinitions>
@@ -605,12 +521,12 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0" Grid.Column="0"
-                            Style="{StaticResource ContentBigTitleStyle}"
+                            Style="{StaticResource Content.Title.Big.TextBlock}"
                             Text="{Binding Path=[SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}">
                             <TextBlock.ToolTip>
                                 <StackPanel Style="{StaticResource ToolTipPanelStyle}">
                                     <uc:HtmlTextBlock 
-                                        Style="{StaticResource ToolTipTextBlockStyle}"
+                                        Style="{StaticResource Content.ToolTip.TextBlock}"
                                         Html="{Binding Path=[SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                 </StackPanel>
                             </TextBlock.ToolTip>
@@ -619,13 +535,13 @@
                         <CheckBox
                             Grid.Row="0" Grid.Column="1"
                             x:Name="RandomAdjutantCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="RandomAdjutantCheckBox_Checked" Unchecked="RandomAdjutantCheckBox_Unchecked"/>
                         <!-- comment -->
                         <uc:HtmlTextBlock
                             Grid.Row="1" Grid.ColumnSpan="2"
                             x:Name="RandomAdjutantCommentTextBlock"
-                            Style="{StaticResource TextBlockBaseStyle}"
+                            Style="{StaticResource Base.TextBlock}"
                             Margin="0,3,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"
                             FontSize="11" Foreground="#666666" TextWrapping="Wrap" 
                             Hyperlink.RequestNavigate="Hyperlink_RequestNavigate"/>
@@ -639,14 +555,13 @@
                         <!-- title -->
                         <TextBlock 
                             Grid.Row="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- combobox -->
                         <ComboBox 
                             Grid.Row="1"
                             x:Name="AdjutantSkinComboBox"
-                            Margin="0,5,0,0"
-                            Background="{StaticResource BackgroundBrush}" BorderThickness="2"
+                            Style="{StaticResource Content.ComboBox}"
                             SelectionChanged="AdjutantSkinComboBox_SelectionChanged">
                             <ComboBoxItem Content="{Binding Path=[SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_NORMAL], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             <ComboBoxItem Content="{Binding Path=[SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_SKIN], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
@@ -660,7 +575,7 @@
                             <StackPanel 
                                 Style="{StaticResource ToolTipPanelStyle}">
                                 <uc:HtmlTextBlock 
-                                    Style="{StaticResource ToolTipTextBlockStyle}"
+                                    Style="{StaticResource Content.ToolTip.TextBlock}"
                                     Text="{Binding Path=[SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -674,12 +589,12 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_WHITELIST], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}">
                             <TextBlock.ToolTip>
                                 <StackPanel Style="{StaticResource ToolTipPanelStyle}">
                                     <uc:HtmlTextBlock
-                                        Style="{StaticResource ToolTipTextBlockStyle}"
+                                        Style="{StaticResource Content.ToolTip.TextBlock}"
                                         Html="{Binding Path=[SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_WHITELIST_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                 </StackPanel>
                             </TextBlock.ToolTip>
@@ -688,7 +603,7 @@
                         <TextBox
                             Grid.Row="1"
                             x:Name="DollWhitelistTextBox"
-                            Style="{StaticResource ContentTextBoxStyle}" 
+                            Style="{StaticResource Content.TextBox}" 
                             LostFocus="DollWhitelistTextBox_LostFocus"/>
                     </Grid>
                     <!-- 스킨 화이트리스트 -->
@@ -700,12 +615,12 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_WHITELITE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}">
                             <TextBlock.ToolTip>
                                 <StackPanel Style="{StaticResource ToolTipPanelStyle}">
                                     <uc:HtmlTextBlock
-                                        Style="{StaticResource ToolTipTextBlockStyle}"
+                                        Style="{StaticResource Content.ToolTip.TextBlock}"
                                         Html="{Binding Path=[SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_WHITELITE_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                 </StackPanel>
                             </TextBlock.ToolTip>
@@ -714,7 +629,7 @@
                         <TextBox
                             Grid.Row="1"
                             x:Name="SkinWhitelistTextBox"
-                            Style="{StaticResource ContentTextBoxStyle}" 
+                            Style="{StaticResource Content.TextBox}" 
                             LostFocus="SkinWhitelistTextBox_LostFocus"/>
                     </Grid>
                     <!-- 부관 블랙리스트 -->
@@ -726,12 +641,12 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_BLACKLIST], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}">
                             <TextBlock.ToolTip>
                                 <StackPanel Style="{StaticResource ToolTipPanelStyle}">
                                     <uc:HtmlTextBlock
-                                        Style="{StaticResource ToolTipTextBlockStyle}"
+                                        Style="{StaticResource Content.ToolTip.TextBlock}"
                                         Html="{Binding Path=[SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_BLACKLIST_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                 </StackPanel>
                             </TextBlock.ToolTip>
@@ -740,7 +655,7 @@
                         <TextBox
                             Grid.Row="1"
                             x:Name="DollBlacklistTextBox"
-                            Style="{StaticResource ContentTextBoxStyle}" 
+                            Style="{StaticResource Content.TextBox}" 
                             LostFocus="DollBlacklistTextBox_LostFocus"/>
                     </Grid>
                     <!-- 스킨 블랙리스트 -->
@@ -752,12 +667,12 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_BLACKLIST], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}">
                             <TextBlock.ToolTip>
                                 <StackPanel Style="{StaticResource ToolTipPanelStyle}">
                                     <uc:HtmlTextBlock
-                                        Style="{StaticResource ToolTipTextBlockStyle}"
+                                        Style="{StaticResource Content.ToolTip.TextBlock}"
                                         Html="{Binding Path=[SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_BLACKLIST_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                 </StackPanel>
                             </TextBlock.ToolTip>
@@ -766,7 +681,7 @@
                         <TextBox
                             Grid.Row="1"
                             x:Name="SkinBlacklistTextBox"
-                            Style="{StaticResource ContentTextBoxStyle}" 
+                            Style="{StaticResource Content.TextBox}" 
                             LostFocus="SkinBlacklistTextBox_LostFocus"/>
                     </Grid>
                     <!-- 부관 상태 -->
@@ -779,21 +694,20 @@
                             <StackPanel 
                                 Style="{StaticResource ToolTipPanelStyle}">
                                 <uc:HtmlTextBlock 
-                                    Style="{StaticResource ToolTipTextBlockStyle}"
+                                    Style="{StaticResource Content.ToolTip.TextBlock}"
                                     Text="{Binding Path=[SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
                         <!-- title -->
                         <TextBlock 
                             Grid.Row="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- combobox -->
                         <ComboBox 
                             Grid.Row="1"
                             x:Name="AdjutantShapeComboBox"
-                            Margin="0,5,0,0"
-                            Background="{StaticResource BackgroundBrush}" BorderThickness="2"
+                            Style="{StaticResource Content.ComboBox}"
                             SelectionChanged="AdjutantShapeComboBox_SelectionChanged">
                             <ComboBoxItem Content="{Binding Path=[SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_NORMAL], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             <ComboBoxItem Content="{Binding Path=[SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_WOUND], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>

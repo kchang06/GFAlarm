@@ -15,7 +15,7 @@
     <ScrollViewer VerticalScrollBarVisibility="Visible">
         <Grid Margin="20,10">
             <uc:HtmlTextBlock x:Name="ProxyGuideTextBlock" 
-                              Style="{StaticResource TextBlockBaseStyle}"
+                              Style="{StaticResource Base.TextBlock}"
                               TextWrapping="Wrap"
                               Html="{Binding Path=[SETTING_PROXY_SERVER_GUIDE_COMMENT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
         </Grid>

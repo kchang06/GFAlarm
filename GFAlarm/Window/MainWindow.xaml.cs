@@ -971,6 +971,7 @@ namespace GFAlarm
                     {
                         if (!Config.Setting.tabNotification)
                             return;
+                        MenuToggleButton_Notify.BeginAnimation(Rectangle.OpacityProperty, null);
                         MenuToggleButton_Notify.BeginAnimation(Rectangle.OpacityProperty, Animations.Flicking);
                         MenuToggleButton_Notify.Visibility = Visibility.Visible;
                     }
@@ -1394,7 +1395,7 @@ namespace GFAlarm
                     ExpCalApplyButton.Content = "적용 실패";
                 }
                 await Task.Delay(1500);
-                ExpCalApplyButton.Background = Application.Current.Resources["TransparentBrush"] as Brush;
+                ExpCalApplyButton.Background = Application.Current.Resources["BackgroundBrush1"] as Brush;
                 ExpCalApplyButton.Content = "적용";
             });
         }

@@ -5,10 +5,9 @@ using Newtonsoft.Json.Linq;
 using NLog;
 using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
-using System.Linq;
 using System.IO;
-using System.Threading;
+using System.Linq;
+using System.Reflection;
 
 namespace GFAlarm.Data
 {
@@ -16,9 +15,12 @@ namespace GFAlarm.Data
     {
         private static readonly Logger log = LogManager.GetCurrentClassLogger();
 
+        private static JObject operation = new JObject();
+
         /// <summary>
         /// 지도 정보
         /// </summary>
+        /*
         public class Map
         {
             /// <summary>
@@ -87,6 +89,7 @@ namespace GFAlarm.Data
                 return GetDb(sql, "GFData");
             }
         }
+        */
 
         /// <summary>
         /// Logistics 군수지원
@@ -101,8 +104,16 @@ namespace GFAlarm.Data
             /// <returns></returns>
             public static JObject GetData(int id) 
             {
-                string sql = string.Format("SELECT * FROM operation WHERE id = {0} LIMIT 1", id);
-                return GetDb(sql, "GFData");
+                //string sql = string.Format("SELECT * FROM operation WHERE id = {0} LIMIT 1", id);
+                //return GetDb(sql, "GFData");
+
+                JObject json = GetJsonDb("operation");
+                string key = id.ToString();
+                if (json.ContainsKey(key))
+                {
+                    return json[key].Value<JObject>();
+                }
+                return new JObject();
             }
         }
 
@@ -112,81 +123,6 @@ namespace GFAlarm.Data
         public class Mission
         {
             /// <summary>
-            /// 저축런용 자율작전 정보
-            /// </summary>
-            //public static Dictionary<int, List<SaveRunMission>> saveRunMissions = new Dictionary<int, List<SaveRunMission>>();
-
-            /// <summary>
-            /// 자율작전 정보
-            /// </summary>
-            //public class SaveRunMission
-            //{
-            //    public int id = 0;
-            //    public string location = "";
-            //    public int number = 0;
-            //    public int lvPenalty = 0;
-            //    public int requireEch = 0;
-            //    public int mp = 0;
-            //    public int part = 0;
-            //}
-
-            static Mission()
-            {
-                //try
-                //{
-                    
-
-                //    string sql = "SELECT id, location, lv_penalty, require_ech, require_resource FROM mission WHERE require_time != '00:00'";
-                //    List<JObject> missions = GetDbs(sql, "GFData");
-                //    foreach (JObject mission in missions)
-                //    {
-                //        int id = Parser.Json.ParseInt(mission["id"]);
-                //        string location = Parser.Json.ParseString(mission["location"]);
-                //        int lv_penalty = Parser.Json.ParseInt(mission["lv_penalty"]);
-                //        int require_ech = Parser.Json.ParseInt(mission["require_ech"]);
-                //        int[] require_resource = Parser.Json.ParseString(mission["require_resource"]).Split(',').Select(Int32.Parse).ToArray();
-                //        if (require_resource.Length == 2)
-                //        {
-                //            for (int i = 1; i <= 3; i++)
-                //            {
-                //                //int resource = (require_resource[0] + require_resource[1]) * i;
-                //                int resource = require_resource[0] * i;
-                //                SaveRunMission saveRunMission = new SaveRunMission()
-                //                {
-                //                    id = id,
-                //                    location = location,
-                //                    number = i,
-                //                    lvPenalty = lv_penalty,
-                //                    requireEch = require_ech,
-                //                    mp = require_resource[0] * i,
-                //                    part = require_resource[1] * i,
-                //                };
-                //                if (saveRunMissions.ContainsKey(resource))
-                //                {
-                //                    saveRunMissions[resource].Add(saveRunMission);
-                //                }
-                //                else
-                //                {
-                //                    saveRunMissions.Add(resource, new List<SaveRunMission>() { saveRunMission });
-                //                }
-                //            }
-                //        }
-                //    }
-                    //Dictionary<int, List<SaveRunMission>> tempSaveRunMissions = new Dictionary<int, List<SaveRunMission>>();
-                    //foreach (KeyValuePair<int, List<SaveRunMission>> item in saveRunMissions)
-                    //{
-                    //    List<SaveRunMission> tempMissions = item.Value.OrderBy(A => A.requireEch).ThenBy(A => A.lvPenalty).ToList();
-                    //    tempSaveRunMissions.Add(item.Key, tempMissions);
-                    //}
-                    //saveRunMissions = tempSaveRunMissions;
-                //}
-                //catch (Exception ex)
-                //{
-                //    log.Error(ex, "전역 정보 데이터베이스 에러");
-                //}
-            }
-
-            /// <summary>
             /// 전역 정보 가져오기
             /// </summary>
             /// <param name="id"></param>
@@ -194,8 +130,16 @@ namespace GFAlarm.Data
             /// <returns></returns>
             public static JObject GetData(int id)
             {
-                string sql = string.Format("SELECT * FROM mission WHERE id = {0} LIMIT 1", id);
-                return GetDb(sql, "GFData");
+                //string sql = string.Format("SELECT * FROM mission WHERE id = {0} LIMIT 1", id);
+                //return GetDb(sql, "GFData");
+
+                JObject json = GetJsonDb("mission");
+                string key = id.ToString();
+                if (json.ContainsKey(key))
+                {
+                    return json[key].Value<JObject>();
+                }
+                return new JObject();
             }
 
             /// <summary>
@@ -205,11 +149,19 @@ namespace GFAlarm.Data
             /// <returns></returns>
             public static int GetRequireTime(int id)
             {
-                string sql = string.Format("SELECT require_time FROM mission WHERE id = {0} LIMIT 1", id);
-                string value = GetDb(sql, "require_time", "GFData");
-                if (string.IsNullOrEmpty(value))
-                    value = "00:00";
-                return TimeUtil.ParseHHMM(value);
+                //string sql = string.Format("SELECT require_time FROM mission WHERE id = {0} LIMIT 1", id);
+                //string value = GetDb(sql, "require_time", "GFData");
+                //if (string.IsNullOrEmpty(value))
+                //    value = "00:00";
+                //return TimeUtil.ParseHHMM(value);
+
+                JObject json = GetData(id);
+                string hhmm = "00:00";
+                if (json.ContainsKey("require_time"))
+                {
+                    hhmm = json["require_time"].Value<string>();
+                }
+                return TimeUtil.ParseHHMM(hhmm);
             }
 
             /// <summary>
@@ -257,18 +209,44 @@ namespace GFAlarm.Data
             /// <returns></returns>
             public static string[] GetEnemyCodes(long id)
             {
-                string[] result = null;
-                string sql = string.Format("SELECT members FROM gfdb_enemy_team WHERE id = {0} LIMIT 1", id);
-                string value = GetDb(sql, "members", "GFData");
-                // id, members
-                // 73, Scouts,Prowler,Prowler,Prowler,Scouts,Vespid,Vespid,Vespid
-                if (string.IsNullOrEmpty(value))
-                    return null;
-                if (value.Contains(","))
-                    result = value.Split(',');
-                else
-                    result = new string[] { value };
-                return result;
+                //string[] result = null;
+                //string sql = string.Format("SELECT members FROM gfdb_enemy_team WHERE id = {0} LIMIT 1", id);
+                //string value = GetDb(sql, "members", "GFData");
+                /*
+                    id, members
+                    73, Scouts,Prowler,Prowler,Prowler,Scouts,Vespid,Vespid,Vespid
+                */
+                //if (string.IsNullOrEmpty(value))
+                //    return null;
+                //if (value.Contains(","))
+                //    result = value.Split(',');
+                //else
+                //    result = new string[] { value };
+                //return result;
+
+                JObject json = GetJsonDb("gfdb_enemy_team");
+                string key = id.ToString();
+                if (json.ContainsKey(key))
+                {
+                    try
+                    {
+                        string[] result = null;
+                        string members = json[key]["members"].Value<string>();
+                        /*
+                            id, members
+                            73, Scouts,Prowler,Prowler,Prowler,Scouts,Vespid,Vespid,Vespid
+                        */
+                        if (string.IsNullOrEmpty(members))
+                            return null;
+                        if (members.Contains(","))
+                            result = members.Split(',');
+                        else
+                            result = new string[] { members };
+                        return result;
+                    }
+                    catch { }
+                }
+                return new string[] { };
             }
         }
 
@@ -741,8 +719,17 @@ namespace GFAlarm.Data
             /// <returns></returns>
             public static string GetSquadPieceName(int pieceId)
             {
-                string sql = string.Format("SELECT name FROM squad WHERE piece_id = {0} LIMIT 1", pieceId);
-                return GetDb(sql, "name", "GFData");
+                //string sql = string.Format("SELECT name FROM squad WHERE piece_id = {0} LIMIT 1", pieceId);
+                //return GetDb(sql, "name", "GFData");
+
+                int id = pieceId % 300;
+                JObject json = GetJsonDb("squad");
+                string key = id.ToString();
+                if (json.ContainsKey(key))
+                {
+                    return json[key]["name"].Value<string>();
+                }
+                return "";
             }
         }
 
@@ -858,22 +845,49 @@ namespace GFAlarm.Data
             /// <summary>
             /// 요정 정보 가져오기
             /// </summary>
-            /// <param name="no"></param>
+            /// <param name="id"></param>
             /// <returns></returns>
-            public static JObject GetFairyData(int no)
+            public static JObject GetData(int id)
             {
-                string sql = string.Format("SELECT * FROM fairy WHERE id = '{0}' LIMIT 1", no);
-                return GetDb(sql, "GFData");
+                //string sql = string.Format("SELECT * FROM fairy WHERE id = {0} LIMIT 1", id);
+                //return GetDb(sql, "GFData");
+
+                JObject json = GetJsonDb("fairy");
+                string key = id.ToString();
+                if (json.ContainsKey(key))
+                {
+                    return json[key].Value<JObject>();
+                }
+                return new JObject();
             }
 
             /// <summary>
             /// 요정 이름 가져오기
             /// </summary>
-            /// <param name="no"></param>
+            /// <param name="id"></param>
             /// <returns></returns>
-            public static string GetFairyName(int no)
+            public static string GetName(int id)
             {
-                return LanguageResources.Instance[string.Format("FAIRY_{0}", no)];
+                return LanguageResources.Instance[string.Format("FAIRY_{0}", id)];
+            }
+
+            /// <summary>
+            /// 요정 특성 가져오기
+            /// </summary>
+            /// <param name="traitId"></param>
+            /// <returns></returns>
+            public static JObject GetTraitData(int traitId)
+            {
+                //string sql = string.Format("SELECT * FROM fairy_trait WHERE id = {0} LIMIT 1", traitId);
+                //return GetDb(sql, "GFData");
+
+                JObject json = GetJsonDb("fairy_trait");
+                string key = traitId.ToString();
+                if (json.ContainsKey(key))
+                {
+                    return json[key].Value<JObject>();
+                }
+                return new JObject();
             }
 
             /// <summary>
@@ -881,7 +895,7 @@ namespace GFAlarm.Data
             /// </summary>
             /// <param name="traitId"></param>
             /// <returns></returns>
-            public static string GetFairyTraitName(int traitId)
+            public static string GetTraitName(int traitId)
             {
                 return LanguageResources.Instance[string.Format("TRAIT_{0}", traitId)];
             }
@@ -1164,39 +1178,6 @@ namespace GFAlarm.Data
                     return 0;
                 }
             }
-
-            /// <summary>
-            /// 요정 정보 가져오기
-            /// </summary>
-            /// <param name="id"></param>
-            /// <returns></returns>
-            public static JObject GetData(int id)
-            {
-                string sql = string.Format("SELECT * FROM fairy WHERE id = {0} LIMIT 1", id);
-                return GetDb(sql, "GFData");
-            }
-
-            /// <summary>
-            /// 요정 이름 가져오기
-            /// </summary>
-            /// <param name="id"></param>
-            /// <returns></returns>
-            public static string GetName(int id)
-            {
-                string name = LanguageResources.Instance[string.Format("FAIRY_{0}", id)];
-                return name;
-            }
-
-            /// <summary>
-            /// 요정 특성 가져오기
-            /// </summary>
-            /// <param name="traitId"></param>
-            /// <returns></returns>
-            public static JObject GetTrait(int traitId)
-            {
-                string sql = string.Format("SELECT * FROM fairy_trait WHERE id = {0} LIMIT 1", traitId);
-                return GetDb(sql, "GFData");
-            }
         }
 
         /// <summary>
@@ -1212,6 +1193,7 @@ namespace GFAlarm.Data
             /// <returns></returns>
             public static JObject GetData(int area_id, int enemy_id)
             {
+                /*
                 try
                 {
                     string sql = string.Format("SELECT * FROM theater_enemy WHERE area_id = {0} AND id = {1}", 
@@ -1222,6 +1204,7 @@ namespace GFAlarm.Data
                 {
                     log.Error(ex, "국지전 웨이브 정보 가져오기 에러");
                 }
+                */
                 return null;
             }
         }
@@ -1378,11 +1361,19 @@ namespace GFAlarm.Data
             /// <returns></returns>
             public static string GetData(int id, string col)
             {
-                string sql = string.Format("SELECT {0} FROM squad WHERE id = {1} LIMIT 1", col, id);
-                string value = GetDb(sql, col, "GFData");
-                if (string.IsNullOrEmpty(value))
-                    value = id.ToString();
-                return value;
+                //string sql = string.Format("SELECT {0} FROM squad WHERE id = {1} LIMIT 1", col, id);
+                //string value = GetDb(sql, col, "GFData");
+                //if (string.IsNullOrEmpty(value))
+                //    value = id.ToString();
+                //return value;
+
+                JObject json = GetJsonDb("squad");
+                string key = id.ToString();
+                if (json.ContainsKey(key))
+                {
+                    return json[key]["name"].Value<string>();
+                }
+                return "";
             }
 
             /// <summary>
@@ -1428,8 +1419,16 @@ namespace GFAlarm.Data
             /// <returns></returns>
             public static JObject GetDollData(int id)
             {
-                string sql = string.Format("SELECT * FROM doll WHERE id = '{0}' LIMIT 1", id);
-                return GetDb(sql, "GFData");
+                //string sql = string.Format("SELECT * FROM doll WHERE id = '{0}' LIMIT 1", id);
+                //return GetDb(sql, "GFData");
+
+                JObject json = GetJsonDb("doll");
+                string key = id.ToString();
+                if (json.ContainsKey(key))
+                {
+                    return json[key].Value<JObject>();
+                }
+                return new JObject();
             }
 
             /// <summary>
@@ -1449,19 +1448,37 @@ namespace GFAlarm.Data
             /// <returns></returns>
             public static List<int> GetDollSkin(int no, bool isLive2d = false, bool isChild = false)
             {
-                List<int> result = new List<int>();
+                //HashSet<int> result = new HashSet<int>();
+                //no = no > 20000 ? no % 20000 : no;
+                //string sql = string.Format("SELECT * FROM skin WHERE gun_id = '{0}'", no);
+                //if (isLive2d)
+                //    sql += " AND is_live2d = true ";
+                //if (isChild)
+                //    sql += " AND is_child = true ";
+                //List<JObject> items = GetDbs(sql, "GFData");
+                //foreach (JObject item in items)
+                //{
+                //    result.Add(Parser.Json.ParseInt(item["skin_id"]));
+                //}
+                //return result;
+
+                HashSet<int> result = new HashSet<int>();
                 no = no > 20000 ? no % 20000 : no;
-                string sql = string.Format("SELECT * FROM skin WHERE gun_id = '{0}'", no);
-                if (isLive2d)
-                    sql += " AND is_live2d = true ";
-                if (isChild)
-                    sql += " AND is_child = true ";
-                List<JObject> items = GetDbs(sql, "GFData");
-                foreach (JObject item in items)
+                string id = no.ToString();
+                JObject json = GetJsonDb("skin");
+                string[] keys = json.Properties().Select(p => p.Name).ToArray();
+                foreach (string key in keys)
                 {
-                    result.Add(Parser.Json.ParseInt(item["skin_id"]));
+                    JObject item = json[key].Value<JObject>();
+                    if (item["gun_id"].Value<string>() != id)
+                        continue;
+                    if (item["is_live2d"].Value<string>() != (isLive2d == true ? "1" : "0"))
+                        continue;
+                    if (item["is_child"].Value<string>() != (isChild == true ? "1" : "0"))
+                        continue;
+                    result.Add(Parser.String.ParseInt(key));
                 }
-                return result;
+                return result.ToList();
             }
 
             /// <summary>
@@ -1472,18 +1489,33 @@ namespace GFAlarm.Data
             /// <returns></returns>
             public static List<int> GetDollSkin(bool isLive2d, bool isChild)
             {
-                List<int> result = new List<int>();
-                string sql = string.Format("SELECT * FROM skin WHERE 1 = 1");
-                if (isLive2d)
-                    sql += " AND is_live2d = true ";
-                if (isChild)
-                    sql += " AND is_child = true ";
-                List<JObject> items = GetDbs(sql, "GFData");
-                foreach (JObject item in items)
+                //List<int> result = new List<int>();
+                //string sql = string.Format("SELECT * FROM skin WHERE 1 = 1");
+                //if (isLive2d)
+                //    sql += " AND is_live2d = true ";
+                //if (isChild)
+                //    sql += " AND is_child = true ";
+                //List<JObject> items = GetDbs(sql, "GFData");
+                //foreach (JObject item in items)
+                //{
+                //    result.Add(Parser.Json.ParseInt(item["skin_id"]));
+                //}
+                //return result;
+
+                HashSet<int> result = new HashSet<int>();
+                JObject json = GetJsonDb("skin");
+                log.Debug("skin_db={0}", json.ToString());
+                string[] keys = json.Properties().Select(p => p.Name).ToArray();
+                foreach (string key in keys)
                 {
-                    result.Add(Parser.Json.ParseInt(item["skin_id"]));
+                    JObject item = json[key].Value<JObject>();
+                    if (item["is_live2d"].Value<string>() != (isLive2d == true ? "1" : "0"))
+                        continue;
+                    if (item["is_child"].Value<string>() != (isChild == true ? "1" : "0"))
+                        continue;
+                    result.Add(Parser.String.ParseInt(key));
                 }
-                return result;
+                return result.ToList();
             }
 
             /// <summary>
@@ -1514,20 +1546,40 @@ namespace GFAlarm.Data
             /// <returns></returns>
             public static List<int> GetDollOwnSkin(List<int> ownSkins, bool isLive2d = false, bool isChild = false)
             {
+                //try
+                //{
+                //    HashSet<int> result = new HashSet<int>();
+                //    string sql = string.Format("SELECT * FROM skin WHERE skin_id in ({0})", string.Join(",", ownSkins));
+                //    if (isLive2d)
+                //        sql += " AND is_live2d = true ";
+                //    if (isChild)
+                //        sql += " AND is_child = true ";
+                //    List<JObject> items = GetDbs(sql, "GFData");
+                //    foreach (JObject item in items)
+                //    {
+                //        result.Add(Parser.Json.ParseInt(item["gun_id"]));
+                //    }
+                //    return result.ToList();
+                //}
+                //catch { }
+                //return new List<int>();
+
                 try
                 {
                     HashSet<int> result = new HashSet<int>();
-                    string sql = string.Format("SELECT * FROM skin WHERE skin_id in ({0})", string.Join(",", ownSkins));
-                    if (isLive2d)
-                        sql += " AND is_live2d = true ";
-                    if (isChild)
-                        sql += " AND is_child = true ";
-                    List<JObject> items = GetDbs(sql, "GFData");
-                    foreach (JObject item in items)
+                    JObject json = GetJsonDb("skin");
+                    string[] keys = json.Properties().Select(p => p.Name).ToArray();
+                    foreach (string key in keys)
                     {
-                        result.Add(Parser.Json.ParseInt(item["gun_id"]));
+                        JObject item = json[key].Value<JObject>();
+                        if (!ownSkins.Contains(item["skin_id"].Value<int>()))
+                            continue;
+                        if (item["is_live2d"].Value<string>() != (isLive2d == true ? "1" : "0"))
+                            continue;
+                        if (item["is_child"].Value<string>() != (isChild == true ? "1" : "0"))
+                            continue;
+                        result.Add(item["gun_id"].Value<int>());
                     }
-                    return result.ToList();
                 }
                 catch { }
                 return new List<int>();
@@ -2581,20 +2633,19 @@ namespace GFAlarm.Data
             /// 장비 정보 가져오기
             /// </summary>
             /// <param name="id"></param>
-            /// <param name="col"></param>
             /// <returns></returns>
-            public static string GetData(int id, string col)
-            {
-                string sql = string.Format("SELECT {1} FROM equip WHERE id = {0} LIMIT 1", id, col);
-                string value = GetDb(sql, col, "GFData");
-                if (string.IsNullOrEmpty(value))
-                    value = id.ToString();
-                return value;
-            }
             public static JObject GetData(int id)
             {
-                string sql = string.Format("SELECT * FROM equip WHERE id = {0} LIMIT 1", id);
-                return GetDb(sql, "GFData");
+                //string sql = string.Format("SELECT * FROM equip WHERE id = {0} LIMIT 1", id);
+                //return GetDb(sql, "GFData");
+
+                JObject json = GetJsonDb("equip");
+                string key = id.ToString();
+                if (json.ContainsKey(key))
+                {
+                    return json[key].Value<JObject>();
+                }
+                return new JObject();
             }
 
             /// <summary>
@@ -2622,8 +2673,16 @@ namespace GFAlarm.Data
             /// <returns></returns>
             public static JObject GetData(int id)
             {
-                string sql = string.Format("SELECT * FROM quest WHERE id = {0} LIMIT 1", id);
-                return GetDb(sql, "GFData");
+                //string sql = string.Format("SELECT * FROM quest WHERE id = {0} LIMIT 1", id);
+                //return GetDb(sql, "GFData");
+
+                JObject json = GetJsonDb("quest");
+                string key = id.ToString();
+                if (json.ContainsKey(key))
+                {
+                    return json[key].Value<JObject>();
+                }
+                return new JObject();
             }
         }
 
@@ -2782,13 +2841,49 @@ namespace GFAlarm.Data
             /// <returns></returns>
             public static JObject GetSpotData(int id)
             {
-                string sql = string.Format("SELECT * FROM gfdb_spot WHERE id = {0} LIMIT 1", id);
-                return GetDb(sql, "GFData");
+                //string sql = string.Format("SELECT * FROM gfdb_spot WHERE id = {0} LIMIT 1", id);
+                //return GetDb(sql, "GFData");
+
+                JObject json = GetJsonDb("gfdb_spot");
+                string key = id.ToString();
+                if (json.ContainsKey(key))
+                {
+                    return json[key].Value<JObject>();
+                }
+                return new JObject();
             }
         }
 
+        #region Json Functions
+
+        static Dictionary<string, JObject> jsonDb = new Dictionary<string, JObject>();
+
+        private static JObject GetJsonDb(string db)
+        {
+            if (jsonDb.ContainsKey(db))
+                return jsonDb[db];
+
+            string dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string file = string.Format("{0}/Resource/db/{1}.json", dir, db);
+            if (File.Exists(file))
+            {
+                try
+                {
+                    string str = CompressUtil.Decompress(File.ReadAllText(file));
+                    JObject json = JObject.Parse(str);
+                    jsonDb.Add(db, json);
+                    return jsonDb[db];
+                }
+                catch { }
+            }
+            return new JObject();
+        }
+
+        #endregion
+
         #region Sqlite Functions
 
+        /*
         private static volatile Dictionary<string, SQLiteConnection> conns = new Dictionary<string, SQLiteConnection>();
         private static object syncLock = new Object();
 
@@ -2936,6 +3031,7 @@ namespace GFAlarm.Data
             foreach (var item in conns)
                 conns[item.Key].Close();
         }
+        */
 
         #endregion
     }

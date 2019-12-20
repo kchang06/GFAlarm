@@ -264,11 +264,21 @@ namespace GFAlarm.Transaction.PacketProcess
                     "build_slot": 3
                 }
             */
+            // response Gun/finishDevelop
+            /*
+                {
+                    "gun_with_user_add": {
+                        "gun_with_user_id": "383506736",
+                        "gun_id": "2"
+                    }
+                }
+             */
             #endregion
             try
             {
                 log.Debug("인형제조 완료");
                 JObject request = Parser.Json.ParseJObject(request_string);
+                JObject response = Parser.Json.ParseJObject(response_string);
                 if (request != null)
                 {
                     int buildSlot = Parser.Json.ParseInt(request["build_slot"]);
@@ -278,6 +288,18 @@ namespace GFAlarm.Transaction.PacketProcess
                     {
                         slot = buildSlot,
                     });
+                }
+                if (response != null)
+                {
+                    // 인형 추가
+                    if (response.ContainsKey("gun_with_user_add") && response["gun_with_user_add"] is JObject)
+                    {
+                        JObject gun_with_user_add = response["gun_with_user_add"].Value<JObject>();
+                        long gunWithUserId = Parser.Json.ParseLong(gun_with_user_add["gun_with_user_id"]);
+                        int gunId = Parser.Json.ParseInt(gun_with_user_add["gun_id"]);
+
+                        UserData.Doll.Add(new DollWithUserInfo(gunWithUserId, gunId));
+                    }
                 }
             }
             catch (Exception ex)
@@ -308,7 +330,7 @@ namespace GFAlarm.Transaction.PacketProcess
                     "build_heavy": 0
                 }
             */
-            // response Gun/developMultiGun
+            // response Gun/developMultiGun (단일 제조)
             /*
                 {
                     "gun_ids": [
@@ -322,76 +344,59 @@ namespace GFAlarm.Transaction.PacketProcess
                         }
                     ]
                 }
-                */
+            */
+            // response Gun/developMultiGun (복수 제조)
+            /*
+                [
+                    {
+                        "gun_with_user_add": {
+                            "gun_with_user_id": "383509177",
+                            "gun_id": "9"
+                        }
+                    },
+                    {
+                        "gun_with_user_add": {
+                            "gun_with_user_id": "383509178",
+                            "gun_id": "90"
+                        }
+                    },
+                    {
+                        "gun_with_user_add": {
+                            "gun_with_user_id": "383509179",
+                            "gun_id": "2"
+                        }
+                    }
+                ]
+             */
             #endregion
             try
             {
                 log.Debug("인형일괄제조 시작");
                 JObject request = Parser.Json.ParseJObject(request_string);
-                JObject response = Parser.Json.ParseJObject(response_string);
-                if (request != null && response != null && response.ContainsKey("gun_ids") && response["gun_ids"] is JArray)
+                if (request != null)
                 {
                     int mp = Parser.Json.ParseInt(request["mp"]);
                     int ammo = Parser.Json.ParseInt(request["ammo"]);
                     int mre = Parser.Json.ParseInt(request["mre"]);
                     int part = Parser.Json.ParseInt(request["part"]);
                     int inputLevel = Parser.Json.ParseInt(request["input_level"]);
+                    int buildQuick = Parser.Json.ParseInt(request["build_quick"]);
                     // 0: 일반, 1: 소투입, 2: 중투입, 3: 고투입
 
                     log.Debug("투입자원 {0}/{1}/{2}/{3}", mp, ammo, mre, part);
                     log.Debug("투입레벨 {0} (0: 일반, 1: 소투입, 2: 중투입, 3: 고투입)", inputLevel);
 
-                    JArray items = response["gun_ids"].Value<JArray>();
-                    foreach (var item in items)
+                    // 복수 제조
+                    if (buildQuick == 1)
                     {
-                        int buildSlot = Parser.Json.ParseInt(item["slot"]);
-                        if (buildSlot > 0)
+                        JArray response = Parser.Json.ParseJArray(response_string);
+                        foreach (var item in response)
                         {
-                            UserData.mp -= mp;
-                            UserData.ammo -= ammo;
-                            UserData.mre -= mre;
-                            UserData.part -= part;
+                            JObject gun_with_user_add = item["gun_with_user_add"].Value<JObject>();
+                            long gunWithUserId = Parser.Json.ParseLong(gun_with_user_add["gun_with_user_id"]);
+                            int gunId = Parser.Json.ParseInt(gun_with_user_add["gun_id"]);
 
-                            int gunId = Parser.Json.ParseInt(item["id"]);
-                            int startTime = TimeUtil.GetCurrentSec();
-
-                            //log.Debug("제조슬롯 {0} | 인형 {1} | 제조시작 {2}", buildSlot, gunId, Parser.Time.GetDateTime(startTime).ToString("MM-dd HH:mm:ss"));
-
-                            JObject doll = GameData.Doll.GetDollData(gunId);
-                            string gunName = "";
-                            string gunType = "";
-                            int gunStar = 0;
-                            if (doll != null)
-                            {
-                                gunName = Parser.Json.ParseString(doll["name"]);
-                                gunType = Parser.Json.ParseString(doll["type"]);
-                                gunStar = Parser.Json.ParseInt(doll["star"]);
-
-                                log.Debug("병과 {0} | 레어도 {1} 성", gunType, gunStar);
-                            }
-
-                            // 알림 탭 추가
-                            dashboardView.Add(new ProduceDollTemplate()
-                            {
-                                slot = buildSlot,
-                                gunId = gunId,
-                                startTime = startTime,
-                                inputLevel = inputLevel,
-                                spendResource = new int[] { mp, ammo, mre, part },
-                            });
-
-                            if ((Config.Alarm.notifyProduceDoll5Star && gunStar >= 5) ||  // 5성 인형제조 알림
-                                (Config.Alarm.notifyProduceShotgun && gunType == "SG") || // 샷건 인형제조 알림
-                                (Config.Alarm.notifyProduceDoll))                         // 인형제조 알림
-                            {
-                                Notifier.Manager.notifyQueue.Enqueue(new Message()
-                                {
-                                    send = MessageSend.All,
-                                    subject = LanguageResources.Instance["MESSAGE_PRODUCE_DOLL_SUBJECT"],
-                                    content = string.Format(LanguageResources.Instance["MESSAGE_PRODUCE_DOLL_CONTENT"],
-                                                            gunStar, gunName, gunType),
-                                });
-                            }
+                            UserData.Doll.Add(new DollWithUserInfo(gunWithUserId, gunId));
 
                             // 일반제조
                             if (inputLevel == 0)
@@ -408,7 +413,97 @@ namespace GFAlarm.Transaction.PacketProcess
                             }
                         }
                     }
+                    // 단수 제조
+                    else
+                    {
+                        JObject response = Parser.Json.ParseJObject(response_string);
+                        if (response.ContainsKey("gun_ids") && response["gun_ids"] is JArray)
+                        {
+                            JArray items = response["gun_ids"].Value<JArray>();
+                            foreach (var item in items)
+                            {
+                                int buildSlot = Parser.Json.ParseInt(item["slot"]);
+                                if (buildSlot > 0)
+                                {
+                                    UserData.mp -= mp;
+                                    UserData.ammo -= ammo;
+                                    UserData.mre -= mre;
+                                    UserData.part -= part;
+
+                                    int gunId = Parser.Json.ParseInt(item["id"]);
+                                    int startTime = TimeUtil.GetCurrentSec();
+
+                                    //log.Debug("제조슬롯 {0} | 인형 {1} | 제조시작 {2}", buildSlot, gunId, Parser.Time.GetDateTime(startTime).ToString("MM-dd HH:mm:ss"));
+
+                                    JObject doll = GameData.Doll.GetDollData(gunId);
+                                    string gunName = "";
+                                    string gunType = "";
+                                    int gunStar = 0;
+                                    if (doll != null)
+                                    {
+                                        gunName = Parser.Json.ParseString(doll["name"]);
+                                        gunType = Parser.Json.ParseString(doll["type"]);
+                                        gunStar = Parser.Json.ParseInt(doll["star"]);
+
+                                        log.Debug("병과 {0} | 레어도 {1} 성", gunType, gunStar);
+                                    }
+
+                                    // 알림 탭 추가
+                                    dashboardView.Add(new ProduceDollTemplate()
+                                    {
+                                        slot = buildSlot,
+                                        gunId = gunId,
+                                        startTime = startTime,
+                                        inputLevel = inputLevel,
+                                        spendResource = new int[] { mp, ammo, mre, part },
+                                    });
+
+                                    if ((Config.Alarm.notifyProduceDoll5Star && gunStar >= 5) ||  // 5성 인형제조 알림
+                                        (Config.Alarm.notifyProduceShotgun && gunType == "SG") || // 샷건 인형제조 알림
+                                        (Config.Alarm.notifyProduceDoll))                         // 인형제조 알림
+                                    {
+                                        Notifier.Manager.notifyQueue.Enqueue(new Message()
+                                        {
+                                            send = MessageSend.All,
+                                            subject = LanguageResources.Instance["MESSAGE_PRODUCE_DOLL_SUBJECT"],
+                                            content = string.Format(LanguageResources.Instance["MESSAGE_PRODUCE_DOLL_CONTENT"],
+                                                                    gunStar, gunName, gunType),
+                                        });
+                                    }
+
+                                    // 일반제조
+                                    if (inputLevel == 0)
+                                    {
+                                        // 임무 갱신
+                                        UserData.Quest.Daily.produceDoll += 1;
+                                        UserData.Quest.Weekly.produceDoll += 1;
+                                    }
+                                    // 중형제조
+                                    else if (inputLevel > 0)
+                                    {
+                                        // 임무 갱신
+                                        UserData.Quest.Weekly.produceHeavyDoll += 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
+
+                //if (request != null && response != null && response.ContainsKey("gun_ids") && response["gun_ids"] is JArray)
+                //{
+                //    int mp = Parser.Json.ParseInt(request["mp"]);
+                //    int ammo = Parser.Json.ParseInt(request["ammo"]);
+                //    int mre = Parser.Json.ParseInt(request["mre"]);
+                //    int part = Parser.Json.ParseInt(request["part"]);
+                //    int inputLevel = Parser.Json.ParseInt(request["input_level"]);
+                //    // 0: 일반, 1: 소투입, 2: 중투입, 3: 고투입
+
+                //    log.Debug("투입자원 {0}/{1}/{2}/{3}", mp, ammo, mre, part);
+                //    log.Debug("투입레벨 {0} (0: 일반, 1: 소투입, 2: 중투입, 3: 고투입)", inputLevel);
+
+
+                //}
             }
             catch (Exception ex)
             {

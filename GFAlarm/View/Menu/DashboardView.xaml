@@ -14,18 +14,32 @@
      SnapsToDevicePixels="True"
      d:DesignHeight="300" 
      d:DesignWidth="200">
+    <UserControl.Resources>
+        <!-- GroupBox.Border (height 32px) -->
+        <Style BasedOn="{StaticResource GroupBox.Border}"
+               TargetType="{x:Type Border}" x:Key="GroupBox.Border">
+            <Setter Property="Height" Value="32"/>
+        </Style>
+        <!-- GroupBox.Title.TextBlock -->
+        <Style BasedOn="{StaticResource GroupBox.Title.TextBlock}" 
+               TargetType="{x:Type TextBlock}" x:Key="GroupBox.Title.TextBlock">
+            <Setter Property="Margin" Value="5,0,0,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+    </UserControl.Resources>
     <Grid Margin="0,0,2,0">
         <!-- 오버레이 -->
         <Grid x:Name="EmptyOverlay" Panel.ZIndex="100" Visibility="Visible"
-              Background="{StaticResource BackgroundBrush}">
-            <iconPacks:PackIconMaterial Style="{DynamicResource OverlayIconStyle}" 
+              Background="{StaticResource BackgroundBrush1}">
+            <iconPacks:PackIconMaterial Style="{DynamicResource Overlay.Icon}" 
                                         Kind="EmoticonDead"/>
-            <uc:HtmlTextBlock Style="{DynamicResource OverlayTextStyle}"  
+            <uc:HtmlTextBlock Style="{DynamicResource Overlay.TextBlock}"  
                               Html="{Binding Path=[OVERLAY_EMPTY_DASHBOARD], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
         </Grid>
         
         <!-- 리스트 박스들 -->
-        <ScrollViewer VerticalScrollBarVisibility="Visible">
+        <ScrollViewer VerticalScrollBarVisibility="Visible" >
             <StackPanel x:Name="DashboardStackPanel" 
                         Orientation="Vertical">
                 
@@ -33,7 +47,7 @@
                 <StackPanel x:Name="ShareGem">
                     <!-- groupbox -->
                     <Border x:Name="ShareGemGroupBox" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxBorderStyle}">
+                            Style="{StaticResource GroupBox.Border}">
                         <Grid Margin="10,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
@@ -42,13 +56,13 @@
                             <!-- icon -->
                             <iconPacks:PackIconMaterial
                                 Grid.Column="0"
-                                Style="{StaticResource GroupBoxIconStyle}"
+                                Style="{StaticResource GroupBox.Icon}"
                                 Foreground="{StaticResource OrangeBrush}"
                                 Width="16" Height="13" Kind="DiamondStone"/>
                             <!-- title -->
                             <TextBlock 
                                 Grid.Column="1" 
-                                Style="{StaticResource GroupBoxTitleStyle}"
+                                Style="{StaticResource GroupBox.Title.TextBlock}"
                                 Text="{Binding Path=[UNRECEIVE_SHARE_GEM], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         </Grid>
                     </Border>
@@ -58,7 +72,7 @@
                 <StackPanel x:Name="ShareBattery">
                     <!-- groupbox -->
                     <Border x:Name="ShareBatteryGroupBox" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxBorderStyle}">
+                            Style="{StaticResource GroupBox.Border}">
                         <Grid Margin="10,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
@@ -67,13 +81,13 @@
                             <!-- icon -->
                             <iconPacks:PackIconMaterial
                                 Grid.Column="0"
-                                Style="{StaticResource GroupBoxIconStyle}"
+                                Style="{StaticResource GroupBox.Icon}"
                                 Foreground="{StaticResource OrangeBrush}"
                                 Width="16" Height="14" Kind="BatteryCharging"/>
                             <!-- title -->
                             <TextBlock 
                                 Grid.Column="1" 
-                                Style="{StaticResource GroupBoxTitleStyle}"
+                                Style="{StaticResource GroupBox.Title.TextBlock}"
                                 Text="{Binding Path=[UNRECEIVE_SHARE_BATTERY], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         </Grid>
                     </Border>
@@ -83,10 +97,10 @@
                 <StackPanel x:Name="DispatchedEchelon">
                     <!-- lower guide -->
                     <Border x:Name="DispatchedEchelonLowerGuide" Visibility="Collapsed"
-                            Style="{StaticResource GroupGuideStyle}"/>
+                            Style="{StaticResource GroupBox.Guideline.Border}"/>
                     <!-- groupbox -->
                     <Border x:Name="DispatchedEchelonGroupBox" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxBorderStyle}"
+                            Style="{StaticResource GroupBox.Border}"
                             MouseDown="GroupBox_MouseDown" MouseMove="Group_MouseMove" MouseUp="GroupBox_MouseUp">
                         <Grid Margin="10,0">
                             <Grid.ColumnDefinitions>
@@ -98,27 +112,27 @@
                             <!-- icon -->
                             <iconPacks:PackIconMaterial
                                 Grid.Column="0"
-                                Style="{StaticResource GroupBoxIconStyle}"
+                                Style="{StaticResource GroupBox.Icon}"
                                 Width="16" Height="15" Kind="ChessKnight"/>
                             <!-- title -->
                             <TextBlock
                                 Grid.Column="1"
-                                Style="{StaticResource GroupBoxTitleStyle}"
+                                Style="{StaticResource GroupBox.Title.TextBlock}"
                                 Text="{Binding Path=[DASHBOARD_GROUP_DISPATCHED_ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             <!-- count -->
                             <Border 
                                 Grid.Column="2" 
-                                Style="{StaticResource GroupBoxCountBorderStyle}">
+                                Style="{StaticResource GroupBox.Count.Border}">
                                 <TextBlock 
                                     x:Name="DispatchedEchelonGroupBox_Count"
-                                    Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                    Style="{StaticResource GroupBox.Count.TextBlock}"
                                     Text="0"/>
                             </Border>
                             <!-- arrow -->
                             <iconPacks:PackIconMaterial 
                                 Grid.Column="3" 
                                 x:Name="DispatchedEchelonGroupBox_Arrow"
-                                Style="{StaticResource GroupBoxArrowStyle}"
+                                Style="{StaticResource GroupBox.Arrow.Icon}"
                                 Kind="ChevronDown"/>
                         </Grid>
                     </Border>
@@ -127,40 +141,40 @@
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid x:Name="TemplateGrid" 
-                                      Style="{StaticResource ItemTemplateStyle}">
+                                      Style="{StaticResource Item.Template}">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <!-- 슬롯 -->
                                     <TextBlock x:Name="SlotTextBlock" Grid.ColumnSpan="2"
-                                               Style="{StaticResource ItemSlotStyle}"
+                                               Style="{StaticResource Item.Slot}"
                                                Text="{Binding Path=TBSlot, Mode=OneWay}"/>
                                     <!-- 지원코드 -->
                                     <TextBlock x:Name="TitleTextBlock" Grid.Column="0"
-                                               Style="{StaticResource ItemTitleStyle}"
+                                               Style="{StaticResource Item.Title}"
                                                Margin="30,1,0,0"
                                                Text="{Binding Path=TBCode, Mode=OneWay}"/>
                                     <!-- 지원종류 -->
                                     <TextBlock x:Name="SubtitleTextBlock" Grid.Column="0"
-                                               Style="{StaticResource ItemSubtitleStyle}">
+                                               Style="{StaticResource Item.Subtitle}">
                                         <Run x:Name="TypeTextBlock" Text="{Binding Path=TBType, Mode=OneWay}"/>
                                         <Run x:Name="NumberTextBlock" Text="{Binding Path=TBNumber, Mode=OneWay}"/>
                                     </TextBlock>
                                     <!-- 남은 시간 -->
                                     <TextBlock x:Name="RemainTimeTextBlock" Grid.ColumnSpan="2"
-                                               Style="{StaticResource ItemRemainTimeStyle}"
+                                               Style="{StaticResource Item.RemainTime}"
                                                Text="{Binding Path=TBRemainTime, Mode=OneWay}"/>
                                     <!-- 완료 시간 -->
                                     <TextBlock x:Name="EndTimeTextBlock" Grid.ColumnSpan="2"
-                                               Style="{StaticResource ItemEndTimeStyle}"
+                                               Style="{StaticResource Item.EndTime}"
                                                Text="{Binding Path=TBEndTime, Mode=OneWay}"/>
                                     <!-- 구분선 -->
                                     <Border x:Name="Delimiter" Grid.ColumnSpan="2" 
-                                            Style="{StaticResource ItemDelimiterStyle}"/>
+                                            Style="{StaticResource Item.Delimiter}"/>
                                     <!-- tooltip -->
                                     <Grid.ToolTip>
-                                        <StackPanel Style="{StaticResource ToolTipStackPanelStyle}" Orientation="Vertical">
+                                        <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}" Orientation="Vertical">
                                             <!-- 자율작전 툴팁 -->
                                             <Grid x:Name="AutoMissionToolTipGrid" Margin="0,5">
                                                 <Grid.ColumnDefinitions>
@@ -179,37 +193,37 @@
                                                 <!-- 투입 제대 -->
                                                 <iconPacks:PackIconMaterial 
                                                     Grid.Row="0" Grid.ColumnSpan="2" 
-                                                    Style="{StaticResource IconStyle}"
+                                                    Style="{StaticResource Base.Icon}"
                                                     Height="14" Margin="3,0,0,5" HorizontalAlignment="Left" VerticalAlignment="Center"
                                                     Foreground="{StaticResource GreenBrush}" 
                                                     Kind="ChessKnight"/>
                                                 <TextBlock Grid.Row="0" Grid.ColumnSpan="2"
-                                                           Style="{StaticResource ToolTipTitleStyle}"
+                                                           Style="{StaticResource Content.ToolTip.Title.TextBlock}"
                                                            Margin="24,0,0,5"
                                                            Text="{Binding Path=[DISPATCHED_ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                                 <Border Grid.Row="1" Grid.ColumnSpan="2"
-                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}"
                                                         Padding="6,2,0,5"
                                                         BorderThickness="0,1">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                FontSize="14" Foreground="{StaticResource OrangeBrush}"
                                                                Text="{Binding Path=TBTeamIds, Mode=OneWay}"/>
                                                 </Border>
                                                 <!-- 투입 자원 -->
                                                 <iconPacks:PackIconMaterial 
                                                     Grid.Row="2" Grid.ColumnSpan="2"
-                                                    Style="{StaticResource IconStyle}"
+                                                    Style="{StaticResource Base.Icon}"
                                                     Height="11" Margin="3,10,0,5" HorizontalAlignment="Left" VerticalAlignment="Center"
                                                     Foreground="{StaticResource GreenBrush}"
                                                     Kind="Archive"/>
                                                 <TextBlock Grid.Row="2"   Grid.ColumnSpan="2"
-                                                           Style="{StaticResource ToolTipTitleStyle}"
+                                                           Style="{StaticResource Content.ToolTip.Title.TextBlock}"
                                                            Margin="24,10,0,5"
                                                            Text="{Binding Path=[SPEND_RESOURCE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                                 <!-- row header -->
                                                 <Border Grid.Row="3" Grid.Column="0" BorderThickness="0,1,1,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}" HorizontalAlignment="Center">
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}" HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image Source="/GFAlarm;component/Resource/image/icon/res/manpower.png" 
                                                                    Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
@@ -217,8 +231,8 @@
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="4" Grid.Column="0" BorderThickness="0,0,1,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}" HorizontalAlignment="Center">
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}" HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image Source="/GFAlarm;component/Resource/image/icon/res/ammo.png" 
                                                                    Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
@@ -226,8 +240,8 @@
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="5" Grid.Column="0" BorderThickness="0,0,1,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}" HorizontalAlignment="Center">
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}" HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image Source="/GFAlarm;component/Resource/image/icon/res/mre.png" 
                                                                    Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
@@ -235,8 +249,8 @@
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="6" Grid.Column="0" BorderThickness="0,0,1,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}" HorizontalAlignment="Center">
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}" HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image Source="/GFAlarm;component/Resource/image/icon/res/part.png" 
                                                                    Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
@@ -245,29 +259,29 @@
                                                 </Border>
                                                 <!-- spend resources -->
                                                 <Border Grid.Row="3" Grid.Column="1" BorderThickness="0,1,0,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Right" Foreground="{StaticResource OrangeBrush}">
                                                         <Run Text="{Binding Path=spendResource[0], Mode=OneWay}"/>
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="4" Grid.Column="1" BorderThickness="0,0,0,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Right" Foreground="{StaticResource OrangeBrush}">
                                                         <Run Text="{Binding Path=spendResource[0], Mode=OneWay}"/>
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="5" Grid.Column="1" BorderThickness="0,0,0,1" 
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Right" Foreground="{StaticResource OrangeBrush}">
                                                         <Run Text="{Binding Path=spendResource[0], Mode=OneWay}"/>
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="6" Grid.Column="1" BorderThickness="0,0,0,1"
-                                                        Style="{StaticResource ToolTipTableStyle}" >
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}" 
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}" >
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}" 
                                                                HorizontalAlignment="Right" Foreground="{StaticResource OrangeBrush}">
                                                         <Run Text="{Binding Path=spendResource[1], Mode=OneWay}"/>
                                                     </TextBlock>
@@ -291,18 +305,18 @@
                                                 <!-- 획득 자원 -->
                                                 <iconPacks:PackIconMaterial 
                                                     Grid.Row="0" Grid.ColumnSpan="3"
-                                                    Style="{StaticResource IconStyle}"
+                                                    Style="{StaticResource Base.Icon}"
                                                     Height="12" Margin="3,0,0,5" VerticalAlignment="Center"
                                                     Foreground="{StaticResource OrangeBrush}"
                                                     Kind="Archive"/>
                                                 <TextBlock Grid.Row="0" Grid.ColumnSpan="3"
-                                                           Style="{StaticResource ToolTipTitleStyle}"
+                                                           Style="{StaticResource Content.ToolTip.Title.TextBlock}"
                                                            Margin="24,0,0,5"
                                                            Text="{Binding Path=[REWARD_RESOURCE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                                 <!-- row header -->
                                                 <Border Grid.Row="1" Grid.Column="0" BorderThickness="0,1,1,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image Source="/GFAlarm;component/Resource/image/icon/res/manpower.png" 
@@ -311,8 +325,8 @@
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="2" Grid.Column="0" BorderThickness="0,0,1,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image Source="/GFAlarm;component/Resource/image/icon/res/ammo.png" 
@@ -321,8 +335,8 @@
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="3" Grid.Column="0" BorderThickness="0,0,1,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image Source="/GFAlarm;component/Resource/image/icon/res/mre.png" 
@@ -331,8 +345,8 @@
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="4" Grid.Column="0" BorderThickness="0,0,1,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image Source="/GFAlarm;component/Resource/image/icon/res/part.png" 
@@ -342,62 +356,62 @@
                                                 </Border>
                                                 <Border Grid.Row="5" Grid.Column="0" BorderThickness="0,0,1,1"
                                                         x:Name="ItemIconBorder1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
                                                 </Border>
                                                 <!-- reward resources -->
                                                 <Border Grid.Row="1" Grid.Column="1" BorderThickness="0,1,1,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Right" Foreground="#FFB400">
                                                         <Run x:Name="ManpowerTextBlock" Text="{Binding Path=rewardResource[0], Mode=OneWay}"/>
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="2" Grid.Column="1" BorderThickness="0,0,1,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Right" Foreground="#FFB400">
                                                         <Run x:Name="AmmoTextBlock" Text="{Binding Path=rewardResource[1], Mode=OneWay}"/>
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="3" Grid.Column="1" BorderThickness="0,0,1,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Right" Foreground="#FFB400">
                                                         <Run x:Name="MreTextBlock" Text="{Binding Path=rewardResource[2], Mode=OneWay}"/>
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="4" Grid.Column="1" BorderThickness="0,0,1,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}" 
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}" 
                                                                HorizontalAlignment="Right" Foreground="#FFB400">
                                                         <Run x:Name="PartTextBlock" Text="{Binding Path=rewardResource[3], Mode=OneWay}"/>
                                                     </TextBlock>
                                                 </Border>
                                                 <!-- reward resources (per hour) -->
                                                 <Border Grid.Row="1" Grid.Column="2" BorderThickness="0,1,0,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Right" Foreground="#FFB400">
                                                         <Run x:Name="ManpowerHourTextBlock" Text="{Binding Path=rewardResourcePerHour[0], Mode=OneWay}"/><Run Foreground="#FFFFFF" Text="/h"/>
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="2" Grid.Column="2" BorderThickness="0,0,0,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Right" Foreground="#FFB400">
                                                         <Run x:Name="AmmoHourTextBlock" Text="{Binding Path=rewardResourcePerHour[1], Mode=OneWay}"/><Run Foreground="#FFFFFF" Text="/h"/>
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="3" Grid.Column="2" BorderThickness="0,0,0,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Right" Foreground="#FFB400">
                                                         <Run x:Name="MreHourTextBlock" Text="{Binding Path=rewardResourcePerHour[2], Mode=OneWay}"/><Run Foreground="#FFFFFF" Text="/h"/>
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="4" Grid.Column="2" BorderThickness="0,0,0,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Right" Foreground="#FFB400">
                                                         <Run x:Name="PartHourTextBlock" Text="{Binding Path=rewardResourcePerHour[3], Mode=OneWay}"/><Run Foreground="#FFFFFF" Text="/h"/>
                                                     </TextBlock>
@@ -405,8 +419,8 @@
                                                 <!-- reward items -->
                                                 <Border Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" BorderThickness="0,0,0,1"
                                                         x:Name="ItemIconBorder2"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource TextBlockBaseStyle}" 
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Base.TextBlock}" 
                                                                Padding="0,3,0,0" HorizontalAlignment="Center" FontSize="13">
                                                         <InlineUIContainer>
                                                             <Image x:Name="ItemIcon1TextBlock" Source="{Binding Path=rewardItemIcon[0], Mode=OneWay}" 
@@ -489,17 +503,17 @@
                     </ListBox>
                     <!-- upper guide -->
                     <Border x:Name="DispatchedEchelonUpperGuide" Visibility="Collapsed"
-                            Style="{StaticResource GroupGuideStyle}"/>
+                            Style="{StaticResource GroupBox.Guideline.Border}"/>
                 </StackPanel>
                 
                 <!-- 인형제조 -->
                 <StackPanel x:Name="ProduceDoll">
                     <!-- lower guide -->
                     <Border x:Name="ProduceDollLowerGuide" Visibility="Collapsed"
-                            Style="{StaticResource GroupGuideStyle}"/>
+                            Style="{StaticResource GroupBox.Guideline.Border}"/>
                     <!-- groupbox -->
                     <Border x:Name="ProduceDollGroupBox" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxBorderStyle}"
+                            Style="{StaticResource GroupBox.Border}"
                             MouseDown="GroupBox_MouseDown" MouseMove="Group_MouseMove" MouseUp="GroupBox_MouseUp">
                         <Grid Margin="10,0">
                             <Grid.ColumnDefinitions>
@@ -511,27 +525,27 @@
                             <!-- icon -->
                             <iconPacks:PackIconMaterial
                                 Grid.Column="0"
-                                Style="{StaticResource GroupBoxIconStyle}"
+                                Style="{StaticResource GroupBox.Icon}"
                                 Width="16" Height="12" Kind="HumanGreeting"/>
                             <!-- title -->
                             <TextBlock
                                 Grid.Column="1"
-                                Style="{StaticResource GroupBoxTitleStyle}"
+                                Style="{StaticResource GroupBox.Title.TextBlock}"
                                 Text="{Binding Path=[DASHBOARD_GROUP_PRODUCE_DOLL], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             <!-- count -->
                             <Border 
                                 Grid.Column="2" 
-                                Style="{StaticResource GroupBoxCountBorderStyle}">
+                                Style="{StaticResource GroupBox.Count.Border}">
                                 <TextBlock 
                                     x:Name="ProduceDollGroupBox_Count"
-                                    Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                    Style="{StaticResource GroupBox.Count.TextBlock}"
                                     Text="0"/>
                             </Border>
                             <!-- arrow -->
                             <iconPacks:PackIconMaterial 
                                 Grid.Column="3" 
                                 x:Name="ProduceDollGroupBox_Arrow"
-                                Style="{StaticResource GroupBoxArrowStyle}"
+                                Style="{StaticResource GroupBox.Arrow.Icon}"
                                 Kind="ChevronDown"/>
                         </Grid>
                     </Border>
@@ -540,40 +554,40 @@
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid x:Name="TemplateGrid" 
-                                      Style="{StaticResource ItemTemplateStyle}">
+                                      Style="{StaticResource Item.Template}">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <!--슬롯-->
                                     <TextBlock x:Name="SlotTextBlock" Grid.ColumnSpan="2"
-                                               Style="{StaticResource ItemSlotStyle}"
+                                               Style="{StaticResource Item.Slot}"
                                                Text="{Binding Path=TBSlot, Mode=OneWay}"/>
                                     <!--인형이름-->
                                     <TextBlock x:Name="TitleTextBlock" Grid.Column="0"
-                                               Style="{StaticResource ItemTitleStyle}"
+                                               Style="{StaticResource Item.Title}"
                                                Margin="30,3,0,0" FontSize="14" TextTrimming="CharacterEllipsis"
                                                Text="{Binding Path=TBName, Mode=OneWay}"/>
                                     <!--인형종류/레어도-->
                                     <TextBlock x:Name="SubtitleTextBlock" Grid.Column="0"
-                                               Style="{StaticResource ItemSubtitleStyle}"
+                                               Style="{StaticResource Item.Subtitle}"
                                                Margin="30,0,0,5" TextTrimming="CharacterEllipsis">
                                         <Run Text="{Binding Path=TBCategory, Mode=OneWay}" FontSize="11"/>
                                         <Run Text="{Binding Path=TBStar, Mode=OneWay}" Foreground="{StaticResource OrangeBrush}"/>
                                     </TextBlock>
                                     <!--남은시간-->
                                     <TextBlock x:Name="RemainTimeTextBlock" Grid.Column="1"
-                                               Style="{StaticResource ItemRemainTimeStyle}"
+                                               Style="{StaticResource Item.RemainTime}"
                                                Text="{Binding Path=TBRemainTime, Mode=OneWay}"/>
                                     <!--예정시간-->
                                     <TextBlock x:Name="EndTimeTextBlock" Grid.Column="1"
-                                               Style="{StaticResource ItemEndTimeStyle}"
+                                               Style="{StaticResource Item.EndTime}"
                                                Text="{Binding Path=TBEndTime, Mode=OneWay}"/>
                                     <!--구분선-->
                                     <Border x:Name="Delimiter" Grid.ColumnSpan="2" 
-                                            Style="{StaticResource ItemDelimiterStyle}"/>
+                                            Style="{StaticResource Item.Delimiter}"/>
                                     <Grid.ToolTip>
-                                        <StackPanel Style="{StaticResource ToolTipStackPanelStyle}" Orientation="Vertical">
+                                        <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}" Orientation="Vertical">
                                             <Grid>
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition MinWidth="40"/>
@@ -590,19 +604,19 @@
                                                 <!-- 투입 자원 -->
                                                 <iconPacks:PackIconMaterial 
                                                     Grid.Row="0" Grid.ColumnSpan="2"
-                                                    Style="{StaticResource IconStyle}"
+                                                    Style="{StaticResource Base.Icon}"
                                                     Height="11" Margin="3,0,0,5" HorizontalAlignment="Left" VerticalAlignment="Center"
                                                     Foreground="{StaticResource OrangeBrush}"
                                                     Kind="Archive"/>
                                                 <TextBlock Grid.Row="0" Grid.ColumnSpan="2"
-                                                           Style="{StaticResource ToolTipTitleStyle}"
+                                                           Style="{StaticResource Content.ToolTip.Title.TextBlock}"
                                                            Margin="24,0,0,5"
                                                            Text="{Binding Path=[SPEND_RESOURCE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                                 <!-- 인력 -->
                                                 <Border Grid.Row="1" Grid.Column="0"
-                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}"
                                                         BorderThickness="0,1,1,1">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image Source="/GFAlarm;component/Resource/image/icon/res/manpower.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
@@ -610,18 +624,18 @@
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="1" Grid.Column="1" 
-                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}"
                                                         BorderThickness="0,1,0,1">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                Foreground="{StaticResource OrangeBrush}"  HorizontalAlignment="Right">
                                                         <Run x:Name="ManpowerTextBlock" Text="{Binding Path=spendResource[0], Mode=OneWay}"/>
                                                     </TextBlock>
                                                 </Border>
                                                 <!-- 탄약 -->
                                                 <Border Grid.Row="2" Grid.Column="0"
-                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}"
                                                         BorderThickness="0,0,1,1">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image Source="/GFAlarm;component/Resource/image/icon/res/ammo.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
@@ -629,18 +643,18 @@
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="2" Grid.Column="1" 
-                                                        Style="{StaticResource ToolTipTableStyle}" 
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}" 
                                                         BorderThickness="0,0,0,1">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right">
                                                         <Run x:Name="AmmoTextBlock" Text="{Binding Path=spendResource[1], Mode=OneWay}"/>
                                                     </TextBlock>
                                                 </Border>
                                                 <!-- 식량 -->
                                                 <Border Grid.Row="3" Grid.Column="0" 
-                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}"
                                                         BorderThickness="0,0,1,1">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image Source="/GFAlarm;component/Resource/image/icon/res/mre.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
@@ -648,18 +662,18 @@
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="3" Grid.Column="1" 
-                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}"
                                                         BorderThickness="0,0,0,1">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right">
                                                         <Run x:Name="MreTextBlock" Text="{Binding Path=spendResource[2], Mode=OneWay}"/>
                                                     </TextBlock>
                                                 </Border>
                                                 <!-- 부품 -->
                                                 <Border Grid.Row="4" Grid.Column="0" 
-                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}"
                                                         BorderThickness="0,0,1,1">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image Source="/GFAlarm;component/Resource/image/icon/res/part.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
@@ -667,9 +681,9 @@
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="4" Grid.Column="1" 
-                                                        Style="{StaticResource ToolTipTableStyle}" 
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}" 
                                                         BorderThickness="0,0,0,1">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}" 
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}" 
                                                             Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right">
                                                         <Run x:Name="PartTextBlock" Text="{Binding Path=spendResource[3], Mode=OneWay}"/>
                                                     </TextBlock>
@@ -677,9 +691,9 @@
                                                 <!-- 아이템 -->
                                                 <Border Grid.Row="5" Grid.ColumnSpan="2"
                                                         x:Name="ItemIconBorder"
-                                                        Style="{StaticResource ToolTipTableStyle}" 
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}" 
                                                         BorderThickness="0,0,0,1">
-                                                        <TextBlock Style="{StaticResource TextBlockBaseStyle}" 
+                                                        <TextBlock Style="{StaticResource Base.TextBlock}" 
                                                                    Padding="0,3,0,0" HorizontalAlignment="Center" FontSize="13">
                                                             <!-- 인형제조계약 -->
                                                             <InlineUIContainer>
@@ -738,17 +752,17 @@
                     </ListBox>
                     <!-- upper guide -->
                     <Border x:Name="ProduceDollUpperGuide" Visibility="Collapsed"
-                            Style="{StaticResource GroupGuideStyle}"/>
+                            Style="{StaticResource GroupBox.Guideline.Border}"/>
                 </StackPanel>
                 
                 <!-- 장비제조 -->
                 <StackPanel x:Name="ProduceEquip">
                     <!-- lower guide -->
                     <Border x:Name="ProduceEquipLowerGuide" Visibility="Collapsed"
-                            Style="{StaticResource GroupGuideStyle}"/>
+                            Style="{StaticResource GroupBox.Guideline.Border}"/>
                     <!-- groupbox -->
                     <Border x:Name="ProduceEquipGroupBox" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxBorderStyle}"
+                            Style="{StaticResource GroupBox.Border}"
                             MouseDown="GroupBox_MouseDown" MouseMove="Group_MouseMove" MouseUp="GroupBox_MouseUp">
                         <Grid Margin="10,0">
                             <Grid.ColumnDefinitions>
@@ -760,27 +774,27 @@
                             <!-- icon -->
                             <iconPacks:PackIconMaterial
                                 Grid.Column="0"
-                                Style="{StaticResource GroupBoxIconStyle}"
+                                Style="{StaticResource GroupBox.Icon}"
                                 Width="16" Height="12" Kind="Package"/>
                             <!-- title -->
                             <TextBlock
                                 Grid.Column="1"
-                                Style="{StaticResource GroupBoxTitleStyle}"
+                                Style="{StaticResource GroupBox.Title.TextBlock}"
                                 Text="{Binding Path=[DASHBOARD_GROUP_PRODUCE_EQUIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             <!-- count -->
                             <Border 
                                 Grid.Column="2" 
-                                Style="{StaticResource GroupBoxCountBorderStyle}">
+                                Style="{StaticResource GroupBox.Count.Border}">
                                 <TextBlock 
                                     x:Name="ProduceEquipGroupBox_Count"
-                                    Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                    Style="{StaticResource GroupBox.Count.TextBlock}"
                                     Text="0"/>
                             </Border>
                             <!-- arrow -->
                             <iconPacks:PackIconMaterial 
                                 Grid.Column="3" 
                                 x:Name="ProduceEquipGroupBox_Arrow"
-                                Style="{StaticResource GroupBoxArrowStyle}"
+                                Style="{StaticResource GroupBox.Arrow.Icon}"
                                 Kind="ChevronDown"/>
                         </Grid>
                     </Border>
@@ -789,40 +803,40 @@
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid x:Name="TemplateGrid"
-                                      Style="{StaticResource ItemTemplateStyle}">
+                                      Style="{StaticResource Item.Template}">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <!--슬롯-->
                                     <TextBlock x:Name="SlotTextBlock" Grid.ColumnSpan="2"
-                                               Style="{StaticResource ItemSlotStyle}"
+                                               Style="{StaticResource Item.Slot}"
                                                Text="{Binding Path=TBSlot, Mode=OneWay}"/>
                                     <!-- title -->
                                     <TextBlock x:Name="TitleTextBlock" Grid.Column="0"
-                                               Style="{StaticResource ItemTitleStyle}" 
+                                               Style="{StaticResource Item.Title}" 
                                                Margin="30,3,0,0" FontSize="14" TextTrimming="CharacterEllipsis"
                                                Text="{Binding Path=TBName, Mode=OneWay}"/>
                                     <!--부제목-->
                                     <TextBlock x:Name="SubtitleTextBlock" Grid.Column="0"
-                                               Style="{StaticResource ItemSubtitleStyle}"
+                                               Style="{StaticResource Item.Subtitle}"
                                                Margin="30,0,0,5" FontSize="11" TextTrimming="CharacterEllipsis">
                                         <Run Text="{Binding Path=TBSubtitle1, Mode=OneWay}" x:Name="FairyTraitTextBlock"/><Run Text="{Binding Path=TBSubtitle2, Mode=OneWay}" Foreground="{StaticResource OrangeBrush}"/>
                                     </TextBlock>
                                     <!--남은시간-->
                                     <TextBlock x:Name="RemainTimeTextBlock" Grid.Column="1"
-                                               Style="{StaticResource ItemRemainTimeStyle}"
+                                               Style="{StaticResource Item.RemainTime}"
                                                Text="{Binding Path=TBRemainTime, Mode=OneWay}"/>
                                     <!--예정시간-->
                                     <TextBlock x:Name="EndTimeTextBlock" Grid.Column="1"
-                                               Style="{StaticResource ItemEndTimeStyle}"
+                                               Style="{StaticResource Item.EndTime}"
                                                Text="{Binding Path=TBEndTime, Mode=OneWay}"/>
                                     <!--구분선-->
                                     <Border x:Name="Delimiter" Grid.ColumnSpan="2"
-                                            Style="{StaticResource ItemDelimiterStyle}"/>
+                                            Style="{StaticResource Item.Delimiter}"/>
                                     <!-- tooltip -->
                                     <Grid.ToolTip>
-                                        <StackPanel Style="{StaticResource ToolTipStackPanelStyle}" Orientation="Vertical">
+                                        <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}" Orientation="Vertical">
                                             <Grid Margin="0,5">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition MinWidth="40"/>
@@ -839,18 +853,18 @@
                                                 <!-- 투입 자원 -->
                                                 <iconPacks:PackIconMaterial 
                                                     Grid.Row="0" Grid.ColumnSpan="2" 
-                                                    Style="{StaticResource IconStyle}"
+                                                    Style="{StaticResource Base.Icon}"
                                                     Height="11" Margin="3,0,0,5" HorizontalAlignment="Left" VerticalAlignment="Center"
                                                     Foreground="{StaticResource OrangeBrush}"
                                                     Kind="Archive"/>
                                                 <TextBlock Grid.Row="0" Grid.ColumnSpan="2" 
-                                                           Style="{StaticResource ToolTipTitleStyle}"
+                                                           Style="{StaticResource Content.ToolTip.Title.TextBlock}"
                                                            Margin="24,0,0,5"
                                                            Text="{Binding Path=[SPEND_RESOURCE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                                 <!-- row header -->
                                                 <Border Grid.Row="1" Grid.Column="0" BorderThickness="0,1,1,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image Source="/GFAlarm;component/Resource/image/icon/res/manpower.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
@@ -858,8 +872,8 @@
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="2" Grid.Column="0" BorderThickness="0,0,1,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image Source="/GFAlarm;component/Resource/image/icon/res/ammo.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
@@ -867,8 +881,8 @@
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="3" Grid.Column="0" BorderThickness="0,0,1,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image Source="/GFAlarm;component/Resource/image/icon/res/mre.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
@@ -876,8 +890,8 @@
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="4" Grid.Column="0" BorderThickness="0,0,1,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image Source="/GFAlarm;component/Resource/image/icon/res/part.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
@@ -886,29 +900,29 @@
                                                 </Border>
                                                 <!-- spend resources -->
                                                 <Border Grid.Row="1" Grid.Column="1" BorderThickness="0,1,0,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right">
                                                         <Run x:Name="ManpowerTextBlock" Text="{Binding Path=spendResource[0], Mode=OneWay}"/>
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="2" Grid.Column="1" BorderThickness="0,0,0,1"
-                                                        Style="{StaticResource ToolTipTableStyle}" >
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}" >
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right">
                                                         <Run x:Name="AmmoTextBlock" Text="{Binding Path=spendResource[1], Mode=OneWay}"/>
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="3" Grid.Column="1" BorderThickness="0,0,0,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right">
                                                         <Run x:Name="MreTextBlock" Text="{Binding Path=spendResource[2], Mode=OneWay}"/>
                                                     </TextBlock>
                                                 </Border>
                                                 <Border Grid.Row="4" Grid.Column="1" BorderThickness="0,0,0,1"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}" 
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}" 
                                                                Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right">
                                                         <Run x:Name="PartTextBlock" Text="{Binding Path=spendResource[3], Mode=OneWay}"/>
                                                     </TextBlock>
@@ -916,8 +930,8 @@
                                                 <!-- spend items -->
                                                 <Border Grid.Row="5" Grid.ColumnSpan="2" BorderThickness="0,0,0,1"
                                                         x:Name="ItemIconBorder"
-                                                        Style="{StaticResource ToolTipTableStyle}">
-                                                        <TextBlock Style="{StaticResource TextBlockBaseStyle}" 
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}">
+                                                        <TextBlock Style="{StaticResource Base.TextBlock}" 
                                                                    Padding="0,5,0,0" HorizontalAlignment="Center" FontSize="13">
                                                             <!-- 장비제조계약 -->
                                                             <InlineUIContainer>
@@ -979,17 +993,17 @@
                     </ListBox>
                     <!-- upper guide -->
                     <Border x:Name="ProduceEquipUpperGuide" Visibility="Collapsed"
-                        Style="{StaticResource GroupGuideStyle}"/>
+                        Style="{StaticResource GroupBox.Guideline.Border}"/>
                 </StackPanel>
                 
                 <!-- 스킬훈련 -->
                 <StackPanel x:Name="SkillTrain">
                     <!-- lower guide -->
                     <Border x:Name="SkillTrainLowerGuide" Visibility="Collapsed"
-                            Style="{StaticResource GroupGuideStyle}"/>
+                            Style="{StaticResource GroupBox.Guideline.Border}"/>
                     <!-- groupbox -->
                     <Border x:Name="SkillTrainGroupBox" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxBorderStyle}"
+                            Style="{StaticResource GroupBox.Border}"
                             MouseDown="GroupBox_MouseDown" MouseMove="Group_MouseMove" MouseUp="GroupBox_MouseUp">
                         <Grid Margin="10,0">
                             <Grid.ColumnDefinitions>
@@ -1001,27 +1015,27 @@
                             <!-- icon -->
                             <iconPacks:PackIconMaterial
                                 Grid.Column="0"
-                                Style="{StaticResource GroupBoxIconStyle}"
+                                Style="{StaticResource GroupBox.Icon}"
                                 Width="16" Height="15" Kind="Microscope"/>
                             <!-- title -->
                             <TextBlock
                                 Grid.Column="1"
-                                Style="{StaticResource GroupBoxTitleStyle}"
+                                Style="{StaticResource GroupBox.Title.TextBlock}"
                                 Text="{Binding Path=[DASHBOARD_GROUP_SKILL_TRAIN], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             <!-- count -->
                             <Border 
                                 Grid.Column="2" 
-                                Style="{StaticResource GroupBoxCountBorderStyle}">
+                                Style="{StaticResource GroupBox.Count.Border}">
                                 <TextBlock 
                                     x:Name="SkillTrainGroupBox_Count"
-                                    Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                    Style="{StaticResource GroupBox.Count.TextBlock}"
                                     Text="0"/>
                             </Border>
                             <!-- arrow -->
                             <iconPacks:PackIconMaterial 
                                 Grid.Column="3" 
                                 x:Name="SkillTrainGroupBox_Arrow"
-                                Style="{StaticResource GroupBoxArrowStyle}"
+                                Style="{StaticResource GroupBox.Arrow.Icon}"
                                 Kind="ChevronDown"/>
                         </Grid>
                     </Border>
@@ -1030,43 +1044,43 @@
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid x:Name="TemplateGrid" 
-                                      Style="{StaticResource ItemTemplateStyle}">
+                                      Style="{StaticResource Item.Template}">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <!--슬롯-->
                                     <TextBlock x:Name="SlotTextBlock" Grid.ColumnSpan="2"
-                                               Style="{StaticResource ItemSlotStyle}"
+                                               Style="{StaticResource Item.Slot}"
                                                Text="{Binding Path=TBSlot, Mode=OneWay}"/>
                                     <!-- title -->
                                     <TextBlock x:Name="TitleTextBlock" Grid.Column="0"
-                                               Style="{StaticResource ItemTitleStyle}"
+                                               Style="{StaticResource Item.Title}"
                                                Margin="30,3,0,0" FontSize="14" TextTrimming="CharacterEllipsis"
                                                Text="{Binding Path=TBTitle, Mode=OneWay}"/>
                                     <!--부제목-->
                                     <TextBlock x:Name="SubtitleTextBlock" Grid.Column="0"
-                                               Style="{StaticResource ItemSubtitleStyle}"
+                                               Style="{StaticResource Item.Subtitle}"
                                                Margin="30,0,0,4" TextTrimming="CharacterEllipsis">
                                         Lv <Run Text="{Binding Path=TBSubtitle1, Mode=OneWay}" Foreground="{StaticResource OrangeBrush}"/> → Lv <Run Text="{Binding Path=TBSubtitle2, Mode=OneWay}" Foreground="{StaticResource OrangeBrush}"/>
                                     </TextBlock>
                                     <!-- 경험훈련 -->
                                     <TextBlock x:Name="SubtitleTextBlock2" Grid.Column="0" Visibility="Collapsed"
-                                               Style="{StaticResource ItemSubtitleStyle}"
+                                               Style="{StaticResource Item.Subtitle}"
                                                Margin="30,0,0,4" TextTrimming="CharacterEllipsis">
                                         <Run Text="{Binding Path=[EXP_TRAIN], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                     </TextBlock>
                                     <!--남은시간-->
                                     <TextBlock x:Name="RemainTimeTextBlock" Grid.Column="1"
-                                               Style="{StaticResource ItemRemainTimeStyle}"
+                                               Style="{StaticResource Item.RemainTime}"
                                                Text="{Binding Path=TBRemainTime, Mode=OneWay}"/>
                                     <!--예정시간-->
                                     <TextBlock x:Name="EndTimeTextBlock" Grid.Column="1"
-                                               Style="{StaticResource ItemEndTimeStyle}"
+                                               Style="{StaticResource Item.EndTime}"
                                                Text="{Binding Path=TBEndTime, Mode=OneWay}"/>
                                     <!--구분선-->
                                     <Border x:Name="Delimiter" Grid.ColumnSpan="2" 
-                                            Style="{StaticResource ItemDelimiterStyle}"/>
+                                            Style="{StaticResource Item.Delimiter}"/>
                                 </Grid>
                                 <DataTemplate.Triggers>
                                     <!-- 마지막 목록 -->
@@ -1092,17 +1106,17 @@
                     </ListBox>
                     <!-- upper guide -->
                     <Border x:Name="SkillTrainUpperGuide" Visibility="Collapsed"
-                        Style="{StaticResource GroupGuideStyle}"/>
+                        Style="{StaticResource GroupBox.Guideline.Border}"/>
                 </StackPanel>
                 
                 <!-- 정보분석 -->
                 <StackPanel x:Name="DataAnalysis">
                     <!-- lower guide -->
                     <Border x:Name="DataAnalysisLowerGuide" Visibility="Collapsed"
-                        Style="{StaticResource GroupGuideStyle}"/>
+                        Style="{StaticResource GroupBox.Guideline.Border}"/>
                     <!-- groupbox -->
                     <Border x:Name="DataAnalysisGroupBox" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxBorderStyle}"
+                            Style="{StaticResource GroupBox.Border}"
                             MouseDown="GroupBox_MouseDown" MouseMove="Group_MouseMove" MouseUp="GroupBox_MouseUp">
                         <Grid Margin="10,0">
                             <Grid.ColumnDefinitions>
@@ -1114,27 +1128,27 @@
                             <!-- icon -->
                             <iconPacks:PackIconMaterial
                                 Grid.Column="0"
-                                Style="{StaticResource GroupBoxIconStyle}"
+                                Style="{StaticResource GroupBox.Icon}"
                                 Width="16" Height="15" Kind="HexagonMultiple"/>
                             <!-- title -->
                             <TextBlock
                                 Grid.Column="1"
-                                Style="{StaticResource GroupBoxTitleStyle}"
+                                Style="{StaticResource GroupBox.Title.TextBlock}"
                                 Text="{Binding Path=[DASHBOARD_GROUP_DATA_ANALYSIS], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             <!-- count -->
                             <Border 
                                 Grid.Column="2" 
-                                Style="{StaticResource GroupBoxCountBorderStyle}">
+                                Style="{StaticResource GroupBox.Count.Border}">
                                 <TextBlock 
                                     x:Name="DataAnalysisGroupBox_Count"
-                                    Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                    Style="{StaticResource GroupBox.Count.TextBlock}"
                                     Text="0"/>
                             </Border>
                             <!-- arrow -->
                             <iconPacks:PackIconMaterial 
                                 Grid.Column="3" 
                                 x:Name="DataAnalysisGroupBox_Arrow"
-                                Style="{StaticResource GroupBoxArrowStyle}"
+                                Style="{StaticResource GroupBox.Arrow.Icon}"
                                 Kind="ChevronDown"/>
                         </Grid>
                     </Border>
@@ -1143,7 +1157,7 @@
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid x:Name="TemplateGrid" 
-                                      Style="{StaticResource ItemTemplateStyle}">
+                                      Style="{StaticResource Item.Template}">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="Auto"/>
@@ -1154,16 +1168,16 @@
                                                       Content="{Binding canvasChipShape, Mode=OneWay}"/>
                                     <!-- slot -->
                                     <TextBlock x:Name="SlotTextBlock" Grid.ColumnSpan="2"
-                                               Style="{StaticResource ItemSlotStyle}"
+                                               Style="{StaticResource Item.Slot}"
                                                Text="{Binding Path=TBSlot, Mode=OneWay}"/>
                                     <!-- title -->
                                     <TextBlock x:Name="PieceTextBlock" Grid.Column="0"
-                                            Style="{StaticResource ItemTitleStyle}" 
+                                            Style="{StaticResource Item.Title}" 
                                             Margin="30,3,0,0" FontSize="14" Foreground="#FFFFFFFF" TextTrimming="CharacterEllipsis"
                                             Text="{Binding Path=TBPiece, Mode=OneWay}"/>
                                     <!-- piece name -->
                                     <TextBlock x:Name="PieceTitleTextBlock" Grid.Column="0"
-                                            Style="{StaticResource ItemSubtitleStyle}" 
+                                            Style="{StaticResource Item.Subtitle}" 
                                             Margin="30,0,0,4" Foreground="{StaticResource OrangeBrush}" TextTrimming="CharacterEllipsis"
                                             Text="{Binding Path=TBPieceGuide, Mode=OneWay}"/>
                                     <!-- chip stat -->
@@ -1173,49 +1187,49 @@
                                                Source="/GFAlarm;component/Resource/image/icon/chip/hit.png" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"
                                                Margin="0,3,0,0" Height="10" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                                         <TextBlock x:Name="HitTextBlock" 
-                                                   Style="{StaticResource TextBlockBaseStyle}" 
+                                                   Style="{StaticResource Base.TextBlock}" 
                                                    Margin="12,1,0,0" FontSize="11" Foreground="#FFFFFF" 
                                                    Text="{Binding Path=hit, Mode=OneWay}"/>
                                         <Image x:Name="ReloadIcon" 
                                                Source="/GFAlarm;component/Resource/image/icon/chip/reload.png" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"
                                                Margin="30,3,0,0" Height="10" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                                         <TextBlock x:Name="ReloadTextBlock" 
-                                                   Style="{StaticResource TextBlockBaseStyle}" 
+                                                   Style="{StaticResource Base.TextBlock}" 
                                                    Margin="42,1,0,0" FontSize="11" Foreground="#FFFFFF"
                                                    Text="{Binding Path=reload, Mode=OneWay}"/>
                                         <Image x:Name="DamageIcon" 
                                                Source="/GFAlarm;component/Resource/image/icon/chip/damage.png" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"
                                                Margin="0,14,0,0" Height="10" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                                         <TextBlock x:Name="DamageTextBlock" 
-                                                   Style="{StaticResource TextBlockBaseStyle}" 
+                                                   Style="{StaticResource Base.TextBlock}" 
                                                    Margin="12,12,0,0" FontSize="11" Foreground="#FFFFFF"
                                                    Text="{Binding Path=damage, Mode=OneWay}"/>
                                         <Image x:Name="DefBreakIcon" 
                                                Source="/GFAlarm;component/Resource/image/icon/chip/def_break.png" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"
                                                Margin="30,14,0,0" Height="10" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                                         <TextBlock x:Name="DefBreakTextBlock"
-                                                   Style="{StaticResource TextBlockBaseStyle}" 
+                                                   Style="{StaticResource Base.TextBlock}" 
                                                    Margin="42,12,0,0" FontSize="11" Foreground="#FFFFFF"
                                                    Text="{Binding Path=defBreak, Mode=OneWay}"/>
                                     </Grid>
                                     <!-- chip star -->
                                     <TextBlock x:Name="ChipStarTextBlock" Grid.Column="0" Visibility="Collapsed"
-                                               Style="{StaticResource TextBlockBaseStyle}"
+                                               Style="{StaticResource Base.TextBlock}"
                                                Margin="49,0,0,4" HorizontalAlignment="Left" VerticalAlignment="Bottom"
                                                Foreground="{StaticResource OrangeBrush}" FontSize="9" TextTrimming="CharacterEllipsis">
                                         <Run Text="{Binding Path=TBChipStar, Mode=OneWay}"/>
                                     </TextBlock>
                                     <!-- remain time -->
                                     <TextBlock x:Name="RemainTimeTextBlock" Grid.Column="1"
-                                               Style="{StaticResource ItemRemainTimeStyle}"
+                                               Style="{StaticResource Item.RemainTime}"
                                                Text="{Binding Path=TBRemainTime, Mode=OneWay}"/>
                                     <!-- end time -->
                                     <TextBlock x:Name="EndTimeTextBlock" Grid.Column="1"
-                                               Style="{StaticResource ItemEndTimeStyle}"
+                                               Style="{StaticResource Item.EndTime}"
                                                Text="{Binding Path=TBEndTime, Mode=OneWay}"/>
                                     <!-- border -->
                                     <Border x:Name="Delimiter" Grid.ColumnSpan="2"
-                                            Style="{StaticResource ItemDelimiterStyle}"/>
+                                            Style="{StaticResource Item.Delimiter}"/>
                                 </Grid>
                                 <DataTemplate.Triggers>
                                     <!-- 마지막 목록 -->
@@ -1261,17 +1275,17 @@
                     </ListBox>
                     <!-- upper guide -->
                     <Border x:Name="DataAnalysisUpperGuide" Visibility="Collapsed"
-                        Style="{StaticResource GroupGuideStyle}"/>
+                        Style="{StaticResource GroupBox.Guideline.Border}"/>
                 </StackPanel>
                 
                 <!-- 탐색현황 -->
                 <StackPanel x:Name="Explore">
                     <!-- lower guide -->
                     <Border x:Name="ExploreLowerGuide" Visibility="Collapsed"
-                            Style="{StaticResource GroupGuideStyle}"/>
+                            Style="{StaticResource GroupBox.Guideline.Border}"/>
                     <!-- groupbox -->
                     <Border x:Name="ExploreGroupBox" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxBorderStyle}"
+                            Style="{StaticResource GroupBox.Border}"
                             MouseDown="GroupBox_MouseDown" MouseMove="Group_MouseMove" MouseUp="GroupBox_MouseUp">
                         <Grid Margin="10,0">
                             <Grid.ColumnDefinitions>
@@ -1283,27 +1297,27 @@
                             <!-- icon -->
                             <iconPacks:PackIconMaterial
                                 Grid.Column="0"
-                                Style="{StaticResource GroupBoxIconStyle}"
+                                Style="{StaticResource GroupBox.Icon}"
                                 Width="16" Height="13" Kind="MapOutline"/>
                             <!-- title -->
                             <TextBlock
                                 Grid.Column="1"
-                                Style="{StaticResource GroupBoxTitleStyle}"
+                                Style="{StaticResource GroupBox.Title.TextBlock}"
                                 Text="{Binding Path=[DASHBOARD_GROUP_EXPLORE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             <!-- count -->
                             <Border 
                                 Grid.Column="2" 
-                                Style="{StaticResource GroupBoxCountBorderStyle}">
+                                Style="{StaticResource GroupBox.Count.Border}">
                                 <TextBlock 
                                     x:Name="ExploreGroupBox_Count"
-                                    Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                    Style="{StaticResource GroupBox.Count.TextBlock}"
                                     Text="0"/>
                             </Border>
                             <!-- arrow -->
                             <iconPacks:PackIconMaterial 
                                 Grid.Column="3" 
                                 x:Name="ExploreGroupBox_Arrow"
-                                Style="{StaticResource GroupBoxArrowStyle}"
+                                Style="{StaticResource GroupBox.Arrow.Icon}"
                                 Kind="ChevronDown"/>
                         </Grid>
                     </Border>
@@ -1312,48 +1326,48 @@
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid x:Name="TemplateGrid"
-                                      Style="{StaticResource ItemTemplateStyle}">
+                                      Style="{StaticResource Item.Template}">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <!-- title -->
                                     <TextBlock x:Name="TitleTextBlock" Grid.Column="0"
-                                               Style="{StaticResource ItemTitleStyle}"
+                                               Style="{StaticResource Item.Title}"
                                                Margin="5,2,0,0" FontSize="14" TextTrimming="CharacterEllipsis">
                                         <Run Text="{Binding Path=TBAreaName, Mode=OneWay}"/>
                                         <Run Foreground="#8FC41F" Text="{Binding Path=[NOW_EXPLORE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                     </TextBlock>
                                     <!--부제목-->
                                     <TextBlock x:Name="SubtitleTextBlock" Grid.Column="0"
-                                               Style="{StaticResource ItemSubtitleStyle}"
+                                               Style="{StaticResource Item.Subtitle}"
                                                Margin="5,0,0,5" FontSize="11" TextTrimming="CharacterEllipsis">
                                         <Run Text="{Binding Path=[NEXT_EVENT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                         <Run x:Name="EventRemainTimeTextBlock" Text="{Binding Path=TBEventRemainTime, Mode=OneWay}"/>
                                     </TextBlock>
                                     <!--남은시간-->
                                     <TextBlock x:Name="RemainTimeTextBlock" Grid.Column="1"
-                                            Style="{StaticResource ItemRemainTimeStyle}"
+                                            Style="{StaticResource Item.RemainTime}"
                                             Text="{Binding Path=TBRemainTime, Mode=OneWay}"/>
                                     <!--예정시간-->
                                     <TextBlock x:Name="EndTimeTextBlock" Grid.Column="1"
-                                            Style="{StaticResource ItemEndTimeStyle}"
+                                            Style="{StaticResource Item.EndTime}"
                                             Text="{Binding Path=TBEndTime, Mode=OneWay}"/>
                                     <!--구분선-->
                                     <Border x:Name="Delimiter" Grid.ColumnSpan="2" 
-                                            Style="{StaticResource ItemDelimiterStyle}"/>
+                                            Style="{StaticResource Item.Delimiter}"/>
                                     <!-- 툴팁 -->
                                     <Grid.ToolTip>
-                                        <StackPanel Style="{StaticResource ToolTipStackPanelStyle}" Orientation="Vertical">
+                                        <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}" Orientation="Vertical">
                                             <!-- 가이드 -->
                                             <StackPanel x:Name="ToolTipGuideTextBlock" Visibility="Collapsed"
                                                         Orientation="Horizontal">
                                                 <iconPacks:PackIconMaterial Width="24" Height="24" 
-                                                                            Style="{StaticResource IconStyle}"
+                                                                            Style="{StaticResource Base.Icon}"
                                                                             HorizontalAlignment="Center" VerticalAlignment="Center" 
                                                                             Foreground="{StaticResource OrangeBrush}" 
                                                                             Kind="AlertCircle"/>
-                                                <TextBlock Style="{StaticResource ToolTipTextBlockStyle}" 
+                                                <TextBlock Style="{StaticResource Content.ToolTip.TextBlock}" 
                                                            Width="180" Margin="8,0,0,0" Foreground="#FFFFFF" VerticalAlignment="Top"
                                                            TextWrapping="Wrap" TextTrimming="None"
                                                            Text="{Binding Path=[EXPLORE_REWARD_GUIDE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
@@ -1371,13 +1385,13 @@
                                                 </Grid.RowDefinitions>
                                                 <!-- 획득 자원 -->
                                                 <iconPacks:PackIconMaterial Grid.ColumnSpan="3" Grid.Row="0" 
-                                                                            Style="{StaticResource IconStyle}"
+                                                                            Style="{StaticResource Base.Icon}"
                                                                             Height="12" Margin="3,0,0,5" VerticalAlignment="Center"
                                                                             Foreground="{StaticResource OrangeBrush}"
                                                                             Kind="Archive"/>
                                                 <TextBlock Grid.ColumnSpan="3" Grid.Row="0"
                                                            x:Name="ToolTipRewardTitleTextBlock"
-                                                           Style="{StaticResource ToolTipTitleStyle}"
+                                                           Style="{StaticResource Content.ToolTip.Title.TextBlock}"
                                                            Margin="24,0,0,5">
                                                     <Run Text="{Binding Path=[REWARD_RESOURCE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                                     <Run Text="{Binding Path=[EXPLORE_8_HOUR_GUIDE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}" FontSize="11" FontWeight="Normal"/>                                                    
@@ -1385,15 +1399,15 @@
                                                 <!-- 획득 보상 -->
                                                 <!--<TextBlock Grid.ColumnSpan="3" Grid.Row="0" 
                                                            x:Name="ToolTipRewardTitleTextBlock"
-                                                           Style="{StaticResource ToolTipTitleStyle}">
+                                                           Style="{StaticResource Content.ToolTip.Title.TextBlock}">
                                                     <Run Text="{Binding Path=[REWARD_RESOURCE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                                     <Run Text="{Binding Path=[EXPLORE_8_HOUR_GUIDE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}" FontSize="11" FontWeight="Normal"/>
                                                 </TextBlock>-->
                                                 <!-- 메인 보상 -->
                                                 <Border Grid.Column="0" Grid.Row="1"
-                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}"
                                                         Padding="5" BorderThickness="0,1,1,1">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image x:Name="MainRewardIcon" Width="20" Source="{Binding Path=TBMainRewardIcon, Mode=OneWay}" RenderOptions.BitmapScalingMode="HighQuality"/>        
@@ -1402,9 +1416,9 @@
                                                 </Border>
                                                 <!-- 서브 보상 1 -->
                                                 <Border Grid.Column="1" Grid.Row="1"
-                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}"
                                                         Padding="5" BorderThickness="0,1,1,1">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image x:Name="SubReward1Icon" Width="20" Source="{Binding Path=TBSubReward1Icon, Mode=OneWay}" RenderOptions.BitmapScalingMode="HighQuality"/>        
@@ -1413,9 +1427,9 @@
                                                 </Border>
                                                 <!-- 서브 보상 2 -->
                                                 <Border Grid.Column="2" Grid.Row="1"
-                                                        Style="{StaticResource ToolTipTableStyle}"
+                                                        Style="{StaticResource Content.ToolTip.Table.Border}"
                                                         Padding="5" BorderThickness="0,1,0,1">
-                                                    <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                                    <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                                                HorizontalAlignment="Center">
                                                         <InlineUIContainer>
                                                             <Image x:Name="SubReward2Icon" Width="20" Source="{Binding Path=TBSubReward2Icon, Mode=OneWay}" RenderOptions.BitmapScalingMode="HighQuality"/>        
@@ -1451,7 +1465,7 @@
                     </ListBox>
                     <!-- upper guide -->
                     <Border x:Name="ExploreUpperGuide" Visibility="Collapsed"
-                            Style="{StaticResource GroupGuideStyle}"/>
+                            Style="{StaticResource GroupBox.Guideline.Border}"/>
                 </StackPanel>
                 
                 <!-- 수복현황 -->
@@ -1459,10 +1473,10 @@
                     <!-- lower guide -->
                     <Border 
                         x:Name="RestoreDollLowerGuide" Visibility="Collapsed"
-                        Style="{StaticResource GroupGuideStyle}"/>
+                        Style="{StaticResource GroupBox.Guideline.Border}"/>
                     <!-- groupbox -->
                     <Border x:Name="RestoreDollGroupBox" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxBorderStyle}"
+                            Style="{StaticResource GroupBox.Border}"
                             MouseDown="GroupBox_MouseDown" MouseMove="Group_MouseMove" MouseUp="GroupBox_MouseUp">
                         <Grid Margin="10,0">
                             <Grid.ColumnDefinitions>
@@ -1474,27 +1488,27 @@
                             <!-- icon -->
                             <iconPacks:PackIconMaterial
                                 Grid.Column="0"
-                                Style="{StaticResource GroupBoxIconStyle}"
+                                Style="{StaticResource GroupBox.Icon}"
                                 Width="16" Height="15" Kind="SeatFlat"/>
                             <!-- title -->
                             <TextBlock
                                 Grid.Column="1"
-                                Style="{StaticResource GroupBoxTitleStyle}"
+                                Style="{StaticResource GroupBox.Title.TextBlock}"
                                 Text="{Binding Path=[DASHBOARD_GROUP_RESTORE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             <!-- count -->
                             <Border 
                                 Grid.Column="2" 
-                                Style="{StaticResource GroupBoxCountBorderStyle}">
+                                Style="{StaticResource GroupBox.Count.Border}">
                                 <TextBlock 
                                     x:Name="RestoreDollGroupBox_Count"
-                                    Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                    Style="{StaticResource GroupBox.Count.TextBlock}"
                                     Text="0"/>
                             </Border>
                             <!-- arrow -->
                             <iconPacks:PackIconMaterial 
                                 Grid.Column="3" 
                                 x:Name="RestoreDollGroupBox_Arrow"
-                                Style="{StaticResource GroupBoxArrowStyle}"
+                                Style="{StaticResource GroupBox.Arrow.Icon}"
                                 Kind="ChevronDown"/>
                         </Grid>
                     </Border>
@@ -1503,36 +1517,36 @@
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid x:Name="TemplateGrid" 
-                                      Style="{StaticResource ItemTemplateStyle}">
+                                      Style="{StaticResource Item.Template}">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <!--슬롯-->
                                     <TextBlock x:Name="SlotTextBlock" Grid.ColumnSpan="2"
-                                               Style="{StaticResource ItemSlotStyle}"
+                                               Style="{StaticResource Item.Slot}"
                                                Text="{Binding Path=TBSlot, Mode=OneWay}"/>
                                     <!--인형이름-->
                                     <TextBlock x:Name="TitleTextBlock" Grid.Column="0"
-                                               Style="{StaticResource ItemTitleStyle}"
+                                               Style="{StaticResource Item.Title}"
                                                Margin="30,3,0,0" FontSize="14" TextTrimming="CharacterEllipsis"
                                                Text="{Binding Path=TBTitle, Mode=OneWay}"/>
                                     <!--인형종류/레어도-->
                                     <TextBlock x:Name="SubtitleTextBlock" Grid.Column="0"
-                                               Style="{StaticResource ItemSubtitleStyle}"
+                                               Style="{StaticResource Item.Subtitle}"
                                                Margin="30,0,0,5" FontSize="11" TextTrimming="CharacterEllipsis"
                                                Text="{Binding Path=TBSubtitle, Mode=OneWay}"/>
                                     <!--남은시간-->
                                     <TextBlock x:Name="RemainTimeTextBlock" Grid.Column="1"
-                                               Style="{StaticResource ItemRemainTimeStyle}"
+                                               Style="{StaticResource Item.RemainTime}"
                                                Text="{Binding Path=TBRemainTime, Mode=OneWay}"/>
                                     <!--예정시간-->
                                     <TextBlock x:Name="EndTimeTextBlock" Grid.Column="1"
-                                               Style="{StaticResource ItemEndTimeStyle}"
+                                               Style="{StaticResource Item.EndTime}"
                                                Text="{Binding Path=TBEndTime, Mode=OneWay}"/>
                                     <!--구분선-->
                                     <Border x:Name="Delimiter" Grid.ColumnSpan="2" 
-                                            Style="{StaticResource ItemDelimiterStyle}"/>
+                                            Style="{StaticResource Item.Delimiter}"/>
                                 </Grid>
                                 <DataTemplate.Triggers>
                                     <!-- 마지막 목록 -->
@@ -1549,7 +1563,7 @@
                     </ListBox>
                     <!-- upper guide -->
                     <Border x:Name="RestoreDollUpperGuide" Visibility="Collapsed"
-                        Style="{StaticResource GroupGuideStyle}"/>
+                        Style="{StaticResource GroupBox.Guideline.Border}"/>
                 </StackPanel>
                 
             </StackPanel>

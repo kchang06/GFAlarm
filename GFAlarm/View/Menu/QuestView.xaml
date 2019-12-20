@@ -14,27 +14,25 @@
     d:DesignHeight="300" 
     d:DesignWidth="200">
     <UserControl.Resources>
-        <!-- 그룹 아이콘 스타일 -->
-        <Style x:Key="GroupIconStyle" TargetType="iconPacks:PackIconMaterial" BasedOn="{StaticResource IconStyle}">
-            <Setter Property="Width" Value="16"/>
-            <Setter Property="Height" Value="12"/>
-            <Setter Property="Margin" Value="8,0,0,0"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Foreground" Value="#FFFFFF"/>
+        <!-- GroupBox.Border (height 32px) -->
+        <Style BasedOn="{StaticResource GroupBox.Border}"
+               TargetType="{x:Type Border}" x:Key="GroupBox.Border">
+            <Setter Property="Height" Value="32"/>
         </Style>
-        <!-- 그룹 텍스트 스타일 -->
-        <Style x:Key="GroupTextStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
-            <Setter Property="Margin" Value="30,0,0,0"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
+        <!-- GroupBox.Title.TextBlock -->
+        <Style BasedOn="{StaticResource GroupBox.Title.TextBlock}" 
+               TargetType="{x:Type TextBlock}" x:Key="GroupBox.Title.TextBlock">
+            <Setter Property="Margin" Value="5,0,0,0"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="12"/>
         </Style>
-        <!-- 임무 목록 템플릿 -->
+
+        <!-- Quest Template -->
         <DataTemplate x:Key="QuestTemplate">
             <Grid x:Name="TemplateGrid" 
-                  Style="{StaticResource ItemTemplateStyle}">
+                  Style="{StaticResource Item.Template}">
                 <Grid.ToolTip>
-                    <StackPanel Style="{StaticResource ToolTipStackPanelStyle}"
+                    <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}"
                                 Orientation="Vertical">
                         <!-- 획득 보상 -->
                         <Grid>
@@ -58,19 +56,19 @@
                             </Grid.RowDefinitions>
                             <!-- 획득 자원 -->
                             <iconPacks:PackIconMaterial Grid.ColumnSpan="2" Grid.Row="0" 
-                                                        Style="{StaticResource IconStyle}"
+                                                        Style="{StaticResource Base.Icon}"
                                                         Height="12" Margin="3,0,0,5" VerticalAlignment="Center"
                                                         Foreground="{StaticResource OrangeBrush}"
                                                         Kind="Archive"/>
                             <TextBlock Grid.ColumnSpan="2" Grid.Row="0"
-                                       Style="{StaticResource ToolTipTitleStyle}"
+                                       Style="{StaticResource Content.ToolTip.Title.TextBlock}"
                                        Margin="24,0,0,5"
                                        Text="{Binding Path=[REWARD_RESOURCE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             <!-- 인력 -->
                             <Border Grid.Column="0" Grid.Row="1"
-                                    Style="{StaticResource ToolTipTableStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}"
                                     BorderThickness="0,1,1,1">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            HorizontalAlignment="Center">
                                     <InlineUIContainer>
                                         <Image Source="/GFAlarm;component/Resource/image/icon/res/manpower.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
@@ -78,19 +76,19 @@
                                 </TextBlock>
                             </Border>
                             <Border Grid.Column="1" Grid.Row="1"
-                                    Style="{StaticResource ToolTipTableStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}"
                                     BorderThickness="0,1,0,1">
                                 <TextBlock x:Name="ManpowerTextBlock" 
-                                           Style="{StaticResource ToolTipTableTextStyle}"
+                                           Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right">
                                     <Run Text="{Binding Path=rewardResource[0], Mode=OneWay}"/>
                                 </TextBlock>
                             </Border>
                             <!-- 탄약 -->
                             <Border Grid.Column="0" Grid.Row="2"
-                                    Style="{StaticResource ToolTipTableStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}"
                                     BorderThickness="0,0,1,1">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                             HorizontalAlignment="Center">
                                     <InlineUIContainer>
                                         <Image Source="/GFAlarm;component/Resource/image/icon/res/ammo.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
@@ -98,19 +96,19 @@
                                 </TextBlock>
                             </Border>
                             <Border Grid.Column="1" Grid.Row="2"
-                                    Style="{StaticResource ToolTipTableStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}"
                                     BorderThickness="0,0,0,1">
                                 <TextBlock x:Name="AmmoTextBlock" 
-                                           Style="{StaticResource ToolTipTableTextStyle}"
+                                           Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right">
                                     <Run Text="{Binding Path=rewardResource[1], Mode=OneWay}"/>
                                 </TextBlock>
                             </Border>
                             <!-- 식량 -->
                             <Border Grid.Column="0" Grid.Row="3"
-                                    Style="{StaticResource ToolTipTableStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}"
                                     BorderThickness="0,0,1,1">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            HorizontalAlignment="Center">
                                     <InlineUIContainer>
                                         <Image Source="/GFAlarm;component/Resource/image/icon/res/mre.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
@@ -118,19 +116,19 @@
                                 </TextBlock>
                             </Border>
                             <Border Grid.Column="1" Grid.Row="3"
-                                    Style="{StaticResource ToolTipTableStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}"
                                     BorderThickness="0,0,0,1">
                                 <TextBlock x:Name="MreTextBlock" 
-                                           Style="{StaticResource ToolTipTableTextStyle}"
+                                           Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right">
                                     <Run Text="{Binding Path=rewardResource[2], Mode=OneWay}"/>
                                 </TextBlock>
                             </Border>
                             <!-- 부품 -->
                             <Border Grid.Column="0" Grid.Row="4"
-                                    Style="{StaticResource ToolTipTableStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}"
                                     BorderThickness="0,0,1,1">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            HorizontalAlignment="Center">
                                     <InlineUIContainer>
                                         <Image Source="/GFAlarm;component/Resource/image/icon/res/part.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
@@ -138,19 +136,19 @@
                                 </TextBlock>
                             </Border>
                             <Border Grid.Column="1" Grid.Row="4"
-                                    Style="{StaticResource ToolTipTableStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}"
                                     BorderThickness="0,0,0,1">
                                 <TextBlock x:Name="PartTextBlock" 
-                                           Style="{StaticResource ToolTipTableTextStyle}"
+                                           Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right">
                                     <Run Text="{Binding Path=rewardResource[3], Mode=OneWay}"/>
                                 </TextBlock>
                             </Border>
                             <!-- 아이템 -->
                             <Border Grid.ColumnSpan="2" Grid.Row="5"
-                                    Style="{StaticResource ToolTipTableStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}"
                                     BorderThickness="0,0,0,1">
-                                <TextBlock Style="{StaticResource TextBlockBaseStyle}"
+                                <TextBlock Style="{StaticResource Base.TextBlock}"
                                            FontSize="13" LineHeight="20" Padding="0,5,0,3" TextAlignment="Center" TextWrapping="Wrap">
                                     <InlineUIContainer>
                                         <Image x:Name="TBItemIcon1" Source="{Binding Path=rewardItemIcon[0], Mode=OneWay}" Width="24" RenderOptions.BitmapScalingMode="HighQuality"/>
@@ -175,7 +173,7 @@
                 </Grid.ColumnDefinitions>
                 <!-- 임무 번호 -->
                 <TextBlock Grid.Column="0" 
-                           Style="{StaticResource TextBlockBaseStyle}"
+                           Style="{StaticResource Base.TextBlock}"
                            HorizontalAlignment="Left" VerticalAlignment="Top"
                            Margin="10,4,0,0" FontSize="11" Foreground="#40FFFFFF" TextTrimming="CharacterEllipsis">
                     <Run Text="{Binding Path=TBQuestCycle, Mode=OneWay}"/>
@@ -183,28 +181,28 @@
                 </TextBlock>
                 <!--임무 목표-->
                 <TextBlock x:Name="QuestTitleTextBlock" Grid.Column="0"
-                           Style="{StaticResource TextBlockBaseStyle}"
+                           Style="{StaticResource Base.TextBlock}"
                            HorizontalAlignment="Left" VerticalAlignment="Bottom"
                            Margin="10,0,0,4" FontSize="14" TextTrimming="CharacterEllipsis">
                     <Run Text="{Binding Path=TBQuestTitle, Mode=OneWay}"/>
                 </TextBlock>
                 <!-- 달성여부 -->
                 <TextBlock x:Name="IsCompletedTextBlock" Grid.Column="1" Visibility="Collapsed"
-                           Style="{StaticResource TextBlockBaseStyle}" 
+                           Style="{StaticResource Base.TextBlock}" 
                            HorizontalAlignment="Right" VerticalAlignment="Top"
                            Margin="0,4,10,0" FontSize="11" Foreground="{StaticResource OrangeBrush}">
                     <Run>달성</Run>
                 </TextBlock>
                 <!--진행상황-->
                 <TextBlock Grid.Column="1" 
-                           Style="{StaticResource TextBlockBaseStyle}"
+                           Style="{StaticResource Base.TextBlock}"
                            HorizontalAlignment="Right" VerticalAlignment="Bottom"
                            Margin="0,0,10,4" FontSize="12" Foreground="#70FFFFFF">
                     <Run x:Name="QuestCountTextBlock" FontSize="16" Foreground="White" Text="{Binding Path=TBQuestCount, Mode=OneWay}"/>/<Run Text="{Binding Path=TBQuestMaxCount, Mode=OneWay}"/>
                 </TextBlock>
                 <!--구분선-->
                 <Border x:Name="Delimiter" Grid.ColumnSpan="2"
-                        Style="{StaticResource ItemDelimiterStyle}"/>
+                        Style="{StaticResource Item.Delimiter}"/>
             </Grid>
             <DataTemplate.Triggers>
                 <!-- 자원 -->
@@ -249,26 +247,26 @@
     <Grid Margin="0,0,2,0">
         <!-- 임무 버튼 눌러달라 오버레이 -->
         <Grid x:Name="EmptyOverlay" Panel.ZIndex="100" Visibility="Visible"
-              Background="{StaticResource BackgroundBrush}">
-            <iconPacks:PackIconMaterial Style="{StaticResource IconStyle}"
+              Background="{StaticResource BackgroundBrush1}">
+            <iconPacks:PackIconMaterial Style="{StaticResource Base.Icon}"
                                         Margin="0,0,0,60" Width="64" Height="64" 
                                         HorizontalAlignment="Center" VerticalAlignment="Center" 
                                         Foreground="#FFFFFF"
                                         Kind="ClipboardTextOutline"/>
-            <uc:HtmlTextBlock Style="{StaticResource TextBlockBaseStyle}" 
+            <uc:HtmlTextBlock Style="{StaticResource Base.TextBlock}" 
                               Margin="0,90,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" 
                               Foreground="#FFFFFF" FontSize="14" TextAlignment="Center"
                               Html="{Binding Path=[OVERLAY_EMPTY_QUEST], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
         </Grid>
         <!-- 완료 오버레이 -->
         <Grid x:Name="CompleteOverlay" Panel.ZIndex="99" Visibility="Visible"
-              Background="{StaticResource BackgroundBrush}">
-            <iconPacks:PackIconMaterial Style="{StaticResource IconStyle}" 
+              Background="{StaticResource BackgroundBrush1}">
+            <iconPacks:PackIconMaterial Style="{StaticResource Base.Icon}" 
                                         Margin="0,0,0,60" Width="64" Height="64" 
                                         HorizontalAlignment="Center" VerticalAlignment="Center" 
                                         Foreground="#FFFFFF"
                                         Kind="ClipboardCheckOutline" />
-            <uc:HtmlTextBlock Style="{StaticResource TextBlockBaseStyle}" 
+            <uc:HtmlTextBlock Style="{StaticResource Base.TextBlock}" 
                               Margin="0,90,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" 
                               Foreground="#FFFFFF" FontSize="14" TextAlignment="Center"
                               Html="{Binding Path=[OVERLAY_COMPLETE_QUEST], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
@@ -280,7 +278,7 @@
                 <!-- 정보임무 그룹 -->
                 <Border
                     x:Name="ResearchGroupBox" Visibility="Collapsed"
-                    Style="{StaticResource GroupBoxBorderStyle}"
+                    Style="{StaticResource GroupBox.Border}"
                     MouseLeftButtonUp="GroupBox_MouseUp">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -292,26 +290,26 @@
                         <!-- icon -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource GroupBoxIconStyle}"
+                            Style="{StaticResource GroupBox.Icon}"
                             Width="16" Height="12" Kind="HexagonMultiple"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[RESEARCH_QUEST], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- count -->
                         <Border
                             Grid.Column="2"
-                            Style="{StaticResource GroupBoxCountBorderStyle}">
+                            Style="{StaticResource GroupBox.Count.Border}">
                             <TextBlock x:Name="ResearchCount" 
-                                       Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                       Style="{StaticResource GroupBox.Count.TextBlock}"
                                        Text="0"/>
                         </Border>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="3"
                             x:Name="ResearchArrow"
-                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -322,7 +320,7 @@
                 <!-- 일간임무 그룹 -->
                 <Border
                     x:Name="QuestGroupBox" Visibility="Collapsed"
-                    Style="{StaticResource GroupBoxBorderStyle}"
+                    Style="{StaticResource GroupBox.Border}"
                     MouseLeftButtonUp="GroupBox_MouseUp">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -334,26 +332,26 @@
                         <!-- icon -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource GroupBoxIconStyle}"
+                            Style="{StaticResource GroupBox.Icon}"
                             Width="16" Height="12" Kind="CalendarToday"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[DAILY_QUEST], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- count -->
                         <Border
                             Grid.Column="2"
-                            Style="{StaticResource GroupBoxCountBorderStyle}">
+                            Style="{StaticResource GroupBox.Count.Border}">
                             <TextBlock x:Name="QuestCount" 
-                                       Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                       Style="{StaticResource GroupBox.Count.TextBlock}"
                                        Text="0"/>
                         </Border>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="3"
                             x:Name="QuestArrow"
-                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -364,7 +362,7 @@
                 <!-- 주간임무 그룹 -->
                 <Border
                     x:Name="WeeklyGroupBox" Visibility="Collapsed"
-                    Style="{StaticResource GroupBoxBorderStyle}"
+                    Style="{StaticResource GroupBox.Border}"
                     MouseLeftButtonUp="GroupBox_MouseUp">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -376,26 +374,26 @@
                         <!-- icon -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource GroupBoxIconStyle}"
+                            Style="{StaticResource GroupBox.Icon}"
                             Width="16" Height="12" Kind="CalendarWeek"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[WEEKLY_QUEST], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- count -->
                         <Border
                             Grid.Column="2"
-                            Style="{StaticResource GroupBoxCountBorderStyle}">
+                            Style="{StaticResource GroupBox.Count.Border}">
                             <TextBlock x:Name="WeeklyCount" 
-                                       Style="{StaticResource GroupBoxCountTextBlockStyle}"
+                                       Style="{StaticResource GroupBox.Count.TextBlock}"
                                        Text="0"/>
                         </Border>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="3"
                             x:Name="WeeklyArrow"
-                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>

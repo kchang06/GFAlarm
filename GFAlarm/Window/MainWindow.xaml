@@ -46,7 +46,7 @@
     <!-- ================================================= -->
     <Window.Template>
         <ControlTemplate TargetType="Window">
-            <Grid Background="{StaticResource BackgroundBrush}">
+            <Grid Background="{StaticResource BackgroundBrush1}">
                 <Border x:Name="WindowBorder" 
                         BorderBrush="{DynamicResource PrimaryBrush}" BorderThickness="2">
                     <Grid>
@@ -58,7 +58,7 @@
                         <Grid x:Name="WindowTitlebarGrid" Grid.Row="0" 
                               Background="{DynamicResource PrimaryBrush}">
                             <!-- title -->
-                            <TextBlock Style="{StaticResource TextBlockBaseStyle}" 
+                            <TextBlock Style="{StaticResource Base.TextBlock}" 
                                        Margin="5,0,0,2" HorizontalAlignment="Left" VerticalAlignment="Center"
                                        Text="{Binding Path=[PROGRAM_TITLE], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"/>
                             <!-- buttons -->
@@ -66,18 +66,18 @@
                                         HorizontalAlignment="Right" VerticalAlignment="Center">
                                 <!-- open folder -->
                                 <Button x:Name="OpenFolderButton" 
-                                        Style="{StaticResource TitlebarButton}"
+                                        Style="{StaticResource Titlebar.Button}"
                                         Margin="0,0,0,2"
                                         Content="{iconPacks:Material Kind=FolderOpen, Width=12, Height=12}" 
                                         ToolTip="{Binding Path=[OPEN_FOLDER], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"
                                         Click="OpenFolderButton_Click" VerticalAlignment="Center"/>
                                 <!-- always on top -->
-                                <ToggleButton x:Name="AlwaysOnTopButton" Style="{StaticResource TitlebarToggleButton}" 
+                                <ToggleButton x:Name="AlwaysOnTopButton" Style="{StaticResource Titlebar.ToggleButton}" 
                                           Margin="0,0,0,2"
                                           Content="{iconPacks:Material Kind=PinOff, Width=11, Height=11}" ToolTip="{Binding Path=[ALWAYS_ON_TOP], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"
                                           Checked="AlwaysOnTopButton_Checked" Unchecked="AlwaysOnTopButton_Unchecked"/>
                                 <!-- minimode -->
-                                <!--<Button x:Name="WindowCollapseButton" Style="{StaticResource TitlebarButton}" 
+                                <!--<Button x:Name="WindowCollapseButton" Style="{StaticResource Titlebar.Button}" 
                                     Margin="0,0,0,0" VerticalAlignment="Center"
                                     Content="{iconPacks:Material Kind=ArrowCollapse, Width=12, Height=12}" ToolTip="최소화"
                                     RenderOptions.BitmapScalingMode="HighQuality"/>-->
@@ -86,7 +86,7 @@
                                 <!-- minimize -->
                                 <Button 
                                     x:Name="WindowMinimizeButton" 
-                                    Style="{StaticResource TitlebarButton}" 
+                                    Style="{StaticResource Titlebar.Button}" 
                                     Margin="0,6,0,0"
                                     Content="{iconPacks:Material Kind=WindowMinimize, Width=9, Height=9}" 
                                     ToolTip="{Binding Path=[WINDOW_MINIMIZE], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"
@@ -94,7 +94,7 @@
                                 <!-- close -->
                                 <Button 
                                     x:Name="WidnowCloseButton" 
-                                    Style="{StaticResource TitlebarButton}" 
+                                    Style="{StaticResource Titlebar.Button}" 
                                     Margin="0,0,3,1"
                                     Content="{iconPacks:Material Kind=WindowClose, Width=9, Height=9}"
                                     ToolTip="{Binding Path=[WINDOW_CLOSE], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"
@@ -129,10 +129,10 @@
         <!-- ================================================= -->
         <Grid x:Name="SideMenuGrid"
               Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Panel.ZIndex="20"
-              Background="{StaticResource BackgroundBrightBrush}" 
+              Background="{StaticResource BackgroundBrush2}" 
               MouseWheel="SideMenuGrid_MouseWheel">
             <!-- border -->
-            <Border BorderBrush="{StaticResource BackgroundBrush}" BorderThickness="0,0,2,0" 
+            <Border BorderBrush="{StaticResource BackgroundBrush1}" BorderThickness="0,0,2,0" 
                     Background="Transparent" SnapsToDevicePixels="True"/>
             <!-- button -->
             <Grid Height="Auto" VerticalAlignment="Top">
@@ -140,52 +140,52 @@
                             Margin="0,10">
                     <!-- 알림 버튼 -->
                     <ToggleButton x:Name="DashboardMenuToggleButton" 
-                                  Style="{StaticResource MenuToggleButtonStyle}"
+                                  Style="{StaticResource Menu.ToggleButton}"
                                   ToolTip="{Binding Path=[TAB_DASHBOARD], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"
                                   HorizontalAlignment="Left" Width="30" 
                                   Click="MenuToggleButton_MouseLeftButtonDown" MouseRightButtonDown="MenuToggleButton_MouseRightButtonDown">
                         <iconPacks:PackIconMaterial x:Name="DashboardMenuIcon" 
-                                                    Style="{StaticResource IconStyle}"
+                                                    Style="{StaticResource Base.Icon}"
                                                     Width="30" Height="15" Kind="Alarm" Opacity="0.25"/>
                     </ToggleButton>
                     <!-- 제대 버튼 -->
                     <ToggleButton x:Name="EchelonMenuToggleButton"
-                                  Style="{StaticResource MenuToggleButtonStyle}"
+                                  Style="{StaticResource Menu.ToggleButton}"
                                   ToolTip="{Binding Path=[TAB_ECHELON], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}" 
                                   HorizontalAlignment="Left" Width="30" 
                                   Click="MenuToggleButton_MouseLeftButtonDown" MouseRightButtonDown="MenuToggleButton_MouseRightButtonDown">
                         <iconPacks:PackIconMaterial x:Name="EchelonMenuIcon" 
-                                                    Style="{StaticResource IconStyle}"
+                                                    Style="{StaticResource Base.Icon}"
                                                     Width="30" Height="15" Kind="HumanFemaleFemale" Opacity="0.25"/>
                     </ToggleButton>
                     <!-- 임무 버튼 -->
                     <ToggleButton x:Name="QuestMenuToggleButton" 
-                                  Style="{StaticResource MenuToggleButtonStyle}"
+                                  Style="{StaticResource Menu.ToggleButton}"
                                   ToolTip="{Binding Path=[TAB_QUEST], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"
                                   HorizontalAlignment="Left" Width="30" 
                                   Click="MenuToggleButton_MouseLeftButtonDown" MouseRightButtonDown="MenuToggleButton_MouseRightButtonDown">
                         <iconPacks:PackIconMaterial x:Name="QuestMenuIcon" 
-                                                    Style="{StaticResource IconStyle}"
+                                                    Style="{StaticResource Base.Icon}"
                                                     Width="30" Height="15" Kind="ClipboardTextOutline" Opacity="0.25"/>
                     </ToggleButton>
                     <!-- 창고 버튼 -->
                     <ToggleButton x:Name="WarehouseMenuToggleButton" Visibility="Collapsed"
-                                  Style="{StaticResource MenuToggleButtonStyle}"
+                                  Style="{StaticResource Menu.ToggleButton}"
                                   ToolTip="{Binding Path=[TAB_WAREHOUSE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"
                                   HorizontalAlignment="Left" Width="30" 
                                   Click="MenuToggleButton_MouseLeftButtonDown" MouseRightButtonDown="MenuToggleButton_MouseRightButtonDown">
                         <iconPacks:PackIconMaterial x:Name="WarehouseMenuIcon" 
-                                                    Style="{StaticResource IconStyle}"
+                                                    Style="{StaticResource Base.Icon}"
                                                     Width="30" Height="13" Kind="Archive" Opacity="0.25"/>
                     </ToggleButton>
                     <!-- 전역 녹화 버튼 -->
                     <ToggleButton x:Name="RecordMenu_ToggleButton" Visibility="Collapsed"
-                                  Style="{StaticResource MenuToggleButtonStyle}" 
+                                  Style="{StaticResource Menu.ToggleButton}" 
                                   ToolTip="{Binding Path=[TAB_RECORD_MISSION], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"
                                   HorizontalAlignment="Left" Width="30" 
                                   Click="MenuToggleButton_MouseLeftButtonDown" MouseRightButtonDown="MenuToggleButton_MouseRightButtonDown">
                         <iconPacks:PackIconMaterial x:Name="RecordMenuIcon" 
-                                                    Style="{StaticResource IconStyle}"
+                                                    Style="{StaticResource Base.Icon}"
                                                     Width="30" Height="15" Kind="RecordRec" Opacity="0.25"/>
                     </ToggleButton>
                 </StackPanel>
@@ -200,27 +200,27 @@
             <Grid Height="Auto" VerticalAlignment="Bottom">
                 <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,10" Panel.ZIndex="10">
                     <!-- 연결 버튼 -->
-                    <ToggleButton x:Name="ProxyMenuToggleButton" Style="{StaticResource MenuToggleButtonStyle}"
+                    <ToggleButton x:Name="ProxyMenuToggleButton" Style="{StaticResource Menu.ToggleButton}"
                                   HorizontalAlignment="Left" Width="30"
                                   ToolTip="{Binding Path=[TAB_PROXY], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"
                                   Click="MenuToggleButton_MouseLeftButtonDown">
-                        <iconPacks:PackIconMaterial Style="{StaticResource IconStyle}" 
+                        <iconPacks:PackIconMaterial Style="{StaticResource Base.Icon}" 
                                                     Width="30" Height="14" Kind="LanConnect"/>
                     </ToggleButton>
                     <!-- 알림 설정 버튼 -->
-                    <ToggleButton x:Name="AlarmSettingToggleButton" Style="{StaticResource MenuToggleButtonStyle}"
+                    <ToggleButton x:Name="AlarmSettingToggleButton" Style="{StaticResource Menu.ToggleButton}"
                                   HorizontalAlignment="Left" Width="30" 
                                   ToolTip="{Binding Path=[TAB_NOTIFICATION_SETTING], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"
                                   Click="MenuToggleButton_MouseLeftButtonDown">
-                        <iconPacks:PackIconMaterial Style="{StaticResource IconStyle}"
+                        <iconPacks:PackIconMaterial Style="{StaticResource Base.Icon}"
                                                     Width="30" Height="13" Kind="Bell"/>
                     </ToggleButton>
                     <!-- 설정 버튼 -->
-                    <ToggleButton x:Name="SettingMenuToggleButton" Style="{StaticResource MenuToggleButtonStyle}"
+                    <ToggleButton x:Name="SettingMenuToggleButton" Style="{StaticResource Menu.ToggleButton}"
                                   HorizontalAlignment="Left" Width="30"
                                   ToolTip="{Binding Path=[TAB_SETTING], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"
                                   Click="MenuToggleButton_MouseLeftButtonDown">
-                        <iconPacks:PackIconMaterial Style="{StaticResource IconStyle}" 
+                        <iconPacks:PackIconMaterial Style="{StaticResource Base.Icon}" 
                                                     Width="30" Height="13" Kind="Settings"/>
                     </ToggleButton>
                 </StackPanel>
@@ -232,8 +232,8 @@
         <!-- ================================================= -->
         <Border x:Name="HeaderGrid"
                 Grid.Column="1" Grid.Row="0" Panel.ZIndex="999"
-                Background="{StaticResource BackgroundBrightBrush}" 
-                BorderBrush="{StaticResource BackgroundBrush}" BorderThickness="0,0,0,2" 
+                Background="{StaticResource BackgroundBrush2}" 
+                BorderBrush="{StaticResource BackgroundBrush1}" BorderThickness="0,0,0,2" 
                 SnapsToDevicePixels="True">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -243,7 +243,7 @@
 
                 <!-- title -->
                 <TextBlock Grid.Column="0"
-                           Style="{StaticResource TextBlockBaseStyle}"
+                           Style="{StaticResource Base.TextBlock}"
                            Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"
                            TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" TextAlignment="Left">
                     <Run x:Name="TitleTextBlock" Text="TITLE"/>
@@ -253,7 +253,7 @@
                             Margin="5,0" HorizontalAlignment="Right">
                     <!-- 테스트 버튼 -->
                     <Button x:Name="TestButton" Visibility="Collapsed"
-                            Style="{StaticResource MenuButtonStyle}"
+                            Style="{StaticResource Menu.Button}"
                             Width="28" Height="30"
                             Content="{iconPacks:Material Kind=Pill, Width=15, Height=30}"
                             Click="TestButton_Click" MouseRightButtonUp="TestButton_MouseRightButtonUp"/>
@@ -263,7 +263,7 @@
                           MouseEnter="SortGrid_MouseEnter" MouseLeave="SortGrid_MouseLeave">
                         <!-- sort button -->
                         <ToggleButton x:Name="SortToggleButton" 
-                                      Style="{StaticResource MenuToggleButtonStyle}"
+                                      Style="{StaticResource Menu.ToggleButton}"
                                       Width="28" Height="30" VerticalAlignment="Top"
                                       ToolTip="{Binding Path=[HEADER_SORT_BUTTON], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"
                                       Content="{iconPacks:Material Kind=Sort, Width=17, Height=30}"/>
@@ -271,16 +271,16 @@
                         <Canvas x:Name="SortToggleButton_Dropdown" Visibility="Collapsed"
                                 SnapsToDevicePixels="True">
                             <Border Canvas.Top="30" Canvas.Left="-53" 
-                                    BorderBrush="{StaticResource BackgroundBrush}" BorderThickness="2" 
-                                    Background="{StaticResource BackgroundBrightBrightBrush}"
+                                    BorderBrush="{StaticResource BackgroundBrush1}" BorderThickness="2" 
+                                    Background="{StaticResource BackgroundBrush3}"
                                     SnapsToDevicePixels="True">
                                 <StackPanel Orientation="Vertical">
                                     <!-- sort by slot -->
                                     <ToggleButton x:Name="SlotSortToggleButton" 
-                                                  Style="{StaticResource MenuToggleButtonStyle}"
+                                                  Style="{StaticResource Menu.ToggleButton}"
                                                   Width="80" FontSize="11" HorizontalAlignment="Left"
                                                   Click="SortToggleButton_Click">
-                                        <TextBlock Style="{StaticResource TextBlockBaseStyle}"
+                                        <TextBlock Style="{StaticResource Base.TextBlock}"
                                                    Margin="5,0,0,0" HorizontalAlignment="Left"
                                                    FontSize="11" 
                                                    Text="{Binding Path=[HEADER_SORT_BY_SLOT], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"/>
@@ -289,11 +289,11 @@
                                     <Border BorderBrush="#10FFFFFF" BorderThickness="0,0,0,1" SnapsToDevicePixels="True"/>
                                     <!-- sort by remain time -->
                                     <ToggleButton x:Name="RemainTimeSortToggleButton" 
-                                                  Style="{StaticResource MenuToggleButtonStyle}"
+                                                  Style="{StaticResource Menu.ToggleButton}"
                                                   Width="80" HorizontalAlignment="Left"
                                                   FontSize="11"
                                                   Click="SortToggleButton_Click">
-                                        <TextBlock Style="{StaticResource TextBlockBaseStyle}"
+                                        <TextBlock Style="{StaticResource Base.TextBlock}"
                                                    Margin="5,0,0,0" HorizontalAlignment="Left"
                                                    FontSize="11"
                                                    Text="{Binding Path=[HEADER_SORT_BY_REMAIN_TIME], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"/>
@@ -308,7 +308,7 @@
                           MouseEnter="FilterGrid_MouseEnter" MouseLeave="FilterGrid_MouseLeave">
                         <!-- filter button -->
                         <ToggleButton x:Name="FilterToggleButton" 
-                                      Style="{StaticResource MenuToggleButtonStyle}"
+                                      Style="{StaticResource Menu.ToggleButton}"
                                       Width="28" Height="30" VerticalAlignment="Top" 
                                       ToolTip="{Binding Path=[HEADER_FILTER_BUTTON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}" ToolTipService.Placement="Right" 
                                       Content="{iconPacks:Material Kind=Filter, Width=12, Height=30}"/>
@@ -316,23 +316,23 @@
                         <Canvas x:Name="FilterToggleButton_Dropdown" Visibility="Collapsed"
                                 SnapsToDevicePixels="True">
                             <Border Canvas.Top="30" Canvas.Left="-29" 
-                                    BorderBrush="{StaticResource BackgroundBrush}" BorderThickness="2"
-                                    Background="{StaticResource BackgroundBrightBrightBrush}"
+                                    BorderBrush="{StaticResource BackgroundBrush1}" BorderThickness="2"
+                                    Background="{StaticResource BackgroundBrush3}"
                                     SnapsToDevicePixels="True">
                                 <StackPanel Orientation="Vertical">
                                     <!-- 지원현황 -->
                                     <ToggleButton x:Name="DispatchedEchelonFilterToggleButton" 
-                                                  Style="{StaticResource MenuToggleButtonStyle}"
+                                                  Style="{StaticResource Menu.ToggleButton}"
                                                   Width="56"
                                                   ToolTip="{Binding Path=[DASHBOARD_GROUP_DISPATCHED_ECHELON], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"
                                                   Click="FilterButton_Click">
                                         <Grid>
                                             <iconPacks:PackIconMaterial x:Name="DispatchedEchelonFilterIcon" 
-                                                                        Style="{StaticResource IconStyle}" 
+                                                                        Style="{StaticResource Base.Icon}" 
                                                                         Margin="9,0,0,0" Width="10" Height="31" Opacity="0.25"
                                                                         Kind="ChessKnight"/>
                                             <CheckBox x:Name="DispatchedEchelonFilterCheckBox" 
-                                                      Style="{StaticResource CheckBoxBaseStyle}"
+                                                      Style="{StaticResource Base.CheckBox}"
                                                       Margin="30,0,0,0" 
                                                       Click="FilterCheckBox_Click"/>
                                         </Grid>
@@ -340,17 +340,17 @@
                                     <Border BorderBrush="#10FFFFFF" BorderThickness="0,0,0,1" SnapsToDevicePixels="True"/>
                                     <!-- 탐색현황 -->
                                     <ToggleButton x:Name="ExploreFilterToggleButton" 
-                                                  Style="{StaticResource MenuToggleButtonStyle}"
+                                                  Style="{StaticResource Menu.ToggleButton}"
                                                   Width="56"
                                                   ToolTip="{Binding Path=[DASHBOARD_GROUP_EXPLORE], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}" 
                                                   Click="FilterButton_Click">
                                         <Grid>
                                             <iconPacks:PackIconMaterial x:Name="ExploreFilterIcon" 
-                                                                        Style="{StaticResource IconStyle}" 
+                                                                        Style="{StaticResource Base.Icon}" 
                                                                         Margin="7,0,0,0" Width="13" Height="31" Opacity="0.25"
                                                                         Kind="MapOutline"/>
                                             <CheckBox x:Name="ExploreFilterCheckBox" 
-                                                      Style="{StaticResource CheckBoxBaseStyle}"
+                                                      Style="{StaticResource Base.CheckBox}"
                                                       Margin="30,0,0,0" 
                                                       Click="FilterCheckBox_Click"/>
                                         </Grid>
@@ -358,17 +358,17 @@
                                     <Border BorderBrush="#10FFFFFF" BorderThickness="0,0,0,1" SnapsToDevicePixels="True"/>
                                     <!-- 인형제조 -->
                                     <ToggleButton x:Name="ProduceDollFilterToggleButton" 
-                                                  Style="{StaticResource MenuToggleButtonStyle}"
+                                                  Style="{StaticResource Menu.ToggleButton}"
                                                   Width="56"
                                                   ToolTip="{Binding Path=[DASHBOARD_GROUP_PRODUCE_DOLL], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}" 
                                                   Click="FilterButton_Click">
                                         <Grid>
                                             <iconPacks:PackIconMaterial x:Name="ProduceDollFilterIcon" 
-                                                                        Style="{StaticResource IconStyle}" 
+                                                                        Style="{StaticResource Base.Icon}" 
                                                                         Margin="7,0,0,0" Width="15" Height="31" Opacity="0.25"
                                                                         Kind="HumanGreeting"/>
                                             <CheckBox x:Name="ProduceDollFilterCheckBox" 
-                                                      Style="{StaticResource CheckBoxBaseStyle}"
+                                                      Style="{StaticResource Base.CheckBox}"
                                                       Margin="30,0,0,0" 
                                                       Click="FilterCheckBox_Click"/>
                                         </Grid>
@@ -376,17 +376,17 @@
                                     <Border BorderBrush="#10FFFFFF" BorderThickness="0,0,0,1" SnapsToDevicePixels="True"/>
                                     <!-- 장비제조 -->
                                     <ToggleButton x:Name="ProduceEquipFilterToggleButton" 
-                                                  Style="{StaticResource MenuToggleButtonStyle}"
+                                                  Style="{StaticResource Menu.ToggleButton}"
                                                   Width="56"
                                                   ToolTip="{Binding Path=[DASHBOARD_GROUP_PRODUCE_EQUIP], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}" 
                                                   Click="FilterButton_Click">
                                         <Grid>
                                             <iconPacks:PackIconMaterial x:Name="ProduceEquipFilterIcon" 
-                                                                        Style="{StaticResource IconStyle}" 
+                                                                        Style="{StaticResource Base.Icon}" 
                                                                         Margin="8,0,0,0" Width="12" Height="31" Opacity="0.25"
                                                                         Kind="Package"/>
                                             <CheckBox x:Name="ProduceEquipFilterCheckBox" 
-                                                      Style="{StaticResource CheckBoxBaseStyle}"
+                                                      Style="{StaticResource Base.CheckBox}"
                                                       Margin="30,0,0,0" 
                                                       Click="FilterCheckBox_Click"/>
                                         </Grid>
@@ -394,17 +394,17 @@
                                     <Border BorderBrush="#10FFFFFF" BorderThickness="0,0,0,1" SnapsToDevicePixels="True"/>
                                     <!-- 훈련현황 -->
                                     <ToggleButton x:Name="SkillTrainFilterToggleButton" 
-                                                  Style="{StaticResource MenuToggleButtonStyle}"
+                                                  Style="{StaticResource Menu.ToggleButton}"
                                                   Width="56"
                                                   ToolTip="{Binding Path=[DASHBOARD_GROUP_SKILL_TRAIN], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}" 
                                                   Click="FilterButton_Click">
                                         <Grid>
                                             <iconPacks:PackIconMaterial x:Name="SkillTrainFilterIcon" 
-                                                                        Style="{StaticResource IconStyle}" 
+                                                                        Style="{StaticResource Base.Icon}" 
                                                                         Margin="8,0,0,0" Width="14" Height="31" Opacity="0.25"
                                                                         Kind="Microscope"/>
                                             <CheckBox x:Name="SkillTrainFilterCheckBox" 
-                                                      Style="{StaticResource CheckBoxBaseStyle}"
+                                                      Style="{StaticResource Base.CheckBox}"
                                                       Margin="30,0,0,0" 
                                                       Click="FilterCheckBox_Click"/>
                                         </Grid>
@@ -412,17 +412,17 @@
                                     <Border BorderBrush="#10FFFFFF" BorderThickness="0,0,0,1" SnapsToDevicePixels="True"/>
                                     <!-- 분석현황 -->
                                     <ToggleButton x:Name="DataAnalysisFilterToggleButton" 
-                                                  Style="{StaticResource MenuToggleButtonStyle}"
+                                                  Style="{StaticResource Menu.ToggleButton}"
                                                   Width="56"
                                                   ToolTip="{Binding Path=[DASHBOARD_GROUP_DATA_ANALYSIS], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}" 
                                                   Click="FilterButton_Click">
                                         <Grid>
                                             <iconPacks:PackIconMaterial x:Name="DataAnalysisFilterIcon" 
-                                                                        Style="{StaticResource IconStyle}" 
+                                                                        Style="{StaticResource Base.Icon}" 
                                                                         Margin="8,0,0,0" Width="15" Height="31" Opacity="0.25"
                                                                         Kind="HexagonMultiple"/>
                                             <CheckBox x:Name="DataAnalysisFilterCheckBox" 
-                                                      Style="{StaticResource CheckBoxBaseStyle}"
+                                                      Style="{StaticResource Base.CheckBox}"
                                                       Margin="30,0,0,0" 
                                                       Click="FilterCheckBox_Click"/>
                                         </Grid>
@@ -430,17 +430,17 @@
                                     <Border BorderBrush="#10FFFFFF" BorderThickness="0,0,0,1" SnapsToDevicePixels="True"/>
                                     <!-- 수복현황 -->
                                     <ToggleButton x:Name="RestoreDollFilterToggleButton" 
-                                                  Style="{StaticResource MenuToggleButtonStyle}"
+                                                  Style="{StaticResource Menu.ToggleButton}"
                                                   Width="56"
                                                   ToolTip="{Binding Path=[DASHBOARD_GROUP_RESTORE], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}" 
                                                   Click="FilterButton_Click">
                                         <Grid>
                                             <iconPacks:PackIconMaterial x:Name="RestoreDollFilterIcon" 
-                                                                        Style="{StaticResource IconStyle}" 
+                                                                        Style="{StaticResource Base.Icon}" 
                                                                         Margin="7,0,0,0" Width="16" Height="31" Opacity="0.25"
                                                                         Kind="SeatFlat"/>
                                             <CheckBox x:Name="RestoreDollFilterCheckBox" 
-                                                      Style="{StaticResource CheckBoxBaseStyle}"
+                                                      Style="{StaticResource Base.CheckBox}"
                                                       Margin="30,0,0,0" 
                                                       Click="FilterCheckBox_Click"/>
                                         </Grid>
@@ -455,7 +455,7 @@
                           MouseEnter="ExpCalGrid_MouseEnter" MouseLeave="ExpCalGrid_MouseLeave">
                         <!-- exp calculator button -->
                         <ToggleButton x:Name="ExpCalToggleButton"
-                                      Style="{StaticResource MenuToggleButtonStyle}"
+                                      Style="{StaticResource Menu.ToggleButton}"
                                       Width="28" Height="30" VerticalAlignment="Top"
                                       ToolTip="{Binding Path=[HEADER_EXPCAL_BUTTON], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"
                                       Content="{iconPacks:Material Kind=Calculator, Width=11, Height=30}"/>
@@ -463,8 +463,8 @@
                         <Canvas x:Name="ExpCalToggleButton_Dropdown" Visibility="Collapsed"
                                 SnapsToDevicePixels="True">
                             <Border Canvas.Top="30" Canvas.Left="-150"
-                                    Background="{StaticResource BackgroundBrightBrightBrush}"
-                                    BorderBrush="{StaticResource BackgroundBrush}" BorderThickness="2"
+                                    Background="{StaticResource BackgroundBrush3}"
+                                    BorderBrush="{StaticResource BackgroundBrush1}" BorderThickness="2"
                                     SnapsToDevicePixels="True">
                                 <Grid Margin="5">
                                     <Grid.ColumnDefinitions>
@@ -481,15 +481,13 @@
                                     </Grid.RowDefinitions>
                                     <!-- 프리셋 -->
                                     <TextBlock Grid.Row="0" Grid.Column="0"
-                                               Style="{StaticResource TextBlockBaseStyle}"
+                                               Style="{StaticResource Base.TextBlock}"
                                                Margin="5,0,15,0" VerticalAlignment="Center"
                                                Text="{Binding Path=[HEADER_EXPCAL_PRESET], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                     <ComboBox Grid.Row="0" Grid.Column="1"
-                                              x:Name="PresetComboBox"                                                                                                                                                         
-                                              Margin="0,5,5,5" Padding="3"
-                                              HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"
-                                              BorderThickness="2"
-                                              Background="{StaticResource BackgroundBrightBrush}"
+                                              x:Name="PresetComboBox"     
+                                              Style="{StaticResource Base.ComboBox}"
+                                              Margin="0,5,5,5" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"
                                               SelectionChanged="PresetComboBox_SelectionChanged">
                                         <ComboBoxItem Content="{Binding Path=[RUN_43E], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                         <ComboBoxItem Content="{Binding Path=[RUN_02], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
@@ -500,50 +498,55 @@
                                     </ComboBox>
                                     <!-- 기본 경험치 -->
                                     <TextBlock Grid.Row="1" Grid.Column="0"
-                                               Style="{StaticResource TextBlockBaseStyle}"
+                                               Style="{StaticResource Base.TextBlock}"
                                                Margin="5,0,15,0" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap"
                                                Text="{Binding Path=[HEADER_EXPCAL_BASE_EXP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                     <TextBox Grid.Row="1" Grid.Column="1" 
                                              x:Name="BaseExpTextBox"
-                                             Margin="0,5,5,5" Padding="3"
-                                             Background="{StaticResource BackgroundBrightBrush}"
+                                             Style="{StaticResource Base.TextBox}"
+                                             Margin="0,5,5,5" 
+                                             Background="{StaticResource BackgroundBrush2}"
                                              HorizontalAlignment="Stretch" VerticalAlignment="Center"
                                              TextAlignment="Left"
                                              Text="550"/>
                                     <!-- 교전 횟수 -->
-                                    <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource TextBlockBaseStyle}"
+                                    <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource Base.TextBlock}"
                                                Margin="5,0,15,0" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap"
                                                Text="{Binding Path=[HEADER_EXPCAL_BATTLE_COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                     <TextBox Grid.Row="2" Grid.Column="1"
                                              x:Name="BattleCountTextBox"
-                                             Margin="0,5,5,5" Padding="3"
-                                             Background="{StaticResource BackgroundBrightBrush}"
+                                             Style="{StaticResource Base.TextBox}"
+                                             Margin="0,5,5,5"
+                                             Background="{StaticResource BackgroundBrush2}"
                                              HorizontalAlignment="Stretch" VerticalAlignment="Center"
                                              TextAlignment="Left"
                                              Text="550"/>
                                     <!-- 레벨 패널티 -->
-                                    <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource TextBlockBaseStyle}"
+                                    <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource Base.TextBlock}"
                                                Margin="5,0,15,0" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap"
                                                Text="{Binding Path=[HEADER_EXPCAL_LEVEL_PENALTY], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                     <TextBox Grid.Row="3" Grid.Column="1" 
                                              x:Name="LevelPenaltyTextBox"
-                                             Margin="0,5,5,5" Padding="3"
-                                             Background="{StaticResource BackgroundBrightBrush}"
+                                             Style="{StaticResource Base.TextBox}"
+                                             Margin="0,5,5,5"
+                                             Background="{StaticResource BackgroundBrush2}"
                                              HorizontalAlignment="Stretch" VerticalAlignment="Center"
                                              TextAlignment="Left"
                                              Text="550"/>
                                     <!-- 경험치 이벤트 -->
-                                    <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource TextBlockBaseStyle}"
+                                    <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource Base.TextBlock}"
                                                Margin="5,0,15,0" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap"
                                                Text="{Binding Path=[HEADER_EXPCAL_EXPUP_EVENT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
-                                    <CheckBox Grid.Row="4" Grid.Column="1" Style="{StaticResource CheckBoxBaseStyle}"
+                                    <CheckBox Grid.Row="4" Grid.Column="1" 
+                                              Style="{StaticResource Base.CheckBox}"
                                               x:Name="ExpCalExpUpCheckBox"
                                               Margin="0,0,-6,0"
                                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     <!-- 적용 -->
                                     <Button Grid.Row="5" Grid.ColumnSpan="2"
                                             x:Name="ExpCalApplyButton"
-                                            Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                            Style="{StaticResource Base.Button}"
+                                            Margin="2,5,8,5.333" HorizontalAlignment="Stretch" VerticalAlignment="Center"
                                             Foreground="{StaticResource NormalBrush}"
                                             Content="{Binding Path=[HEADER_EXPCAL_APPLY_BUTTON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"
                                             Click="ExpCalApplyButton_Click"/>
@@ -553,11 +556,11 @@
                     </Grid>
                     <!-- 접기/펴기 버튼 -->
                     <Button x:Name="ExpandCollapseButton" 
-                            Style="{StaticResource MenuButtonStyle}"
+                            Style="{StaticResource Menu.Button}"
                             Width="24" Height="30"
                             ToolTip="{Binding Path=[HEADER_COLLAPSE_EXPAND_BUTTON], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"
                             Click="ExpandCollapseButton_Click">
-                        <iconPacks:PackIconMaterial x:Name="ExpandCollapseButtonIcon" Style="{StaticResource IconStyle}"
+                        <iconPacks:PackIconMaterial x:Name="ExpandCollapseButtonIcon" Style="{StaticResource Base.Icon}"
                                                     Kind="UnfoldMoreHorizontal" Width="8" Height="30"/>
                     </Button>
                 </StackPanel>
@@ -575,8 +578,8 @@
         <!-- ===================== 푸터 ====================== -->
         <!-- ================================================= -->
         <Border Grid.Column="1" Grid.Row="2" Panel.ZIndex="10" 
-                Background="{StaticResource BackgroundBrightBrush}" 
-                BorderBrush="{StaticResource BackgroundBrush}" BorderThickness="0,2,0,0" 
+                Background="{StaticResource BackgroundBrush2}" 
+                BorderBrush="{StaticResource BackgroundBrush1}" BorderThickness="0,2,0,0" 
                 SnapsToDevicePixels="True">
             <Grid x:Name="FooterGrid" 
                   Margin="0" Height="54" Background="Transparent"
@@ -585,7 +588,7 @@
                 
                 <!-- 연결상태 -->
                 <iconPacks:PackIconMaterial x:Name="ConnectionStatusIcon"
-                                            Style="{StaticResource IconStyle}"
+                                            Style="{StaticResource Base.Icon}"
                                             Width="14" Height="14" Margin="10,9,0,9" VerticalAlignment="Bottom" HorizontalAlignment="Left"
                                             Foreground="#20FFFFFF" Kind="WifiOff"/>
                 
@@ -595,7 +598,7 @@
                     <!-- tooltip -->
                     <Grid.ToolTip>
                         <StackPanel Orientation="Vertical"
-                                    Style="{StaticResource ToolTipStackPanelStyle}">
+                                    Style="{StaticResource Content.ToolTip.StackPanel}">
                             <!-- 오늘 충전가능한 모의작전점수 -->
                             <uc:HtmlTextBlock x:Name="BpPointToolTipTextBlock" Grid.ColumnSpan="2"
                                               Foreground="{StaticResource NormalBrush}"
@@ -604,7 +607,7 @@
                     </Grid.ToolTip>
                     <!-- content -->
                     <TextBlock x:Name="BpTextBlock" 
-                               Style="{StaticResource TextBlockBaseStyle}"
+                               Style="{StaticResource Base.TextBlock}"
                                Margin="0,8,10,0" HorizontalAlignment="Right" VerticalAlignment="Top">
                         <Run Text="{Binding Path=[FOOTER_SIM_POINT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!--<Run x:Name="BpPointTextBlock" Text="{Binding Path=bpPoint, Mode=OneWay}" FontWeight="Bold"/>/6-->
@@ -619,16 +622,16 @@
                     <!-- tooltip -->
                     <Grid.ToolTip>
                         <StackPanel Orientation="Vertical"
-                                    Style="{StaticResource ToolTipStackPanelStyle}">
+                                    Style="{StaticResource Content.ToolTip.StackPanel}">
                             <!-- 자유경험치 세부 수치-->
-                            <TextBlock Style="{StaticResource TextBlockBaseStyle}">
+                            <TextBlock Style="{StaticResource Base.TextBlock}">
                                 <Run Text="{Binding Path=[FOOTER_SURPLUS_EXP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                 <Run x:Name="GlobalExpPointTextBlock" Text="{Binding Path=(user:UserData+GlobalExp.exp), Mode=OneWay}" FontWeight="Bold"/>/<Run x:Name="GlobalExpMaxPointTextBlock" Text="{Binding Path=(user:UserData+GlobalExp.maxExp), Mode=OneWay}"/>
                             </TextBlock>
                         </StackPanel>
                     </Grid.ToolTip>
                     <!-- content -->
-                    <TextBlock Style="{StaticResource TextBlockBaseStyle}"
+                    <TextBlock Style="{StaticResource Base.TextBlock}"
                                Margin="0,9,10,0" HorizontalAlignment="Right" VerticalAlignment="Top">
                         <Run Text="{Binding Path=[FOOTER_SURPLUS_EXP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <Run x:Name="GlobalExpPercentTextBlock" Text="{Binding Path=(user:UserData+GlobalExp.percent), Mode=OneWay}" FontWeight="Bold"/>%
@@ -645,7 +648,7 @@
               Background="{DynamicResource PrimaryBrush}">
             <!-- 현재 시간 -->
             <TextBlock Visibility="Collapsed"
-                       Style="{StaticResource StatusbarTextBlockStyle}"
+                       Style="{StaticResource Statusbar.TextBlock}"
                        HorizontalAlignment="Left">
                 <Run x:Name="CurrentTimeTextBlock" Text="{Binding Path=(user:UserData.currentTime), Mode=OneWay}"/>
             </TextBlock>
@@ -653,44 +656,44 @@
                         Margin="3,0" HorizontalAlignment="Right">
                 <!-- 현재 작전 -->
                 <TextBlock x:Name="CurrentMissionTextBlock" Visibility="Collapsed"
-                           Style="{StaticResource StatusbarTextBlockStyle}">
+                           Style="{StaticResource Statusbar.TextBlock}">
                 </TextBlock>
                 <!-- 인력 -->
-                <TextBlock Style="{StaticResource StatusbarTextBlockStyle}" Visibility="Collapsed">
+                <TextBlock Style="{StaticResource Statusbar.TextBlock}" Visibility="Collapsed">
                     <Run Text="{Binding Path=(user:UserData.mp), Mode=OneWay}"/>
                     <Run Text="|" Foreground="#40FFFFFF"/>
                 </TextBlock>
                 <!-- 탄약 -->
-                <TextBlock Style="{StaticResource StatusbarTextBlockStyle}" Visibility="Collapsed">
+                <TextBlock Style="{StaticResource Statusbar.TextBlock}" Visibility="Collapsed">
                     <Run Text="{Binding Path=(user:UserData.ammo), Mode=OneWay}"/>
                     <Run Text="|" Foreground="#40FFFFFF"/>
                 </TextBlock>
                 <!-- 식량 -->
-                <TextBlock Style="{StaticResource StatusbarTextBlockStyle}" Visibility="Collapsed">
+                <TextBlock Style="{StaticResource Statusbar.TextBlock}" Visibility="Collapsed">
                     <Run Text="{Binding Path=(user:UserData.mre), Mode=OneWay}"/>
                     <Run Text="|" Foreground="#40FFFFFF"/>
                 </TextBlock>
                 <!-- 부품 -->
-                <TextBlock Style="{StaticResource StatusbarTextBlockStyle}" Visibility="Collapsed">
+                <TextBlock Style="{StaticResource Statusbar.TextBlock}" Visibility="Collapsed">
                     <Run Text="{Binding Path=(user:UserData.part), Mode=OneWay}"/>
                 </TextBlock>
                 <!-- 지원 -->
                 <TextBlock x:Name="ReinforceTextBlock" Visibility="Visible"
-                           Style="{StaticResource StatusbarTextBlockStyle}">
+                           Style="{StaticResource Statusbar.TextBlock}">
                     <Run Text="{Binding Path=[STATUS_REINFORCE_COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                     <Run x:Name="ReinforceCountTextBlock" Text="{Binding Path=(user:UserData.borrowTeamToday), Mode=OneWay}" FontWeight="Bold"/>/20
                     <!--<Run Text="|" Foreground="#40FFFFFF"/>-->
                 </TextBlock>
                 <!-- 인형 -->
                 <TextBlock x:Name="DollTextBlock" Visibility="Visible"
-                           Style="{StaticResource StatusbarTextBlockStyle}">
+                           Style="{StaticResource Statusbar.TextBlock}">
                     <Run Text="{Binding Path=[STATUS_DOLL_COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                     <Run x:Name="DollCounTextBlock" Text="{Binding Path=(user:UserData.dollCount), Mode=OneWay}" FontWeight="Bold"/>/<Run x:Name="DollMaxCountTextBlock" Text="{Binding Path=(user:UserData.maxDollCount), Mode=OneWay}"/>
                     <!--<Run Text="|" Foreground="#40FFFFFF"/>-->
                 </TextBlock>
                 <!-- 장비 -->
                 <TextBlock x:Name="EquipTextBlock" Visibility="Visible"
-                           Style="{StaticResource StatusbarTextBlockStyle}">
+                           Style="{StaticResource Statusbar.TextBlock}">
                     <Run Text="{Binding Path=[STATUS_EQUIP_COUNT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                     <Run x:Name="EquipCounTextBlock" Text="{Binding Path=(user:UserData.equipCount), Mode=OneWay}" FontWeight="Bold"/>/<Run x:Name="EquipMaxCountTextBlock" Text="{Binding Path=(user:UserData.maxEquipCount), Mode=OneWay}"/>
                 </TextBlock>

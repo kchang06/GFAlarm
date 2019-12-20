@@ -30,6 +30,13 @@ namespace GFAlarm.View.Option
         {
             InitializeComponent();
 
+            Loaded += SettingView_Loaded;
+        }
+
+        private void SettingView_Loaded(object sender, RoutedEventArgs e)
+        {
+            InitLanguage();
+
             // 버전
             this.VersionTextBlock.Text = Config.version;
 
@@ -42,9 +49,10 @@ namespace GFAlarm.View.Option
             this.useVoiceNotification = Config.Setting.voiceNotification;
             this.useAdjutantVoice = Config.Setting.adjutantVoiceOnly;
             this.useStartVoice = Config.Setting.startVoice;
-            this.setVoiceVolume = Config.Setting.voiceVolume.ToString();
-            this.VolumeSlider.Minimum = 0;
             this.VolumeSlider.Maximum = 100;
+            this.VolumeSlider.Minimum = 0;
+            this.VolumeSlider.ValueChanged += VolumeSlider_ValueChanged;
+            this.setVoiceVolume = Config.Setting.voiceVolume.ToString();
             this.useSoundPlayerApi = Config.Setting.useSoundPlayerApi;
             this.useTabNotification = Config.Setting.tabNotification;
 
@@ -54,7 +62,7 @@ namespace GFAlarm.View.Option
             this.FromMailAddressTextBox.Text = Config.Setting.fromMailAddress;
             this.FromMailPasswordTextBox.Text = Config.Setting.fromMailPass;
             this.ToMailAddressTextBox.Text = Config.Setting.toMailAddress;
-
+            
             // 파일 저장
             this.setFileEncoding = Config.Setting.fileEncoding;
             this.useSaveUserInfo = Config.Setting.exportUserInfo;
@@ -70,8 +78,9 @@ namespace GFAlarm.View.Option
             this.useHideToTray = Config.Window.minimizeToTray;
             this.useStickyWindow = Config.Window.stickyWindow;
             this.setWindowOpacity = Config.Window.windowOpacity.ToString();
-            this.WindowOpacitySlider.Minimum = 30;
             this.WindowOpacitySlider.Maximum = 100;
+            this.WindowOpacitySlider.Minimum = 30;
+            this.WindowOpacitySlider.ValueChanged += WindowOpacitySlider_ValueChanged;
             this.WindowColorTextBox.Text = Config.Window.windowColor;
             if (rgbRegex.IsMatch(Config.Window.windowColor))
             {
@@ -81,14 +90,10 @@ namespace GFAlarm.View.Option
             // 기타
             this.useCheckUpdate = Config.Setting.checkUpdate;
             this.setLogLevel = Config.Setting.logLevel.ToString();
-            this.LogLevelSlider.Minimum = 0;
             this.LogLevelSlider.Maximum = 5;
+            this.LogLevelSlider.Minimum = 0;
+            this.LogLevelSlider.ValueChanged += LogLevelSlider_ValueChanged;
             this.useLogPacket = Config.Setting.logPacket;
-        }
-
-        private void SettingViewContent_Loaded(object sender, RoutedEventArgs e)
-        {
-            InitLanguage();
         }
 
         /// <summary>
@@ -489,8 +494,10 @@ namespace GFAlarm.View.Option
         {
             set
             {
+                log.Debug("set volume string {0}", value);
                 int tempValue = 0;
-                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                //int.TryParse(-exceptNumberRegex.Replace(value, ""), out tempValue);
+                int.TryParse(Regex.Match(value, @"\d+").Value, out tempValue);
                 if (0 <= tempValue && tempValue <= 100)
                 {
                     Config.Setting.voiceVolume = tempValue;
@@ -501,11 +508,16 @@ namespace GFAlarm.View.Option
                 }
                 this.VolumeSlider.Value = tempValue;
                 this.VolumeTextBox.Text = string.Format("{0}%", tempValue);
+                log.Debug("set volume {0}", tempValue);
             }
         }
         private void VolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             setVoiceVolume = e.NewValue.ToString();
+        }
+        private void VolumeSlider_LostFocus(object sender, RoutedEventArgs e)
+        {
+            setVoiceVolume = (sender as Slider).Value.ToString();
         }
         private void VolumeTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
@@ -944,7 +956,7 @@ namespace GFAlarm.View.Option
             set
             {
                 int tempValue = 0;
-                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                int.TryParse(Regex.Match(value, @"\d+").Value, out tempValue);
                 if (30 <= tempValue && tempValue <= 100)
                 {
                     Config.Window.windowOpacity = tempValue;
@@ -1022,7 +1034,7 @@ namespace GFAlarm.View.Option
             set
             {
                 int tempValue = 0;
-                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                int.TryParse(Regex.Match(value, @"\d+").Value, out tempValue);
                 if (0 <= tempValue && tempValue <= 5)
                 {
                     Config.Setting.logLevel = tempValue;

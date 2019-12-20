@@ -12,7 +12,7 @@ namespace GFAlarm.Util
     {
         private static readonly Logger log = LogManager.GetCurrentClassLogger();
 
-        public static string version = "2.53";
+        public static string version = "2.55";
 
         private static ReaderWriterLockSlim _lock = new ReaderWriterLockSlim();
         public static JObject data = null;
@@ -25,7 +25,7 @@ namespace GFAlarm.Util
         public static bool duringTheater = false;
         public static bool needFakeVersion = false;
 
-        public static string latest_version = "";
+        public static string latest_version = version;
         public static string latest_download_url = "";
         public static string voice_guide_url = "";
         public static string mail_guide_url = "";

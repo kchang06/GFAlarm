@@ -14,14 +14,34 @@
     d:DesignHeight="500" 
     d:DesignWidth="200">
     <UserControl.Resources>
-        <!-- 설정 툴팁 스택판넬 스타일 -->
-        <Style x:Key="SettingToolTipStackPanelStyle" TargetType="{x:Type StackPanel}">
-            <Setter Property="Orientation" Value="Vertical"/>
-            <Setter Property="MaxWidth" Value="300"/>
-            <Setter Property="Margin" Value="5"/>
+        <!-- GroupBox.Border (height 32px) -->
+        <Style BasedOn="{StaticResource GroupBox.Border}"
+               TargetType="{x:Type Border}" x:Key="GroupBox.Border">
+            <Setter Property="Height" Value="32"/>
         </Style>
-        <!-- 제대 번호 스타일 -->
-        <Style x:Key="EchelonGroupNumericStyle" TargetType="{x:Type iconPacks:PackIconMaterial}">
+        <!-- GroupBox.Title.TextBlock -->
+        <Style BasedOn="{StaticResource GroupBox.Title.TextBlock}" 
+               TargetType="{x:Type TextBlock}" x:Key="GroupBox.Title.TextBlock">
+            <Setter Property="Margin" Value="5,0,0,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+        <!-- GroupBox.Count.Border -->
+        <Style BasedOn="{StaticResource GroupBox.Count.Border}"
+               TargetType="{x:Type Border}" x:Key="GroupBox.Count.Border">
+            <Setter Property="Padding" Value="5,0"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="{StaticResource GrayBrush}"/>
+        </Style>
+        <!-- Content.ToolTip.StackPanel -->
+        <Style BasedOn="{StaticResource Content.ToolTip.StackPanel}" 
+               TargetType="{x:Type StackPanel}" x:Key="Content.ToolTip.StackPanel">
+            <Setter Property="MaxWidth" Value="300"/>
+        </Style>
+
+        <!-- GroupBox.EchelonNumber.Icon -->
+        <Style TargetType="{x:Type iconPacks:PackIconMaterial}" x:Key="GroupBox.EchelonNumber.Icon">
             <!--<Setter Property="Margin" Value="8,0,0,0"/>-->
             <!--<Setter Property="Width" Value="14"/>-->
             <Setter Property="Height" Value="14"/>
@@ -29,13 +49,22 @@
             <Setter Property="HorizontalAlignment" Value="Right"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
+        <!-- GroupBox.Echelon.Status.Border -->
+        <Style TargetType="{x:Type Border}" x:Key="GroupBox.Echelon.Status.Border">
+            
+        </Style>
+        <!-- GroupBox.Echelon.Status.TextBlock -->
+        <Style TargetType="{x:Type TextBlock}" x:Key="GroupBox.Echelon.Status.TextBlock">
+            
+        </Style>
+        
         <!-- 제대 그룹 텍스트 스타일 -->
-        <Style x:Key="EchelonGroupTextStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+        <!--<Style x:Key="EchelonGroupTextStyle" TargetType="TextBlock" BasedOn="{StaticResource Base.TextBlock}">
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="5,0,0,0"/>
         </Style>
-        <!-- 제대 상태 Border 스타일 -->
+        --><!-- 제대 상태 Border 스타일 --><!--
         <Style x:Key="EchelonStatusBorderStyle" TargetType="{x:Type Border}">
             <Setter Property="Margin" Value="8,-1,0,0"/>
             <Setter Property="Padding" Value="5,0,5,0"/>
@@ -44,24 +73,24 @@
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="CornerRadius" Value="3"/>
         </Style>
-        <!-- 제대 상태 텍스트 스타일 -->
-        <Style x:Key="EchelonStatusTextStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+        --><!-- 제대 상태 텍스트 스타일 --><!--
+        <Style x:Key="EchelonStatusTextStyle" TargetType="TextBlock" BasedOn="{StaticResource Base.TextBlock}">
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="11"/>
             <Setter Property="FontWeight" Value="Bold"/>
-        </Style>
+        </Style>-->
         <!-- 리스트 아이템 스타일 -->
         <DataTemplate x:Key="EchelonTemplate">
             <Grid x:Name="TemplateGrid" 
-                  Style="{StaticResource ItemTemplateStyle}">
+                  Style="{StaticResource Item.Template}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <!-- tooltip -->
                 <Grid.ToolTip>
-                    <StackPanel Style="{StaticResource SettingToolTipStackPanelStyle}" 
+                    <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}" 
                                 Orientation="Vertical">
                         
                         <!-- 필요 경험치 -->
@@ -81,7 +110,7 @@
                             <!-- 필요 경험치 -->
                             <iconPacks:PackIconMaterial 
                                 Grid.Row="0" Grid.ColumnSpan="3" 
-                                Style="{StaticResource IconStyle}"
+                                Style="{StaticResource Base.Icon}"
                                 HorizontalAlignment="Left" VerticalAlignment="Center"
                                 Width="24" Height="13" Foreground="{StaticResource OrangeBrush}"
                                 Kind="AccountClock"/>
@@ -89,86 +118,86 @@
                                 Grid.Row="0" Grid.ColumnSpan="3" Orientation="Horizontal"
                                 Margin="24,0,0,5" HorizontalAlignment="Left" VerticalAlignment="Center">
                                 <TextBlock 
-                                    Style="{StaticResource ToolTipTitleStyle}"
+                                    Style="{StaticResource Content.ToolTip.Title.TextBlock}"
                                     Margin="0" Padding="0" VerticalAlignment="Bottom"
                                     Text="{Binding Path=[REQUIRE_EXP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                 <uc:HtmlTextBlock 
-                                    Style="{StaticResource ToolTipTitleStyle}"
+                                    Style="{StaticResource Content.ToolTip.Title.TextBlock}"
                                     Margin="3,0,0,0" Padding="0" VerticalAlignment="Bottom" 
                                     FontSize="11"
                                     Html="{Binding Path=[NO_MVP_BONUS], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                             <!-- header -->
                             <Border Grid.Row="1" Grid.Column="0" BorderThickness="0,1,1,1"
-                                    Style="{StaticResource ToolTipTableStyle}"/>
+                                    Style="{StaticResource Content.ToolTip.Table.Border}"/>
                             <!-- 다음 레벨 -->
                             <Border Grid.Row="2" Grid.Column="0" BorderThickness="0,0,1,1"
-                                    Style="{StaticResource ToolTipTableStyle}">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}" 
+                                    Style="{StaticResource Content.ToolTip.Table.Border}">
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}" 
                                            HorizontalAlignment="Center"
                                            Text="{Binding Path=[TO_NEXT_LEVEL], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </Border>
                             <!-- 다음 편제 -->
                             <Border Grid.Row="3" Grid.Column="0" BorderThickness="0,0,1,1"
-                                    Style="{StaticResource ToolTipTableStyle}">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}" 
+                                    Style="{StaticResource Content.ToolTip.Table.Border}">
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}" 
                                            HorizontalAlignment="Center"
                                            Text="{Binding Path=[TO_NEXT_EXPAND], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </Border>
                             <!-- 최대 레벨 -->
                             <Border Grid.Row="4" Grid.Column="0" BorderThickness="0,0,1,1"
-                                    Style="{StaticResource ToolTipTableStyle}">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}" 
+                                    Style="{StaticResource Content.ToolTip.Table.Border}">
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}" 
                                            HorizontalAlignment="Center"
                                            Text="{Binding Path=[TO_MAX_LEVEL], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </Border>
                             <!-- require run -->
                             <Border Grid.Row="1" Grid.Column="1" BorderThickness="0,1,1,1"
-                                    Style="{StaticResource ToolTipTableStyle}">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}">
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            HorizontalAlignment="Center"
                                            Text="{Binding Path=[MISSION_SHORT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </Border>
                             <Border Grid.Row="2" Grid.Column="1" BorderThickness="0,0,1,1"
-                                    Style="{StaticResource ToolTipTableStyle}">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}">
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            HorizontalAlignment="Right"
                                            Text="{Binding Path=runCount[0], Mode=OneWay}"/>
                             </Border>
                             <Border Grid.Row="3" Grid.Column="1" BorderThickness="0,0,1,1"
-                                    Style="{StaticResource ToolTipTableStyle}">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}">
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            HorizontalAlignment="Right"
                                            Text="{Binding Path=runCount[1], Mode=OneWay}"/>
                             </Border>
                             <Border Grid.Row="4" Grid.Column="1" BorderThickness="0,0,1,1"
-                                    Style="{StaticResource ToolTipTableStyle}">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}">
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            HorizontalAlignment="Right"
                                            Text="{Binding Path=runCount[2], Mode=OneWay}"/>
                             </Border>
                             <!-- combat report count -->
                             <Border Grid.Row="1" Grid.Column="2" BorderThickness="0,1,0,1"
-                                    Style="{StaticResource ToolTipTableStyle}">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}">
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            HorizontalAlignment="Center"
                                            Text="{Binding Path=[COMBAT_REPORT_SHORT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </Border>
                             <Border Grid.Row="2" Grid.Column="2" BorderThickness="0,0,0,1"
-                                    Style="{StaticResource ToolTipTableStyle}">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}">
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            HorizontalAlignment="Right"
                                            Text="{Binding Path=reportCount[0], Mode=OneWay}"/>
                             </Border>
                             <Border Grid.Row="3" Grid.Column="2" BorderThickness="0,0,0,1"
-                                    Style="{StaticResource ToolTipTableStyle}">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}">
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            HorizontalAlignment="Right"
                                            Text="{Binding Path=reportCount[1], Mode=OneWay}"/>
                             </Border>
                             <Border Grid.Row="4" Grid.Column="2" BorderThickness="0,0,0,1"
-                                    Style="{StaticResource ToolTipTableStyle}">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}">
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            HorizontalAlignment="Right"
                                            Text="{Binding Path=reportCount[2], Mode=OneWay}"/>
                             </Border>
@@ -188,18 +217,18 @@
                             </Grid.RowDefinitions>
                             <!-- 수복 정보 -->
                             <iconPacks:PackIconMaterial Grid.ColumnSpan="3" Grid.Row="0" 
-                                                        Style="{StaticResource IconStyle}"
+                                                        Style="{StaticResource Base.Icon}"
                                                         Margin="0,5,0,5" Width="24" Height="8" HorizontalAlignment="Left" VerticalAlignment="Center"
                                                         Foreground="{StaticResource OrangeBrush}"
                                                         Kind="SeatFlat"/>
                             <TextBlock Grid.ColumnSpan="3" Grid.Row="0"
-                                       Style="{StaticResource ToolTipTitleStyle}"
+                                       Style="{StaticResource Content.ToolTip.Title.TextBlock}"
                                        Margin="24,5,0,5" HorizontalAlignment="Left" VerticalAlignment="Center" 
                                        Text="{Binding Path=[REQUIRE_RESTORE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             <!-- 헤더 -->
                             <Border Grid.Column="0" Grid.Row="1" BorderThickness="0,1,1,1"
-                                    Style="{StaticResource ToolTipTableStyle}">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}">
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            HorizontalAlignment="Center">
                                     <InlineUIContainer>
                                         <Image Source="/GFAlarm;component/Resource/image/icon/res/manpower.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
@@ -207,8 +236,8 @@
                                 </TextBlock>
                             </Border>
                             <Border Grid.Column="1" Grid.Row="1" BorderThickness="0,1,1,1"
-                                    Style="{StaticResource ToolTipTableStyle}">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}">
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            HorizontalAlignment="Center">
                                     <InlineUIContainer>
                                         <Image Source="/GFAlarm;component/Resource/image/icon/res/part.png" Height="16" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True"/>
@@ -216,27 +245,27 @@
                                 </TextBlock>
                             </Border>
                             <Border Grid.Column="2" Grid.Row="1" BorderThickness="0,1,0,1"
-                                    Style="{StaticResource ToolTipTableStyle}">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}">
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            HorizontalAlignment="Center"
                                            Text="{Binding Path=[REQUIRE_TIME], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </Border>
                             <!-- 내용 -->
                             <Border Grid.Column="0" Grid.Row="2" BorderThickness="0,0,1,1"
-                                    Style="{StaticResource ToolTipTableStyle}">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}">
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right"
                                            Text="{Binding Path=TBRestoreRequireManpower, Mode=OneWay}"/>
                             </Border>
                             <Border Grid.Column="1" Grid.Row="2" BorderThickness="0,0,1,1"
-                                    Style="{StaticResource ToolTipTableStyle}">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}">
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right"
                                            Text="{Binding Path=TBRestoreRequirePart, Mode=OneWay}"/>
                             </Border>
                             <Border Grid.Column="2" Grid.Row="2" BorderThickness="0,0,0,1"
-                                    Style="{StaticResource ToolTipTableStyle}">
-                                <TextBlock Style="{StaticResource ToolTipTableTextStyle}"
+                                    Style="{StaticResource Content.ToolTip.Table.Border}">
+                                <TextBlock Style="{StaticResource Content.ToolTip.Table.TextBlock}"
                                            Foreground="{StaticResource OrangeBrush}" HorizontalAlignment="Right"
                                            Text="{Binding Path=TBRestoreRequireTime, Mode=OneWay}"/>
                             </Border>
@@ -250,30 +279,30 @@
                     <!-- 병과 아이콘 -->
                     <Image Source="{Binding Path=typeIcon, Mode=OneWay}" Margin="0,5,0,0" Height="12" RenderOptions.BitmapScalingMode="HighQuality"/>
                     <!-- 레벨 -->
-                    <TextBlock Style="{StaticResource TextBlockBaseStyle}" 
+                    <TextBlock Style="{StaticResource Base.TextBlock}" 
                                Margin="3,4,0,0" FontSize="11">
                         <Run Foreground="#70FFFFFF">Lv.</Run><Run x:Name="LevelTextBlock" Text="{Binding Path=level, Mode=OneWay}"/>
                     </TextBlock>
                     <!-- 제대 위치 -->
-                    <!--<TextBlock Style="{StaticResource TextBlockBaseStyle}"
+                    <!--<TextBlock Style="{StaticResource Base.TextBlock}"
                                Margin="3,4,0,0" FontSize="11">
                         <Run Foreground="#10FFFFFF" Text="{Binding Path=location, Mode=OneWay}"/>
                     </TextBlock>-->
                 </StackPanel>
                 <!-- 남은 경험치 -->
                 <TextBlock Grid.ColumnSpan="2" Margin="0,4,21,0" HorizontalAlignment="Right" VerticalAlignment="Top"
-                           Style="{StaticResource TextBlockBaseStyle}" FontSize="11" Foreground="#70FFFFFF">
+                           Style="{StaticResource Base.TextBlock}" FontSize="11" Foreground="#70FFFFFF">
                     <Run>Next</Run>
                     <Run x:Name="RemainExpTextBlock" Foreground="White" Text="{Binding Path=remainExp, Mode=OneWay}"/>
                 </TextBlock>
                 <!-- 인형 이름 -->
                 <TextBlock x:Name="NameTextBlock" Grid.Column="0" Margin="5,0,0,4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Panel.ZIndex="10"
-                           Style="{StaticResource TextBlockBaseStyle}" FontSize="11" TextTrimming="CharacterEllipsis">
+                           Style="{StaticResource Base.TextBlock}" FontSize="11" TextTrimming="CharacterEllipsis">
                     <Run FontSize="14" Text="{Binding Path=name, Mode=OneWay}"/>
                 </TextBlock>
                 <!-- 체력 -->
                 <TextBlock x:Name="HpStatusTextBlock" Grid.Column="1"
-                           Style="{StaticResource TextBlockBaseStyle}" 
+                           Style="{StaticResource Base.TextBlock}" 
                            Margin="0,0,21,4" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                            FontSize="11" Foreground="#70FFFFFF">
                     <!-- 링크 -->
@@ -287,7 +316,7 @@
                 </TextBlock>
                 <!-- 요정 특성 -->
                 <TextBlock x:Name="TraitTextBlock" Grid.Column="1" Visibility="Collapsed"
-                           Style="{StaticResource TextBlockBaseStyle}"
+                           Style="{StaticResource Base.TextBlock}"
                            Margin="0,0,21,4" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                            FontSize="12" Foreground="#FFFFFF"
                            Text="{Binding Path=fairyTrait, Mode=OneWay}"/>
@@ -334,7 +363,7 @@
                 </StackPanel>
                 <!--구분선-->
                 <Border x:Name="Delimiter" Grid.ColumnSpan="2"
-                        Style="{StaticResource ItemDelimiterStyle}"/>
+                        Style="{StaticResource Item.Delimiter}"/>
             </Grid>
             <DataTemplate.Triggers>
                 <!-- 탄약 -->
@@ -501,21 +530,21 @@
     <Grid Margin="0,0,2,0">
         <!-- 오버레이 -->
         <Grid x:Name="EmptyOverlay" Panel.ZIndex="100" Visibility="Visible"
-              Background="{StaticResource BackgroundBrush}">
-            <iconPacks:PackIconMaterial Style="{StaticResource IconStyle}"
+              Background="{StaticResource BackgroundBrush1}">
+            <iconPacks:PackIconMaterial Style="{StaticResource Base.Icon}"
                                         Margin="0,0,0,60"  HorizontalAlignment="Center" VerticalAlignment="Center"
                                         Kind="EmoticonDead" Foreground="White" Width="64" Height="64"/>
-            <uc:HtmlTextBlock Style="{StaticResource TextBlockBaseStyle}" 
+            <uc:HtmlTextBlock Style="{StaticResource Base.TextBlock}" 
                               Margin="0,90,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" 
                               TextAlignment="Center" Foreground="#FFFFFF" FontSize="14"
                               Html="{Binding Path=[OVERLAY_EMPTY_ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
         </Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Visible">
+        <ScrollViewer x:Name="Echelon_ScrollViewer" VerticalScrollBarVisibility="Visible">
             <StackPanel x:Name="EchelonStackPanel" Orientation="Vertical">
                 
                 <!-- [그룹] 1제대 -->
                 <Border x:Name="Echelon1GroupBox" Visibility="Collapsed"
-                        Style="{StaticResource GroupBoxBorderStyle}"
+                        Style="{StaticResource GroupBox.Border}"
                         MouseLeftButtonDown="GroupBox_MouseDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -527,29 +556,29 @@
                         <!-- echelon number -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Style="{StaticResource GroupBox.EchelonNumber.Icon}"
                             Kind="Numeric1"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
                         <Border 
                             Grid.Column="2" 
                             x:Name="Echelon1GroupBox_StatusBorder" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Style="{StaticResource GroupBox.Count.Border}"
                             Width="Auto">
                             <TextBlock 
                                 x:Name="Echelon1GroupBox_StatusTextBlock"
-                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Style="{StaticResource GroupBox.Count.TextBlock}" FontWeight="Bold"
                                 Text="STATUS"/>
                         </Border>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="3"
                             x:Name="Echelon1GroupBox_Arrow"
-                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -559,7 +588,7 @@
 
                 <!-- [그룹] 2제대 -->
                 <Border x:Name="Echelon2GroupBox" Visibility="Collapsed"
-                        Style="{StaticResource GroupBoxBorderStyle}"
+                        Style="{StaticResource GroupBox.Border}"
                         MouseLeftButtonDown="GroupBox_MouseDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -571,29 +600,29 @@
                         <!-- echelon number -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Style="{StaticResource GroupBox.EchelonNumber.Icon}"
                             Kind="Numeric2"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
                         <Border 
                             Grid.Column="2" 
                             x:Name="Echelon2GroupBox_StatusBorder" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Style="{StaticResource GroupBox.Count.Border}"
                             Width="Auto">
                             <TextBlock 
                                 x:Name="Echelon2GroupBox_StatusTextBlock"
-                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Style="{StaticResource GroupBox.Count.TextBlock}" FontWeight="Bold"
                                 Text="STATUS"/>
                         </Border>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="3"
                             x:Name="Echelon2GroupBox_Arrow"
-                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -603,7 +632,7 @@
 
                 <!-- [그룹] 3제대 -->
                 <Border x:Name="Echelon3GroupBox" Visibility="Collapsed"
-                        Style="{StaticResource GroupBoxBorderStyle}"
+                        Style="{StaticResource GroupBox.Border}"
                         MouseLeftButtonDown="GroupBox_MouseDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -615,29 +644,29 @@
                         <!-- echelon number -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Style="{StaticResource GroupBox.EchelonNumber.Icon}"
                             Kind="Numeric3"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
                         <Border 
                             Grid.Column="2" 
                             x:Name="Echelon3GroupBox_StatusBorder" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Style="{StaticResource GroupBox.Count.Border}"
                             Width="Auto">
                             <TextBlock 
                                 x:Name="Echelon3GroupBox_StatusTextBlock"
-                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Style="{StaticResource GroupBox.Count.TextBlock}" FontWeight="Bold"
                                 Text="STATUS"/>
                         </Border>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="3"
                             x:Name="Echelon3GroupBox_Arrow"
-                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -647,7 +676,7 @@
 
                 <!-- [그룹] 4제대 -->
                 <Border x:Name="Echelon4GroupBox" Visibility="Collapsed"
-                        Style="{StaticResource GroupBoxBorderStyle}"
+                        Style="{StaticResource GroupBox.Border}"
                         MouseLeftButtonDown="GroupBox_MouseDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -659,29 +688,29 @@
                         <!-- echelon number -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Style="{StaticResource GroupBox.EchelonNumber.Icon}"
                             Kind="Numeric4"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
                         <Border 
                             Grid.Column="2" 
                             x:Name="Echelon4GroupBox_StatusBorder" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Style="{StaticResource GroupBox.Count.Border}"
                             Width="Auto">
                             <TextBlock 
                                 x:Name="Echelon4GroupBox_StatusTextBlock"
-                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Style="{StaticResource GroupBox.Count.TextBlock}" FontWeight="Bold"
                                 Text="STATUS"/>
                         </Border>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="3"
                             x:Name="Echelon4GroupBox_Arrow"
-                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -691,7 +720,7 @@
 
                 <!-- [그룹] 5제대 -->
                 <Border x:Name="Echelon5GroupBox" Visibility="Collapsed"
-                        Style="{StaticResource GroupBoxBorderStyle}"
+                        Style="{StaticResource GroupBox.Border}"
                         MouseLeftButtonDown="GroupBox_MouseDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -703,29 +732,29 @@
                         <!-- echelon number -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Style="{StaticResource GroupBox.EchelonNumber.Icon}"
                             Kind="Numeric5"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
                         <Border 
                             Grid.Column="2" 
                             x:Name="Echelon5GroupBox_StatusBorder" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Style="{StaticResource GroupBox.Count.Border}"
                             Width="Auto">
                             <TextBlock 
                                 x:Name="Echelon5GroupBox_StatusTextBlock"
-                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Style="{StaticResource GroupBox.Count.TextBlock}" FontWeight="Bold"
                                 Text="STATUS"/>
                         </Border>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="3"
                             x:Name="Echelon5GroupBox_Arrow"
-                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -735,7 +764,7 @@
 
                 <!-- [그룹] 6제대 -->
                 <Border x:Name="Echelon6GroupBox" Visibility="Collapsed"
-                        Style="{StaticResource GroupBoxBorderStyle}"
+                        Style="{StaticResource GroupBox.Border}"
                         MouseLeftButtonDown="GroupBox_MouseDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -747,29 +776,29 @@
                         <!-- echelon number -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Style="{StaticResource GroupBox.EchelonNumber.Icon}"
                             Kind="Numeric6"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
                         <Border 
                             Grid.Column="2" 
                             x:Name="Echelon6GroupBox_StatusBorder" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Style="{StaticResource GroupBox.Count.Border}"
                             Width="Auto">
                             <TextBlock 
                                 x:Name="Echelon6GroupBox_StatusTextBlock"
-                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Style="{StaticResource GroupBox.Count.TextBlock}" FontWeight="Bold"
                                 Text="STATUS"/>
                         </Border>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="3"
                             x:Name="Echelon6GroupBox_Arrow"
-                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -779,7 +808,7 @@
 
                 <!-- [그룹] 7제대 -->
                 <Border x:Name="Echelon7GroupBox" Visibility="Collapsed"
-                        Style="{StaticResource GroupBoxBorderStyle}"
+                        Style="{StaticResource GroupBox.Border}"
                         MouseLeftButtonDown="GroupBox_MouseDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -791,29 +820,29 @@
                         <!-- echelon number -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Style="{StaticResource GroupBox.EchelonNumber.Icon}"
                             Kind="Numeric7"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
                         <Border 
                             Grid.Column="2" 
                             x:Name="Echelon7GroupBox_StatusBorder" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Style="{StaticResource GroupBox.Count.Border}"
                             Width="Auto">
                             <TextBlock 
                                 x:Name="Echelon7GroupBox_StatusTextBlock"
-                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Style="{StaticResource GroupBox.Count.TextBlock}" FontWeight="Bold"
                                 Text="STATUS"/>
                         </Border>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="3"
                             x:Name="Echelon7GroupBox_Arrow"
-                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -823,7 +852,7 @@
 
                 <!-- [그룹] 8제대 -->
                 <Border x:Name="Echelon8GroupBox" Visibility="Collapsed"
-                        Style="{StaticResource GroupBoxBorderStyle}"
+                        Style="{StaticResource GroupBox.Border}"
                         MouseLeftButtonDown="GroupBox_MouseDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -835,29 +864,29 @@
                         <!-- echelon number -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Style="{StaticResource GroupBox.EchelonNumber.Icon}"
                             Kind="Numeric8"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
                         <Border 
                             Grid.Column="2" 
                             x:Name="Echelon8GroupBox_StatusBorder" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Style="{StaticResource GroupBox.Count.Border}"
                             Width="Auto">
                             <TextBlock 
                                 x:Name="Echelon8GroupBox_StatusTextBlock"
-                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Style="{StaticResource GroupBox.Count.TextBlock}" FontWeight="Bold"
                                 Text="STATUS"/>
                         </Border>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="3"
                             x:Name="Echelon8GroupBox_Arrow"
-                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -867,7 +896,7 @@
 
                 <!-- [그룹] 9제대 -->
                 <Border x:Name="Echelon9GroupBox" Visibility="Collapsed"
-                        Style="{StaticResource GroupBoxBorderStyle}"
+                        Style="{StaticResource GroupBox.Border}"
                         MouseLeftButtonDown="GroupBox_MouseDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -879,29 +908,29 @@
                         <!-- echelon number -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Style="{StaticResource GroupBox.EchelonNumber.Icon}"
                             Kind="Numeric9"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
                         <Border 
                             Grid.Column="2" 
                             x:Name="Echelon9GroupBox_StatusBorder" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Style="{StaticResource GroupBox.Count.Border}"
                             Width="Auto">
                             <TextBlock 
                                 x:Name="Echelon9GroupBox_StatusTextBlock"
-                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Style="{StaticResource GroupBox.Count.TextBlock}" FontWeight="Bold"
                                 Text="STATUS"/>
                         </Border>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="3"
                             x:Name="Echelon9GroupBox_Arrow"
-                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -911,7 +940,7 @@
 
                 <!-- [그룹] 10제대 -->
                 <Border x:Name="Echelon10GroupBox" Visibility="Collapsed"
-                        Style="{StaticResource GroupBoxBorderStyle}"
+                        Style="{StaticResource GroupBox.Border}"
                         MouseLeftButtonDown="GroupBox_MouseDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -923,29 +952,29 @@
                         <!-- echelon number -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource EchelonGroupNumericStyle}"
+                            Style="{StaticResource GroupBox.EchelonNumber.Icon}"
                             Kind="Numeric10"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupBoxTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[ECHELON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- echelon status -->
                         <Border 
                             Grid.Column="2" 
                             x:Name="Echelon10GroupBox_StatusBorder" Visibility="Collapsed"
-                            Style="{StaticResource GroupBoxCountBorderStyle}"
+                            Style="{StaticResource GroupBox.Count.Border}"
                             Width="Auto">
                             <TextBlock 
                                 x:Name="Echelon10GroupBox_StatusTextBlock"
-                                Style="{StaticResource GroupBoxCountTextBlockStyle}" FontWeight="Bold"
+                                Style="{StaticResource GroupBox.Count.TextBlock}" FontWeight="Bold"
                                 Text="STATUS"/>
                         </Border>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="3"
                             x:Name="Echelon10GroupBox_Arrow"
-                            Style="{StaticResource GroupBoxArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>

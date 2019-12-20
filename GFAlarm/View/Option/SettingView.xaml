@@ -11,112 +11,24 @@
     xmlns:local="clr-namespace:GFAlarm.View.Option"
     mc:Ignorable="d" 
     
-    Loaded="SettingViewContent_Loaded"
-    
     SnapsToDevicePixels="True"
     d:DesignHeight="2500" 
     d:DesignWidth="225">
     <UserControl.Resources>
-        <!-- [그룹] 스타일 -->
-        <Style x:Key="GroupBorderStyle" TargetType="Border">
+        <!-- GroupBox.Border (height 40px) -->
+        <Style BasedOn="{StaticResource GroupBox.Border}"
+               TargetType="{x:Type Border}" x:Key="GroupBox.Border">
             <Setter Property="Height" Value="40"/>
-            <Setter Property="Background" Value="{StaticResource BackgroundBrightBrush}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource BackgroundBrush}"/>
-            <Setter Property="BorderThickness" Value="0,0,2,2"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <!--<Setter Property="BitmapEffect">
-                <Setter.Value>
-                    <DropShadowBitmapEffect Color="Black" Direction="0" ShadowDepth="0" Opacity="0.25" Softness="0.3"/>
-                </Setter.Value>
-            </Setter>-->
         </Style>
-        <!-- [그룹] > [아이콘] 스타일 -->
-        <Style x:Key="GroupIconStyle" TargetType="iconPacks:PackIconMaterial" BasedOn="{StaticResource IconStyle}">
-            <!--<Setter Property="Margin" Value="5,0,0,0"/>-->
-            <Setter Property="HorizontalAlignment" Value="Center"/>
+        <!-- GroupBox.Title.TextBlock (verticalalign center) -->
+        <Style BasedOn="{StaticResource GroupBox.Title.TextBlock}"
+               TargetType="{x:Type TextBlock}" x:Key="GroupBox.Title.TextBlock">
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Foreground" Value="#FFFFFF"/>
         </Style>
-        <!-- [그룹] > [제목] 스타일 -->
-        <Style x:Key="GroupTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="TextWrapping" Value="NoWrap"/>
-            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
-        </Style>
-        <!-- [그룹] > [부제목] 스타일 -->
-        <Style x:Key="GroupSubtitleStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
-            <Setter Property="VerticalAlignment" Value="Top"/>
-            <Setter Property="FontSize" Value="11"/>
-            <Setter Property="TextWrapping" Value="NoWrap"/>
-            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
-        </Style>
-        <!-- [그룹] > [화살표] 스타일 -->
-        <Style x:Key="GroupArrowStyle" TargetType="iconPacks:PackIconMaterial">
-            <Setter Property="Width" Value="11"/>
-            <Setter Property="Height" Value="11"/>
+        <!-- GroupBox.Arrow.Icon (margin 0,5,0,0) -->
+        <Style BasedOn="{StaticResource GroupBox.Arrow.Icon}"
+               TargetType="{x:Type iconPacks:PackIconMaterial}" x:Key="GroupBox.Arrow.Icon">
             <Setter Property="Margin" Value="0,0,5,0"/>
-            <Setter Property="HorizontalAlignment" Value="Right"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Foreground" Value="#FFFFFF"/>
-            <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
-            <Setter Property="SnapsToDevicePixels" Value="True"/>
-        </Style>
-        <!-- [목록] > [큰 제목] 스타일 -->
-        <Style x:Key="ContentBigTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="TextWrapping" Value="NoWrap"/>
-            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
-        </Style>
-        <!-- [목록] > [작은 제목] 스타일 -->
-        <Style x:Key="ContentSmallTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
-            <Setter Property="FontSize" Value="12"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="TextWrapping" Value="NoWrap"/>
-            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
-        </Style>
-        <!-- [목록] > [텍스트박스] 스타일 -->
-        <Style x:Key="ContentTextBoxStyle" TargetType="TextBox">
-            <Setter Property="Margin" Value="0,5,0,0"/>
-            <Setter Property="Padding" Value="3"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="BorderThickness" Value="2"/>
-            <Setter Property="FontFamily" Value="Segoe UI, Meiryo UI, Malgun Gothic"/>
-            <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Style.Triggers>
-                <Trigger Property="IsEnabled" Value="False">
-                    <Setter Property="Background" Value="Gray"/>
-                    <Setter Property="Foreground" Value="White"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-        <!-- [목록] > [체크박스] 스타일 -->
-        <Style x:Key="ContentCheckBoxStyle" TargetType="CheckBox" BasedOn="{StaticResource CheckBoxBaseStyle}">
-            <Setter Property="Margin" Value="0,0,-6,0"/>
-            <Setter Property="HorizontalAlignment" Value="Right"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-        </Style>
-        <!-- [목록] > [경계선] 스타일 -->
-        <Style x:Key="ContentBorderStyle" TargetType="Border">
-            <Setter Property="Margin" Value="10,0"/>
-            <Setter Property="BorderBrush" Value="#40FFFFFF"/>
-            <Setter Property="BorderThickness" Value="0,0,0,1"/>
-            <Setter Property="SnapsToDevicePixels" Value="True"/>
-        </Style>
-        <!-- [툴팁] > [판넬] 스타일 -->
-        <Style x:Key="ToolTipPanelStyle" TargetType="StackPanel">
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="MaxWidth" Value="250"/>
-            <Setter Property="Orientation" Value="Vertical"/>
-        </Style>
-        <!-- [툴팁] > [텍스트] 스타일 -->
-        <Style x:Key="ToolTipTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
-            <Setter Property="TextTrimming" Value="None"/>
-            <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
     </UserControl.Resources>
     <Grid Margin="0,0,2,0">
@@ -125,7 +37,7 @@
                 <!-- [그룹] 언어 -->
                 <Border
                     x:Name="LanguageGroupBox"
-                    Style="{StaticResource GroupBorderStyle}"
+                    Style="{StaticResource GroupBox.Border}"
                     MouseLeftButtonDown="GroupBox_MouseLeftButtonDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -136,18 +48,18 @@
                         <!-- icon -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource GroupIconStyle}"
+                            Style="{StaticResource GroupBox.Icon}"
                             Width="16" Height="13" Kind="Translate"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[SETTING_LANGUAGE_GROUP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="2"
                             x:Name="LanguageGroupBox_Arrow"
-                            Style="{StaticResource GroupArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -165,14 +77,13 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0"
-                            Style="{StaticResource ContentBigTitleStyle}"
+                            Style="{StaticResource Content.Title.Big.TextBlock}"
                             Text="Language"/>
                         <!-- combobox -->
                         <ComboBox
                             Grid.Row="1"
                             x:Name="LanguageComboBox"
-                            Margin="0,5,0,0"
-                            Background="{StaticResource BackgroundBrush}" BorderThickness="2"
+                            Style="{StaticResource Content.ComboBox}"
                             SelectionChanged="LanguageComboBox_SelectionChanged">
                             <ComboBoxItem Content="Korean"/>
                             <ComboBoxItem Content="Chinese"/>
@@ -183,7 +94,7 @@
                         <TextBlock
                             Grid.Row="2"
                             x:Name="LanguageWarningTextBlock" Visibility="Collapsed"
-                            Style="{StaticResource TextBlockBaseStyle}"
+                            Style="{StaticResource Base.TextBlock}"
                             Margin="0,5,0,0" Foreground="{StaticResource RedBrush}"
                             Text="Restart Required"/>
                     </Grid>
@@ -191,7 +102,7 @@
                 <!-- [그룹] 윈도우 알림 -->
                 <Border
                     x:Name="WindowToastGroupBox"
-                    Style="{StaticResource GroupBorderStyle}"
+                    Style="{StaticResource GroupBox.Border}"
                     MouseLeftButtonDown="GroupBox_MouseLeftButtonDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -205,25 +116,25 @@
                         <!-- icon -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource GroupIconStyle}"
+                            Style="{StaticResource GroupBox.Icon}"
                             Width="16" Height="13" Kind="Comment"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[SETTING_TOAST_GROUP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- indicator -->
                         <TextBlock
                             Grid.Column="2"
                             x:Name="WindowToastGroupBox_OnOff"
-                            Style="{StaticResource TextBlockBaseStyle}"
+                            Style="{StaticResource Base.TextBlock}"
                             Margin="0,0,28,0" VerticalAlignment="Center" Foreground="{StaticResource RedBrush}"
                             Text="OFF"/>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="2"
                             x:Name="WindowToastGroupBox_Arrow"
-                            Style="{StaticResource GroupArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -240,29 +151,29 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Column="0"
-                            Style="{StaticResource ContentBigTitleStyle}"
+                            Style="{StaticResource Content.Title.Big.TextBlock}"
                             Text="{Binding Path=[SETTING_TOAST_USE_WIN_TOAST], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Column="1"
                             x:Name="WindowToastCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="WindowToastCheckBox_Checked" Unchecked="WindowToastCheckBox_Unchecked"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <Image HorizontalAlignment="Stretch" 
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <Image HorizontalAlignment="Stretch" Stretch="UniformToFill" StretchDirection="DownOnly" RenderOptions.BitmapScalingMode="HighQuality"
                                        Source="/GFAlarm;component/Resource/image/guide/win_noti_toast.png"/>
-                                <Image Margin="0,5,0,0" HorizontalAlignment="Stretch" 
+                                <Image Margin="0,5,0,0" HorizontalAlignment="Stretch" Stretch="UniformToFill" StretchDirection="DownOnly" RenderOptions.BitmapScalingMode="HighQuality"
                                        Source="/GFAlarm;component/Resource/image/guide/win_noti_traytip.png"/>
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Margin="0,5,0,0" 
                                                   Html="{Binding Path=[SETTING_TOAST_USE_WIN_TOAST_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
                     </Grid>
                     <!-- border -->
-                    <Border Margin="10,5,10,0" Style="{StaticResource ContentBorderStyle}"/>
+                    <Border Margin="10,5,10,0" Style="{StaticResource Content.Border}"/>
                     <!-- 강한 알림 -->
                     <Grid Margin="20,10,20,5" Background="Transparent">
                         <Grid.ColumnDefinitions>
@@ -272,24 +183,24 @@
                         <!-- title -->
                         <uc:HtmlTextBlock
                             Grid.Column="0"
-                            Style="{StaticResource ContentBigTitleStyle}"
+                            Style="{StaticResource Content.Title.Big.TextBlock}"
                             Html="{Binding Path=[SETTING_TOAST_USE_STRONG_WIN_TOAST], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Column="1"
                             x:Name="StrongToastCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="StrongToastCheckBox_Checked" Unchecked="StrongToastCheckBox_Unchecked"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_TOAST_USE_STRONG_WIN_TOAST_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
                     </Grid>
                     <!-- border -->
-                    <Border Margin="10,5,10,0" Style="{StaticResource ContentBorderStyle}"/>
+                    <Border Margin="10,5,10,0" Style="{StaticResource Content.Border}"/>
                     <!-- 음성 알림 -->
                     <Grid Margin="20,10,20,0" Background="Transparent">
                         <Grid.ColumnDefinitions>
@@ -303,26 +214,26 @@
                         <!-- title -->
                         <uc:HtmlTextBlock
                             Grid.Row="0" Grid.Column="0"
-                            Style="{StaticResource ContentBigTitleStyle}"
+                            Style="{StaticResource Content.Title.Big.TextBlock}"
                             Html="{Binding Path=[SETTING_TOAST_USE_VOICE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Row="0" Grid.Column="1"
                             x:Name="VoiceCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="VoiceCheckBox_Checked" Unchecked="VoiceCheckBox_Unchecked"/>
                         <!-- comment -->
                         <uc:HtmlTextBlock
                             Grid.Row="1" Grid.ColumnSpan="2"
                             x:Name="VoiceCommentTextBlock"
-                            Style="{StaticResource TextBlockBaseStyle}"
+                            Style="{StaticResource Base.TextBlock}"
                             Margin="0,3,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
                             FontSize="11" Foreground="#666666" TextWrapping="Wrap"
                             Hyperlink.RequestNavigate="Hyperlink_RequestNavigate"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_TOAST_USE_VOICE_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -336,18 +247,18 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_TOAST_USE_ONLY_ADJUTANT_VOICE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Column="1"
                             x:Name="AdjutantVoiceCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="AdjutantVoiceCheckBox_Checked" Unchecked="AdjutantVoiceCheckBox_Unchecked"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_TOAST_USE_ONLY_ADJUTANT_VOICE_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -361,18 +272,18 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_TOAST_USE_START_VOICE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Column="1"
                             x:Name="StartVoiceCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="StartVoiceCheckBox_Checked" Unchecked="StartVoiceCheckBox_Unchecked"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_TOAST_USE_START_VOICE_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -390,7 +301,7 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0" Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_TOAST_VOICE_VOLUME], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- slider -->
                         <Grid Grid.Row="1" Grid.ColumnSpan="2">
@@ -401,30 +312,19 @@
                             <Slider
                                 Grid.Column="0"
                                 x:Name="VolumeSlider"
-                                Style="{StaticResource SliderBaseStyle}"
                                 MinHeight="8" Height="8" VerticalAlignment="Center"
-                                TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
-                                ValueChanged="VolumeSlider_ValueChanged"/>
+                                TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"/>
                             <!-- counter -->
                             <TextBox
                                 Grid.Column="1"
                                 x:Name="VolumeTextBox"
-                                Margin="8 0 0 1" Padding="0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent"
-                                HorizontalAlignment="Stretch" VerticalAlignment="Center"
-                                TextAlignment="Right"
+                                Style="{StaticResource Content.Slider.TextBox}"
                                 LostFocus="VolumeTextBox_LostFocus"/>
-                            <!--<TextBlock
-                                Grid.Column="1"
-                                Grid.Row="1" Grid.Column="1"
-                                Style="{StaticResource TextBlockBaseStyle}"
-                                Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Run Text="{Binding Path=Value, ElementName=VolumeSlider}"/><Run Text="%"/>
-                            </TextBlock>-->
                         </Grid>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_TOAST_VOICE_VOLUME_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -438,18 +338,18 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_TOAST_USE_SOUNDPLAYER_API], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Column="1"
                             x:Name="SoundPlayerApiCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="SoundPlayerApiCheckBox_Checked" Unchecked="SoundPlayerApiCheckBox_Unchecked"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_TOAST_USE_SOUNDPLAYER_API_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -457,13 +357,13 @@
                     <!-- 테스트 알림 -->
                     <Button
                         x:Name="ToastTestButton"
-                        Style="{StaticResource ButtonBaseStyle}"
+                        Style="{StaticResource Base.Button}"
                         Width="90" Margin="0,10,20,5" Padding="5,4" HorizontalAlignment="Right" VerticalAlignment="Center"
                         FontSize="11"
                         Content="{Binding Path=[SETTING_TOAST_TEST_BUTTON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"
                         Click="ToastTestButton_Click"/>
                     <!-- border -->
-                    <Border Margin="10,5,10,0" Style="{StaticResource ContentBorderStyle}"/>
+                    <Border Margin="10,5,10,0" Style="{StaticResource Content.Border}"/>
                     <!-- 탭 알림 -->
                     <Grid Margin="20,10,20,15" Background="Transparent">
                         <Grid.ColumnDefinitions>
@@ -473,21 +373,21 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_TOAST_USE_TAB], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Column="1"
                             x:Name="TabNotificationCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="TabNotificationCheckBox_Checked" Unchecked="TabNotificationCheckBox_Unchecked"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <Image HorizontalAlignment="Stretch" 
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <Image HorizontalAlignment="Stretch" Stretch="UniformToFill" StretchDirection="DownOnly" RenderOptions.BitmapScalingMode="HighQuality"
                                        Source="/GFAlarm;component/Resource/image/guide/tab_noti.png"/>
                                 <uc:HtmlTextBlock 
-                                    Style="{StaticResource ToolTipTextBlockStyle}"
+                                    Style="{StaticResource Content.ToolTip.TextBlock}"
                                     Margin="0,5,0,0"
                                     Html="{Binding Path=[SETTING_TOAST_USE_TAB_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
@@ -497,7 +397,7 @@
                 <!-- [그룹] 메일 알림 -->
                 <Border
                     x:Name="MailGroupBox"
-                    Style="{StaticResource GroupBorderStyle}"
+                    Style="{StaticResource GroupBox.Border}"
                     MouseLeftButtonDown="GroupBox_MouseLeftButtonDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -511,25 +411,25 @@
                         <!-- icon -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource GroupIconStyle}"
+                            Style="{StaticResource GroupBox.Icon}"
                             Width="16" Height="11" Kind="Email"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[SETTING_MAIL_GROUP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- indicator -->
                         <TextBlock
                             Grid.Column="2"
                             x:Name="MailGroupBox_OnOff"
-                            Style="{StaticResource TextBlockBaseStyle}"
+                            Style="{StaticResource Base.TextBlock}"
                             Margin="0,0,28,0" VerticalAlignment="Center" Foreground="{StaticResource RedBrush}"
                             Text="OFF"/>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="2"
                             x:Name="MailGroupBox_Arrow"
-                            Style="{StaticResource GroupArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -550,29 +450,29 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0" Grid.Column="0"
-                            Style="{StaticResource ContentBigTitleStyle}"
+                            Style="{StaticResource Content.Title.Big.TextBlock}"
                             Text="{Binding Path=[SETTING_MAIL_USE_MAIL], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Row="0" Grid.Column="1"
                             x:Name="MailCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="MailCheckBox_Checked" Unchecked="MailCheckBox_Unchecked"/>
                         <!-- comment -->
                         <uc:HtmlTextBlock
                             Grid.Row="1" Grid.ColumnSpan="2"
                             x:Name="MailCommentTextBlock"
-                            Style="{StaticResource TextBlockBaseStyle}"
+                            Style="{StaticResource Base.TextBlock}"
                             Margin="0,3,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
                             FontSize="11" Foreground="#666666" TextWrapping="Wrap"
                             Hyperlink.RequestNavigate="Hyperlink_RequestNavigate"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <Image HorizontalAlignment="Stretch" 
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <Image HorizontalAlignment="Stretch" Stretch="UniformToFill" StretchDirection="DownOnly" RenderOptions.BitmapScalingMode="HighQuality"
                                        Source="/GFAlarm;component/Resource/image/guide/win_noti_mail.png"/>
                                 <uc:HtmlTextBlock 
-                                    Style="{StaticResource ToolTipTextBlockStyle}"
+                                    Style="{StaticResource Content.ToolTip.TextBlock}"
                                     Margin="0,5,0,0"
                                     Html="{Binding Path=[SETTING_MAIL_USE_MAIL_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
@@ -587,13 +487,13 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_MAIL_SMTP_ADDRESS], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- textbox -->
                         <TextBox
                             Grid.Row="1"
                             x:Name="SmtpHostTextBox"
-                            Style="{StaticResource ContentTextBoxStyle}" 
+                            Style="{StaticResource Content.TextBox}" 
                             LostFocus="SmtpHostTextBox_LostFocus"/>
                     </Grid>
                     <!-- 알림 보낼 메일주소 -->
@@ -605,13 +505,13 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_MAIL_FROM_MAIL_ADDRESS], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- textbox -->
                         <TextBox
                             Grid.Row="1"
                             x:Name="FromMailAddressTextBox"
-                            Style="{StaticResource ContentTextBoxStyle}" 
+                            Style="{StaticResource Content.TextBox}"
                             LostFocus="FromMailAddressTextBox_LostFocus"/>
                     </Grid>
                     <!-- 알림 보낼 메일 앱 비밀번호 (알리미용) -->
@@ -623,13 +523,13 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_MAIL_FROM_MAIL_PASSWORD], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- textbox -->
                         <TextBox
                             Grid.Row="1"
                             x:Name="FromMailPasswordTextBox"
-                            Style="{StaticResource ContentTextBoxStyle}" 
+                            Style="{StaticResource Content.TextBox}" 
                             LostFocus="FromMailPasswordTextBox_LostFocus"/>
                     </Grid>
                     <!-- 알림 받을 메일주소 -->
@@ -641,19 +541,19 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_MAIL_TO_MAIL_ADDRESS], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- textbox -->
                         <TextBox
                             Grid.Row="1"
                             x:Name="ToMailAddressTextBox"
-                            Style="{StaticResource ContentTextBoxStyle}" 
+                            Style="{StaticResource Content.TextBox}" 
                             LostFocus="ToMailAddressTextBox_LostFocus"/>
                     </Grid>
                     <!-- 테스트 알림 -->
                     <Button
                         x:Name="MailTestButton"
-                        Style="{StaticResource ButtonBaseStyle}"
+                        Style="{StaticResource Base.Button}"
                         Width="90" Margin="0,10,20,15" Padding="5,4" HorizontalAlignment="Right" VerticalAlignment="Center"
                         FontSize="11"
                         Content="{Binding Path=[SETTING_MAIL_TEST_BUTTON], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"
@@ -662,7 +562,7 @@
                 <!-- [그룹] 파일 저장 설정 -->
                 <Border
                     x:Name="FileSaveGroupBox"
-                    Style="{StaticResource GroupBorderStyle}"
+                    Style="{StaticResource GroupBox.Border}"
                     MouseLeftButtonDown="GroupBox_MouseLeftButtonDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -676,18 +576,18 @@
                         <!-- icon -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource GroupIconStyle}"
+                            Style="{StaticResource GroupBox.Icon}"
                             Width="16" Height="14" Kind="File"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[SETTING_FILE_GROUP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="2"
                             x:Name="FileSaveGroupBox_Arrow"
-                            Style="{StaticResource GroupArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -704,14 +604,13 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_FILE_ENCODING], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- combobox -->
                         <ComboBox
                             Grid.Row="1"
                             x:Name="FileEncodingComboBox"
-                            Margin="0,5,0,0"
-                            Background="{StaticResource BackgroundBrush}" BorderThickness="2"
+                            Style="{StaticResource Content.ComboBox}"
                             SelectionChanged="FileEncodingComboBox_SelectionChanged">
                             <ComboBoxItem Content="Default"/>
                             <ComboBoxItem Content="UTF-8"/>
@@ -730,26 +629,26 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0" Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_FILE_SAVE_USER_INFO], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Row="0" Grid.Column="1"
                             x:Name="SaveUserInfoCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="SaveUserInfoCheckBox_Checked" Unchecked="SaveUserInfoCheckBox_Unchecked"/>
                         <!-- comment -->
                         <uc:HtmlTextBlock
                             Grid.Row="1" Grid.ColumnSpan="2"
                             x:Name="SaveUserInfoCommentTextBlock"
-                            Style="{StaticResource TextBlockBaseStyle}"
+                            Style="{StaticResource Base.TextBlock}"
                             Margin="0,3,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"
                             FontSize="11" Foreground="#666666" TextWrapping="Wrap" 
                             Hyperlink.RequestNavigate="Hyperlink_RequestNavigate"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_FILE_SAVE_USER_INFO_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -763,18 +662,18 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_FILE_SAVE_ITEM_INFO], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Column="1"
                             x:Name="SaveItemInfoCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="SaveItemInfoCheckBox_Checked" Unchecked="SaveItemInfoCheckBox_Unchecked"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_FILE_SAVE_ITEM_INFO_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -788,18 +687,18 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_FILE_SAVE_DOLL_INFO], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Column="1"
                             x:Name="SaveDollInfoCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="SaveDollInfoCheckBox_Checked" Unchecked="SaveDollInfoCheckBox_Unchecked"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_FILE_SAVE_DOLL_INFO_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -813,18 +712,18 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_FILE_SAVE_EQUIP_INFO], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Column="1"
                             x:Name="SaveEquipInfoCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="SaveEquipInfoCheckBox_Checked" Unchecked="SaveEquipInfoCheckBox_Unchecked"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_FILE_SAVE_EQUIP_INFO_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -838,18 +737,18 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_FILE_SAVE_FAIRY_INFO], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Column="1"
                             x:Name="SaveFairyInfoCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="SaveFairyInfoCheckBox_Checked" Unchecked="SaveFairyInfoCheckBox_Unchecked"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_FILE_SAVE_FAIRY_INFO_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -863,18 +762,18 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_FILE_SAVE_RESCUE_DOLL], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Column="1"
                             x:Name="SaveRescueDollCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="SaveRescueDollCheckBox_Checked" Unchecked="SaveRescueDollCheckBox_Unchecked"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_FILE_SAVE_RESCUE_DOLL_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -892,18 +791,18 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0" Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_FILE_SAVE_THEATER_EXERCISE_WAVE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Row="0" Grid.Column="1"
                             x:Name="SaveTheaterExerciseCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="SaveTheaterExerciseCheckBox_Checked" Unchecked="SaveTheaterExerciseCheckBox_Unchecked"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_FILE_SAVE_THEATER_EXERCISE_WAVE_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -921,26 +820,26 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0" Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_FILE_SAVE_BATTLE_TESTER], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Row="0" Grid.Column="1"
                             x:Name="SaveTesterPresetCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="SaveTesterPresetCheckBox_Checked" Unchecked="SaveTesterPresetCheckBox_Unchecked"/>
                         <!-- comment -->
                         <uc:HtmlTextBlock
                             Grid.Row="1" Grid.ColumnSpan="2"
                             x:Name="SaveTesterPresetCommentTextBlock"
-                            Style="{StaticResource TextBlockBaseStyle}"
+                            Style="{StaticResource Base.TextBlock}"
                             Margin="0,3,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"
                             FontSize="11" Foreground="#666666" TextWrapping="Wrap" 
                             Hyperlink.RequestNavigate="Hyperlink_RequestNavigate"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_FILE_SAVE_BATTLE_TESTER_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -949,7 +848,7 @@
                 <!-- [그룹] 윈도우 설정 -->
                 <Border
                     x:Name="WindowGroupBox"
-                    Style="{StaticResource GroupBorderStyle}"
+                    Style="{StaticResource GroupBox.Border}"
                     MouseLeftButtonDown="GroupBox_MouseLeftButtonDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -963,18 +862,18 @@
                         <!-- icon -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource GroupIconStyle}"
+                            Style="{StaticResource GroupBox.Icon}"
                             Width="16" Height="13" Kind="WindowMaximize"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[SETTING_WINDOW_GROUP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="2"
                             x:Name="WindowGroupBox_Arrow"
-                            Style="{StaticResource GroupArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -991,22 +890,22 @@
                         <!-- title -->
                         <TextBlock 
                             Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_WINDOW_HIDE_TO_TRAY], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}">
                         </TextBlock>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Column="1"
                             x:Name="HideToTrayCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="HideToTrayCheckBox_Checked" Unchecked="HideToTrayCheckBox_Unchecked"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <Image HorizontalAlignment="Stretch" 
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <Image HorizontalAlignment="Stretch" Stretch="UniformToFill" StretchDirection="DownOnly" RenderOptions.BitmapScalingMode="HighQuality"
                                        Source="/GFAlarm;component/Resource/image/guide/minimize_to_tray.png"/>
                                 <uc:HtmlTextBlock 
-                                    Style="{StaticResource ToolTipTextBlockStyle}"
+                                    Style="{StaticResource Content.ToolTip.TextBlock}"
                                     Margin="0,5,0,0"
                                     Html="{Binding Path=[SETTING_WINDOW_HIDE_TO_TRAY_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
@@ -1021,19 +920,19 @@
                         <!-- title -->
                         <TextBlock 
                             Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_WINDOW_STICKY_WINDOW], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}">
                         </TextBlock>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Column="1"
                             x:Name="StickyWindowCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="StickyWindowCheckBox_Checked" Unchecked="StickyWindowCheckBox_Unchecked"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_WINDOW_STICKY_WINDOW_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -1051,7 +950,7 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0" Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_WINDOW_OPACITY], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- slider -->
                         <Grid Grid.Row="1" Grid.ColumnSpan="2">
@@ -1062,29 +961,19 @@
                             <Slider
                                 Grid.Column="0"
                                 x:Name="WindowOpacitySlider"
-                                Style="{StaticResource SliderBaseStyle}"
                                 MinHeight="8" Height="8" VerticalAlignment="Center"
-                                TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
-                                ValueChanged="WindowOpacitySlider_ValueChanged"/>
+                                TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"/>
                             <!-- counter -->
                             <TextBox
                                 Grid.Column="1"
                                 x:Name="WindowOpacityTextBox"
-                                Margin="8 0 0 1" Padding="0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent"
-                                HorizontalAlignment="Stretch" VerticalAlignment="Center"
-                                TextAlignment="Right"
+                                Style="{StaticResource Content.Slider.TextBox}"
                                 LostFocus="WindowOpacityTextBox_LostFocus"/>
-                            <!--<TextBlock
-                                Grid.Column="1"
-                                Style="{StaticResource TextBlockBaseStyle}"
-                                Margin="15,0,0,0" VerticalAlignment="Center">
-                               <Run Text="{Binding Path=Value, ElementName=WindowOpacitySlider}"/><Run Text="%"/>
-                            </TextBlock>-->
                         </Grid>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_WINDOW_OPACITY_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -1103,13 +992,13 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0" Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_WINDOW_COLOR], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- textbox -->
                         <TextBox
                             Grid.Row="1" Grid.Column="0"
                             x:Name="WindowColorTextBox"
-                            Style="{StaticResource ContentTextBoxStyle}"
+                            Style="{StaticResource Content.TextBox}"
                             TextChanged="WindowColorTextBox_TextChanged"/>
                         <!-- example -->
                         <Rectangle
@@ -1120,13 +1009,13 @@
                         <TextBlock
                             Grid.Row="2" Grid.ColumnSpan="2"
                             x:Name="WindowColorWarningTextBlock" Visibility="Collapsed"
-                            Style="{StaticResource TextBlockBaseStyle}"
+                            Style="{StaticResource Base.TextBlock}"
                             Margin="0,5,0,0" Foreground="{StaticResource RedBrush}"
                             Text="Restart Required"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
-                            <StackPanel Style="{StaticResource ToolTipPanelStyle}">
-                                <uc:HtmlTextBlock Style="{StaticResource ToolTipTextBlockStyle}"
+                            <StackPanel Style="{StaticResource Content.ToolTip.StackPanel}">
+                                <uc:HtmlTextBlock Style="{StaticResource Content.ToolTip.TextBlock}"
                                                   Html="{Binding Path=[SETTING_WINDOW_COLOR_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -1135,7 +1024,7 @@
                 <!-- [그룹] 기타 설정 -->
                 <Border
                     x:Name="ExtraGroupBox"
-                    Style="{StaticResource GroupBorderStyle}"
+                    Style="{StaticResource GroupBox.Border}"
                     MouseLeftButtonDown="GroupBox_MouseLeftButtonDown">
                     <Grid Margin="10,0">
                         <Grid.ColumnDefinitions>
@@ -1149,18 +1038,18 @@
                         <!-- icon -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="0"
-                            Style="{StaticResource GroupIconStyle}"
+                            Style="{StaticResource GroupBox.Icon}"
                             Width="16" Height="13" Kind="DiamondStone"/>
                         <!-- title -->
                         <TextBlock
                             Grid.Column="1"
-                            Style="{StaticResource GroupTitleStyle}"
+                            Style="{StaticResource GroupBox.Title.TextBlock}"
                             Text="{Binding Path=[SETTING_EXTRA_GROUP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                         <!-- arrow -->
                         <iconPacks:PackIconMaterial
                             Grid.Column="2"
                             x:Name="ExtraGroupBox_Arrow"
-                            Style="{StaticResource GroupArrowStyle}"
+                            Style="{StaticResource GroupBox.Arrow.Icon}"
                             Kind="ChevronDown"/>
                     </Grid>
                 </Border>
@@ -1177,21 +1066,21 @@
                         <!-- title -->
                         <TextBlock 
                             Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="{Binding Path=[SETTING_EXTRA_USE_CHECK_UPDATE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}">
                         </TextBlock>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Column="1"
                             x:Name="CheckUpdateCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="CheckUpdateCheckBox_Checked" Unchecked="CheckUpdateCheckBox_Unchecked"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
                             <StackPanel
-                                Style="{StaticResource ToolTipPanelStyle}">
+                                Style="{StaticResource Content.ToolTip.StackPanel}">
                                 <uc:HtmlTextBlock
-                                    Style="{StaticResource ToolTipTextBlockStyle}"
+                                    Style="{StaticResource Content.ToolTip.TextBlock}"
                                     Html="{Binding Path=[SETTING_EXTRA_USE_CHECK_UPDATE_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -1209,7 +1098,7 @@
                         <!-- title -->
                         <TextBlock
                             Grid.Row="0" Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="Print Log (Level)"/>
                         <!-- slider -->
                         <Grid Grid.Row="1" Grid.ColumnSpan="2">
@@ -1220,31 +1109,21 @@
                             <Slider
                                 Grid.Column="0"
                                 x:Name="LogLevelSlider"
-                                Style="{StaticResource SliderBaseStyle}"
                                 MinHeight="8" Height="8" VerticalAlignment="Center"
-                                TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
-                                ValueChanged="LogLevelSlider_ValueChanged"/>
+                                TickFrequency="1" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"/>
                             <!-- counter -->
                             <TextBox
                                 Grid.Column="1"
                                 x:Name="LogLevelTextBox"
-                                Margin="8 0 0 1" Padding="0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent"
-                                HorizontalAlignment="Stretch" VerticalAlignment="Center"
-                                TextAlignment="Right"
+                                Style="{StaticResource Content.Slider.TextBox}"
                                 LostFocus="LogLevelTextBox_LostFocus"/>
-                            <!--<TextBlock
-                                Grid.Column="1"
-                                Style="{StaticResource TextBlockBaseStyle}"
-                                Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Run Text="{Binding Path=Value, ElementName=LogLevelSlider}"/><Run Text="L"/>
-                            </TextBlock>-->
                         </Grid>
                         <!-- tooltip -->
                         <Grid.ToolTip>
                             <StackPanel
-                                Style="{StaticResource ToolTipPanelStyle}">
+                                Style="{StaticResource Content.ToolTip.StackPanel}">
                                 <uc:HtmlTextBlock
-                                    Style="{StaticResource ToolTipTextBlockStyle}"
+                                    Style="{StaticResource Content.ToolTip.TextBlock}"
                                     Html="{Binding Path=[SETTING_EXTRA_LOG_LEVEL_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
@@ -1258,27 +1137,27 @@
                         <!-- title -->
                         <TextBlock 
                             Grid.Column="0"
-                            Style="{StaticResource ContentSmallTitleStyle}"
+                            Style="{StaticResource Content.Title.Small.TextBlock}"
                             Text="Print Packet">
                         </TextBlock>
                         <!-- checkbox -->
                         <CheckBox
                             Grid.Column="1"
                             x:Name="LogPacketCheckBox"
-                            Style="{StaticResource ContentCheckBoxStyle}"
+                            Style="{StaticResource Base.CheckBox}"
                             Checked="LogPacketCheckBox_Checked" Unchecked="LogPacketCheckBox_Unchecked"/>
                         <!-- tooltip -->
                         <Grid.ToolTip>
                             <StackPanel
-                                Style="{StaticResource ToolTipPanelStyle}">
+                                Style="{StaticResource Content.ToolTip.StackPanel}">
                                 <uc:HtmlTextBlock
-                                    Style="{StaticResource ToolTipTextBlockStyle}"
+                                    Style="{StaticResource Content.ToolTip.TextBlock}"
                                     Html="{Binding Path=[SETTING_EXTRA_LOG_PACKET_TOOLTIP], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                             </StackPanel>
                         </Grid.ToolTip>
                     </Grid>
                     <!-- border -->
-                    <Border Margin="10,15,10,0" Style="{StaticResource ContentBorderStyle}"/>
+                    <Border Margin="10,15,10,0" Style="{StaticResource Content.Border}"/>
                 </StackPanel>
                 <!-- 프로그램 정보 -->
                 <StackPanel x:Name="ProgramInfoGroupBox" Orientation="Vertical">
@@ -1290,17 +1169,17 @@
                         Source="/GFAlarm;component/Resource/image/box.png" 
                         RenderOptions.BitmapScalingMode="HighQuality" Cursor="Hand"/>
                     <TextBlock
-                        Style="{StaticResource TextBlockBaseStyle}"
+                        Style="{StaticResource Base.TextBlock}"
                         Margin="0,10,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" 
                         TextAlignment="Center">
                         <Run Text="{Binding Path=[PROGRAM_TITLE], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/><LineBreak/>
                         <Run Text="v"/><Run x:Name="VersionTextBlock" Text="0.00"/>
                     </TextBlock>
                     <!-- border -->
-                    <Border Margin="10,10,10,0" Style="{StaticResource ContentBorderStyle}"/>
+                    <Border Margin="10,10,10,0" Style="{StaticResource Content.Border}"/>
                     <!-- developer -->
                     <TextBlock
-                        Style="{StaticResource TextBlockBaseStyle}"
+                        Style="{StaticResource Base.TextBlock}"
                         Margin="0,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"
                         TextAlignment="Center" FontSize="11">
                         <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="https://gall.dcinside.com/mgallery/board/lists?id=micateam">MICATEAM 마이너 갤러리</Hyperlink><LineBreak/>
@@ -1308,36 +1187,36 @@
                         <Run Text="kchang06.thk@gmail.com"/>
                     </TextBlock>
                     <!-- border -->
-                    <Border Margin="10,5,10,0" Style="{StaticResource ContentBorderStyle}"/>
+                    <Border Margin="10,5,10,0" Style="{StaticResource Content.Border}"/>
                     <!-- bug report -->
                     <uc:HtmlTextBlock
                         x:Name="BugReportTextBlock"
-                        Style="{StaticResource TextBlockBaseStyle}"
+                        Style="{StaticResource Base.TextBlock}"
                         Margin="20,5,20,0" HorizontalAlignment="Center" VerticalAlignment="Top"
                         TextWrapping="Wrap" TextAlignment="Center" FontSize="11"
                         Hyperlink.RequestNavigate="Hyperlink_RequestNavigate"
                         Html="{Binding Path=[PROGRAM_BUG_REPORT], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                     <!-- border -->
-                    <Border x:Name="TranslatorBorder" Margin="10,5,10,0" Style="{StaticResource ContentBorderStyle}"/>
+                    <Border x:Name="TranslatorBorder" Margin="10,5,10,0" Style="{StaticResource Content.Border}"/>
                     <!-- translator -->
-                    <uc:HtmlTextBlock Style="{StaticResource TextBlockBaseStyle}"
+                    <uc:HtmlTextBlock Style="{StaticResource Base.TextBlock}"
                                       x:Name="TranslatorTextBlock"
                                       Margin="0,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"
                                       TextAlignment="Center" FontSize="11"
                                       Hyperlink.RequestNavigate="Hyperlink_RequestNavigate"
                                       Html="{Binding Path=[TRANSLATED_BY], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                     <!-- border -->
-                    <Border Margin="10,5,10,0" Style="{StaticResource ContentBorderStyle}"/>
+                    <Border Margin="10,5,10,0" Style="{StaticResource Content.Border}"/>
                     <!-- copyright1 -->
-                    <uc:HtmlTextBlock Style="{StaticResource TextBlockBaseStyle}"
+                    <uc:HtmlTextBlock Style="{StaticResource Base.TextBlock}"
                                       Margin="20,5,20,0" HorizontalAlignment="Center" VerticalAlignment="Top"
                                       TextAlignment="Center" FontSize="11" TextWrapping="Wrap"
                                       Hyperlink.RequestNavigate="Hyperlink_RequestNavigate"
                                       Html="{Binding Path=[PROGRAM_DESCRIPTION], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                     <!-- border -->
-                    <Border Margin="10,5,10,0" Style="{StaticResource ContentBorderStyle}"/>
+                    <Border Margin="10,5,10,0" Style="{StaticResource Content.Border}"/>
                     <!-- copyright2 -->
-                    <uc:HtmlTextBlock Style="{StaticResource TextBlockBaseStyle}"
+                    <uc:HtmlTextBlock Style="{StaticResource Base.TextBlock}"
                                       Margin="20,5,20,15" HorizontalAlignment="Center" VerticalAlignment="Top"
                                       TextAlignment="Center" FontSize="11" TextWrapping="Wrap"
                                       Hyperlink.RequestNavigate="Hyperlink_RequestNavigate"

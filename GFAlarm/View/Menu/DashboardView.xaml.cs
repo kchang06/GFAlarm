@@ -169,6 +169,7 @@ namespace GFAlarm.View.Menu
             ChangeHeight.From = fromHeight;
             ChangeHeight.To = toHeight;
 
+            listBox.BeginAnimation(ListBox.HeightProperty, null);
             listBox.BeginAnimation(ListBox.HeightProperty, ChangeHeight);
         }
 
@@ -528,7 +529,6 @@ namespace GFAlarm.View.Menu
                     DataAnalysisTemplate item = data as DataAnalysisTemplate;
                     Remove(item);
                     this.DataAnalysisList.Add(item);
-                    //if (Parser.Time.GetCurrentMs() < item.endTime - Config.Extra.earlyNotifyMiliseconds)
                     if (TimeUtil.GetCurrentSec() < item.endTime - Config.Extra.earlyNotifySeconds)
                         this.DataAnalysisEndTimes.Add(item.endTime);
                 }
@@ -1167,6 +1167,22 @@ namespace GFAlarm.View.Menu
 
         #region ListBoxControl
 
+        public object Find(object data)
+        {
+            if (data is ProduceDollTemplate)
+            {
+                ProduceDollTemplate target = data as ProduceDollTemplate;
+                foreach (ProduceDollTemplate item in ProduceDollList)
+                {
+                    if (item.slot == target.slot)
+                    {
+                        return item;
+                    }
+                }
+            }
+            return null;
+        }
+
         /// <summary>
         /// 수복현황 인형 찾기
         /// </summary>
@@ -1670,7 +1686,7 @@ namespace GFAlarm.View.Menu
                 arrow.Kind = expand == true ? PackIconMaterialKind.ChevronDown : PackIconMaterialKind.ChevronUp;
 
                 StackPanel itemGroup = this.DashboardStackPanel.FindName(string.Format("{0}", item.Value)) as StackPanel;
-                MoveElement(Config.Dashboard.index[item.Key], itemGroup);
+                MoveElement(Config.Dashboard.index[item.Key] - 2, itemGroup); // 공유전지, 공유보석 그룹박스가 존재하므로 -2
             }
             StackPanel shareBatteryGroup = this.DashboardStackPanel.FindName("ShareBattery") as StackPanel;
             MoveElement(0, shareBatteryGroup);

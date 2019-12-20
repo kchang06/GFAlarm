@@ -35,7 +35,7 @@
     <!-- 윈도우 타이틀바 -->
     <Window.Template>
         <ControlTemplate TargetType="Window">
-            <Grid Background="{StaticResource BackgroundBrush}">
+            <Grid Background="{StaticResource BackgroundBrush1}">
                 <Border x:Name="WindowBorder" BorderBrush="{DynamicResource PrimaryBrush}" BorderThickness="2">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -45,7 +45,7 @@
                         <!-- titlebar -->
                         <Grid x:Name="WindowTitlebarGrid" Grid.Row="0" 
                               Background="{DynamicResource PrimaryBrush}">
-                            <TextBlock Style="{StaticResource TextBlockBaseStyle}" 
+                            <TextBlock Style="{StaticResource Base.TextBlock}" 
                                        Margin="5,0,0,2" HorizontalAlignment="Left" VerticalAlignment="Center"
                                        Text="{Binding Path=[PROGRAM_TITLE], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"/>
                             <StackPanel Orientation="Horizontal"
@@ -53,7 +53,7 @@
                                 <!-- 좌측 붙이기 -->
                                 <Button 
                                     x:Name="StickLeftButton" 
-                                    Style="{StaticResource TitlebarButton}" 
+                                    Style="{StaticResource Titlebar.Button}" 
                                     Width="18" Margin="0,0,0,0" ToolTipService.Placement="Right" 
                                     VerticalAlignment="Center" RenderOptions.BitmapScalingMode="HighQuality"
                                     ToolTip="{Binding Path=[STICK_TO_LEFT], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}" 
@@ -63,7 +63,7 @@
                                 <!-- 우측 붙이기 -->
                                 <Button 
                                     x:Name="StickRightButton" 
-                                    Style="{StaticResource TitlebarButton}" 
+                                    Style="{StaticResource Titlebar.Button}" 
                                     Width="18" Margin="0,0,0,0" ToolTipService.Placement="Right"
                                     VerticalAlignment="Center" RenderOptions.BitmapScalingMode="HighQuality"
                                     ToolTip="{Binding Path=[STICK_TO_RIGHT], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}" 
@@ -75,7 +75,7 @@
                                 <!-- 최소화 -->
                                 <Button 
                                     x:Name="WindowMinimizeButton" 
-                                    Style="{StaticResource TitlebarButton}" 
+                                    Style="{StaticResource Titlebar.Button}" 
                                     Margin="0,6,0,0"
                                     Content="{iconPacks:Material Kind=WindowMinimize, Width=9, Height=9}" 
                                     ToolTip="{Binding Path=[WINDOW_MINIMIZE], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"
@@ -83,7 +83,7 @@
                                 <!-- 종료 -->
                                 <Button 
                                     x:Name="WidnowCloseButton" 
-                                    Style="{StaticResource TitlebarButton}" 
+                                    Style="{StaticResource Titlebar.Button}" 
                                     Margin="0,0,3,1"
                                     Content="{iconPacks:Material Kind=WindowClose, Width=9, Height=9}"
                                     ToolTip="{Binding Path=[WINDOW_CLOSE], Source={x:Static ls:LanguageResources.Instance}, Mode=OneWay}"

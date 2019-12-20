@@ -8,35 +8,22 @@
     StartupUri="Window/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/PresentationFramework.Aero;V3.0.0.0;31bf3856ad364e35;component\themes/aero.normalcolor.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatSlider.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-         
-            <!-- ================================================= -->
-            <!-- ================== 기본 스타일 ================== -->
-            <!-- ================================================= -->
 
             <!-- 폰트 -->
-            <!--<FontFamily x:Key="Mohave">pack://application:,,,/Resource/font/#Mohave</FontFamily>-->
-            <!--<FontFamily x:Key="Mohave">pack://application:,,,/Resource/font/#Mohave</FontFamily>-->
-            <!--<FontFamily x:Key="Mohave">./Resource/font/#Mohave Regular</FontFamily>-->
-            <FontFamily x:Key="Segoe UI">./Resource/font/#Segoe UI</FontFamily>
+            <FontFamily x:Key="./Resource/font/#Segoe UI">./Resource/font/#Segoe UI</FontFamily>
+
+            <!-- ================================================= -->
+            <!-- ================== 색상 스타일 ================== -->
+            <!-- ================================================= -->
 
             <SolidColorBrush x:Key="PrimaryBrush" Color="#FF007ACC"/>
             <SolidColorBrush x:Key="PrimaryDeactiveBrush" Color="#AA007ACC"/>
-            
-            <!--<SolidColorBrush x:Key="HighlightBrush" Color="#FF007ACC"/>-->
-            <!--<Color x:Key="PrimaryButtonOverBrush" A="170" R="0" G="122" B="204"/>-->
-            <!--<Color x:Key="PrimaryButtonNormalBrush" A="0" R="0" G="122" B="204"/>-->
 
-            <SolidColorBrush x:Key="BackgroundBrush" Color="#1E1E1E"/>
-            <SolidColorBrush x:Key="BackgroundBrightBrush" Color="#24292E"/>
-            <SolidColorBrush x:Key="BackgroundBrightBrightBrush" Color="#2D3339"/>
+            <SolidColorBrush x:Key="BackgroundBrush1" Color="#1E1E1E"/>
+            <SolidColorBrush x:Key="BackgroundBrush2" Color="#24292E"/>
+            <SolidColorBrush x:Key="BackgroundBrush3" Color="#2D3339"/>
+            <SolidColorBrush x:Key="BackgroundBrush4" Color="#434D56"/>
+            <SolidColorBrush x:Key="BackgroundBrush5" Color="#5A6772"/>
             
             <SolidColorBrush x:Key="WindowActiveBrush" Color="#FF007ACC"/>
             <SolidColorBrush x:Key="WindowDeactiveBrush" Color="#AA007ACC"/>
@@ -66,54 +53,711 @@
             <SolidColorBrush x:Key="DisconnectBrush" Color="#FFC425"/>
             
             <!-- 제대상태 색상 -->
-            <!--<SolidColorBrush x:Key="EchelonLogisticsBrush" Color="#DE7B13"/>-->
             <SolidColorBrush x:Key="EchelonLogisticsBrush" Color="#EF6C00"/>
-            <!--<SolidColorBrush x:Key="EchelonAutoBattleBrush" Color="#3DAA0D"/>-->
             <SolidColorBrush x:Key="EchelonAutoBattleBrush" Color="#388E3C"/>
             <SolidColorBrush x:Key="EchelonMissionBrush" Color="#1E88E5"/>
 
-            <!-- 툴팁 스타일 -->
-            <Style TargetType="ToolTip">
-                <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
-            </Style>
-            <!-- 슬라이더 스타일 -->
+            
+            
+            <SolidColorBrush x:Key="Brush.White" Color="#ffffff"/>
+            <SolidColorBrush x:Key="Brush.White.Deactive" Color="#aaffffff"/>
 
-            <!-- 슬라이더 스타일 -->
-            <Style x:Key="SliderBaseStyle" TargetType="{x:Type Slider}" BasedOn="{StaticResource FlatSlider}">
-            <!--<Style x:Key="SliderBaseStyle" TargetType="{x:Type Slider}">-->
-                <Setter Property="Cursor" Value="Hand"/>
+            <SolidColorBrush x:Key="Brush.Orange" Color="#ffb400"/>
+            <SolidColorBrush x:Key="Brush.Orange.Deactive" Color="#aaffb400"/>
+
+            <SolidColorBrush x:Key="Brush.Black" Color="#000000"/>
+            <SolidColorBrush x:Key="Brush.Black.Deactive" Color="#aa000000"/>
+            
+            <SolidColorBrush x:Key="Brush.Ammo" Color="#ff9800"/>
+            <SolidColorBrush x:Key="Brush.Mre" Color="#03a9f4"/>
+            
+            <SolidColorBrush x:Key="Brush.Chip.Orange" Color="#ef6b43"/>
+            <SolidColorBrush x:Key="Brush.Chip.Blue" Color="#6f88d9"/>
+            
+            <SolidColorBrush x:Key="Brush.Connect" Color="#b5ff20"/>
+            <SolidColorBrush x:Key="Brush.Disconnect" Color="#ffc425"/>
+
+            <SolidColorBrush x:Key="Brush.Echelon.Status.Logistics" Color="#ef6c00"/>
+            <SolidColorBrush x:Key="Brush.Echelon.Status.AutoBattle" Color="#388e3c"/>
+            <SolidColorBrush x:Key="Brush.Echelon.Status.Mission" Color="#1e88e5"/>
+
+            <!-- https://yeun.github.io/open-color -->
+
+            <SolidColorBrush x:Key="Brush.Gray0" Color="#f8f9fa"/>
+            <SolidColorBrush x:Key="Brush.Gray1" Color="#f1f3f5"/>
+            <SolidColorBrush x:Key="Brush.Gray2" Color="#e9ecef"/>
+            <SolidColorBrush x:Key="Brush.Gray3" Color="#dee2e6"/>
+            <SolidColorBrush x:Key="Brush.Gray4" Color="#ced4da"/>
+            <SolidColorBrush x:Key="Brush.Gray5" Color="#adb5bd"/>
+            <SolidColorBrush x:Key="Brush.Gray6" Color="#868e96"/>
+            <SolidColorBrush x:Key="Brush.Gray7" Color="#495057"/>
+            <SolidColorBrush x:Key="Brush.Gray8" Color="#343a40"/>
+            <SolidColorBrush x:Key="Brush.Gray9" Color="#212529"/>
+
+            <SolidColorBrush x:Key="Brush.Red0" Color="#fff5f5"/>
+            <SolidColorBrush x:Key="Brush.Red1" Color="#ffe3e3"/>
+            <SolidColorBrush x:Key="Brush.Red2" Color="#ffc9c9"/>
+            <SolidColorBrush x:Key="Brush.Red3" Color="#ffa8a8"/>
+            <SolidColorBrush x:Key="Brush.Red4" Color="#ff8787"/>
+            <SolidColorBrush x:Key="Brush.Red5" Color="#ff6b6b"/>
+            <SolidColorBrush x:Key="Brush.Red6" Color="#fa5252"/>
+            <SolidColorBrush x:Key="Brush.Red7" Color="#f03e3e"/>
+            <SolidColorBrush x:Key="Brush.Red8" Color="#e03131"/>
+            <SolidColorBrush x:Key="Brush.Red9" Color="#c92a2a"/>
+
+            <SolidColorBrush x:Key="Brush.Pink0" Color="#fff0f6"/>
+            <SolidColorBrush x:Key="Brush.Pink1" Color="#ffdeeb"/>
+            <SolidColorBrush x:Key="Brush.Pink2" Color="#fcc2d7"/>
+            <SolidColorBrush x:Key="Brush.Pink3" Color="#faa2c1"/>
+            <SolidColorBrush x:Key="Brush.Pink4" Color="#f783ac"/>
+            <SolidColorBrush x:Key="Brush.Pink5" Color="#f06595"/>
+            <SolidColorBrush x:Key="Brush.Pink6" Color="#e64980"/>
+            <SolidColorBrush x:Key="Brush.Pink7" Color="#d6336c"/>
+            <SolidColorBrush x:Key="Brush.Pink8" Color="#c2255c"/>
+            <SolidColorBrush x:Key="Brush.Pink9" Color="#a61e4d"/>
+
+            <SolidColorBrush x:Key="Brush.Grape0" Color="#f8f0fc"/>
+            <SolidColorBrush x:Key="Brush.Grape1" Color="#f3d9fa"/>
+            <SolidColorBrush x:Key="Brush.Grape2" Color="#eebefa"/>
+            <SolidColorBrush x:Key="Brush.Grape3" Color="#e599f7"/>
+            <SolidColorBrush x:Key="Brush.Grape4" Color="#da77f2"/>
+            <SolidColorBrush x:Key="Brush.Grape5" Color="#cc5de8"/>
+            <SolidColorBrush x:Key="Brush.Grape6" Color="#be4bdb"/>
+            <SolidColorBrush x:Key="Brush.Grape7" Color="#ae3ec9"/>
+            <SolidColorBrush x:Key="Brush.Grape8" Color="#9c36b5"/>
+            <SolidColorBrush x:Key="Brush.Grape9" Color="#862e9c"/>
+
+            <SolidColorBrush x:Key="Brush.Blue0" Color="#e7f5ff"/>
+            <SolidColorBrush x:Key="Brush.Blue1" Color="#d0ebff"/>
+            <SolidColorBrush x:Key="Brush.Blue2" Color="#a5d8ff"/>
+            <SolidColorBrush x:Key="Brush.Blue3" Color="#74c0fc"/>
+            <SolidColorBrush x:Key="Brush.Blue4" Color="#4dabf7"/>
+            <SolidColorBrush x:Key="Brush.Blue5" Color="#339af0"/>
+            <SolidColorBrush x:Key="Brush.Blue6" Color="#228be6"/>
+            <SolidColorBrush x:Key="Brush.Blue7" Color="#1c7ed6"/>
+            <SolidColorBrush x:Key="Brush.Blue8" Color="#1971c2"/>
+            <SolidColorBrush x:Key="Brush.Blue9" Color="#1864ab"/>
+
+            <SolidColorBrush x:Key="Brush.Green0" Color="#ebfbee"/>
+            <SolidColorBrush x:Key="Brush.Green1" Color="#d3f9d8"/>
+            <SolidColorBrush x:Key="Brush.Green2" Color="#b2f2bb"/>
+            <SolidColorBrush x:Key="Brush.Green3" Color="#8ce99a"/>
+            <SolidColorBrush x:Key="Brush.Green4" Color="#69db7c"/>
+            <SolidColorBrush x:Key="Brush.Green5" Color="#51cf66"/>
+            <SolidColorBrush x:Key="Brush.Green6" Color="#40c057"/>
+            <SolidColorBrush x:Key="Brush.Green7" Color="#37b24d"/>
+            <SolidColorBrush x:Key="Brush.Green8" Color="#2f9e44"/>
+            <SolidColorBrush x:Key="Brush.Green9" Color="#2b8a3e"/>
+
+            <SolidColorBrush x:Key="Brush.Yellow0" Color="#fff9db"/>
+            <SolidColorBrush x:Key="Brush.Yellow1" Color="#fff3bf"/>
+            <SolidColorBrush x:Key="Brush.Yellow2" Color="#ffec99"/>
+            <SolidColorBrush x:Key="Brush.Yellow3" Color="#ffe066"/>
+            <SolidColorBrush x:Key="Brush.Yellow4" Color="#ffd43b"/>
+            <SolidColorBrush x:Key="Brush.Yellow5" Color="#fcc419"/>
+            <SolidColorBrush x:Key="Brush.Yellow6" Color="#fab005"/>
+            <SolidColorBrush x:Key="Brush.Yellow7" Color="#f59f00"/>
+            <SolidColorBrush x:Key="Brush.Yellow8" Color="#f08c00"/>
+            <SolidColorBrush x:Key="Brush.Yellow9" Color="#e67700"/>
+
+            <SolidColorBrush x:Key="Brush.Orange0" Color="#fff4e6"/>
+            <SolidColorBrush x:Key="Brush.Orange1" Color="#ffe8cc"/>
+            <SolidColorBrush x:Key="Brush.Orange2" Color="#ffd8a8"/>
+            <SolidColorBrush x:Key="Brush.Orange3" Color="#ffc078"/>
+            <SolidColorBrush x:Key="Brush.Orange4" Color="#ffa94d"/>
+            <SolidColorBrush x:Key="Brush.Orange5" Color="#ff922b"/>
+            <SolidColorBrush x:Key="Brush.Orange6" Color="#fd7e14"/>
+            <SolidColorBrush x:Key="Brush.Orange7" Color="#f76707"/>
+            <SolidColorBrush x:Key="Brush.Orange8" Color="#e8590c"/>
+            <SolidColorBrush x:Key="Brush.Orange9" Color="#d9480f"/>
+
+            <!-- ================================================= -->
+            <!-- ================== 기본 스타일 ================== -->
+            <!-- ================================================= -->
+
+            <!-- TextBlock Style -->
+            <Style TargetType="{x:Type TextBlock}" x:Key="Base.TextBlock">
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontFamily" Value="./Resource/font/#Segoe UI, Meiryo UI, Malgun Gothic"/>
+                <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
                 <Setter Property="SnapsToDevicePixels" Value="True"/>
             </Style>
-            <!-- 체크박스 스타일 -->
-            <Style x:Key="CheckBoxBaseStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource MetroCheckBox}">
-            <!--<Style x:Key="CheckBoxBaseStyle" TargetType="{x:Type CheckBox}">-->
+            
+            <!-- TextBox Style -->
+            <Style TargetType="{x:Type TextBox}" x:Key="Base.TextBox">
                 <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="MinWidth" Value="20"/>
+                <Setter Property="MinHeight" Value="25"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontFamily" Value="./Resource/font/#Segoe UI, Meiryo UI, Malgun Gothic"/>
+                <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
+                <Setter Property="CaretBrush" Value="{StaticResource NormalBrush}"/>
+                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
                 <Setter Property="SnapsToDevicePixels" Value="True"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TextBox}">
+                            <Border x:Name="Border"
+                                    Background="{StaticResource BackgroundBrush1}"
+                                    BorderBrush="{StaticResource BackgroundBrush4}" BorderThickness="2">
+                                <ScrollViewer x:Name="PART_ContentHost"
+                                              Margin="5,4"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource BackgroundBrush5}"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="Foreground" Value="{StaticResource BackgroundBrush5}"/>
+                                    <Setter TargetName="Border" Property="Background" Value="Gray"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
             </Style>
-            <!-- 버튼 -->
-            <!--<Style x:Key="ButtonBaseStyle" TargetType="Button">-->
-            <Style x:Key="ButtonBaseStyle" TargetType="Button" BasedOn="{StaticResource SquareButtonStyle}">
+
+            <!-- Button Style -->
+            <Style TargetType="{x:Type Button}" x:Key="Base.Button">
                 <Setter Property="Cursor" Value="Hand"/>
                 <Setter Property="FontSize" Value="12"/>
-                <Setter Property="FontWeight" Value="Regular"/>
                 <Setter Property="FontFamily" Value="./Resource/font/#Segoe UI, Meiryo UI, Malgun Gothic"/>
-                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="BorderBrush" Value="{StaticResource BackgroundBrush4}"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="Background" Value="{StaticResource BackgroundBrush1}"/>
+                <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
+                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="Border"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter x:Name="Content" TextBlock.Foreground="{TemplateBinding Foreground}"
+                                                  Margin="5,4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <!--<Trigger Property="Button.IsPressed" Value="True">
+                                    <Setter TargetName="Border" Property="Background" Value="White"/>
+                                </Trigger>-->
+                                <Trigger Property="Button.IsMouseOver" Value="True">
+                                    <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource BackgroundBrush5}"/>
+                                    <!--<Setter TargetName="Border" Property="Background" Value="{StaticResource BackgroundBrush2}"/>-->
+                                </Trigger>
+                                <Trigger Property="Button.IsEnabled" Value="False">
+                                    <Setter Property="Foreground" Value="Gray"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- CheckBox Style -->
+            <Style TargetType="{x:Type CheckBox}" x:Key="Base.CheckBox">
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Content" Value=""/>
+                <Setter Property="Width" Value="20"/>
+                <Setter Property="Height" Value="20"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type CheckBox}">
+                            <Grid>
+                                <Border x:Name="Border" 
+                                        Background="{StaticResource BackgroundBrush1}"
+                                        BorderThickness="2" BorderBrush="{StaticResource BackgroundBrush4}">
+                                    <iconPacks:PackIconMaterial
+                                        x:Name="Icon" Visibility="Hidden"
+                                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                                        Width="12" Height="12" Foreground="{StaticResource PrimaryBrush}" Kind="CheckBold"/>
+                                </Border>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter TargetName="Icon" Property="Visibility" Value="Visible"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource BackgroundBrush5}"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="Border" Property="Background" Value="Gray"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- ToolTip Style -->
+            <Style TargetType="{x:Type ToolTip}">
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="BorderBrush" Value="{StaticResource BackgroundBrush4}"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="Background" Value="{StaticResource BackgroundBrush1}"/>
+                <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ToolTip}">
+                            <Border x:Name="Border" 
+                                    Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter Margin="{TemplateBinding Margin}"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                                  TextBlock.Foreground="{TemplateBinding Foreground}"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            
+            <!-- Slider Style -->
+            <Style TargetType="{x:Type Slider}">
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Slider">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto" Name="row"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="*" Name="column" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+                                <Border Name="PART_Border"
+                                        BorderThickness="0"
+                                        Padding="4"
+                                        Grid.Row="1" Grid.Column="1"
+                                        Width="{TemplateBinding Width}"
+                                        Height="{TemplateBinding Height}"
+                                        Background="{StaticResource BackgroundBrush3}"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Center" />
+                                <Track Name="PART_Track"
+                                       HorizontalAlignment="Stretch" 
+                                       VerticalAlignment="Center"
+                                       Grid.Row="1" Grid.Column="1"
+                                       Width="{TemplateBinding Width}"
+                                       Height="{TemplateBinding Height}">
+                                    <Track.Thumb>
+                                        <Thumb Style="{DynamicResource SliderThumbStyle}" />
+                                    </Track.Thumb>
+                                </Track>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="PART_Border" Property="Background" Value="{StaticResource BackgroundBrush4}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="SliderThumbStyle" TargetType="{x:Type Thumb}">
+                <Setter Property="OverridesDefaultStyle" Value="False"/>
+                <Setter Property="Height" Value="8"/>
+                <Setter Property="Width" Value="8"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Thumb">
+                            <Rectangle x:Name="ThumbRect"
+                                       Fill="{DynamicResource PrimaryDeactiveBrush}"
+                                       Width="{TemplateBinding Width}"
+                                       Height="{TemplateBinding Height}"/>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ThumbRect" Property="Fill" Value="{StaticResource PrimaryBrush}"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="ThumbRect" Property="Fill" Value="Gray"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <!-- End of the Slider Style -->
+            
+            <!-- ComboBox Style -->
+            <ControlTemplate TargetType="ToggleButton" x:Key="ComboBoxToggleButtonTemplate">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="24"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.ColumnSpan="2" Name="Border"
+                            BorderBrush="{StaticResource BackgroundBrush4}" 
+                            CornerRadius="0" BorderThickness="2"
+                            Background="{StaticResource BackgroundBrush1}"/>
+                    <Border Grid.Column="1" Margin="2" BorderBrush="{StaticResource BackgroundBrush4}" Name="ButtonBorder"
+                            CornerRadius="0, 0, 0, 0" BorderThickness="0,0,0,0" 
+                            Background="{StaticResource BackgroundBrush1}"/>
+                    <Path Name="Arrow" Grid.Column="1" 
+                          Data="M0,0 L0,2 L4,6 L8,2 L8,0 L4,4 z"
+                          HorizontalAlignment="Center" Fill="{StaticResource BackgroundBrush5}"
+                          VerticalAlignment="Center" />
+                </Grid>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="UIElement.IsMouseOver" Value="True">
+                        <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource BackgroundBrush5}"/>
+                    </Trigger>
+                    <Trigger Property="ToggleButton.IsChecked" Value="True">
+                        
+                    </Trigger>
+                    <Trigger Property="UIElement.IsEnabled" Value="False">
+                        <Setter Property="Panel.Background" TargetName="Border" Value="Gray"/>
+                        <Setter Property="Panel.Background" TargetName="ButtonBorder" Value="Gray"/>
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+            <Style TargetType="{x:Type ComboBox}" x:Key="Base.ComboBox">
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+                <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+                <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+                <Setter Property="TextElement.Foreground" Value="{StaticResource NormalBrush}"/>
+                <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}"/>
+                <Setter Property="Control.Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ComboBox">
+                            <Grid>
+                                <ToggleButton Name="ToggleButton" Grid.Column="2"
+                                              ClickMode="Press" Focusable="False"
+                                              IsChecked="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                              Template="{StaticResource ComboBoxToggleButtonTemplate}"/>
+                                <ContentPresenter Name="ContentSite" Margin="7,5,23,6" IsHitTestVisible="False"
+                                                  HorizontalAlignment="Left" VerticalAlignment="Center"                              
+                                                  TextBlock.FontFamily="./Resource/font/#Segoe UI, Meiryo UI, Malgun Gothic"
+                                                  Content="{TemplateBinding ComboBox.SelectionBoxItem}" 
+                                                  ContentTemplate="{TemplateBinding ComboBox.SelectionBoxItemTemplate}"
+                                                  ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"/>
+                                <TextBox Name="PART_EditableTextBox" Margin="5,5,23,6"                     
+                                         IsReadOnly="{TemplateBinding IsReadOnly}"
+                                         Visibility="Hidden" Background="Transparent"
+                                         HorizontalAlignment="Left" VerticalAlignment="Center"
+                                         FontFamily="./Resource/font/#Segoe UI, Meiryo UI, Malgun Gothic"
+                                         Focusable="True" >
+                                    <TextBox.Template>
+                                        <ControlTemplate TargetType="TextBox">
+                                            <Border Name="PART_ContentHost" Focusable="False" />
+                                        </ControlTemplate>
+                                    </TextBox.Template>
+                                </TextBox>
+                                <!-- Popup showing items -->
+                                <Popup Name="Popup" Placement="Bottom"
+                                       Focusable="False" AllowsTransparency="True"
+                                       IsOpen="{TemplateBinding ComboBox.IsDropDownOpen}"
+                                       PopupAnimation="Slide">
+                                    <Grid Name="DropDown" SnapsToDevicePixels="True"
+                                          MinWidth="{TemplateBinding FrameworkElement.ActualWidth}"
+                                          MaxHeight="{TemplateBinding ComboBox.MaxDropDownHeight}">
+                                        <Border Name="DropDownBorder" Background="{StaticResource BackgroundBrush1}" Margin="0"
+                                                CornerRadius="0" BorderThickness="2,0,2,2" 
+                                                BorderBrush="{StaticResource BackgroundBrush4}"/>
+                                        <ScrollViewer Margin="2,0,2,2" SnapsToDevicePixels="True">
+                                            <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained" />
+                                        </ScrollViewer>
+                                    </Grid>
+                                </Popup>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="ItemsControl.HasItems" Value="False">
+                                    <Setter Property="FrameworkElement.MinHeight" TargetName="DropDownBorder" Value="95"/>
+                                </Trigger>
+                                <Trigger Property="UIElement.IsEnabled" Value="False">
+                                    <Setter Property="TextElement.Foreground" Value="{StaticResource BackgroundBrush4}"/>
+                                </Trigger>
+                                <Trigger Property="ItemsControl.IsGrouping" Value="True">
+                                    <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
+                                </Trigger>
+                                <Trigger Property="ComboBox.IsEditable" Value="True">
+                                    <Setter Property="KeyboardNavigation.IsTabStop" Value="False"/>
+                                    <Setter Property="UIElement.Visibility" TargetName="PART_EditableTextBox" Value="Visible"/>
+                                    <Setter Property="UIElement.Visibility" TargetName="ContentSite" Value="Hidden"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="{x:Type ComboBoxItem}">
+                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                            <Border Name="Border"
+                                    Padding="5"
+                                    SnapsToDevicePixels="True">
+                                <ContentPresenter TextBlock.FontFamily="./Resource/font/#Segoe UI, Meiryo UI, Malgun Gothic"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter TargetName="Border" Property="Background" Value="{StaticResource PrimaryBrush}"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Border" Property="Background" Value="{StaticResource BackgroundBrush3}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <!-- End of the ComboBox Style -->
+            
+            <!-- ScrollBar Style -->
+            <Style TargetType="{x:Type RepeatButton}" x:Key="ScrollBarLineButton">
+                <Setter Property="Visibility" Value="Hidden"/>
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+                <Setter Property="OverridesDefaultStyle" Value="true"/>
+                <Setter Property="Focusable" Value="false"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type RepeatButton}">
+                            <!--<Border Name="Border" Margin="1" CornerRadius="2"--> 
+                            <Border Name="Border" Margin="0"
+                                    Background="{StaticResource BackgroundBrush2}" BorderBrush="{StaticResource BackgroundBrush3}" BorderThickness="1">
+                                <Path HorizontalAlignment="Center" VerticalAlignment="Center" Fill="{StaticResource BackgroundBrush3}" Data="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsPressed" Value="true">
+                                    <Setter TargetName="Border" Property="Background" Value="{StaticResource BackgroundBrush5}" />
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="false">
+                                    <Setter Property="Foreground" Value="{StaticResource BackgroundBrush1}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="{x:Type RepeatButton}" x:Key="ScrollBarPageButton">
+                <Setter Property="Visibility" Value="Hidden"/>
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+                <Setter Property="OverridesDefaultStyle" Value="true"/>
+                <Setter Property="IsTabStop" Value="false"/>
+                <Setter Property="Focusable" Value="false"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type RepeatButton}">
+                            <Border Background="{StaticResource BackgroundBrush1}" />
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="{x:Type Thumb}" x:Key="ScrollBarThumb">
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+                <Setter Property="OverridesDefaultStyle" Value="true"/>
+                <Setter Property="IsTabStop" Value="false"/>
+                <Setter Property="Focusable" Value="false"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Thumb}">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" Width="Auto" Margin="0"/>
+                                    <!--Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0"  Width="8" Margin="8,0,-2,0"/>-->
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <ControlTemplate TargetType="{x:Type ScrollBar}" x:Key="VerticalScrollBar">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="0"/>
+                        <RowDefinition Height="0.00001*"/>
+                        <RowDefinition MaxHeight="0"/>
+                    </Grid.RowDefinitions>
+                    <!--<Border Grid.RowSpan="3" CornerRadius="2" Background="Transparent" />-->
+                    <Border Grid.RowSpan="3" Background="Transparent" />
+                    <RepeatButton Grid.Row="0" Style="{StaticResource ScrollBarLineButton}" Height="18" Command="ScrollBar.LineUpCommand" Content="M 0 4 L 8 4 L 4 0 Z" />
+                    <Track Name="PART_Track" Grid.Row="1" IsDirectionReversed="true">
+                        <Track.DecreaseRepeatButton>
+                            <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageUpCommand" />
+                        </Track.DecreaseRepeatButton>
+                        <Track.Thumb>
+                            <!--<Thumb Style="{StaticResource ScrollBarThumb}" Margin="1,0,1,0"--> 
+                            <Thumb x:Name="PART_Thumb" Style="{StaticResource ScrollBarThumb}" Margin="0,0,0,0" 
+                                   Background="{StaticResource BackgroundBrush2}" BorderBrush="{StaticResource BackgroundBrush3}" />
+                        </Track.Thumb>
+                        <Track.IncreaseRepeatButton>
+                            <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageDownCommand" />
+                        </Track.IncreaseRepeatButton>
+                    </Track>
+                    <RepeatButton Grid.Row="3" Style="{StaticResource ScrollBarLineButton}" Height="18" Command="ScrollBar.LineDownCommand" Content="M 0 0 L 4 4 L 8 0 Z"/>
+                </Grid>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter TargetName="PART_Thumb" Property="Background" Value="{StaticResource BackgroundBrush3}"/>
+                        <Setter TargetName="PART_Thumb" Property="BorderBrush" Value="{StaticResource BackgroundBrush3}"/>
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+            <ControlTemplate TargetType="{x:Type ScrollBar}" x:Key="HorizontalScrollBar">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MaxWidth="18"/>
+                        <ColumnDefinition Width="0.00001*"/>
+                        <ColumnDefinition MaxWidth="18"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.ColumnSpan="3" CornerRadius="2" Background="#F0F0F0"/>
+                    <RepeatButton Grid.Column="0"  Style="{StaticResource ScrollBarLineButton}" Width="18" Command="ScrollBar.LineLeftCommand" Content="M 4 0 L 4 8 L 0 4 Z" />
+                    <Track Name="PART_Track" Grid.Column="1" IsDirectionReversed="False">
+                        <Track.DecreaseRepeatButton>
+                            <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageLeftCommand" />
+                        </Track.DecreaseRepeatButton>
+                        <Track.Thumb>
+                            <!--<Thumb Style="{StaticResource ScrollBarThumb}" Margin="0,1,0,1"--> 
+                            <Thumb Style="{StaticResource ScrollBarThumb}" Margin="0,0,0,0" 
+                                   Background="{StaticResource BackgroundBrush2}" BorderBrush="{StaticResource BackgroundBrush3}" />
+                        </Track.Thumb>
+                        <Track.IncreaseRepeatButton>
+                            <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageRightCommand" />
+                        </Track.IncreaseRepeatButton>
+                    </Track>
+                    <RepeatButton Grid.Column="3" Style="{StaticResource ScrollBarLineButton}" Width="18" Command="ScrollBar.LineRightCommand" Content="M 0 0 L 4 4 L 0 8 Z"/>
+                </Grid>
+            </ControlTemplate>
+            <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+                <Setter Property="OverridesDefaultStyle" Value="true"/>
+                <Style.Triggers>
+                    <Trigger Property="Orientation" Value="Horizontal">
+                        <Setter Property="Width" Value="Auto"/>
+                        <Setter Property="Height" Value="18" />
+                        <Setter Property="Template" Value="{StaticResource HorizontalScrollBar}" />
+                    </Trigger>
+                    <Trigger Property="Orientation" Value="Vertical">
+                        <!--<Setter Property="Width" Value="18"/>-->
+                        <Setter Property="Width" Value="Auto"/>
+                        <Setter Property="Height" Value="Auto" />
+                        <Setter Property="Template" Value="{StaticResource VerticalScrollBar}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <!-- Icon Style -->
+            <Style TargetType="{x:Type iconPacks:PackIconMaterial}" x:Key="Base.Icon">
+                <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
                 <Setter Property="SnapsToDevicePixels" Value="True"/>
             </Style>
-            <!-- 텍스트 블록 스타일 -->
-            <Style x:Key="TextBlockBaseStyle" TargetType="TextBlock">
-                <Setter Property="FontSize" Value="12"/>
-                <Setter Property="FontFamily" Value="./Resource/font/#Segoe UI, Meiryo UI, Malgun Gothic"/>
-                <Setter Property="Foreground" Value="#FFFFFF"/>
+            
+            <!-- ListBox Style -->
+            <Style TargetType="{x:Type ListBox}">
                 <Setter Property="SnapsToDevicePixels" Value="True"/>
+                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+                <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Visible"/>
+                <!--<Setter Property="ScrollViewer.CanContentScroll" Value="True"/>-->
+                <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
+                <!--<Setter Property="MaxWidth" Value="Auto"/>-->
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ListBox}">
+                            <ItemsPresenter x:Name="TemplateListBox"/>
+                            <ControlTemplate.Triggers>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="IsGrouping" Value="True" />
+                                        <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="False" />
+                                    </MultiTrigger.Conditions>
+                                </MultiTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
             </Style>
-            <!-- 텍스트박스 스타일 -->
-            <!--<Style TargetType="TextBox">
-                <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
-                <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Style TargetType="{x:Type ListBoxItem}">
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                            <Border x:Name="Border"
+                                    Background="{TemplateBinding Background}"
+                                    BorderThickness="0">
+                                <ContentPresenter/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- ListBox Color Style -->
+            <!--<SolidColorBrush x:Key="ListBox.Static.Background" Color="Transparent" />
+            <SolidColorBrush x:Key="ListBox.Static.Border" Color="Transparent" />
+            <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="Transparent" />
+            <SolidColorBrush x:Key="ListBox.Disabled.Border" Color="Transparent" />-->
+            <!-- ListBox Style -->
+            <!--<Style TargetType="ListBox">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderBrush" Value="Transparent" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ListBox}">
+                            <ItemsPresenter x:Name="TemplateListBox"/>
+                            <ControlTemplate.Triggers>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="IsGrouping" Value="true" />
+                                        <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false" />
+                                    </MultiTrigger.Conditions>
+                                </MultiTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Resources>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                    <ContentPresenter/>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Setter Property="BorderBrush" Value="Transparent"/>
+                                        </Trigger>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Setter Property="BorderBrush" Value="Transparent"/>
+                                        </Trigger>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Setter Property="BorderBrush" Value="Transparent"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Style.Resources>
             </Style>-->
-            <!-- 하이퍼링크 스타일 -->
-            <Style TargetType="Hyperlink">
+
+            <!-- Hyperlink Style -->
+            <Style TargetType="{x:Type Hyperlink}">
                 <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
                 <Setter Property="Foreground" Value="{StaticResource BlueBrush}"/>
                 <Setter Property="TextBlock.TextDecorations" Value="{x:Null}"/>
@@ -126,11 +770,249 @@
             </Style>
 
             <!-- ================================================= -->
+            <!-- ================== 커스텀 스타일 ================ -->
+            <!-- ================================================= -->
+
+            <!-- GroupBox.Border -->
+            <Style TargetType="{x:Type Border}" x:Key="GroupBox.Border">
+                <Setter Property="Height" Value="50"/>
+                <Setter Property="Background" Value="{StaticResource BackgroundBrush2}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource BackgroundBrush1}"/>
+                <Setter Property="BorderThickness" Value="0,0,2,2"/>
+                <Setter Property="Cursor" Value="Hand"/>
+            </Style>
+            <!-- GroupBox.Title -->
+            <Style BasedOn="{StaticResource Base.TextBlock}" 
+                   TargetType="{x:Type TextBlock}" x:Key="GroupBox.Title.TextBlock">
+                <Setter Property="VerticalAlignment" Value="Bottom"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextWrapping" Value="NoWrap"/>
+                <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            </Style>
+            <!-- GroupBox.Subtitle -->
+            <Style BasedOn="{StaticResource Base.TextBlock}" 
+                   TargetType="{x:Type TextBlock}" x:Key="GroupBox.Subtitle.TextBlock">
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="FontSize" Value="11"/>
+                <Setter Property="TextWrapping" Value="NoWrap"/>
+                <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            </Style>
+            <!-- GroupBox.Icon -->
+            <Style TargetType="{x:Type iconPacks:PackIconMaterial}" x:Key="GroupBox.Icon">
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
+            </Style>
+            <!-- GroupBox.Count.Border -->
+            <Style TargetType="{x:Type Border}" x:Key="GroupBox.Count.Border">
+                <Setter Property="Margin" Value="5,-2,8,0"/>
+                <Setter Property="Padding" Value="5,0"/>
+                <Setter Property="Height" Value="18"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="CornerRadius" Value="3"/>
+                <!--<Setter Property="BorderBrush" Value="{StaticResource GrayBrush}"/>-->
+                <Setter Property="Background" Value="{StaticResource BackgroundBrush4}"/>
+            </Style>
+            <!-- GroupBox.Count.TextBlock -->
+            <Style BasedOn="{StaticResource Base.TextBlock}" 
+                   TargetType="{x:Type TextBlock}" x:Key="GroupBox.Count.TextBlock">
+                <Setter Property="Margin" Value="0,-1,0,0"/>
+                <Setter Property="FontSize" Value="11"/>
+                <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+            <!-- GroupBox.Arrow.Icon -->
+            <Style TargetType="{x:Type iconPacks:PackIconMaterial}" x:Key="GroupBox.Arrow.Icon">
+                <Setter Property="Width" Value="11"/>
+                <Setter Property="Height" Value="11"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
+                <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+            </Style>
+            <!-- GroupBox.Guideline.Border-->
+            <Style TargetType="{x:Type Border}" x:Key="GroupBox.Guideline.Border">
+                <Setter Property="BorderBrush" Value="{StaticResource OrangeBrush}"/>
+                <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+            </Style>
+
+            <!-- Content.Title.TextBlock -->
+            <Style BasedOn="{StaticResource Base.TextBlock}"
+                   TargetType="{x:Type TextBlock}" x:Key="Content.Title.TextBlock">
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="TextWrapping" Value="NoWrap"/>
+                <Setter Property="TextTrimming" Value="CharacterEllipsis"/>                
+            </Style>
+            <!-- Content.Title.Big.TextBlock-->
+            <Style BasedOn="{StaticResource Content.Title.TextBlock}" 
+                   TargetType="{x:Type TextBlock}" x:Key="Content.Title.Big.TextBlock">
+                <Setter Property="FontSize" Value="14"/>
+
+            </Style>
+            <!-- Content.Title.Small.TextBlock -->
+            <Style BasedOn="{StaticResource Content.Title.TextBlock}"
+                   TargetType="{x:Type TextBlock}" x:Key="Content.Title.Small.TextBlock">
+                <Setter Property="FontSize" Value="12"/>
+            </Style>
+            <!-- Content.TextBox -->
+            <Style BasedOn="{StaticResource Base.TextBox}" 
+                   TargetType="{x:Type TextBox}" x:Key="Content.TextBox">
+                <Setter Property="Margin" Value="0,5,0,0"/>
+            </Style>
+            <!-- Content.ComboBox -->
+            <Style BasedOn="{StaticResource Base.ComboBox}" 
+                   TargetType="{x:Type ComboBox}" x:Key="Content.ComboBox">
+                <Setter Property="Margin" Value="0,6,0,0"/>
+            </Style>
+            
+            <!-- Content.Slider.TextBox -->
+            <Style TargetType="{x:Type TextBox}" x:Key="Content.Slider.TextBox">
+                <Setter Property="Margin" Value="8,0,0,1"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="TextAlignment" Value="Right"/>
+            </Style>
+            
+            <!-- Content.Border -->
+            <Style TargetType="{x:Type Border}" x:Key="Content.Border">
+                <Setter Property="Margin" Value="10,0"/>
+                <Setter Property="BorderBrush" Value="{StaticResource BackgroundBrush2}"/>
+                <Setter Property="BorderThickness" Value="0,0,0,2"/>
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+            </Style>
+            
+            <!-- Content.ToolTip.StackPanel -->
+            <Style TargetType="{x:Type StackPanel}" x:Key="Content.ToolTip.StackPanel">
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="MaxWidth" Value="250"/>
+                <Setter Property="Orientation" Value="Vertical"/>
+            </Style>
+            <!-- Content.ToolTip.TextBlock -->
+            <Style BasedOn="{StaticResource Base.TextBlock}" 
+                   TargetType="{x:Type TextBlock}" x:Key="Content.ToolTip.TextBlock">
+                <Setter Property="TextTrimming" Value="None"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+            </Style>
+            <!-- Content.ToolTip.Title.TextBlock -->
+            <Style BasedOn="{StaticResource Content.ToolTip.TextBlock}"
+                   TargetType="{x:Type TextBlock}" x:Key="Content.ToolTip.Title.TextBlock">
+                <Setter Property="Margin" Value="3,10,0,5"/>
+                <Setter Property="FontSize" Value="13"/>
+            </Style>
+            <!-- Content.ToolTip.Table.Border -->
+            <Style TargetType="{x:Type Border}" x:Key="Content.ToolTip.Table.Border">
+                <Setter Property="Padding" Value="6,4"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderBrush" Value="{StaticResource BackgroundBrush3}"/>
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+            </Style>
+            <!-- Content.ToolTip.Table.TextBlock -->
+            <Style BasedOn="{StaticResource Content.ToolTip.TextBlock}" 
+                   TargetType="{x:Type TextBlock}" x:Key="Content.ToolTip.Table.TextBlock">
+                <!--<Setter Property="Margin" Value="6,0"/>-->
+                <!--<Setter Property="Padding" Value="3"/>-->
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+
+            <!-- Overlay.Icon -->
+            <Style x:Key="Overlay.Icon" TargetType="{x:Type iconPacks:PackIconMaterial}" BasedOn="{StaticResource Base.Icon}">
+                <Setter Property="Margin" Value="0,0,0,60"/>
+                <Setter Property="Width" Value="64"/>
+                <Setter Property="Height" Value="64"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Foreground" Value="#FFFFFFFF"/>
+            </Style>
+            <!-- Overlay.TextBlock -->
+            <Style x:Key="Overlay.TextBlock" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource Base.TextBlock}">
+                <Setter Property="Margin" Value="0,90,0,0"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextAlignment" Value="Center"/>
+                <Setter Property="Foreground" Value="#FFFFFFFF"/>
+            </Style>
+
+            <!-- Item.Template -->
+            <Style TargetType="{x:Type Grid}" x:Key="Item.Template">
+                <Setter Property="Height" Value="40"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="ToolTipService.Placement" Value="Right"/>
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+            </Style>
+            <!-- Item.Slot -->
+            <Style BasedOn="{StaticResource Base.TextBlock}" 
+                   TargetType="{x:Type TextBlock}" x:Key="Item.Slot">
+                <Setter Property="Margin" Value="5,0,0,5"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="40"/>
+                <Setter Property="Foreground" Value="{StaticResource Brush.Gray8}"/>
+            </Style>
+            <!-- Item.Title -->
+            <Style BasedOn="{StaticResource Base.TextBlock}" 
+                   TargetType="{x:Type TextBlock}" x:Key="Item.Title">
+                <Setter Property="Margin" Value="30,1,0,0"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="TextWrapping" Value="NoWrap"/>
+                <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            </Style>
+            <!-- Item.Subtitle -->
+            <Style BasedOn="{StaticResource Base.TextBlock}" 
+                   TargetType="{x:Type TextBlock}" x:Key="Item.Subtitle">
+                <Setter Property="Margin" Value="30,0,0,4"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Bottom"/>
+                <Setter Property="Foreground" Value="{StaticResource Brush.Gray4}"/>
+                <Setter Property="TextWrapping" Value="NoWrap"/>
+                <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            </Style>
+            <!-- Item.RemainTime -->
+            <Style BasedOn="{StaticResource Base.TextBlock}" 
+                   TargetType="{x:Type TextBlock}" x:Key="Item.RemainTime">
+                <Setter Property="Margin" Value="0,1,5,0"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
+            </Style>
+            <!-- Item.EndTime -->
+            <Style BasedOn="{StaticResource Base.TextBlock}" 
+                   TargetType="{x:Type TextBlock}" x:Key="Item.EndTime">
+                <Setter Property="Margin" Value="0,0,5,4"/>
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="VerticalAlignment" Value="Bottom"/>
+                <Setter Property="Foreground" Value="{StaticResource Brush.Gray4}"/>
+            </Style>
+            <!-- Item.Delimiter -->
+            <Style TargetType="{x:Type Border}" x:Key="Item.Delimiter">
+                <Setter Property="Margin" Value="5,0"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Bottom"/>
+                <Setter Property="BorderBrush" Value="{StaticResource BackgroundBrush2}"/>
+                <Setter Property="BorderThickness" Value="0,0,0,2"/>
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+            </Style>
+
+            <!-- ================================================= -->
             <!-- ================ 타이틀 바 스타일 =============== -->
             <!-- ================================================= -->
 
-            <!-- Titlebar Button 스타일 -->
-            <Style x:Key="TitlebarButton" TargetType="Button">
+            <!-- Titlebar.Button -->
+            <Style TargetType="{x:Type Button}" x:Key="Titlebar.Button">
                 <Setter Property="Width" Value="20"/>
                 <Setter Property="Height" Value="24"/>
                 <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -145,7 +1027,7 @@
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Opacity="{TemplateBinding Opacity}">
                                 <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
                                     <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
                                 </Grid>
@@ -160,8 +1042,8 @@
                 </Style.Triggers>
             </Style>
 
-            <!-- Titlebar ToggleButton 스타일 -->
-            <Style x:Key="TitlebarToggleButton" TargetType="ToggleButton">
+            <!-- Titlebar.ToggleButton -->
+            <Style TargetType="{x:Type ToggleButton}" x:Key="Titlebar.ToggleButton">
                 <Setter Property="Width" Value="20"/>
                 <Setter Property="Height" Value="24"/>
                 <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -176,7 +1058,7 @@
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="ToggleButton">
-                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Opacity="{TemplateBinding Opacity}">
                                 <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
                             </Border>
                         </ControlTemplate>
@@ -193,8 +1075,8 @@
             <!-- =============== 사이드 메뉴 스타일 ============== -->
             <!-- ================================================= -->
 
-            <!-- Menu > Button 스타일 -->
-            <Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}">
+            <!-- Menu.Button -->
+            <Style TargetType="{x:Type Button}" x:Key="Menu.Button">
                 <Setter Property="Padding" Value="0"/>
                 <Setter Property="Width" Value="32"/>
                 <Setter Property="Height" Value="32"/>
@@ -245,8 +1127,8 @@
                 </Setter>
             </Style>
             
-            <!-- Menu > ToggleButton 스타일 -->
-            <Style x:Key="MenuToggleButtonStyle" TargetType="ToggleButton">
+            <!-- Menu.ToggleButton -->
+            <Style TargetType="{x:Type ToggleButton}" x:Key="Menu.ToggleButton">
                 <Setter Property="Padding" Value="0"/>
                 <Setter Property="Width" Value="32"/>
                 <Setter Property="Height" Value="32"/>
@@ -309,57 +1191,12 @@
             </Style>
 
             <!-- ================================================= -->
-            <!-- ================ 헤더 메뉴 스타일 =============== -->
-            <!-- ================================================= -->
-            <Style x:Key="HeaderDropdownStyle" TargetType="Canvas">
-                <Style.Triggers>
-                    <Trigger Property="IsEnabled" Value="True">
-                        <Setter Property="Visibility" Value="Visible"/>
-                    <!--<Trigger Property="Canvas.IsEnabled" Value="True">-->
-                        <!--<Trigger.EnterActions>
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" >
-                                        <DiscreteObjectKeyFrame KeyTime="0:0:0.0">
-                                            <DiscreteObjectKeyFrame.Value>
-                                                <Visibility>Visible</Visibility>
-                                            </DiscreteObjectKeyFrame.Value>
-                                        </DiscreteObjectKeyFrame>
-                                    </ObjectAnimationUsingKeyFrames>
-                                    <DoubleAnimation Duration="0:0:0.05" 
-                                                                        Storyboard.TargetProperty="Opacity" 
-                                                                        From="0" To="1"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </Trigger.EnterActions>
-                        <Trigger.ExitActions>
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <DoubleAnimation Duration="0:0:0.05" 
-                                                                        Storyboard.TargetProperty="Opacity" 
-                                                                        From="1" To="0"/>
-                                    <ObjectAnimationUsingKeyFrames  Storyboard.TargetProperty="Visibility" >
-                                        <DiscreteObjectKeyFrame KeyTime="0:0:0.05">
-                                            <DiscreteObjectKeyFrame.Value>
-                                                <Visibility>Collapsed</Visibility>
-                                            </DiscreteObjectKeyFrame.Value>
-                                        </DiscreteObjectKeyFrame>
-                                    </ObjectAnimationUsingKeyFrames>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </Trigger.ExitActions>-->
-                    </Trigger>
-                    <!--<Trigger Property="Canvas.IsEnabled" Value="False">
-                        <Setter Property="Opacity" Value="0"/>
-                        <Setter Property="Visibility" Value="Collapsed"/>
-                    </Trigger>-->
-                </Style.Triggers>
-            </Style>
-
-            <!-- ================================================= -->
             <!-- ================= 상태 바 스타일 ================ -->
             <!-- ================================================= -->
-            <Style x:Key="StatusbarTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+            
+            <!-- Statusbar.TextBlock -->
+            <Style BasedOn="{StaticResource Base.TextBlock}"
+                   TargetType="{x:Type TextBlock}" x:Key="Statusbar.TextBlock">
                 <!--<Setter Property="Margin" Value="3,2,3,0"/>-->
                 <Setter Property="Margin" Value="3,1,3,0"/>
                 <Setter Property="FontFamily" Value="Gulim"/>
@@ -371,362 +1208,6 @@
                 <Setter Property="TextOptions.TextHintingMode" Value="Fixed"/>
                 <Setter Property="SnapsToDevicePixels" Value="True"/>
             </Style>
-
-            <!-- ================================================= -->
-            <!-- ================== 기본 스타일 ================== -->
-            <!-- ================================================= -->
-            
-            <!-- TextBlock -->
-            <Style TargetType="{x:Type TextBlock}">
-                <Setter Property="FontSize" Value="12"/>
-                <Setter Property="FontFamily" Value="./Resource/font/#Segoe UI, Meiryo UI, Malgun Gothic"/>
-                <Setter Property="Foreground" Value="#FFFFFF"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-            </Style>
-            
-            <!-- TextBox -->
-            <Style TargetType="TextBox">
-                <Setter Property="FontSize" Value="12"/>
-                <Setter Property="FontFamily" Value="./Resource/font/#Segoe UI, Meiryo UI, Malgun Gothic"/>
-                <Setter Property="Foreground" Value="#FFFFFF"/>
-                <Setter Property="Background" Value="Transparent"/>
-                <Setter Property="CaretBrush" Value="#FFFFFF"/>
-                <Setter Property="BorderThickness" Value="2"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-                <Style.Triggers>
-                    <Trigger Property="IsFocused" Value="True">
-                        <Setter Property="BorderBrush" Value="Blue"/>
-                        <Setter Property="BorderThickness" Value="2"/>
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
-            
-            <!-- PasswordBox -->
-            <Style TargetType="PasswordBox">
-                <Setter Property="FontSize" Value="12"/>
-                <Setter Property="FontFamily" Value="./Resource/font/#Segoe UI, Meiryo UI, Malgun Gothic"/>
-                <Setter Property="Foreground" Value="#FFFFFF"/>
-                <Setter Property="Background" Value="Transparent"/>
-                <Setter Property="BorderThickness" Value="2"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-            </Style>
-            
-            <!-- Button -->
-            <Style TargetType="Button" BasedOn="{StaticResource SquareButtonStyle}">
-            <!--<Style TargetType="Button">-->
-                <Setter Property="Cursor" Value="Hand"/>
-                <Setter Property="FontSize" Value="12"/>
-                <Setter Property="FontFamily" Value="./Resource/font/#Segoe UI, Meiryo UI, Malgun Gothic"/>
-                <Setter Property="FontWeight" Value="Regular"/>
-                <Setter Property="Foreground" Value="#FFFFFF"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-            </Style>
-            
-            <!-- CheckBox -->
-            <Style TargetType="CheckBox" BasedOn="{StaticResource MetroCheckBox}">
-            <!--<Style TargetType="CheckBox">-->
-                <Setter Property="Cursor" Value="Hand"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-            </Style>
-            
-            <!-- Slider --> 
-            <Style TargetType="Slider" BasedOn="{StaticResource FlatSlider}">
-            <!--<Style TargetType="Slider">-->
-                <Setter Property="Cursor" Value="Hand"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-            </Style>
-            
-            <!-- ListBox Color Style -->
-            <SolidColorBrush x:Key="ListBox.Static.Background" Color="Transparent" />
-            <SolidColorBrush x:Key="ListBox.Static.Border" Color="Transparent" />
-            <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="Transparent" />
-            <SolidColorBrush x:Key="ListBox.Disabled.Border" Color="Transparent" />
-            <!-- ListBox -->
-            <Style TargetType="ListBox">
-                <Setter Property="Background" Value="Transparent" />
-                <Setter Property="BorderBrush" Value="Transparent" />
-                <Setter Property="BorderThickness" Value="0" />
-                <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
-                <Setter Property="VerticalContentAlignment" Value="Center" />
-                <Setter Property="HorizontalAlignment" Value="Stretch"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type ListBox}">
-                            <ItemsPresenter x:Name="TemplateListBox"/>
-                            <ControlTemplate.Triggers>
-                                <MultiTrigger>
-                                    <MultiTrigger.Conditions>
-                                        <Condition Property="IsGrouping" Value="true" />
-                                        <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false" />
-                                    </MultiTrigger.Conditions>
-                                </MultiTrigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-                <Style.Resources>
-                    <Style TargetType="{x:Type ListBoxItem}">
-                        <Setter Property="Background" Value="Transparent"/>
-                        <Setter Property="BorderBrush" Value="Transparent"/>
-                        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                                    <ContentPresenter/>
-                                    <ControlTemplate.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="Transparent"/>
-                                            <Setter Property="BorderBrush" Value="Transparent"/>
-                                        </Trigger>
-                                        <Trigger Property="IsSelected" Value="True">
-                                            <Setter Property="Background" Value="Transparent"/>
-                                            <Setter Property="BorderBrush" Value="Transparent"/>
-                                        </Trigger>
-                                        <Trigger Property="IsEnabled" Value="False">
-                                            <Setter Property="Background" Value="Transparent"/>
-                                            <Setter Property="BorderBrush" Value="Transparent"/>
-                                        </Trigger>
-                                    </ControlTemplate.Triggers>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </Style.Resources>
-            </Style>
-
-            <!-- Icon -->
-            <Style x:Key="IconStyle" TargetType="iconPacks:PackIconMaterial">
-                <!--<Setter Property="HorizontalAlignment" Value="Center"/>
-                <Setter Property="VerticalAlignment" Value="Center"/>-->
-                <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-            </Style>
-
-            <!-- ================================================= -->
-            <!-- ================ 커스텀 스타일 ================== -->
-            <!-- ================================================= -->
-            
-            <!-- ToolTip > StackPanel 스타일 -->
-            <Style x:Key="ToolTipStackPanelStyle" TargetType="{x:Type StackPanel}">
-                <Setter Property="MaxWidth" Value="220"/>
-                <Setter Property="Orientation" Value="Vertical"/>
-                <Setter Property="Margin" Value="5"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-            </Style>
-            
-            <!-- ToolTip > StackPanel > TextBlock 스타일 -->
-            <Style x:Key="ToolTipTextBlockStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseStyle}">
-                <Setter Property="TextWrapping" Value="Wrap"/>
-            </Style>
-            
-            <!-- ToolTip > Title 스타일 -->
-            <Style x:Key="ToolTipTitleStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseStyle}">
-                <Setter Property="Margin" Value="3,10,0,5"/>
-                <Setter Property="FontSize" Value="13"/>
-                <!--<Setter Property="FontWeight" Value="Bold"/>-->
-            </Style>
-            <!-- ToolTip > Table 스타일 -->
-            <Style x:Key="ToolTipTableStyle" TargetType="{x:Type Border}">
-                <Setter Property="Padding" Value="6,4"/>
-                <Setter Property="Background" Value="Transparent"/>
-                <!--<Setter Property="BorderBrush" Value="#FF7E7E7E"/>-->
-                <Setter Property="BorderBrush" Value="#30FFFFFF"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-            </Style>
-            <!-- ToolTip > Table Text 스타일 -->
-            <Style x:Key="ToolTipTableTextStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseStyle}">
-                <!--<Setter Property="Margin" Value="6,0"/>-->
-                <!--<Setter Property="Padding" Value="3"/>-->
-                <Setter Property="HorizontalAlignment" Value="Left"/>
-                <Setter Property="VerticalAlignment" Value="Center"/>
-                <Setter Property="FontFamily" Value="./Resource/font/#Segoe UI"/>
-            </Style>
-
-            <!-- Group > Grid 스타일 -->
-            <Style x:Key="GroupGridStyle" TargetType="{x:Type Grid}">
-                <Setter Property="Cursor" Value="Hand"/>
-                <Setter Property="Height" Value="32"/>
-                <Setter Property="Background" Value="Transparent"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-            </Style>
-            <!-- Group > Guide 스타일 -->
-            <Style x:Key="GroupGuideStyle" TargetType="{x:Type Border}">
-                <Setter Property="Height" Value="1"/>
-                <Setter Property="BorderThickness" Value="0"/>
-                <Setter Property="Background" Value="#FFB400"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-            </Style>
-            <!-- Group > Border 스타일 -->
-            <Style x:Key="GroupBorderStyle" TargetType="{x:Type Border}">
-                <Setter Property="Background" Value="{StaticResource BackgroundBrightBrush}"/>
-                <Setter Property="BorderBrush" Value="{StaticResource BackgroundBrush}"/>
-                <!--<Setter Property="BorderThickness" Value="0,0,1,1"/>-->
-                <Setter Property="BorderThickness" Value="0,0,2,2"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-            </Style>
-            <!-- Group > Icon 스타일 -->
-            <Style x:Key="GroupIconStyle" TargetType="{x:Type iconPacks:PackIconMaterial}" BasedOn="{StaticResource IconStyle}">
-                <Setter Property="Margin" Value="8,-1,0,0"/>
-                <Setter Property="HorizontalAlignment" Value="Left"/>
-                <Setter Property="VerticalAlignment" Value="Center"/>
-                <Setter Property="Foreground" Value="#FFFFFF"/>
-            </Style>
-           
-            <!-- Group > Arrow 스타일 -->
-            <Style x:Key="GroupArrowStyle" TargetType="{x:Type iconPacks:PackIconMaterial}">
-                <Setter Property="Width" Value="11"/>
-                <Setter Property="Height" Value="11"/>
-                <Setter Property="Margin" Value="0,-1,10,0"/>
-                <Setter Property="HorizontalAlignment" Value="Right"/>
-                <Setter Property="VerticalAlignment" Value="Center"/>
-                <Setter Property="Foreground" Value="#FFFFFF"/>
-                <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-            </Style>
-
-            <!-- GroupBox > Border 스타일 -->
-            <Style x:Key="GroupBoxBorderStyle" TargetType="Border">
-                <Setter Property="Height" Value="32"/>
-                <Setter Property="Background" Value="{StaticResource BackgroundBrightBrush}"/>
-                <Setter Property="BorderBrush" Value="{StaticResource BackgroundBrush}"/>
-                <Setter Property="BorderThickness" Value="0,0,2,2"/>
-                <Setter Property="Cursor" Value="Hand"/>
-            </Style>
-            <!-- GroupBox > Icon 스타일 -->
-            <Style x:Key="GroupBoxIconStyle" TargetType="iconPacks:PackIconMaterial" BasedOn="{StaticResource IconStyle}">
-                <Setter Property="VerticalAlignment" Value="Center"/>
-                <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
-            </Style>
-            <!-- GroupBox > Title 스타일 -->
-            <Style x:Key="GroupBoxTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
-                <Setter Property="Margin" Value="5,0,0,0"/>
-                <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
-                <Setter Property="VerticalAlignment" Value="Center"/>
-                <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
-                <Setter Property="TextWrapping" Value="NoWrap"/>
-            </Style>
-            <!-- GroupBox > Count > Border 스타일 -->
-            <Style x:Key="GroupBoxCountBorderStyle" TargetType="Border">
-                <Setter Property="Background" Value="{StaticResource GrayBrush}"/>
-                <Setter Property="Margin" Value="5,-2,8,0"/>
-                <Setter Property="Padding" Value="5,0"/>
-                <!--<Setter Property="Width" Value="24"/>-->
-                <Setter Property="Height" Value="18"/>
-                <Setter Property="BorderThickness" Value="0"/>
-                <Setter Property="BorderBrush" Value="Transparent"/>
-                <Setter Property="CornerRadius" Value="3"/>
-            </Style>
-            <!-- GroupBox > Count > TextBlock 스타일 -->
-            <Style x:Key="GroupBoxCountTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
-                <Setter Property="Margin" Value="0,-1,0,0"/>
-                <Setter Property="FontSize" Value="11"/>
-                <Setter Property="FontFamily" Value="./Resource/font/#Segoe UI, Meiryo UI Bold, Malgun Gothic Bold"/>
-                <Setter Property="Foreground" Value="White"/>
-                <Setter Property="HorizontalAlignment" Value="Center"/>
-                <Setter Property="VerticalAlignment" Value="Center"/>
-            </Style>
-            <!-- Group > Arrow 스타일 -->
-            <Style x:Key="GroupBoxArrowStyle" TargetType="{x:Type iconPacks:PackIconMaterial}">
-                <Setter Property="Width" Value="11"/>
-                <Setter Property="Height" Value="11"/>
-                <Setter Property="Margin" Value="0,-1,0,0"/>
-                <Setter Property="HorizontalAlignment" Value="Right"/>
-                <Setter Property="VerticalAlignment" Value="Center"/>
-                <Setter Property="Foreground" Value="#FFFFFF"/>
-                <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-            </Style>
-
-            <!-- Overlay > Icon 스타일 -->
-            <Style x:Key="OverlayIconStyle" TargetType="{x:Type iconPacks:PackIconMaterial}" BasedOn="{StaticResource IconStyle}">
-                <Setter Property="Margin" Value="0,0,0,60"/>
-                <Setter Property="Width" Value="64"/>
-                <Setter Property="Height" Value="64"/>
-                <Setter Property="HorizontalAlignment" Value="Center"/>
-                <Setter Property="VerticalAlignment" Value="Center"/>
-                <Setter Property="Foreground" Value="#FFFFFFFF"/>
-            </Style>
-            <!-- Overlay > TextBlock 스타일 -->
-            <Style x:Key="OverlayTextStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseStyle}">
-                <Setter Property="Margin" Value="0,90,0,0"/>
-                <Setter Property="HorizontalAlignment" Value="Center"/>
-                <Setter Property="VerticalAlignment" Value="Center"/>
-                <Setter Property="FontSize" Value="14"/>
-                <Setter Property="TextAlignment" Value="Center"/>
-                <Setter Property="Foreground" Value="#FFFFFFFF"/>
-            </Style>
-            
-            <!-- ListBox > Template 스타일 -->
-            <Style x:Key="ItemTemplateStyle" TargetType="{x:Type Grid}">
-                <Setter Property="Height" Value="40"/>
-                <Setter Property="Background" Value="Transparent"/>
-                <Setter Property="ToolTipService.Placement" Value="Right"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-            </Style>
-            <!-- ListBox > Slot 스타일 -->
-            <Style x:Key="ItemSlotStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseStyle}">
-                <Setter Property="Margin" Value="5,0,0,5"/>
-                <Setter Property="HorizontalAlignment" Value="Left"/>
-                <Setter Property="VerticalAlignment" Value="Center"/>
-                <Setter Property="FontSize" Value="40"/>
-                <Setter Property="Foreground" Value="#10FFFFFF"/>
-            </Style>
-            <!-- ListBox > Title 스타일 -->
-            <Style x:Key="ItemTitleStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseStyle}">
-                <Setter Property="Margin" Value="30,1,0,0"/>
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="HorizontalAlignment" Value="Left"/>
-                <Setter Property="VerticalAlignment" Value="Top"/>
-                <Setter Property="TextWrapping" Value="NoWrap"/>
-                <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
-            </Style>
-            <!-- ListBox > Subtitle 스타일 -->
-            <Style x:Key="ItemSubtitleStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseStyle}">
-                <Setter Property="Margin" Value="30,0,0,4"/>
-                <Setter Property="HorizontalAlignment" Value="Left"/>
-                <Setter Property="VerticalAlignment" Value="Bottom"/>
-                <Setter Property="Foreground" Value="#CCFFFFFF"/>
-                <Setter Property="TextWrapping" Value="NoWrap"/>
-                <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
-            </Style>
-            <!-- ListBox > RemainTime 스타일 -->
-            <Style x:Key="ItemRemainTimeStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseStyle}">
-                <Setter Property="Margin" Value="0,1,5,0"/>
-                <Setter Property="FontFamily" Value="./Resource/font/#Segoe UI"/>
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="HorizontalAlignment" Value="Right"/>
-                <Setter Property="VerticalAlignment" Value="Top"/>
-                <Setter Property="Foreground" Value="#FFFFFF"/>
-            </Style>
-            <!-- ListBox > EndTime 스타일 -->
-            <Style x:Key="ItemEndTimeStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseStyle}">
-                <Setter Property="Margin" Value="0,0,5,4"/>
-                <Setter Property="HorizontalAlignment" Value="Right"/>
-                <Setter Property="VerticalAlignment" Value="Bottom"/>
-                <Setter Property="Foreground" Value="#CCFFFFFF"/>
-            </Style>
-            <!-- ListBox > Delimiter 스타일 -->
-            <Style x:Key="ItemDelimiterStyle" TargetType="{x:Type Border}">
-                <Setter Property="Height" Value="1"/>
-                <Setter Property="Margin" Value="5,0"/>
-                <Setter Property="BorderBrush" Value="#10FFFFFF"/>
-                <Setter Property="BorderThickness" Value="1"/>
-                <Setter Property="HorizontalAlignment" Value="Stretch"/>
-                <Setter Property="VerticalAlignment" Value="Bottom"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-            </Style>
-
-            <Style x:Key="SettingTextBlockStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBaseStyle}">
-                <Setter Property="TextWrapping" Value="NoWrap"/>
-                <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
-            </Style>
-
-            <!-- ================================================= -->
-            <!-- ====================== 기타 ===================== -->
-            <!-- ================================================= -->
-            <!-- HTML 텍스트 박스 스타일 -->
-            <!--<uc:HtmlFormatter x:Key="HtmlFormatter"/>-->
 
         </ResourceDictionary>
     </Application.Resources>

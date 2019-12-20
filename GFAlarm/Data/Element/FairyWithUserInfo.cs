@@ -175,13 +175,13 @@ namespace GFAlarm.Data.Element
                     JObject fairy = GameData.Fairy.GetData(this.no);
                     if (fairy != null)
                     {
-                        this.name = GameData.Fairy.GetFairyName(this.no);
+                        this.name = GameData.Fairy.GetName(this.no);
                         this.category = Parser.Json.ParseString(fairy["category"]);
                     }
-                    JObject trait = GameData.Fairy.GetTrait(this.traitId);
+                    JObject trait = GameData.Fairy.GetTraitData(this.traitId);
                     if (trait != null)
                     {
-                        this.traitName = GameData.Fairy.GetFairyTraitName(this.traitId);
+                        this.traitName = GameData.Fairy.GetTraitName(this.traitId);
                         this.isRareTrait = Parser.Json.ParseInt(trait["is_rare"]) == 1 ? true : false;
                     }
                     break;

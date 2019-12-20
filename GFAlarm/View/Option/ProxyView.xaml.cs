@@ -105,10 +105,6 @@ namespace GFAlarm.View.Option
                     if (!string.IsNullOrEmpty(Config.uncensor_patch_url))
                         this.UncensorModeCommentTextBlock.Html = string.Format(LanguageResources.Instance["SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR_COMMENT"],
                                                                                 Config.uncensor_patch_url);
-                    //if (!string.IsNullOrEmpty(Config.random_adjutant_guide_url))
-                    //    this.RandomAdjutantCommentTextBlock.Html = string.Format(LanguageResources.Instance["SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_COMMENT"],
-                    //                                                            Config.random_adjutant_guide_url);
-
                     if (App.isElevated)
                         this.PacAdminPrivilegeTextBlock.Text = LanguageResources.Instance["SETTING_PAC_SERVER_NOW_ADMIN"];
                     else
@@ -138,8 +134,8 @@ namespace GFAlarm.View.Option
                         this.UpstreamProxyHostTextBox.IsEnabled = false;
                         this.UpstreamProxyPortTextBox.IsEnabled = false;
 
-                        this.ProxyGuideBorder.Visibility = Visibility.Visible;
-                        this.ProxyGuide.Visibility = Visibility.Visible;
+                        //this.ProxyGuideBorder.Visibility = Visibility.Visible;
+                        //this.ProxyGuide.Visibility = Visibility.Visible;
                     }
                     else
                     {
@@ -157,8 +153,8 @@ namespace GFAlarm.View.Option
                         this.UpstreamProxyHostTextBox.IsEnabled = true;
                         this.UpstreamProxyPortTextBox.IsEnabled = true;
 
-                        this.ProxyGuideBorder.Visibility = Visibility.Collapsed;
-                        this.ProxyGuide.Visibility = Visibility.Collapsed;
+                        //this.ProxyGuideBorder.Visibility = Visibility.Collapsed;
+                        //this.ProxyGuide.Visibility = Visibility.Collapsed;
                     }
                     break;
                 case "PacketForger":

@@ -86,6 +86,7 @@ namespace GFAlarm
                     if (choose == MessageBoxResult.Yes)
                     {
                         System.Diagnostics.Process.Start(Config.latest_download_url);
+                        Application.Current.Shutdown();
                     }
                 }
             }
@@ -181,7 +182,7 @@ namespace GFAlarm
         void OnDispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
             string errorMessage = string.Format("An unhandled exception occurred: {0}", e.Exception.ToString());
-            MessageBox.Show(errorMessage, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            //MessageBox.Show(errorMessage, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             log.Error(e.Exception);
             // OR whatever you want like logging etc. MessageBox it's just example
             // for quick debugging etc.

@@ -136,7 +136,7 @@ namespace GFAlarm.View.DataTemplate
                 _passiveSkill = value;
                 if (value != 0 && fairyId != 0)
                 {
-                    JObject trait = GameData.Fairy.GetTrait(value);
+                    JObject trait = GameData.Fairy.GetTraitData(value);
                     if (trait != null)
                     {
                         this.TBSubtitle1 = LanguageResources.Instance[string.Format("TRAIT_{0}", value)];

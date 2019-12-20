@@ -46,8 +46,9 @@ namespace GFAlarm.View.Option
             // 상한 알림
             this.useMaxPoint = Config.Alarm.notifyMaxBp;
             this.setMaxPoint = Config.Alarm.notifyMaxBpPoint.ToString();
-            this.MaxPointSlider.Minimum = 1;
             this.MaxPointSlider.Maximum = 6;
+            this.MaxPointSlider.Minimum = 1;
+            this.MaxPointSlider.ValueChanged += MaxPointSlider_ValueChanged;
             this.useMaxDoll = Config.Alarm.notifyMaxDoll;
             this.useMaxEquip = Config.Alarm.notifyMaxEquip;
             this.useMaxGlobalExp = Config.Alarm.notifyMaxGlobalExp;
@@ -55,17 +56,20 @@ namespace GFAlarm.View.Option
             // 전역 알림
             this.useGetDoll = Config.Alarm.notifyRescueDoll;
             this.setGetDoll = Config.Alarm.notifyRescueDollStar.ToString();
-            this.GetDollSlider.Minimum = 2;
             this.GetDollSlider.Maximum = 5;
+            this.GetDollSlider.Minimum = 2;
+            this.GetDollSlider.ValueChanged += GetDollSlider_ValueChanged;
             this.useGetEquip = Config.Alarm.notifyGetEquip;
             this.setGetEquip = Config.Alarm.notifyGetEquipStar.ToString();
-            this.GetEquipSlider.Minimum = 2;
             this.GetEquipSlider.Maximum = 5;
+            this.GetEquipSlider.Minimum = 2;
+            this.GetEquipSlider.ValueChanged += GetEquipSlider_ValueChanged;
             this.useMissionSuccess = Config.Alarm.notifyMissionSuccess;
             this.useMoveFinish = Config.Alarm.notifyTeamMove;
             this.setMoveFinish = Config.Alarm.notifyTeamMoveCount.ToString();
-            this.MoveFinishSlider.Minimum = 1;
             this.MoveFinishSlider.Maximum = 40;
+            this.MoveFinishSlider.Minimum = 1;
+            this.MoveFinishSlider.ValueChanged += MoveFinishSlider_ValueChanged;
             this.useMoveAndBattleFinish = Config.Alarm.notifyTeamMoveAndBattleFinish;
 
             // 인형 알림
@@ -74,6 +78,7 @@ namespace GFAlarm.View.Option
             this.setHpWarning = Config.Alarm.notifyDollWoundedPercent.ToString();
             this.HpWarningSlider.Minimum = 1;
             this.HpWarningSlider.Maximum = 100;
+            this.HpWarningSlider.ValueChanged += HpWarningSlider_ValueChanged;
             this.useMaxLevel = Config.Alarm.notifyMaxLevel;
 
             // 제조 알림
@@ -87,32 +92,34 @@ namespace GFAlarm.View.Option
             // 지휘관 보너스
             this.useDollExpBonus = Config.Costume.coBonusDollExp;
             this.setDollExpBonus = Config.Costume.coBonusDollExpPercent.ToString();
-            this.DollExpBonusSlider.Minimum = 1;
             this.DollExpBonusSlider.Maximum = 100;
+            this.DollExpBonusSlider.Minimum = 1;
+            this.DollExpBonusSlider.ValueChanged += DollExpBonusSlider_ValueChanged;
             this.useRestoreTimeBonus = Config.Costume.coBonusRestoreTime;
             this.setRestoreTimeBonus = Config.Costume.coBonusRestoreTimePercent.ToString();
-            this.RestoreTimeBonusSlider.Minimum = 1;
             this.RestoreTimeBonusSlider.Maximum = 100;
+            this.RestoreTimeBonusSlider.Minimum = 1;
+            this.RestoreTimeBonusSlider.ValueChanged += RestoreTimeBonusSlider_ValueChanged;
             this.useSkillTimeBonus = Config.Costume.coBonusSkillTrainTime;
             this.setSkillTimeBonus = Config.Costume.coBonusSkillTrainTimePercent.ToString();
-            this.SkillTimeBonusSlider.Minimum = 1;
             this.SkillTimeBonusSlider.Maximum = 100;
+            this.SkillTimeBonusSlider.Minimum = 1;
+            this.SkillTimeBonusSlider.ValueChanged += SkillTimeBonusSlider_ValueChanged;
 
             // 기타
             this.useEarlyNotify = Config.Extra.earlyNotify;
             this.setEarlyNotify = Config.Extra.earlyNotifySeconds.ToString();
-            this.EarlyNotifySlider.Minimum = 1;
             this.EarlyNotifySlider.Maximum = 300;
+            this.EarlyNotifySlider.Minimum = 1;
+            this.EarlyNotifySlider.ValueChanged += EarlyNotifySlider_ValueChanged;
 
-            // 언어 새로고침
-            InitLanguage();
-
-            //this.Loaded += SettingAlarmView2_Loaded;
+            Loaded += SettingAlarmView_Loaded;
         }
 
-        private void SettingAlarmView2_Loaded(object sender, RoutedEventArgs e)
+        private void SettingAlarmView_Loaded(object sender, RoutedEventArgs e)
         {
-
+            // 언어 새로고침
+            InitLanguage();
         }
 
         /// <summary>
@@ -416,7 +423,7 @@ namespace GFAlarm.View.Option
             set
             {
                 int tempValue = 0;
-                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                int.TryParse(Regex.Match(value, @"\d+").Value, out tempValue);
                 if (1 <= tempValue && tempValue <= 6)
                 {
                     Config.Alarm.notifyMaxBpPoint = tempValue;
@@ -528,7 +535,7 @@ namespace GFAlarm.View.Option
             set
             {
                 int tempValue = 0;
-                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                int.TryParse(Regex.Match(value, @"\d+").Value, out tempValue);
                 if (2 <= tempValue && tempValue <= 5)
                 {
                     Config.Alarm.notifyRescueDollStar = tempValue;
@@ -577,7 +584,7 @@ namespace GFAlarm.View.Option
             set
             {
                 int tempValue = 0;
-                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                int.TryParse(Regex.Match(value, @"\d+").Value, out tempValue);
                 if (2 <= tempValue && tempValue <= 5)
                 {
                     Config.Alarm.notifyGetEquipStar = tempValue;
@@ -666,7 +673,7 @@ namespace GFAlarm.View.Option
             set
             {
                 int tempValue = 0;
-                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                int.TryParse(Regex.Match(value, @"\d+").Value, out tempValue);
                 if (1 <= tempValue && tempValue <= 40)
                 {
                     Config.Alarm.notifyTeamMoveCount = tempValue;
@@ -771,7 +778,7 @@ namespace GFAlarm.View.Option
             set
             {
                 int tempValue = 0;
-                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                int.TryParse(Regex.Match(value, @"\d+").Value, out tempValue);
                 if (1 <= tempValue && tempValue <= 100)
                 {
                     Config.Alarm.notifyDollWoundedPercent = tempValue;
@@ -947,7 +954,7 @@ namespace GFAlarm.View.Option
             set
             {
                 int tempValue = 0;
-                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                int.TryParse(Regex.Match(value, @"\d+").Value, out tempValue);
                 if (1 <= tempValue && tempValue <= 100)
                 {
                     Config.Costume.coBonusDollExpPercent = tempValue;
@@ -995,7 +1002,7 @@ namespace GFAlarm.View.Option
             set
             {
                 int tempValue = 0;
-                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                int.TryParse(Regex.Match(value, @"\d+").Value, out tempValue);
                 if (1 <= tempValue && tempValue <= 100)
                 {
                     Config.Costume.coBonusRestoreTimePercent = tempValue;
@@ -1043,7 +1050,7 @@ namespace GFAlarm.View.Option
             set
             {
                 int tempValue = 0;
-                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                int.TryParse(Regex.Match(value, @"\d+").Value, out tempValue);
                 if (1 <= tempValue && tempValue <= 100)
                 {
                     Config.Costume.coBonusSkillTrainTimePercent = tempValue;
@@ -1095,7 +1102,7 @@ namespace GFAlarm.View.Option
             set
             {
                 int tempValue = 0;
-                int.TryParse(exceptNumberRegex.Replace(value, ""), out tempValue);
+                int.TryParse(Regex.Match(value, @"\d+").Value, out tempValue);
                 if (1 <= tempValue && tempValue <= 300)
                 {
                     Config.Extra.earlyNotifySeconds = tempValue;
@@ -1136,5 +1143,7 @@ namespace GFAlarm.View.Option
         {
             System.Diagnostics.Process.Start(e.Uri.ToString());
         }
+
+
     }
 }
