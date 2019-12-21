@@ -716,7 +716,7 @@ DOLL_276	Kord	Kord	Kord	Kord
 DOLL_277	VP70	VP70	VP70	VP70
 DOLL_278	Six12	Six12	Six12	Six12
 DOLL_279	INSAS	INSAS	INSAS	INSAS
-DOLL_280				
+DOLL_280	MAT-49	MAT-49	MAT-49	MAT-49
 DOLL_281	CAWS	CAWS	CAWS	CAWS
 DOLL_282	DP-12	DP-12	DP-12	DP-12
 DOLL_283	리버레이터	Liberator	Liberator	Liberator
@@ -911,8 +911,8 @@ EQUIP_164	M9 BC2 손잡이	M9 BC2 손잡이	M9 BC2 손잡이	M9 BC2 손잡이
 EQUIP_165	전술 헤드셋	전술 헤드셋	전술 헤드셋	전술 헤드셋
 EQUIP_166	DO 반사조준경	DO 반사조준경	DO 반사조준경	DO 반사조준경
 EQUIP_167	C96 참나무 개머리판	C96 참나무 개머리판	C96 참나무 개머리판	C96 참나무 개머리판
-EQUIP_168	100식 접이식 개머리판	100식 접이식 개머리판	100식 접이식 개머리판	100식 접이식 개머리판
-EQUIP_169	RFB 전방 레일	RFB 전방 레일	RFB 전방 레일	RFB 전방 레일
+EQUIP_168	100식 접이식 개머리판	100식 접이식 개머리판	Folding Stock	100식 접이식 개머리판
+EQUIP_169	RFB 전방 레일	RFB 전방 레일	Am RFB Quad Rail	RFB 전방 레일
 EQUIP_170	20mm HEI	20mm HEI	20mm HEI	20mm HEI
 EQUIP_171	전술 번개 안테나	전술 번개 안테나	전술 번개 안테나	전술 번개 안테나
 EQUIP_TYPE_1	옵티컬	光学瞄具	Optical	オプティカル
@@ -1112,7 +1112,7 @@ TRAIT_910115	진압계	镇压型	Suppression	鎮圧型
 TRAIT_910116	예민계	敏锐型	Keen	鋭敏型
 TRAIT_910117	격양계	激昂型	Fervor	激昂系
 TRAIT_910118	황금계	黄金型	Golden	黄金型
-TRAIT_910119	급양계	厨神型	급양계	給養型
+TRAIT_910119	급양계	厨神型	Chef	給養型
 TRAIT_910120	현란계	绚烂型	현란계	絢爛型
 TRAIT_910121	연하계	贺岁型	연하계	煙霞型
 TRAIT_910122	청량계	清凉型	청량계	清凉型

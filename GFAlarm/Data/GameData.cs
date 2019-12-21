@@ -2390,7 +2390,7 @@ namespace GFAlarm.Data
 
                         // 수복 자원
                         // Roundup(잃은 체력 / 최대 체력 * 0.5 * (최대 더미 수 + 1) * 10 * 수복 자원 배율)
-                        @base = Math.Ceiling(loseHp / maxHp * 0.5 * (maxLink + 1) * 10);
+                        @base = loseHp / maxHp * 0.5 * (maxLink + 1) * 10;
                         result[1] = (int)Math.Ceiling(@base * mpRatio);
                         result[2] = (int)Math.Ceiling(@base * partRatio);
                     }

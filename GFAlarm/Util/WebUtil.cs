@@ -57,7 +57,7 @@ namespace GFAlarm.Util
             {
                 string lastVer = RequestFile(url);
                 string currVer = FileUtil.GetFile(path);
-                if (lastVer != currVer)
+                if (!string.IsNullOrEmpty(lastVer) && lastVer != currVer)
                     return true;
             }
             catch (Exception ex)
@@ -80,8 +80,11 @@ namespace GFAlarm.Util
                 log.Debug("Update DB => {0}", url);
                 //long baseFileSize = new FileInfo(path).Length;
                 string file = RequestFile(url);
-                File.WriteAllText(path, file);
-                return true;
+                if (!string.IsNullOrEmpty(file))
+                {
+                    File.WriteAllText(path, file);
+                    return true;
+                }
             }
             catch (Exception ex)
             {
