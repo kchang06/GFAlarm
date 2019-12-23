@@ -1331,6 +1331,11 @@ namespace GFAlarm
                     battleCount = 5;
                     levelPenalty = 115;
                     break;
+                case 6:
+                    baseExp = 600;
+                    battleCount = 4;
+                    levelPenalty = 120;
+                    break;
             }
             Config.Echelon.baseExp = baseExp;
             Config.Echelon.battleCount = battleCount;
@@ -1769,50 +1774,78 @@ namespace GFAlarm
             if (Config.Setting.checkUpdateDb)
             {
                 string dir = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                bool isNeedUpdate = WebUtil.RequestDatabaseVersion(
+
+                bool isNeedLangUpdate = WebUtil.RequestDatabaseVersion(
+                    string.Format("https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/{0}", "language_version"),
+                    string.Format("{0}/Resource/{1}", dir, "language_version")
+                );
+                bool isNeedDbUpdate = WebUtil.RequestDatabaseVersion(
                     string.Format("https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/{0}", "db_version"),
                     string.Format("{0}/Resource/db/{1}", dir, "db_version")
                 );
-
-                if (isNeedUpdate)
+                if (isNeedDbUpdate || isNeedLangUpdate)
                 {
                     this.OverlayUpdate.Visibility = Visibility.Visible;
                     new Thread(delegate ()
                     {
                         bool isSuccess = false;
-                        string[] updateFiles = new string[] {
-                            "doll.json",
-                            "equip.json",
-                            "fairy.json",
-                            "fairy_trait.json",
-                            "gfdb_ally_team.json",
-                            "gfdb_building.json",
-                            "gfdb_enemy_team.json",
-                            "gfdb_mission.json",
-                            "gfdb_spot.json",
-                            "mission.json",
-                            "operation.json",
-                            "quest.json",
-                            "skin.json",
-                            "squad.json",
-                        };
-                        foreach (string updateFile in updateFiles)
+                        // 디비 업데이트 필요
+                        if (isNeedDbUpdate)
                         {
+                            string[] updateFiles = new string[] {
+                                "doll.json",
+                                "equip.json",
+                                "fairy.json",
+                                "fairy_trait.json",
+                                "gfdb_ally_team.json",
+                                "gfdb_building.json",
+                                "gfdb_enemy_team.json",
+                                "gfdb_mission.json",
+                                "gfdb_spot.json",
+                                "mission.json",
+                                "operation.json",
+                                "quest.json",
+                                "skin.json",
+                                "squad.json",
+                            };
+                            foreach (string updateFile in updateFiles)
+                            {
+                                Dispatcher.Invoke(() =>
+                                {
+                                    this.UpdateFileTextBlock.Text = updateFile;
+                                });
+                                isSuccess = WebUtil.RequestAndSaveDatabase(
+                                    string.Format("https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/{0}", updateFile),
+                                    string.Format("{0}/Resource/db/{1}", dir, updateFile)
+                                );
+                            }
+                            if (isSuccess != false)
+                            {
+                                WebUtil.RequestAndSaveDatabase(
+                                    string.Format("https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/{0}", "db_version"),
+                                    string.Format("{0}/Resource/db/{1}", dir, "db_version")
+                                );
+                            }
+                        }
+                        // 언어 업데이트 필요
+                        if (isNeedLangUpdate)
+                        {
+                            string updateFile = "language.tsv";
                             Dispatcher.Invoke(() =>
                             {
                                 this.UpdateFileTextBlock.Text = updateFile;
                             });
                             isSuccess = WebUtil.RequestAndSaveDatabase(
-                                string.Format("https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/{0}", updateFile),
+                                string.Format("https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/{0}", updateFile),
                                 string.Format("{0}/Resource/db/{1}", dir, updateFile)
                             );
-                        }
-                        if (isSuccess != false)
-                        {
-                            WebUtil.RequestAndSaveDatabase(
-                                string.Format("https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/db/{0}", "db_version"),
-                                string.Format("{0}/Resource/db/{1}", dir, "db_version")
-                            );
+                            if (isSuccess != false)
+                            {
+                                WebUtil.RequestAndSaveDatabase(
+                                    string.Format("https://raw.githubusercontent.com/kchang06/GFAlarm/master/GFAlarm/Resource/{0}", "language_version"),
+                                    string.Format("{0}/Resource/{1}", dir, "language_version")
+                                );
+                            }
                         }
                         Dispatcher.Invoke(() =>
                         {

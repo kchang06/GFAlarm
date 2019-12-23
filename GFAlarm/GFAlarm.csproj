@@ -1139,6 +1139,7 @@
     <None Include="Resource\GFPAC.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Resource\language_version" />
     <Content Include="Resource\sound\Voice\1002\complete_auto_mission.wav" />
     <Content Include="Resource\sound\Voice\1002\complete_operation.wav" />
     <Content Include="Resource\sound\Voice\1002\doll_wounded.wav" />

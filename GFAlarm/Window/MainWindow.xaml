@@ -509,6 +509,7 @@
                                         <ComboBoxItem Content="{Binding Path=[RUN_81N], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                         <ComboBoxItem Content="{Binding Path=[RUN_115], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                         <ComboBoxItem Content="{Binding Path=[RUN_SG_32], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
+                                        <ComboBoxItem Content="{Binding Path=[RUN_124E], Mode=OneWay, Source={x:Static ls:LanguageResources.Instance}}"/>
                                     </ComboBox>
                                     <!-- 기본 경험치 -->
                                     <TextBlock Grid.Row="1" Grid.Column="0"
