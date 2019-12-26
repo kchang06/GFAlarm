@@ -26,7 +26,7 @@ ECHELON	제대	梯队	Echelon	部隊
 COUNT	건	个	Count	件
 RUN_43E	4-3e	4-3e	4-3e	4-3e
 RUN_02	0-2	0-2	0-2	0-2
-RUN_SG_32	4드라	4九头蛇	SG 3-2	4ドラ
+RUN_SG_32	4드라	4九头蛇	SG 3-2	4ヒドラ
 RUN_104E	10-4e	10-4e	10-4e	10-4e
 RUN_81N	8-1n	8-1n	8-1n	8-1n
 RUN_115	11-5	11-5	11-5	11-5
@@ -295,8 +295,8 @@ SETTING_WINDOW_STICKY_WINDOW_TOOLTIP	알리미 창이 화면 가장자리에 붙
 SETTING_EXTRA_GROUP	기타	其他	Extra	その他
 SETTING_EXTRA_USE_CHECK_UPDATE	업데이트 확인	版本更新	Check for Update	アップデートチェック
 SETTING_EXTRA_USE_CHECK_UPDATE_TOOLTIP	알리미 실행 시 최신 업데이트가 있는지 확인	运行通知器时版本更新	Check for latest version of GFAlarm during launch	アラートツール起動する時最新バージョンがあるか確認
-SETTING_EXTRA_USE_CHECK_DATABASE	DB 업데이트 확인	Check for DB Update	Check for DB Update	Check for DB Update
-SETTING_EXTRA_USE_CHECK_DATABASE_TOOLTIP	알리미 실행 시 최신 데이터베이스로 자동 업데이트	Check for DB Update	Check for DB Update	Check for DB Update
+SETTING_EXTRA_USE_CHECK_DATABASE	DB 자동 업데이트	Auto DB Update	Auto DB Update	Auto DB Update
+SETTING_EXTRA_USE_CHECK_DATABASE_TOOLTIP	알리미 실행 시 최신 DB로 자동 업데이트	Auto DB Update	Auto DB Update	Auto DB Update
 SETTING_EXTRA_LOG_LEVEL_TOOLTIP	로그 레벨[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	日志等级[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	Log Level[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	ログレベル[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]
 SETTING_EXTRA_LOG_PACKET_TOOLTIP	로그에 패킷 출력[br]로그 레벨을 Info 이하로 설정할 것[br][font color='#F44336'](속도가 느려질 수 있음)[/font]	对日志输出包[br]日志等级设定到Info以下[br][font color='#F44336'](速度可能会变慢)[/font]	Print packets on log[br]Set Log Level to below Info[br][font color='#F44336'](Can slow down system)[/font]	ログにパケット出力[br]ログレベルをInfo以下に設定してください[br][font color='#F44336'](アプリが重くなるかも知れません)[/font]
 MESSAGE_CONNECT_SUBJECT	연결 상태	连接现况	Connection	連結状態
@@ -722,6 +722,12 @@ DOLL_281	CAWS	CAWS	CAWS	CAWS
 DOLL_282	DP-12	DP-12	DP-12	DP-12
 DOLL_283	리버레이터	Liberator	Liberator	Liberator
 DOLL_284	Zas M76	Zas M76	Zas M76	Zas M76
+DOLL_285	C-93	C-93	C-93	C-93
+DOLL_286	KAC-PDW	KAC-PDW	KAC-PDW	KAC-PDW
+DOLL_287	SIG-556	SIG-556	SIG-556	SIG-556
+DOLL_288	CR-21	CR-21	CR-21	CR-21
+DOLL_289	R5	R5	R5	R5
+DOLL_291	43M	43M	43M	43M
 DOLL_1001	노엘	诺爱尔	Noel	ノエル
 DOLL_1002	엘펠트	艾尔菲尔特	Elphelt	エルフェルト
 DOLL_1003	키아나 카스라나	琪亚娜	Kiana	キアナ・カスラナ
