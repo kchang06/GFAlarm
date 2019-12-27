@@ -45,7 +45,7 @@ TO_NEXT_LEVEL	다음 레벨	其次等级	Next Level	次のレベルまで
 TO_NEXT_EXPAND	다음 편제	其次编制	Next Link	次の編拡まで
 TO_MAX_LEVEL	최대 레벨	最大等级	Max Level	最大レベルまで
 REQUIRE_RESTORE	수복 정보	修复信息	Restore Info	修理情報
-DISPATCHED_ECHELON	투입 제대	Echelon	Echelon	Echelon
+DISPATCHED_ECHELON	투입 제대	投入的梯队	Echelon	Echelon
 EXPLORE_8_HOUR_GUIDE	(8시간 기준)	(标准是8个小时)	(8 Hours)	(8時間基準)
 EXPLORE_REWARD_GUIDE	획득 보상을 보려면 전진기지-제어콘솔을 열어주십시오	如果想获得奖励,请打开前进营地-储物柜	Open Gate Console in Forward Basecamp to check exploration rewards	獲得報酬を見たい場合、キャンプの制御コンソールを開いてください
 NEXT_EVENT	다음 발견	其次发现	Next Event	次の発見
@@ -116,7 +116,7 @@ SETTING_PROXY_SERVER_USE_SSL_DECRYPT_WARNING	[font color='#F44336']대만 서버
 SETTING_PROXY_SERVER_USE_SSL_DECRYPT_COMMENT	[a href='{0}']링크[/a]를 참고해서 인증서 설치 후 사용 가능	参考[a href='{0}']链接[/a]可在设置认证书后使用	Refer to [a href='{0}']link[/a] to install certificate before use	[a href='{0}']サイト[/a]を参考して認証書をインストールした後使えます
 SETTING_PAC_SERVER_GROUP	PAC 서버	PAC服务器	PAC Server	
 SETTING_PAC_SERVER_USE	PAC 서버	PAC服务器	PAC Server	
-SETTING_PAC_SERVER_USE_TOOLTIP	PAC(Proxy Auto Config)를 사용하기 위한 서버[br][font color='#F44336']관리자 권한이 필요[/font]		[font color='#F44336']Server Admin's Privilege[/font][br]is required to use PAC(Proxy Auto Config)	
+SETTING_PAC_SERVER_USE_TOOLTIP	PAC(Proxy Auto Config)를 사용하기 위한 서버[br][font color='#F44336']관리자 권한이 필요[/font]	使用PAC(Proxy Auto Config)的服务器时，[br][font color='#F44336]]需要管理者权限[/font]	[font color='#F44336']Server Admin's Privilege[/font][br]is required to use PAC(Proxy Auto Config)	
 SETTING_PAC_SERVER_SET_DOMAIN	PAC 도메인	PAC域	PAC Domain	
 SETTING_PAC_SERVER_SET_DOMAIN_TOOLTIP	외부 네트워크에서 도메인을 사용해서 접속할 경우 설정할 것	若在外部网络中使用域名连接时，设置这部分。	Set if accessing through domain by external network	
 SETTING_PAC_SERVER_PORT_NUMBER	PAC 포트번호	PAC端口编号	PAC Port Number	
@@ -133,11 +133,11 @@ SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT	랜덤 부관	随机副官	Random Adju
 SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_COMMENT	인형 [font color='#ffb400']{0}[/font] 스킨 [font color='#ffb400']{1}[/font]	人形 [font color='#ffb400']{0}[/font] 皮肤 [font color='#ffb400']{1}[/font]	T-Doll [font color='#ffb400']{0}[/font] Skin [font color='#ffb400']{1}[/font]	人形 [font color='#ffb400']{0}[/font] Skin [font color='#ffb400']{1}[/font]
 SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_TOOLTIP	소속 인형 중 랜덤한 인형으로 부관 설정		Set random T-Doll as Adjutant on Login	所属人形の中からランダムに副官を設定
 SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_WHITELIST	부관 화이트리스트	副官白名单	Adjutant Whitelist	副官ホワイトリスト
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_WHITELIST_TOOLTIP	소속 인형 중 선택된 인형만 부관으로 등장하도록 설정[br][font color='#FFF44336']소속되지 않은 인형은 출현하지 않음[/font]		Allow whitelisted T-Dolls as Adjutant[br][font color='#FFF44336']Locked T-Dolls will not appear[/font]	選択された人形が、副官に登場するように設定する[br][font color='#FFF44336']所属していない人形は出現していない[/font]
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_WHITELIST_TOOLTIP	소속 인형 중 선택된 인형만 부관으로 등장하도록 설정[br][font color='#FFF44336']소속되지 않은 인형은 출현하지 않음[/font]	所属的人形中随机设置为副官	Allow whitelisted T-Dolls as Adjutant[br][font color='#FFF44336']Locked T-Dolls will not appear[/font]	選択された人形が、副官に登場するように設定する[br][font color='#FFF44336']所属していない人形は出現していない[/font]
 SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_BLACKLIST	부관 블랙리스트	副官黑名单	Adjutant Blacklist	副官ブラックリスト
 SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_BLACKLIST_TOOLTIP	설정된 인형은 등장하지 않음	设置所属的人形中只选择的人形才能作为副官[br][font color='#FFF44336]]没有所属的人形不会出现[/font]	Deny blacklisted T-Dolls as Adjutant	設定された人形は登場しない
 SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_WHITELITE	스킨 화이트리스트	皮肤白名单	Skin Whitelist	スキンホワイトリスト
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_WHITELITE_TOOLTIP	보유 스킨 중 선택된 스킨만 입고 등장하도록 설정[br][font color='#FFF44336']보유하지 않은 스킨은 입지 않음[/font]		Allow whitelisted Skins for Adjutant[br][font color='#FFF44336']Locked Skins will not appear[/font]	選択されたスキンのみ着て登場するように設定[br][font color='#FFF44336']保有していないスキンは選択できない[/font]
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_WHITELITE_TOOLTIP	보유 스킨 중 선택된 스킨만 입고 등장하도록 설정[br][font color='#FFF44336']보유하지 않은 스킨은 입지 않음[/font]	设定只穿拥有的皮肤中选择的皮肤[br][font color='#FFF44336]]不穿不拥有的皮肤[/font]	Allow whitelisted Skins for Adjutant[br][font color='#FFF44336']Locked Skins will not appear[/font]	選択されたスキンのみ着て登場するように設定[br][font color='#FFF44336']保有していないスキンは選択できない[/font]
 SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_BLACKLIST	스킨 블랙리스트	皮肤黑名单	Skin Blacklist	スキンブラックリスト
 SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_BLACKLIST_TOOLTIP	설정된 스킨은 등장하지 않음	设定不想看的皮肤	Deny blacklisted Skins for Adjutant	設定されたスキンは登場しない
 SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN	부관 스킨	副官的皮肤	Adjutant Skin	副官スキン
@@ -295,8 +295,8 @@ SETTING_WINDOW_STICKY_WINDOW_TOOLTIP	알리미 창이 화면 가장자리에 붙
 SETTING_EXTRA_GROUP	기타	其他	Extra	その他
 SETTING_EXTRA_USE_CHECK_UPDATE	업데이트 확인	版本更新	Check for Update	アップデートチェック
 SETTING_EXTRA_USE_CHECK_UPDATE_TOOLTIP	알리미 실행 시 최신 업데이트가 있는지 확인	运行通知器时版本更新	Check for latest version of GFAlarm during launch	アラートツール起動する時最新バージョンがあるか確認
-SETTING_EXTRA_USE_CHECK_DATABASE	DB 자동 업데이트	Auto DB Update	Auto DB Update	Auto DB Update
-SETTING_EXTRA_USE_CHECK_DATABASE_TOOLTIP	알리미 실행 시 최신 DB로 자동 업데이트	Auto DB Update	Auto DB Update	Auto DB Update
+SETTING_EXTRA_USE_CHECK_DATABASE	DB 자동 업데이트	自动数据库更新	Auto DB Update	Auto DB Update
+SETTING_EXTRA_USE_CHECK_DATABASE_TOOLTIP	알리미 실행 시 최신 DB로 자동 업데이트	运行通知器时自动数据库更新	Auto DB Update	Auto DB Update
 SETTING_EXTRA_LOG_LEVEL_TOOLTIP	로그 레벨[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	日志等级[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	Log Level[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	ログレベル[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]
 SETTING_EXTRA_LOG_PACKET_TOOLTIP	로그에 패킷 출력[br]로그 레벨을 Info 이하로 설정할 것[br][font color='#F44336'](속도가 느려질 수 있음)[/font]	对日志输出包[br]日志等级设定到Info以下[br][font color='#F44336'](速度可能会变慢)[/font]	Print packets on log[br]Set Log Level to below Info[br][font color='#F44336'](Can slow down system)[/font]	ログにパケット出力[br]ログレベルをInfo以下に設定してください[br][font color='#F44336'](アプリが重くなるかも知れません)[/font]
 MESSAGE_CONNECT_SUBJECT	연결 상태	连接现况	Connection	連結状態
@@ -345,8 +345,8 @@ MESSAGE_DOLL_NEED_DUMMY_LINK_SUBJECT	인형	人形	T-Doll	人形
 MESSAGE_DOLL_NEED_DUMMY_LINK_CONTENT	{0}제대 {1} 편제확대 필요	{0}梯队 {1} 需要编制扩大	{0} Echelon {1} requires Dummy Link	{0}部隊 {1} 編制拡大必要
 MESSAGE_DOLL_MAX_LEVEL_SUBJECT	인형	人形	T-Doll	人形
 MESSAGE_DOLL_MAX_LEVEL_CONTENT	{0}제대 {1} 최대 레벨 도달	{0}梯队 {1} 达到最大等级	{0} Echelon {1} Max Level reached	{0}部隊 {1} レベルカンスト
-MESSAGE_DOLL_HP_WARNING_SUBJECT	인형	T-Doll	T-Doll	人形
-MESSAGE_DOLL_HP_WARNING_CONTENT	{0}제대 {1} 체력 경고 ({2}% 이하)	{0} Echelon {1} HP Warning	{0} Echelon {1} HP Warning	{0}部隊 {1} 修復が必要
+MESSAGE_DOLL_HP_WARNING_SUBJECT	인형	人形	T-Doll	人形
+MESSAGE_DOLL_HP_WARNING_CONTENT	{0}제대 {1} 체력 경고 ({2}% 이하)	{0} 梯队 {1} 生命值警告 ({2}% 以下)	{0} Echelon {1} HP Warning	{0}部隊 {1} 修復が必要
 MESSAGE_PRODUCE_DOLL_SUBJECT	인형제조	人形制造	T-Doll Production	人形製造
 MESSAGE_PRODUCE_DOLL_CONTENT	{0}성 인형 {1} ({2}) 제조	制造 {0}星 人形 {1} ({2})	{2} {1} ({0} Star) Production completed	星{0} 人形 {1} ({2}) 製造
 MESSAGE_PRODUCE_EQUIP_SUBJECT	장비제조	装备制造	Equip Production	装備製造
@@ -375,7 +375,7 @@ DOLL_INFO_CURRENT_EXP	현재 경험치	现在经验值	Current Exp	現在経験�
 DOLL_INFO_REQUIRE_EXP	필요 경험치	需要经验值	Required Exp	必要経験値
 DOLL_INFO_DUMMY_LINK	편제 수	编制数	Link	リンク数
 DOLL_INFO_MOD	개조	心智升级	MOD	改造
-DOLL_INFO_MAX_HP	최대 체력	最大生命	Max HP	最大HP
+DOLL_INFO_MAX_HP	최대 체력	最大生命值	Max HP	最大HP
 DOLL_INFO_HP	체력	生命	HP	HP
 DOLL_INFO_POW	화력	伤害	Damage	火力
 DOLL_INFO_HIT	명중	命中	Accuracy	命中
@@ -918,8 +918,8 @@ EQUIP_164	M9 BC2 손잡이	M9 BC2 손잡이	M9 BC2 손잡이	M9 BC2 손잡이
 EQUIP_165	전술 헤드셋	전술 헤드셋	전술 헤드셋	전술 헤드셋
 EQUIP_166	DO 반사조준경	DO 반사조준경	DO 반사조준경	DO 반사조준경
 EQUIP_167	C96 참나무 개머리판	C96 참나무 개머리판	C96 참나무 개머리판	C96 참나무 개머리판
-EQUIP_168	100식 접이식 개머리판	100식 접이식 개머리판	Folding Stock	100식 접이식 개머리판
-EQUIP_169	RFB 전방 레일	RFB 전방 레일	Am RFB Quad Rail	RFB 전방 레일
+EQUIP_168	100식 접이식 개머리판	折叠枪托	Folding Stock	100식 접이식 개머리판
+EQUIP_169	RFB 전방 레일	RFB前导轨	Am RFB Quad Rail	RFB 전방 레일
 EQUIP_170	20mm HEI	20mm HEI	20mm HEI	20mm HEI
 EQUIP_171	전술 번개 안테나	전술 번개 안테나	전술 번개 안테나	전술 번개 안테나
 EQUIP_TYPE_1	옵티컬	光学瞄具	Optical	オプティカル
