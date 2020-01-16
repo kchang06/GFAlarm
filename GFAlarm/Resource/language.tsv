@@ -52,7 +52,7 @@ NEXT_EVENT	다음 발견	其次发现	Next Event	次の発見
 NOW_EXPLORE	탐색 중	正在探索	Exploring	探索中
 DAILY_QUEST	일간임무	日常任务	Daily Quest	デイリー任務
 WEEKLY_QUEST	주간임무	周常任务	Weekly Quest	ウィークリー任務
-RESEARCH_QUEST	정보임무	情报任务	Research Quest	情報任務
+RESEARCH_QUEST	정보임무	情报任务	Intelligence Quest	情報任務
 LOGISTICS	군수지원	后勤支援	Logistics	後方支援
 AUTO_BATTLE	자율작전	自律作战	Auto-Battle	自立作戦
 MISSION	작전	作战	Mission	作戦
@@ -73,17 +73,18 @@ TAB_ECHELON	제대	梯队	Echelon	部隊
 TAB_QUEST	임무	任务	Quest	任務
 TAB_WAREHOUSE	창고	仓库	Warehouse	倉庫
 TAB_RECORD_MISSION	전역 녹화	作战绿化	Record Mission	録画
+TAB_MINIMAP	미니맵	Minimap	Minimap	Minimap
 TAB_PROXY	연결	连接	Proxy	連結
 TAB_NOTIFICATION_SETTING	알림 설정	通知设置	Notification Settings	通知設定
 TAB_SETTING	설정	设置	Settings	設定
-HEADER_EXPCAL_BUTTON	경험치 계산기	经验值计算器	Exp Calculator	
-HEADER_EXPCAL_PRESET	프리셋	预设	Preset	
-HEADER_EXPCAL_BASE_EXP	기본 경험치	基本经验值	Base Exp	
-HEADER_EXPCAL_BATTLE_COUNT	교전 횟수	交战次数	Battle Count	
-HEADER_EXPCAL_LEVEL_PENALTY	레벨 패널티	最优经验值等级	Level Penalty	
+HEADER_EXPCAL_BUTTON	경험치 계산기	经验值计算器	Exp Calculator	Exp Calculator
+HEADER_EXPCAL_PRESET	프리셋	预设	Preset	Preset
+HEADER_EXPCAL_BASE_EXP	기본 경험치	基本经验值	Base Exp	Base Exp
+HEADER_EXPCAL_BATTLE_COUNT	교전 횟수	交战次数	Battle Count	Battle Count
+HEADER_EXPCAL_LEVEL_PENALTY	레벨 패널티	最优经验值等级	Level Penalty	Level Penalty
 HEADER_EXPCAL_EXPUP_EVENT	경험치 이벤트	经验值提升活动	Exp Up Event	経験値アップイベント
 HEADER_EXPCAL_EXPUP_EVENT_TOOLTIP	경험치 이벤트를 설정	设定经验值提升活动	Apply Exp Rate-up Event	経験値アップイベント設定
-HEADER_EXPCAL_APPLY_BUTTON	적용	设置	Apply	
+HEADER_EXPCAL_APPLY_BUTTON	적용	设置	Apply	Apply
 HEADER_SORT_BUTTON	정렬	排序	Sort	ソート
 HEADER_SORT_BY_SLOT	슬롯 순	位置	Slot	スロット順
 HEADER_SORT_BY_REMAIN_TIME	남은 시간 순	剩余时间	Remaining Time	残り時間順
@@ -114,26 +115,26 @@ SETTING_PROXY_SERVER_PORT_NUMBER	포트번호	代理服务器端口编号	Port N
 SETTING_PROXY_SERVER_USE_SSL_DECRYPT	HTTPS 복호화	代理服务器 HTTPS 复护化	HTTPS Decryption	プロキシHTTPS復号化
 SETTING_PROXY_SERVER_USE_SSL_DECRYPT_WARNING	[font color='#F44336']대만 서버에서만 사용할 것[/font]	[font color='#F44336']只在台服使用[/font]	[font color='#F44336']TW Server Only[/font]	[font color='#F44336']台湾サーバーユーザー様だけ使ってください[/font]
 SETTING_PROXY_SERVER_USE_SSL_DECRYPT_COMMENT	[a href='{0}']링크[/a]를 참고해서 인증서 설치 후 사용 가능	参考[a href='{0}']链接[/a]可在设置认证书后使用	Refer to [a href='{0}']link[/a] to install certificate before use	[a href='{0}']サイト[/a]を参考して認証書をインストールした後使えます
-SETTING_PAC_SERVER_GROUP	PAC 서버	PAC服务器	PAC Server	
-SETTING_PAC_SERVER_USE	PAC 서버	PAC服务器	PAC Server	
-SETTING_PAC_SERVER_USE_TOOLTIP	PAC(Proxy Auto Config)를 사용하기 위한 서버[br][font color='#F44336']관리자 권한이 필요[/font]	使用PAC(Proxy Auto Config)的服务器时，[br][font color='#F44336]]需要管理者权限[/font]	[font color='#F44336']Server Admin's Privilege[/font][br]is required to use PAC(Proxy Auto Config)	
-SETTING_PAC_SERVER_SET_DOMAIN	PAC 도메인	PAC域	PAC Domain	
-SETTING_PAC_SERVER_SET_DOMAIN_TOOLTIP	외부 네트워크에서 도메인을 사용해서 접속할 경우 설정할 것	若在外部网络中使用域名连接时，设置这部分。	Set if accessing through domain by external network	
-SETTING_PAC_SERVER_PORT_NUMBER	PAC 포트번호	PAC端口编号	PAC Port Number	
-SETTING_PAC_SERVER_NOW_ADMIN	관리자 권한 사용중	正在使用管理人员的权限	Admin Privilege Enabled	
-SETTING_PAC_SERVER_NEED_ADMIN	관리자 권한 필요	需要管理人员的权限	Admin Privilege Disabled	
+SETTING_PAC_SERVER_GROUP	PAC 서버	PAC服务器	PAC Server	PAC Server
+SETTING_PAC_SERVER_USE	PAC 서버	PAC服务器	PAC Server	PAC Server
+SETTING_PAC_SERVER_USE_TOOLTIP	PAC(Proxy Auto Config)를 사용하기 위한 서버[br][font color='#F44336']관리자 권한이 필요[/font]	使用PAC(Proxy Auto Config)的服务器时，[br][font color='#F44336]]需要管理者权限[/font]	[font color='#F44336']Server Admin's Privilege[/font][br]is required to use PAC(Proxy Auto Config)	[font color='#F44336']Server Admin's Privilege[/font][br]is required to use PAC(Proxy Auto Config)
+SETTING_PAC_SERVER_SET_DOMAIN	PAC 도메인	PAC域	PAC Domain	PAC Domain
+SETTING_PAC_SERVER_SET_DOMAIN_TOOLTIP	외부 네트워크에서 도메인을 사용해서 접속할 경우 설정할 것	若在外部网络中使用域名连接时，设置这部分。	Set if accessing through domain by external network	Set if accessing through domain by external network
+SETTING_PAC_SERVER_PORT_NUMBER	PAC 포트번호	PAC端口编号	PAC Port Number	PAC Port Number
+SETTING_PAC_SERVER_NOW_ADMIN	관리자 권한 사용중	正在使用管理人员的权限	Admin Privilege Enabled	Admin Privilege Enabled
+SETTING_PAC_SERVER_NEED_ADMIN	관리자 권한 필요	需要管理人员的权限	Admin Privilege Disabled	Admin Privilege Disabled
 SETTING_UPSTREAM_PROXY_GROUP	경유 프록시	经由代理服务器	Upstream Proxy	プロキシサーバー経由
 SETTING_UPSTREAM_PROXY_USE_UPSTREAM_PROXY	경유 프록시	经由代理服务器	Upstream Proxy	プロキシサーバー経由
 SETTING_UPSTREAM_PROXY_ADDRESS	경유 프록시 주소	经由的代理服务器地址	Upstream Proxy Address	プロキシサーバーのアドレス
 SETTING_UPSTREAM_PROXY_USE_UPSTREAM_PROXY_TOOLTIP	설정 시 프록시를 사용하는 타 프로그램을 경유하여 소녀전선 서버에 접속	设置时，经由使用代理服务器的其他程序连接游戏	Connect to GF server via third-party program using Proxy when enabled	セットアップ時に、プロキシサーバーを使用して別のプログラム経由でゲームに接続します
 SETTING_PROXY_SERVER_GUIDE	사용 가이드	使用指南	Proxy Guide	使用ガイド
 SETTING_PROXY_SERVER_GUIDE_COMMENT	[font size='14']■ Android[/font][br]→ 설정[br]→ 네트워크 및 인터넷[br]→ Wi-Fi[br]→ 연결된 AP 설정[br]→ 고급 옵션[br]→ 프록시 '수동' 설정[br]→ 프록시 호스트 [font color='#8ec127']{0}[/font][br]→ 프록시 포트 [font color='#8ec127']{1}[/font][br]→ 소녀전선 (재)로그인[br][br] [font size='14']■ iOS[/font][br]→ 설정[br]→ Wi-Fi[br]→ 연결된 AP 설정[br]→ 프록시 구성[br]→ '수동' 설정[br]→ 서버 [font color='#8ec127']{0}[/font][br]→ 포트 [font color='#8ec127']{1}[/font][br]→ 소녀전선 (재)로그인[br] [br] [font size='14' color='#ff4500']■ 접속 불가 시[/font][br]→ 시작[br]→ 실행[br]→ cmd[br]→ ipconfig[br]→ 표시된 IPv4 주소로 시도[br] [br] [font size='14' color='#ff4500']■ 보안 정책 위반(코드 22) 발생 시[/font][br]→ 기기 프록시 설정 끄기[br]→ 소녀전선 실행[br]→ 로그인 직전까지 진행[br]→ 기기 프록시 설정 켜기[br]→ 소녀전선 (재)로그인	[font size='14']■ Android[/font][br]→ 设置[br]→ 网络与互联网[br]→ Wi-Fi[br]→ 连接的AP设置[br]→ 高级期权[br]→ 代理服务器设置提示‘被动’[br]→ 代理服务器主机 [font color='#8ec127']{0}[/font][br]→ 代理服务器端口编号 [font color='#8ec127']{1}[/font][br]→ 再登录少女前线[br][br] [font size='14']■ iOS[/font][br]→ 设置[br]→ Wi-Fi[br]→ 连接的AP设置[br]→ 代理服务器构成[br]→ ‘被动’设置[br]→ 服务器 [font color='#8ec127']{0}[/font][br]→ 端口 [font color='#8ec127']{1}[/font][br]→ 再登录少女前线[br] [br] [font size='14' color='#ff4500']■ 无法连接时[/font][br]→ 开始[br]→ 执行[br]→ cmd[br]→ ipconfig[br]→ 试图用表示的IPv4地址[br] [br] [font size='14' color='#ff4500']■ 违反安全政策(代码22)时[/font][br]→ 关闭代理服务器设置[br]→ 实行少女前线[br]→ 进行到登录前[br]→ 再打开代理服务器设置[br]→ 再登录少女前线	[font size='14']■ Android[/font][br]→ Settings[br]→ Network & Internet[br]→ Wi-Fi[br]→ Connected AP Setting[br]→ Advanced Options[br]→ Proxy 'Manual'[br]→ Proxy Hostname [font color='#8ec127']{0}[/font][br]→ Proxy Port [font color='#8ec127']{1}[/font][br]→ Girls Frontline (Re)Login[br][br] [font size='14']■ iOS[/font][br]→ Settings[br]→ Wi-Fi[br]→ Connected AP Setting[br]→ Configure Proxy[br]→ Set 'Manual'[br]→ Server [font color='#8ec127']{0}[/font][br]→ Port [font color='#8ec127']{1}[/font][br]→ Girls Frontline (Re)Login[br] [br] [font size='14' color='#ff4500']■ Can't Connect?[/font][br]→ Start[br]→ run[br]→ cmd[br]→ ipconfig[br]→ connect to IPv4 address[br] [br] [font size='14' color='#ff4500']■ If Security Policy Violation(Code 22) occurs[/font][br]→ Turn off Proxy setting from device[br]→ Launch Girls Frontline[br]→ Proceed until right before logging in[br]→ Turn on Proxy setting from device[br]→ Relaunch Girls Frontline	[font size='14']■ Android[/font][br]→ 設定[br]→ ネットワーク及びインターネット[br]→ Wi-Fi[br]→ 繋がったAP設定[br]→ 詳細設定項目[br]→ プロキシ '手動' 設定[br]→ プロキシホスト [font color='#8ec127']{0}[/font][br]→ プロキシポート [font color='#8ec127']{1}[/font][br]→ ドルフロ (再)ログイン[br][br] [font size='14']■ iOS[/font][br]→ 設定[br]→ Wi-Fi[br]→ 接続中のWi-fiをタップ[br]→ プロキシを構成[br]→ '手動' 設定[br]→ サーバー [font color='#8ec127']{0}[/font][br]→ ポート [font color='#8ec127']{1}[/font][br]→ ドルフロ (再)ログイン[br] [br] [font size='14' color='#ff4500']■ 接続ができない場合[/font][br]→ スタート[br]→ Windows システムツール[br]→ cmd[br]→ ipconfig[br]→ 表示された IPv4 アドレスで試してください[br] [br] [font size='14' color='#ff4500']■ セキュリティ政策違反(コード 22)が発生した場合[/font][br]→ 端末のプロキシ設定を切る[br]→ ドルフロ起動[br]→ ログイン直前まで進む[br]→ 端末のプロキシ設定[br]→ ドルフロ (再)ログイン
-SETTING_PACKET_FORGER_GROUP	패킷 변조	包伪造	Packet Forger	
-SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT	랜덤 부관	随机副官	Random Adjutant	
+SETTING_PACKET_FORGER_GROUP	패킷 변조	包伪造	Packet Forger	Packet Forger
+SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT	랜덤 부관	随机副官	Random Adjutant	Random Adjutant
 SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_COMMENT	인형 [font color='#ffb400']{0}[/font] 스킨 [font color='#ffb400']{1}[/font]	人形 [font color='#ffb400']{0}[/font] 皮肤 [font color='#ffb400']{1}[/font]	T-Doll [font color='#ffb400']{0}[/font] Skin [font color='#ffb400']{1}[/font]	人形 [font color='#ffb400']{0}[/font] Skin [font color='#ffb400']{1}[/font]
-SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_TOOLTIP	소속 인형 중 랜덤한 인형으로 부관 설정		Set random T-Doll as Adjutant on Login	所属人形の中からランダムに副官を設定
+SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_TOOLTIP	소속 인형 중 랜덤한 인형으로 부관 설정	所属的人形中随机设置为副官	Set random T-Doll as Adjutant on Login	所属人形の中からランダムに副官を設定
 SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_WHITELIST	부관 화이트리스트	副官白名单	Adjutant Whitelist	副官ホワイトリスト
-SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_WHITELIST_TOOLTIP	소속 인형 중 선택된 인형만 부관으로 등장하도록 설정[br][font color='#FFF44336']소속되지 않은 인형은 출현하지 않음[/font]	所属的人形中随机设置为副官	Allow whitelisted T-Dolls as Adjutant[br][font color='#FFF44336']Locked T-Dolls will not appear[/font]	選択された人形が、副官に登場するように設定する[br][font color='#FFF44336']所属していない人形は出現していない[/font]
+SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_WHITELIST_TOOLTIP	소속 인형 중 선택된 인형만 부관으로 등장하도록 설정[br][font color='#FFF44336']소속되지 않은 인형은 출현하지 않음[/font]	所属的人形中选择的人形设置为副官	Allow whitelisted T-Dolls as Adjutant[br][font color='#FFF44336']Locked T-Dolls will not appear[/font]	選択された人形が、副官に登場するように設定する[br][font color='#FFF44336']所属していない人形は出現していない[/font]
 SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_BLACKLIST	부관 블랙리스트	副官黑名单	Adjutant Blacklist	副官ブラックリスト
 SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_BLACKLIST_TOOLTIP	설정된 인형은 등장하지 않음	设置所属的人形中只选择的人形才能作为副官[br][font color='#FFF44336]]没有所属的人形不会出现[/font]	Deny blacklisted T-Dolls as Adjutant	設定された人形は登場しない
 SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SKIN_WHITELITE	스킨 화이트리스트	皮肤白名单	Skin Whitelist	スキンホワイトリスト
@@ -317,8 +318,8 @@ MESSAGE_COMPLETE_TRAIN_EXP_SUBJECT	경험훈련	经验训练	Exp Training	経験
 MESSAGE_COMPLETE_TRAIN_DOLL_CONTENT	인형 {0} 훈련완료	人形 {0} 完成训练	{0} Training completed	人形 {0} 訓練完了
 MESSAGE_COMPLETE_TRAIN_FAIRY_CONTENT	요정 {0} 훈련완료	妖精 {0} 完成训练	{0} Training completed	妖精 {0} 訓練完了
 MESSAGE_COMPLETE_TRAIN_SQUAD_CONTENT	중장비 {0} 훈련완료	重装部队 {0} 完成训练	{0} Training completed	중装備 {0} 訓練完了
-MESSAGE_COMPLETE_DATA_ANALYSIS_SUBJECT	정보분석	情报解析	Data Analysis	情報分析
-MESSAGE_COMPLETE_DATA_ANALYSIS_CONTENT	정보분석 완료	完成情报解析	Data Analysis completed	情報分析完了
+MESSAGE_COMPLETE_DATA_ANALYSIS_SUBJECT	정보분석	情报解析	Intelligence Analysis	情報分析
+MESSAGE_COMPLETE_DATA_ANALYSIS_CONTENT	정보분석 완료	完成情报解析	Intelligence Analysis completed	情報分析完了
 MESSAGE_COMPLETE_RESTORE_SUBJECT	인형수복	人性修复	T-Doll Repair	人形修理
 MESSAGE_COMPLETE_RESTORE_CONTENT	인형 {0} 수복 완료	人形 {0} 修复成功	{0} Repair completed	人形 {0} 修理完了
 MESSAGE_COMPLETE_EXPLORE_SUBJECT	전진기지	前进营地	Forward Basecamp	前進基地
@@ -356,7 +357,7 @@ MESSAGE_THEATER_EXERCISE_SAVE_WAVE_SUBJECT	국지전	战区攻略系统	Theater	
 MESSAGE_THEATER_EXERCISE_SAVE_WAVE_CONTENT	국지전 웨이브 정보를 확인하려면 재로그인 필요	要确认战区攻略系统的信息时需要重新登录	Requires re-log in to check Theater Wave info	戦区Wave情報を確認したい場合は再ログイン必要
 MESSAGE_QUEST_DAILY_SUBJECT	일간임무	日常任务	Daily Quest	デイリー任務
 MESSAGE_QUEST_WEEKLY_SUBJECT	주간임무	周常任务	Weekly Quest	ウィークリー任務
-MESSAGE_QUEST_RESEARCH_SUBJECT	정보임무	情报任务	Research Quest	情報任務
+MESSAGE_QUEST_RESEARCH_SUBJECT	정보임무	情报任务	Intelligence Quest	情報任務
 MESSAGE_QUEST_CONTENT	{0} 달성	达到 {0}	{0} Complete	{0} 達成
 MESSAGE_TEST_SUBJECT	테스트 알림	测试通知	Test Notification	テスト
 MESSAGE_TEST_CONTENT	테스트 알림 성공	测试通知成功	Test Notification Success	テストアラート OK
@@ -365,9 +366,9 @@ MAIL_FORMAT	[소녀전선] {0}	[少女前线] {0}	[Girls Frontline] {0}	[ドル�
 MARRIED	서약	誓约	Oathed	誓約
 LOCKED	잠김	锁定	Locked	ロック
 DOLL_INFO_ID	ID	ID	ID	ID
-DOLL_INFO_NO	도감번호	图鉴编号	No	図鑑番号
+DOLL_INFO_NO	도감번호	图鉴编号	No.	図鑑番号
 DOLL_INFO_TYPE	종류	类型	Type	種類
-DOLL_INFO_STAR	레어도	稀有度	Star	レアリティ
+DOLL_INFO_STAR	레어도	稀有度	Rarity	レアリティ
 DOLL_INFO_NAME	인형	人形	Name	人形
 DOLL_INFO_LEVEL	레벨	等级	Level	レベル
 DOLL_INFO_SUM_EXP	누적 경험치	累积经验值	Total Exp	累計経験値
@@ -424,7 +425,7 @@ EQUIP_INFO_IS_LOCKED	잠김여부	是否锁定	Locked	ロックチェック
 FAIRY_INFO_ID	ID	ID	ID	ID
 FAIRY_INFO_NO	도감번호	图鉴编号	No	図鑑番号
 FAIRY_INFO_NAME	요정	妖精	Name	妖精
-FAIRY_INFO_QUALITY_LEVEL	레어도	稀有度	Star	レアリティ
+FAIRY_INFO_QUALITY_LEVEL	레어도	稀有度	Rarity	レアリティ
 FAIRY_INFO_QUALITY_EXP	개발수치	开发值	Dev. Rate	開発値
 FAIRY_INFO_LEVEL	레벨	等级	Level	レベル
 FAIRY_INFO_TRAIT	특성	特性	Talent	天賦
@@ -436,7 +437,7 @@ RESCUE_DOLL_MISSION_NAME	전역	作战	Mission	戦役
 RESCUE_DOLL_MISSION_COUNT	전역횟수	作战次数	Mission Attempt	戦役回数
 RESCUE_DOLL_DOLL_ID	인형 ID	人形ID	Doll ID	人形ID
 RESCUE_DOLL_DOLL_NAME	인형	人形	Doll	人形
-RESCUE_DOLL_DOLL_STAR	레어도	稀有度	Star	レアリティ
+RESCUE_DOLL_DOLL_STAR	레어도	稀有度	Rarity	レアリティ
 RESCUE_DOLL_DOLL_CORE	코어	核心	Core	コア
 DOLL_1	콜트 리볼버	柯尔特左轮	SAA	コルトSAA
 DOLL_2	M1911	M1911	M1911	M1911
@@ -729,6 +730,12 @@ DOLL_288	CR-21	CR-21	CR-21	CR-21
 DOLL_289	R5	R5	R5	R5
 DOLL_290	89식	89式	89 Shiki	89式
 DOLL_291	43M	43M	43M	43M
+DOLL_292	RPK-16	RPK-16	RPK-16	RPK-16
+DOLL_293	AK-15	AK-15	AK-15	AK-15
+DOLL_294	웨블리	Webley	Webley	Webley
+DOLL_295	CF05	CF05	CF05	CF05
+DOLL_296	SL8	SL8	SL8	SL8
+DOLL_297	M82	M82	M82	M82
 DOLL_1001	노엘	诺爱尔	Noel	ノエル
 DOLL_1002	엘펠트	艾尔菲尔特	Elphelt	エルフェルト
 DOLL_1003	키아나 카스라나	琪亚娜	Kiana	キアナ・カスラナ
@@ -913,16 +920,16 @@ EQUIP_158	가속 코일	加速线圈	Acceleration Coil	加速コイル
 EQUIP_159	전술 머리띠	战术发卡	Tactical Headband	戦術鉢巻き
 EQUIP_160	No32 MKI	No32 MKI	No32 MKI	No32 MKI
 EQUIP_161	첨단 복합 조준경	先进单兵瞄具	Advanced individual Optic	先端複合スコープ
-EQUIP_162	RPD 특수 군장	RPD 특수 군장	RPD 특수 군장	RPD 특수 군장
-EQUIP_163	MAC10 레일 총몸	MAC10 레일 총몸	MAC10 레일 총몸	MAC10 레일 총몸
-EQUIP_164	M9 BC2 손잡이	M9 BC2 손잡이	M9 BC2 손잡이	M9 BC2 손잡이
-EQUIP_165	전술 헤드셋	전술 헤드셋	전술 헤드셋	전술 헤드셋
-EQUIP_166	DO 반사조준경	DO 반사조준경	DO 반사조준경	DO 반사조준경
-EQUIP_167	C96 참나무 개머리판	C96 참나무 개머리판	C96 참나무 개머리판	C96 참나무 개머리판
+EQUIP_162	RPD 특수 군장	RPD单兵套件	RPD 특수 군장	RPD 특수 군장
+EQUIP_163	MAC10 레일 총몸	MAC10 上机匣	MAC10 레일 총몸	MAC10 레일 총몸
+EQUIP_164	M9 BC2 손잡이	M9 BC2握把	M9 BC2 손잡이	M9 BC2 손잡이
+EQUIP_165	전술 헤드셋	战术耳机	전술 헤드셋	전술 헤드셋
+EQUIP_166	DO 반사조준경	DO反射瞄具	DO 반사조준경	DO 반사조준경
+EQUIP_167	C96 참나무 개머리판	C96橡木枪托	C96 참나무 개머리판	C96 참나무 개머리판
 EQUIP_168	100식 접이식 개머리판	折叠枪托	Folding Stock	100식 접이식 개머리판
 EQUIP_169	RFB 전방 레일	RFB前导轨	Am RFB Quad Rail	RFB 전방 레일
 EQUIP_170	20mm HEI	20mm HEI	20mm HEI	20mm HEI
-EQUIP_171	전술 번개 안테나	전술 번개 안테나	전술 번개 안테나	전술 번개 안테나
+EQUIP_171	전술 번개 안테나	战术闪电呆毛	전술 번개 안테나	전술 번개 안테나
 EQUIP_TYPE_1	옵티컬	光学瞄具	Optical	オプティカル
 EQUIP_TYPE_2	옵티컬	光学瞄具	Optical	オプティカル
 EQUIP_TYPE_3	옵티컬	光学瞄具	Optical	オプティカル
@@ -1148,9 +1155,9 @@ QUEST_128	지원제대 호출	使用支援梯队	Friend Support	支援部隊使�
 QUEST_129	정보분석	情报解析	Data Analysis	情報分析
 QUEST_130	정보분석	情报解析	Data Analysis	情報分析
 QUEST_201	인형수복	战术少女修复	Repair T-Doll	人形修理
-QUEST_202	철혈기계 처치	消灭普通机械铁血兵	Kill Machine S.F.	鉄血機械討伐
-QUEST_203	철혈인형 처치	消灭普通人形铁血兵	Kill Humanoid S.F.	鉄血人形討伐
-QUEST_204	철혈보스 처치	消灭BOSS	Kill Boss S.F.	鉄血ボス討伐
+QUEST_202	철혈기계 처치	消灭普通机械铁血兵	Eliminate Machine S.F.	鉄血機械討伐
+QUEST_203	철혈인형 처치	消灭普通人形铁血兵	Eliminate Humanoid S.F.	鉄血人形討伐
+QUEST_204	철혈보스 처치	消灭BOSS	Eliminate Boss S.F.	鉄血ボス討伐
 QUEST_205	군수지원	后勤支援	Logistic Support	後方支援
 QUEST_206	S랭크 전투	以S评价完成战斗	S Rank Battle	Sランク戦闘
 QUEST_207	인형강화	战术少女强化	Enhance T-Doll	人形強化
@@ -1158,9 +1165,9 @@ QUEST_208	인형제조	战术少女制造	Produce T-Doll	人形製造
 QUEST_209	스킬훈련	人形技能训练	Skill Training	スキル訓練
 QUEST_210	모의작전	模拟作战	Combat Simulation	模擬作戦
 QUEST_211	장비제조	装备制造	Produce Equip	装備製造
-QUEST_212	장갑기계 처치	消灭装甲机械铁血兵	Kill Armored Machine S.F.	装甲機械討伐
-QUEST_213	장갑인형 처치	消灭装甲人形铁血兵	Kill Armored Humanoid S.F.	装甲人形討伐
-QUEST_214	중형인형제조	人形重型制造	Equip Heavy Production	大型人形製造
+QUEST_212	장갑기계 처치	消灭装甲机械铁血兵	Eliminate Armored Machine S.F.	装甲機械討伐
+QUEST_213	장갑인형 처치	消灭装甲人形铁血兵	Eliminate Armored Humanoid S.F.	装甲人形討伐
+QUEST_214	중형인형제조	人形重型制造	T-Doll Heavy Production	大型人形製造
 QUEST_215	장비교정	装备校准	Equip Calibration	装備校正
 QUEST_216	장비강화	装备强化	Equip Enhancement	装備強化
 QUEST_217	중형장비제조	装备重型制造	Equip Heavy Production	大型装備製造
@@ -1169,16 +1176,16 @@ QUEST_219	요정강화	妖精强化	Fairy Enhancement	妖精強化
 QUEST_220	정보분석	情报解析	Data Analysis	情報分析
 QUEST_221	칩셋강화	强化消耗芯片	Enhance Chip	テトリス校正
 QUEST_301	아무 전역 승리	完成任何作战	Clear Any Mission	無作為の戦役勝利
-QUEST_302	아무 적 처치	消灭任何敌人	Kill Any Enemy	無作為の敵討伐
+QUEST_302	아무 적 처치	消灭任何敌人	Eliminate Any Enemy	無作為の敵討伐
 QUEST_303	일반 4-6 승리	通过普通4-6	Clear Mission 4-6	通常4-6勝利
 QUEST_304	일반 5-6 승리	通过普通5-6	Clear Mission 5-6	通常5-6勝利
 QUEST_305	일반 6-6 승리	通过普通6-6	Clear Mission 6-6	通常6-6勝利
 QUEST_306	일반 7-6 승리	通过普通7-6	Clear Mission 7-6	通常7-6勝利
-QUEST_307	철혈보스 처치	消灭BOSS	Kill Boss S.F.	鉄血ボス討伐
-QUEST_308	장갑인형 처치	消灭装甲人形铁血兵	Kill Armored Humanoid S.F.	装甲人形討伐
-QUEST_309	장갑기계 처치	消灭装甲机械铁血兵	Kill Armored Machine S.F.	装甲機械討伐
-QUEST_310	철혈인형 처치	消灭普通人形铁血兵	Kill Humanoid S.F.	鉄血人形討伐
-QUEST_311	철혈기계 처치	消灭普通机械铁血兵	Kill Machine S.F.	鉄血機械討伐
+QUEST_307	철혈보스 처치	消灭BOSS	Eliminate Boss S.F.	鉄血ボス討伐
+QUEST_308	장갑인형 처치	消灭装甲人形铁血兵	Eliminate Armored Humanoid S.F.	装甲人形討伐
+QUEST_309	장갑기계 처치	消灭装甲机械铁血兵	Eliminate Armored Machine S.F.	装甲機械討伐
+QUEST_310	철혈인형 처치	消灭普通人形铁血兵	Eliminate Humanoid S.F.	鉄血人形討伐
+QUEST_311	철혈기계 처치	消灭普通机械铁血兵	Eliminate Machine S.F.	鉄血機械討伐
 QUEST_312	일반 전역승리	通过普通战役	Clear Normal Mission	通常戦役勝利
 QUEST_313	긴급 전역승리	通过紧急战役	Clear Emergency Mission	緊急戦役勝利
 QUEST_314	야간 전역승리	通过夜战战役	Clear Night Mission	夜戦戦役勝利
