@@ -73,7 +73,7 @@ TAB_ECHELON	제대	梯队	Echelon	部隊
 TAB_QUEST	임무	任务	Quest	任務
 TAB_WAREHOUSE	창고	仓库	Warehouse	倉庫
 TAB_RECORD_MISSION	전역 녹화	作战绿化	Record Mission	録画
-TAB_MINIMAP	미니맵	Minimap	Minimap	Minimap
+TAB_MINIMAP	미니맵	小地图	Minimap	Minimap
 TAB_PROXY	연결	连接	Proxy	連結
 TAB_NOTIFICATION_SETTING	알림 설정	通知设置	Notification Settings	通知設定
 TAB_SETTING	설정	设置	Settings	設定
@@ -930,6 +930,7 @@ EQUIP_168	100식 접이식 개머리판	折叠枪托	Folding Stock	100식 접이
 EQUIP_169	RFB 전방 레일	RFB前导轨	Am RFB Quad Rail	RFB 전방 레일
 EQUIP_170	20mm HEI	20mm HEI	20mm HEI	20mm HEI
 EQUIP_171	전술 번개 안테나	战术闪电呆毛	전술 번개 안테나	전술 번개 안테나
+EQUIP_174	Frag12 파쇄탄	Frag12 파쇄탄	Frag12 파쇄탄	Frag12 파쇄탄
 EQUIP_TYPE_1	옵티컬	光学瞄具	Optical	オプティカル
 EQUIP_TYPE_2	옵티컬	光学瞄具	Optical	オプティカル
 EQUIP_TYPE_3	옵티컬	光学瞄具	Optical	オプティカル
@@ -1077,6 +1078,7 @@ EQUIP_TYPE_168	전용장비	专属装备	Exclusive	専用装備
 EQUIP_TYPE_169	전용장비	专属装备	Exclusive	専用装備
 EQUIP_TYPE_170	전용장비	专属装备	Exclusive	専用装備
 EQUIP_TYPE_171	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_174	전용장비	专属装备	Exclusive	専用装備
 FAIRY_1	용사요정	勇士妖精	Warrior Fairy	勇士妖精
 FAIRY_2	격노요정	暴怒妖精	Fury Fairy	激怒妖精
 FAIRY_3	방패요정	盾甲妖精	Armor Fairy	装甲妖精
@@ -1102,6 +1104,7 @@ FAIRY_22	해변요정	海滩妖精	Beach Fairy	海辺妖精
 FAIRY_23	연타요정	连击妖精	Combo Fairy	連撃妖精
 FAIRY_24	장벽요정	立盾妖精	Barrier Fairy	障壁妖精
 FAIRY_25	쌍둥이요정	双生妖精	Twin Fairy	双子妖精
+FAIRY_26	시조요정	시조요정	시조요정	시조요정
 FAIRY_1001	야에 사쿠라	八重樱	Yae Sakura	八重 桜
 FAIRY_1002	카구야	耀夜姬	Kaguya Hime	カグヤ
 FAIRY_1003	클로에	柯萝伊	Chloe	クロエ
