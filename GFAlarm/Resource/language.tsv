@@ -34,7 +34,7 @@ RUN_124E	12-4E	12-4E	12-4E	12-4E
 COMBAT_REPORT	작전보고서	作战报告	Combat Report	作戦報告書
 COMBAT_REPORT_SHORT	작보	报告	C.Report	作報
 UNKNOWN	알 수 없음	未知道	Unknown	不明
-NEED_RELOGIN	재로그인 필요	需要在登录	Need Relogin	再ログインしてください
+NEED_RELOGIN	재로그인 필요	需要再登录	Need Relogin	再ログインしてください
 UNRECEIVE_SHARE_GEM	공유보석 미수령	未领取共用宝石	Unreceived Share Gem	シェアダイヤを受け取っていません
 UNRECEIVE_SHARE_BATTERY	공유전지 미수령	未领取共用电池	Unreceived Share Battery	戦友宿舎バッテリーを受け取っていません
 SPEND_RESOURCE	투입 자원	投入资源	Spend Resources	投入資源
@@ -53,6 +53,7 @@ NOW_EXPLORE	탐색 중	正在探索	Exploring	探索中
 DAILY_QUEST	일간임무	日常任务	Daily Quest	デイリー任務
 WEEKLY_QUEST	주간임무	周常任务	Weekly Quest	ウィークリー任務
 RESEARCH_QUEST	정보임무	情报任务	Intelligence Quest	情報任務
+BINGO_QUEST	빙고임무	活动任务	Bingo Quest	Bingo Quest
 LOGISTICS	군수지원	后勤支援	Logistics	後方支援
 AUTO_BATTLE	자율작전	自律作战	Auto-Battle	自立作戦
 MISSION	작전	作战	Mission	作戦
@@ -112,6 +113,9 @@ SETTING_PROXY_SERVER_GROUP	프록시 서버	代理服务器	Proxy Server	プロ�
 SETTING_PROXY_SERVER_USE_PROXY_SERVER	프록시 서버	代理服务器	Proxy Server	プロキシサーバー
 SETTING_PROXY_SERVER_USE_AUTO_START	자동시작	自动运行代理服务器	Auto Start	プロキシ自動スタート
 SETTING_PROXY_SERVER_PORT_NUMBER	포트번호	代理服务器端口编号	Port Number	プロキシポート番号
+SETTING_PROXY_SERVER_USE_AUTH	접속 인증	连接认证	Authentication	Authentication
+SETTING_PROXY_SERVER_AUTH_USERNAME	사용자 이름	用户名	Username	Username
+SETTING_PROXY_SERVER_AUTH_PASSWORD	비밀번호	密码	Password	Password
 SETTING_PROXY_SERVER_USE_SSL_DECRYPT	HTTPS 복호화	代理服务器 HTTPS 复护化	HTTPS Decryption	プロキシHTTPS復号化
 SETTING_PROXY_SERVER_USE_SSL_DECRYPT_WARNING	[font color='#F44336']대만 서버에서만 사용할 것[/font]	[font color='#F44336']只在台服使用[/font]	[font color='#F44336']TW Server Only[/font]	[font color='#F44336']台湾サーバーユーザー様だけ使ってください[/font]
 SETTING_PROXY_SERVER_USE_SSL_DECRYPT_COMMENT	[a href='{0}']링크[/a]를 참고해서 인증서 설치 후 사용 가능	参考[a href='{0}']链接[/a]可在设置认证书后使用	Refer to [a href='{0}']link[/a] to install certificate before use	[a href='{0}']サイト[/a]を参考して認証書をインストールした後使えます
@@ -225,6 +229,8 @@ SETTING_NOTIFICATION_PRODUCE_FAIRY_TOOLTIP	제조된 요정을 알림	通知制�
 SETTING_NOTIFICATION_COSTUME_GROUP	지휘관 복장 효과	指挥官服装效果	Costume	指揮官アバター効果
 SETTING_NOTIFICATION_COSTUME_DOLL_EXP_BONUS	브리핑 능력	作战总结	Briefing Skill	ブリーフィング能力
 SETTING_NOTIFICATION_COSTUME_DOLL_EXP_BONUS_TOOLTIP	전투에서 얻는 인형 경험치 상승[br][font color='#ffb400'](상승 보너스)[/font]	战斗产生的人形经验[br][font color='#ffb400'](上升)[/font]	Increase T-Doll Exp earned during battle[br][font color='#ffb400'](Increase Bonus)[/font]	戦闘で得る人形経験値上昇[br][font color='#ffb400'](上昇ボーナス)[/font]
+SETTING_NOTIFICATION_COSTUME_FAIRY_EXP_BONUS	심화 학습	深入学习	Deep Learning	Deep Learning
+SETTING_NOTIFICATION_COSTUME_FAIRY_EXP_BONUS_TOOLTIP	전투에서 얻는 요정 경험치 상승[br][font color='#ffb400'](상승 보너스)[/font]	战斗中获得的妖精的经验值上升[br][font color='#ffb400'](上涨奖金)[/font]	Increase Fairy EXP earned during battle[br][font color='#ffb400'](Increase Bonus)[/font]	Increase Fairy EXP earned during battle[br][font color='#ffb400'](Increase Bonus)[/font]
 SETTING_NOTIFICATION_COSTUME_RESTORE_TIME	자장가	摇篮曲	Lullaby	子守歌
 SETTING_NOTIFICATION_COSTUME_RESTORE_TIME_TOOLTIP	인형/중장비 수복 시간 단축[br][font color='#ffb400'](단축 보너스)[/font]	重装人形和普通人形的修复时间减少[br][font color='#ffb400'](减少)[/font]	Decrease T-Doll/HOC Repair time[br][font color='#ffb400'](Decrease Bonus)[/font]	人形/重装備部隊修理時間短縮[br][font color='#ffb400'](短縮ボーナス)[/font]
 SETTING_NOTIFICATION_COSTUME_SKILL_TIME	속성 훈련	速成培训	Haste Training	速成訓練
@@ -245,8 +251,8 @@ SETTING_TOAST_USE_VOICE_TOOLTIP	소리가 나지 않는 경우 대체 알림으�
 SETTING_TOAST_USE_VOICE_COMMENT	[a href='{0}']링크[/a]의 음성데이터 설치 시 인형 음성 알림 사용가능	安装[a href='{0}']链接[/a]的语音数据时可使用人形语音通知	Download T-Doll voice data from [a href='{0}']link[/a] to use T-Doll Voice Notification	[a href='{0}']アドレス[/a]の音声データをインストールした場合、人形ボイスアラート設定可能
 SETTING_TOAST_USE_ONLY_ADJUTANT_VOICE	음성 알림 부관만	只要副官的语音	Adjutant Voice Only	アラート設定（副官）
 SETTING_TOAST_USE_ONLY_ADJUTANT_VOICE_TOOLTIP	모든 인형 음성을 부관 음성으로 변경	所有人形的语音换成副官的语音	Play all T-Doll voice notifications as Adjutant's voice	全ての人形ボイスを副官ボイスに変更
-SETTING_TOAST_USE_START_VOICE	군수/자율 출발 음성	后勤支援/自律作战执行语音	Logistics/Auto-Battle	
-SETTING_TOAST_USE_START_VOICE_TOOLTIP	군수/자율 출발 시 음성 알림	后勤支援/自律作战执行时，语音通知	Enable T-Doll voice notification when starting Logistics/Auto-Battle	
+SETTING_TOAST_USE_START_VOICE	군수/자율 출발 음성	后勤支援/自律作战执行语音	Logistics/Auto-Battle	Logistics/Auto-Battle
+SETTING_TOAST_USE_START_VOICE_TOOLTIP	군수/자율 출발 시 음성 알림	后勤支援/自律作战执行时，语音通知	Enable T-Doll voice notification when starting Logistics/Auto-Battle	Enable T-Doll voice notification when starting Logistics/Auto-Battle
 SETTING_TOAST_VOICE_VOLUME	음성 알림 볼륨	语音通知音量	Voice Volume	ボイスアラートのボリューム
 SETTING_TOAST_VOICE_VOLUME_TOOLTIP	음성 알림 볼륨 설정	设定语音通知音量	Set voice volume	ボイスアラートのボリューム設定
 SETTING_TOAST_USE_SOUNDPLAYER_API	구버전 소리 API	旧版本语音API	Use SoundPlayerAPI	古いバージョンのサウンドAPI
@@ -736,6 +742,7 @@ DOLL_294	웨블리	Webley	Webley	Webley
 DOLL_295	CF05	CF05	CF05	CF05
 DOLL_296	SL8	SL8	SL8	SL8
 DOLL_297	M82	M82	M82	M82
+DOLL_298	Vepr	Vepr	Vepr	Vepr
 DOLL_1001	노엘	诺爱尔	Noel	ノエル
 DOLL_1002	엘펠트	艾尔菲尔特	Elphelt	エルフェルト
 DOLL_1003	키아나 카스라나	琪亚娜	Kiana	キアナ・カスラナ
@@ -930,7 +937,7 @@ EQUIP_168	100식 접이식 개머리판	折叠枪托	Folding Stock	100식 접이
 EQUIP_169	RFB 전방 레일	RFB前导轨	Am RFB Quad Rail	RFB 전방 레일
 EQUIP_170	20mm HEI	20mm HEI	20mm HEI	20mm HEI
 EQUIP_171	전술 번개 안테나	战术闪电呆毛	전술 번개 안테나	전술 번개 안테나
-EQUIP_174	Frag12 파쇄탄	Frag12 파쇄탄	Frag12 파쇄탄	Frag12 파쇄탄
+EQUIP_174	Frag12 파쇄탄	Frag12高爆弹	Frag12 파쇄탄	Frag12 파쇄탄
 EQUIP_TYPE_1	옵티컬	光学瞄具	Optical	オプティカル
 EQUIP_TYPE_2	옵티컬	光学瞄具	Optical	オプティカル
 EQUIP_TYPE_3	옵티컬	光学瞄具	Optical	オプティカル
@@ -1104,7 +1111,7 @@ FAIRY_22	해변요정	海滩妖精	Beach Fairy	海辺妖精
 FAIRY_23	연타요정	连击妖精	Combo Fairy	連撃妖精
 FAIRY_24	장벽요정	立盾妖精	Barrier Fairy	障壁妖精
 FAIRY_25	쌍둥이요정	双生妖精	Twin Fairy	双子妖精
-FAIRY_26	시조요정	시조요정	시조요정	시조요정
+FAIRY_26	시조요정	祥瑞妖精	시조요정	시조요정
 FAIRY_1001	야에 사쿠라	八重樱	Yae Sakura	八重 桜
 FAIRY_1002	카구야	耀夜姬	Kaguya Hime	カグヤ
 FAIRY_1003	클로에	柯萝伊	Chloe	クロエ
@@ -1134,6 +1141,12 @@ TRAIT_910119	급양계	厨神型	Chef	給養型
 TRAIT_910120	현란계	绚烂型	현란계	絢爛型
 TRAIT_910121	연하계	贺岁型	연하계	煙霞型
 TRAIT_910122	청량계	清凉型	청량계	清凉型
+SQUAD_1	BGM-71	BGM-71	BGM-71	BGM-71
+SQUAD_2	AGS-30	AGS-30	AGS-30	AGS-30
+SQUAD_3	2B14	2B14	2B14	2B14
+SQUAD_4	M2	M2	M2	M2
+SQUAD_5	AT4	AT4	AT4	AT4
+SQUAD_6	QLZ-04	QLZ-04	QLZ-04	QLZ-04
 QUEST_101	전역승리	作战胜利	Clear Any Map	戦役勝利
 QUEST_102	전역승리	作战胜利	Clear Any Map	戦役勝利
 QUEST_103	전역승리	作战胜利	Clear Any Map	戦役勝利
@@ -1192,3 +1205,1307 @@ QUEST_311	철혈기계 처치	消灭普通机械铁血兵	Eliminate Machine S.F.
 QUEST_312	일반 전역승리	通过普通战役	Clear Normal Mission	通常戦役勝利
 QUEST_313	긴급 전역승리	通过紧急战役	Clear Emergency Mission	緊急戦役勝利
 QUEST_314	야간 전역승리	通过夜战战役	Clear Night Mission	夜戦戦役勝利
+ITEM_1	인형제조계약	人形制造契约	T-Doll Contract	人形製造契約
+ITEM_2	장비제조계약	装备制造契约	Equipment Contract	装備製造契約
+ITEM_3	쾌속제조계약	快速制造契约	Quick Production Contract	快速製造契約
+ITEM_4	쾌속수복계약	快速修复契约	Quick Repair Contract	快速修復契約
+ITEM_5	일일정지허가	每日暂停许可	Daily Pause Permit	一時停止毎日許可
+ITEM_6	자율전투허가	自动战斗许可	Auto-Battle Permit	自動戦闘許可
+ITEM_7	서약의 증표	誓约之证	Oath Certificate	誓約の証
+ITEM_8	쾌속훈련계약	快速训练契约	Quick Training Contract	快速訓練契約
+ITEM_9	증폭캡슐	增幅胶囊	Enhancement Capsule	増幅カプセル
+ITEM_10	대체 코어	替代核心	Dummy Core	代用コア
+ITEM_11	PW카드	密码卡	Key Card	パスワードカード
+ITEM_12	PT	积分	Points	ポイント
+ITEM_13	이름 변경권	改名卡	Name Change Card	改名カード
+ITEM_14	원시 데이터 샘플	原始数据样本	Original Sample	原始サンプル
+ITEM_15	순정 데이터 샘플	纯净数据样本	Pure Sample	データサンプル
+ITEM_16	쾌속 분석 계약	快速解析契约	Quick Analysis Contract	快速解析契約
+ITEM_17	데이터 패치	数据补丁	Data Patch	データパッチ
+ITEM_31	초급훈련자료	初级训练资料	Basic Training Data	初級訓練資料
+ITEM_32	중급훈련자료	中级训练资料	Intermediate Training Data	中級訓練資料
+ITEM_33	고급훈련자료	高级训练资料	Advanced Training Data	上級訓練資料
+ITEM_41	구매토큰	采购币	Token	コイン
+ITEM_42	교환권	兑换券	Exchange Ticket	引換券
+ITEM_43	블랙카드	黑卡	Black Card	ブラックカード
+ITEM_44	교정권	校准点券	Calibration Ticket	較正チケット
+ITEM_45	기억파편	记忆碎片	Memory Fragment	記憶の欠片
+ITEM_46	특수작전보고서	特种作战报告书	Special Combat Report	特種作戦報告書
+ITEM_47	국지전 소재	战区素材	Battle Zone Material	
+ITEM_48	3종 훈련자료	三项训练资料	Three types of Training Data	
+ITEM_49	정식 서버 보석	正式服钻石		
+ITEM_50	표준 부품	通用配件	Universal Parts	汎用部品
+ITEM_51	신형 사통 소자	新型火控元件	New Type Fire-Control Component	
+ITEM_100	엘리트 그리폰훈장	精英狮鹫作战勋章	Elite Griffin Combat Medal	グリフィン・エリート勲章
+ITEM_101	전투훈장	战斗排行勋章	Combat Ranking Medal	戦闘ランキング勲章
+ITEM_102	수집랭킹훈장	收集排行勋章	Collection Ranking Medal	収集ランキング勲章
+ITEM_103	챌린저 훈장	挑战者勋章	Challenger Medal	挑戦者勲章
+ITEM_104	엘리트 기묘한 모험 훈장	精英奇妙冒险勋章	Elite Adventurer Medal	エリートの奇妙な冒険勲章
+ITEM_301	BGM-71	BGM-71	BGM-71	BGM-71
+ITEM_302	AGS-30	AGS-30	AGS-30	AGS-30
+ITEM_303	2B14	2B14	2B14	2B14
+ITEM_304	M2	M2	M2	M2
+ITEM_305	AT4	AT4	AT4	AT4
+ITEM_306	QLZ-04	QLZ-04	QLZ-04	QLZ-04
+ITEM_501	인력	人力	Manpower	人力
+ITEM_502	탄약	弹药	Ammo	弾薬
+ITEM_503	식량	口粮	Rations	配給
+ITEM_504	부품	零件	Parts	部品
+ITEM_505	보석	钻石	Gems	ダイヤ
+ITEM_506	전지	电池	Battery	バッテリー
+ITEM_507	자유경험치	全局经验	Surplus EXP	トータル経験値
+ITEM_508	우정점수	友情点数	Friendship Points	友情ポイント
+ITEM_509	요정지령	妖精指令	Fairy Command	妖精指令
+ITEM_510	추가 모의작전점수	模拟作战超导动能	Combat Sim Extra Energy	模擬作戦超伝導AP
+ITEM_511	지휘관 경험치	指挥官经验	Commander EXP	指揮官経験値
+ITEM_1001	AAT-52 아이콘	AAT-52 图标		
+ITEM_1002	G43 아이콘	G43 图标		
+ITEM_1003	IDW 아이콘	IDW 图标		
+ITEM_1004	L85A1 아이콘	L85A1 图标		
+ITEM_1005	M1911 아이콘	M1911 图标		
+ITEM_1006	PPSH-41 아이콘	PPSH-41 图标		
+ITEM_1007	배레타38형 아이콘	伯莱塔38型 图标		
+ITEM_1008	AK-47 아이콘	AK-47 图标		
+ITEM_1009	글록17 아이콘	格洛克17 图标		
+ITEM_1010	마카로프 아이콘	马卡洛夫 图标		
+ITEM_1011	VZ61 아이콘	VZ61 图标		
+ITEM_1012	세르듀코프 아이콘	谢尔久科夫 图标		
+ITEM_1013	ST AR-15 아이콘	ST AR-15 图标		
+ITEM_1014	M1918 아이콘	M1918 图标		
+ITEM_1015	MP5 아이콘	MP5 图标		
+ITEM_1016	PTRD 아이콘	PTRD 图标		
+ITEM_1017	UMP9 아이콘	UMP9 图标		
+ITEM_1018	G11 아이콘	G11 图标		
+ITEM_1019	OTs-14 아이콘	OTs-14 图标		
+ITEM_1020	수오미 아이콘	索米 图标		
+ITEM_1021	IOP	IOP		
+ITEM_1022	AEGIS	圣盾		
+ITEM_1023	Jupiter	木星		
+ITEM_1024	SOPMODII	SOPMODII		
+ITEM_1025	코르바툰트리의 눈요정			
+ITEM_1026	M4A1기념 아이콘			
+ITEM_1027	ST AR-15기념 아이콘			
+ITEM_1028	M16A1기념 아이콘			
+ITEM_1029	M4 SOPMOD II기념 아이콘			
+ITEM_1030	1주년기념 카드배경			
+ITEM_1031	브렌 아이콘			
+ITEM_1032	FMG-9 아이콘			
+ITEM_1033	KS-23 아이콘			
+ITEM_1034	M9 아이콘			
+ITEM_1035	M1919A4 아이콘			
+ITEM_1036	MAC-10 아이콘			
+ITEM_1037	마이크로 우지 아이콘			
+ITEM_1038	OTs-12 아이콘			
+ITEM_1039	PPS-43 아이콘			
+ITEM_1040	RMB-93 아이콘			
+ITEM_1041	스텐MkⅡ 아이콘			
+ITEM_1042	SV-98 아이콘			
+ITEM_1043	G36 아이콘			
+ITEM_1044	콜트리볼버 아이콘			
+ITEM_1045	SPAS-12 아이콘			
+ITEM_1046	SVD 아이콘			
+ITEM_1047	UMP45 아이콘			
+ITEM_1048	KSG 아이콘			
+ITEM_1049	M99 아이콘			
+ITEM_1050	RO635 아이콘			
+ITEM_1051	Manticore			
+ITEM_1052	Vespid&Ripper			
+ITEM_1053	M4A1			
+ITEM_1054	SPP-1			
+ITEM_1055	드리머			
+ITEM_1056	UMP40 아이콘			
+ITEM_1057	배경 : 심층투영			
+ITEM_1058	FNP-9 아이콘			
+ITEM_1059	G3 아이콘			
+ITEM_1060	LWMMG 아이콘			
+ITEM_1061	M3 아이콘			
+ITEM_1062	나강 리볼버 아이콘			
+ITEM_1063	Spectre M4 아이콘			
+ITEM_1064	SVT-38 아이콘			
+ITEM_1065	M1개런드 아이콘			
+ITEM_1066	M2HB 아이콘			
+ITEM_1067	M21 아이콘			
+ITEM_1068	StG44 아이콘			
+ITEM_1069	토카레프 아이콘			
+ITEM_1070	AS Val 아이콘			
+ITEM_1071	M60 아이콘			
+ITEM_1072	Mk23 아이콘			
+ITEM_1073	스프링필드 아이콘			
+ITEM_1074	스테츠킨 아이콘			
+ITEM_1075	Kar98k 아이콘			
+ITEM_1076	M950A 아이콘			
+ITEM_1077	톰슨 아이콘			
+ITEM_1078	Jaeger			
+ITEM_1079	Dragoon			
+ITEM_1080	Sangvis Ferri			
+ITEM_1081	AR15			
+ITEM_1082	Destroyer			
+ITEM_1083	임시 지휘실			
+ITEM_1084	레이더 기지			
+ITEM_1085	거리의 낙서			
+ITEM_1086	옛날의 도시			
+ITEM_1087	마카로프 - 잭오랜턴			
+ITEM_1088	Vector - 고양이 발바닥			
+ITEM_1089	MP5 - 드라큘라			
+ITEM_1090	M45 - 과자 배달부			
+ITEM_1091	스프링필드 - 정통파 마녀			
+ITEM_1092	WA2000 - 고성에서의 모험			
+ITEM_1093	M1919A4 - 카밀라			
+ITEM_1094	MK23 - 스위트 데빌			
+ITEM_1095	G11 - 은톨이 좀비			
+ITEM_1096	64식 - 떠돌이 마녀			
+ITEM_1097	리-엔필드 - 제복 사냥꾼			
+ITEM_1098	마이크로 우지 - 잠에서 깬 바보			
+ITEM_1099	M1918 - 바니 걸			
+ITEM_1100	MP-446 - 고집 센 악동			
+ITEM_1101	64식 - 물 선녀복			
+ITEM_1102	그리즐리 MkⅤ - 주말 경비원			
+ITEM_1103	M1919A4 - 파티의 연인			
+ITEM_1104	콜트 리볼버 - 별똥별의 소원			
+ITEM_1105	스프링필드 - 성스러운 밤의 축복			
+ITEM_1106	M14 - 성탄절 퍼레이드 의상			
+ITEM_1107	M21 - 성탄절 실내복			
+ITEM_1108	SVD - 겨울 선녀			
+ITEM_1109	WA2000 - 겨울날 그대를 기다리며			
+ITEM_1110	NTW-20 - 루돌프			
+ITEM_1111	FAL - 겨울 보급 작전			
+ITEM_1112	MG5 - 새빨간 야간경비원			
+ITEM_1113	수오미 - 코르바툰투리의 눈 요정			
+ITEM_1114	56-1식 - 샐비어			
+ITEM_1115	MP-446 - 해바라기			
+ITEM_1116	NZ75 - 국화꽃 소녀			
+ITEM_1117	M99 - 시클라멘			
+ITEM_1118	95식 - 영롱한 옥			
+ITEM_1119	97식 - 화려한 모란			
+ITEM_1120	59식 - 앵초			
+ITEM_1121	PTRD - 로맨틱한 임무			
+ITEM_1122	UMP9 - "내가 좀 늦었지?"			
+ITEM_1123	UMP45 - "이번만이야"			
+ITEM_1124	웰로드 MkⅡ - 영국 연인			
+ITEM_1125	SV-98 - 웨이트리스			
+ITEM_1126	토카레프 - 두 사람의 인생			
+ITEM_1127	PPsh-41 - 계약 시간			
+ITEM_1128	스텐 MkⅡ - 마음의 대답			
+ITEM_1129	리-엔필드 - 평생의 수호자			
+ITEM_1130	PK - 당신과 함께			
+ITEM_1131	P7 - 손 도장			
+ITEM_1132	FAL - 최고로 중요한 날			
+ITEM_1133	ST AR-15 - 계절학교에 가다			
+ITEM_1134	M950A - 당번 대표			
+ITEM_1135	MG4 - 생존멤버			
+ITEM_1136	6P62 - 전투선원			
+ITEM_1137	스콜피온 - 붉은 은하수			
+ITEM_1138	스프링필드 - 등불 아래의 여왕			
+ITEM_1139	모신-나강 - 달빛 바다			
+ITEM_1140	WA2000 - 무도회의 쉼표			
+ITEM_1141	HK416 - 별에 감싸이다			
+ITEM_1142	M1918 - 준비된 세레나데			
+ITEM_1143	SR-3MP - 검은토끼 마키아또			
+ITEM_1144	M950A - "축제 시작이야!"			
+ITEM_1145	리-엔필드 - 양파 저격수			
+ITEM_1146	MP40 - 엄지공주			
+ITEM_1147	그리즐리 MkⅤ - 변신! 테디베어!			
+ITEM_1148	네게브 - 조그만 방랑자			
+ITEM_1149	G36 - 꼬마 메이드			
+ITEM_1150	노엘 - μ-12			
+ITEM_1151	엘펠트 - 매그넘 웨딩			
+ITEM_1152	엘펠트 - 인형 섬멸자			
+ITEM_1153	NTW-20 - 무더위 속 임무			
+ITEM_1154	95식 - 여름의 풍류			
+ITEM_1155	수오미 - 한여름 밤의 요정			
+ITEM_1156	G28 - 트로피컬 스톰			
+ITEM_1157	M37 - 한여름의 순례자			
+ITEM_1158	M1개런드 - 해변의 공주			
+ITEM_1159	스프링필드 - 잠에서 깬 인어			
+ITEM_1160	WA2000 - 모불라 작전			
+ITEM_1161	Five-seveN - 크루즈의 여왕님			
+ITEM_1162	PKP - 꽃과 물			
+ITEM_1163	G36C - 여름·불꽃놀이·양지의 시			
+ITEM_1164	OTs-14 - 흩날리는 벚꽃눈			
+ITEM_1165	KLIN - 세 마리의 까마귀			
+ITEM_1166	MP5 - 잠들지 않는 꽃			
+ITEM_1167	M249 SAW - 북극 여우			
+ITEM_1168	9A-91 - 총알 카페			
+ITEM_1169	G3 - 전쟁터의 제빵사			
+ITEM_1170	MG3 - 휴일의 거리 풍경			
+ITEM_1171	TAR-21 - 야간 주점			
+ITEM_1172	은톨이 좀비			
+ITEM_1173	웰로드 MkⅡ - 그림자의 왕			
+ITEM_1174	79식 - 구미호			
+ITEM_1175	IWS 2000 - 일곱 번째 봉인자			
+ITEM_1176	P7 - 마총의 수녀			
+ITEM_1177	Spitfire - 마지막 앨리스			
+ITEM_1178	FNC - 이 사탕은 이제 내 거!			
+ITEM_1179	Super SASS - 늑대 소녀			
+ITEM_1180	RFB 아이콘			
+ITEM_1181	S.A.T.8 아이콘			
+ITEM_1182	USAS-12 아이콘			
+ITEM_1183	Vector 아이콘			
+ITEM_1184	Spitfire 아이콘			
+ITEM_1185	Kar98k			
+ITEM_1186	M4A1			
+ITEM_1187	M16A1			
+ITEM_1188	Halloween			
+ITEM_1189	Dinergate			
+ITEM_1190	키아나 - 키아나의 예복			
+ITEM_1191	브로냐 - 브로냐의 장갑			
+ITEM_1192	제레 - 제레의 의식			
+ITEM_1193	아이콘 : 외톨이 - 그 날을 소망하며......			
+ITEM_1194	아이콘 : 외톨이 - 키아나			
+ITEM_1195	아이콘 : 외톨이 - 메이			
+ITEM_1196	아이콘 : 외톨이 - 브로냐			
+ITEM_1197	아이콘 : 외톨이 - 테레사			
+ITEM_1198	아이콘 : 외톨이 - 히메코			
+ITEM_1199	아이콘 : 외톨이 - 제레			
+ITEM_1200	카드 배경 : 외톨이 - 표지			
+ITEM_1201	카드 배경 : 외톨이 - 원념			
+ITEM_1202	카드 배경 : 외톨이 - 붕괴 강림			
+ITEM_1203	톰슨 - 데빌 헌터			
+ITEM_1204	컨텐더 - 오페라의 유령			
+ITEM_1205	PKP - 걸 프롬 UNCLE			
+ITEM_1206	MG5 - 황야의 사냥꾼			
+ITEM_1207	AEK-999 - 광란의 질주			
+ITEM_1208	PzB39 - 열혈 라이더			
+ITEM_1209	G36 - “바텐더”			
+ITEM_1210	아이콘 : 데빌 헌터			
+ITEM_1211	기지 배경 : 대형 극장			
+ITEM_1212	아이콘 : 코르바툰투리의 눈 요정			
+ITEM_1213	기지 배경 : 크리스마스 이브의 한 때			
+ITEM_1214	기지 배경 : 크리스마스 이브의 작은 방			
+ITEM_1215	RFB - 크리스마스를 훔친 RFB			
+ITEM_1216	G11 - 가장 아름다운 선물			
+ITEM_1217	Zas M21 - 총성을 울리는 설녀			
+ITEM_1218	CZ75 - 겨울의 탐험가			
+ITEM_1219	아멜리 - 선물은 성탄절 트리			
+ITEM_1220	M1918 - 꿈꿔왔던 크리스마스			
+ITEM_1221	Ots-44 - 숲속의 어린 순록			
+ITEM_1222	아이콘 : 전술 흰담비			
+ITEM_1223	아이콘 : 그리폰 성탄절 자수			
+ITEM_1224	아이콘 : 철혈 성탄절 자수			
+ITEM_1225	아이콘 : 수수께끼의 산타클로스			
+ITEM_1226	카드 배경 : 자연과 맺은 성탄절 약속			
+ITEM_1227	대만서버 1주년 기념 아이콘			
+ITEM_1228	아이콘 : 공식 4컷 vol.1			
+ITEM_1229	아이콘 : 공식 4컷 vol.2			
+ITEM_1230	아이콘 : 공식 4컷 vol.3			
+ITEM_1231	M99 - 토끼반			
+ITEM_1232	NZ75 - ThanX!&Go2Hell!			
+ITEM_1233	SPP-1 - 가랑눈에 감싸여			
+ITEM_1234	Super-Shorty - 타향의 갈림길에서			
+ITEM_1235	RMB-93 - 별의 저편			
+ITEM_1236	대만서버 1주년 기념 카드 배경			
+ITEM_1237	아이콘 : 재회			
+ITEM_1238	카드 배경 : 협박			
+ITEM_1239	DSR-50 - 비목단			
+ITEM_1240	S.A.T.8 - 매화 도장			
+ITEM_1241	ART556 - 양배추 소녀			
+ITEM_1242	JS05 - 제피란테스			
+ITEM_1243	Mk23 - 브랜디시아			
+ITEM_1244	M590 - 흰나팔꽃			
+ITEM_1245	81식 카빈 - 백산차			
+ITEM_1246	LWMMG - 센토레아			
+ITEM_1247	한양조 88식 - 동호의 연꽃			
+ITEM_1248	아이콘 : 공식 4컷 vol.4			
+ITEM_1249	아이콘 : 세뱃돈 여신			
+ITEM_1250	기지 배경 : 설날 주점			
+ITEM_1251	카드 배경 : 여중호걸			
+ITEM_1252	Vector - 맹목적인 믿음			
+ITEM_1253	Five-seveN - 꿈꿔왔던 미소			
+ITEM_1254	MP5 - 작은 한 걸음			
+ITEM_1255	G36 - 순백의 수레국화			
+ITEM_1256	56-1식 - 마음을 엮는 매듭			
+ITEM_1257	SV-98 - 하트를 꿰뚫어주지!			
+ITEM_1258	아이콘 : 슬픈 눈의 신부			
+ITEM_1259	기지 배경 : 대성당			
+ITEM_1260	카드 배경 : 부활절 경고			
+ITEM_1261	아이콘 : 부활절 흰 토끼			
+ITEM_1262	M1911 개조 후 아이콘			
+ITEM_1263	FN-49 개조 후 아이콘			
+ITEM_1264	M4A1 개조 후 아이콘			
+ITEM_1265	ST AR-15 개조 후 아이콘			
+ITEM_1266	IDW 개조 후 아이콘			
+ITEM_1267	64식 개조 후 아이콘			
+ITEM_1268	나강 리볼버 개조 후 아이콘			
+ITEM_1269	모신나강 개조 후 아이콘			
+ITEM_1270	M1918 개조 후 아이콘			
+ITEM_1271	MP-446 개조 후 아이콘			
+ITEM_1272	K2 - 동방의 공주			
+ITEM_1273	K5 - 둥근 달빛			
+ITEM_1274	KLIN - 추운 겨울을 넘어			
+ITEM_1275	63식 - 현황의 봉황			
+ITEM_1276	아이콘 : 흑기사			
+ITEM_1277	아이콘 : 윈드토커			
+ITEM_1278	아이콘 : 타락천사			
+ITEM_1279	아이콘 : 하얀 아이돌			
+ITEM_1280	아이콘 : 고양이 전사			
+ITEM_1281	아이콘：클리어			
+ITEM_1282	아이콘：페일			
+ITEM_1283	아이콘 : 포터블 여왕			
+ITEM_1284	클리어 - 포터블 여왕 2세			
+ITEM_1285	페일 - 포터블 여왕 3세			
+ITEM_1286	카드 배경 : 포터블 어드벤처			
+ITEM_1287	아이콘 : 공식 4컷 vol.5			
+ITEM_1288	아이콘 : 글로벌 1주년 특별 카리나			
+ITEM_1289	카드배경 : 우리의 1년			
+ITEM_1290	DSR-50 - 베스트 오퍼			
+ITEM_1291	그리즐리 MkⅤ - 별이 빛나는 밤의 무도회			
+ITEM_1292	웰로드 MkⅡ - 해 질 무렵의 위기			
+ITEM_1293	Zas M21 - 화이트 퀸			
+ITEM_1294	콜트 리볼버 - 기적의 여왕			
+ITEM_1295	UMP9 - 세계의 노래			
+ITEM_1296	UMP45 - 다이아몬드의 꽃			
+ITEM_1297	IDW -  상자 속 고양이			
+ITEM_1298	EVO - 백야의 별 이야기			
+ITEM_1299	아이콘 : 로스트 이퀄라이저			
+ITEM_1300	아이콘 : 확고한 징벌자			
+ITEM_1301	아이콘 : 무심한 아이돌			
+ITEM_1302	아이콘 : 미소짓는 웨어울프			
+ITEM_1303	최첨단 마스크 기념 아이콘			
+ITEM_1304	카드배경 : 피파의 노래			
+ITEM_1305	아이콘 : 공식 4컷 vol.6			
+ITEM_1306	아이콘：최적의 거래			
+ITEM_1307	카르카노M1891 - 용감한 재봉사			
+ITEM_1308	카르카노M91/38 - 세노키오			
+ITEM_1309	Five-seveN - 행복한 세상의 담비			
+ITEM_1310	PP-19 - 개구리 공주			
+ITEM_1311	C-MS - 거위의 신비한 여행			
+ITEM_1312	썬더 - 레이븐 네버모어			
+ITEM_1313	아이콘 : 삼각 코어			
+ITEM_1314	아이콘 : 찹쌀 고양이			
+ITEM_1315	카드배경 : 단오절			
+ITEM_1316	대한민국 1주년 아이콘			
+ITEM_1317	대한민국 1주년 카드배경			
+ITEM_1318	콜트 리볼버 개조 후 아이콘			
+ITEM_1319	SV-98 개조 후 아이콘			
+ITEM_1320	G3 개조 후 아이콘			
+ITEM_1321	브렌 개조 후 아이콘			
+ITEM_1322	NTW-20 - VIP 체험관			
+ITEM_1323	컨텐더 - 백화집사			
+ITEM_1324	M950A - 집안일 테스트			
+ITEM_1325	G28 - 맥주목장			
+ITEM_1326	게파드 M1 - 1일 계약			
+ITEM_1327	아이콘 : VIP 시제품			
+ITEM_1328	기지 배경 : 따사로운 카페			
+ITEM_1329	카드 배경 : 메이드 체험회			
+ITEM_1330	아이콘：여우가면			
+ITEM_1331	기지 배경：불꽃이 수놓은 여름			
+ITEM_1332	아이콘：물에 빠진 개 꼴			
+ITEM_1333	카드 배경：마지막 티켓			
+ITEM_1334	G41 - 비치펑크2064			
+ITEM_1335	AK-12 - 빙수시대			
+ITEM_1336	AA-12 - 태양을 피하는 방법			
+ITEM_1337	AN-94 - 잠수종과 인형			
+ITEM_1338	MP7 - 사탕발린 총알			
+ITEM_1339	FAL - FAL의 여름			
+ITEM_1340	G36 - 50일의 메이드			
+ITEM_1341	SPAS-12 - 한여름의 열매			
+ITEM_1342	아멜리 - 아멜리의 리시브			
+ITEM_1343	P38 - 여름보다 뜨거운 인형			
+ITEM_1344	M4 SOPMOD II 개조 후 아이콘			
+ITEM_1345	UMP45 개조 후 아이콘			
+ITEM_1346	카드 배경：해변 파티			
+ITEM_1347	아이콘：비치펑크2064			
+ITEM_1348	기지 배경：한여름의 해변			
+ITEM_1349	기지 배경：한가위만 같아라			
+ITEM_1350	MG5 - 플레이그 나이트			
+ITEM_1351	G11 - 용가리 주니어 Jr.			
+ITEM_1352	M1887 - 위쳐 제너럴			
+ITEM_1353	80식 - 스틸 버터플라이			
+ITEM_1354	M1897 - 일렉트릭 위치			
+ITEM_1355	아이콘：인형 악사			
+ITEM_1356	카드 배경：소녀와 세계			
+ITEM_1357	아이콘：트릭 오어 디너게이트			
+ITEM_1358	카드 배경：핼러윈 카니발			
+ITEM_1359	기지 배경：생존자들의 핼러윈			
+ITEM_1360	S.A.T.8 - 호박꼬치			
+ITEM_1361	TAC-50 - 엘프 악마사냥꾼			
+ITEM_1362	MDR - 고스트랩			
+ITEM_1363	FAMAS - 총포와 사이드박스			
+ITEM_1364	브렌 - 잭 트리니티			
+ITEM_1365	F1 - 블랙 위치 아카데미			
+ITEM_1366	스텐 MkⅡ 개조 후 아이콘			
+ITEM_1367	M14 개조 후 아이콘			
+ITEM_1368	G36 개조 후 아이콘			
+ITEM_1369	LWMMG 개조 후 아이콘			
+ITEM_1370	HK21 - 총알은 사슬을 꿰뚫고			
+ITEM_1371	JS05 - 이별의 연주			
+ITEM_1372	PM-06 - 창공을 나는 법			
+ITEM_1373	USAS-12 - VRAIN Power			
+ITEM_1374	HK45 - 미라클☆스타트			
+ITEM_1375	나강 리볼버 - 별들의 유대			
+ITEM_1376	아이콘： 호박꼬치			
+ITEM_1377	카드 배경： 총포와 사이드박스			
+ITEM_1378	Px4 스톰 - 크리스마스 모닝퀸			
+ITEM_1379	P90 - 스칼렛 터보			
+ITEM_1380	ART556 - 굴뚝 청소부			
+ITEM_1381	FP-6 - 사랑의 위성			
+ITEM_1382	Five-seveN - 푸르고 푸른 성탄절			
+ITEM_1383	G36 - 아이들의 성탄절			
+ITEM_1384	TMP - 매우 반짝이는 귀			
+ITEM_1385	아이콘：사탕 지팡이			
+ITEM_1386	아이콘：전술 순록			
+ITEM_1387	카드 배경：전술 순록			
+ITEM_1388	기지 배경：창밖을 보라			
+ITEM_1389	아이콘：공식 4컷 vol.7			
+ITEM_1390	아이콘：크리스마스 모닝퀸			
+ITEM_1391	카드 배경：크리스마스 럼블			
+ITEM_1392	64식 소총 - 새해의 소망	64式自 - 新年祈愿		
+ITEM_1393	RFB - 신년 최고의 플레이어	RFB - 正月游戏大师		
+ITEM_1394	100식 - 총잡이 무녀	樱花 - 枪使巫女		
+ITEM_1395	카르카노 M91/38 - Insegui l'aquilone	卡尔卡诺M91/38 - Insegui l'aquilone		
+ITEM_1396	카르카노 M1891 - 시작을 알리는 소리	卡尔卡诺M1891 - 起始的钟声		
+ITEM_1397	M1014 - 설월화	M1014 - 雪月花		
+ITEM_1398	AS Val - 꿈의 불꽃놀이	As Val - 梦花火		
+ITEM_1399	62식 - 축제 나들이	62式 - 新年游园会		
+ITEM_1400	UMP45 - 겨울 여행	UMP45 - 冬之旅		
+ITEM_1401	아이콘：대만 서버 2주년 기념			
+ITEM_1402	카드 배경：대만 서버 2주년 기념			
+ITEM_1403	아이콘：공식 4컷 vol.8			
+ITEM_1404	아이콘：최첨단 마스크·이성질체			
+ITEM_1405	카드 배경：철혈 참석			
+ITEM_1406	아이콘：치명적인 자유			
+ITEM_1407	OTs-14 - 크라슐라	OTs-14 - 紫雨心		
+ITEM_1408	AK-74U - 은방울	AK-74U - 君影草		
+ITEM_1409	88식 - 봄 난초	88式 - 朵幽兰		
+ITEM_1410	IWS 2000 - 에델바이스	IWS 2000 - 薄雪绒		
+ITEM_1411	CZ75 - 금련화	CZ75 - 金莲花		
+ITEM_1412	MP5 - 야지마	MP5 - 山苏子		
+ITEM_1413	CZ52 - 네모필라	CZ52 - 琉璃唐		
+ITEM_1414	아이콘：크라슐라			
+ITEM_1415	카드 배경：크라슐라			
+ITEM_1416	아이콘：술먹은 촉댕이			
+ITEM_1417	아이콘：특급 전서구			
+ITEM_1418	카드 배경：서약 성지			
+ITEM_1419	아이콘：공식4컷 vol.9			
+ITEM_1420	수오미 - 행복한 사명	索米 - 幸福使命		
+ITEM_1421	PKP - 실버 스타	PKP - 银白之星		
+ITEM_1422	G36C - 행복을 향해서	G36C - 迈出步伐的你		
+ITEM_1423	Mk23 - 전해진 마음	Mk23 - 传达到的心意		
+ITEM_1424	T-5000 - 웨딩 레인저	T5000 - 誓约变身		
+ITEM_1425	게파드 M1 - 기대되는 내일	猎豹M1 - 期待着的明天		
+ITEM_1426	SPAS-12 - 헌병 군악대			
+ITEM_1427	아이콘：최고의 미소			
+ITEM_1428	카드 배경：행복한 사명			
+ITEM_1429	GSh-18 - 전진 수술실			
+ITEM_1430	아이콘：공식 4컷 vol.10			
+ITEM_1431	아이콘：스프링필드 스페셜			
+ITEM_1432	컨텐더 - 사파이어의 마총사	竞争者 - 龙狼子		
+ITEM_1433	네게브 - 프린세스 다크스톤	内格夫 - 黑石姬		
+ITEM_1434	SPAS-12 - 고블린 헌터	SPAS-12 - 哥布林猎手		
+ITEM_1435	토카레프 - 그리폰의 무희	托卡列夫 - 格里芬的舞娘		
+ITEM_1436	IDW - 망토 두른 고양이	IDW - 斗篷与猫耳		
+ITEM_1437	아이콘：글로벌 서버 1주년 기념			
+ITEM_1438	기지 배경：트와일라잇			
+ITEM_1439	아이콘：각오한 탐색자			
+ITEM_1440	아이콘：빛나는 추적자			
+ITEM_1441	아이콘：희망의 씨앗			
+ITEM_1442	아이콘：추락한 선도자			
+ITEM_1443	아이콘：절망의 심연			
+ITEM_1444	아이콘：최첨단 마스크·3주년			
+ITEM_1445	아이콘: 마이크로 우지 개조			
+ITEM_1446	아이콘: AS Val 개조			
+ITEM_1447	아이콘: StG-44 개조			
+ITEM_1448	K2 - 해뜨기 전에	K2 - 黎明之前		
+ITEM_1449	AK-12 - 프리징 블루	AK-12 - 静寂苍蓝		
+ITEM_1450	AN-94 - 사일런트 레드	AN-94 - 沉默嫣红		
+ITEM_1451	M99 - 흰토끼 축제	M99 - 白兔夏宴		
+ITEM_1452	MDR - 연회 관측자	MDR - 酒会观测者		
+ITEM_1453	79식 - 별빛의 폭스트롯	79式 - 星夜狐步		
+ITEM_1454	G28 - 달빛과 에메랄드	G28 - 月光与祖母绿		
+ITEM_1455	K5 - 운명의 왈츠	K5 - 命运华尔兹		
+ITEM_1456	썬더 - 블랙 스완의 꿈	雷电 - 黑天鹅的梦		
+ITEM_1457	카드 배경：한여름 다과회			
+ITEM_1458	아이콘："잭팟"			
+ITEM_1459	아이콘：맥주의 파도			
+ITEM_1460	아이콘：그랜드 슬램 펀치			
+ITEM_1461	아이콘：평생 친구 고양이			
+ITEM_1462	아이콘：이 망할 세상을 위해			
+ITEM_1463	아이콘：친애하는 베키			
+ITEM_1464	아이콘：슈퍼 꼬맹이 대장			
+ITEM_1465	카드 배경：VA-11에 어서 오세요			
+ITEM_1466	스텔라 호시이 - 친구의 갑옷	史黛拉·星井 - 挚友的铠甲		
+ITEM_1467	도로시 헤이즈 - 메가 산타	多萝西·海兹 - 珍稀圣诞礼服		
+ITEM_1468	다나 제인 - 붉은 혜성	达娜·赞恩 - 赤色彗星		
+ITEM_1469	세이 아사기리 - 친구의 사복	赛伊·朝雾 - 挚友的便装		
+ITEM_1470	알마 알머스 - 학교 대모험	阿尔玛·阿玛斯 - 中学大冒险		
+ITEM_1471	질 스팅레이 - 마법소녀 줄리아나	吉尔·斯汀雷 - 模特战士		
+ITEM_1472	HK416-고양이의 선물	HK416 - 黑猫的赠礼		
+ITEM_1473	K11-꼬마 과학자	K11 - 小小科学家		
+ITEM_1474	UMP45-깡총 요원	UMP45 - 特工垂耳兔		
+ITEM_1475	UMP9-킁킁 수사관	UMP9 - 柴犬侦查员		
+ITEM_1476	KSVK-천사의 물감	KSVK - 天使的画笔		
+ITEM_1477	OTs-44-맑음 때때로 꿀꿀	OTs-44 - 超能少女猪		
+ITEM_1478	아이콘：여름 수호자			
+ITEM_1479	카드 배경：수박서리			
+ITEM_1480	R93-럭키 바캉스	R93 - 长假幸运星		
+ITEM_1481	루이스-자외선 차단 작전	刘易斯 - 防晒大作战		
+ITEM_1482	C-MS-날치 대행진	C-MS - 进击的飞鱼		
+ITEM_1483	88식-침수 방지 키트	88式 - 反溺水配件		
+ITEM_1484	4식-4번함 출항	四式 - 海角四号		
+ITEM_1485	세르듀코프 - 까마귀 구조대원	谢尔久科夫 - 黑鸦救生员		
+ITEM_1486	Z-62-수영 수업	Z-62 - 游泳课题		
+ITEM_1487	아이콘: G80-3000			
+ITEM_1488	아이콘: MX8.0			
+ITEM_1489	아이콘： 일본 서버 1주년 기념			
+ITEM_1490	아이콘:최첨단 마스크·연쇄분열			
+ITEM_1491	아이콘：길 잃은 우담화			
+ITEM_1492	카드 배경：시발역			
+ITEM_1493	아이콘：MP5 개조			
+ITEM_1494	아이콘：HK416 개조			
+ITEM_1495	아이콘：한양조88식 개조			
+ITEM_1496	아이콘：UMP9 개조			
+ITEM_1497	ADS - 물빛 청춘	ADS - 水色青春		
+ITEM_1498	S.A.T.8 - 소녀의 비밀 이야기	S.A.T.8 - 少女密话		
+ITEM_1499	G36 - 달밑에서 소원을	G36 - 月下祈愿		
+ITEM_1500	M249 SAW - 달무리의 밤	M249 SAW - 胧月夜		
+ITEM_1501	OTs-12 - 백화요란	OTs-12 - 百花缭乱		
+ITEM_1502	기지 배경：환상의 꽃밭			
+ITEM_1503	PA-15 - 두근두근 하이스쿨	PA-15 - 高校心跳物语		
+ITEM_1504	95식 - 순백의 졸업식	95式 - 纯白毕业祭		
+ITEM_1505	97식 - 지각 시츄에이션	97式 - 迟到戏码		
+ITEM_1506	SR-3MP - 토끼 특공대장	SR-3MP - 特攻队长兔		
+ITEM_1507	Mk23 - 개학을 알리는 고양이 노래	Mk23 - 宣告开学的猫之歌		
+ITEM_1508	M590 - 방과 후 심심풀이	M590 - 放课后的消遣		
+ITEM_1509	M500 - 수업 중 낮잠	M500 - 课间白日梦		
+ITEM_1510	TMP - 냥 프리즘 파워	TMP - 喵棱镜威力		
+ITEM_1511	아이콘: 여름 기념사진			
+ITEM_1512	카드 배경: R타입 수플렉스			
+ITEM_1513	아이콘: 복음전도사			
+ITEM_1514	아이콘: 트릭 배틀			
+ITEM_1515	카드 배경: 패닉의 끝			
+ITEM_1516	아이콘: 고스트 캣틴			
+ITEM_1517	QBU-88 - 사탕 내놔라!	QBU-88 - 拦路劫糖!		
+ITEM_1518	G36C - 적안의 G36C	G36C - 灼眼的G36C		
+ITEM_1519	M870 - 펌킨 포트리스	M870 - 南瓜堡垒		
+ITEM_1520	MG3 - 밤이 되었습니다	MG3 - 满月请睁眼		
+ITEM_1521	KSVK - 뒷면의 문워커	KSVK - 月暗面漫步		
+ITEM_1522	97식 산탄총 - 97계 병법	97式霰 - 奇谋妙策九七计		
+ITEM_1523	PSG-1 - 한밤중의 습격	PSG-1 - 魅影突击		
+ITEM_1524	Model L - 흑야연옥찰	Model L - 暗夜炼狱刹		
+ITEM_1525	아이콘: 절명 식객			
+ITEM_1526	아이콘: 야옹이 파티			
+ITEM_1527	아이콘: 앞만 보고 가			
+ITEM_1528	아이콘: 포기는 없다			
+ITEM_1529	아이콘: "제게 기대주세요!"			
+ITEM_1530	아이콘: 싹트는 희망			
+ITEM_1531	아이콘: 최고로 High			
+ITEM_1532	아이콘: 철댕이를 주시할 때...			
+ITEM_1533	아이콘:"사탕 없지만 장난 치지 마"			
+ITEM_1534	카드배경:마물의 축제			
+ITEM_1535	Saiga-12 - 크림슨 코드라이버	Saiga-12 - 茜红领航		
+ITEM_1536	P22 - 스퍼트 매그넘	P22 - 跃动冲刺		
+ITEM_1537	UKM-2000 - 퀘이사 스트림	UKM-2000 - 急速风流		
+ITEM_1538	M2HB - 데저트 크로스	M2HB - 热砂声援		
+ITEM_1539	PPK - 터뷸런스 소닉	PPK - 烈旋音波		
+ITEM_1540	아이콘: 메리 크리스마스다멍!			
+ITEM_1541	아이콘: 안아주세요!			
+ITEM_1542	카드배경: 시공을 초월한 포옹			
+ITEM_1543	루이스 - 크리스마스이브의 약속	刘易斯 - 圣夜约定		
+ITEM_1544	HK21 - 은여우와 9분의 1 승강장	HK21 - 银狐的⅑月台		
+ITEM_1545	CAWS - 120유로의 겨울 선물	CAWS - 120份冬日礼物		
+ITEM_1546	100식 - 마음에 묻어둔 보물	樱花 - 埋入心底的宝藏		
+ITEM_1547	허니뱃저 - 산타 공주와 무표정 오소리	蜜獾 - 圣诞公主和不笑贝特		
+ITEM_1548	게파드M1 - 무구한 수호자	猎豹M1 - 无垢庇护者		
+ITEM_1549	LWMMG - 12월은 나의 거짓말	LWMMG - 12月是我的谎言		
+ITEM_1550	스테츠킨 개조 아이콘	斯捷奇金 MOD 图标		
+ITEM_1551	C96 개조 아이콘	C96 图标		
+ITEM_1552	베레타 38형 개조 아이콘	伯莱塔38型 MOD 图标		
+ITEM_1553	NTW-20 개조 아이콘	NTW-20 图标		
+ITEM_8001	정보 점수			
+ITEM_8002	정보 점수			
+ITEM_8003	기밀문서			
+ITEM_9001	보급 상자			
+ITEM_9003	보급상자			
+ITEM_100001	붉은봉투			
+ITEM_100002	복 주머니			
+ITEM_100003	마력원소			
+ITEM_100004	보급상자			
+ITEM_100005	특급 킹 다이아냥			
+ITEM_100006	생강과자			
+ITEM_100007	보급상자			
+ITEM_100008	부활절 달걀			
+ITEM_100009	리스펙트 왕관			
+ITEM_100010	최첨단 마스크			
+ITEM_100011	글로벌 2주년 코스튬권			
+ITEM_100012	삼각 코어			
+ITEM_100013	여우가면			
+ITEM_100014	보급상자			
+ITEM_100015	개구쟁이 랜턴			
+ITEM_100016	마력원소			
+ITEM_100017	사탕 지팡이			
+ITEM_100018	최첨단 마스크·이성질체			
+ITEM_100019	술먹은 촉댕이			
+ITEM_100020	최첨단 마스크·3주년			
+ITEM_100021	보급상자			
+ITEM_100022	3주년 코스튬 교환권			
+ITEM_100023	흰 장갑 파편			
+ITEM_100024	전술 수박			
+ITEM_100025	최첨단 마스크·연쇄분열			
+ITEM_100026	해몽 상자			
+ITEM_100027	유령 비누			
+ITEM_100028	리스펙트 왕관			
+ITEM_100029	반짝이는 작은별			
+ITEM_110001	카니발 활동 점수			
+ITEM_110002	카니발 활동 점수2			
+ITEM_110003	카니발 활동 점수3			
+ITEM_110004	테스트 서버 활동 점수			
+ITEM_110005	이벤트 PT			
+ITEM_110006	이벤트 PT			
+ITEM_110007	이벤트 PT			
+ITEM_110008	이벤트 PT			
+ITEM_110009	이벤트 PT			
+ITEM_110010	이벤트 PT			
+ITEM_110011	이벤트 점수			
+ITEM_110012	이벤트 점수			
+ITEM_110013	이벤트 점수			
+ITEM_110014	이벤트 점수			
+ITEM_110015	이벤트 점수			
+ITEM_110016	이벤트 점수			
+ITEM_110017	이벤트 점수			
+ITEM_110018	이벤트 점수			
+ITEM_110019	이벤트 점수			
+ITEM_110020	이벤트 점수			
+ITEM_110021	이벤트 점수			
+ITEM_110022	이벤트 점수			
+ITEM_110023	이벤트 포인트			
+ITEM_110024	이벤트 점수			
+ITEM_110025	이벤트 점수			
+ITEM_110026	이벤트 점수			
+ITEM_110027	이벤트 점수			
+ITEM_110028	이벤트 점수			
+ITEM_110029	이벤트 점수			
+ITEM_110030	이벤트 점수 - 등불 밑 새해			
+ITEM_7001	사탕 주머니			
+ITEM_7002	예비 부품			
+ITEM_7003	땀 뻘뻘			
+ITEM_7004	반했어			
+ITEM_7005	고민투성			
+ITEM_7006	침투성이			
+ITEM_7007	공주병			
+ITEM_7008	골드러시			
+ITEM_7101	지휘관 의상-수영복 치장 효과			
+ITEM_7102	지휘관 의상-여름 이벤트 치장 효과			
+ITEM_7103	지휘관 의상-2019 유카타 치장 효과			
+ITEM_7104	지휘관 의상 - 2019년 불량학생 치장 효과			
+ITEM_7105	지휘관 의상 - 2019 동계복 이펙트			
+ITEM_6001	고기만두	普通肉包	Ordinary Meat Bun	普通の肉まん
+ITEM_6002	만두 통	一屉肉包	Bundle of Meat Buns	一せいろの肉まん
+ITEM_6003	일품 만두	镇魂肉包	Trove of Meat Buns	プレミアム肉まん
+ITEM_6004	서민 세트	平民标配	Commonfolk Standard	平民の標準装備
+ITEM_6005	디럭스 세트	单人无忧桶	Comfort Bucket for One	お一人様大満足セット
+ITEM_6006	커플 세트	双人乐享全餐	Full Meal for Two	お二人様お幸せセット
+ITEM_6007	케이크 조각	草莓芝士片	Strawberry Cheesecake Slice	1ピースのチーズケーキ
+ITEM_6008	금주 추천 케이크	一周蛋糕精选	One Week's Cake Selection	ウィークリーケーキセレクト
+ITEM_6009	설탕 폭탄 세트	甜蜜爆弹箱	Sweet Explosives	スウィーツの宝箱
+ITEM_6010	브랜드 커피	Baby//cB-A-B-Y.	Baby//c B-A-B-Y.	「Baby//cB-A-B-Y.」
+ITEM_6011	포장마차 어묵	街边关东煮	Streetside Oden	屋台のおでん
+ITEM_6012	야생 벌꿀 세트	野生蜂巢组合	Wild Honeycomb	野生蜂蜜セット
+ITEM_6013	냉동 극장	寒冰剧场	Icy Theater	アイス劇場
+ITEM_4001	도시의 선물	城市的馈赠	City's Gift	都市の贈り物
+ITEM_4002	설원의 선물	雪地的馈赠	Snowfield's Gift	雪原の贈り物
+ITEM_4003	숲의 선물	森林的馈赠	Forest's Gift	森林の贈り物
+ITEM_4004	황무지의 선물	荒野的馈赠	Wasteland's Gift	荒野の贈り物
+ITEM_601	랜덤염색약	无限惊喜染色剂	Infinite Surprise Dye	ンダム染色剤
+ITEM_602	지정염색약	色彩指定染色剂	Colorful Specified Dye	ラー指定染色剤
+MISSION_1	준비운동	热身运动	Warm-Up Exercise	準備運動
+MISSION_2	흑색정보	黑色情报	Dark Information	裏面情報
+MISSION_3	거점수호	守护据点	Defend the Base	拠点防衛
+MISSION_4	마지막 도전	最终挑战	Final Challenge	最終挑戦
+MISSION_5	연습훈련	演习训练	Drill	演習訓練
+MISSION_6	부상자 이송	转移伤患	Transport the Injured	傷者移送
+MISSION_7	이변 조사	调查异常	Investigate Anomalies	異常調査
+MISSION_8	실종자	失踪人口	Missing Party	失踪人物
+MISSION_9	구조신호	救援信号	Rescue Signal	救援信号
+MISSION_10	제초작전	除草行动	Operation Uproot	除草作戦
+MISSION_11	역량평가 Ⅰ	进阶训练Ⅰ	Advanced Training I	上級訓練Ⅰ
+MISSION_12	역량평가 Ⅱ	进阶训练Ⅱ	Advanced Training II	上級訓練Ⅱ
+MISSION_13	역량평가 Ⅲ	进阶训练Ⅲ	Advanced Training III	上級訓練Ⅲ
+MISSION_14	역량평가 Ⅳ	进阶训练Ⅳ	Advanced Training IV	上級訓練Ⅳ
+MISSION_15	추적일지	追踪日志	Record Trace	追跡ログ
+MISSION_16	긴급지원	紧急支援	Emergency Reinforcement	緊急支援
+MISSION_17	정황조사	调查敌情	Enemy Investigation	敵情調査
+MISSION_18	데이터 수집	采集数据	Data Collection	資料収集
+MISSION_19	추가의뢰	额外委托	Additional Commission	追加依頼
+MISSION_20	작전종료	终止作战	Termination	作戦終了
+MISSION_21	샘플수집 Ⅰ	战地样本Ⅰ	Field Samples I	戦地サンプルⅠ
+MISSION_22	샘플수집 Ⅱ	战地样本Ⅱ	Field Samples II	戦地サンプルⅡ
+MISSION_23	샘플수집 Ⅲ	战地样本Ⅲ	Field Samples III	戦地サンプルⅢ
+MISSION_24	샘플수집 Ⅳ	战地样本Ⅳ	Field Samples IV	戦地サンプルⅣ
+MISSION_25	입구개통	打通入口	Clearing a Path	道を拓け
+MISSION_26	정보탈취	截获情报	Intercepted Intelligence	情報入手
+MISSION_27	비밀지원	秘密支援	Covert Reinforcement	秘密支援
+MISSION_28	방어작전	防御作战	Defensive Operation	防御作戦
+MISSION_29	빠른역습	快速反击	Swift Counterattack	高速反撃
+MISSION_30	사냥금지	禁止狩猎	No Hunting	狩猟禁止
+MISSION_31	데이터 회수 Ⅰ	回收数据Ⅰ	Data Retrieval I	データ回収Ⅰ
+MISSION_32	데이터 회수 Ⅱ	回收数据Ⅱ	Data Retrieval II	データ回収Ⅱ
+MISSION_33	데이터 회수 Ⅲ	回收数据Ⅲ	Data Retrieval III	データ回収Ⅲ
+MISSION_34	데이터 회수 Ⅳ	回收数据Ⅳ	Data Retrieval IV	データ回収Ⅳ
+MISSION_35	보조용병	协助佣兵	Assist the Mercenaries	支援傭兵
+MISSION_36	증원차단	切断增援	Cut Off Reinforcement	増援切断
+MISSION_37	전선돌파	突破阵线	Break Through Enemy Lines	戦線突破
+MISSION_38	동료수색	搜索同伴	Search for Companions	仲間捜索
+MISSION_39	좌표측정	定位坐标	Locate the Coordinates	座標特定
+MISSION_40	교란수습	平息干扰	Eradicate the Disturbance	侵入排除
+MISSION_41	기억회상 Ⅰ	记忆回溯Ⅰ	Reminiscing I	記憶回想Ⅰ
+MISSION_42	기억회상 Ⅱ	记忆回溯Ⅱ	Reminiscing II	記憶回想Ⅱ
+MISSION_43	기억회상 Ⅲ	记忆回溯Ⅲ	Reminiscing III	記憶回想Ⅲ
+MISSION_44	기억회상 Ⅳ	记忆回溯Ⅳ	Reminiscing IV	記憶回想Ⅳ
+MISSION_45	훈련참가	参加演习	Drill Attendance	演習参加
+MISSION_46	기습저지	抵挡突袭	Raid Resistance	奇襲阻止
+MISSION_47	반격개시	反戈一击	Counterstrike	反撃開始
+MISSION_48	퇴로확보	保证撤离	Safeguard Retreat	撤退保証
+MISSION_49	내부현상	内部现象	Internal Phenomenon	内部現象
+MISSION_50	추격밀령	追击密令	Order to Pursue	追撃密令
+MISSION_51	퍼즐풀이 Ⅰ	谜题破解Ⅰ	Solving the Mystery I	迷題解明Ⅰ
+MISSION_52	퍼즐풀이 Ⅱ	谜题破解Ⅱ	Solving the Mystery II	迷題解明Ⅱ
+MISSION_53	퍼즐풀이 Ⅲ	谜题破解Ⅲ	Solving the Mystery III	迷題解明Ⅲ
+MISSION_54	퍼즐풀이 Ⅳ	谜题破解Ⅳ	Solving the Mystery IV	迷題解明Ⅳ
+MISSION_55	네게브 소대	内格夫小队	Squad Negev	ネゲヴ小隊
+MISSION_56	이중 구조작전	双重救援	Double Rescue	二重救援
+MISSION_57	재회	重逢	Reunion	再会
+MISSION_58	감금인	监禁者	Prisoner	監禁
+MISSION_59	의지	意志	Resolve	意志
+MISSION_60	뒤늦은 이별	迟来的告别	Late Farewell	遅すぎた告別
+MISSION_61	마지막 소원 Ⅰ	最后愿望Ⅰ	Final Wish I	最後の願いⅠ
+MISSION_62	마지막 소원 Ⅱ	最后愿望Ⅱ	Final Wish II	最後の願いⅡ
+MISSION_63	마지막 소원 Ⅲ	最后愿望Ⅲ	Final Wish III	最後の願いⅢ
+MISSION_64	마지막 소원 Ⅳ	最后愿望Ⅳ	Final Wish IV	最後の願いⅣ
+MISSION_65	새로운 일	新工作	New Job	新たな仕事
+MISSION_1101	경험특훈 Ⅰ	经验特训Ⅰ	EXP Mode I	経験特訓Ⅰ
+MISSION_1102	경험특훈 Ⅱ	经验特训Ⅱ	EXP Mode II	経験特訓Ⅱ
+MISSION_1103	경험특훈 Ⅲ	经验特训Ⅲ	EXP Mode III	経験特訓Ⅲ
+MISSION_1201	강화연습 Ⅰ	强化练习Ⅰ	Capsule Mode I	強化練習Ⅰ
+MISSION_1202	강화연습 Ⅱ	强化练习Ⅱ	Capsule Mode II	強化練習Ⅱ
+MISSION_1203	강화연습 Ⅲ	强化练习Ⅲ	Capsule Mode III	強化練習Ⅲ
+MISSION_1301	자료추출 Ⅰ	资料采样Ⅰ	Data Mode I	資料収集Ⅰ
+MISSION_1302	자료추출 Ⅱ	资料采样Ⅱ	Data Mode II	資料収集Ⅱ
+MISSION_1303	자료추출 Ⅲ	资料采样Ⅲ	Data Mode III	資料収集Ⅲ
+MISSION_1501	마인드회랑Ⅰ	云图回廊Ⅰ	Neural Cloud Corridor I	メンタル回廊Ⅰ
+MISSION_1502	마인드회랑Ⅱ	云图回廊Ⅱ	Neural Cloud Corridor II	メンタル回廊Ⅱ
+MISSION_1503	마인드회랑Ⅲ	云图回廊Ⅲ	Neural Cloud Corridor III	メンタル回廊Ⅲ
+MISSION_10001	7단계 퍼즐	七阶谜题	Seven-Step Puzzle	七階謎題
+MISSION_10002	모서리 처리	角先破解	Corner Breaker	コーナー・ファースト
+MISSION_10003	층계교체	层先调换	Layers Reversal	レイヤー・バイ・レイヤー
+MISSION_10004	차면붕괴	次面崩溃	Side Collapse	次面崩解
+MISSION_10005	재앙의 울버린 Ⅰ	狼獾成灾Ⅰ	The Wolves Gather I	バーガータウンⅠ
+MISSION_10006	재앙의 울버린 Ⅱ	狼獾成灾Ⅱ	The Wolves Gather II	バーガータウンⅡ
+MISSION_10007	재앙의 울버린 Ⅲ	狼獾成灾Ⅲ	The Wolves Gather III	バーガータウンⅢ
+MISSION_10008	재앙의 울버린 Ⅳ	狼獾成灾Ⅳ	The Wolves Gather IV	バーガータウンⅣ
+MISSION_10009	등화관제 Ⅰ	灯火管制Ⅰ	Lighting Curfew I	灯火管制Ⅰ
+MISSION_10010	등화관제 Ⅱ	灯火管制Ⅱ	Lighting Curfew II	灯火管制Ⅱ
+MISSION_10011	등화관제 Ⅲ	灯火管制Ⅲ	Lighting Curfew III	灯火管制Ⅲ
+MISSION_10012	등화관제 Ⅳ	灯火管制Ⅳ	Lighting Curfew IV	灯火管制Ⅳ
+MISSION_10013	귀환작전 Ⅰ	归乡行动Ⅰ	Operation Homecoming I	帰郷行動Ⅰ
+MISSION_10014	귀환작전 Ⅱ	归乡行动Ⅱ	Operation Homecoming II	帰郷行動Ⅱ
+MISSION_10015	귀환작전 Ⅲ	归乡行动Ⅲ	Operation Homecoming III	帰郷行動Ⅲ
+MISSION_10016	귀환작전 Ⅳ	归乡行动Ⅳ	Operation Homecoming IV	帰郷行動Ⅳ
+MISSION_10017	이상한 나라로	坠入兔洞	Down the Rabbit Hole	ウサギの巣
+MISSION_90001	꼬마 집배원 Ⅰ	小小邮差Ⅰ	Petite Courrier I	小さな配達人Ⅰ
+MISSION_90002	꼬마 집배원 Ⅱ	小小邮差Ⅱ	Petite Courrier II	小さな配達人Ⅱ
+MISSION_90003	꼬마 집배원 Ⅲ	小小邮差Ⅲ	Petite Courrier III	小さな配達人Ⅲ
+MISSION_90004	꼬마 집배원 Ⅳ	小小邮差Ⅳ	Petite Courrier IV	小さな配達人Ⅳ
+MISSION_90005	전문 서포터 Ⅰ	专业帮手Ⅰ	Professional Help I	プロヘルパーⅠ
+MISSION_90006	전문 서포터 Ⅱ	专业帮手Ⅱ	Professional Help II	プロヘルパーⅡ
+MISSION_90007	전문 서포터 Ⅲ	专业帮手Ⅲ	Professional Help III	プロヘルパーⅢ
+MISSION_90008	전문 서포터 Ⅳ	专业帮手Ⅳ	Professional Help IV	プロヘルパーⅣ
+MISSION_90009	익명구조 Ⅰ	匿名营救Ⅰ	Anonymous Rescue I	匿名救助Ⅰ
+MISSION_90010	익명구조 Ⅱ	匿名营救Ⅱ	Anonymous Rescue II	匿名救助Ⅱ
+MISSION_90011	익명구조 Ⅲ	匿名营救Ⅲ	Anonymous Rescue III	匿名救助Ⅲ
+MISSION_90012	익명구조 Ⅳ	匿名营救Ⅳ	Anonymous Rescue IV	匿名救助Ⅳ
+MISSION_90013	7일간 동료 Ⅰ	一周的队友Ⅰ	One-Week Teammates I	1週間相棒Ⅰ
+MISSION_90014	7일간 동료 Ⅱ	一周的队友Ⅱ	One-Week Teammates II	1週間相棒Ⅱ
+MISSION_90015	7일간 동료 Ⅲ	一周的队友Ⅲ	One-Week Teammates III	1週間相棒Ⅲ
+MISSION_90016	7일간 동료 Ⅳ	一周的队友Ⅳ	One-Week Teammates IV	1週間相棒Ⅳ
+MISSION_66	파괴활동	破坏活动	Sabotage	破壊工作
+MISSION_67	일과순찰	日常巡逻	Daily Patrols	日常巡回
+MISSION_68	급습	突袭	Ambush	襲撃
+MISSION_69	술래잡기	猫鼠游戏	Cat and Mouse	鬼さんこちら
+MISSION_70	재회	重逢	Reunion	再会
+MISSION_71	회수작전Ⅰ	回收行动Ⅰ	Retrieval I	回収作戦Ⅰ
+MISSION_72	회수작전Ⅱ	回收行动Ⅱ	Retrieval II	回収作戦Ⅱ
+MISSION_73	회수작전Ⅲ	回收行动Ⅲ	Retrieval III	回収作戦Ⅲ
+MISSION_74	회수작전Ⅳ	回收行动Ⅳ	Retrieval IV	回収作戦Ⅳ
+MISSION_90017	비상배식Ⅰ	非常菜贩Ⅰ	Peculiar Vendor I	変わった行商人Ⅰ
+MISSION_90018	비상배식Ⅱ	非常菜贩Ⅱ	Peculiar Vendor II	変わった行商人Ⅱ
+MISSION_90019	비상배식Ⅲ	非常菜贩Ⅲ	Peculiar Vendor III	変わった行商人Ⅲ
+MISSION_90020	비상배식Ⅳ	非常菜贩Ⅳ	Peculiar Vendor IV	変わった行商人Ⅳ
+MISSION_10018	7단계 퍼즐	七阶谜题	Seven-Step Puzzle	七階謎題
+MISSION_10019	모서리 처리	角先破解	Corner Breaker	コーナー・ファースト
+MISSION_10020	층계교체	层先调换	Layer Reversal	レイヤー・バイ・レイヤー
+MISSION_10021	차면붕괴	次面崩溃	Side Collapse	次面崩解
+MISSION_10022	십자배치	十字基底	Cross Base	クロスベース
+MISSION_10023	빗나간 예측	错位预判	Bearing Miscalculation	変位予測
+MISSION_10024	정해진 공식	定向算法	Directional Algorithm	指向算法
+MISSION_10025	행렬반전	逆转序列	Reverse Sequence	序列逆転
+MISSION_75	발표회	报告会	Report Meeting	報告会
+MISSION_76	최후의 만찬	最后的晚餐	The Last Supper	最後の晩餐
+MISSION_77	가속	加速	Acceleration	加速
+MISSION_78	불청객	不速之客	Unwelcomed Guest	招かれざる客
+MISSION_79	하늘에 그림자	空中阴影	Shadow in the Sky	空に浮かぶ影
+MISSION_80	사명	使命	Mission	使命
+MISSION_81	순례자Ⅰ	巡礼者Ⅰ	Parader I	巡礼者Ⅰ
+MISSION_82	순례자Ⅱ	巡礼者Ⅱ	Parader II	巡礼者Ⅱ
+MISSION_83	순례자Ⅲ	巡礼者Ⅲ	Parader III	巡礼者Ⅲ
+MISSION_84	순례자Ⅳ	巡礼者Ⅳ	Parader IV	巡礼者Ⅳ
+MISSION_10026	인형섬멸	人偶歼灭	T-Doll Annihilation	アナイアレイター
+MISSION_10027	세인트 엘모	圣艾尔蒙	St. Elmo	セントエルモ
+MISSION_10028	사냥 게임	狩猎游戏	Hunting Game	ハンティングゲーム
+MISSION_10029	헌팅 래빗 작전	猎兔行动	Operation Rabbit Hunt	ウサギ狩り作戦
+MISSION_90021	호문쿨루스Ⅰ	瓶中人Ⅰ	People in the Flask I	ホムンクルスⅠ
+MISSION_90022	호문쿨루스Ⅱ	瓶中人Ⅱ	People in the Flask II	ホムンクルスⅡ
+MISSION_90023	호문쿨루스Ⅲ	瓶中人Ⅲ	People in the Flask III	ホムンクルスⅢ
+MISSION_90024	호문쿨루스Ⅳ	瓶中人Ⅳ	People in the Flask IV	ホムンクルスⅣ
+MISSION_10030	심지혼선Ⅰ	认知迷云Ⅰ	Cognitive Conundrum I	認知混迷Ⅰ
+MISSION_10031	심지혼선Ⅱ	认知迷云Ⅱ	Cognitive Conundrum II	認知混迷Ⅱ
+MISSION_10032	심지혼선Ⅲ	认知迷云Ⅲ	Cognitive Conundrum III	認知混迷Ⅲ
+MISSION_10033	심지혼선Ⅳ	认知迷云Ⅳ	Cognitive Conundrum IV	認知混迷Ⅳ
+MISSION_10034	쌍곡함수Ⅰ	双曲函数Ⅰ	Hyperbolic Function I	双曲関数Ⅰ
+MISSION_10035	쌍곡함수Ⅱ	双曲函数Ⅱ	Hyperbolic Function II	双曲関数Ⅱ
+MISSION_10036	허수미궁	虚数迷宫	Imaginary Maze	虚数迷宮
+MISSION_10037	쌍곡함수Ⅲ	双曲函数Ⅲ	Hyperbolic Function III	双曲関数Ⅲ
+MISSION_10038	쌍곡함수Ⅳ	双曲函数Ⅳ	Hyperbolic Function IV	双曲関数Ⅳ
+MISSION_10039	대립행동Ⅰ	相对行为Ⅰ	Relative Behavior I	対立行為Ⅰ
+MISSION_10040	대립행동Ⅱ	相对行为Ⅱ	Relative Behavior II	対立行為Ⅱ
+MISSION_10041	대립행동Ⅲ	相对行为Ⅲ	Relative Behavior III	対立行為Ⅲ
+MISSION_10042	대립행동Ⅳ	相对行为Ⅳ	Relative Behavior IV	対立行為Ⅳ
+MISSION_85	야간연회	夜间宴会	Banquet after Dark	夜の宴
+MISSION_86	탐색	试探	Probe	探究
+MISSION_87	토론회	讨论会	Forum	ディスカッション
+MISSION_88	2차 탐색	二次检索	Double Search	二次検索
+MISSION_89	전주곡	前奏曲	Prelude	プレリュード
+MISSION_90	포위돌파	突围	Breakthrough	包囲突破
+MISSION_91	매와 개Ⅰ	鹰与犬Ⅰ	Hawk and Hound I	犬と鷹Ⅰ
+MISSION_92	매와 개Ⅱ	鹰与犬Ⅱ	Hawk and Hound II	犬と鷹Ⅱ
+MISSION_93	매와 개Ⅲ	鹰与犬Ⅲ	Hawk and Hound III	犬と鷹Ⅲ
+MISSION_94	매와 개Ⅳ	鹰与犬Ⅳ	Hawk and Hound IV	犬と鷹Ⅳ
+MISSION_10043	붕괴강림	崩坏降临	Imminent Collapse	崩壊降臨
+MISSION_10044	호기해사묘	好奇心害死猫	Curiosity Killed the Cat	好奇心は猫を殺す
+MISSION_10045	키아나 출격	琪亚娜出击	Kiana Strikes	キアナ出撃
+MISSION_10046	입장불가	禁止入内	Do Not Enter	立入禁止
+MISSION_10047	불길한 징조	不祥的雷电	Ominous Thunder	不吉な雷
+MISSION_10048	커지는 욕망	膨胀的欲望	Swelling Desire	膨らむ欲望
+MISSION_10049	원념	怨念	Resentment	怨念
+MISSION_10050	그 날을 소망하며...	只希望有一天…	I Only Hope That One Day…	いつか必ず…
+MISSION_95	출발일	启程日	Departure Day	出発日
+MISSION_96	전선으로 가다	开往前线	Toward the Frontlines	前線に向かう
+MISSION_97	중심 지역 도착	踏入腹地	Into the Hinterland	中心地
+MISSION_98	대토벌	大扫荡	Cleanup	大襲撃
+MISSION_99	고군분투	疲于奔命	On the Run	逃げ回る
+MISSION_100	목숨을 건 돌파	殊死突围	Desperate Breakout	最終突破
+MISSION_101	배신Ⅰ	背叛Ⅰ	Betrayal I	裏切Ⅰ
+MISSION_102	배신Ⅱ	背叛Ⅱ	Betrayal II	裏切Ⅱ
+MISSION_103	배신Ⅲ	背叛Ⅲ	Betrayal III	裏切Ⅲ
+MISSION_104	배신Ⅳ	背叛Ⅳ	Betrayal IV	裏切Ⅳ
+MISSION_10051	시작점	起点	Starting Point	起点
+MISSION_10052	분기점	分歧点	Splinter Point	分岐点
+MISSION_10053	행정사점 Ⅰ	冲程止点 Ⅰ	Stroke Dead-Center I	衝程死点Ⅰ
+MISSION_10054	행정사점 Ⅱ	冲程止点 Ⅱ	Stroke Dead-Center II	衝程死点Ⅱ
+MISSION_10055	행정사점 Ⅲ	冲程止点 Ⅲ	Stroke Dead-Center III	衝程死点Ⅲ
+MISSION_10056	행정사점 Ⅳ	冲程止点 Ⅳ	Stroke Dead-Center IV	衝程死点Ⅳ
+MISSION_10057	압축시동 Ⅰ	压缩启动 Ⅰ	Compression Initiates I	圧縮燃焼Ⅰ
+MISSION_10058	압축시동 Ⅱ	压缩启动 Ⅱ	Compression Initiates II	圧縮燃焼Ⅱ
+MISSION_10059	압축시동 Ⅲ	压缩启动 Ⅲ	Compression Initiates III	圧縮燃焼Ⅲ
+MISSION_10060	압축시동 Ⅳ	压缩启动 Ⅳ	Compression Initiates IV	圧縮燃焼Ⅳ
+MISSION_10061	재점화 Ⅰ	再点火 Ⅰ	Re-Ignition I	再点火Ⅰ
+MISSION_10062	재점화 Ⅱ	再点火 Ⅱ	Re-Ignition II	再点火Ⅱ
+MISSION_10063	재점화 Ⅲ	再点火 Ⅲ	Re-Ignition III	再点火Ⅲ
+MISSION_10064	재점화 Ⅳ	再点火 Ⅳ	Re-Ignition IV	再点火Ⅳ
+MISSION_10065	분기점	分歧点	Splinter Point	分岐点
+MISSION_10066	퀸즈 갬빗 Ⅰ	后翼弃卒 Ⅰ	Queen's Gambit I	クイーンズ・ギャンビットⅠ
+MISSION_10067	퀸즈 갬빗 Ⅱ	后翼弃卒 Ⅱ	Queen's Gambit II	クイーンズ・ギャンビットⅡ
+MISSION_10068	퀸즈 갬빗 Ⅲ	后翼弃卒 Ⅲ	Queen's Gambit III	クイーンズ・ギャンビットⅢ
+MISSION_10069	퀸즈 갬빗 Ⅳ	后翼弃卒 Ⅳ	Queen's Gambit IV	クイーンズ・ギャンビットⅣ
+MISSION_10070	캐슬링 Ⅰ	王车易位 Ⅰ	Castling I	キャスリングⅠ
+MISSION_10071	캐슬링 Ⅱ	王车易位 Ⅱ	Castling II	キャスリングⅡ
+MISSION_10072	캐슬링 Ⅲ	王车易位 Ⅲ	Castling III	キャスリングⅢ
+MISSION_10073	캐슬링 Ⅳ	王车易位 Ⅳ	Castling IV	キャスリングⅣ
+MISSION_10074	프로모션 Ⅰ	底线升变 Ⅰ	Promotion I	プロモーションⅠ
+MISSION_10075	프로모션 Ⅱ	底线升变 Ⅱ	Promotion II	プロモーションⅡ
+MISSION_10076	프로모션 Ⅲ	底线升变 Ⅲ	Promotion III	プロモーションⅢ
+MISSION_10077	프로모션 Ⅳ	底线升变 Ⅳ	Promotion IV	プロモーションⅣ
+MISSION_10078	노 메이트 Ⅰ	弱子死局 Ⅰ	Minor Pieces Draw I	ステイルメイトⅠ
+MISSION_10079	노 메이트 Ⅱ	弱子死局 Ⅱ	Minor Pieces Draw II	ステイルメイトⅡ
+MISSION_10080	노 메이트 Ⅲ	弱子死局 Ⅲ	Minor Pieces Draw III	ステイルメイトⅢ
+MISSION_10081	노 메이트 Ⅳ	弱子死局 Ⅳ	Minor Pieces Draw IV	ステイルメイトⅣ
+MISSION_10082	최종수단 Ⅰ	最终手段 Ⅰ	Last Resort I	最終手段Ⅰ
+MISSION_10083	최종수단 Ⅱ	最终手段 Ⅱ	Last Resort II	最終手段Ⅱ
+MISSION_10084	최종수단 Ⅲ	最终手段 Ⅲ	Last Resort III	最終手段Ⅲ
+MISSION_10085	최종수단 Ⅳ	最终手段 Ⅳ	Last Resort IV	最終手段Ⅳ
+MISSION_10086	최종수단 Ⅴ	最终手段 Ⅴ	Last Resort V	最終手段Ⅴ
+MISSION_10087	엔드 게임	终局	Endgame	エンドゲーム
+MISSION_10088	메신저	信使	Messenger	メッセンジャー
+MISSION_10089	생존자	幸存者	Survivor	生存者
+MISSION_10090	굿바이 용궁	再见了龙宫	Goodbye - Dragon Palace	さらば竜宮
+MISSION_10091	말벌집	马蜂窝	Hornet's Nest	ハチの巣
+MISSION_10092	엔드 게임	终局	Endgame	エンドゲーム
+MISSION_90025	일방적인 회상 Ⅰ	片面回忆Ⅰ	One-Sided Memory I	記憶の片割れⅠ
+MISSION_90026	일방적인 회상 Ⅱ	片面回忆Ⅱ	One-Sided Memory II	記憶の片割れⅡ
+MISSION_90027	일방적인 회상 Ⅲ	片面回忆Ⅲ	One-Sided Memory III	記憶の片割れⅢ
+MISSION_90028	일방적인 회상 Ⅳ	片面回忆Ⅳ	One-Sided Memory IV	記憶の片割れⅣ
+MISSION_10093	Stalker	跟踪狂	Stalker	Stalker
+MISSION_10094	HeartBeat	心跳	HeartBeat	HeartBeat
+MISSION_10095	Waiting for you	等着你！	Waiting For You!	Waiting for you
+MISSION_10096	Sunset Rider	薄暮骑士	Sunset Rider	Sunset Rider
+MISSION_10097	Fate	命运	Fate	Fate
+MISSION_10098	End of the Moonlight	月光的尽头	End of the Moonlight	End of the Moonlight
+MISSION_10099	Stalker EX	跟踪狂EX	Stalker EX	Stalker EX
+MISSION_10100	HeartBeat EX	心跳EX	HeartBeat EX	HeartBeat EX
+MISSION_10101	Waiting for you EX	等着你！EX	Waiting For You! EX	Waiting for you EX
+MISSION_10102	Sunset Rider EX	薄暮骑士EX	Sunset Rider EX	Sunset Rider EX
+MISSION_10103	Fate EX	命运EX	Fate EX	Fate EX
+MISSION_10104	End of the Moonlight EX	月光的尽头EX	End of the Moonlight EX	End of the Moonlight EX
+MISSION_90029	독수리와 갈까마귀Ⅰ	巨鹰与寒鸦Ⅰ	Eagle and Jackdaw I	鷲と大鴉Ⅰ
+MISSION_90030	독수리와 갈까마귀Ⅱ	巨鹰与寒鸦Ⅱ	Eagle and Jackdaw II	鷲と大鴉Ⅱ
+MISSION_90031	독수리와 갈까마귀Ⅲ	巨鹰与寒鸦Ⅲ	Eagle and Jackdaw III	鷲と大鴉Ⅲ
+MISSION_90032	독수리와 갈까마귀Ⅳ	巨鹰与寒鸦Ⅳ	Eagle and Jackdaw IV	鷲と大鴉Ⅳ
+MISSION_10105	이상한 나라로+	坠入兔洞+	Down the Rabbit Hole+	ウサギの巣+
+MISSION_10106	폐기물	废弃物	Waste	廃棄物
+MISSION_10107	어두운 밤	夜幕	Nightfall	ナイトフォール
+MISSION_10108	세이프 하우스	安全屋	Safe House	セーフハウス
+MISSION_10109	예비전원	备用电源	Auxiliary Power	予備電源
+MISSION_10110	비축거점	储备据点	Reserve Outpost	物資拠点
+MISSION_10111	잘 가라 허수아비	别了，稻草人	Farewell - Scarecrow	さようなら、スケアクロウ
+MISSION_10113	마지막 날	最后一天	The Last Day	最後の一日
+MISSION_10112	피 없는 전장	没有血的战场	Bloodless Battlefield	血のない戦場
+MISSION_10114	평화협상	和平谈判	Peaceful Negotiations	平和交渉
+MISSION_10115	행운?	幸运？	Fortunate?	ラッキー？
+MISSION_10116	철혈고위거점	铁血精英据点	Sangvis Elite Outpost	鉄血精鋭拠点
+MISSION_10117	마인드 파편	心智碎片	Neural Fragments	記憶の欠片
+MISSION_10118	가장 비겁한 소원	最卑鄙的愿望	Darkest Desire	卑怯の願い
+MISSION_10120	의문의 적	未知敌人	Unknown Enemy	未確認目標
+MISSION_10121	지원군	“支援”	Support	「支援」
+MISSION_10122	그리폰 결사대	格里芬敢死队	Griffin Expendables	グリフィン決死隊
+MISSION_10123	2번 수비거점	2号防御据点	Defense Outpost 2	2号防衛拠点
+MISSION_10124	3번 수비거점	3号防御据点	Defense Outpost 3	3号防衛拠点
+MISSION_10125	거친 장난	玩笑而已	Just Kidding	ただのジョーク
+MISSION_10126	4번 수비거점	4号防御据点	Defense Outpost 4	4号防衛拠点
+MISSION_10127	떠보는 공세	试探性的攻势	Exploratory Attack	探りの一手
+MISSION_10128	총공격	总攻击	General Offensive	総攻撃
+MISSION_10129	미래를 위해	为了未来	For the Future	未来のために
+MISSION_10130	검은 인형	黑色人偶	Black Doll	黒い人形
+MISSION_10131	ELID 감염자	ELID感染者	ELID-Infected	ELID感染者
+MISSION_10132	신호탄	信号弹	Signal Flare	信号弾
+MISSION_10133	레드존	红区	Red Zone	レッドゾン
+MISSION_10134	옐로우존	黄区	Yellow Zone	イェローゾン
+MISSION_10135	복수	报仇	Vengeance	復讐
+MISSION_10136	표식	记号	Mark	マーカー
+MISSION_10137	희망 출현	希望出现	A New Hope	希望が現す
+MISSION_10142	모든 울분	全部的怒火	Sum of All Wraths	すべての怒り
+MISSION_10138	비열한 생쥐들	可耻的老鼠	Vile Rats	ネズミ達
+MISSION_10143	운에 맡기다	运气	Luck	己の運
+MISSION_10139	나쁜 소식	坏消息	Bad News	悪い知らせ
+MISSION_10140	IED	IED	IED	IED
+MISSION_10141	걸림돌	绊脚石	Stumbling Block	踏み石
+MISSION_10144	하얀 인형	白色人偶	White Doll	白い人形
+MISSION_10146	포효하는 태양	咆哮的太阳	Roaring Sun	吠える太陽
+MISSION_10147	무서운 굉음	恐怖的轰鸣	Howl of Terror	恐怖の轟
+MISSION_10148	작별 인사	彼此平安	Safe and Sound	お互いの安否
+MISSION_10149	잠깐만인 평화	此刻的和平	Short-lived Peace	静かな平和
+MISSION_10150	마지막 티켓	最终航班	Final Flight	最終便
+MISSION_10155	돌풍구출	飓风营救	Hurricane Rescue	人質救援
+MISSION_10145	다음 목적지	后目的地	Final Destination	後の目的地
+MISSION_10151	유지	遗命	Final Order	余命
+MISSION_10154	승리자	胜利者	Victor	勝利者
+MISSION_10156	폭심지	内爆心	Ground Zero	内爆心
+MISSION_10157	추방자	流放者	Exile	亡命者
+MISSION_105	급류를 뚫고	急流破解	Torrent Breaker	ハイスピードハッキング
+MISSION_106	전자의 눈동자	电子之瞳	Electronic Eye	エレクトリックアイ
+MISSION_107	침묵 속 추적	沉默追踪	Silent Pursuit	サイレントトレース
+MISSION_108	파멸 직전	毁灭之前	Prior to Destruction	ビフォーエンド
+MISSION_109	거리의 오두막	街中小屋	House in the Street	ストリートハウス
+MISSION_110	지하세계	地下世界	Underworld	アンダーグラウンド
+MISSION_111	낯선 여정	陌生旅程	Strange Journey	未知なる旅
+MISSION_112	습격 준비	袭击部署	Plan of Attack	襲撃計画
+MISSION_113	난리 속 강도	趁火打劫	Fishing in Troubled Waters	混乱に乗じて
+MISSION_114	역경 탈출	绝地逃生	Great Escape	脱出
+MISSION_10158	허수미궁+	虚数迷宫+	Imaginary Maze+	虚数迷宮+
+MISSION_10159	인형섬멸 EX	人偶歼灭EX	Doll Annihilation EX	アナイアレイターEX
+MISSION_10160	세인트 엘모 EX	圣艾尔蒙EX	St. Elmo EX	セントエルモの灯EX
+MISSION_10161	사냥 게임 EX	狩猎游戏EX	Hunting Game EX	ハンティングゲームEX
+MISSION_10162	헌팅 래빗 작전 EX	猎兔行动EX	Operation Rabbit Hung EX	ウサギ狩り作戦EX
+MISSION_10194	기념	纪念	Souvenir	記念
+MISSION_10195	환상뿐일 평화Ⅰ	幻影的和平Ⅰ	Illusory Peace I	
+MISSION_10196	환상뿐일 평화Ⅰ - 전투	幻影的和平Ⅰ - 战斗	Illusory Peace I - Battle	
+MISSION_10197	환상뿐일 평화Ⅱ	幻影的和平Ⅱ	Illusory Peace II	
+MISSION_10198	환상뿐일 평화Ⅱ - 서브 스토리	幻影的和平Ⅱ - 支线	Illusory Peace II - Branch	
+MISSION_10199	환상뿐일 평화Ⅲ - 전투	幻影的和平Ⅲ - 战斗	Illusory Peace III - Battle	
+MISSION_10200	환상뿐일 평화Ⅲ	幻影的和平Ⅲ	Illusory Peace III	
+MISSION_10201	환상뿐일 평화Ⅰ - 서브 스토리	幻影的和平Ⅰ - 支线	Illusory Peace I - Branch	
+MISSION_10202	환상뿐일 평화Ⅳ	幻影的和平Ⅳ	Illusory Peace IV	
+MISSION_10203	고양이와 생쥐Ⅰ	猫与鼠Ⅰ	Cat and Mouse I	
+MISSION_10204	고양이와 생쥐Ⅱ	猫与鼠Ⅱ	Cat and Mouse II	
+MISSION_10205	고양이와 생쥐Ⅲ	猫与鼠Ⅲ	Cat and Mouse III	
+MISSION_10206	고양이와 생쥐Ⅲ - 전투	猫与鼠Ⅲ - 战斗	Cat and Mouse III - Battle	
+MISSION_10207	고양이와 생쥐Ⅲ - 서브 스토리	猫与鼠Ⅲ - 支线	Cat and Mouse III - Branch	
+MISSION_10208	고양이와 생쥐Ⅳ	猫与鼠Ⅳ	Cat and Mouse IV	
+MISSION_10209	변경 밖에서Ⅰ	边境之外Ⅰ	Beyond the Border I	
+MISSION_10210	변경 밖에서Ⅱ	边境之外Ⅱ	Beyond the Border II	
+MISSION_10211	변경 밖에서Ⅲ	边境之外Ⅲ	Beyond the Border III	
+MISSION_10212	변경 밖에서Ⅳ	边境之外Ⅳ	Beyond the Border IV	
+MISSION_10213	피의 신념Ⅰ	鲜血的信念Ⅰ	Faith of Blood I	
+MISSION_10214	피의 신념Ⅰ - 전투	鲜血的信念Ⅰ - 战斗	Faith of Blood I - Battle	
+MISSION_10215	피의 신념Ⅰ - 서브 스토리Ⅰ	鲜血的信念Ⅰ - 支线Ⅰ	Faith of Blood I - Branch I	
+MISSION_10216	피의 신념Ⅰ - 서브 스토리Ⅱ	鲜血的信念Ⅰ - 支线Ⅱ	Faith of Blood I - Branch II	
+MISSION_10217	피의 신념Ⅱ	鲜血的信念Ⅱ	Faith of Blood II	
+MISSION_10218	피의 신념Ⅱ - 서브 스토리	鲜血的信念Ⅱ - 支线	Faith of Blood II - Branch	
+MISSION_10219	피의 신념Ⅲ	鲜血的信念Ⅲ	Faith of Blood III	
+MISSION_10220	늑대와 올빼미Ⅰ	狼与枭Ⅰ	Wolf and Owl I	
+MISSION_10221	늑대와 올빼미Ⅰ - 전투	狼与枭Ⅰ - 战斗	Wolf and Owl I - Battle	
+MISSION_10222	늑대와 올빼미Ⅰ - 서브 스토리	狼与枭Ⅰ - 支线	Wolf and Owl I - Branch	
+MISSION_10223	늑대와 올빼미Ⅱ - 전투	狼与枭Ⅱ - 战斗	Wolf and Owl II - Battle	
+MISSION_10224	늑대와 올빼미Ⅱ	狼与枭Ⅱ	Wolf and Owl II	
+MISSION_10225	늑대와 올빼미Ⅲ	狼与枭Ⅲ	Wolf and Owl III	
+MISSION_10226	늑대와 올빼미Ⅳ	狼与枭Ⅳ	Wolf and Owl IV	
+MISSION_10227	성벽 밑에서Ⅰ	巨墙之下Ⅰ	Under the Wall I	
+MISSION_10228	성벽 밑에서Ⅰ - 전투	巨墙之下Ⅰ - 战斗	Under the Wall I - Battle	
+MISSION_10229	성벽 밑에서Ⅱ	巨墙之下Ⅱ	Under the Wall II	
+MISSION_10230	잃어버린 카드Ⅰ	失落的筹码Ⅰ	Lost Bargaining Chip I	
+MISSION_10231	잃어버린 카드Ⅰ - 전투	失落的筹码Ⅰ - 战斗	Lost Bargaining Chip I - Battle	
+MISSION_10232	잃어버린 카드Ⅱ	失落的筹码Ⅱ	Lost Bargaining Chip II	
+MISSION_10233	잃어버린 카드Ⅲ - 전투	失落的筹码Ⅲ - 战斗	Lost Bargaining Chip III - Battle	
+MISSION_10234	잃어버린 카드Ⅲ	失落的筹码Ⅲ	Lost Bargaining Chip III	
+MISSION_10235	상어와 바다Ⅰ	鲛与海Ⅰ	Shark and the Sea I	
+MISSION_10236	상어와 바다Ⅰ - 전투	鲛与海Ⅰ - 战斗	Shark and the Sea I - Battle	
+MISSION_10237	상어와 바다Ⅱ	鲛与海Ⅱ	Shark and the Sea II	
+MISSION_10238	상어와 바다Ⅲ	鲛与海Ⅲ	Shark and the Sea III	
+MISSION_10239	상어와 바다Ⅳ - 전투	鲛与海Ⅳ - 战斗	Shark and the Sea IV - Battle	
+MISSION_10240	상어와 바다Ⅳ	鲛与海Ⅳ	Shark and the Sea IV	
+MISSION_10241	상어와 바다V	鲛与海V	Shark and the Sea V	
+MISSION_10242	상어와 바다Ⅵ	鲛与海Ⅵ	Shark and the Sea VI	
+MISSION_10243	상어와 바다Ⅶ	鲛与海Ⅶ	Shark and the Sea VII	
+MISSION_10244	소란 속에서Ⅰ	尘嚣之上Ⅰ	Above the Hubbub I	
+MISSION_10245	소란 속에서Ⅱ	尘嚣之上Ⅱ	Above the Hubbub II	
+MISSION_10246	소란 속에서Ⅱ - 서브 스토리	尘嚣之上Ⅱ - 支线	Above the Hubbub II - Branch	
+MISSION_10247	소란 속에서Ⅲ	尘嚣之上Ⅲ	Above the Hubbub III	
+MISSION_10248	소란 속에서Ⅳ	尘嚣之上Ⅳ	Above the Hubbub IV	
+MISSION_10249	소란 속에서V	尘嚣之上V	Above the Hubbub V	
+MISSION_10250	소란 속에서Ⅵ	尘嚣之上Ⅵ	Above the Hubbub VI	
+MISSION_10251	소란 속에서Ⅵ - 서브 스토리Ⅰ	尘嚣之上Ⅵ - 支线Ⅰ	Above the Hubbub VI - Branch I	
+MISSION_10252	소란 속에서Ⅵ - 서브 스토리Ⅱ	尘嚣之上Ⅵ - 支线Ⅱ	Above the Hubbub VI - Branch II	
+MISSION_10253	혼돈폐막	混沌落幕	Reign of Chaos	
+MISSION_10254	환상뿐일 평화Ⅰ - 전투	幻影的和平Ⅰ - 战斗	Illusory Peace I - Battle	
+MISSION_10255	환상뿐일 평화Ⅲ - 전투	幻影的和平Ⅲ - 战斗	Illusory Peace III - Battle	
+MISSION_10256	고양이와 생쥐Ⅲ - 전투	猫与鼠Ⅲ - 战斗	Cat and Mouse III - Battle	
+MISSION_10257	고양이와 생쥐Ⅳ	猫与鼠Ⅳ	Cat and Mouse IV	
+MISSION_10258	변경 밖에서Ⅱ	边境之外Ⅱ	Beyond the Border II	
+MISSION_10259	변경 밖에서Ⅲ	边境之外Ⅲ	Beyond the Border III	
+MISSION_10260	피의 신념Ⅰ - 전투	鲜血的信念Ⅰ - 战斗	Faith of Blood I - Battle	
+MISSION_10261	피의 신념Ⅱ	鲜血的信念Ⅱ	Faith of Blood II	
+MISSION_10262	늑대와 올빼미Ⅰ - 전투	狼与枭Ⅰ - 战斗	Wolf and Owl I - Battle	
+MISSION_10263	늑대와 올빼미Ⅱ - 전투	狼与枭Ⅱ - 战斗	Wolf and Owl II - Battle	
+MISSION_10264	늑대와 올빼미Ⅲ	狼与枭Ⅲ	Wolf and Owl III	
+MISSION_10265	성벽 밑에서Ⅰ - 전투	巨墙之下Ⅰ - 战斗	Under the Wall I - Battle	
+MISSION_10266	잃어버린 카드Ⅰ - 전투	失落的筹码Ⅰ - 战斗	Lost Bargaining Chip I - Battle	
+MISSION_10267	잃어버린 카드Ⅲ - 전투	失落的筹码Ⅲ - 战斗	Lost Bargaining Chip III - Battle	
+MISSION_10268	상어와 바다Ⅰ - 전투	鲛与海Ⅰ - 战斗	Shark and the Sea I - Battle	
+MISSION_10269	상어와 바다Ⅲ	鲛与海Ⅲ	Shark and the Sea III	
+MISSION_10270	상어와 바다Ⅳ - 전투	鲛与海Ⅳ - 战斗	Shark and the Sea IV - Battle	
+MISSION_10271	소란 속에서Ⅱ	尘嚣之上Ⅱ	Above the Hubbub II	
+MISSION_10272	소란 속에서V	尘嚣之上V	Above the Hubbub V	
+MISSION_10273	혼돈폐막	混沌落幕	Reign of Chaos	
+MISSION_10274	환상뿐일 평화V	幻影的和平V	Illusory Peace V	
+MISSION_10275	소란 속에서Ⅲ	尘嚣之上Ⅲ	Above the Hubbub III	
+MISSION_10276	소란 속에서Ⅳ	尘嚣之上Ⅳ	Above the Hubbub IV	
+MISSION_90033	무지개 다리Ⅰ	归途由光铺成Ⅰ	The Way Back is Paved with Light I	
+MISSION_90034	무지개 다리Ⅱ	归途由光铺成Ⅱ	The Way Back is Paved with Light II	
+MISSION_90035	무지개 다리Ⅲ	归途由光铺成Ⅲ	The Way Back is Paved with Light III	
+MISSION_90036	무지개 다리Ⅳ	归途由光铺成Ⅳ	The Way Back is Paved with Light IV	
+MISSION_10277	디제리두 연주법	迪吉里杜管吹奏指南	Didgeridoo Tutorial	ディジュリドゥ演奏指導
+MISSION_10278	사춘기	青春期	Adolescence	青春期
+MISSION_10279	선구자	先驱者	Pioneer	先駆者
+MISSION_10280	소닉붐	音爆	Sonic Boom	ソニックブーム
+MISSION_10281	닭가슴살	鸡胸肉	Chicken Breast	鶏むね肉
+MISSION_10282	무대 울렁증	公众演讲恐惧症	Fear of Public Speaking	スピーチ恐怖症
+MISSION_10283	진실 게임	真心话大冒险	Truth or Dare	本音大冒険
+MISSION_10284	이 세상 마지막 비	世上的最后一场雨	The Last Rain In The World	この世界最後の雨
+MISSION_10285	디제리두 연주법EX	迪吉里杜管吹奏指南EX	Didgeridoo Tutorial EX	ディジュリドゥ演奏指導EX
+MISSION_10286	사춘기EX	青春期EX	Adolescence EX	青春期EX
+MISSION_10287	선구자EX	先驱者EX	Pioneer EX	先駆者EX
+MISSION_10288	소닉붐EX	音爆EX	Sonic Boom EX	ソニックブームEX
+MISSION_10289	닭가슴살EX	鸡胸肉EX	Chicken Breast EX	鶏むね肉EX
+MISSION_10290	무대 울렁증EX	公众演讲恐惧症EX	Fear of Public Speaking EX	スピーチ恐怖症EX
+MISSION_10291	진실 게임EX	真心话大冒险EX	Truth or Dare EX	本音大冒険EX
+MISSION_10292	이 세상 마지막 비EX	世上的最后一场雨EX	The Last Rain In The World EX	この世界最後の雨EX
+MISSION_10293	하바네라	哈巴涅拉	Habanera	ハバネラ
+MISSION_10294	정적의 기운	静寂气息	Don't Translate	
+MISSION_10295	정적의 기운 - 전투	静寂气息-战斗	Don't Translate	
+MISSION_10296	파트 타임	两份工作	Don't Translate	
+MISSION_10297	뿌리를 찾아서	追踪本源	Don't Translate	
+MISSION_10298	옛벗과 재회	故友重逢	Don't Translate	
+MISSION_10299	옛벗과 재회 - 전투	故友重逢-战斗	Don't Translate	
+MISSION_10300	묶여버린 유령 Ⅰ	被束缚的幽灵Ⅰ	Don't Translate	
+MISSION_10301	묶여버린 유령 Ⅰ - 전투	被束缚的幽灵Ⅰ-战斗	Don't Translate	
+MISSION_10302	묶여버린 유령 Ⅱ	被束缚的幽灵Ⅱ	Don't Translate	
+MISSION_10303	묶여버린 유령 Ⅱ - 전투	被束缚的幽灵Ⅱ-战斗	Don't Translate	
+MISSION_10304	닿지 않는 탄식 Ⅰ	无法触摸的叹息Ⅰ	Don't Translate	
+MISSION_10305	닿지 않는 탄식 Ⅰ - 전투	无法触摸的叹息Ⅰ-战斗	Don't Translate	
+MISSION_10306	이름 없는 방랑자 Ⅰ	无名的流亡者Ⅰ	Don't Translate	
+MISSION_10307	이름 없는 방랑자 Ⅰ - 전투	无名的流亡者Ⅰ-战斗	Don't Translate	
+MISSION_10308	이름 없는 방랑자 Ⅱ	无名的流亡者Ⅱ	Don't Translate	
+MISSION_10309	이름 없는 방랑자 Ⅱ - 전투	无名的流亡者Ⅱ-战斗	Don't Translate	
+MISSION_10310	닿지 않는 탄식 Ⅱ	无法触摸的叹息Ⅱ	Don't Translate	
+MISSION_10311	인식 분열 Ⅱ	认知裂变Ⅱ	Don't Translate	
+MISSION_10312	인식 분열 Ⅱ - 전투	认知裂变Ⅱ-战斗	Don't Translate	
+MISSION_10313	바닥의 귀향길 Ⅰ	底层归乡Ⅰ	Don't Translate	
+MISSION_10314	인식 분열 Ⅰ - 전투	认知裂变Ⅰ-战斗	Don't Translate	
+MISSION_10315	불청객	不受欢迎的人	Don't Translate	
+MISSION_10316	인식 분열 Ⅲ	认知裂变Ⅲ	Don't Translate	
+MISSION_10317	인식 분열 Ⅳ - 전투	认知裂变Ⅳ-战斗	Don't Translate	
+MISSION_10318	인식 분열 Ⅳ	认知裂变Ⅳ	Don't Translate	
+MISSION_10319	끝 없는 연결	无尽的链接	Don't Translate	
+MISSION_10320	바닥의 귀향길 Ⅱ	底层归乡Ⅱ	Don't Translate	
+MISSION_10321	바닥의 귀향길 Ⅱ - 전투	底层归乡Ⅱ-战斗	Don't Translate	
+MISSION_10322	이성질체 Ⅰ	异构体Ⅰ	Don't Translate	
+MISSION_10323	이성질체 Ⅰ - 전투	异构体Ⅰ-战斗	Don't Translate	
+MISSION_10324	바닥의 귀향길 Ⅲ	底层归乡Ⅲ	Don't Translate	
+MISSION_10325	바닥의 귀향길 Ⅲ - 전투	底层归乡Ⅲ-战斗	Don't Translate	
+MISSION_10326	이성질체 Ⅱ	异构体Ⅱ	Don't Translate	
+MISSION_10327	이성질체 Ⅱ - 전투	异构体Ⅱ-战斗	Don't Translate	
+MISSION_10328	진퇴양난	进退两难	Don't Translate	
+MISSION_10329	진퇴양난 - 전투	进退两难-战斗	Don't Translate	
+MISSION_10330	이 뽑기 작전 Ⅰ	斩牙行动Ⅰ	Don't Translate	
+MISSION_10331	이 뽑기 작전 Ⅰ - 전투Ⅰ	斩牙行动Ⅰ-战斗Ⅰ	Don't Translate	
+MISSION_10332	이 뽑기 작전 Ⅰ - 전투Ⅱ	斩牙行动Ⅰ-战斗Ⅱ	Don't Translate	
+MISSION_10333	이 뽑기 작전 Ⅱ	斩牙行动Ⅱ	Don't Translate	
+MISSION_10334	이 뽑기 작전 Ⅱ - 전투	斩牙行动Ⅱ-战斗	Don't Translate	
+MISSION_10335	모든 것을 삼키는 꽃밭	吞噬一切的花海	Don't Translate	
+MISSION_10336	인식 분열 Ⅰ	认知裂变Ⅰ	Don't Translate	
+MISSION_10337	모든 것을 삼키는 꽃밭 - 전투	吞噬一切的花海-战斗	Don't Translate	
+MISSION_10338	잘 있어라 - 탈린 Ⅰ	再见了，塔林Ⅰ	Don't Translate	
+MISSION_10339	잘 있어라 - 탈린 Ⅰ - 전투Ⅰ	再见了，塔林Ⅰ-战斗Ⅰ	Don't Translate	
+MISSION_10340	잘 있어라 - 탈린 Ⅰ - 전투Ⅱ	再见了，塔林Ⅰ-战斗Ⅱ	Don't Translate	
+MISSION_10341	잘 있어라 - 탈린 Ⅱ	再见了，塔林Ⅱ	Don't Translate	
+MISSION_10342	종언의 꽃밭	终焉花海	Don't Translate	
+MISSION_10343	정적의 기운 - 전투EX	静寂气息-战斗EX	Don't Translate	
+MISSION_10344	옛벗과 재회 - 전투EX	故友重逢-战斗EX	Don't Translate	
+MISSION_10345	묶여버린 유령 Ⅰ - 전투EX	被束缚的幽灵Ⅰ-战斗EX	Don't Translate	
+MISSION_10346	묶여버린 유령 Ⅱ - 전투EX	被束缚的幽灵Ⅱ-战斗EX	Don't Translate	
+MISSION_10347	닿지 않는 탄식 Ⅰ - 전투EX	无法触摸的叹息Ⅰ-战斗EX	Don't Translate	
+MISSION_10348	이름 없는 방랑자 Ⅰ - 전투EX	无名的流亡者Ⅰ-战斗EX	Don't Translate	
+MISSION_10349	이름 없는 방랑자 Ⅱ - 전투EX	无名的流亡者Ⅱ-战斗EX	Don't Translate	
+MISSION_10350	인식 분열 Ⅱ - 전투EX	认知裂变Ⅱ-战斗EX	Don't Translate	
+MISSION_10351	인식 분열 Ⅰ - 전투EX	认知裂变Ⅰ-战斗EX	Don't Translate	
+MISSION_10352	인식 분열 Ⅳ - 전투EX	认知裂变Ⅳ-战斗EX	Don't Translate	
+MISSION_10353	바닥의 귀향길 Ⅱ - 전투EX	底层归乡Ⅱ-战斗EX	Don't Translate	
+MISSION_10354	이성질체 Ⅰ - 전투EX	异构体Ⅰ-战斗EX	Don't Translate	
+MISSION_10355	바닥의 귀향길 Ⅲ - 전투EX	底层归乡Ⅲ-战斗EX	Don't Translate	
+MISSION_10356	이성질체 Ⅱ - 전투EX	异构体Ⅱ-战斗EX	Don't Translate	
+MISSION_10357	진퇴양난 - 전투EX	进退两难-战斗EX	Don't Translate	
+MISSION_10358	이 뽑기 작전 Ⅰ - 전투EXⅠ	斩牙行动Ⅰ-战斗EXⅠ	Don't Translate	
+MISSION_10359	이 뽑기 작전 Ⅰ - 전투EXⅡ	斩牙行动Ⅰ-战斗EXⅡ	Don't Translate	
+MISSION_10360	이 뽑기 작전 Ⅱ - 전투EX	斩牙行动Ⅱ-战斗EX	Don't Translate	
+MISSION_10361	E-B-5	E-B-5	Don't Translate	
+MISSION_10362	모든 것을 삼키는 꽃밭 - 전투EX	吞噬一切的花海-战斗EX	Don't Translate	
+MISSION_10363	잘 있어라 - 탈린 Ⅰ - 전투EXⅠ	再见了，塔林Ⅰ-战斗EXⅠ	Don't Translate	
+MISSION_10364	잘 있어라 - 탈린 Ⅰ - 전투EXⅡ	再见了，塔林Ⅰ-战斗EXⅡ	Don't Translate	
+MISSION_10365	종언의 꽃밭EX	终焉花海EX	Don't Translate	
+MISSION_10366	기밀 정보 I	机密情报I	Don't Translate	
+MISSION_10367	기밀 정보 II	机密情报II	Don't Translate	
+MISSION_10368	기밀 정보 III	机密情报III	Don't Translate	
+MISSION_10369	기밀 정보 IV	机密情报IV	Don't Translate	
+MISSION_10370	기밀 정보 V	机密情报V	Don't Translate	
+MISSION_10371	기밀 정보 VI	机密情报VI	Don't Translate	
+MISSION_10372	기밀 정보 VII	机密情报VII	Don't Translate	
+MISSION_10373	기밀 정보 VIII	机密情报VIII	Don't Translate	
+MISSION_10374	기밀 정보 IX	机密情报IX	Don't Translate	
+MISSION_10375	기밀 정보 X	机密情报X	Don't Translate	
+MISSION_10376	기밀 정보 XI	机密情报XI	Don't Translate	
+MISSION_10377	기밀 정보 XII	机密情报XII	Don't Translate	
+MISSION_10378	기밀 정보 XIII	机密情报XIII	Don't Translate	
+MISSION_10379	기밀 정보 XIV	机密情报XIV	Don't Translate	
+MISSION_10380	기밀 정보 XV	机密情报XV	Don't Translate	
+MISSION_10381	변질된 스타카토	变质的断音	Spoiled Staccato	
+MISSION_10382	깜짝 상자	开袋惊喜	Open Bag Surprise	
+MISSION_10383	유통기한	赏味期限	Shelf Life	
+MISSION_10384	방부제	防腐剂	Preservative	
+MISSION_90037	그녀가 없는 전장 Ⅰ	她不在的战场Ⅰ		
+MISSION_90038	그녀가 없는 전장 Ⅱ	她不在的战场Ⅱ		
+MISSION_90039	그녀가 없는 전장 Ⅲ	她不在的战场Ⅲ		
+MISSION_90040	그녀가 없는 전장 Ⅳ	她不在的战场Ⅳ		
+MISSION_10385	철혈의 그린치	铁血怨	Sangvis Orphan	デスター
+MISSION_10386	솔리드 디너게이트	蚁中谍	Mission: Dinergate	ミッション：アリえない
+MISSION_10387	달려라 디너게이트	X战蚁	X-Dinergates	X-ANT
+MISSION_10388	선물 찬송가	礼物颂	Ode to Gifts	Ode to present
+MISSION_115	고삐 풀기	缰绳结扣		
+MISSION_116	환영 추적	幻影追踪		
+MISSION_117	피의 철학	杀戮哲学		
+MISSION_118	초연 신호	硝烟信号		
+MISSION_119	우담화의 잔영	昙花残忆		
+MISSION_120	여명을 뚫고	脱离黎明		
+MISSION_121	아침 회의Ⅰ	晨间会议Ⅰ		
+MISSION_122	아침 회의Ⅱ	晨间会议Ⅱ		
+MISSION_123	아침 회의Ⅲ	晨间会议Ⅲ		
+MISSION_124	아침 회의Ⅳ	晨间会议Ⅳ		
+MISSION_10389	직진성 II	直进性II		
+MISSION_10390	임계각 II	临界角II		
+MISSION_10391	반사면 III	反射面III		
+MISSION_10392	전반사 II	全内反射II		
+MISSION_10393	가역성 II	可逆性II		
+MISSION_10394	도파관 II	波导管II		
+MISSION_10395	간섭계 II	干涉仪II		
+MISSION_10396	편광자 II	起偏器II		
+MISSION_10397	스펙트럼 II	光谱仪II		
+MISSION_10398	거울상 과다 III	对映体过量III		
+MISSION_10399	비대칭 유도 II	不对称诱导II		
+MISSION_10400		回火II		
+MISSION_10401		切割II		
+MISSION_10402		镀银II		
+MISSION_10403		粉碎II		
+MISSION_10404		镀银III		
+MISSION_10405		预热II		
+MISSION_10407		稳泡II		
+MISSION_10412	진공관 EX	真空管EX		
+MISSION_10413	임계각 EX-I	临界角EX-I		
+MISSION_10414	임계각 EX-II	临界角EX-II		
+MISSION_10415		稳泡EX		
+MISSION_10418	비경수위	谜境守卫		
+MISSION_10419	반사면 II	反射面II		
+MISSION_10420	편광자 III	起偏器III		
+MISSION_10421	불규칙 편파 III	破碎偏振面III		
+MISSION_10422	재결정 분해 III	重结晶拆分III		
+MISSION_10423		退火EX		
+MISSION_10424		退火I		
+MISSION_10425		退火III		
+MISSION_10426	점등관	启辉器		
+MISSION_10427	직진성 I	直进性I		
+MISSION_10428	굴절점	折射点		
+MISSION_10429	임계각 I	临界角I		
+MISSION_10430	반사면 I	反射面I		
+MISSION_10431	임계각 III	临界角III		
+MISSION_10432	전반사 I	全内反射I		
+MISSION_10433	사인 곡선	正弦曲线		
+MISSION_10434	가역성 I	可逆性I		
+MISSION_10435	코사인 신호	余弦信号		
+MISSION_10436	편광자 I	起偏器I		
+MISSION_10437	회절 격자	光栅		
+MISSION_10438	도파관 I	波导管I		
+MISSION_10439	분광계	分束器		
+MISSION_10440	간섭계 I	干涉仪I		
+MISSION_10441	틈새	狭缝		
+MISSION_10442	진공관	真空管		
+MISSION_10443	가속기	加速器		
+MISSION_10444	스펙트럼 I	光谱仪I		
+MISSION_10445	검광자	检偏器		
+MISSION_10446	거울상 과다 I	对映体过量I		
+MISSION_10447	거울상 과다 II	对映体过量II		
+MISSION_10448	재결정 분해 I	重结晶拆分I		
+MISSION_10449	불규칙 편파 I	破碎偏振面I		
+MISSION_10450	재결정 분해 II	重结晶拆分II		
+MISSION_10451	불규칙 편파 II	破碎偏振面II		
+MISSION_10452	비대칭 유도 I	不对称诱导I		
+MISSION_10453	광학 이성질체	光学异构体		
+MISSION_10454	유리 터널	粉碎I		
+MISSION_10455		混合		
+MISSION_10456		预热I		
+MISSION_10457		烧结		
+MISSION_10458		发泡		
+MISSION_10459		稳泡I		
+MISSION_10460		成型		
+MISSION_10461		退火II		
+MISSION_10462		回火I		
+MISSION_10463		切割I		
+MISSION_10464		打磨		
+MISSION_10465		镀银I		
+MISSION_10466		虚像重铸		
+MISSION_10467		玻璃隧道		
