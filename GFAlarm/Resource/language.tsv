@@ -2,9 +2,9 @@ key	ko-KR	zh-CN	en-US	ja-JP
 PROGRAM_TITLE	소녀전선 알리미	少女前线通知器	Girls Frontline Alarm	ドルフロ アラーム
 PROGRAM_TITLE_SHORT	소녀전선 알리미	少女前线通知器	GFAlarm	ドルフロ アラーム
 TRANSLATED_BY		CN translated by 'Jenitak'[br]Voice translated by 'Jenitak'	EN translated by 'Seyren'[br]Voice translated by 'Seyren'	JP translated by 'リリア'[br]Voice translated by 'FlamBerry'
-PROGRAM_DESCRIPTION	소녀전선 알리미 프로그램은 모바일 게임 [font color='#ffb400']소녀전선[/font]의 패킷과 게임 데이터를 기반으로 동작됩니다.	少女前线通知器以[font color='#ffb400']少女前线[/font]的包和游戏数据为基础运行。	Girls Frontline Alarm runs based on packets and game data from a mobile game [font color='#ffb400']Girls' Frontline[/font].	
-PROGRAM_COPYRIGHT	모든 저작권과 권리는 [a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a]에 귀속되어 있습니다.	所有版权和权利归[a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a]。	All rights reserved to [a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a].	
-PROGRAM_BUG_REPORT	버그 발견 시, 제작자 email 또는 [a href='{0}']최신버전 글[/a]로 리포트 바랍니다.	若发现缺陷时,请报告到制作者的电子邮件或[a href='{0}']最新版的网页[/a]。	When you find a bug, please report to developer email or [a href='{0}']latest version post[/a].	When you find a bug, please report to developer email or [a href='{0}']latest version post[/a].
+PROGRAM_DESCRIPTION	소녀전선 알리미 프로그램은 모바일 게임 [font color='#ffb400']소녀전선[/font]의 패킷과 게임 데이터를 기반으로 동작됩니다.	少女前线通知器以[font color='#ffb400']少女前线[/font]的包和游戏数据为基础运行。	Girls Frontline Alarm runs based on packets and game data from a mobile game [font color='#ffb400']Girls' Frontline[/font].	Girls Frontline Alarm runs based on packets and game data from a mobile game [font color='#ffb400']Girls' Frontline[/font].
+PROGRAM_COPYRIGHT	모든 저작권과 권리는 [a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a]에 귀속되어 있습니다.	所有版权和权利归[a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a]。	All rights reserved to [a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a].	All rights reserved to [a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a].
+PROGRAM_BUG_REPORT	버그 발견 시, 제작자 email 또는 [a href='{0}']최신버전 글[/a]로 리포트 바랍니다.	若发现缺陷时,请报告到制作者的电子邮件或[a href='{0}']最新版的网页[/a]。	When you find a bug, please report to developer email or [a href='{0}']latest version post[/a].	バグを発見した場合、製作者のメールアドレスか[a href='{0}']最新バージョンの投稿[/a]へ報告してください。
 OPEN_FOLDER	폴더 열기	打开文件夹	Open Folder	フォルダーを開く
 ALWAYS_ON_TOP	항상 위	一直在前端	Always On Top	常に最前面に表示
 STICK_TO_LEFT	좌측 붙이기	靠左	Stick To Left	左側に寄せる
@@ -23,6 +23,9 @@ AMMO	탄약	弹药	Ammunition	弾薬
 MRE	식량	粮食	Ration	配給
 PART	부품	零件	Parts	部品
 ECHELON	제대	梯队	Echelon	部隊
+ALLY_ECHELON	아군 제대	Ally Echelon	Ally Echelon	友軍部隊
+FRIEND_ECHELON	친구 제대	Friend Echelon	Friend Echelon	戦友部隊
+HOSTAGE_ECHELON	인질 제대	Hostage Echelon	Hostage Echelon	Hostage Echelon
 COUNT	건	个	Count	件
 RUN_43E	4-3e	4-3e	4-3e	4-3e
 RUN_02	0-2	0-2	0-2	0-2
@@ -53,11 +56,11 @@ NOW_EXPLORE	탐색 중	正在探索	Exploring	探索中
 DAILY_QUEST	일간임무	日常任务	Daily Quest	デイリー任務
 WEEKLY_QUEST	주간임무	周常任务	Weekly Quest	ウィークリー任務
 RESEARCH_QUEST	정보임무	情报任务	Intelligence Quest	情報任務
-BINGO_QUEST	빙고임무	活动任务	Bingo Quest	Bingo Quest
+BINGO_QUEST	빙고임무	活动任务	Bingo Quest	ビンゴ任務
 LOGISTICS	군수지원	后勤支援	Logistics	後方支援
 AUTO_BATTLE	자율작전	自律作战	Auto-Battle	自立作戦
 MISSION	작전	作战	Mission	作戦
-LOGISTICS_SHORT	군수	后勤	Logistcis	後方
+LOGISTICS_SHORT	군수	后勤	Logistics	後方
 AUTO_BATTLE_SHORT	자율	自律	Auto	自立
 MISSION_SHORT	작전	作战	Mission	作戦
 SKILL_TRAIN	스킬훈련	技能训练	Skill Training	スキル訓練
@@ -74,18 +77,18 @@ TAB_ECHELON	제대	梯队	Echelon	部隊
 TAB_QUEST	임무	任务	Quest	任務
 TAB_WAREHOUSE	창고	仓库	Warehouse	倉庫
 TAB_RECORD_MISSION	전역 녹화	作战绿化	Record Mission	録画
-TAB_MINIMAP	미니맵	小地图	Minimap	Minimap
+TAB_MINIMAP	미니맵	小地图	Minimap	ミニマップ
 TAB_PROXY	연결	连接	Proxy	連結
 TAB_NOTIFICATION_SETTING	알림 설정	通知设置	Notification Settings	通知設定
 TAB_SETTING	설정	设置	Settings	設定
-HEADER_EXPCAL_BUTTON	경험치 계산기	经验值计算器	Exp Calculator	Exp Calculator
-HEADER_EXPCAL_PRESET	프리셋	预设	Preset	Preset
-HEADER_EXPCAL_BASE_EXP	기본 경험치	基本经验值	Base Exp	Base Exp
-HEADER_EXPCAL_BATTLE_COUNT	교전 횟수	交战次数	Battle Count	Battle Count
-HEADER_EXPCAL_LEVEL_PENALTY	레벨 패널티	最优经验值等级	Level Penalty	Level Penalty
+HEADER_EXPCAL_BUTTON	경험치 계산기	经验值计算器	Exp Calculator	経験値計算機
+HEADER_EXPCAL_PRESET	프리셋	预设	Preset	プリセット
+HEADER_EXPCAL_BASE_EXP	기본 경험치	基本经验值	Base Exp	基本経験値
+HEADER_EXPCAL_BATTLE_COUNT	교전 횟수	交战次数	Battle Count	戦闘回数
+HEADER_EXPCAL_LEVEL_PENALTY	레벨 패널티	最优经验值等级	Level Penalty	適正レベル
 HEADER_EXPCAL_EXPUP_EVENT	경험치 이벤트	经验值提升活动	Exp Up Event	経験値アップイベント
 HEADER_EXPCAL_EXPUP_EVENT_TOOLTIP	경험치 이벤트를 설정	设定经验值提升活动	Apply Exp Rate-up Event	経験値アップイベント設定
-HEADER_EXPCAL_APPLY_BUTTON	적용	设置	Apply	Apply
+HEADER_EXPCAL_APPLY_BUTTON	적용	设置	Apply	適用
 HEADER_SORT_BUTTON	정렬	排序	Sort	ソート
 HEADER_SORT_BY_SLOT	슬롯 순	位置	Slot	スロット順
 HEADER_SORT_BY_REMAIN_TIME	남은 시간 순	剩余时间	Remaining Time	残り時間順
@@ -109,24 +112,29 @@ DASHBOARD_GROUP_SKILL_TRAIN	훈련현황	训练现况	Skill Training	訓練状�
 DASHBOARD_GROUP_DATA_ANALYSIS	분석현황	解析现况	Data Analysis	分析状況
 DASHBOARD_GROUP_RESTORE	수복현황	修复现况	Repair T-Doll	修理状況
 DASHBOARD_GROUP_EXPLORE	탐색현황	探索现况	Explore	探索状況
+MINIMAP_SHOW_ECHELON_UNIT	제대	Echelon	Echelon	Echelon
+MINIMAP_SHOW_POWER_TAG	작전능력	Power	Power	Power
+MINIMAP_SHOW_ECHELON_TAG	제대	Echelon	Echelon	Echelon
+MINIMAP_DRAW_HIGH_QUALITY	고품질	High Quality	High Quality	High Quality
+MINIMAP_DEBUG_MODE	디버그	Debug	Debug	Debug
 SETTING_PROXY_SERVER_GROUP	프록시 서버	代理服务器	Proxy Server	プロキシサーバー
 SETTING_PROXY_SERVER_USE_PROXY_SERVER	프록시 서버	代理服务器	Proxy Server	プロキシサーバー
 SETTING_PROXY_SERVER_USE_AUTO_START	자동시작	自动运行代理服务器	Auto Start	プロキシ自動スタート
 SETTING_PROXY_SERVER_PORT_NUMBER	포트번호	代理服务器端口编号	Port Number	プロキシポート番号
-SETTING_PROXY_SERVER_USE_AUTH	접속 인증	连接认证	Authentication	Authentication
-SETTING_PROXY_SERVER_AUTH_USERNAME	사용자 이름	用户名	Username	Username
-SETTING_PROXY_SERVER_AUTH_PASSWORD	비밀번호	密码	Password	Password
+SETTING_PROXY_SERVER_USE_AUTH	접속 인증	连接认证	Authentication	認証
+SETTING_PROXY_SERVER_AUTH_USERNAME	사용자 이름	用户名	Username	ユーザー名
+SETTING_PROXY_SERVER_AUTH_PASSWORD	비밀번호	密码	Password	パスワード
 SETTING_PROXY_SERVER_USE_SSL_DECRYPT	HTTPS 복호화	代理服务器 HTTPS 复护化	HTTPS Decryption	プロキシHTTPS復号化
 SETTING_PROXY_SERVER_USE_SSL_DECRYPT_WARNING	[font color='#F44336']대만 서버에서만 사용할 것[/font]	[font color='#F44336']只在台服使用[/font]	[font color='#F44336']TW Server Only[/font]	[font color='#F44336']台湾サーバーユーザー様だけ使ってください[/font]
 SETTING_PROXY_SERVER_USE_SSL_DECRYPT_COMMENT	[a href='{0}']링크[/a]를 참고해서 인증서 설치 후 사용 가능	参考[a href='{0}']链接[/a]可在设置认证书后使用	Refer to [a href='{0}']link[/a] to install certificate before use	[a href='{0}']サイト[/a]を参考して認証書をインストールした後使えます
-SETTING_PAC_SERVER_GROUP	PAC 서버	PAC服务器	PAC Server	PAC Server
-SETTING_PAC_SERVER_USE	PAC 서버	PAC服务器	PAC Server	PAC Server
+SETTING_PAC_SERVER_GROUP	PAC 서버	PAC服务器	PAC Server	PACサーバ
+SETTING_PAC_SERVER_USE	PAC 서버	PAC服务器	PAC Server	PACサーバ
 SETTING_PAC_SERVER_USE_TOOLTIP	PAC(Proxy Auto Config)를 사용하기 위한 서버[br][font color='#F44336']관리자 권한이 필요[/font]	使用PAC(Proxy Auto Config)的服务器时，[br][font color='#F44336]]需要管理者权限[/font]	[font color='#F44336']Server Admin's Privilege[/font][br]is required to use PAC(Proxy Auto Config)	[font color='#F44336']Server Admin's Privilege[/font][br]is required to use PAC(Proxy Auto Config)
-SETTING_PAC_SERVER_SET_DOMAIN	PAC 도메인	PAC域	PAC Domain	PAC Domain
+SETTING_PAC_SERVER_SET_DOMAIN	PAC 도메인	PAC域	PAC Domain	PACドメイン
 SETTING_PAC_SERVER_SET_DOMAIN_TOOLTIP	외부 네트워크에서 도메인을 사용해서 접속할 경우 설정할 것	若在外部网络中使用域名连接时，设置这部分。	Set if accessing through domain by external network	Set if accessing through domain by external network
-SETTING_PAC_SERVER_PORT_NUMBER	PAC 포트번호	PAC端口编号	PAC Port Number	PAC Port Number
-SETTING_PAC_SERVER_NOW_ADMIN	관리자 권한 사용중	正在使用管理人员的权限	Admin Privilege Enabled	Admin Privilege Enabled
-SETTING_PAC_SERVER_NEED_ADMIN	관리자 권한 필요	需要管理人员的权限	Admin Privilege Disabled	Admin Privilege Disabled
+SETTING_PAC_SERVER_PORT_NUMBER	PAC 포트번호	PAC端口编号	PAC Port Number	PACポート番号
+SETTING_PAC_SERVER_NOW_ADMIN	관리자 권한 사용중	正在使用管理人员的权限	Admin Privilege Enabled	管理者権限が有効
+SETTING_PAC_SERVER_NEED_ADMIN	관리자 권한 필요	需要管理人员的权限	Admin Privilege Disabled	管理者権限が無効
 SETTING_UPSTREAM_PROXY_GROUP	경유 프록시	经由代理服务器	Upstream Proxy	プロキシサーバー経由
 SETTING_UPSTREAM_PROXY_USE_UPSTREAM_PROXY	경유 프록시	经由代理服务器	Upstream Proxy	プロキシサーバー経由
 SETTING_UPSTREAM_PROXY_ADDRESS	경유 프록시 주소	经由的代理服务器地址	Upstream Proxy Address	プロキシサーバーのアドレス
@@ -161,7 +169,7 @@ SETTING_PACKET_FORGER_RANDOM_ADJUTANT_SHAPE_RANDOM	랜덤	随机	Random	ラン�
 SETTING_PACKET_FORGER_USE_RANDOM_SKIN	랜덤 부관 스킨	随机副官的皮肤	Random Adjutant Skin	ランダム副官スキン
 SETTING_PACKET_FORGER_USE_RANDOM_SKIN_TOOLTIP	설정된 부관의 스킨만 랜덤 설정	设置的副官的皮肤随机选择	Set random Skins for selected T-Dolls	設定された副官のスキンだけランダムに設定
 SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR	검열해제 모드	666模式	Uncensor Mode	規制解除モード
-SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR_COMMENT	[a href='{0}']검열해제 패치[/a]로 추가 해제	[a href='{0}']用解除审查修补[/a]追加解除	Refer to [a href='{0}']link[/a] for additional uncensored patch	[a href='{0}']規制解除アップデート[/a]で追加解除(JPサーバーは規制されてません）
+SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR_COMMENT	[a href='{0}']검열해제 패치[/a]로 추가 해제	[a href='{0}']用解除审查修补[/a]追加解除	Refer to [a href='{0}']link[/a] for additional uncensored patch	[a href='{0}']規制解除アップデート[/a]で追加解除(JPサーバーは規制されていません）
 SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR_TOOLTIP	설정한 상태로 로그인 한 뒤 130/130/130/30 인형제조 후 재로그인 시 검열해제[br][font color='#F44336'](검열해제 확인 후 반드시 검열해제 설정을 체크해제할 것)[/font]	以设定的状态登录后 130/130/130/30 人形制造后再登录时解除审查[br][font color='#F44336'](确认解除审查后应该解除设置)[/font]	Log in after enabling and produce a T-Doll with 130/130/130/30 then re-log in to enable uncensor[br][font color='#F44336'](Uncheck after uncensor is enabled)[/font]	設定した状態でログインした後「130/130/130/30」人形製造して再ログインすると規制解禁[br][font color='#F44336'](規制解禁が確認できた後、必ず規制解禁ボタンチェックを外してください)[/font]
 SETTING_NOTIFICATION_COMPLETE_GROUP	완료 알림	完成通知	Complete	完了アラート
 SETTING_NOTIFICATION_COMPLETE_DISPATCHED_ECHELON	지원현황	支援现况	Dispatched Echelon	支援状況
@@ -205,9 +213,9 @@ SETTING_NOTIFICATION_MISSION_MOVE_TEAM	제대이동 완료	梯队移动结束	Mo
 SETTING_NOTIFICATION_MISSION_MOVE_TEAM_TOOLTIP	설정된 횟수만큼 제대이동 후 알림	按设定的次数梯队移动后通知	Notify after set amount of Echelon movement has completed	設定された回数分部隊移動後アラート
 SETTING_NOTIFICATION_MISSION_MOVE_TEAM_UNIT	회	回	T	回
 SETTING_NOTIFICATION_MISSION_MOVE_TEAM_AND_WIN_BATTLE	전투 후 알림	战后通知	Post-Battle Complete	戦闘後アラート
-SETTING_NOTIFICATION_MISSION_MOVE_TEAM_AND_WIN_BATTLE_TOOLTIP	설정된 횟수만큼 제대이동 후 전투가 완료되면 알림	按设定的次数梯队移动后战斗结束时通知	Notify after set amount of Echelon movements and battle has completed	設定された回数分部隊移動後戦闘終わったらアラート
+SETTING_NOTIFICATION_MISSION_MOVE_TEAM_AND_WIN_BATTLE_TOOLTIP	설정된 횟수만큼 제대이동 후 전투가 완료되면 알림	按设定的次数梯队移动后战斗结束时通知	Notify after set amount of Echelon movements and battle has completed	設定された回数分の部隊移動後、戦闘終了時にアラート
 SETTING_NOTIFICATION_DOLL_GROUP	인형 알림	人形通知	Doll	人形アラート
-SETTING_NOTIFICATION_DOLL_NEED_DUMMY_LINK	편제확대 필요	需要编制扩大	Dummy Link	編制拡大必要
+SETTING_NOTIFICATION_DOLL_NEED_DUMMY_LINK	편제확대 필요	需要编制扩大	Dummy Link	編制拡大が必要
 SETTING_NOTIFICATION_DOLL_NEED_DUMMY_LINK_TOOLTIP	편제확대 필요한 인형 알림[br][font color='#ffb400'](1링크 자스는 알리지 않음)[/font]	通知需要编制扩大的人形[br][font color='#ffb400'](不通知1编制的Zas)[/font]	Notify T-Doll requiring Dummy Link[br][font color='#ffb400'](Excludes x1 Zas M21)[/font]	人形が編制拡大可能になった場合アラート[br][font color='#ffb400'](1リンクZasは除く)[/font]
 SETTING_NOTIFICATION_DOLL_HP_WARNING	체력 경고	体力警告	HP Warning	体力警告
 SETTING_NOTIFICATION_DOLL_HP_WARNING_TOOLTIP	설정된 체력 이하로 떨어진 인형 알림[br][font color='#ffb400'](중상 기준 30%)[/font]	通知降到设定体力以下的人形[br][font color='#ffb400'](重伤标准 30%)[/font]	Notify when T-Doll's HP drops below set amount[br][font color='#ffb400'](Critically Damaged at 30%)[/font]	設定した体力の割合まで人形が損傷した場合アラート[br][font color='#ffb400'](重傷基準30%)[/font]
@@ -229,12 +237,12 @@ SETTING_NOTIFICATION_PRODUCE_FAIRY_TOOLTIP	제조된 요정을 알림	通知制�
 SETTING_NOTIFICATION_COSTUME_GROUP	지휘관 복장 효과	指挥官服装效果	Costume	指揮官アバター効果
 SETTING_NOTIFICATION_COSTUME_DOLL_EXP_BONUS	브리핑 능력	作战总结	Briefing Skill	ブリーフィング能力
 SETTING_NOTIFICATION_COSTUME_DOLL_EXP_BONUS_TOOLTIP	전투에서 얻는 인형 경험치 상승[br][font color='#ffb400'](상승 보너스)[/font]	战斗产生的人形经验[br][font color='#ffb400'](上升)[/font]	Increase T-Doll Exp earned during battle[br][font color='#ffb400'](Increase Bonus)[/font]	戦闘で得る人形経験値上昇[br][font color='#ffb400'](上昇ボーナス)[/font]
-SETTING_NOTIFICATION_COSTUME_FAIRY_EXP_BONUS	심화 학습	深入学习	Deep Learning	Deep Learning
-SETTING_NOTIFICATION_COSTUME_FAIRY_EXP_BONUS_TOOLTIP	전투에서 얻는 요정 경험치 상승[br][font color='#ffb400'](상승 보너스)[/font]	战斗中获得的妖精的经验值上升[br][font color='#ffb400'](上涨奖金)[/font]	Increase Fairy EXP earned during battle[br][font color='#ffb400'](Increase Bonus)[/font]	Increase Fairy EXP earned during battle[br][font color='#ffb400'](Increase Bonus)[/font]
+SETTING_NOTIFICATION_COSTUME_FAIRY_EXP_BONUS	심화 학습	深入学习	Deep Learning	ディープラーニング
+SETTING_NOTIFICATION_COSTUME_FAIRY_EXP_BONUS_TOOLTIP	전투에서 얻는 요정 경험치 상승[br][font color='#ffb400'](상승 보너스)[/font]	战斗中获得的妖精的经验值上升[br][font color='#ffb400'](上涨奖金)[/font]	Increase Fairy EXP earned during battle[br][font color='#ffb400'](Increase Bonus)[/font]	戦闘で得る妖精経験値上昇[br][font color='#ffb400'](上昇ボーナス)[/font]
 SETTING_NOTIFICATION_COSTUME_RESTORE_TIME	자장가	摇篮曲	Lullaby	子守歌
-SETTING_NOTIFICATION_COSTUME_RESTORE_TIME_TOOLTIP	인형/중장비 수복 시간 단축[br][font color='#ffb400'](단축 보너스)[/font]	重装人形和普通人形的修复时间减少[br][font color='#ffb400'](减少)[/font]	Decrease T-Doll/HOC Repair time[br][font color='#ffb400'](Decrease Bonus)[/font]	人形/重装備部隊修理時間短縮[br][font color='#ffb400'](短縮ボーナス)[/font]
+SETTING_NOTIFICATION_COSTUME_RESTORE_TIME_TOOLTIP	인형/중장비 수복 시간 단축[br][font color='#ffb400'](단축 보너스)[/font]	重装人形和普通人形的修复时间减少[br][font color='#ffb400'](减少)[/font]	Decrease T-Doll/HOC Repair time[br][font color='#ffb400'](Decrease Bonus)[/font]	人形/重火力部隊修理時間短縮[br][font color='#ffb400'](短縮ボーナス)[/font]
 SETTING_NOTIFICATION_COSTUME_SKILL_TIME	속성 훈련	速成培训	Haste Training	速成訓練
-SETTING_NOTIFICATION_COSTUME_SKILL_TIME_TOOLTIP	인형/요정/중장비 스킬 훈련 시간 단축[br][font color='#ffb400'](단축 보너스)[/font]	减少技能训练时间[br][font color='#ffb400'](减少)[/font]	Decrease T-Doll/Fairy/HOC Skill Training time[br][font color='#ffb400'](Decrease Bonus)[/font]	人形/妖精/重装備部隊　スキル訓練時間短縮[br][font color='#ffb400'](短縮ボーナス)[/font]
+SETTING_NOTIFICATION_COSTUME_SKILL_TIME_TOOLTIP	인형/요정/중장비 스킬 훈련 시간 단축[br][font color='#ffb400'](단축 보너스)[/font]	减少技能训练时间[br][font color='#ffb400'](减少)[/font]	Decrease T-Doll/Fairy/HOC Skill Training time[br][font color='#ffb400'](Decrease Bonus)[/font]	人形/妖精/重火力部隊　スキル訓練時間短縮[br][font color='#ffb400'](短縮ボーナス)[/font]
 SETTING_NOTIFICATION_EXTRA_GROUP	기타	其他	Extra	その他
 SETTING_NOTIFICATION_EXTRA_ADVANCED_NOTIFICATION	미리 알림	预先通知	Advanced Notification	事前アラート
 SETTING_NOTIFICATION_EXTRA_ADVANCED_NOTIFICATION_TOOLTIP	알림들이 설정된 시간만큼 일찍 울리게 설정	设定让通知像设定的时间一样早点响起	Notify in advance for set amount of time	設定した秒数分事前にアラートを行う
@@ -245,14 +253,14 @@ SETTING_TOAST_GROUP	윈도우 알림	操作系统设置	Windows Toast	WINDOWSア
 SETTING_TOAST_USE_WIN_TOAST	윈도우 알림	操作系统设置	Windows Toast	WINDOWSアラート
 SETTING_TOAST_USE_WIN_TOAST_TOOLTIP	윈도우 토스트 또는 트레이 풍선 알림을 사용	启用Windows Toast或工具提示通知	Use Windows Toast Notification or System Tray Bubble Notification	通知バナー、もしくはタスクトレイからのアラートを行う
 SETTING_TOAST_USE_STRONG_WIN_TOAST	+강한 알림	+强烈的通知	+Strong Toast	+アラートパワーアップ
-SETTING_TOAST_USE_STRONG_WIN_TOAST_TOOLTIP	알림에 집중되도록 시스템 소리를 일시적으로 줄이고 알림을 오랫동안 띄움 (운영체제 지원 시 가능)	暂时减少系统语音,以便集中通知(操作系统支持时可用)	Lowers System Volume temporarily and increases pop-up time to strengthen notification (Available only if supported by OS)	アラートが聞こえやすくなるようにシステム音を一時的に小さくしてアラートを長くする
+SETTING_TOAST_USE_STRONG_WIN_TOAST_TOOLTIP	알림에 집중되도록 시스템 소리를 일시적으로 줄이고 알림을 오랫동안 띄움 (운영체제 지원 시 가능)	暂时减少系统语音,以便集中通知(操作系统支持时可用)	Lowers System Volume temporarily and increases pop-up time to strengthen notification (Available only if supported by OS)	アラートが聞こえやすくなるようにシステム音を一時的に小さくしてアラートポップアップを長くする
 SETTING_TOAST_USE_VOICE	+음성 알림[br][font size='11px'](별도 소리 알림)[/font]	+语音通知[br][font size='11px'](附加语音通知)[/font]	+Voice Notification[br][font size='11px'](Alternate Sound Notification)[/font]	+ボイスアラート[br][font size='11px'](別途のサウンドでアラート)[/font]
 SETTING_TOAST_USE_VOICE_TOOLTIP	소리가 나지 않는 경우 대체 알림으로 사용 가능, 음성 데이터 미설치 또는 해당 인형 음성이 존재하지 않을 경우 기본 알림 소리를 출력함	不出语音时可使用代替通知, 未设置语音数据或不存在相应人形语音时,输出基本提示语音	Plays default sound if voice data is not installed or missing. Can replace with personalized sound if voice data is missing	サウンドが出ない場合、代替のアラートで設定可能、音声データ設置してないか該当人形の音声データが存在してない場合基本アラートサウンドを出力する
 SETTING_TOAST_USE_VOICE_COMMENT	[a href='{0}']링크[/a]의 음성데이터 설치 시 인형 음성 알림 사용가능	安装[a href='{0}']链接[/a]的语音数据时可使用人形语音通知	Download T-Doll voice data from [a href='{0}']link[/a] to use T-Doll Voice Notification	[a href='{0}']アドレス[/a]の音声データをインストールした場合、人形ボイスアラート設定可能
 SETTING_TOAST_USE_ONLY_ADJUTANT_VOICE	음성 알림 부관만	只要副官的语音	Adjutant Voice Only	アラート設定（副官）
 SETTING_TOAST_USE_ONLY_ADJUTANT_VOICE_TOOLTIP	모든 인형 음성을 부관 음성으로 변경	所有人形的语音换成副官的语音	Play all T-Doll voice notifications as Adjutant's voice	全ての人形ボイスを副官ボイスに変更
-SETTING_TOAST_USE_START_VOICE	군수/자율 출발 음성	后勤支援/自律作战执行语音	Logistics/Auto-Battle	Logistics/Auto-Battle
-SETTING_TOAST_USE_START_VOICE_TOOLTIP	군수/자율 출발 시 음성 알림	后勤支援/自律作战执行时，语音通知	Enable T-Doll voice notification when starting Logistics/Auto-Battle	Enable T-Doll voice notification when starting Logistics/Auto-Battle
+SETTING_TOAST_USE_START_VOICE	군수/자율 출발 음성	后勤支援/自律作战执行语音	Logistics/Auto-Battle	後方支援/自律作戦
+SETTING_TOAST_USE_START_VOICE_TOOLTIP	군수/자율 출발 시 음성 알림	后勤支援/自律作战执行时，语音通知	Enable T-Doll voice notification when starting Logistics/Auto-Battle	後方支援/自律作戦の開始時に人形の音声で通知する
 SETTING_TOAST_VOICE_VOLUME	음성 알림 볼륨	语音通知音量	Voice Volume	ボイスアラートのボリューム
 SETTING_TOAST_VOICE_VOLUME_TOOLTIP	음성 알림 볼륨 설정	设定语音通知音量	Set voice volume	ボイスアラートのボリューム設定
 SETTING_TOAST_USE_SOUNDPLAYER_API	구버전 소리 API	旧版本语音API	Use SoundPlayerAPI	古いバージョンのサウンドAPI
@@ -267,10 +275,10 @@ SETTING_MAIL_FROM_MAIL_ADDRESS	알림 보낼 메일주소 (알리미용)	发送�
 SETTING_MAIL_FROM_MAIL_PASSWORD	알림 보낼 메일 앱 비밀번호 (알리미용)	发送通知的邮件的密码 (通知器专用)	From Mail App Password (For GFAlarm)	アラートを受けるメールパスワード (アラート用)
 SETTING_MAIL_TO_MAIL_ADDRESS	알림 받을 메일주소	收到通知的邮件地址	To Mail Address	アラートを受けるメールアドレス
 SETTING_MAIL_TEST_BUTTON	테스트 메일	测试邮件	TEST	テストメール
-SETTING_TOAST_USE_TAB	탭 알림	页签通知	Tab Notification	タップアラート
+SETTING_TOAST_USE_TAB	탭 알림	页签通知	Tab Notification	タブアラート
 SETTING_TOAST_USE_TAB_TOOLTIP	완료된 알림 존재 시 탭을 하이라이트	已完成的提示存在时,以页签为重要标志	Highlights Tab with completed notification	完了したアラートがある場合タブをハイライトする
 SETTING_FILE_GROUP	파일 저장	储存文件	File Save	ファイル保存
-SETTING_FILE_ENCODING	인코딩	编码	Encoding	エンコディング
+SETTING_FILE_ENCODING	인코딩	编码	Encoding	エンコーディング
 SETTING_FILE_SAVE_USER_INFO	사용자정보 저장	储存用户信息	Save User Info	ユーザー情報保存
 SETTING_FILE_SAVE_USER_INFO_TOOLTIP	로그인 시 전체 사용자정보 저장[br](user_info.json)	登录时存用户的所有信息[br](user_info.json)	Save User Info when logging in[br](user_info.json)	ログインする際、全てのユーザー情報保存[br](user_info.json)
 SETTING_FILE_SAVE_USER_INFO_COMMENT	[a href='{0}']칩셋조합기[/a]에서 사용가능	[a href='{0}']芯片组合机[/a]可使用	Used for [a href='{0}']GFChipCalc[/a]	[a href='{0}']テトリス組み合わせツール[/a]で使える
@@ -283,7 +291,7 @@ SETTING_FILE_SAVE_EQUIP_INFO_TOOLTIP	로그인 시 장비정보 저장[br](equip
 SETTING_FILE_SAVE_FAIRY_INFO	요정정보 저장	储存妖精信息	Save Fairy Info	妖精情報保存
 SETTING_FILE_SAVE_FAIRY_INFO_TOOLTIP	로그인 시 요정정보 저장[br](fairy_info.csv)	登录时储存妖精信息[br](fairy_info.csv)	Save Fairy Info when logging in[br](fairy_info.csv)	ログインする際、妖精情報保存[br](fairy_info.csv)
 SETTING_FILE_SAVE_RESCUE_DOLL	획득인형 저장	储存获得的人形	Save Rescue Doll	獲得人形情報保存
-SETTING_FILE_SAVE_RESCUE_DOLL_TOOLTIP	전역 중 획득한 인형 저장[br](rescued_doll.csv)	储存作战中获得的人形[br](rescued_doll.csv)	Save Rescued T-Dolls list[br](rescued_doll.csv)	戦役クリア中獲得した人形情報保存[br](rescued_doll.csv)
+SETTING_FILE_SAVE_RESCUE_DOLL_TOOLTIP	전역 중 획득한 인형 저장[br](rescued_doll.csv)	储存作战中获得的人形[br](rescued_doll.csv)	Save Rescued T-Dolls list[br](rescued_doll.csv)	戦役クリア中に獲得した人形情報保存[br](rescued_doll.csv)
 SETTING_FILE_SAVE_THEATER_EXERCISE_WAVE	국지전 웨이브 저장	储存战区攻略系统的波	Save Theater Exercise	戦区Wave情報保存
 SETTING_FILE_SAVE_THEATER_EXERCISE_WAVE_TOOLTIP	국지전 웨이브 정보 저장[br](theater_exercise.csv)	储存波的信息[br](theater_exercise.csv)	Save Theater wave info[br](theater_exercise.csv)	戦区Wave情報保存[br](theater_exercise.csv)
 SETTING_FILE_SAVE_THEATER_EXERCISE_WAVE_COMMENT	[a href='{0}']국지전 시트[/a]에서 배치확인	[a href='{0}']在战区攻略系统的Sheet[/a]可以看敌人的安排	Refer to [a href='{0}']Theater Sheet[/a] for layout	[a href='{0}']戦区シート[/a]で配置確認
@@ -291,23 +299,23 @@ SETTING_FILE_SAVE_BATTLE_TESTER	테스터 프리셋 저장	储存测试者预置
 SETTING_FILE_SAVE_BATTLE_TESTER_TOOLTIP	전투 테스터용 프리셋 저장[br](battle_tester_echelon_preset.gun)[br](battle_tester_squad_preset.sqd)[br](battle_tester_equip_preset.equip)	储存战斗测试者预置[br](battle_tester_echelon_preset.gun)[br](battle_tester_squad_preset.sqd)[br](battle_tester_equip_preset.equip)	Save preset for Batter Tester[br](battle_tester_echelon_preset.gun)[br](battle_tester_squad_preset.sqd)[br](battle_tester_equip_preset.equip)	戦闘テスター用プリセット保存[br](battle_tester_echelon_preset.gun)[br](battle_tester_squad_preset.sqd)[br](battle_tester_equip_preset.equip)
 SETTING_FILE_SAVE_BATTLE_TESTER_COMMENT	[a href='{0}']전투 테스터[/a]에서 사용가능	[a href='{0}']在战斗测试[/a]可使用	Used for [a href='{0}']Battle Tester[/a]	[a href='{0}']戦闘テスター[/a]で使える
 SETTING_WINDOW_GROUP	윈도우	窗口	Window	ツール
-SETTING_WINDOW_HIDE_TO_TRAY	트레이 숨김	隐藏到任务栏托盘	Hide to Tray	タスクトレイに置く
-SETTING_WINDOW_HIDE_TO_TRAY_TOOLTIP	최소화 시 트레이로 숨김	关闭时隐藏到任务栏托盘	Hides to System Tray when Minimized	最小化する場合タスクトレイに置く
+SETTING_WINDOW_HIDE_TO_TRAY	트레이 숨김	隐藏到任务栏托盘	Hide to Tray	タスクトレイに最小化
+SETTING_WINDOW_HIDE_TO_TRAY_TOOLTIP	최소화 시 트레이로 숨김	关闭时隐藏到任务栏托盘	Hides to System Tray when Minimized	最小化する場合タスクトレイに表示する
 SETTING_WINDOW_OPACITY	창 투명도	窗口透明度	Opacity	ツールの透明度
 SETTING_WINDOW_OPACITY_TOOLTIP	알리미 창 투명도 설정	设定通知器的窗口透明度	Set Opacity for GFAlarm	アラートツールの透明度設定
 SETTING_WINDOW_COLOR	창 색상	窗口颜色	Color	ツールの色
 SETTING_WINDOW_COLOR_TOOLTIP	창 색상 설정[br](기본값 [font color='#007acc']#007ACC[/font])	设定窗口颜色[br](标准值 [font color='#007acc']#007ACC[/font])	Set window color[br](Default [font color='#007acc']#007ACC[/font])	ツールの色設定[br](デフォルト [font color='#007acc']#007ACC[/font])
 SETTING_WINDOW_STICKY_WINDOW	창 자석	窗口磁铁功能	Sticky	ツールの磁石機能
-SETTING_WINDOW_STICKY_WINDOW_TOOLTIP	알리미 창이 화면 가장자리에 붙도록 설정	设定通知器的窗口贴在屏幕边缘	Enable GFAlarm to stick to edge of screen	アラートのツールが画面の隅っこにつけるように設定
+SETTING_WINDOW_STICKY_WINDOW_TOOLTIP	알리미 창이 화면 가장자리에 붙도록 설정	设定通知器的窗口贴在屏幕边缘	Enable GFAlarm to stick to edge of screen	アラートのウィンドウが画面の隅に吸着するよう設定
 SETTING_EXTRA_GROUP	기타	其他	Extra	その他
 SETTING_EXTRA_USE_CHECK_UPDATE	업데이트 확인	版本更新	Check for Update	アップデートチェック
-SETTING_EXTRA_USE_CHECK_UPDATE_TOOLTIP	알리미 실행 시 최신 업데이트가 있는지 확인	运行通知器时版本更新	Check for latest version of GFAlarm during launch	アラートツール起動する時最新バージョンがあるか確認
+SETTING_EXTRA_USE_CHECK_UPDATE_TOOLTIP	알리미 실행 시 최신 업데이트가 있는지 확인	运行通知器时版本更新	Check for latest version of GFAlarm during launch	アラートが起動する時最新バージョンがあるか確認
 SETTING_EXTRA_USE_CHECK_DATABASE	DB 자동 업데이트	自动数据库更新	Auto DB Update	Auto DB Update
 SETTING_EXTRA_USE_CHECK_DATABASE_TOOLTIP	알리미 실행 시 최신 DB로 자동 업데이트	运行通知器时自动数据库更新	Auto DB Update	Auto DB Update
 SETTING_EXTRA_LOG_LEVEL_TOOLTIP	로그 레벨[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	日志等级[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	Log Level[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	ログレベル[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]
 SETTING_EXTRA_LOG_PACKET_TOOLTIP	로그에 패킷 출력[br]로그 레벨을 Info 이하로 설정할 것[br][font color='#F44336'](속도가 느려질 수 있음)[/font]	对日志输出包[br]日志等级设定到Info以下[br][font color='#F44336'](速度可能会变慢)[/font]	Print packets on log[br]Set Log Level to below Info[br][font color='#F44336'](Can slow down system)[/font]	ログにパケット出力[br]ログレベルをInfo以下に設定してください[br][font color='#F44336'](アプリが重くなるかも知れません)[/font]
-MESSAGE_CONNECT_SUBJECT	연결 상태	连接现况	Connection	連結状態
-MESSAGE_CONNECT_CONTENT	연결 성공	连接成功	Connection Success	連結成功
+MESSAGE_CONNECT_SUBJECT	연결 상태	连接现况	Connection	接続状態
+MESSAGE_CONNECT_CONTENT	연결 성공	连接成功	Connection Success	接続成功
 MESSAGE_COMPLETE_LOGISTICS_SUBJECT	군수지원	后勤支援	Logistics	後方支援
 MESSAGE_COMPLETE_LOGISTICS_CONTENT	군수지원 {0} 도착	到达 {0} 后勤支援	Logistic support {0} completed	後方支援 {0} 完了
 MESSAGE_COMPLETE_AUTO_BATTLE_SUBJECT	자율작전	自律作战	Auto-Battle	自立作戦
@@ -646,9 +654,9 @@ DOLL_198	카르카노M91/38	卡尔卡诺M91/38	Carcano M91/38	カルカノM91/38
 DOLL_199	80식	80式	Type80	80式
 DOLL_200	XM3	XM3	XM3	XM3
 DOLL_201	게파드 M1	猎豹M1	Gepard M1	ゲパードM1
-DOLL_202	썬더	雷电	Thunder	サンダー
-DOLL_203	허니뱃저	蜜獾	Honey Badger	ハニー・バジャー
-DOLL_204	발리스타	芭莉斯塔	Ballista	バリスタ
+DOLL_202	썬더	雷电	Thunder	Thunder
+DOLL_203	허니뱃저	蜜獾	Honey Badger	Honey Badger
+DOLL_204	발리스타	芭莉斯塔	Ballista	Ballista
 DOLL_205	AN-94	AN-94	AN-94	AN-94
 DOLL_206	AK-12	AK-12	AK-12	AK-12
 DOLL_207	CZ2000	CZ2000	CZ2000	CZ2000
@@ -743,6 +751,7 @@ DOLL_295	CF05	CF05	CF05	CF05
 DOLL_296	SL8	SL8	SL8	SL8
 DOLL_297	M82	M82	M82	M82
 DOLL_298	Vepr	Vepr	Vepr	Vepr
+DOLL_299	HSM10	HSM10	HSM10	HSM10
 DOLL_1001	노엘	诺爱尔	Noel	ノエル
 DOLL_1002	엘펠트	艾尔菲尔特	Elphelt	エルフェルト
 DOLL_1003	키아나 카스라나	琪亚娜	Kiana	キアナ・カスラナ
@@ -865,15 +874,15 @@ EQUIP_93	PKN03M야간조준경	PKN03M夜视瞄具	PKN03M Night Scope	PKN03M暗�
 EQUIP_94	전술용 메모리 칩	专用战术内存	Dedicated Tactical Memory	戦術用メモリチップ
 EQUIP_95	16Lab HP탄	16Lab 空尖弹	16Lab Hollow Point Ammo	16Lab ホローポイント弾
 EQUIP_96	16Lab 열광학 슈트	16Lab 热光学披风	16Lab Thermoptic Camouflage Cape	16Lab熱光学迷彩マント
-EQUIP_99	남겨진 무기상자	遗留的武器库	Inherited Weapon Arsenal	残された武器箱
-EQUIP_100	경량화 레일 킷	轻量化导轨套件	Light Weight Rail System	軽量化レイルキット
+EQUIP_99	남겨진 무기상자	遗留的武器库	Inherited Weapon Arsenal	遺されたケース
+EQUIP_100	경량화 레일 킷	轻量化导轨套件	Light Weight Rail System	軽量化レールキット
 EQUIP_101	XM261 탄약	XM261短弹	XM261 ACP	XM261弾薬
 EQUIP_102	강화 카트리지	性能升级卡带	Ability Upgrade Cartridge	強化カートリッジ
 EQUIP_103	64식용 소음기	64专用消音器	Type64 Exclusive Suppressor	64式サイレンサー
 EQUIP_104	조정간 트리거셋	快慢机扳机组	Fire Selector	調整間トリガセット
 EQUIP_105	PM 5-25X56	PM 5-25X56	PM 5-25X56	PM 5-25X56
 EQUIP_106	EOT XPS3	EOT XPS3	EOT XPS3	EOT XPS3
-EQUIP_107	무한 탄약통	无限弹链箱	Infinite Ammo Box	無限アサルトパック
+EQUIP_107	무한 탄약통	无限弹链箱	Infinite Ammo Box	インフィニティパック
 EQUIP_108	두꺼운 푸른 슈트	蓝色加厚披风	Blue Thickened Cape	厚い青いマント
 EQUIP_109	16Lab 6-24X56	16Lab 6-24X56	16Lab 6-24X56	16Lab 6-24X56
 EQUIP_110	16Lab 고속탄	16Lab 高速弹	16Lab High-Velocity Ammo	16Lab 高速弾
@@ -898,7 +907,7 @@ EQUIP_129	M2 양각대	M2两脚架	M2 Bipod	M2両角帯
 EQUIP_130	G36 복합 조준경	G36混合瞄准镜	G36 Hybrid Optics	G36複合スコープ
 EQUIP_131	MGO 6X48	MGO 6X48	MGO 6X48	MGO 6X48
 EQUIP_132	MG4 전용 MGO	MG4用MGO	MG4 Exclusive MGO	MG4専用 MGO
-EQUIP_133	APS 전용 개머리판	APS专用枪托	Stechkin Exclusive Stock	APS専用 台じり
+EQUIP_133	APS 전용 개머리판	APS专用枪托	Stechkin Exclusive Stock	APS専用銃床
 EQUIP_134	MPL M21	MPL M21	MPL M21	MPL M21
 EQUIP_135	SP6 아음속탄	SP6亚音速弹	SP-6 Subsonic Rounds	SP6 亜音速弾
 EQUIP_136	7.92 KURZ	7.92 KURZ	7.92 KURZ	7.92 KURZ
@@ -917,24 +926,24 @@ EQUIP_148	스텔라의 의안	电子义眼	Prosthetic Eye	電子の目
 EQUIP_149	알마의 의수	机械义手	Cybernetic Hands	機械の義手
 EQUIP_150	ZFG42	ZFG42	ZFG42	ZFG42
 EQUIP_151	20GA 벅샷	20GA猎鹿弹	20GA Buckshot	20GAバックショット
-EQUIP_152	SIG510 트리거셋	SIG510快慢机	SIG-510 Fire Selector	SIG510 トリガセット
-EQUIP_153	BM59 중형 총열	BM59重管	BM59 Heavy Barrel	BM59 中型銃身
-EQUIP_154	OSS 소음기	OSS消音器	OSS Suppressor	OSS サイレンサー
-EQUIP_155	PPK 소음기	PPK消音器	PPK Suppressor	PPK サイレンサー
+EQUIP_152	SIG510 트리거셋	SIG510快慢机	SIG-510 Fire Selector	SIG-510ファイアセレクター
+EQUIP_153	BM59 중형 총열	BM59重管	BM59 Heavy Barrel	BM59ヘビーバレル
+EQUIP_154	OSS 소음기	OSS消音器	OSS Suppressor	OSSサイレンサー
+EQUIP_155	PPK 소음기	PPK消音器	PPK Suppressor	PPKサイレンサー
 EQUIP_156	AMP COMPSP	AMP COMPSP	AMP COMPSP	AMP COMPSP
 EQUIP_157	LED 플래시	LED武器灯	LED Tactical Flashlight	LEDフラッシュ
 EQUIP_158	가속 코일	加速线圈	Acceleration Coil	加速コイル
 EQUIP_159	전술 머리띠	战术发卡	Tactical Headband	戦術鉢巻き
 EQUIP_160	No32 MKI	No32 MKI	No32 MKI	No32 MKI
 EQUIP_161	첨단 복합 조준경	先进单兵瞄具	Advanced individual Optic	先端複合スコープ
-EQUIP_162	RPD 특수 군장	RPD单兵套件	RPD 특수 군장	RPD 특수 군장
-EQUIP_163	MAC10 레일 총몸	MAC10 上机匣	MAC10 레일 총몸	MAC10 레일 총몸
-EQUIP_164	M9 BC2 손잡이	M9 BC2握把	M9 BC2 손잡이	M9 BC2 손잡이
+EQUIP_162	RPD 특수 군장	RPD单兵套件	RPD Infantry Webbing	RPD専用歩兵装備
+EQUIP_163	MAC10 레일 총몸	MAC10 上机匣	MAX10 Upper Receiver	MAX10アッパーレシーバー
+EQUIP_164	M9 BC2 손잡이	M9 BC2握把	M9 BC2 Grips	M9 BC2グリップ
 EQUIP_165	전술 헤드셋	战术耳机	전술 헤드셋	전술 헤드셋
 EQUIP_166	DO 반사조준경	DO反射瞄具	DO 반사조준경	DO 반사조준경
 EQUIP_167	C96 참나무 개머리판	C96橡木枪托	C96 참나무 개머리판	C96 참나무 개머리판
-EQUIP_168	100식 접이식 개머리판	折叠枪托	Folding Stock	100식 접이식 개머리판
-EQUIP_169	RFB 전방 레일	RFB前导轨	Am RFB Quad Rail	RFB 전방 레일
+EQUIP_168	100식 접이식 개머리판	折叠枪托	Folding Stock	折り畳み式銃床
+EQUIP_169	RFB 전방 레일	RFB前导轨	Am RFB Quad Rail	RFB専用フロントレール
 EQUIP_170	20mm HEI	20mm HEI	20mm HEI	20mm HEI
 EQUIP_171	전술 번개 안테나	战术闪电呆毛	전술 번개 안테나	전술 번개 안테나
 EQUIP_174	Frag12 파쇄탄	Frag12高爆弹	Frag12 파쇄탄	Frag12 파쇄탄
@@ -1111,7 +1120,7 @@ FAIRY_22	해변요정	海滩妖精	Beach Fairy	海辺妖精
 FAIRY_23	연타요정	连击妖精	Combo Fairy	連撃妖精
 FAIRY_24	장벽요정	立盾妖精	Barrier Fairy	障壁妖精
 FAIRY_25	쌍둥이요정	双生妖精	Twin Fairy	双子妖精
-FAIRY_26	시조요정	祥瑞妖精	시조요정	시조요정
+FAIRY_26	시조요정	祥瑞妖精	시조요정	原型妖精
 FAIRY_1001	야에 사쿠라	八重樱	Yae Sakura	八重 桜
 FAIRY_1002	카구야	耀夜姬	Kaguya Hime	カグヤ
 FAIRY_1003	클로에	柯萝伊	Chloe	クロエ
@@ -1905,8 +1914,8 @@ ITEM_4001	도시의 선물	城市的馈赠	City's Gift	都市の贈り物
 ITEM_4002	설원의 선물	雪地的馈赠	Snowfield's Gift	雪原の贈り物
 ITEM_4003	숲의 선물	森林的馈赠	Forest's Gift	森林の贈り物
 ITEM_4004	황무지의 선물	荒野的馈赠	Wasteland's Gift	荒野の贈り物
-ITEM_601	랜덤염색약	无限惊喜染色剂	Infinite Surprise Dye	ンダム染色剤
-ITEM_602	지정염색약	色彩指定染色剂	Colorful Specified Dye	ラー指定染色剤
+ITEM_601	랜덤염색약	无限惊喜染色剂	Infinite Surprise Dye	ランダム染色剤
+ITEM_602	지정염색약	色彩指定染色剂	Colorful Specified Dye	カラー指定染色剤
 MISSION_1	준비운동	热身运动	Warm-Up Exercise	準備運動
 MISSION_2	흑색정보	黑色情报	Dark Information	裏面情報
 MISSION_3	거점수호	守护据点	Defend the Base	拠点防衛
@@ -2509,3 +2518,10 @@ MISSION_10464		打磨
 MISSION_10465		镀银I		
 MISSION_10466		虚像重铸		
 MISSION_10467		玻璃隧道		
+MISSION_10468		可观测极限I		
+MISSION_10469		光锥参考系I		
+MISSION_10470		因果隔离面		
+MISSION_10471		黑体热辐射I		
+MISSION_10472		逃逸加速度I		
+MISSION_10473		穿越视界线		
+MISSION_10474		逃逸加速度 - EX-II		
