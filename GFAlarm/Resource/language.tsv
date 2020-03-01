@@ -25,7 +25,7 @@ PART	부품	零件	Parts	部品
 ECHELON	제대	梯队	Echelon	部隊
 ALLY_ECHELON	아군 제대	Ally Echelon	Ally Echelon	友軍部隊
 FRIEND_ECHELON	친구 제대	Friend Echelon	Friend Echelon	戦友部隊
-HOSTAGE_ECHELON	인질 제대	Hostage Echelon	Hostage Echelon	Hostage Echelon
+HOSTAGE_ECHELON	인질 제대	Hostage Echelon	Hostage Echelon	救援待ち
 COUNT	건	个	Count	件
 RUN_43E	4-3e	4-3e	4-3e	4-3e
 RUN_02	0-2	0-2	0-2	0-2
@@ -112,11 +112,13 @@ DASHBOARD_GROUP_SKILL_TRAIN	훈련현황	训练现况	Skill Training	訓練状�
 DASHBOARD_GROUP_DATA_ANALYSIS	분석현황	解析现况	Data Analysis	分析状況
 DASHBOARD_GROUP_RESTORE	수복현황	修复现况	Repair T-Doll	修理状況
 DASHBOARD_GROUP_EXPLORE	탐색현황	探索现况	Explore	探索状況
-MINIMAP_SHOW_ECHELON_UNIT	제대	Echelon	Echelon	Echelon
-MINIMAP_SHOW_POWER_TAG	작전능력	Power	Power	Power
-MINIMAP_SHOW_ECHELON_TAG	제대	Echelon	Echelon	Echelon
-MINIMAP_DRAW_HIGH_QUALITY	고품질	High Quality	High Quality	High Quality
-MINIMAP_DEBUG_MODE	디버그	Debug	Debug	Debug
+MINIMAP_TURN_COUNT	턴	Turn	Turn	Turn
+MINIMAP_ACTION_POINT	행동점수	AP	AP	AP
+MINIMAP_SHOW_ECHELON_UNIT	제대	Echelon	Echelon	部隊
+MINIMAP_SHOW_POWER_TAG	작전능력	Power	Power	作戦能力
+MINIMAP_SHOW_ECHELON_TAG	제대	Echelon	Echelon	部隊名
+MINIMAP_DRAW_HIGH_QUALITY	고품질	High Quality	High Quality	高画質
+MINIMAP_DEBUG_MODE	디버그	Debug	Debug	デバッグ
 SETTING_PROXY_SERVER_GROUP	프록시 서버	代理服务器	Proxy Server	プロキシサーバー
 SETTING_PROXY_SERVER_USE_PROXY_SERVER	프록시 서버	代理服务器	Proxy Server	プロキシサーバー
 SETTING_PROXY_SERVER_USE_AUTO_START	자동시작	自动运行代理服务器	Auto Start	プロキシ自動スタート
@@ -142,6 +144,9 @@ SETTING_UPSTREAM_PROXY_USE_UPSTREAM_PROXY_TOOLTIP	설정 시 프록시를 사용
 SETTING_PROXY_SERVER_GUIDE	사용 가이드	使用指南	Proxy Guide	使用ガイド
 SETTING_PROXY_SERVER_GUIDE_COMMENT	[font size='14']■ Android[/font][br]→ 설정[br]→ 네트워크 및 인터넷[br]→ Wi-Fi[br]→ 연결된 AP 설정[br]→ 고급 옵션[br]→ 프록시 '수동' 설정[br]→ 프록시 호스트 [font color='#8ec127']{0}[/font][br]→ 프록시 포트 [font color='#8ec127']{1}[/font][br]→ 소녀전선 (재)로그인[br][br] [font size='14']■ iOS[/font][br]→ 설정[br]→ Wi-Fi[br]→ 연결된 AP 설정[br]→ 프록시 구성[br]→ '수동' 설정[br]→ 서버 [font color='#8ec127']{0}[/font][br]→ 포트 [font color='#8ec127']{1}[/font][br]→ 소녀전선 (재)로그인[br] [br] [font size='14' color='#ff4500']■ 접속 불가 시[/font][br]→ 시작[br]→ 실행[br]→ cmd[br]→ ipconfig[br]→ 표시된 IPv4 주소로 시도[br] [br] [font size='14' color='#ff4500']■ 보안 정책 위반(코드 22) 발생 시[/font][br]→ 기기 프록시 설정 끄기[br]→ 소녀전선 실행[br]→ 로그인 직전까지 진행[br]→ 기기 프록시 설정 켜기[br]→ 소녀전선 (재)로그인	[font size='14']■ Android[/font][br]→ 设置[br]→ 网络与互联网[br]→ Wi-Fi[br]→ 连接的AP设置[br]→ 高级期权[br]→ 代理服务器设置提示‘被动’[br]→ 代理服务器主机 [font color='#8ec127']{0}[/font][br]→ 代理服务器端口编号 [font color='#8ec127']{1}[/font][br]→ 再登录少女前线[br][br] [font size='14']■ iOS[/font][br]→ 设置[br]→ Wi-Fi[br]→ 连接的AP设置[br]→ 代理服务器构成[br]→ ‘被动’设置[br]→ 服务器 [font color='#8ec127']{0}[/font][br]→ 端口 [font color='#8ec127']{1}[/font][br]→ 再登录少女前线[br] [br] [font size='14' color='#ff4500']■ 无法连接时[/font][br]→ 开始[br]→ 执行[br]→ cmd[br]→ ipconfig[br]→ 试图用表示的IPv4地址[br] [br] [font size='14' color='#ff4500']■ 违反安全政策(代码22)时[/font][br]→ 关闭代理服务器设置[br]→ 实行少女前线[br]→ 进行到登录前[br]→ 再打开代理服务器设置[br]→ 再登录少女前线	[font size='14']■ Android[/font][br]→ Settings[br]→ Network & Internet[br]→ Wi-Fi[br]→ Connected AP Setting[br]→ Advanced Options[br]→ Proxy 'Manual'[br]→ Proxy Hostname [font color='#8ec127']{0}[/font][br]→ Proxy Port [font color='#8ec127']{1}[/font][br]→ Girls Frontline (Re)Login[br][br] [font size='14']■ iOS[/font][br]→ Settings[br]→ Wi-Fi[br]→ Connected AP Setting[br]→ Configure Proxy[br]→ Set 'Manual'[br]→ Server [font color='#8ec127']{0}[/font][br]→ Port [font color='#8ec127']{1}[/font][br]→ Girls Frontline (Re)Login[br] [br] [font size='14' color='#ff4500']■ Can't Connect?[/font][br]→ Start[br]→ run[br]→ cmd[br]→ ipconfig[br]→ connect to IPv4 address[br] [br] [font size='14' color='#ff4500']■ If Security Policy Violation(Code 22) occurs[/font][br]→ Turn off Proxy setting from device[br]→ Launch Girls Frontline[br]→ Proceed until right before logging in[br]→ Turn on Proxy setting from device[br]→ Relaunch Girls Frontline	[font size='14']■ Android[/font][br]→ 設定[br]→ ネットワーク及びインターネット[br]→ Wi-Fi[br]→ 繋がったAP設定[br]→ 詳細設定項目[br]→ プロキシ '手動' 設定[br]→ プロキシホスト [font color='#8ec127']{0}[/font][br]→ プロキシポート [font color='#8ec127']{1}[/font][br]→ ドルフロ (再)ログイン[br][br] [font size='14']■ iOS[/font][br]→ 設定[br]→ Wi-Fi[br]→ 接続中のWi-fiをタップ[br]→ プロキシを構成[br]→ '手動' 設定[br]→ サーバー [font color='#8ec127']{0}[/font][br]→ ポート [font color='#8ec127']{1}[/font][br]→ ドルフロ (再)ログイン[br] [br] [font size='14' color='#ff4500']■ 接続ができない場合[/font][br]→ スタート[br]→ Windows システムツール[br]→ cmd[br]→ ipconfig[br]→ 表示された IPv4 アドレスで試してください[br] [br] [font size='14' color='#ff4500']■ セキュリティ政策違反(コード 22)が発生した場合[/font][br]→ 端末のプロキシ設定を切る[br]→ ドルフロ起動[br]→ ログイン直前まで進む[br]→ 端末のプロキシ設定[br]→ ドルフロ (再)ログイン
 SETTING_PACKET_FORGER_GROUP	패킷 변조	包伪造	Packet Forger	Packet Forger
+SETTING_PACKET_FORGER_USE_RANDOM_HOME_BG	랜덤 기지 배경	Random Background	Random Background	Random Background
+SETTING_PACKET_FORGER_USE_RANDOM_HOME_BG_COMMENT	기지 배경 [font color='#ffb400']{0}[/font]	Background [font color='#ffb400']{0}[/font]	Background [font color='#ffb400']{0}[/font]	Background [font color='#ffb400']{0}[/font]
+SETTING_PACKET_FORGER_USE_RANDOM_HOME_BG_TOOLTIP	보유 기지 배경 중 랜덤한 배경으로 설정	보유 기지 배경 중 랜덤한 배경으로 설정	보유 기지 배경 중 랜덤한 배경으로 설정	보유 기지 배경 중 랜덤한 배경으로 설정
 SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT	랜덤 부관	随机副官	Random Adjutant	Random Adjutant
 SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_COMMENT	인형 [font color='#ffb400']{0}[/font] 스킨 [font color='#ffb400']{1}[/font]	人形 [font color='#ffb400']{0}[/font] 皮肤 [font color='#ffb400']{1}[/font]	T-Doll [font color='#ffb400']{0}[/font] Skin [font color='#ffb400']{1}[/font]	人形 [font color='#ffb400']{0}[/font] Skin [font color='#ffb400']{1}[/font]
 SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_TOOLTIP	소속 인형 중 랜덤한 인형으로 부관 설정	所属的人形中随机设置为副官	Set random T-Doll as Adjutant on Login	所属人形の中からランダムに副官を設定
@@ -399,6 +404,7 @@ DOLL_INFO_RATE	사속	射速	Rate of Fire	射速
 DOLL_INFO_SPEED	이동속도	移速	Move Speed	移動速度
 DOLL_INFO_ARMOR	장갑	护甲	Armor	防御
 DOLL_INFO_BULLET	장탄	上弹数	Rounds	弾約数
+DOLL_INFO_CRIT	치명률	暴击概率	Crit.Damage	会心率
 DOLL_INFO_SKILL1	스킬1	技能1	Skill1	スキル1
 DOLL_INFO_SKILL2	스킬2	技能2	Skill2	スキル2
 DOLL_INFO_EQUIP1_ID	장비1 ID	装备1 ID	Equip1 ID	装備1 ID
@@ -1120,7 +1126,7 @@ FAIRY_22	해변요정	海滩妖精	Beach Fairy	海辺妖精
 FAIRY_23	연타요정	连击妖精	Combo Fairy	連撃妖精
 FAIRY_24	장벽요정	立盾妖精	Barrier Fairy	障壁妖精
 FAIRY_25	쌍둥이요정	双生妖精	Twin Fairy	双子妖精
-FAIRY_26	시조요정	祥瑞妖精	시조요정	原型妖精
+FAIRY_26	시조요정	祥瑞妖精	Mold Fairy	原型妖精
 FAIRY_1001	야에 사쿠라	八重樱	Yae Sakura	八重 桜
 FAIRY_1002	카구야	耀夜姬	Kaguya Hime	カグヤ
 FAIRY_1003	클로에	柯萝伊	Chloe	クロエ
@@ -2457,25 +2463,25 @@ MISSION_10396	편광자 II	起偏器II
 MISSION_10397	스펙트럼 II	光谱仪II		
 MISSION_10398	거울상 과다 III	对映体过量III		
 MISSION_10399	비대칭 유도 II	不对称诱导II		
-MISSION_10400		回火II		
-MISSION_10401		切割II		
-MISSION_10402		镀银II		
-MISSION_10403		粉碎II		
-MISSION_10404		镀银III		
-MISSION_10405		预热II		
-MISSION_10407		稳泡II		
-MISSION_10412	진공관 EX	真空管EX		
+MISSION_10400	템퍼링 II	回火II		
+MISSION_10401	절삭 II	切割II		
+MISSION_10402	은 도금 II	镀银II		
+MISSION_10403	분쇄 II	粉碎II		
+MISSION_10404	은 도금 III	镀银III		
+MISSION_10405	예열 II	预热II		
+MISSION_10407	관측 범위 극한 III	稳泡II		
+MISSION_10412	기포 안정 II	真空管EX		
 MISSION_10413	임계각 EX-I	临界角EX-I		
 MISSION_10414	임계각 EX-II	临界角EX-II		
-MISSION_10415		稳泡EX		
+MISSION_10415	기포 안정 EX	稳泡EX		
 MISSION_10418	비경수위	谜境守卫		
 MISSION_10419	반사면 II	反射面II		
 MISSION_10420	편광자 III	起偏器III		
 MISSION_10421	불규칙 편파 III	破碎偏振面III		
 MISSION_10422	재결정 분해 III	重结晶拆分III		
-MISSION_10423		退火EX		
-MISSION_10424		退火I		
-MISSION_10425		退火III		
+MISSION_10423	설담금 EX	退火EX		
+MISSION_10424	설담금 I	退火I		
+MISSION_10425	설담금 III	退火III		
 MISSION_10426	점등관	启辉器		
 MISSION_10427	직진성 I	直进性I		
 MISSION_10428	굴절점	折射点		
@@ -2504,24 +2510,24 @@ MISSION_10450	재결정 분해 II	重结晶拆分II
 MISSION_10451	불규칙 편파 II	破碎偏振面II		
 MISSION_10452	비대칭 유도 I	不对称诱导I		
 MISSION_10453	광학 이성질체	光学异构体		
-MISSION_10454	유리 터널	粉碎I		
-MISSION_10455		混合		
-MISSION_10456		预热I		
-MISSION_10457		烧结		
-MISSION_10458		发泡		
-MISSION_10459		稳泡I		
-MISSION_10460		成型		
-MISSION_10461		退火II		
-MISSION_10462		回火I		
-MISSION_10463		切割I		
-MISSION_10464		打磨		
-MISSION_10465		镀银I		
-MISSION_10466		虚像重铸		
-MISSION_10467		玻璃隧道		
-MISSION_10468		可观测极限I		
-MISSION_10469		光锥参考系I		
-MISSION_10470		因果隔离面		
-MISSION_10471		黑体热辐射I		
-MISSION_10472		逃逸加速度I		
-MISSION_10473		穿越视界线		
-MISSION_10474		逃逸加速度 - EX-II		
+MISSION_10454	분쇄 I	粉碎I		
+MISSION_10455	혼합	混合		
+MISSION_10456	예열 I	预热I		
+MISSION_10457	소결	烧结		
+MISSION_10458	기포 생성	发泡		
+MISSION_10459	기포 안정 I	稳泡I		
+MISSION_10460	형체 부여	成型		
+MISSION_10461	설담금 II	退火II		
+MISSION_10462	템퍼링 I	回火I		
+MISSION_10463	절삭 I	切割I		
+MISSION_10464	광내기	打磨		
+MISSION_10465	은 도금 I	镀银I		
+MISSION_10466	허상 재주조	虚像重铸		
+MISSION_10467	가려진 특이점	玻璃隧道		
+MISSION_10468	관측 범위 극한 I	可观测极限I		
+MISSION_10469	광원뿔좌표계 I	光锥参考系I		
+MISSION_10470	인과 차단면	因果隔离面		
+MISSION_10471	흑체복사 I	黑体热辐射I		
+MISSION_10472	탈출가속도 I	逃逸加速度I		
+MISSION_10473	지평선을 넘어	穿越视界线		
+MISSION_10474	탈출가속도 - EX-II	逃逸加速度 - EX-II		
