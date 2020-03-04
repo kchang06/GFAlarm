@@ -1,4 +1,5 @@
 key	ko-KR	zh-CN	en-US	ja-JP
+// Program				
 PROGRAM_TITLE	소녀전선 알리미	少女前线通知器	Girls Frontline Alarm	ドルフロ アラーム
 PROGRAM_TITLE_SHORT	소녀전선 알리미	少女前线通知器	GFAlarm	ドルフロ アラーム
 TRANSLATED_BY		CN translated by 'Jenitak'[br]Voice translated by 'Jenitak'	EN translated by 'Seyren'[br]Voice translated by 'Seyren'	JP translated by 'リリア'[br]Voice translated by 'FlamBerry'
@@ -15,6 +16,7 @@ TRAY_CLOSE	종료	退出	Close	終了
 TRAY_RESET_POSITION	위치 리셋	重定位	Position Reset	リセット
 VERSION_CHECK_TITLE	버전 확인	版本更新	Version Check	バージョン確認
 VERSION_CHECK_CONTENT	최신버전 {0}가 존재합니다. 다운로드 링크로 이동합니까?	发现新版本 {0}. 打开下载网页吗?	Latest version {0} is available. Would you like to open download link?	最新バージョン 「{0}」が存在します。ダウンロードリンクへ移動しますか？
+// Common				
 TIME	시간	时间	Time	時間
 REQUIRE_TIME	소요 시간	所需时间	Require Time	残り時間
 END_TIME	완료 시간	完成时间	Complete Time	完了時間
@@ -29,7 +31,7 @@ HOSTAGE_ECHELON	인질 제대	Hostage Echelon	Hostage Echelon	救援待ち
 COUNT	건	个	Count	件
 RUN_43E	4-3e	4-3e	4-3e	4-3e
 RUN_02	0-2	0-2	0-2	0-2
-RUN_SG_32	4드라	4九头蛇	SG 3-2	4ヒドラ
+RUN_SG_32	4드라	4九头蛇	SG 3-2	特異点3-2
 RUN_104E	10-4e	10-4e	10-4e	10-4e
 RUN_81N	8-1n	8-1n	8-1n	8-1n
 RUN_115	11-5	11-5	11-5	11-5
@@ -72,15 +74,17 @@ EXPLORE_SNOW_LAND	설원	雪原	Snowfield	雪原
 EXPLORE_FOREST	숲	树林	Forest	森
 EXPLORE_WASTE_LAND	황무지	荒地	Wasteland	荒野
 DATA_PIECE	핵심데이터	芯片	Data Piece	核心データ
+// Tab				
 TAB_DASHBOARD	알림	通知	Alarm	通知
 TAB_ECHELON	제대	梯队	Echelon	部隊
 TAB_QUEST	임무	任务	Quest	任務
 TAB_WAREHOUSE	창고	仓库	Warehouse	倉庫
 TAB_RECORD_MISSION	전역 녹화	作战绿化	Record Mission	録画
 TAB_MINIMAP	미니맵	小地图	Minimap	ミニマップ
-TAB_PROXY	연결	连接	Proxy	連結
+TAB_PROXY	연결	连接	Proxy	接続
 TAB_NOTIFICATION_SETTING	알림 설정	通知设置	Notification Settings	通知設定
 TAB_SETTING	설정	设置	Settings	設定
+// Header				
 HEADER_EXPCAL_BUTTON	경험치 계산기	经验值计算器	Exp Calculator	経験値計算機
 HEADER_EXPCAL_PRESET	프리셋	预设	Preset	プリセット
 HEADER_EXPCAL_BASE_EXP	기본 경험치	基本经验值	Base Exp	基本経験値
@@ -94,17 +98,21 @@ HEADER_SORT_BY_SLOT	슬롯 순	位置	Slot	スロット順
 HEADER_SORT_BY_REMAIN_TIME	남은 시간 순	剩余时间	Remaining Time	残り時間順
 HEADER_FILTER_BUTTON	필터	过滤	Filter	フィルター
 HEADER_COLLAPSE_EXPAND_BUTTON	일괄 접기/펴기	一总 关/开	Collapse/Expand All	一括で閉じる/開く
+// Footer				
 FOOTER_SIM_POINT	모의작전점수	模拟作战体力	Sim Energy	基礎AP
 FOOTER_SIM_POINT_TOOLTIP	오늘 충전가능한 점수 [b]{0}[/b]점[br](출석시간 {1} 기준)	今天可充的体力 [b]{0}[/b]点[br](连接时间 {1} 标准)	Today's Available Sim Energy [b]{0}[/b] [br](Attendance Time {1})	今日回復できる基礎AP [b]{0}[/b][br](ログイン時間 {1} 基準)
 FOOTER_SURPLUS_EXP	자유경험치	全局经验值	Surplus Exp	トータル経験値
 FOOTER_SURPLUS_EXP_TOOLTILP	자유경험치	全局经验值	Surplus Exp	トータル経験値
+// Status				
 STATUS_REINFORCE_COUNT	지원	支援	Support	支援部隊
 STATUS_DOLL_COUNT	인형	人形	T-Doll	人形
 STATUS_EQUIP_COUNT	장비	装备	Equip	装備
+// Overlay				
 OVERLAY_EMPTY_DASHBOARD	알림 정보가[br]존재하지 않습니다	不存在[br]通知信息	Dashboard[br]is empty	情報が[br]ありません
 OVERLAY_EMPTY_ECHELON	제대 정보가[br]존재하지 않습니다	不存在[br]梯队信息	Echelon Info[br]Not Found	部隊情報が[br]ありません
 OVERLAY_EMPTY_QUEST	메인화면 [font color='#ffb400']임무[/font] 버튼을[br] 눌러주십시오	在主页选择[font color='#ffb400']任务[/font]	Press [font color='#ffb400']QUEST[/font] Button[br]on Main Menu	メイン画面 [font color='#ffb400']任務[/font] ボタンを[br]押してください
 OVERLAY_COMPLETE_QUEST	모든 임무가[br]완료되었습니다	完成所有任务	All Quests[br]Completed	全ての任務が[br]完了しました
+// Dashboard				
 DASHBOARD_GROUP_DISPATCHED_ECHELON	지원현황	支援现况	Dispatched Echelon	後方状況
 DASHBOARD_GROUP_PRODUCE_DOLL	인형제조	人形制造	T-Doll Production	人形製造
 DASHBOARD_GROUP_PRODUCE_EQUIP	장비제조	装备制造	Equip Production	装備製造
@@ -112,13 +120,17 @@ DASHBOARD_GROUP_SKILL_TRAIN	훈련현황	训练现况	Skill Training	訓練状�
 DASHBOARD_GROUP_DATA_ANALYSIS	분석현황	解析现况	Data Analysis	分析状況
 DASHBOARD_GROUP_RESTORE	수복현황	修复现况	Repair T-Doll	修理状況
 DASHBOARD_GROUP_EXPLORE	탐색현황	探索现况	Explore	探索状況
-MINIMAP_TURN_COUNT	턴	Turn	Turn	Turn
-MINIMAP_ACTION_POINT	행동점수	AP	AP	AP
-MINIMAP_SHOW_ECHELON_UNIT	제대	Echelon	Echelon	部隊
-MINIMAP_SHOW_POWER_TAG	작전능력	Power	Power	作戦能力
-MINIMAP_SHOW_ECHELON_TAG	제대	Echelon	Echelon	部隊名
+// Minimap				
+MINIMAP_TURN_COUNT	턴	回合	Turn	ターン
+MINIMAP_ACTION_POINT	행동점수	行动点数	AP	AP
+MINIMAP_SHOW_ECHELON_UNIT	제대	梯队	Echelon	部隊
+MINIMAP_SHOW_POWER_TAG	작전능력	作战效能	Power	作戦能力
+MINIMAP_SHOW_ECHELON_TAG	제대	梯队	Echelon	部隊名
 MINIMAP_DRAW_HIGH_QUALITY	고품질	High Quality	High Quality	高画質
-MINIMAP_DEBUG_MODE	디버그	Debug	Debug	デバッグ
+MINIMAP_CAPTURE	캡쳐	Capture	Capture	Capture
+MINIMAP_AUTO_CAPTURE	자동 캡쳐	Auto Capture	Auto Capture	Auto Capture
+MINIMAP_DEBUG_MODE	디버그	调试	Debug	デバッグ
+// Proxy Setting				
 SETTING_PROXY_SERVER_GROUP	프록시 서버	代理服务器	Proxy Server	プロキシサーバー
 SETTING_PROXY_SERVER_USE_PROXY_SERVER	프록시 서버	代理服务器	Proxy Server	プロキシサーバー
 SETTING_PROXY_SERVER_USE_AUTO_START	자동시작	自动运行代理服务器	Auto Start	プロキシ自動スタート
@@ -176,6 +188,7 @@ SETTING_PACKET_FORGER_USE_RANDOM_SKIN_TOOLTIP	설정된 부관의 스킨만 랜�
 SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR	검열해제 모드	666模式	Uncensor Mode	規制解除モード
 SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR_COMMENT	[a href='{0}']검열해제 패치[/a]로 추가 해제	[a href='{0}']用解除审查修补[/a]追加解除	Refer to [a href='{0}']link[/a] for additional uncensored patch	[a href='{0}']規制解除アップデート[/a]で追加解除(JPサーバーは規制されていません）
 SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR_TOOLTIP	설정한 상태로 로그인 한 뒤 130/130/130/30 인형제조 후 재로그인 시 검열해제[br][font color='#F44336'](검열해제 확인 후 반드시 검열해제 설정을 체크해제할 것)[/font]	以设定的状态登录后 130/130/130/30 人形制造后再登录时解除审查[br][font color='#F44336'](确认解除审查后应该解除设置)[/font]	Log in after enabling and produce a T-Doll with 130/130/130/30 then re-log in to enable uncensor[br][font color='#F44336'](Uncheck after uncensor is enabled)[/font]	設定した状態でログインした後「130/130/130/30」人形製造して再ログインすると規制解禁[br][font color='#F44336'](規制解禁が確認できた後、必ず規制解禁ボタンチェックを外してください)[/font]
+// Notification Setting				
 SETTING_NOTIFICATION_COMPLETE_GROUP	완료 알림	完成通知	Complete	完了アラート
 SETTING_NOTIFICATION_COMPLETE_DISPATCHED_ECHELON	지원현황	支援现况	Dispatched Echelon	支援状況
 SETTING_NOTIFICATION_COMPLETE_DISPATCHED_ECHELON_TOOLTIP	군수지원/자율작전 완료를 알림	通知完成后勤支援/自律作战	Notify Logistics/Auto-Battle completion)	後方支援/自立作戦完了をアラート
@@ -252,6 +265,7 @@ SETTING_NOTIFICATION_EXTRA_GROUP	기타	其他	Extra	その他
 SETTING_NOTIFICATION_EXTRA_ADVANCED_NOTIFICATION	미리 알림	预先通知	Advanced Notification	事前アラート
 SETTING_NOTIFICATION_EXTRA_ADVANCED_NOTIFICATION_TOOLTIP	알림들이 설정된 시간만큼 일찍 울리게 설정	设定让通知像设定的时间一样早点响起	Notify in advance for set amount of time	設定した秒数分事前にアラートを行う
 SETTING_NOTIFICATION_EXTRA_ADVANCED_NOTIFICATION_UNIT	초	秒	Sec	秒
+// Setting				
 SETTING_LANGUAGE_GROUP	언어	语言设置	Language	言語設定
 SETTING_NOTIFICATION_GROUP	알림 설정	通知设置	Notification	アラート設定
 SETTING_TOAST_GROUP	윈도우 알림	操作系统设置	Windows Toast	WINDOWSアラート
@@ -315,10 +329,11 @@ SETTING_WINDOW_STICKY_WINDOW_TOOLTIP	알리미 창이 화면 가장자리에 붙
 SETTING_EXTRA_GROUP	기타	其他	Extra	その他
 SETTING_EXTRA_USE_CHECK_UPDATE	업데이트 확인	版本更新	Check for Update	アップデートチェック
 SETTING_EXTRA_USE_CHECK_UPDATE_TOOLTIP	알리미 실행 시 최신 업데이트가 있는지 확인	运行通知器时版本更新	Check for latest version of GFAlarm during launch	アラートが起動する時最新バージョンがあるか確認
-SETTING_EXTRA_USE_CHECK_DATABASE	DB 자동 업데이트	自动数据库更新	Auto DB Update	Auto DB Update
-SETTING_EXTRA_USE_CHECK_DATABASE_TOOLTIP	알리미 실행 시 최신 DB로 자동 업데이트	运行通知器时自动数据库更新	Auto DB Update	Auto DB Update
+SETTING_EXTRA_USE_CHECK_DATABASE	DB 자동 업데이트	自动数据库更新	Auto DB Update	データベース自動アップデート
+SETTING_EXTRA_USE_CHECK_DATABASE_TOOLTIP	알리미 실행 시 최신 DB로 자동 업데이트	运行通知器时自动数据库更新	Auto DB Update	アラート起動時に最新のデータベースに自動更新
 SETTING_EXTRA_LOG_LEVEL_TOOLTIP	로그 레벨[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	日志等级[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	Log Level[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]	ログレベル[br][font color='#ffb400'](0: Trace, 1: Debug, 2: Info, 3: Warn, 4: Error, 5: Fatal)[/font]
 SETTING_EXTRA_LOG_PACKET_TOOLTIP	로그에 패킷 출력[br]로그 레벨을 Info 이하로 설정할 것[br][font color='#F44336'](속도가 느려질 수 있음)[/font]	对日志输出包[br]日志等级设定到Info以下[br][font color='#F44336'](速度可能会变慢)[/font]	Print packets on log[br]Set Log Level to below Info[br][font color='#F44336'](Can slow down system)[/font]	ログにパケット出力[br]ログレベルをInfo以下に設定してください[br][font color='#F44336'](アプリが重くなるかも知れません)[/font]
+// Message				
 MESSAGE_CONNECT_SUBJECT	연결 상태	连接现况	Connection	接続状態
 MESSAGE_CONNECT_CONTENT	연결 성공	连接成功	Connection Success	接続成功
 MESSAGE_COMPLETE_LOGISTICS_SUBJECT	군수지원	后勤支援	Logistics	後方支援
@@ -384,6 +399,7 @@ MESSAGE_TEST_WITH_VOICE_CONTENT	인형 {0} 음성	人形 {0} 语音	Doll {0} Voi
 MAIL_FORMAT	[소녀전선] {0}	[少女前线] {0}	[Girls Frontline] {0}	[ドルフロ] {0}
 MARRIED	서약	誓约	Oathed	誓約
 LOCKED	잠김	锁定	Locked	ロック
+// CSV Export				
 DOLL_INFO_ID	ID	ID	ID	ID
 DOLL_INFO_NO	도감번호	图鉴编号	No.	図鑑番号
 DOLL_INFO_TYPE	종류	类型	Type	種類
@@ -459,6 +475,8 @@ RESCUE_DOLL_DOLL_ID	인형 ID	人形ID	Doll ID	人形ID
 RESCUE_DOLL_DOLL_NAME	인형	人形	Doll	人形
 RESCUE_DOLL_DOLL_STAR	레어도	稀有度	Rarity	レアリティ
 RESCUE_DOLL_DOLL_CORE	코어	核心	Core	コア
+// T-Doll Name				
+DOLL_-1	카리나	格林娜	Kalina	カリーナ
 DOLL_1	콜트 리볼버	柯尔特左轮	SAA	コルトSAA
 DOLL_2	M1911	M1911	M1911	M1911
 DOLL_3	M9	M9	M9	M9
@@ -805,6 +823,7 @@ DOLL_20094	64식 Mod	64式 Mod	Type64	64式
 DOLL_20095	한양조 88식 Mod	汉阳造88式 Mod	Type88	漢陽88式
 DOLL_20101	UMP9 Mod	UMP9 Mod	UMP9	UMP9
 DOLL_20103	UMP45 Mod	UMP45 Mod	UMP45	UMP45
+// Equip Name				
 EQUIP_1	BM 3-12X40	BM 3-12X40	BM 3-12X40	BM 3-12X40
 EQUIP_2	LRA 2-12X50	LRA 2-12X50	LRA 2-12X50	LRA 2-12X50
 EQUIP_3	PSO-1	PSO-1	PSO-1	PSO-1
@@ -953,6 +972,7 @@ EQUIP_169	RFB 전방 레일	RFB前导轨	Am RFB Quad Rail	RFB専用フロント�
 EQUIP_170	20mm HEI	20mm HEI	20mm HEI	20mm HEI
 EQUIP_171	전술 번개 안테나	战术闪电呆毛	전술 번개 안테나	전술 번개 안테나
 EQUIP_174	Frag12 파쇄탄	Frag12高爆弹	Frag12 파쇄탄	Frag12 파쇄탄
+// Equip Type				
 EQUIP_TYPE_1	옵티컬	光学瞄具	Optical	オプティカル
 EQUIP_TYPE_2	옵티컬	光学瞄具	Optical	オプティカル
 EQUIP_TYPE_3	옵티컬	光学瞄具	Optical	オプティカル
@@ -1101,6 +1121,7 @@ EQUIP_TYPE_169	전용장비	专属装备	Exclusive	専用装備
 EQUIP_TYPE_170	전용장비	专属装备	Exclusive	専用装備
 EQUIP_TYPE_171	전용장비	专属装备	Exclusive	専用装備
 EQUIP_TYPE_174	전용장비	专属装备	Exclusive	専用装備
+// Fairy Name				
 FAIRY_1	용사요정	勇士妖精	Warrior Fairy	勇士妖精
 FAIRY_2	격노요정	暴怒妖精	Fury Fairy	激怒妖精
 FAIRY_3	방패요정	盾甲妖精	Armor Fairy	装甲妖精
@@ -1134,6 +1155,7 @@ FAIRY_1004	스이	希依	Suee	スイ
 FAIRY_1005	세나&리나	世拉＆妮娜	Sehra&Nina	セナ&リナ
 FAIRY_1006	프레이야&카밀리아	普蕾娅＆卡米莉娅	Preiya&Camilla	プレイア&カミリア
 FAIRY_1007	안나 그램	安娜·格雷姆	Anna Graem	アナ・グレアム
+// Fairy Trait				
 TRAIT_910101	살상계I	杀伤型I	Damage I	殺傷型I
 TRAIT_910102	살상계II	杀伤型II	Damage II	殺傷型II
 TRAIT_910103	정밀계I	精准型I	Accuracy I	精確型I
@@ -1156,12 +1178,14 @@ TRAIT_910119	급양계	厨神型	Chef	給養型
 TRAIT_910120	현란계	绚烂型	현란계	絢爛型
 TRAIT_910121	연하계	贺岁型	연하계	煙霞型
 TRAIT_910122	청량계	清凉型	청량계	清凉型
+// Squad Name				
 SQUAD_1	BGM-71	BGM-71	BGM-71	BGM-71
 SQUAD_2	AGS-30	AGS-30	AGS-30	AGS-30
 SQUAD_3	2B14	2B14	2B14	2B14
 SQUAD_4	M2	M2	M2	M2
 SQUAD_5	AT4	AT4	AT4	AT4
 SQUAD_6	QLZ-04	QLZ-04	QLZ-04	QLZ-04
+// Quest				
 QUEST_101	전역승리	作战胜利	Clear Any Map	戦役勝利
 QUEST_102	전역승리	作战胜利	Clear Any Map	戦役勝利
 QUEST_103	전역승리	作战胜利	Clear Any Map	戦役勝利
@@ -1220,6 +1244,7 @@ QUEST_311	철혈기계 처치	消灭普通机械铁血兵	Eliminate Machine S.F.
 QUEST_312	일반 전역승리	通过普通战役	Clear Normal Mission	通常戦役勝利
 QUEST_313	긴급 전역승리	通过紧急战役	Clear Emergency Mission	緊急戦役勝利
 QUEST_314	야간 전역승리	通过夜战战役	Clear Night Mission	夜戦戦役勝利
+// Item Name				
 ITEM_1	인형제조계약	人形制造契约	T-Doll Contract	人形製造契約
 ITEM_2	장비제조계약	装备制造契约	Equipment Contract	装備製造契約
 ITEM_3	쾌속제조계약	快速制造契约	Quick Production Contract	快速製造契約
@@ -1922,6 +1947,7 @@ ITEM_4003	숲의 선물	森林的馈赠	Forest's Gift	森林の贈り物
 ITEM_4004	황무지의 선물	荒野的馈赠	Wasteland's Gift	荒野の贈り物
 ITEM_601	랜덤염색약	无限惊喜染色剂	Infinite Surprise Dye	ランダム染色剤
 ITEM_602	지정염색약	色彩指定染色剂	Colorful Specified Dye	カラー指定染色剤
+// Mission Name				
 MISSION_1	준비운동	热身运动	Warm-Up Exercise	準備運動
 MISSION_2	흑색정보	黑色情报	Dark Information	裏面情報
 MISSION_3	거점수호	守护据点	Defend the Base	拠点防衛
