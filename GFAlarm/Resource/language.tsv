@@ -3,8 +3,8 @@ key	ko-KR	zh-CN	en-US	ja-JP
 PROGRAM_TITLE	소녀전선 알리미	少女前线通知器	Girls Frontline Alarm	ドルフロ アラーム
 PROGRAM_TITLE_SHORT	소녀전선 알리미	少女前线通知器	GFAlarm	ドルフロ アラーム
 TRANSLATED_BY		CN translated by 'Jenitak'[br]Voice translated by 'Jenitak'	EN translated by 'Seyren'[br]Voice translated by 'Seyren'	JP translated by 'リリア'[br]Voice translated by 'FlamBerry'
-PROGRAM_DESCRIPTION	소녀전선 알리미 프로그램은 모바일 게임 [font color='#ffb400']소녀전선[/font]의 패킷과 게임 데이터를 기반으로 동작됩니다.	少女前线通知器以[font color='#ffb400']少女前线[/font]的包和游戏数据为基础运行。	Girls Frontline Alarm runs based on packets and game data from a mobile game [font color='#ffb400']Girls' Frontline[/font].	Girls Frontline Alarm runs based on packets and game data from a mobile game [font color='#ffb400']Girls' Frontline[/font].
-PROGRAM_COPYRIGHT	모든 저작권과 권리는 [a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a]에 귀속되어 있습니다.	所有版权和权利归[a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a]。	All rights reserved to [a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a].	All rights reserved to [a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a].
+PROGRAM_DESCRIPTION	소녀전선 알리미 프로그램은 모바일 게임 [font color='#ffb400']소녀전선[/font]의 패킷과 게임 데이터를 기반으로 동작됩니다.	少女前线通知器以[font color='#ffb400']少女前线[/font]的包和游戏数据为基础运行。	Girls Frontline Alarm runs based on packets and game data from a mobile game [font color='#ffb400']Girls' Frontline[/font].	ドルフロアラームは[font color='#ffb400']ドールズフロントライン[/font]のゲームデータ及び通信データを用いています。
+PROGRAM_COPYRIGHT	모든 저작권과 권리는 [a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a]에 귀속되어 있습니다.	所有版权和权利归[a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a]。	All rights reserved to [a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a].	Copyright [a href='http://gf.ppgame.com']SUNBORN Network Technology(MICATEAM)[/a] All rights reserved .
 PROGRAM_BUG_REPORT	버그 발견 시, 제작자 email 또는 [a href='{0}']최신버전 글[/a]로 리포트 바랍니다.	若发现缺陷时,请报告到制作者的电子邮件或[a href='{0}']最新版的网页[/a]。	When you find a bug, please report to developer email or [a href='{0}']latest version post[/a].	バグを発見した場合、製作者のメールアドレスか[a href='{0}']最新バージョンの投稿[/a]へ報告してください。
 OPEN_FOLDER	폴더 열기	打开文件夹	Open Folder	フォルダーを開く
 ALWAYS_ON_TOP	항상 위	一直在前端	Always On Top	常に最前面に表示
@@ -63,7 +63,7 @@ LOGISTICS	군수지원	后勤支援	Logistics	後方支援
 AUTO_BATTLE	자율작전	自律作战	Auto-Battle	自立作戦
 MISSION	작전	作战	Mission	作戦
 LOGISTICS_SHORT	군수	后勤	Logistics	後方
-AUTO_BATTLE_SHORT	자율	自律	Auto	自立
+AUTO_BATTLE_SHORT	자율	自律	Auto	自律
 MISSION_SHORT	작전	作战	Mission	作戦
 SKILL_TRAIN	스킬훈련	技能训练	Skill Training	スキル訓練
 EXP_TRAIN	경험훈련	经验训练	Exp Training	経験訓練
@@ -127,8 +127,8 @@ MINIMAP_SHOW_ECHELON_UNIT	제대	梯队	Echelon	部隊
 MINIMAP_SHOW_POWER_TAG	작전능력	作战效能	Power	作戦能力
 MINIMAP_SHOW_ECHELON_TAG	제대	梯队	Echelon	部隊名
 MINIMAP_DRAW_HIGH_QUALITY	고품질	High Quality	High Quality	高画質
-MINIMAP_CAPTURE	캡쳐	Capture	Capture	Capture
-MINIMAP_AUTO_CAPTURE	자동 캡쳐	Auto Capture	Auto Capture	Auto Capture
+MINIMAP_CAPTURE	캡쳐	Capture	Capture	キャプチャ
+MINIMAP_AUTO_CAPTURE	자동 캡쳐	Auto Capture	Auto Capture	キャプチャの自動撮影
 MINIMAP_DEBUG_MODE	디버그	调试	Debug	デバッグ
 // Proxy Setting				
 SETTING_PROXY_SERVER_GROUP	프록시 서버	代理服务器	Proxy Server	プロキシサーバー
@@ -143,9 +143,9 @@ SETTING_PROXY_SERVER_USE_SSL_DECRYPT_WARNING	[font color='#F44336']대만 서버
 SETTING_PROXY_SERVER_USE_SSL_DECRYPT_COMMENT	[a href='{0}']링크[/a]를 참고해서 인증서 설치 후 사용 가능	参考[a href='{0}']链接[/a]可在设置认证书后使用	Refer to [a href='{0}']link[/a] to install certificate before use	[a href='{0}']サイト[/a]を参考して認証書をインストールした後使えます
 SETTING_PAC_SERVER_GROUP	PAC 서버	PAC服务器	PAC Server	PACサーバ
 SETTING_PAC_SERVER_USE	PAC 서버	PAC服务器	PAC Server	PACサーバ
-SETTING_PAC_SERVER_USE_TOOLTIP	PAC(Proxy Auto Config)를 사용하기 위한 서버[br][font color='#F44336']관리자 권한이 필요[/font]	使用PAC(Proxy Auto Config)的服务器时，[br][font color='#F44336]]需要管理者权限[/font]	[font color='#F44336']Server Admin's Privilege[/font][br]is required to use PAC(Proxy Auto Config)	[font color='#F44336']Server Admin's Privilege[/font][br]is required to use PAC(Proxy Auto Config)
+SETTING_PAC_SERVER_USE_TOOLTIP	PAC(Proxy Auto Config)를 사용하기 위한 서버[br][font color='#F44336']관리자 권한이 필요[/font]	使用PAC(Proxy Auto Config)的服务器时，[br][font color='#F44336]]需要管理者权限[/font]	[font color='#F44336']Server Admin's Privilege[/font][br]is required to use PAC(Proxy Auto Config)	PAC(Proxy Auto Config)の使用には[br][font color='#F44336']管理者権限[/font]が必要です
 SETTING_PAC_SERVER_SET_DOMAIN	PAC 도메인	PAC域	PAC Domain	PACドメイン
-SETTING_PAC_SERVER_SET_DOMAIN_TOOLTIP	외부 네트워크에서 도메인을 사용해서 접속할 경우 설정할 것	若在外部网络中使用域名连接时，设置这部分。	Set if accessing through domain by external network	Set if accessing through domain by external network
+SETTING_PAC_SERVER_SET_DOMAIN_TOOLTIP	외부 네트워크에서 도메인을 사용해서 접속할 경우 설정할 것	若在外部网络中使用域名连接时，设置这部分。	Set if accessing through domain by external network	外部サーバーを用いてアクセスする場合に入力してください
 SETTING_PAC_SERVER_PORT_NUMBER	PAC 포트번호	PAC端口编号	PAC Port Number	PACポート番号
 SETTING_PAC_SERVER_NOW_ADMIN	관리자 권한 사용중	正在使用管理人员的权限	Admin Privilege Enabled	管理者権限が有効
 SETTING_PAC_SERVER_NEED_ADMIN	관리자 권한 필요	需要管理人员的权限	Admin Privilege Disabled	管理者権限が無効
@@ -784,8 +784,8 @@ DOLL_1005	브로냐 자이칙	布洛妮娅	Bronya	ブローニャ・ザイチク
 DOLL_1006	테레사 아포칼립스	德丽莎	Theresa	テレサ・アポカリプス
 DOLL_1007	무라타 히메코	无量塔姬子	Murata Himeko	無量塔 姫子
 DOLL_1008	제레 발레리	希儿·芙乐艾	Seele	ゼーレ・フェレライ
-DOLL_1009	클리어	克莉尔	Clear	クリア
-DOLL_1010	페일	菲尔	Fail	フェイル
+DOLL_1009	클리어	克莉尔	Clear	エル・クレア
+DOLL_1010	페일	菲尔	Fail	エル・フェイル
 DOLL_1017	질 스팅레이	吉尔·斯汀雷	Jill Stingray	ジル・スティングレイ
 DOLL_1018	세이 아사기리	赛伊·朝雾	Sei Asagiri	セイ・P・アサギリ
 DOLL_1019	도로시 헤이즈	多萝西·海兹	Dorothy Haze	ドロシー・ヘイズ
@@ -2184,13 +2184,13 @@ MISSION_90025	일방적인 회상 Ⅰ	片面回忆Ⅰ	One-Sided Memory I	記憶�
 MISSION_90026	일방적인 회상 Ⅱ	片面回忆Ⅱ	One-Sided Memory II	記憶の片割れⅡ
 MISSION_90027	일방적인 회상 Ⅲ	片面回忆Ⅲ	One-Sided Memory III	記憶の片割れⅢ
 MISSION_90028	일방적인 회상 Ⅳ	片面回忆Ⅳ	One-Sided Memory IV	記憶の片割れⅣ
-MISSION_10093	Stalker	跟踪狂	Stalker	Stalker
+MISSION_10093	Stalker	跟踪狂	Stalker	STALKER
 MISSION_10094	HeartBeat	心跳	HeartBeat	HeartBeat
 MISSION_10095	Waiting for you	等着你！	Waiting For You!	Waiting for you
 MISSION_10096	Sunset Rider	薄暮骑士	Sunset Rider	Sunset Rider
 MISSION_10097	Fate	命运	Fate	Fate
 MISSION_10098	End of the Moonlight	月光的尽头	End of the Moonlight	End of the Moonlight
-MISSION_10099	Stalker EX	跟踪狂EX	Stalker EX	Stalker EX
+MISSION_10099	Stalker EX	跟踪狂EX	Stalker EX	STALKER EX
 MISSION_10100	HeartBeat EX	心跳EX	HeartBeat EX	HeartBeat EX
 MISSION_10101	Waiting for you EX	等着你！EX	Waiting For You! EX	Waiting for you EX
 MISSION_10102	Sunset Rider EX	薄暮骑士EX	Sunset Rider EX	Sunset Rider EX
@@ -2209,7 +2209,7 @@ MISSION_10110	비축거점	储备据点	Reserve Outpost	物資拠点
 MISSION_10111	잘 가라 허수아비	别了，稻草人	Farewell - Scarecrow	さようなら、スケアクロウ
 MISSION_10113	마지막 날	最后一天	The Last Day	最後の一日
 MISSION_10112	피 없는 전장	没有血的战场	Bloodless Battlefield	血のない戦場
-MISSION_10114	평화협상	和平谈判	Peaceful Negotiations	平和交渉
+MISSION_10114	평화협상	和平谈判	Peace Negotiations	平和交渉
 MISSION_10115	행운?	幸运？	Fortunate?	ラッキー？
 MISSION_10116	철혈고위거점	铁血精英据点	Sangvis Elite Outpost	鉄血精鋭拠点
 MISSION_10117	마인드 파편	心智碎片	Neural Fragments	記憶の欠片
@@ -2495,11 +2495,18 @@ MISSION_10402	은 도금 II	镀银II
 MISSION_10403	분쇄 II	粉碎II		
 MISSION_10404	은 도금 III	镀银III		
 MISSION_10405	예열 II	预热II		
-MISSION_10407	관측 범위 극한 III	稳泡II		
-MISSION_10412	기포 안정 II	真空管EX		
+MISSION_10406	관측 범위 극한 III	可观测极限III		
+MISSION_10407	기포 안정 II	稳泡II		
+MISSION_10408	광원뿔좌표계 II	光锥参考系II		
+MISSION_10409	관측 범위 극한 II	可观测极限II		
+MISSION_10410	흑체복사 II	黑体热辐射II		
+MISSION_10411	탈출가속도 II	逃逸加速度II		
+MISSION_10412	진공관 EX	真空管EX		
 MISSION_10413	임계각 EX-I	临界角EX-I		
 MISSION_10414	임계각 EX-II	临界角EX-II		
 MISSION_10415	기포 안정 EX	稳泡EX		
+MISSION_10416	관측 범위 극한 - EX	可观测极限 - EX		
+MISSION_10417	탈출가속도 - EX-I	逃逸加速度 - EX-I		
 MISSION_10418	비경수위	谜境守卫		
 MISSION_10419	반사면 II	反射面II		
 MISSION_10420	편광자 III	起偏器III		
@@ -2549,7 +2556,7 @@ MISSION_10463	절삭 I	切割I
 MISSION_10464	광내기	打磨		
 MISSION_10465	은 도금 I	镀银I		
 MISSION_10466	허상 재주조	虚像重铸		
-MISSION_10467	가려진 특이점	玻璃隧道		
+MISSION_10467	가려진 특이점	不可知奇点		
 MISSION_10468	관측 범위 극한 I	可观测极限I		
 MISSION_10469	광원뿔좌표계 I	光锥参考系I		
 MISSION_10470	인과 차단면	因果隔离面		
