@@ -25,9 +25,9 @@ AMMO	탄약	弹药	Ammunition	弾薬
 MRE	식량	粮食	Ration	配給
 PART	부품	零件	Parts	部品
 ECHELON	제대	梯队	Echelon	部隊
-ALLY_ECHELON	아군 제대	Ally Echelon	Ally Echelon	友軍部隊
-FRIEND_ECHELON	친구 제대	Friend Echelon	Friend Echelon	戦友部隊
-HOSTAGE_ECHELON	인질 제대	Hostage Echelon	Hostage Echelon	救援待ち
+ALLY_ECHELON	아군	Ally	Ally	友軍部隊
+FRIEND_ECHELON	친구	Friend	Friend	戦友部隊
+HOSTAGE_ECHELON	인질	Hostage	Hostage	救援待ち
 COUNT	건	个	Count	件
 RUN_43E	4-3e	4-3e	4-3e	4-3e
 RUN_02	0-2	0-2	0-2	0-2
@@ -60,7 +60,7 @@ WEEKLY_QUEST	주간임무	周常任务	Weekly Quest	ウィークリー任務
 RESEARCH_QUEST	정보임무	情报任务	Intelligence Quest	情報任務
 BINGO_QUEST	빙고임무	活动任务	Bingo Quest	ビンゴ任務
 LOGISTICS	군수지원	后勤支援	Logistics	後方支援
-AUTO_BATTLE	자율작전	自律作战	Auto-Battle	自立作戦
+AUTO_BATTLE	자율작전	自律作战	Auto-Battle	自律作戦
 MISSION	작전	作战	Mission	作戦
 LOGISTICS_SHORT	군수	后勤	Logistics	後方
 AUTO_BATTLE_SHORT	자율	自律	Auto	自律
@@ -101,6 +101,10 @@ HEADER_COLLAPSE_EXPAND_BUTTON	일괄 접기/펴기	一总 关/开	Collapse/Expan
 // Footer				
 FOOTER_SIM_POINT	모의작전점수	模拟作战体力	Sim Energy	基礎AP
 FOOTER_SIM_POINT_TOOLTIP	오늘 충전가능한 점수 [b]{0}[/b]점[br](출석시간 {1} 기준)	今天可充的体力 [b]{0}[/b]点[br](连接时间 {1} 标准)	Today's Available Sim Energy [b]{0}[/b] [br](Attendance Time {1})	今日回復できる基礎AP [b]{0}[/b][br](ログイン時間 {1} 基準)
+FOOTER_SANGVIS_SIM_POINT	혼합훈련점수	혼합훈련점수	혼합훈련점수	혼합훈련점수
+FOOTER_SANGVIS_SIM_POINT_TOOLTIP	오늘 충전가능한 점수 [b]{0}[/b]점[br](출석시간 {1} 기준)	今天可充的体力 [b]{0}[/b]点[br](连接时间 {1} 标准)	Today's Available Sim Energy [b]{0}[/b] [br](Attendance Time {1})	今日回復できる基礎AP [b]{0}[/b][br](ログイン時間 {1} 基準)
+FOOTER_SANGVIS_PULSE_POINT	전자기펄스	전자기펄스	전자기펄스	전자기펄스
+FOOTER_SANGVIS_PULSE_POINT_TOOLTIP	오늘 충전가능한 전자기펄스 [b]{0}[/b]점[br](출석시간 {1} 기준)	오늘 충전가능한 전자기펄스 [b]{0}[/b]점[br](출석시간 {1} 기준)	오늘 충전가능한 전자기펄스 [b]{0}[/b]점[br](출석시간 {1} 기준)	오늘 충전가능한 전자기펄스 [b]{0}[/b]점[br](출석시간 {1} 기준)
 FOOTER_SURPLUS_EXP	자유경험치	全局经验值	Surplus Exp	トータル経験値
 FOOTER_SURPLUS_EXP_TOOLTILP	자유경험치	全局经验值	Surplus Exp	トータル経験値
 // Status				
@@ -122,9 +126,9 @@ DASHBOARD_GROUP_RESTORE	수복현황	修复现况	Repair T-Doll	修理状況
 DASHBOARD_GROUP_EXPLORE	탐색현황	探索现况	Explore	探索状況
 // Minimap				
 MINIMAP_TURN_COUNT	턴	回合	Turn	ターン
-MINIMAP_ACTION_POINT	행동점수	行动点数	AP	AP
+MINIMAP_ACTION_POINT	행동점수	行动点数	Action Points	AP
 MINIMAP_SHOW_ECHELON_UNIT	제대	梯队	Echelon	部隊
-MINIMAP_SHOW_POWER_TAG	작전능력	作战效能	Power	作戦能力
+MINIMAP_SHOW_POWER_TAG	작전능력	作战效能	Combat Effectiveness	作戦能力
 MINIMAP_SHOW_ECHELON_TAG	제대	梯队	Echelon	部隊名
 MINIMAP_DRAW_HIGH_QUALITY	고품질	High Quality	High Quality	高画質
 MINIMAP_CAPTURE	캡쳐	Capture	Capture	キャプチャ
@@ -138,6 +142,9 @@ SETTING_PROXY_SERVER_PORT_NUMBER	포트번호	代理服务器端口编号	Port N
 SETTING_PROXY_SERVER_USE_AUTH	접속 인증	连接认证	Authentication	認証
 SETTING_PROXY_SERVER_AUTH_USERNAME	사용자 이름	用户名	Username	ユーザー名
 SETTING_PROXY_SERVER_AUTH_PASSWORD	비밀번호	密码	Password	パスワード
+SETTING_PROXY_SERVER_USE_FIX_CN_SERVER_HEOS	중섭 히오스 픽스	중섭 히오스 픽스	중섭 히오스 픽스	중섭 히오스 픽스
+SETTING_PROXY_SERVER_USE_FIX_CN_SERVER_HEOS_WARNING	한국에서 접속하는 영사/비리 서버 플레이어만 사용할 것	한국에서 접속하는 영사/비리 서버 플레이어만 사용할 것	한국에서 접속하는 영사/비리 서버 플레이어만 사용할 것	한국에서 접속하는 영사/비리 서버 플레이어만 사용할 것
+SETTING_PROXY_SERVER_USE_FIX_CN_SERVER_HEOS_COMMENT	[a href='{0}']링크[/a]의 정보를 기반으로 동작	[a href='{0}']링크[/a]의 정보를 기반으로 동작	[a href='{0}']링크[/a]의 정보를 기반으로 동작	[a href='{0}']링크[/a]의 정보를 기반으로 동작
 SETTING_PROXY_SERVER_USE_SSL_DECRYPT	HTTPS 복호화	代理服务器 HTTPS 复护化	HTTPS Decryption	プロキシHTTPS復号化
 SETTING_PROXY_SERVER_USE_SSL_DECRYPT_WARNING	[font color='#F44336']대만 서버에서만 사용할 것[/font]	[font color='#F44336']只在台服使用[/font]	[font color='#F44336']TW Server Only[/font]	[font color='#F44336']台湾サーバーユーザー様だけ使ってください[/font]
 SETTING_PROXY_SERVER_USE_SSL_DECRYPT_COMMENT	[a href='{0}']링크[/a]를 참고해서 인증서 설치 후 사용 가능	参考[a href='{0}']链接[/a]可在设置认证书后使用	Refer to [a href='{0}']link[/a] to install certificate before use	[a href='{0}']サイト[/a]を参考して認証書をインストールした後使えます
@@ -158,10 +165,10 @@ SETTING_PROXY_SERVER_GUIDE_COMMENT	[font size='14']■ Android[/font][br]→ 설
 SETTING_PACKET_FORGER_GROUP	패킷 변조	包伪造	Packet Forger	Packet Forger
 SETTING_PACKET_FORGER_USE_RANDOM_HOME_BG	랜덤 기지 배경	Random Background	Random Background	Random Background
 SETTING_PACKET_FORGER_USE_RANDOM_HOME_BG_COMMENT	기지 배경 [font color='#ffb400']{0}[/font]	Background [font color='#ffb400']{0}[/font]	Background [font color='#ffb400']{0}[/font]	Background [font color='#ffb400']{0}[/font]
-SETTING_PACKET_FORGER_USE_RANDOM_HOME_BG_TOOLTIP	보유 기지 배경 중 랜덤한 배경으로 설정	보유 기지 배경 중 랜덤한 배경으로 설정	보유 기지 배경 중 랜덤한 배경으로 설정	보유 기지 배경 중 랜덤한 배경으로 설정
+SETTING_PACKET_FORGER_USE_RANDOM_HOME_BG_TOOLTIP	보유 기지 배경 중 랜덤한 배경으로 설정	보유 기지 배경 중 랜덤한 배경으로 설정	Randomly set base background on Login	보유 기지 배경 중 랜덤한 배경으로 설정
 SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT	랜덤 부관	随机副官	Random Adjutant	Random Adjutant
 SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_COMMENT	인형 [font color='#ffb400']{0}[/font] 스킨 [font color='#ffb400']{1}[/font]	人形 [font color='#ffb400']{0}[/font] 皮肤 [font color='#ffb400']{1}[/font]	T-Doll [font color='#ffb400']{0}[/font] Skin [font color='#ffb400']{1}[/font]	人形 [font color='#ffb400']{0}[/font] Skin [font color='#ffb400']{1}[/font]
-SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_TOOLTIP	소속 인형 중 랜덤한 인형으로 부관 설정	所属的人形中随机设置为副官	Set random T-Doll as Adjutant on Login	所属人形の中からランダムに副官を設定
+SETTING_PACKET_FORGER_USE_RANDOM_ADJUTANT_TOOLTIP	소속 인형 중 랜덤한 인형으로 부관 설정	所属的人形中随机设置为副官	Randomly set a T-Doll as Adjutant on Login	所属人形の中からランダムに副官を設定
 SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_WHITELIST	부관 화이트리스트	副官白名单	Adjutant Whitelist	副官ホワイトリスト
 SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_WHITELIST_TOOLTIP	소속 인형 중 선택된 인형만 부관으로 등장하도록 설정[br][font color='#FFF44336']소속되지 않은 인형은 출현하지 않음[/font]	所属的人形中选择的人形设置为副官	Allow whitelisted T-Dolls as Adjutant[br][font color='#FFF44336']Locked T-Dolls will not appear[/font]	選択された人形が、副官に登場するように設定する[br][font color='#FFF44336']所属していない人形は出現していない[/font]
 SETTING_PACKET_FORGER_RANDOM_ADJUTANT_DOLL_BLACKLIST	부관 블랙리스트	副官黑名单	Adjutant Blacklist	副官ブラックリスト
@@ -188,6 +195,8 @@ SETTING_PACKET_FORGER_USE_RANDOM_SKIN_TOOLTIP	설정된 부관의 스킨만 랜�
 SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR	검열해제 모드	666模式	Uncensor Mode	規制解除モード
 SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR_COMMENT	[a href='{0}']검열해제 패치[/a]로 추가 해제	[a href='{0}']用解除审查修补[/a]追加解除	Refer to [a href='{0}']link[/a] for additional uncensored patch	[a href='{0}']規制解除アップデート[/a]で追加解除(JPサーバーは規制されていません）
 SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR_TOOLTIP	설정한 상태로 로그인 한 뒤 130/130/130/30 인형제조 후 재로그인 시 검열해제[br][font color='#F44336'](검열해제 확인 후 반드시 검열해제 설정을 체크해제할 것)[/font]	以设定的状态登录后 130/130/130/30 人形制造后再登录时解除审查[br][font color='#F44336'](确认解除审查后应该解除设置)[/font]	Log in after enabling and produce a T-Doll with 130/130/130/30 then re-log in to enable uncensor[br][font color='#F44336'](Uncheck after uncensor is enabled)[/font]	設定した状態でログインした後「130/130/130/30」人形製造して再ログインすると規制解禁[br][font color='#F44336'](規制解禁が確認できた後、必ず規制解禁ボタンチェックを外してください)[/font]
+SETTING_PACKET_FORGER_USE_AUTO_FAIRY_SKILL	자동 요정스킬	Auto Fairy Skill	Auto Fairy Skill	Auto Fairy Skill
+SETTING_PACKET_FORGER_USE_AUTO_FAIRY_SKILL_TOOLTIP	전역 중 자동 요정스킬을 강제로 변경, 설정한 상태로 로그인 시 반영	전역 중 자동 요정스킬을 강제로 변경, 설정한 상태로 로그인 시 반영	Force change Combat Fairy Auto switch. Setting applied upon Login.	전역 중 자동 요정스킬을 강제로 변경, 설정한 상태로 로그인 시 반영
 // Notification Setting				
 SETTING_NOTIFICATION_COMPLETE_GROUP	완료 알림	完成通知	Complete	完了アラート
 SETTING_NOTIFICATION_COMPLETE_DISPATCHED_ECHELON	지원현황	支援现况	Dispatched Echelon	支援状況
@@ -212,6 +221,12 @@ SETTING_NOTIFICATION_MAXIMUM_GROUP	상한 알림	上限通知	Maximum	上限ア�
 SETTING_NOTIFICATION_MAXIMUM_SIM_POINT	모의작전점수	模拟作战体力	Max Sim Point	模擬作戦基礎AP
 SETTING_NOTIFICATION_MAXIMUM_SIM_POINT_TOOLTIP	설정된 모의작전점수 도달 시 알림	到设置的模拟作战体力时通知	Notify when set Sim Energy Point has reached	基礎APが設定した値に到達した場合にアラート
 SETTING_NOTIFICATION_MAXIMUM_SIM_POINT_UNIT	점	点	P	AP
+SETTING_NOTIFICATION_MAXIMUM_SANGVIS_SIM_POINT	혼합훈련점수	혼합훈련점수	혼합훈련점수	혼합훈련점수
+SETTING_NOTIFICATION_MAXIMUM_SANGVIS_SIM_POINT_TOOLTIP	설정된 혼합훈련점수 도달 시 알림	설정된 혼합훈련점수 도달 시 알림	설정된 혼합훈련점수 도달 시 알림	설정된 혼합훈련점수 도달 시 알림
+SETTING_NOTIFICATION_MAXIMUM_SANGVIS_SIM_POINT_UNIT	점	점	점	점
+SETTING_NOTIFICATION_MAXIMUM_SANGVIS_PULSE_POINT	전자기펄스	전자기펄스	전자기펄스	전자기펄스
+SETTING_NOTIFICATION_MAXIMUM_SANGVIS_PULSE_POINT_TOOLTIP	설정된 전자기펄스 용량 도달 시 알림	설정된 전자기펄스 용량 도달 시 알림	설정된 전자기펄스 용량 도달 시 알림	설정된 전자기펄스 용량 도달 시 알림
+SETTING_NOTIFICATION_MAXIMUM_SANGVIS_PULSE_POINT_UNIT	개	개	개	개
 SETTING_NOTIFICATION_MAXIMUM_DOLL	인형창고	人形仓库	Max T-Doll	人形倉庫
 SETTING_NOTIFICATION_MAXIMUM_DOLL_TOOLTIP	인형창고 상한 도달 시 알림	人形仓库到上限时通知	Notify when T-Doll Slot limit has reached	人形倉庫上限になる場合アラート
 SETTING_NOTIFICATION_MAXIMUM_EQUIP	장비창고	装备仓库	Max Equip	装備倉庫
@@ -360,6 +375,10 @@ MESSAGE_COMPLETE_EXPLORE_SUBJECT	전진기지	前进营地	Forward Basecamp	前�
 MESSAGE_COMPLETE_EXPLORE_CONTENT	탐색제대 귀환	探索梯队返回	Explore completed	探索部隊帰還
 MESSAGE_MAX_SIM_POINT_SUBJECT	모의작전	模拟作战	Combat Simulation	模擬作戦
 MESSAGE_MAX_SIM_POINT_CONTENT	모의작전점수 {0}점 도달	模拟作战体力达到{0}点	Sim Energy {0} Point reached	模擬作戦基礎AP {0}になりました
+MESSAGE_MAX_SANGVIS_SIM_POINT_SUBJECT	혼합작전	혼합작전	혼합작전	혼합작전
+MESSAGE_MAX_SANGVIS_SIM_POINT_CONTENT	혼합작전점수 {0}점 도달	혼합작전점수 {0}점 도달	혼합작전점수 {0}점 도달	혼합작전점수 {0}점 도달
+MESSAGE_MAX_SANGVIS_PULSE_POINT_SUBJECT	전자기펄스	전자기펄스	전자기펄스	전자기펄스
+MESSAGE_MAX_SANGVIS_PULSE_POINT_CONTENT	전자기펄스 {0}개 도달	전자기펄스 {0}개 도달	전자기펄스 {0}개 도달	전자기펄스 {0}개 도달
 MESSAGE_MAX_SURPLUS_EXP_SUBJECT	자유경험치	全局经验值	Surplus Exp	トータル経験値
 MESSAGE_MAX_SURPLUS_EXP_CONTENT	자유경험치 상한 도달	全局经验值达到上限	Maximum Surplus Exp reached	トータル経験値上限到達
 MESSAGE_MAX_DOLL_SUBJECT	창고	人形仓库	Armory	倉庫
@@ -776,6 +795,7 @@ DOLL_296	SL8	SL8	SL8	SL8
 DOLL_297	M82	M82	M82	M82
 DOLL_298	Vepr	Vepr	Vepr	Vepr
 DOLL_299	HSM10	HSM10	HSM10	HSM10
+DOLL_300	CAR	CAR	CAR	CAR
 DOLL_1001	노엘	诺爱尔	Noel	ノエル
 DOLL_1002	엘펠트	艾尔菲尔特	Elphelt	エルフェルト
 DOLL_1003	키아나 카스라나	琪亚娜	Kiana	キアナ・カスラナ
@@ -964,14 +984,17 @@ EQUIP_161	첨단 복합 조준경	先进单兵瞄具	Advanced individual Optic	�
 EQUIP_162	RPD 특수 군장	RPD单兵套件	RPD Infantry Webbing	RPD専用歩兵装備
 EQUIP_163	MAC10 레일 총몸	MAC10 上机匣	MAX10 Upper Receiver	MAX10アッパーレシーバー
 EQUIP_164	M9 BC2 손잡이	M9 BC2握把	M9 BC2 Grips	M9 BC2グリップ
-EQUIP_165	전술 헤드셋	战术耳机	전술 헤드셋	전술 헤드셋
+EQUIP_165	전술 헤드셋	战术耳机	Tactical Earphones	전술 헤드셋
 EQUIP_166	DO 반사조준경	DO反射瞄具	DO 반사조준경	DO 반사조준경
 EQUIP_167	C96 참나무 개머리판	C96橡木枪托	C96 참나무 개머리판	C96 참나무 개머리판
 EQUIP_168	100식 접이식 개머리판	折叠枪托	Folding Stock	折り畳み式銃床
 EQUIP_169	RFB 전방 레일	RFB前导轨	Am RFB Quad Rail	RFB専用フロントレール
 EQUIP_170	20mm HEI	20mm HEI	20mm HEI	20mm HEI
 EQUIP_171	전술 번개 안테나	战术闪电呆毛	전술 번개 안테나	전술 번개 안테나
+EQUIP_172	ART2	ART2	ART2	ART2
+EQUIP_173	9x39mm SPP	9x39mm SPP	9x39mm SPP	9x39mm SPP
 EQUIP_174	Frag12 파쇄탄	Frag12高爆弹	Frag12 파쇄탄	Frag12 파쇄탄
+EQUIP_175	BPR4&SRM6	BPR4&SRM6	BPR4&SRM6	BPR4&SRM6
 // Equip Type				
 EQUIP_TYPE_1	옵티컬	光学瞄具	Optical	オプティカル
 EQUIP_TYPE_2	옵티컬	光学瞄具	Optical	オプティカル
@@ -1120,7 +1143,10 @@ EQUIP_TYPE_168	전용장비	专属装备	Exclusive	専用装備
 EQUIP_TYPE_169	전용장비	专属装备	Exclusive	専用装備
 EQUIP_TYPE_170	전용장비	专属装备	Exclusive	専用装備
 EQUIP_TYPE_171	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_172	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_173	전용장비	专属装备	Exclusive	専用装備
 EQUIP_TYPE_174	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_175	전용장비	专属装备	Exclusive	専用装備
 // Fairy Name				
 FAIRY_1	용사요정	勇士妖精	Warrior Fairy	勇士妖精
 FAIRY_2	격노요정	暴怒妖精	Fury Fairy	激怒妖精
@@ -1147,12 +1173,13 @@ FAIRY_22	해변요정	海滩妖精	Beach Fairy	海辺妖精
 FAIRY_23	연타요정	连击妖精	Combo Fairy	連撃妖精
 FAIRY_24	장벽요정	立盾妖精	Barrier Fairy	障壁妖精
 FAIRY_25	쌍둥이요정	双生妖精	Twin Fairy	双子妖精
-FAIRY_26	시조요정	祥瑞妖精	Mold Fairy	原型妖精
+FAIRY_26	시조요정	原型妖精	Mold Fairy	原型妖精
+FAIRY_27	경사요정	祥瑞妖精	경사요정	경사요정
 FAIRY_1001	야에 사쿠라	八重樱	Yae Sakura	八重 桜
 FAIRY_1002	카구야	耀夜姬	Kaguya Hime	カグヤ
 FAIRY_1003	클로에	柯萝伊	Chloe	クロエ
 FAIRY_1004	스이	希依	Suee	スイ
-FAIRY_1005	세나&리나	世拉＆妮娜	Sehra&Nina	セナ&リナ
+FAIRY_1005	세라&니나	世拉＆妮娜	Sehra&Nina	セナ&リナ
 FAIRY_1006	프레이야&카밀리아	普蕾娅＆卡米莉娅	Preiya&Camilla	プレイア&カミリア
 FAIRY_1007	안나 그램	安娜·格雷姆	Anna Graem	アナ・グレアム
 // Fairy Trait				
@@ -1178,6 +1205,7 @@ TRAIT_910119	급양계	厨神型	Chef	給養型
 TRAIT_910120	현란계	绚烂型	현란계	絢爛型
 TRAIT_910121	연하계	贺岁型	연하계	煙霞型
 TRAIT_910122	청량계	清凉型	청량계	清凉型
+TRAIT_910123	길운계	吉祥型	길운계	吉祥型
 // Squad Name				
 SQUAD_1	BGM-71	BGM-71	BGM-71	BGM-71
 SQUAD_2	AGS-30	AGS-30	AGS-30	AGS-30
@@ -1244,6 +1272,65 @@ QUEST_311	철혈기계 처치	消灭普通机械铁血兵	Eliminate Machine S.F.
 QUEST_312	일반 전역승리	通过普通战役	Clear Normal Mission	通常戦役勝利
 QUEST_313	긴급 전역승리	通过紧急战役	Clear Emergency Mission	緊急戦役勝利
 QUEST_314	야간 전역승리	通过夜战战役	Clear Night Mission	夜戦戦役勝利
+QUEST_2_101	전역승리	作战胜利	Clear Any Map	戦役勝利
+QUEST_2_102	전역승리	作战胜利	Clear Any Map	戦役勝利
+QUEST_2_103	전역승리	作战胜利	Clear Any Map	戦役勝利
+QUEST_2_104	인형제조	战术少女制造	Produce T-Doll	人形製造
+QUEST_2_105	인형제조	战术少女制造	Produce T-Doll	人形製造
+QUEST_2_106	군수지원	后勤支援	Logistic Support	後方支援
+QUEST_2_107	군수지원	后勤支援	Logistic Support	後方支援
+QUEST_2_108	군수지원	后勤支援	Logistic Support	後方支援
+QUEST_2_109	인형강화	战术少女强化	Enhance T-Doll	人形強化
+QUEST_2_110	인형강화	战术少女强化	Enhance T-Doll	人形強化
+QUEST_2_111	인형수복	战术少女修复	Repair T-Doll	人形修理
+QUEST_2_112	모의작전	模拟作战	Combat Simulation	模擬作戦
+QUEST_2_113	모의작전	模拟作战	Combat Simulation	模擬作戦
+QUEST_2_114	장비제조	装备制造	Produce Equip	装備製造
+QUEST_2_115	장비제조	装备制造	Produce Equip	装備製造
+QUEST_2_116	장비강화	装备强化	Enhance Equip	装備強化
+QUEST_2_117	장비강화	装备强化	Enhance Equip	装備強化
+QUEST_2_118	공유전지 획득	获得共用电池	Collect Battery	戦友宿舎バッテリー獲得
+QUEST_2_119	칭찬하기	Praise Friend	Praise Friend	Praise Friend
+QUEST_2_120	정보분석	情报解析	Data Analysis	情報分析
+QUEST_2_121	정보분석	情报解析	Data Analysis	情報分析
+QUEST_2_122	혼합훈련	혼합훈련	혼합훈련	혼합훈련
+QUEST_2_123	혼합훈련	혼합훈련	혼합훈련	혼합훈련
+QUEST_2_201	일반유닛 처치	Eliminate Unit	Eliminate Unit	Eliminate Unit
+QUEST_2_202	일반유닛 처치	Eliminate Unit	Eliminate Unit	Eliminate Unit
+QUEST_2_203	보스 처치	Eliminate Boss	Eliminate Boss	Eliminate Boss
+QUEST_2_204	군수지원	后勤支援	Logistic Support	後方支援
+QUEST_2_205	S랭크 전투	以S评价完成战斗	S Rank Battle	Sランク戦闘
+QUEST_2_206	인형강화	战术少女强化	Enhance T-Doll	人形強化
+QUEST_2_207	인형제조	战术少女制造	Produce T-Doll	人形製造
+QUEST_2_208	스킬훈련	人形技能训练	Skill Training	スキル訓練
+QUEST_2_209	모의작전	模拟作战	Combat Simulation	模擬作戦
+QUEST_2_210	장비제조	装备制造	Produce Equip	装備製造
+QUEST_2_211	장갑유닛 처치	Eliminate Armored Unit	Eliminate Armored Unit	Eliminate Armored Unit
+QUEST_2_212	장갑유닛 처치	Eliminate Armored Unit	Eliminate Armored Unit	Eliminate Armored Unit
+QUEST_2_213	중형인형제조	人形重型制造	T-Doll Heavy Production	大型人形製造
+QUEST_2_214	장비교정	装备校准	Equip Calibration	装備校正
+QUEST_2_215	장비강화	装备强化	Equip Enhancement	装備強化
+QUEST_2_216	중형장비제조	装备重型制造	Equip Heavy Production	大型装備製造
+QUEST_2_217	요정강화	妖精强化	Fairy Enhancement	妖精強化
+QUEST_2_218	정보분석	情报解析	Data Analysis	情報分析
+QUEST_2_219	칩셋강화	强化消耗芯片	Enhance Chip	テトリス校正
+QUEST_2_220	정보임무	Research Quest	Research Quest	Research Quest
+QUEST_2_221	인형해체	Retire T-Doll	Retire T-Doll	Retire T-Doll
+QUEST_2_222	탐색	Explore	Explore	Explore
+QUEST_2_223	일반회수	일반회수	일반회수	일반회수
+QUEST_2_224	혼합훈련	혼합훈련	혼합훈련	혼합훈련
+QUEST_2_301	아무 전역 승리	完成任何作战	Clear Any Mission	無作為の戦役勝利
+QUEST_2_302	아무 적 처치	消灭任何敌人	Eliminate Any Enemy	無作為の敵討伐
+QUEST_2_303	일반 4-6 승리	通过普通4-6	Clear Mission 4-6	通常4-6勝利
+QUEST_2_304	일반 5-6 승리	通过普通5-6	Clear Mission 5-6	通常5-6勝利
+QUEST_2_305	일반 6-6 승리	通过普通6-6	Clear Mission 6-6	通常6-6勝利
+QUEST_2_306	일반 7-6 승리	通过普通7-6	Clear Mission 7-6	通常7-6勝利
+QUEST_2_307	보스 처치	Eliminate Boss	Eliminate Boss	Eliminate Boss
+QUEST_2_308	장갑유닛 처치	Eliminate Armored Unit	Eliminate Armored Unit	Eliminate Armored Unit
+QUEST_2_310	일반유닛 처치	Eliminate Unit	Eliminate Unit	Eliminate Unit
+QUEST_2_312	일반 전역승리	通过普通战役	Clear Normal Mission	通常戦役勝利
+QUEST_2_313	긴급 전역승리	通过紧急战役	Clear Emergency Mission	緊急戦役勝利
+QUEST_2_314	야간 전역승리	通过夜战战役	Clear Night Mission	夜戦戦役勝利
 // Item Name				
 ITEM_1	인형제조계약	人形制造契约	T-Doll Contract	人形製造契約
 ITEM_2	장비제조계약	装备制造契约	Equipment Contract	装備製造契約
@@ -2025,6 +2112,9 @@ MISSION_1303	자료추출 Ⅲ	资料采样Ⅲ	Data Mode III	資料収集Ⅲ
 MISSION_1501	마인드회랑Ⅰ	云图回廊Ⅰ	Neural Cloud Corridor I	メンタル回廊Ⅰ
 MISSION_1502	마인드회랑Ⅱ	云图回廊Ⅱ	Neural Cloud Corridor II	メンタル回廊Ⅱ
 MISSION_1503	마인드회랑Ⅲ	云图回廊Ⅲ	Neural Cloud Corridor III	メンタル回廊Ⅲ
+MISSION_1601		升级材料副本		
+MISSION_1602		升星材料副本		
+MISSION_1603		技能材料副本		
 MISSION_10001	7단계 퍼즐	七阶谜题	Seven-Step Puzzle	七階謎題
 MISSION_10002	모서리 처리	角先破解	Corner Breaker	コーナー・ファースト
 MISSION_10003	층계교체	层先调换	Layers Reversal	レイヤー・バイ・レイヤー
@@ -2564,3 +2654,12 @@ MISSION_10471	흑체복사 I	黑体热辐射I
 MISSION_10472	탈출가속도 I	逃逸加速度I		
 MISSION_10473	지평선을 넘어	穿越视界线		
 MISSION_10474	탈출가속도 - EX-II	逃逸加速度 - EX-II		
+MISSION_10475	빈집	空屋	The Empty House	
+MISSION_10476	그리폰의 건축가	格里芬的建筑师	The Griffin Builder	
+MISSION_10477	MDR의 실종	失踪的MDR	The Missing MDR	
+MISSION_10478	곱사등이	驼背人	The Crooked Man	
+MISSION_10479	귤씨 7개	七个桔核	The Seven Tangerine Pips	
+MISSION_10480	2번째 마인드맵	第二块云图	The Second Neural Cloud	
+MISSION_10481	유령 별장의 소문	幽灵公馆的传言	Rumors of the Haunted Mansion	
+MISSION_10482	리엔필드의 인사 Ⅰ	李·恩菲尔德的致意Ⅰ	Lee Enfield's Last Bow I	
+MISSION_10483	리엔필드의 인사 Ⅱ	李·恩菲尔德的致意Ⅱ	Lee Enfield's Last Bow II	
