@@ -16,6 +16,7 @@ TRAY_CLOSE	종료	退出	Close	終了
 TRAY_RESET_POSITION	위치 리셋	重定位	Position Reset	リセット
 VERSION_CHECK_TITLE	버전 확인	版本更新	Version Check	バージョン確認
 VERSION_CHECK_CONTENT	최신버전 {0}가 존재합니다. 다운로드 링크로 이동합니까?	发现新版本 {0}. 打开下载网页吗?	Latest version {0} is available. Would you like to open download link?	最新バージョン 「{0}」が存在します。ダウンロードリンクへ移動しますか？
+MESSAGE_NOW_TRAY_CONTENT	트레이에서 실행 중	트레이에서 실행 중	트레이에서 실행 중	트레이에서 실행 중
 // Common				
 TIME	시간	时间	Time	時間
 REQUIRE_TIME	소요 시간	所需时间	Require Time	残り時間
@@ -375,8 +376,8 @@ MESSAGE_COMPLETE_EXPLORE_SUBJECT	전진기지	前进营地	Forward Basecamp	前�
 MESSAGE_COMPLETE_EXPLORE_CONTENT	탐색제대 귀환	探索梯队返回	Explore completed	探索部隊帰還
 MESSAGE_MAX_SIM_POINT_SUBJECT	모의작전	模拟作战	Combat Simulation	模擬作戦
 MESSAGE_MAX_SIM_POINT_CONTENT	모의작전점수 {0}점 도달	模拟作战体力达到{0}点	Sim Energy {0} Point reached	模擬作戦基礎AP {0}になりました
-MESSAGE_MAX_SANGVIS_SIM_POINT_SUBJECT	혼합작전	혼합작전	혼합작전	혼합작전
-MESSAGE_MAX_SANGVIS_SIM_POINT_CONTENT	혼합작전점수 {0}점 도달	혼합작전점수 {0}점 도달	혼합작전점수 {0}점 도달	혼합작전점수 {0}점 도달
+MESSAGE_MAX_SANGVIS_SIM_POINT_SUBJECT	혼합훈련	혼합훈련	혼합훈련	혼합훈련
+MESSAGE_MAX_SANGVIS_SIM_POINT_CONTENT	혼합훈련점수 {0}점 도달	혼합훈련점수 {0}점 도달	혼합훈련점수 {0}점 도달	혼합훈련점수 {0}점 도달
 MESSAGE_MAX_SANGVIS_PULSE_POINT_SUBJECT	전자기펄스	전자기펄스	전자기펄스	전자기펄스
 MESSAGE_MAX_SANGVIS_PULSE_POINT_CONTENT	전자기펄스 {0}개 도달	전자기펄스 {0}개 도달	전자기펄스 {0}개 도달	전자기펄스 {0}개 도달
 MESSAGE_MAX_SURPLUS_EXP_SUBJECT	자유경험치	全局经验值	Surplus Exp	トータル経験値
@@ -841,8 +842,12 @@ DOLL_20091	MP-446 Mod	MP-446 Mod	MP-446	MP-446
 DOLL_20093	IDW Mod	IDW Mod	IDW	IDW
 DOLL_20094	64식 Mod	64式 Mod	Type64	64式
 DOLL_20095	한양조 88식 Mod	汉阳造88式 Mod	Type88	漢陽88式
+DOLL_20097	M950A Mod	M950A Mod	M950A Mod	M950A Mod
 DOLL_20101	UMP9 Mod	UMP9 Mod	UMP9	UMP9
 DOLL_20103	UMP45 Mod	UMP45 Mod	UMP45	UMP45
+DOLL_20154	M500 Mod	M500 Mod	M500 Mod	M500 Mod
+DOLL_20221	GSh-18 Mod	GSh-18 Mod	GSh-18 Mod	GSh-18 Mod
+DOLL_20252	KSVK Mod	KSVK Mod	KSVK Mod	KSVK Mod
 // Equip Name				
 EQUIP_1	BM 3-12X40	BM 3-12X40	BM 3-12X40	BM 3-12X40
 EQUIP_2	LRA 2-12X50	LRA 2-12X50	LRA 2-12X50	LRA 2-12X50
@@ -1205,7 +1210,7 @@ TRAIT_910119	급양계	厨神型	Chef	給養型
 TRAIT_910120	현란계	绚烂型	현란계	絢爛型
 TRAIT_910121	연하계	贺岁型	연하계	煙霞型
 TRAIT_910122	청량계	清凉型	청량계	清凉型
-TRAIT_910123	길운계	吉祥型	길운계	吉祥型
+TRAIT_910124	길운계	吉祥型	길운계	吉祥型
 // Squad Name				
 SQUAD_1	BGM-71	BGM-71	BGM-71	BGM-71
 SQUAD_2	AGS-30	AGS-30	AGS-30	AGS-30
@@ -1213,6 +1218,19 @@ SQUAD_3	2B14	2B14	2B14	2B14
 SQUAD_4	M2	M2	M2	M2
 SQUAD_5	AT4	AT4	AT4	AT4
 SQUAD_6	QLZ-04	QLZ-04	QLZ-04	QLZ-04
+// Sangvis Name				
+SANGVIS_1001	스케어크로우	稻草人	스케어크로우	스케어크로우
+SANGVIS_1002	엑스큐셔너	刽子手	엑스큐셔너	엑스큐셔너
+SANGVIS_2001	브루트	残兽	브루트	브루트
+SANGVIS_2002	드라군	龙骑兵	드라군	드라군
+SANGVIS_2003	이지스	圣盾	이지스	이지스
+SANGVIS_3001	리퍼	切割者	리퍼	리퍼
+SANGVIS_3002	베스피드	胡蜂	베스피드	베스피드
+SANGVIS_3003	가드	护卫者	가드	가드
+SANGVIS_3004	예거	猎鸥	예거	예거
+SANGVIS_3005	스트라이커	痛击者	스트라이커	스트라이커
+SANGVIS_3007	스카웃	侦察者	스카웃	스카웃
+SANGVIS_3008	프롤러	巡游者	프롤러	프롤러
 // Quest				
 QUEST_101	전역승리	作战胜利	Clear Any Map	戦役勝利
 QUEST_102	전역승리	作战胜利	Clear Any Map	戦役勝利
