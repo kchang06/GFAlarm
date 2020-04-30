@@ -16,7 +16,7 @@ TRAY_CLOSE	종료	退出	Close	終了
 TRAY_RESET_POSITION	위치 리셋	重定位	Position Reset	リセット
 VERSION_CHECK_TITLE	버전 확인	版本更新	Version Check	バージョン確認
 VERSION_CHECK_CONTENT	최신버전 {0}가 존재합니다. 다운로드 링크로 이동합니까?	发现新版本 {0}. 打开下载网页吗?	Latest version {0} is available. Would you like to open download link?	最新バージョン 「{0}」が存在します。ダウンロードリンクへ移動しますか？
-MESSAGE_NOW_TRAY_CONTENT	트레이에서 실행 중	트레이에서 실행 중	트레이에서 실행 중	트레이에서 실행 중
+MESSAGE_NOW_TRAY_CONTENT	트레이에서 실행 중	트레이에서 실행 중	트레이에서 실행 중	タスクトレイで実行中
 // Common				
 TIME	시간	时间	Time	時間
 REQUIRE_TIME	소요 시간	所需时间	Require Time	残り時間
@@ -43,6 +43,9 @@ UNKNOWN	알 수 없음	未知道	Unknown	不明
 NEED_RELOGIN	재로그인 필요	需要再登录	Need Relogin	再ログインしてください
 UNRECEIVE_SHARE_GEM	공유보석 미수령	未领取共用宝石	Unreceived Share Gem	シェアダイヤを受け取っていません
 UNRECEIVE_SHARE_BATTERY	공유전지 미수령	未领取共用电池	Unreceived Share Battery	戦友宿舎バッテリーを受け取っていません
+EXPLORE_ADAPTIVE_CHANGE_IMMINENT	탐색우세 변경	Adpt Team Change	Adpt Team Change	探索ボーナス人形・ペット変更
+THEATER_NO_DRONE	정찰 미투입	No Drone	No Drone	No Drone
+THEATER_DRONE_RANDOM_PICK	뽑기	Pick	Pick	Pick
 SPEND_RESOURCE	투입 자원	投入资源	Spend Resources	投入資源
 REWARD_RESOURCE	획득 보상	获得奖励	Reward Resources	獲得報酬
 REQUIRE_EXP	필요 경험치	需要经验值	Require Exp	必要経験値
@@ -106,6 +109,7 @@ FOOTER_SANGVIS_SIM_POINT	혼합훈련점수	혼합훈련점수	혼합훈련점�
 FOOTER_SANGVIS_SIM_POINT_TOOLTIP	오늘 충전가능한 점수 [b]{0}[/b]점[br](출석시간 {1} 기준)	今天可充的体力 [b]{0}[/b]点[br](连接时间 {1} 标准)	Today's Available Sim Energy [b]{0}[/b] [br](Attendance Time {1})	今日回復できる基礎AP [b]{0}[/b][br](ログイン時間 {1} 基準)
 FOOTER_SANGVIS_PULSE_POINT	전자기펄스	전자기펄스	전자기펄스	전자기펄스
 FOOTER_SANGVIS_PULSE_POINT_TOOLTIP	오늘 충전가능한 전자기펄스 [b]{0}[/b]점[br](출석시간 {1} 기준)	오늘 충전가능한 전자기펄스 [b]{0}[/b]점[br](출석시간 {1} 기준)	오늘 충전가능한 전자기펄스 [b]{0}[/b]점[br](출석시간 {1} 기준)	오늘 충전가능한 전자기펄스 [b]{0}[/b]점[br](출석시간 {1} 기준)
+FOOTER_SANGVIS_RESCAN	목표재수색	목표재수색	목표재수색	목표재수색
 FOOTER_SURPLUS_EXP	자유경험치	全局经验值	Surplus Exp	トータル経験値
 FOOTER_SURPLUS_EXP_TOOLTILP	자유경험치	全局经验值	Surplus Exp	トータル経験値
 // Status				
@@ -196,8 +200,8 @@ SETTING_PACKET_FORGER_USE_RANDOM_SKIN_TOOLTIP	설정된 부관의 스킨만 랜�
 SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR	검열해제 모드	666模式	Uncensor Mode	規制解除モード
 SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR_COMMENT	[a href='{0}']검열해제 패치[/a]로 추가 해제	[a href='{0}']用解除审查修补[/a]追加解除	Refer to [a href='{0}']link[/a] for additional uncensored patch	[a href='{0}']規制解除アップデート[/a]で追加解除(JPサーバーは規制されていません）
 SETTING_PACKET_FORGER_USE_UNLOCK_CENSOR_TOOLTIP	설정한 상태로 로그인 한 뒤 130/130/130/30 인형제조 후 재로그인 시 검열해제[br][font color='#F44336'](검열해제 확인 후 반드시 검열해제 설정을 체크해제할 것)[/font]	以设定的状态登录后 130/130/130/30 人形制造后再登录时解除审查[br][font color='#F44336'](确认解除审查后应该解除设置)[/font]	Log in after enabling and produce a T-Doll with 130/130/130/30 then re-log in to enable uncensor[br][font color='#F44336'](Uncheck after uncensor is enabled)[/font]	設定した状態でログインした後「130/130/130/30」人形製造して再ログインすると規制解禁[br][font color='#F44336'](規制解禁が確認できた後、必ず規制解禁ボタンチェックを外してください)[/font]
-SETTING_PACKET_FORGER_USE_AUTO_FAIRY_SKILL	자동 요정스킬	Auto Fairy Skill	Auto Fairy Skill	Auto Fairy Skill
-SETTING_PACKET_FORGER_USE_AUTO_FAIRY_SKILL_TOOLTIP	전역 중 자동 요정스킬을 강제로 변경, 설정한 상태로 로그인 시 반영	전역 중 자동 요정스킬을 강제로 변경, 설정한 상태로 로그인 시 반영	Force change Combat Fairy Auto switch. Setting applied upon Login.	전역 중 자동 요정스킬을 강제로 변경, 설정한 상태로 로그인 시 반영
+SETTING_PACKET_FORGER_USE_AUTO_FAIRY_SKILL	자동 요정스킬	Auto Fairy Skill	Auto Fairy Skill	戦闘妖精スキルの自動発動
+SETTING_PACKET_FORGER_USE_AUTO_FAIRY_SKILL_TOOLTIP	전역 중 자동 요정스킬을 강제로 변경, 설정한 상태로 로그인 시 반영	전역 중 자동 요정스킬을 강제로 변경, 설정한 상태로 로그인 시 반영	Force change Combat Fairy Auto switch. Setting applied upon Login.	ログイン時に戦闘妖精スキルの自動発動を強制的に切り替える
 // Notification Setting				
 SETTING_NOTIFICATION_COMPLETE_GROUP	완료 알림	完成通知	Complete	完了アラート
 SETTING_NOTIFICATION_COMPLETE_DISPATCHED_ECHELON	지원현황	支援现况	Dispatched Echelon	支援状況
@@ -228,6 +232,8 @@ SETTING_NOTIFICATION_MAXIMUM_SANGVIS_SIM_POINT_UNIT	점	점	점	점
 SETTING_NOTIFICATION_MAXIMUM_SANGVIS_PULSE_POINT	전자기펄스	전자기펄스	전자기펄스	전자기펄스
 SETTING_NOTIFICATION_MAXIMUM_SANGVIS_PULSE_POINT_TOOLTIP	설정된 전자기펄스 용량 도달 시 알림	설정된 전자기펄스 용량 도달 시 알림	설정된 전자기펄스 용량 도달 시 알림	설정된 전자기펄스 용량 도달 시 알림
 SETTING_NOTIFICATION_MAXIMUM_SANGVIS_PULSE_POINT_UNIT	개	개	개	개
+SETTING_NOTIFICATION_READY_SANGVIS_RESCAN	목표수색	목표수색	목표수색	목표수색
+SETTING_NOTIFICATION_READY_SANGVIS_RESCAN_TOOLTIP	목표수색 준비 시 알림	목표수색 준비 시 알림	목표수색 준비 시 알림	목표수색 준비 시 알림
 SETTING_NOTIFICATION_MAXIMUM_DOLL	인형창고	人形仓库	Max T-Doll	人形倉庫
 SETTING_NOTIFICATION_MAXIMUM_DOLL_TOOLTIP	인형창고 상한 도달 시 알림	人形仓库到上限时通知	Notify when T-Doll Slot limit has reached	人形倉庫上限になる場合アラート
 SETTING_NOTIFICATION_MAXIMUM_EQUIP	장비창고	装备仓库	Max Equip	装備倉庫
@@ -368,6 +374,7 @@ MESSAGE_COMPLETE_TRAIN_EXP_SUBJECT	경험훈련	经验训练	Exp Training	経験
 MESSAGE_COMPLETE_TRAIN_DOLL_CONTENT	인형 {0} 훈련완료	人形 {0} 完成训练	{0} Training completed	人形 {0} 訓練完了
 MESSAGE_COMPLETE_TRAIN_FAIRY_CONTENT	요정 {0} 훈련완료	妖精 {0} 完成训练	{0} Training completed	妖精 {0} 訓練完了
 MESSAGE_COMPLETE_TRAIN_SQUAD_CONTENT	중장비 {0} 훈련완료	重装部队 {0} 完成训练	{0} Training completed	중装備 {0} 訓練完了
+MESSAGE_COMPLETE_TRAIN_SANGVIS_CONTENT	혼합세력 {0} 훈련완료	혼합세력 {0} 훈련완료	{0} Training completed	혼합세력 {0} 훈련완료
 MESSAGE_COMPLETE_DATA_ANALYSIS_SUBJECT	정보분석	情报解析	Intelligence Analysis	情報分析
 MESSAGE_COMPLETE_DATA_ANALYSIS_CONTENT	정보분석 완료	完成情报解析	Intelligence Analysis completed	情報分析完了
 MESSAGE_COMPLETE_RESTORE_SUBJECT	인형수복	人性修复	T-Doll Repair	人形修理
@@ -380,6 +387,8 @@ MESSAGE_MAX_SANGVIS_SIM_POINT_SUBJECT	혼합훈련	혼합훈련	혼합훈련	혼
 MESSAGE_MAX_SANGVIS_SIM_POINT_CONTENT	혼합훈련점수 {0}점 도달	혼합훈련점수 {0}점 도달	혼합훈련점수 {0}점 도달	혼합훈련점수 {0}점 도달
 MESSAGE_MAX_SANGVIS_PULSE_POINT_SUBJECT	전자기펄스	전자기펄스	전자기펄스	전자기펄스
 MESSAGE_MAX_SANGVIS_PULSE_POINT_CONTENT	전자기펄스 {0}개 도달	전자기펄스 {0}개 도달	전자기펄스 {0}개 도달	전자기펄스 {0}개 도달
+MESSAGE_READY_SANGVIS_RESCAN_TITLE	목표수색	목표수색	목표수색	목표수색
+MESSAGE_READY_SANGVIS_RESCAN_CONTENT	목표수색 준비	목표수색 준비	목표수색 준비	목표수색 준비
 MESSAGE_MAX_SURPLUS_EXP_SUBJECT	자유경험치	全局经验值	Surplus Exp	トータル経験値
 MESSAGE_MAX_SURPLUS_EXP_CONTENT	자유경험치 상한 도달	全局经验值达到上限	Maximum Surplus Exp reached	トータル経験値上限到達
 MESSAGE_MAX_DOLL_SUBJECT	창고	人形仓库	Armory	倉庫
@@ -495,6 +504,12 @@ RESCUE_DOLL_DOLL_ID	인형 ID	人形ID	Doll ID	人形ID
 RESCUE_DOLL_DOLL_NAME	인형	人形	Doll	人形
 RESCUE_DOLL_DOLL_STAR	레어도	稀有度	Rarity	レアリティ
 RESCUE_DOLL_DOLL_CORE	코어	核心	Core	コア
+THEATER_WAVE_AREA_ID	지역번호	Area ID	Area ID	Area ID
+THEATER_WAVE_WAVE_NUM	웨이브	Wave	Wave	Wave
+THEATER_WAVE_TEAM_ID	적 구성번호	Enemy ID	Enemy ID	Enemy ID
+THEATER_WAVE_MEMBERS	적 구성	Enemy Member	Enemy Member	Enemy Member
+THEATER_WAVE_IS_NIGHT	야전 여부	Night	Night	Night
+THEATER_WAVE_MAX_DEF	최대 역장	Max Def	Max Def	Max Def
 // T-Doll Name				
 DOLL_-1	카리나	格林娜	Kalina	カリーナ
 DOLL_1	콜트 리볼버	柯尔特左轮	SAA	コルトSAA
@@ -795,8 +810,14 @@ DOLL_295	CF05	CF05	CF05	CF05
 DOLL_296	SL8	SL8	SL8	SL8
 DOLL_297	M82	M82	M82	M82
 DOLL_298	Vepr	Vepr	Vepr	Vepr
-DOLL_299	HSM10	HSM10	HSM10	HSM10
+DOLL_299	HS10	HSM10	HSM10	HSM10
 DOLL_300	CAR	CAR	CAR	CAR
+DOLL_301	MAS-38	MAS-38	MAS-38	MAS-38
+DOLL_303	HP-35	HP-35	HP-35	HP-35
+DOLL_304	SAF	SAF	SAF	SAF
+DOLL_305	타부크	塔布克	Tabuk	Tabuk
+DOLL_306	AK-ALFA	AK-ALFA	AK-ALFA	AK-ALFA
+DOLL_307	ZB-26	ZB-26	ZB-26	ZB-26
 DOLL_1001	노엘	诺爱尔	Noel	ノエル
 DOLL_1002	엘펠트	艾尔菲尔特	Elphelt	エルフェルト
 DOLL_1003	키아나 카스라나	琪亚娜	Kiana	キアナ・カスラナ
@@ -1000,6 +1021,10 @@ EQUIP_172	ART2	ART2	ART2	ART2
 EQUIP_173	9x39mm SPP	9x39mm SPP	9x39mm SPP	9x39mm SPP
 EQUIP_174	Frag12 파쇄탄	Frag12高爆弹	Frag12 파쇄탄	Frag12 파쇄탄
 EQUIP_175	BPR4&SRM6	BPR4&SRM6	BPR4&SRM6	BPR4&SRM6
+EQUIP_176	7n31	7n31	7n31	7n31
+EQUIP_177	MGP 개조 키트	MGP升级套件	MGP 개조 키트	MGP 개조 키트
+EQUIP_178	12.7mm 1SL	12.7mm 1SL	12.7mm 1SL	12.7mm 1SL
+EQUIP_179	WML&전술총몸덮개	WML&战术护木	WML&전술총몸덮개	WML&전술총몸덮개
 // Equip Type				
 EQUIP_TYPE_1	옵티컬	光学瞄具	Optical	オプティカル
 EQUIP_TYPE_2	옵티컬	光学瞄具	Optical	オプティカル
@@ -1152,6 +1177,10 @@ EQUIP_TYPE_172	전용장비	专属装备	Exclusive	専用装備
 EQUIP_TYPE_173	전용장비	专属装备	Exclusive	専用装備
 EQUIP_TYPE_174	전용장비	专属装备	Exclusive	専用装備
 EQUIP_TYPE_175	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_176	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_177	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_178	전용장비	专属装备	Exclusive	専用装備
+EQUIP_TYPE_179	전용장비	专属装备	Exclusive	専用装備
 // Fairy Name				
 FAIRY_1	용사요정	勇士妖精	Warrior Fairy	勇士妖精
 FAIRY_2	격노요정	暴怒妖精	Fury Fairy	激怒妖精
@@ -1207,8 +1236,8 @@ TRAIT_910116	예민계	敏锐型	Keen	鋭敏型
 TRAIT_910117	격양계	激昂型	Fervor	激昂系
 TRAIT_910118	황금계	黄金型	Golden	黄金型
 TRAIT_910119	급양계	厨神型	Chef	給養型
-TRAIT_910120	현란계	绚烂型	현란계	絢爛型
-TRAIT_910121	연하계	贺岁型	연하계	煙霞型
+TRAIT_910120	현란계	绚烂型	Splendor	絢爛型
+TRAIT_910121	연하계	贺岁型	Chinese New Year	煙霞型
 TRAIT_910122	청량계	清凉型	청량계	清凉型
 TRAIT_910124	길운계	吉祥型	길운계	吉祥型
 // Squad Name				
@@ -1221,9 +1250,12 @@ SQUAD_6	QLZ-04	QLZ-04	QLZ-04	QLZ-04
 // Sangvis Name				
 SANGVIS_1001	스케어크로우	稻草人	스케어크로우	스케어크로우
 SANGVIS_1002	엑스큐셔너	刽子手	엑스큐셔너	엑스큐셔너
+SANGVIS_1003	헌터	猎手	헌터	헌터
 SANGVIS_2001	브루트	残兽	브루트	브루트
 SANGVIS_2002	드라군	龙骑兵	드라군	드라군
 SANGVIS_2003	이지스	圣盾	이지스	이지스
+SANGVIS_2004	네메움	钢狮	네메움	네메움
+SANGVIS_2006	맨티코어	蝎甲兽	맨티코어	맨티코어
 SANGVIS_3001	리퍼	切割者	리퍼	리퍼
 SANGVIS_3002	베스피드	胡蜂	베스피드	베스피드
 SANGVIS_3003	가드	护卫者	가드	가드
@@ -2672,12 +2704,12 @@ MISSION_10471	흑체복사 I	黑体热辐射I
 MISSION_10472	탈출가속도 I	逃逸加速度I		
 MISSION_10473	지평선을 넘어	穿越视界线		
 MISSION_10474	탈출가속도 - EX-II	逃逸加速度 - EX-II		
-MISSION_10475	빈집	空屋	The Empty House	
-MISSION_10476	그리폰의 건축가	格里芬的建筑师	The Griffin Builder	
-MISSION_10477	MDR의 실종	失踪的MDR	The Missing MDR	
-MISSION_10478	곱사등이	驼背人	The Crooked Man	
-MISSION_10479	귤씨 7개	七个桔核	The Seven Tangerine Pips	
-MISSION_10480	2번째 마인드맵	第二块云图	The Second Neural Cloud	
-MISSION_10481	유령 별장의 소문	幽灵公馆的传言	Rumors of the Haunted Mansion	
-MISSION_10482	리엔필드의 인사 Ⅰ	李·恩菲尔德的致意Ⅰ	Lee Enfield's Last Bow I	
-MISSION_10483	리엔필드의 인사 Ⅱ	李·恩菲尔德的致意Ⅱ	Lee Enfield's Last Bow II	
+MISSION_10475	빈집	空屋	The Empty House	空き家
+MISSION_10476	그리폰의 건축가	格里芬的建筑师	The Griffin Builder	グリフィンの建築業者
+MISSION_10477	MDR의 실종	失踪的MDR	The Missing MDR	MDR失踪
+MISSION_10478	곱사등이	驼背人	The Crooked Man	背中の曲がった人形
+MISSION_10479	귤씨 7개	七个桔核	The Seven Tangerine Pips	オレンジの種7つ
+MISSION_10480	2번째 마인드맵	第二块云图	The Second Neural Cloud	第二のメンタル
+MISSION_10481	유령 별장의 소문	幽灵公馆的传言	Rumors of the Haunted Mansion	幽霊館のうわさ
+MISSION_10482	리엔필드의 인사 Ⅰ	李·恩菲尔德的致意Ⅰ	Lee Enfield's Last Bow I	リー・エンフィールドの挨拶 Ⅰ
+MISSION_10483	리엔필드의 인사 Ⅱ	李·恩菲尔德的致意Ⅱ	Lee Enfield's Last Bow II	リー・エンフィールドの挨拶 Ⅱ
